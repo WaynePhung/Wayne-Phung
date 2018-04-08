@@ -1,1 +1,121 @@
-My Page
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans|Raleway">
+    <style type="text/css">
+        @import url("MainCSS.css");
+    </style>
+</head>
+
+<body>
+    <navigation>
+        <div class="name">Wayne Phung</div>
+        <div class="dropbtn">
+            <div class="bars" id="bar1"></div>
+            <div class="bars" id="bar2"></div>
+            <div class="bars" id="bar3"></div>
+        </div>
+        <div class="navigationBar" id="navbar">
+            <div class="dropdownContent" id="myDropdown">
+                <a href="#home" class="barItem">Projects</a>
+                <a href="#band" class="barItem">Short Written Pieces</a>
+                <a href="#tour" class="barItem">Personal Idea Page</a>
+                <a href="#tour" class="barItem">About Me</a>
+                <a href="#contact" class="lastBarItem">Contact</a>
+            </div>
+        </div>
+    </navigation>
+    <div class="contentContainer" id="contentContainer">
+        <img src="http://jonvilma.com/images/sunrise-10.jpg" id="firstImg" alt="firstImage">
+        <!--<img src="C:\Users\wphun\Pictures\Saved Pictures\pulledTheHunterDeathKnight.jpg" style = "width: 100%" class="slideshow" alt="secondImage">-->
+        <div class="picNum" id="pic1"> / 3</div>
+        <!--<div class="slideDots">
+	  	  <div class="arrow" id="left"></div>
+		  <span id="dot1"></span>
+		  <span id="dot2"></span>
+		  <span id="dot3"></span>
+		  <span id="dot4"></span>
+		  <div class="arrow" id="right"></div>
+		</div>-->
+
+        <!--Space between picture slideshow and main content-->
+        <div class="firstSpace"></div>
+        <div class="rkcbVid" style="">
+            <iframe src="https://www.youtube.com/embed/LftQ_CoSB-U?rel=0&autohide=1&showinfo=0&ap=%2526fmt%3D18" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen>
+  			</iframe>
+        </div>
+        <div class="firstSpace"></div>
+        <video width="100%" height="80%" id="Believer" controls>
+  			<source src="C:\Users\wphun\Videos\Fourth Draft of Sun God Festival 2017.mp4" type="video/mp4">
+		</video>
+        <div class="firstSpace"></div>
+
+        <!-- Content will go here -->
+        <article>
+            <section id="main-content">
+                <h2>Wayne Phung</h2>
+                <p>Hey, thanks for checking out my website! I'm still fiddling with HTML, CSS, JavaScript, and other coding languages to make a well-designed website. It's still pretty clunky, but I hope that it will look and function a lot more smoothly
+                    later on!</p>
+                <p>In the meantime, feel free to check out my past projects. Thanks again for visiting! I'll just be having some features tested out here below just to get a feel for learning code. :)</p>
+            </section>
+        </article>
+    </div>
+</body>
+
+<footer>
+	<div class="mediaGroup">
+		<div class="mediaContainer" id="findMe">
+			<div class="blurFilter">
+  				<div class="backImg" id="googleBack">
+  				</div>
+	  		</div>
+		  	<i class="fa fa-search" id="searchIcon" aria-hidden="true"></i>
+		  	<p class="mediaText" id="findMeText">Find me!</p>
+		</div>
+        <div class="mediaContainer" id="fbBox" href="https://www.facebook.com/wayne.phung.5">
+        	<div class="blurFilter"> 	<div class="backImg" id="fbBack">
+	  			</div>
+			</div>
+			<i class="fa fa-facebook-official" id="facebook" aria-hidden="true" ></i>
+			<p class="mediaText" id="fbText">wayne.phung.5</p>
+       </div>
+        <div class="mediaContainer" id="lIBox" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+         	<div class="blurFilter">
+         		<div class="backImg" id="liBack">
+	  			</div>
+			</div>
+			<i class="fa fa-linkedin-square" id="linkedIn" aria-hidden="true" >
+			</i>
+          	<p class="mediaText" id="lIText">wayne-phung-8a8242102</p>
+		</div>
+        <div class="mediaContainer" id="emailBox">
+			<div class="blurFilter">
+				<div class="backImg" id="emailBack">
+				</div>
+	  		</div>
+			<i class="fa fa-envelope" id="email" aria-hidden="true" >
+			</i>
+          	<p class="mediaText" id="emailText">wphung@ucsd.edu</p>
+       </div>
+       <div class="mediaContainer" id="portBox" href="https://portfolium.com/WaynePhung">
+		   <div class="blurFilter">
+	   			<div class="backImg" id="portBack">
+		   		</div>
+	  		</div>
+			<img src="C:\Users\wphun\OneDrive\Documents\Website Files\My First Website\Photos\PortfoliumLogo_1.png" id="portfolium">
+          	<p class="mediaText" id="portText">portfolium.com/WaynePhung</p>
+       </div>
+	</div>
+</footer>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://use.fontawesome.com/37e682dcd5.js"></script>
+<script src="jQuery.js"></script>
+
+</html>
