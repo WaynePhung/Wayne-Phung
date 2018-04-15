@@ -90,7 +90,7 @@ body {
 }
 
 .dropbtn {
-    margin: .75em 0em 0em 0.5em;
+    margin: .75em 0em 0em 0.15em;
     float: center;
     display: inline-block;
     position: fixed;
@@ -110,15 +110,13 @@ body {
 }
 
 .dropbtn.toX {
-    background-color: black;
-    border-radius: 14px;
 }
 
 .toX #bar1 {
     width: 45px;
     -webkit-transform: rotate(-45deg) translate(-8.75px, 8px);
     /*Only for min-width of 700px.*/
-    transform: rotate(-45deg) translate(-8.75px, 8px);
+    transform: rotate(-45deg) translate(-10px, 9.25px);
     /*Only for min-width of 700px.*/
     background: white;
 }
@@ -131,7 +129,7 @@ body {
     width: 45px;
     -webkit-transform: rotate(45deg) translate(-8.5px, -10.25px);
     /*Only for min-width of 700px.*/
-    transform: rotate(45deg) translate(-8.5px, -10.25px);
+    transform: rotate(45deg) translate(-8.5px, -9.5px);
     /*Only for min-width of 700px.*/
     background: white;
 }
@@ -867,7 +865,7 @@ footer {
         width: 75%;
         height: 100%;
 		margin-right: 55%;
-        top: 15%;
+        top: 20%;
         display: block;
         text-align: center;
         float: center;
@@ -884,8 +882,9 @@ footer {
         border-radius: 20px 20px;
     }
     .dropdownContent.show a:hover {
+		margin: 0.25em;
+		min-width: 70%;
         font-size: 32px;
-        min-width: 75%;
     }
     .name{
         font-size: 1.5em;
