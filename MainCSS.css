@@ -586,6 +586,12 @@ footer {
 	}
 }
 
+@media only screen (min-width: 775px) and (max-width:992px) {
+    .name{
+        margin-right: 2em;
+    }
+}
+
 @media only screen and (min-width: 850px) {
     #findMeText {
         float: right;
