@@ -11,7 +11,6 @@
     width: 180px;
     height: 57px;
     margin: .6em auto 0em auto;
-    float: right;
     opacity: 1;
     font-family: 'Raleway', Trebuchet MS, sans-serif;
     -webkit-transition: all ease 0.3s;
@@ -91,7 +90,7 @@ body {
 }
 
 .dropbtn {
-    margin: .75em 0em 0em .5em;
+    margin: .75em 0em 0em 0.5em;
     float: center;
     display: inline-block;
     position: fixed;
@@ -415,7 +414,7 @@ footer {
 #liBack {
 	background-image: url("http://gdurl.com/rED4");
 }
- 
+
 #emailBack {
 	background-image: url("http://gdurl.com/XV1U");
 }
@@ -446,7 +445,6 @@ footer {
 
 
 /*Below are media queries designed for a more responsive website across different devices and across different viewport/window sizes.*/
-
 @media only screen and (min-width: 1000px) {
 	body{
 		height: 2200px;
@@ -488,7 +486,7 @@ footer {
     }
 	#liBack{
 		background-size: 100%;
-		background-position: 50% 20%; 
+		background-position: 50% 20%;
 	}
     #linkedIn {
         float: left;
@@ -508,11 +506,11 @@ footer {
         margin-top: 32.5%;
         margin-right: 12%;
     }
-	
+
 	#portBack{
 		background-size: 100% 110%;
 	}
-	
+
 	#portfolium{
 		width: 15%;
 		height: 30%;
@@ -744,32 +742,23 @@ footer {
 }
 
 @media only screen and (min-width: 700px) {
-	
-    .name {
-        right: 5%;
-        margin-right: 1em;
-    }
     .dropdownContent {
-        margin: .5em -3em;
+        margin: .5em -5em;
         font-size: 18px;
     }
     .dropdownContent.show {
         font-size: 15px;
         margin-left: -2em;
     }
-	
     .dot {
         left: 40%;
     }
-	
     #main-content {
         font-size: 18px;
     }
-	
 	footer{
 		min-height: 350px;
 	}
-	
 	.mediaContainer {
         font-family: 'Raleway', Trebuchet MS, sans-serif;
         font-weight: bold;
@@ -783,78 +772,62 @@ footer {
         -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
     }
-	
 	.backImg{
 		opacity: .3;
 	}
-	
 	#googleBack{
 		background-position: 45% 40%;
 	}
-	
     .insetShadow:hover {
         cursor: pointer;
 		box-shadow-color: rgba(255,255,255,.7);
     }
-	
     #searchIcon, #facebook, #email {
         font-size: 400%;
         text-decoration: none;
     }
-	
     #linkedIn {
         font-size: 500%;
     }
-	
     .mediaText {
         float: right;
     }
-	
     #findMe, #lIBox {
         float: left;
         margin-left: 5%;
         margin-bottom: 4%;
     }
-	
 	#lIBox, #emailBox{
 		margin-top: 5%;
 		margin-bottom: 5%;
 	}
-	
     #findMe {
         width: 35%;
     }
-	
     #findMeText {
         float: right;
 		margin-right: 10%;
     }
-	
     #emailBox {
         float: right;
         margin: 5% 5% 4% 0%;
     }
-	
     #fbBox {
         width: 50%;
 		float: right;
 		margin: 0% 5% 4% 0%;
     }
-	
     #lIBox {
         float: left;
         width: 50%;
     }
-	
     #emailBox {
         width: 37.5%;
     }
-	
     #email {
         font-size: 450%;
         float: center;
     }
-	
 	#portBox{
 		width: 57%;
 		margin-top: 4%;
@@ -863,13 +836,9 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
-    /* For mobile phones: */
 	body {
     	height: 1500px;
 	}
-	.name {
-        margin-left: 85%;
-    }
     .navigationBar {
         width: 100%;
 		height: 0%;
@@ -884,7 +853,6 @@ footer {
     .dropbtn.toX {
         background-color: inherit;
     }
-	
     .dropdownContent {
         margin-left: 55%;
     }
@@ -912,6 +880,9 @@ footer {
     .dropdownContent.show a:hover {
         font-size: 32px;
         min-width: 75%;
+    }
+    .name{
+        font-size: 1.5em;
     }
     .dot {
         left: 20%;
@@ -954,14 +925,11 @@ footer {
 }
 
 @media only screen and (min-width: 570px) and (max-width: 700px) {
-
-    .name {
-        margin-left: 85%;
-    }
     .dropdownContent.show {
         margin-left: -17.5%;
 		margin-right: 17.5%;
     }
+
     .contentContainer {
         margin-top: 15%;
     }
@@ -1011,12 +979,15 @@ footer {
 		font-size: 24px;
 	}
 
-	
+
 }
 
 @media only screen and (min-width: 500px) and (max-width: 570px) {
 	footer {
         margin-top: 325%;
+    }
+    .name{
+        margin-left: 3em;
     }
     .dropdownContent {
         margin-left: 25%;
@@ -1048,7 +1019,7 @@ footer {
 	#findMeText, #fbText{
 		font-size: 40px;
 	}
-	
+
 	#lIText{
 		font-size: 27px;
 	}
@@ -1069,15 +1040,15 @@ footer {
 }
 
 @media only screen and (min-width: 400px) and (max-width: 500px) {
-    .name {
-        margin-left: 80%;
-    }
     .dropdownContent {
         margin-left: 47.5%;
         right: 5%;
     }
     .dropdownContent.show {
         margin-left: -25.5%;
+    }
+    .name{
+        margin-left: 2em;
     }
     .contentContainer {
         width: 100%;
@@ -1121,12 +1092,9 @@ footer {
 }
 
 @media only screen and (max-width: 400px) {
-
     .name {
-        width: 100px;
-        right: -10%;
+        width: 150px;
         margin-top: .75em;
-        font-size: 1.5em;
     }
     .dropbtn {
         width: 50px;
@@ -1204,6 +1172,9 @@ footer {
 }
 
 @media only screen and (max-width: 350px) {
+    .name{
+        font-size: 1.1em;
+    }
     .contentContainer {
         margin-top: 22.5%;
     }

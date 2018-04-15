@@ -7,7 +7,7 @@ function toX(x) {
 toggle between hiding and showing the dropdown content */
 function dropDown() {
 	document.getElementById("myDropdown").classList.toggle("show");
-	var myDiv = document.getElementById("menu-indicator");
+	let myDiv = document.getElementById("menu-indicator");
 	if (myDiv.style.opacity === 1) {
 		myDiv.style.opacity = 0;
 	} else {

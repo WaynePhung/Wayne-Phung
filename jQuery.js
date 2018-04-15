@@ -8,7 +8,7 @@ $(document).ready(function () {
 		$('.name').toggleClass('hide');
 		$('.menuIndicator').toggleClass('toX');
 	});
-	
+
 	$(window).scroll(function(){
 		var winWidth = $(document).width();
         var nameValue;
@@ -41,13 +41,13 @@ $(document).ready(function () {
 		  $(".rkcbVid").css({"opacity": "1"});
 		}
 	});
-	
+
 	changeName();
-	$(window).resize(changeName);
-	/* This function changes the name from full to abbreviated when 
-	  the width of the browser window is less than 700px. This also 
+	//$(window).resize(changeName);
+	/* This function changes the name from full to abbreviated when
+	  the width of the browser window is less than 700px. This also
 	  occurs when the browser's width is resized. */
-	function changeName (){
+	/*function changeName (){
 	var winWidth = $(document).width();
 		var widthVal = 700;
 		if (winWidth < widthVal) {
@@ -58,24 +58,24 @@ $(document).ready(function () {
 		else {
 			$(".name").text("Wayne Phung");
 		}
-	}
-	
+	}*/
+
 	$('.mediaContainer').hover(function() {
 		$('.insetShadow').addClass('.colorChange');
 	});
 	//Below is unused code.
-	
-	/*Forming the picture slideshow. This code was adapted by 
-	  Chris Skinner from codepen.io named "Simple jQuery 
+
+	/*Forming the picture slideshow. This code was adapted by
+	  Chris Skinner from codepen.io named "Simple jQuery
 	  Slideshow", https://codepen.io/chrisj-skinner/pen/pvFBf?editors=0010.
-	
+
 	//Get the photos.
 	var imageGroup = $(".slideshow");
-	
+
 	var ulDots = '<ul id="dots">';
-	
+
 	var imageArray = $.makeArray(imageGroup);
-	
+
 	for (var i =0; i < imageArray.length; i++){
 		if (i === 0){
 			imageArray[i].addClass('current');
@@ -92,7 +92,7 @@ $(document).ready(function () {
 	$('#right').click(changePic);
 	$('.slideDots .dot').click(pickImg);
 	//setInterval(function(){moveImg()}, 4000);
-	
+
 	function pickImg(){	$('.selectedDot').removeClass('selectedDot').addClass('dot');
 		var j = this.className;
 		j--;
@@ -103,7 +103,7 @@ $(document).ready(function () {
 			currentImg.removeClass('prev');
 		});
 	}
-	
+
 	function changePic(){
 		var moveImg = this.id;
 		var selectDot = $('.selectedDot').removeClass('selectedDot');
@@ -130,7 +130,7 @@ $(document).ready(function () {
 			currentImg.removeClass('prev');
 		});
 	}
-	
+
 		/*var dotArray = $('.dot').toArray();
 		var dotClick = dotArray[i].getElementById();
     	for (var i = 0; i < dotArray.length; i++) {
