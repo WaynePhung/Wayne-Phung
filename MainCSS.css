@@ -110,6 +110,7 @@ body {
 }
 
 .dropbtn.toX {
+	background-color: transparent;
 }
 
 .toX #bar1 {
