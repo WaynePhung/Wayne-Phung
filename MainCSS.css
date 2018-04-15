@@ -14,7 +14,7 @@
     margin: .6em auto 0em auto;
     opacity: 1;
     font-family: 'Raleway', Trebuchet MS, sans-serif;
-    -webkit-transition: all ease 0.3s;
+    -webkit-transitionf: all ease 0.3s;
     -moz-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
@@ -347,8 +347,18 @@ body {
     transition: all ease 0.5s;
 }
 
-#Believer {
+#believer {
     position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+}
+
+#believer iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 #main-content {
@@ -374,7 +384,7 @@ p {
 
 footer {
     width: 100%;
-    height: 170%;
+    height: 50%;
     background-color: rgba(128, 128, 128, 0.7);
     position: absolute;
     margin-top: 220%;
