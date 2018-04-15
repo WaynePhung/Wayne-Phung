@@ -468,6 +468,9 @@ footer {
         margin: 10% 6.5%;
         width: 85%;
     }
+	.video-embed iframe{
+    	height: 94.35%;
+	}
     .dot {
 		left: 80%;
     }
@@ -735,6 +738,9 @@ footer {
 	body {
     	height: 1500px;
 	}
+	.video-embed iframe{
+    	height: 90%;
+	}
 	.mediaContainer{
 		height: 210px;
 	}
@@ -900,6 +906,9 @@ footer {
 		margin-top: 0.8em;
         font-size: 1.5em;
     }
+	.video-embed iframe{
+		height: 88%;
+	}
     .dot {
         left: 20%;
     }
