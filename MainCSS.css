@@ -90,7 +90,7 @@ body {
 }
 
 .dropbtn {
-    margin: .75em 0em 0em 0.15em;
+    margin: .75em 0em 0em -0.75em;
     float: center;
     display: inline-block;
     position: fixed;
@@ -222,7 +222,7 @@ body {
     flex-direction: row;
     /*Only for min-width of 700px.*/
     text-align: justify;
-    margin: .75em -1em;
+    margin: .75em -0.5em;
 }
 
 .dropdownContent a {
@@ -448,9 +448,6 @@ footer {
 	body{
 		height: 2200px;
 	}
-    .dropbtn {
-        margin-left: .3em;
-    }
     .contentContainer {
         margin: 10% 6.5%;
         width: 85%;
@@ -585,7 +582,7 @@ footer {
 	}
 }
 
-@media only screen (min-width: 775px) and (max-width:992px) {
+@media only screen and (min-width: 775px) and (max-width:992px) {
     .name{
         margin-right: 2em;
     }
@@ -722,9 +719,6 @@ footer {
 	body {
     	height: 1500px;
 	}
-    .dropbtn {
-        margin-left: .75em;
-    }
 	.mediaContainer{
 		height: 210px;
 	}
@@ -748,12 +742,11 @@ footer {
 
 @media only screen and (min-width: 700px) {
     .dropdownContent {
-        margin: .5em -5em;
-        font-size: 18px;
+        margin: .5em -2em;
+        font-size: 20px;
     }
     .dropdownContent.show {
-        font-size: 15px;
-        margin-left: -2em;
+        font-size: 17px;
     }
     .dot {
         left: 40%;
@@ -845,7 +838,7 @@ footer {
     	height: 1500px;
 	}
     .navigationBar {
-        width: 100%;
+        width: 125%;
 		height: 0%;
     }
     .navigationBar.show {
@@ -853,7 +846,7 @@ footer {
         background-color: rgba(0, 0, 0, .75);
     }
     .dropbtn {
-        margin-left: .1em;
+        margin-left: -0.75em;
     }
     .dropbtn.toX {
         background-color: inherit;
@@ -888,6 +881,7 @@ footer {
         font-size: 32px;
     }
     .name{
+		margin-top: 0.8em;
         font-size: 1.5em;
     }
     .dot {
@@ -1053,8 +1047,8 @@ footer {
     .dropdownContent.show {
         margin-left: -25.5%;
     }
-    .name{
-        margin-left: 2em;
+	.name{
+        margin-left: 1.5em;
     }
     .contentContainer {
         width: 100%;
@@ -1125,7 +1119,7 @@ footer {
     .toX #bar3 {
         width: 45px;
         -webkit-transform: rotate(45deg) translate(-8px, -11.25px);
-        transform: rotate(45deg) translate(-4px, -7.5px);
+        transform: rotate(45deg) translate(-4px, -.5px);
     }
     .dropdownContent {
 		float: center;
@@ -1179,7 +1173,8 @@ footer {
 
 @media only screen and (max-width: 350px) {
     .name{
-        font-size: 1.1em;
+        font-size: 1.25em;
+		margin-left: -2em;
     }
     .contentContainer {
         margin-top: 22.5%;
