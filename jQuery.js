@@ -59,7 +59,7 @@ $(document).ready(function () {
 			$(".name").text("Wayne Phung");
 		}
 	}*/
-
+/*Empty code.*/
 	$('.mediaContainer').hover(function() {
 		$('.insetShadow').addClass('.colorChange');
 	});
