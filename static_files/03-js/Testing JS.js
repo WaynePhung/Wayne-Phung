@@ -86,7 +86,7 @@ $(document).ready(function() {
 
     // This section is for gif photos only.
         $(this).find(gif1).addClass('active');
-        $(this).find(gif1).css('background', 'url("../mediaFiles/gifs/SGFgif.gif") no-repeat center');
+        $(this).find(gif1).css('background', 'url("mediaFiles/gifs/SGFgif.gif") no-repeat center');
         $(this).find(gif1).css('background-size', '110%');
     }, function () {
         $(this).find(photo).css('transform', 'scale(1.1)');
@@ -97,7 +97,7 @@ $(document).ready(function() {
     //
     // This section is for gif photos only.
         $(this).find(gif1).removeClass('active');
-        $(this).find(gif1).css('background', 'url("../mediaFiles/images/SGFblackbear.PNG") no-repeat center');
+        $(this).find(gif1).css('background', 'url("mediaFiles/images/SGFblackbear.PNG") no-repeat center');
         $(this).find(gif1).css('background-size', '100%');
     });
 

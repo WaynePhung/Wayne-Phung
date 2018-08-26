@@ -51,7 +51,7 @@
 }
 
 #gif1.active {
-    background: url("../mediaFiles/gifs/SGFgif.gif") no-repeat center;
+    background: url("mediaFiles/gifs/SGFgif.gif") no-repeat center;
     background-size: 100%;
 }
 
