@@ -1,0 +1,59 @@
+.fullPage {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: auto;
+    height: 100vh;
+}
+
+.ui-loader {
+    display: none;
+}
+
+section {
+    display: inline-block;
+    flex: 0 0 auto;
+    float: left;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow-x: hidden;
+    touch-action: manipulation;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.leftArrow {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: auto;
+    height: auto;
+    font-size: 2.75em;
+}
+
+.rightArrow {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    width: auto;
+    height: auto;
+    font-size: 2.75em;
+}
+
+#pp-nav{
+    margin: 0 auto !important;
+    left:0;
+    right: 0;
+    top: auto !important;
+    bottom: 17px;
+    display: inline-block;
+}
+#pp-nav li, .pp-slidesNav li{
+    display:inline-block;
+}

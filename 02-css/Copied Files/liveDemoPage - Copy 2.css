@@ -1,0 +1,938 @@
+/* By default, these are the properties of the following elements
+before media queries override them. */
+
+html, body {
+    width: 100%;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+    overflow: -moz-scrollbars-none;
+}
+
+html.nightMode {
+    background: black;
+}
+
+body {
+    background-color: transparent;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+/* .whileLoad * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+} */
+
+.ui-loader {
+    display: none;
+}
+
+:focus {
+    outline: none;
+}
+
+/* .headerGrid {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    color: black;
+    z-index: 2;
+    transform: translateY(-200px);
+}
+
+.headerGrid.nightMode {
+    background-color: rgba(0, 0, 0, 0.8);
+} */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#mainMenu {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: auto;
+    grid-gap: 1.5% 1.5%;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    padding: 0 3.5% 1.25% 0;
+    margin: 0;
+    width: 90%;
+    min-height: 25px;
+    height: 100px;
+    align-items: center;
+    z-index: 3;
+    transform: translateY(-200px);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+#mainMenu.translate {
+    transform: translateY(0px);
+}
+
+#menuList {
+    grid-column: 1/8;
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0 0;
+    margin: 0 0;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+#menuList > a:not(#disabled).nightMode {
+    color: white;
+}
+
+.listItem {
+    text-align: center;
+    padding: 0 2%;
+    width: 100%;
+    font-size: 1em;
+    color: black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+a {
+    color: black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.nightMode {
+    color: white;
+}
+
+#disabled {
+    color: rgba(99, 105, 114, 0.8);
+    background: transparent;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: underline;
+}
+
+#toggleModes {
+    opacity: 0;
+    grid-column: 9/13;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+#toggleModes.nightMode {
+    color: white;
+}
+
+.sliderGroup {
+    margin: 5% 5%;
+    justify-content: center;
+    text-align: center;
+}
+
+.sliderGroup > p {
+    margin-bottom: 0;
+}
+
+#switchPill {
+    width: 100px;
+    height: 60px;
+    margin: 0 0;
+}
+
+.toggleModes {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 60px;
+    z-index: 2;
+}
+
+.toggleModes input {
+    display: none;
+}
+
+.toggleSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 30%/50%;
+    z-index: 2;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.toggleSlider:before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background-color: white;
+    border-radius: 50%/50%;
+    vertical-align: middle;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+ }
+
+ input:checked + .toggleSlider:before {
+    -webkit-transform: translateX(65%);
+    -ms-transform: translateX(65%);
+    transform: translateX(65%);
+ }
+
+ input:checked + .toggleSlider {
+    background-color: rgb(2, 79, 206);
+ }
+
+ input:focus + .toggleSlider {
+    box-shadow: 0 0 1px rgb(2, 79, 206);
+ }
+
+ .fas {
+     font-size: 1.75em;
+ }
+
+#tabRibbon {
+    display: grid;
+    grid-template-columns: 45px repeat(6, 2fr) repeat(5, 1fr);
+    grid-row: auto;
+    grid-gap: 3% 3%;
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    padding: 1em 2em 1em 1em;
+    margin-right: 2%;
+    width: 100%;
+    min-height: 25px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    /* white-space: nowrap; */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+#tabRibbon.nightMode {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mainContainer {
+    grid-row: 1;
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.mainCell {
+    align-self: flex-start;
+}
+
+#main1 {
+    grid-column: 1/2;
+}
+
+#main2 {
+    grid-column: 10/13;
+    width: auto;
+}
+
+#menuButton {
+    grid-column: 1/2;
+    opacity: 1;
+    background-color: transparent;
+    margin: auto 0;
+    width: 45px;
+    height: 36px;
+    margin: auto 0;
+    cursor: pointer;
+    border-radius: 14px;
+    z-index: 3;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.bars {
+    opacity: 1;
+    margin: 0 0 .5em 0;
+    width: 45px;
+    height: 6px;
+    border-radius: 14px;
+    background: black;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+}
+
+.bars.nightMode {
+    background: white;
+}
+
+#bar3 {
+    margin-bottom: 0;
+}
+
+#bar1.shift{
+    width: 45px;
+    -webkit-transform: rotate(-45deg) translate(-8.75px, 8px);
+    /*Only for min-width of 700px.*/
+    transform: rotate(-45deg) translate(-10px, 9.25px);
+    /*Only for min-width of 700px.*/
+}
+
+#bar2.shift{
+    opacity: 0;
+}
+
+#bar3.shift{
+    width: 45px;
+    -webkit-transform: rotate(45deg) translate(-8.5px, -10.25px);
+    /*Only for min-width of 700px.*/
+    transform: rotate(45deg) translate(-8.5px, -9.5px);
+    /*Only for min-width of 700px.*/
+}
+
+.name {
+    opacity: 1;
+    top: 2.5%;
+    right: 2.5%;
+    margin: auto 0;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: 1.5em;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.name.translate {
+    transform: translateY(-200px);
+}
+
+.name > a {
+    margin: 0 0;
+    color: black;
+}
+
+.name > a.nightMode {
+    color: white;
+}
+
+.name a p {
+    margin: 0 0;
+}
+
+.tabArrows {
+    background-color: transparent;
+    border: none;
+    align-items: flex-end;
+    color: black;
+    font-size: 1.25em;
+    border-radius: 0.5em;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+#leftArrow {
+    grid-row: 1;
+    grid-column: 2/3;
+}
+
+#horizScroll {
+    grid-row: 1;
+    grid-column: 3/7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    color: black;
+    border-radius: 0.5em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* grid-auto-flow: dense; */
+    white-space: nowrap;
+    cursor: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+#horizScroll.translate {
+    transform: translateY(-200px);
+}
+
+#rightArrow {
+    grid-row: 1;
+    grid-column: 7/8;
+}
+
+.shadows {
+    -webkit-box-shadow: inset 0 0 0.8em 0.05em black, 0 0 0.8em 0.05em black;
+    box-shadow: inset 0 0 0.8em 0.05em black, 0 0 0.8em 0.05em black;
+}
+
+.shadows.nightMode {
+    -webkit-box-shadow: inset 0 0 0.8em 0.05em white, 0 0 0.8em 0.05em white;
+    box-shadow: inset 0 0 0.5em 0.3em white, 0 0 0.8em 0.05em white;
+
+}
+
+button {
+    margin: 0 0;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+button:focus {
+    outline: none;
+}
+
+.tabItem {
+    display: inline-block;
+    opacity: 1;
+    flex: 0 0 auto;
+    background-color: transparent;
+    float: left;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5em 0.3em;
+    vertical-align: middle;
+    width: 150px;
+    height: 100%;
+    font-size: 17px;
+    color: black;
+    -webkit-box-shadow: inset 0 0 1em 0.2em black;
+    box-shadow: inset 0 0 1em 0.2em black;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.tabItem.nightMode {
+    color: white;
+    -webkit-box-shadow: inset 0 0 1em 0.2em white;
+    box-shadow: inset 0 0 1em 0.2em white;
+}
+
+.tabArrows:hover, .tabItem:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+.tabArrows.translate {
+    transform: translateY(-200px);
+}
+
+.tabArrows.nightMode {
+    color: white;
+}
+
+.tabArrows:hover.nightMode, .tabItem:hover.nightMode {
+    background-color: #777;
+}
+
+/* .tabItem:focus {
+    opacity: 1;
+} */
+
+.body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bodyWrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.bodyGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto repeat(4, auto);
+    grid-gap: 1% 1%;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    grid-column: 1/-1;
+    text-align: center;
+    height: auto;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+.bodyGrid > p {
+    display: block;
+    grid-column: auto / span 4;
+    /* color: black; */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.bodyGrid > p:nth-child(2n + 1) {
+    grid-column: auto / span 8;
+    overflow-wrap: break-word;
+}
+
+.bodyGrid > p:last-child {
+    grid-column: 1/-1;
+}
+
+.tabContent {
+    opacity: 0;
+    display: inline-block;
+    flex: 0 0 auto;
+    float: left;
+    top: 0;
+    left: 0;
+    padding: 10em 3.5% 2.5% 2.5%;
+    color: black;
+    /* display: none; */
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.tabContent.nightMode {
+    color: white;
+}
+
+#Home {
+    padding-left: 2.5%;
+}
+
+.gridSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: auto;
+    height: auto;
+    line-height: 100%;
+    margin: auto 0;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.gridSection p {
+    display: flex;
+    border: solid 1px black;
+    margin-bottom: 0;
+    padding: 1.5em 1.5em;
+    width: 100%;
+    height: 100%;
+    line-height: normal;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+}
+
+#text1 {
+    background-color: red;
+}
+
+#text2 {
+    background-color: yellow;
+    align-self: flex-start;
+}
+
+#text3 {
+    background-color: violet;
+    align-self: flex-end;
+}
+
+#text4 {
+    background-color: green;
+}
+
+#text1:hover, #text2:hover, #text3:hover, #text4:hover {
+    background-color: orange;
+    z-index: 1;
+}
+
+#text2:hover, #text3:hover {
+    height: 200%;
+    vertical-align: middle;
+    transition: 0.3s ease-in-out;
+}
+
+#text1:hover, #text4:hover {
+    width: 200%;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 249px) {
+    #tabRibbon {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 40px 50px 50px;
+        grid-gap: 1em 1em;
+        padding: 1em 1em;
+        width: 100%;
+        height: auto;
+    }
+
+    .name {
+        font-size: 1.1em;
+    }
+
+    .tabArrows {
+        padding: 0.25em 0.25em;
+        font-size: 1.25em;
+    }
+
+    #leftArrow {
+        grid-row: 3/4;
+        grid-column: 1/5;
+    }
+
+    #horizScroll {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+    }
+
+    .tabItem {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    #rightArrow {
+        grid-row: 3/4;
+        grid-column: 5/9;
+    }
+
+    .listItem, #toggleModes {
+        padding: 0.5em 0.5em;
+        justify-content: center;
+    }
+
+    .listItem {
+        font-size: 1.5em;
+    }
+
+    #toggleModes {
+        font-size: 1em;
+    }
+
+    .toggleSlider, #switchPill {
+        width: 75px;
+        height: 45px;
+    }
+
+    .tabContent {
+        padding: 15em 1em 2.5% 1em;
+    }
+
+}
+
+@media screen and (min-width: 250px) and (max-width: 600px) {
+
+    #tabRibbon {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 40px 50px;
+        grid-gap: 2em 1em;
+        padding: 1em 1em;
+        width: 100%;
+        height: 150px;
+    }
+
+    .tabArrows {
+        font-size: 1.5em;
+    }
+
+    #leftArrow {
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+
+    #horizScroll {
+        grid-row: 2/3;
+        grid-column: 3/7;
+    }
+
+    .tabItem {
+        width: 100%;
+    }
+
+    #rightArrow {
+        grid-row: 2/3;
+        grid-column: 7/9;
+    }
+
+    .name {
+        grid-column: 2/13;
+    }
+
+    .listItem {
+        font-size: 2em;
+        padding: 0.5em 0.5em;
+    }
+
+    #toggleModes {
+        grid-column: 1/-1;
+        margin: 1em 1em;
+        font-size: 1.25em;
+        justify-content: center;
+    }
+
+    .tabContent {
+        padding: 10em 1em 2.5% 1em;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    #leftArrow.translate, #horizScroll.translate, #rightArrow.translate {
+        transform: translateY(-100vh);
+    }
+
+    #tabRibbon.expandMenu {
+        height: 80vh;
+        background-color: rgba(255, 255, 255, 0);
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition:  0.3s ease-in-out;
+        -ms-transition:  0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition:  0.3s ease-in-out;
+    }
+
+    #tabRibbon.expandMenu.nightMode {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #main1 {
+        grid-column: 1/3;
+    }
+
+    #main2 {
+        grid-column: 3/7;
+    }
+
+    #mainMenu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 90vh;
+        padding: 0 0;
+        justify-content: center;
+        transform: translateY(-100vh);
+        -webkit-transition: 0.2s ease-in-out;
+        -moz-transition:  0.2s ease-in-out;
+        -ms-transition:  0.3s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
+        transition:  0.2s ease-in-out;
+    }
+
+    #mainMenu.translate {
+        top: 10%;
+        transform: translateY(0px);
+    }
+
+    #menuList {
+        grid-column: 1/-1;
+        margin: 1em 1em;
+        flex-direction: column;
+        vertical-align: middle;
+    }
+
+    .fas {
+        font-size: 1.25em;
+    }
+
+    .bodyWrapper.blur {
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -ms-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+    }
+
+    #Home {
+        padding-left: 1em;
+    }
+
+    .bodyGrid {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .bodyGrid h1, .bodyGrid > p {
+        grid-column: 1/-1;
+
+    }
+
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 830px) {
+
+    #mainMenu {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 2fr 1fr;
+        grid-gap: 3% 3%;
+        padding: 1em 1.5em 1em 0.5em;
+        justify-content: center;
+    }
+
+    .listItem {
+        width: auto;
+        padding: 0 3.5%;
+    }
+
+    #menuList {
+        grid-column: 1/-1
+    }
+
+    #toggleModes {
+        grid-column: 1/6;
+        justify-content: flex-start;
+    }
+
+    .toggleSlider, #switchPill {
+        width: 75px;
+        height: 45px;
+    }
+
+}
+
+@media screen and (max-width: 830px) {
+
+    #tabRibbon.expandMenu {
+        height: 125px;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition:  0.3s ease-in-out;
+        -ms-transition:  0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        -ms-transition:  0.3s ease-in-out;
+        transition:  0.3s ease-in-out;
+    }
+
+}
+/*
+@media screen and (min-width: 850px) {
+
+    #tabRibbon {
+        width: 98.9%;
+    }
+
+} */

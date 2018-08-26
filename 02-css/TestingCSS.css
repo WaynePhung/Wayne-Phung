@@ -1,0 +1,788 @@
+html {
+    min-width: 175px;
+    width: auto;
+    max-width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+    transition: 0.3s ease-out;
+}
+
+html.nightMode {
+    background-color: black;
+    transition: 0.3s ease-out;
+}
+
+
+/* First, check to see if the browser supports grid layout. */
+@supports (grid-area: auto) {
+
+/* Mobile first, when the width of the window viewport is,
+   by default, less than 27em. */
+
+   body {
+       height: 100%;
+       background-color: white;
+       transition: 0.3s ease-out;
+   }
+
+   body.nightMode {
+       background-color: black;
+   }
+
+   .grid {
+       /* grid-template:
+       "gridContainer gridContainer"
+       "gridContainer gridContainer"
+       "gridContainer"; */
+       grid-template-columns: auto;
+       grid-template-rows: repeat(5, 1fr) auto;
+       display: grid;
+       position: relative;
+       width: 100%;
+       height: 100%;
+       grid-gap: 10px 0;
+       padding: 6em 5% 5% 5%;
+       transition: 0.3s ease-out;
+   }
+
+   p {
+       cursor: default;
+       color: black;
+       word-wrap: break-word;
+       transition: 0.3s ease-out;
+   }
+
+   p.nightMode {
+       color: white;
+   }
+
+   a {
+       color: black;
+   }
+
+   a, a:hover {
+       text-decoration: none;
+   }
+
+   a.nightMode {
+       color: white;
+   }
+
+   header {
+       opacity: 1;
+       position: fixed;
+       display: block;
+       text-align: right;
+       right: 0;
+       width: 150px;
+       height: 75px;
+       background-color: transparent;
+       margin: 1.5% 5% 0 0;
+       z-index: 4;
+       transition: 0.3s ease-out;
+   }
+
+   header.nightMode {
+       background: transparent;
+   }
+
+   .headerContainer {
+       height: 100%;
+       display: flex;
+       flex-direction: row;
+       z-index: 1;
+   }
+
+   .headerContainer > a > p {
+       display: flex;
+       width: auto;
+       height: 2em;
+       align-items: center;
+       font-size: 1.5em;
+       margin-bottom: 0;
+       transition: 0.3s ease-out;
+       cursor: pointer;
+   }
+
+   #name {
+       display: block;
+       text-align: right;
+       justify-content: right;
+       transition: 0.3s ease-out;
+   }
+
+   #name {
+       float: right;
+   }
+
+   .navMenu {
+       opacity: 0.9;
+       display: flex;
+       flex-direction: column;
+       position: fixed;
+       width: 100%;
+       min-height: 75px;
+       height: 10%;
+       padding: 0 0;
+       background: rgba(255, 255, 255, 0.95);
+       align-items: center;
+       z-index: 3;
+       box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.95);
+       transition: 0.3s ease-out;
+   }
+
+   .navMenu.nightMode {
+       opacity: 0.9;
+       box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.95);
+       background: rgba(0, 0, 0, 0.95);
+       transition: 0.3s ease-out;
+   }
+
+   .navMenu.active {
+       height: 15%;
+       transition: 0.3s ease-out;
+   }
+
+   .bars {
+       /*Only for min-width of 700px.*/
+       width: 45px;
+       height: 6px;
+       transition: 0.3s ease-out;
+       margin: 0 0 .5em 0;
+       border-radius: 14px;
+       z-index: 4;
+       opacity: 1;
+       background: black;
+       /*background: -webkit-linear-gradient(left, black 0%, black 20%, white 25%, white 50%, black 55%, black 70%, white 75%, white 100%);*/
+   }
+
+   .bars.nightMode {
+       background: white;
+   }
+
+   .menuButton {
+       float: left;
+       display: inline-block;
+       position: fixed;
+       background-color: transparent;
+       top: 2.5%;
+       left: 5%;
+       width: 45px;
+       height: 45px;
+       cursor: pointer;
+       border-radius: 14px;
+       z-index: 6;
+       opacity: 1;
+       -webkit-transition: 0.3s ease-out;
+       -moz-transition:  0.3s ease-out;
+       -o-transition: 0.3s ease-out;
+       transition:  0.3s ease-out;
+   }
+
+   .menuButton.active {
+       left: 47.5%;
+   }
+
+   #bar3 {
+       margin-bottom: 0;
+   }
+
+   #bar1.shift{
+       width: 45px;
+       -webkit-transform: rotate(-45deg) translate(-8.75px, 8px);
+       /*Only for min-width of 700px.*/
+       transform: rotate(-45deg) translate(-10px, 9.25px);
+       /*Only for min-width of 700px.*/
+   }
+
+   #bar2.shift{
+       opacity: 0;
+   }
+
+   #bar3.shift{
+       width: 45px;
+       -webkit-transform: rotate(45deg) translate(-8.5px, -10.25px);
+       /*Only for min-width of 700px.*/
+       transform: rotate(45deg) translate(-8.5px, -9.5px);
+       /*Only for min-width of 700px.*/
+   }
+
+   .menuItems {
+       opacity: 1;
+       display: flex;
+       flex-wrap: wrap;
+       width: 100%;
+       height: 100%;
+       margin: 0 5% 0 15%;
+       justify-content: left;
+   }
+
+   .barItem {
+       opacity: 0;
+       display: none;
+       position: relative;
+       height: 100%;
+       /* margin: 0 0.75em 0 0; */
+       align-items: center;
+       z-index: 5;
+       transition: 0.3s ease-out;
+   }
+
+   .barItem.active {
+       display: flex;
+       flex-direction: row;
+   }
+
+   #disabled {
+       color: rgba(99, 105, 114, 0.8);
+       background: transparent;
+       cursor: default;
+       pointer-events: none;
+       text-decoration: underline;
+   }
+
+   #disabled.nightMode {
+       color: rgba(211, 217, 226, 0.8);
+   }
+
+   .options {
+       border-radius: 0;
+       background-color: transparent;
+   }
+
+   .options:hover {
+       transition: 0.3s ease-out;
+       background-color: black;
+       color: white;
+   }
+
+   .options.nightMode {
+       color: white;
+   }
+
+   .options.nightMode:hover {
+       background-color: white;
+       color: black;
+   }
+
+   #toggleMode {
+       opacity: 1;
+       padding: 0,5em 0 1em 0;
+       justify-content: center;
+       width: inherit;
+       height: auto;
+   }
+
+   #toggleMode:hover {
+       font-size: auto;
+   }
+
+   #normalMode {
+       opacity: 1;
+   }
+
+   #normalMode.nightMode {
+       opacity: 0.5;
+   }
+
+   #nightMode {
+       opacity: 0.5;
+   }
+
+   #nightMode.nightMode {
+       opacity: 1;
+   }
+
+   .fas, .fab  {
+       font-size: 150%;
+       background: -webkit-linear-gradient(-91deg, #EEF85B 5%, #7AEC8D 53%, #09E5C3 91%);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       -webkit-text-stroke-width: 1px;
+       -webkit-text-stroke-color: rgba(0, 0, 0, 1);
+       justify-content: center;
+       transition: 0.3s ease-out;
+   }
+
+   .fas.nightMode {
+       color: white;
+   }
+
+   .sliderGroup {
+       width: auto;
+       height: inherit;
+       margin: 0 0 0 0.75em;
+       z-index: 4;
+   }
+
+   .sliderGroup > p {
+       font-size: 100%;
+       margin-bottom: 0;
+   }
+
+   #switchPill {
+       width: 55px;
+       height: 100%;
+   }
+
+   .toggleModes {
+       position: relative;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       width: 55px;
+       height: 35px;
+       max-width: 75px;
+       max-height: 40px;
+       z-index: 2;
+   }
+
+   .toggleModes input {
+       display: none;
+   }
+
+   .toggleSlider {
+       position: absolute;
+       cursor: pointer;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       width: 55px;
+       height: 35px;
+       background-color: #ccc;
+       border-radius: 35%;
+       z-index: 4;
+       transition: 0.3s ease-out;
+   }
+
+   .toggleSlider:before {
+       position: absolute;
+       content: "";
+       min-width: 20px;
+       width: 50%;
+       height: 80%;
+       left: 10%;
+       top: 10%;
+       background-color: white;
+       border-radius: 50%;
+       vertical-align: middle;
+       transition: 0.3s ease-out;
+    }
+
+    input:checked + .toggleSlider:before {
+       -webkit-transform: translateX(65%);
+       -ms-transform: translateX(65%);
+       transform: translateX(65%);
+    }
+
+    input:checked + .toggleSlider {
+       background-color: #2196F3;
+    }
+
+    input:focus + .toggleSlider {
+       box-shadow: 0 0 1px #2196F3;
+    }
+
+   body {
+       display: grid;
+       position: relative;
+   }
+
+   .gridContainer {
+       position: relative;
+       width: auto;
+       max-width: 100%;
+       min-height: 100px;
+       height: auto;
+       max-height: 450px;
+       /* margin: 0 5% 5% 5%; */
+       /* border: solid white 0px; */
+       border-radius: 0.5em;
+       z-index: 1;
+       /* cursor: pointer; */
+       box-sizing: border-box;
+       overflow: hidden;
+       transition: 0.3s ease-out;
+   }
+
+   .gridContainer.nightMode {
+       /* border-width: 1px; */
+   }
+
+   .gridContainer > p {
+
+   }
+
+   #container1 {
+       transition: 0.3s ease-out;
+   }
+
+   .photo {
+       top: 15%;
+       display: block;
+       object-fit: cover;
+       margin: 1em auto;
+       width: 100%;
+       height: 100%;
+       max-height: 450px;
+       justify-content: center;
+       text-align: center;
+       transition: 1s ease-out;
+       z-index: 1;
+       background-size: 100%;
+       transform: scale(1.1);
+   }
+
+   .photo:hover {
+       transition: 3s ease-out;
+       /* transform: scale(1.25); */
+   }
+
+   .gradientOverlay {
+       opacity: 0;
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       text-align: center;
+       transition: 0.15s ease-in-out;
+       background: linear-gradient(45deg, transparent, white);
+       /* cursor: pointer; */
+       z-index: 2;
+   }
+
+   .gradientOverlay.nightMode {
+       background: linear-gradient(45deg, transparent, black);
+   }
+
+   .hoverInfo {
+       display: block;
+       text-align: center;
+       justify-content: center;
+       align-items: center;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+       cursor: default;
+       max-height: inherit;
+       z-index: 4;
+   }
+
+   .hoverInfo > p {
+       position: relative;
+       opacity: 0;
+       /* color: black; */
+       text-align: center;
+       vertical-align: middle;
+       transition: 0.15s ease-in-out;
+   }
+
+   .hoverInfo > p:hover {
+       transition-delay: 0.2s;
+   }
+
+   button {
+       opacity: 0;
+       position: relative;
+       cursor: pointer;
+       text-align: center;
+       justify-content: center;
+       align-items: center;
+       z-index: 3;
+   }
+
+   .nestContainer {
+       display: block;
+       position: absolute;
+       bottom: 20%;
+       left: 50%;
+       width: 80%;
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+       margin: 0 0;
+       z-index: 3;
+   }
+
+   .section {
+       display: flex;
+       flex-direction: row;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+       width: 100%;
+       justify-content: space-between;
+       z-index: 3;
+    }
+
+   .testing {
+       opacity: 1;
+       display: block;
+       position: absolute;
+       top: 0;
+       left: 0;
+       min-width: 400px;
+       width: 100%;
+       height: 450px;
+       transition: 0.5s ease-out;
+   }
+
+   footer {
+       grid-column: 1/-1;
+       min-height: 150px;
+       width: 100%;
+       height: 100%;
+       position: relative;
+       text-align: center;
+       vertical-align: center;
+       align-items: center;
+       padding: 5% 0;
+   }
+
+   footer > p {
+       text-align: left;
+   }
+
+   .footerIcons {
+       font-size: 150%;
+       margin: 0 2.5%;
+   }
+
+   .footerIcons.nightMode {
+       color: white;
+   }
+
+   /*-----------------END of default CSS properties.-----------------*/
+
+   /* If, for some reason, the viewport is very tiny (smaller than 243px),
+   change the following properties. */
+
+   @media screen and (max-width: 243px) {
+
+       #name {
+           font-size: 5vw;
+           margin-top: 10%;
+       }
+
+   }
+
+   /* If the viewport is small enough, change the following properties. */
+
+   @media screen and (max-width: 349px) {
+
+       .menuButton.active {
+           left: 42.5%;
+       }
+
+       .navMenu.active {
+           padding: 3em 0 1em 0;
+       }
+
+       #disabled:hover {
+           font-size: 1.15em;
+           padding-bottom: 1em;
+       }
+
+       .options {
+           font-size: 1.15em;
+       }
+
+       .options:hover {
+           font-size: 1.35em;
+       }
+
+       .barItem {
+           padding: 0 5% 1em 0;
+       }
+
+   }
+
+   @media screen and (min-width: 244px and max-width: 349px) {
+
+       #name {
+           font-size: 1em;
+       }
+
+   }
+
+   @media screen and (min-width: 350px and max-width: 742px) {
+
+       .menuButton.active {
+           left: 47.5%;
+       }
+
+       .menuItems {
+           margin: 15px 0 0 15%;
+       }
+
+       #disabled:hover {
+           font-size: 1.15em;
+           padding-bottom: 1em;
+       }
+
+   }
+
+    @media screen and (max-width: 742px) {
+        /* ::-webkit-scrollbar {
+            display: block;
+        } */
+
+        .navMenu.active {
+            height: 100%;
+            padding: 5em 0 1em 0;
+        }
+
+        .menuItems {
+            margin: 2.5% 0 0 0;
+            display: flex;
+            flex-direction: column;
+            width: inherit;
+            height: auto;
+        }
+
+        .barItem {
+            justify-content: center;
+            width: auto;
+            padding: 0 0 1em 0;
+        }
+
+        #disabled:hover {
+            font-size: 1.35em;
+            padding-bottom: 1em;
+        }
+
+        .options {
+            font-size: 1.25em;
+        }
+
+        .options:hover {
+            transition: 0.3s ease-out;
+            padding: 0 0;
+            font-size: 1.75em;
+            background-color: black;
+            color: white;
+        }
+
+        #toggleMode {
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        #normalMode {
+            margin-left: 0;
+        }
+
+        #nightMode {
+            margin-right: 0;
+        }
+    }
+
+   /* If the viewport is wide enough, change the following properties. */
+
+    @media screen and (min-width: 743px) {
+
+        .grid {
+            /* grid-template:
+            "headerContainer"
+            "gridContainer gridContainer"
+            "gridContainer gridContainer"
+            "gridContainer"; */
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(3, 1fr) auto;
+            grid-gap: 3% 3%;
+            padding-top: 7.5em;
+        }
+
+        header, footer{
+            grid-column: 1/-1;
+        }
+
+        #name {
+            grid-area: headerContainer;
+            grid-column-start: 1;
+            grid-column-end: 13;
+        }
+
+        .menuButton.active {
+            left: 5%;
+        }
+
+        .navMenu {
+            width: 100vw;
+        }
+
+        .menuItems {
+            margin: 15px 0 0 10%;
+            height: auto;
+        }
+
+        .barItem {
+            /* margin-bottom: 0.25em; */
+            justify-content: flex-end;
+            float: right;
+            margin: 0 0.25em 0 0;
+            padding: 0 1em;
+            height: 35px;
+        }
+
+        .options {
+            border-radius: 14px;
+        }
+
+        #toggleMode {
+            text-align: center;
+            min-width: 200px;
+            width: auto;
+            padding: 0.5em 1em 0.5em 0;
+        }
+
+        #container1 {
+            grid-column-start: 1;
+            grid-column-end: 9;
+        }
+
+        #container2 {
+            grid-column-start: 9;
+            grid-column-end: 13;
+        }
+
+        #container3 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+
+        #container4 {
+            grid-column-start: 5;
+            grid-column-end: 13;
+        }
+
+        #container5 {
+            grid-column-start: 1;
+            grid-column-end: 13;
+        }
+}
+
+@media screen and (min-width: 880px) {
+
+    header {
+        margin: 0.5em 2.5% 0 0;
+    }
+
+    .menuItems {
+        margin: 15px 0 0 10%;
+    }
+
+    .navMenu.active {
+        height: 10%;
+    }
+
+    #toggleMode {
+        padding-top: 0;
+    }
+
+}
