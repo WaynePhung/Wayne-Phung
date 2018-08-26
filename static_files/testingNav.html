@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Latest Version of Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+        <!-- Font Awesome Icons & CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../02-css/testingNav.css">
+
+        <!-- AngularJS script CDN here. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+
+            <!-- Title of Website -->
+        <title>Testing Website for CSS Grid Layout</title>
+    </head>
+
+    <body>
+        <nav id="mainMenu"> <!--class="headerContainer"-->
+            <div class="menuWrapper">
+                <ul class="menuItem" id="menuList">
+                    <!-- <a href="" class="listItem options" id="disabled">
+                        <li class="navItem">Home</li>
+                    </a> -->
+                    <a href="#section1" class="listItem options">
+                        <li class="navItem">Design Work</li>
+                    </a>
+                    <a href="#MediaPieces" class="listItem options">
+                        <li class="navItem">Media Pieces</li>
+                    </a>
+                    <a href="#AboutMe" class="listItem options">
+                        <li class="navItem">About</li>
+                    </a>
+                    <a href="#Contact" class="listItem options" id="lastBarItem">
+                        <li class="navItem">Contact</li>
+                    </a>
+                </ul>
+                <div class="menuItem" id="toggleModes">
+                    <div class="sliderGroup" id="normalMode">
+                        <i class="fas fa-sun"></i>
+                        <p>Normal</p>
+                    </div>
+                    <div class="sliderGroup" id="switchPill">
+                        <label class="toggleModes">
+                            <input type="checkbox" id="switch">
+                            <span class="toggleSlider"></span>
+                        </label>
+                    </div>
+                    <div class="sliderGroup" id="nightMode">
+                        <i class="fas fa-moon"></i>
+                        <p>Night</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="tabRibbon">
+            <div class="mainContainer">
+                <div class="menuItem" id="menuButton">
+                    <div class="bars" id="bar1"></div>
+                    <div class="bars" id="bar2"></div>
+                    <div class="bars" id="bar3"></div>
+                </div>
+                <div class="mainCell" id="main2">
+                    <div class="name active" id="name">
+                        <a href="liveDemoPage.html"><p>Wayne Phung</p></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="mainBodyWrapper">
+            <div class="parallaxBG" id="mainVideo">
+                <video autoplay muted loop id="bgVideo">
+                    <source src="../mediaFiles/videos/ShuriT2.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div class="mainText">
+                    <h1>My Title</h1>
+                    <p>Some text...</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+
+            <section class="bodySection" id="section1">
+
+                <div class="sectionHeading">
+                    <h2 id="designWork">My Design Work</h2>
+                    <p>From implemented projects to case studies, I've covered different topics such as working with non-profits to developing novel business model concepts.<br>Feel free to scroll/swipe left and right to view my design work!</p>
+                </div>
+                <div class="sectionGrid">
+                    <div class="galleryGrid" id="gallery">
+                        <div class="subSectionGrid">
+                            <div class="galleryImage"></div>
+                            <div class="galleryText">
+                                <h3>Title</h3>
+                                <p>Description of the image is a lengthy one.</p>
+                            </div>
+                        </div>
+                        <div class="subSectionGrid">
+                            <div class="galleryImage"></div>
+                            <div class="galleryText">
+                                <h3>Title</h3>
+                                <p>Description of the image is a lengthy one.</p>
+                            </div>
+                        </div>
+                        <div class="subSectionGrid">
+                            <div class="galleryImage"></div>
+                            <div class="galleryText">
+                                <h3>Title</h3>
+                                <p>Description of the image is a lengthy one.</p>
+                            </div>
+                        </div>
+                        <div class="subSectionGrid">
+                            <div class="galleryImage"></div>
+                            <div class="galleryText">
+                                <h3>Title</h3>
+                                <p>Description of the image is a lengthy one.</p>
+                            </div>
+                        </div>
+                        <button class="sectionArrows" id="leftArrow"><i class="fas fa-arrow-left"></i></button>
+                        <button class="sectionArrows" id="rightArrow"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="bgImage" id="bg1" data-depth="0.4"></div>
+            </section>
+
+            <section class="bodySection" id="section2" data-z-index="1">
+                <div class="bgImage" id="bg2" data-depth="0.4">
+                    <div class="filter" data-depth="0.2">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bodySection" id="section3">
+                <div class="bgImage" id="bg3" data-depth="0.2">
+                    <div class="filter" data-depth="0.2">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="parallaxBG" id="bodyVideo">
+                <video autoplay muted loop id="bgVideo1">
+                    <source src="../mediaFiles/videos/TestingHTML.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div> -->
+        </section>
+    </body>
+
+    <script type="application/javascript" src="../03-js/Javascript Libraries/jquery-3.3.1.min.js"></script>
+    <script type="application/javascript" src="../03-js/testingNav.js"></script>
+
+</html>
