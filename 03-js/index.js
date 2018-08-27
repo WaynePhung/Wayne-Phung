@@ -119,6 +119,9 @@ $(document).ready(function() {
            case 'project.html':
                 getIndex = parseInt(array.projectHtml);
            break;
+           case undefined:
+                getIndex = parseInt(array.indexHtml);
+           break;
        }
        return getIndex;
    }
