@@ -55,6 +55,9 @@ $(document).ready(function() {
        indexArray = retrieveIndexArray();
    console.log(pageNameString);
    console.log(indexArray);
+   if (pageNameString == null) {
+       pageNameString = 'index.html';
+   }
    let defaultIndex = getIndex(pageNameString, indexArray);
    console.log('Default Index: ' + defaultIndex);
 
