@@ -102,7 +102,7 @@ $(document).ready(function() {
            case 'project.html':
                 getIndexArray.projectHtml = index.toString();
            break;
-           default:
+           case undefined:
                 getIndexArray.indexHtml = index.toString();
            break;
        }
