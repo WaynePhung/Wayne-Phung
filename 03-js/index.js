@@ -96,14 +96,14 @@ $(document).ready(function() {
            stringify = JSON.stringify(getIndexArray);
        console.log('stringify: ' + stringify);
        switch (pageName) {
-           case '':
-                getIndexArray.indexHtml = index.toString();
-           break;
            case 'index.html':
                 getIndexArray.indexHtml = index.toString();
            break;
            case 'project.html':
                 getIndexArray.projectHtml = index.toString();
+           break;
+           default:
+                getIndexArray.indexHtml = index.toString();
            break;
        }
        getIndexArray = JSON.stringify(getIndexArray);
