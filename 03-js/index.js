@@ -96,6 +96,9 @@ $(document).ready(function() {
            stringify = JSON.stringify(getIndexArray);
        console.log('stringify: ' + stringify);
        switch (pageName) {
+           case '':
+                getIndexArray.indexHtml = index.toString();
+           break;
            case 'index.html':
                 getIndexArray.indexHtml = index.toString();
            break;
