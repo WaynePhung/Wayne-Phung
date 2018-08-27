@@ -477,7 +477,7 @@ section {
     font-size: 3em;
 }
 
-.workMenuButton {
+.menuButton {
     grid-column: 4/5;
     grid-row: 2/3;
     display: flex;
@@ -487,6 +487,16 @@ section {
     text-align: center;
     align-self: stretch;
     padding: 0.5em;
+    background: white;
+    border: none;
+}
+
+.menuButton:focus {
+    outline: none;
+}
+
+.menuText {
+    cursor: pointer;
 }
 
 #menuButton {
@@ -526,9 +536,9 @@ section {
 
 #bar1.shift{
     width: 45px;
-    -webkit-transform: rotate(-45deg) translate(-8.75px, 8px);
+    -webkit-transform: rotate(-45deg) translate(-12px, 8.25px);
     /*Only for min-width of 700px.*/
-    transform: rotate(-45deg) translate(-10px, 9.25px);
+    transform: rotate(-45deg) translate(-12px, 8.25px);
     /*Only for min-width of 700px.*/
 }
 
@@ -538,15 +548,28 @@ section {
 
 #bar3.shift{
     width: 45px;
-    -webkit-transform: rotate(45deg) translate(-8.5px, -10.25px);
+    -webkit-transform: rotate(45deg) translate(-13.25px, -10.75px);
     /*Only for min-width of 700px.*/
-    transform: rotate(45deg) translate(-10px, -9.25px);
+    transform: rotate(45deg) translate(-13.25px, -10.75px);
     /*Only for min-width of 700px.*/
 }
 
 .hidden {
     opacity: 0.3;
     cursor: default;
+}
+
+.menuButton {
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.menuButton.showMenu {
+    display: grid;
+    width: 100vw;
 }
 
 
@@ -649,7 +672,7 @@ section {
         font-size: 2.5em;
     }
 
-    .workMenuButton {
+    .menuButton {
         grid-column: 2/3;
         flex-direction: row;
         justify-content: flex-end;
@@ -687,7 +710,7 @@ section {
         flex-direction: row;
     }
 
-    .workMenuButton {
+    .menuButton {
         grid-column: 3/4;
         grid-row: 1/2;
     }

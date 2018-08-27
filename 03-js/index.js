@@ -27,7 +27,7 @@ $(document).ready(function() {
            filterItem = $('.filterItem'),
            filter = $('.filter'),
            workBackButton = $('.workBackButton'),
-           menuButton = $('.workMenuButton')
+           menuButton = $('.menuButton')
            // allFilter = $('#allFilter'),
            // shuffleFilter = $('#shuffleFilter');
        ;
@@ -38,6 +38,8 @@ $(document).ready(function() {
             projectSpacing = $('.projectSpacing'),
             navigation = $('.navigation'),
             tabSection = $('.tabSection'),
+            left = $('.left'),
+            right = $('.right'),
             tab = $('.tab'),
             projectMenu = $('#projectMenu');
 
@@ -47,9 +49,77 @@ $(document).ready(function() {
    // ----------------------- INTERACTIVE EFFECTS HERE ------------------------
 
    console.log('fullPage width: ' + fullPage.outerWidth() + ' sectionWidth: ' + section.outerWidth());
-
-   let defaultIndex = 0;
+   // localStorage.clear();
+   let htmlPageName = location.href.split("/").slice(-1),
+       pageNameString = htmlPageName.toString(),
+       indexArray = retrieveIndexArray();
+   console.log(pageNameString);
+   console.log(indexArray);
+   let defaultIndex = getIndex(pageNameString, indexArray);
    console.log('Default Index: ' + defaultIndex);
+
+   function retrieveIndexArray() {
+       if (localStorage.currentIndex) {
+           let getIndexArray = JSON.parse(JSON.stringify(localStorage.getItem('currentIndex')));
+           console.log('Index array: ' + getIndexArray);
+           let convertArray = JSON.parse(getIndexArray);
+           console.log('Convert array: ' + convertArray);
+           return convertArray;
+       } else if (typeof(Storage) !== "undefined") {
+           let indices = {
+               'indexHtml' : '0',
+               'projectHtml' : '0'
+           };
+           console.log(indices);
+           localStorage.setItem('currentIndex', JSON.stringify(indices));
+           let getIndexArray = JSON.parse(JSON.stringify(localStorage.getItem('currentIndex')));
+           console.log('Index array: ' + getIndexArray);
+           let convertArray = JSON.parse(getIndexArray);
+           console.log(convertArray);
+           return convertArray;
+       } else {
+           console.log('Current index not retrieved. Sorry, your browser does not support Web Storage for localStorage...');
+       }
+   }
+
+   function storeDefaultIndex(index) {
+       let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
+           stringify = JSON.stringify(getIndexArray);
+       console.log('stringify: ' + stringify);
+       let changedArray = changeIndexArray(pageNameString, index);
+       localStorage.setItem("currentIndex", changedArray);
+       console.log('Stored index: ' + localStorage.getItem("currentIndex"));
+   }
+
+   function changeIndexArray (pageName, index) {
+       let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
+           stringify = JSON.stringify(getIndexArray);
+       console.log('stringify: ' + stringify);
+       switch (pageName) {
+           case 'index.html':
+                getIndexArray.indexHtml = index.toString();
+           break;
+           case 'project.html':
+                getIndexArray.projectHtml = index.toString();
+           break;
+       }
+       getIndexArray = JSON.stringify(getIndexArray);
+       return getIndexArray;
+   }
+
+   function getIndex (pageName, array) {
+       let getIndex;
+       switch (pageName) {
+           case 'index.html':
+                getIndex = parseInt(array.indexHtml);
+           break;
+           case 'project.html':
+                getIndex = parseInt(array.projectHtml);
+           break;
+       }
+       return getIndex;
+   }
+
    scrolling(defaultIndex);
    leftArrow.on('click', previousTab);
    rightArrow.on('click', nextTab);
@@ -153,6 +223,10 @@ $(document).ready(function() {
        // }
     });
 
+    left.on('click', previousTab);
+    right.on('click', nextTab);
+    tab.on('click', changeTab);
+
    function previousTab() {
        if (defaultIndex == 0 && defaultIndex - 1 < 0) {
            // Do nothing.
@@ -171,12 +245,23 @@ $(document).ready(function() {
        }
    }
 
+   function changeTab () {
+       let getDataIndex = parseInt($(this).attr('data-index'));
+       console.log('Extracted index: ' + getDataIndex);
+       defaultIndex = getDataIndex;
+       console.log('Default Index: ' + defaultIndex);
+       scrolling(defaultIndex);
+       console.log('Clicked tab.');
+       // $('#flexMenu').animate({'scrollLeft': $(".tabItem").eq(defaultIndex)});
+   }
+
    function scrolling (index) {
        toggleMainArrow();
        changeIndex(index);
-       scrollTab(defaultIndex);
-       scrollBody(defaultIndex, 0);
+       scrollTab(index);
+       scrollBody(index, 0);
        switchZIndex(index);
+       storeDefaultIndex(index);
        // progressBar(index);
    }
 
@@ -215,6 +300,9 @@ $(document).ready(function() {
            // tabcontent[i].style.display = (i == parseInt(num)) ? "block" : "none";
            section.eq(i).css('opacity', (i == num) ? "1" : "0"); //tabcontent.eq(parse(num)).css('opacity');
        }
+       // for (i = 0; i < tab.length; i++) {
+       //     tab.eq(i).css({'backgroundColor': (i == parseInt(num)) ? 'black' : 'white', 'color': (i == parseInt(num)) ? 'white' : 'black'});
+       // }
    }
 
    function scrollBody (index, scrollHeight) {
@@ -394,6 +482,7 @@ $(document).ready(function() {
     workBackButton.on('click', previousTab);
 
     menuButton.click (function () {
+        menuButton.toggleClass('showMenu');
         $('#bar1, #bar2, #bar3').toggleClass('shift');
     });
 
@@ -506,7 +595,6 @@ $(document).ready(function() {
     function projectPaddingBottom () {
         let projectMenuWidth = projectMenu.outerWidth(true),
             projectMenuHeight = projectMenu.outerHeight(true);
-        tabSection.css('margin-right', projectMenuWidth + 'px');
         projectSpacing.css('padding-bottom', projectMenuHeight + 'px');
     }
 
@@ -517,7 +605,7 @@ $(document).ready(function() {
         tabSection.animate({"scrollLeft": center}, 300);
         console.log('Data-index property retrieved from tab: ' + $(".tabItem").eq(defaultIndex).attr("data-index"));
     }
-    
+
     function widthAndCenter (link, container, index) {
         let x = container.outerWidth(),
             y = link.eq(index).outerWidth(true),
