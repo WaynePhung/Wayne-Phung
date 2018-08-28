@@ -143,6 +143,10 @@ section {
     font-size: 10em;
 }
 
+.textBody {
+    flex-grow: 2;
+}
+
 #main p, #intro p {
     font-size: 3.5em;
 }
@@ -243,7 +247,7 @@ section {
     border: solid red 1px;
 }
 
-#work h1 {
+#work h1, #contact h1 {
     position: relative;
     flex-grow: 0.25;
     font-size: 10em;
@@ -584,6 +588,54 @@ section {
     transition:  0.3s ease-in-out;
 }
 
+.contactText {
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+.contactWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition:  0.3s ease-in-out;
+    -ms-transition:  0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition:  0.3s ease-in-out;
+}
+
+.contactButton {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    margin: 1em;
+    width: 40vw;
+    min-height: 20vh;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 2em;
+}
+
+.contactButton a p {
+    font-size: 2em;
+}
+
+.contactIcons {
+    color: black;
+    font-size: 5em;
+}
+
+.portImg {
+    width: 1em;
+    height: 1em;
+}
 
 /* ----------------------------------------------------------- */
 /* -----------------End of Default Properties----------------- */
@@ -607,6 +659,7 @@ section {
 
 @media screen and (max-width: 350px) {
     #main h1 {
+        flex-grow: 0.25;
         font-size: 30vw;
     }
 
@@ -638,7 +691,7 @@ section {
         background-position: 50% 22.5%;
     }
 
-    #work h1 {
+    #work h1, #contact h1 {
         text-align: center;
         font-size: 25vw;
     }
@@ -731,7 +784,7 @@ section {
         font-size: 8vw;
     }
 
-    #intro h1, #work h1 {
+    #intro h1, #work h1, #contact h1 {
         font-size: 4em;
     }
 
@@ -827,7 +880,7 @@ section {
         font-size: 5.75vw;
     }
 
-    #intro h1, #work h1 {
+    #intro h1, #work h1, #contact h1 {
         font-size: 4.5em;
     }
 
@@ -871,7 +924,7 @@ section {
 }
 
 @media screen and (min-width: 850px) and (max-width: 1150px){
-    #intro h1, #work h1 {
+    #intro h1, #work h1, #contact h1 {
         font-size: 5.5em;
     }
 
@@ -889,7 +942,7 @@ section {
 }
 
 @media screen and (min-width: 1150px) {
-    #intro h1, #work h1 {
+    #intro h1, #work h1, #contact h1 {
         font-size: 5em;
     }
 

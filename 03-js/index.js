@@ -28,7 +28,9 @@ $(document).ready(function() {
            filter = $('.filter'),
            workBackButton = $('.workBackButton'),
            menu = $('.menu'),
-           workLink = $('.workLink')
+           workLink = $('#workLink'),
+           aboutLink = $('#aboutLink'),
+           contactLink = $('#contactLink')
            // allFilter = $('#allFilter'),
            // shuffleFilter = $('#shuffleFilter');
        ;
@@ -173,8 +175,8 @@ $(document).ready(function() {
                 getIndex = parseInt(array.indexHtml);
            break;
        }
-       console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
-       console.log('indexArray.projectHtml: ' + indexArray.projectHtml);
+       console.log('indexArray.indexHtml: ' + array.indexHtml);
+       console.log('indexArray.projectHtml: ' + array.projectHtml);
        console.log('indexArray: ' + indexArray);
        return getIndex;
    }
@@ -322,7 +324,7 @@ $(document).ready(function() {
        switchZIndex(index);
        console.log('pageNameString from scrolling: ' + pageNameString);
        storeDefaultIndex(pageString, index);
-       // progressBar(index);
+       progressBar(index);
    }
 
    function changeIndex(num) {
@@ -549,7 +551,9 @@ $(document).ready(function() {
         projectPaddingBottom();
     });
 
-    // workLink.on('click', storeDefaultIndex('index.html', 2));
+    workLink.on('click', storeDefaultIndex('index.html', 2));
+    aboutLink.on('click', storeDefaultIndex('index.html', 3));
+    contactLink.on('click', storeDefaultIndex('index.html', 4));
 
 
         // $('.gridItem').each( function(i) {

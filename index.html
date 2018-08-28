@@ -194,13 +194,15 @@
                     <p class="menuTab name">Wayne Phung</p>
                     <button class="menuTab menuButton">
                         <i class="menuIcon fas fa-briefcase"></i>
-                        <a class="workLink" rel="external" href="http://waynephung.com">
+                        <a class="menuLink" id="workLink" rel="external" href="http://waynephung.com">
                             <p>Work</p>
                         </a>
                     </button>
                     <button class="menuTab menuButton">
-                        <i class="menuIcon far fa-smile-wink"></i>
-                        <p>About</p>
+                        <a class="menuLink" id="aboutLink" rel="external" href="http://waynephung.com">
+                            <i class="menuIcon far fa-smile-wink"></i>
+                            <p>About</p>
+                        </a>
                     </button>
                     <button class="menuTab menuButton">
                         <i class="menuIcon far fa-file-alt"></i>
@@ -210,7 +212,9 @@
                     </button>
                     <button class="menuTab menuButton">
                         <i class="menuIcon far fa-comment-alt"></i>
-                        <p>Contact</p>
+                        <a class="menuLink" id="contactLink" rel="external" href="http://waynephung.com">
+                            <p>Contact</p>
+                        </a>
                     </button>
                     <button class="menuButton menu" id="closeMenu">
                         <p class="menuText">Close<p>
@@ -222,15 +226,42 @@
                     </button>
                 </nav>
             </section>
-        	<!-- <section class="section" id="about">
-                <h1>Section 4</h1>
+        	<section class="section" id="about">
+                <h1>More About Me</h1>
             </section>
-            <section class="section" id="resume">
-                <h1>Section 5</h1>
+            <section class="section" id="contact">
+                <h1>Contact Me</h1>
+                <p class="contactText">Feel free to connect with me, the icons will show the way.</p>
+                <div class="contactWrapper">
+                    <button class="contactButton" id="email">
+                        <a rel="external" href="mailto:wphung@ucsd.edu">
+                            <i class="contactIcons far fa-envelope"></i>
+                            <p>Email</p>
+                        </a>
+                    </button>
+                    <button class="contactButton" id="facebook">
+                        <a rel="external" href="https://www.facebook.com/wayne.phung.5" target="_blank">
+                            <i class="contactIcons fab fa-facebook-square"></i>
+                            <p>Facebook</p>
+                        </a>
+                    </button>
+                    <button class="contactButton" id="linkedIn">
+                        <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank">
+                            <i class="contactIcons fab fa-linkedin"></i>
+                            <p>LinkedIn</p>
+                        </a>
+                    </button>
+                    <button class="contactButton" id="Portfolium">
+                        <a rel="external" href="https://portfolium.com/WaynePhung" target="_blank">
+                            <img class="contactIcons portImg" src="mediaFiles/images/PortfoliumLogo_1.png">
+                            <p>Portfolium</p>
+                        </a>
+                    </button>
+                </div>
             </section>
         	<section class="section" id="contact">
                 <h1>Section 6</h1>
-            </section> -->
+            </section>
         </div>
     </body>
 
