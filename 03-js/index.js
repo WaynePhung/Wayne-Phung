@@ -116,6 +116,7 @@ $(document).ready(function() {
        let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
            stringify = JSON.stringify(getIndexArray);
        // console.log('stringify: ' + stringify);
+       console.log('pageName: ' + pageName);
        switch (pageName) {
            case 'index.html':
                 getIndexArray.indexHtml = index.toString();
@@ -127,7 +128,11 @@ $(document).ready(function() {
                 getIndexArray.indexHtml = index.toString();
            break;
        }
+       console.log('getIndexArray.indexHtml: ' + getIndexArray.indexHtml);
+       console.log('getIndexArray.projectHtml: ' + getIndexArray.projectHtml);
+       console.log('getIndexArray: ' + getIndexArray);
        getIndexArray = JSON.stringify(getIndexArray);
+       console.log('getIndexArray: ' + getIndexArray);
        return getIndexArray;
    }
 
