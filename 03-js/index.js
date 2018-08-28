@@ -152,12 +152,24 @@ $(document).ready(function() {
        let getIndex;
        switch (pageName) {
            case 'index.html':
+               if (array.indexHtml == null) {
+                   array.indexHtml = 0;
+               }
                 getIndex = parseInt(array.indexHtml);
            break;
            case 'project.html':
+                if (array.projectHtml == null) {
+                    array.projectHtml = 0;
+                }
                 getIndex = parseInt(array.projectHtml);
            break;
            case undefined:
+               if (array.indexHtml == null) {
+                   array.indexHtml = 0;
+               }
+               if (array.projectHtml == null) {
+                   array.projectHtml = 0;
+               }
                 getIndex = parseInt(array.indexHtml);
            break;
        }
