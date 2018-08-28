@@ -82,9 +82,9 @@ $(document).ready(function() {
        if (localStorage.currentIndex) {
            let getIndexArray = JSON.parse(JSON.stringify(localStorage.getItem('currentIndex')));
            console.log('Index array: ' + getIndexArray);
-           let convertArray = JSON.parse(getIndexArray);
-           console.log('Convert array: ' + convertArray);
-           return convertArray;
+           // let convertArray = JSON.parse(getIndexArray);
+           // console.log('Convert array: ' + convertArray);
+           return getIndexArray;
        } else if (typeof(Storage) !== 'undefined') {
            let indices = {
                'indexHtml' : '0',
