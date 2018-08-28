@@ -129,8 +129,8 @@ $(document).ready(function() {
                 indexArray.indexHtml = index.toString();
            break;
        }
-       console.log('indexArray.indexHtml: ' + getIndexArray.indexHtml);
-       console.log('indexArray.projectHtml: ' + getIndexArray.projectHtml);
+       console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
+       console.log('indexArray.projectHtml: ' + indexArray.projectHtml);
        console.log('indexArray: ' + indexArray);
        getIndexArray = JSON.stringify(indexArray);
        console.log('getIndexArray: ' + getIndexArray);
