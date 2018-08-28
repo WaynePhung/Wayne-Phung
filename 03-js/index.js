@@ -523,7 +523,7 @@ $(document).ready(function() {
         projectPaddingBottom();
     });
 
-    workLink.on('click', storeDefaultIndex('index.html', 2));
+    // workLink.on('click', storeDefaultIndex('index.html', 2));
 
 
         // $('.gridItem').each( function(i) {
