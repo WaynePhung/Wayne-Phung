@@ -104,8 +104,8 @@ $(document).ready(function() {
        let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
            stringify = JSON.stringify(getIndexArray);
        // console.log('stringify: ' + stringify);
-           pageNameString = pageString
-       let changedArray = changeIndexArray(pageString, index);
+           pageNameString = pageString;
+       let changedArray = changeIndexArray(pageNameString, index);
        localStorage.setItem('currentIndex', changedArray);
        console.log('Stored index: ' + localStorage.getItem('currentIndex'));
    }
