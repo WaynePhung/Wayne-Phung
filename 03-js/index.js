@@ -551,9 +551,9 @@ $(document).ready(function() {
         projectPaddingBottom();
     });
 
-    workLink.on('click', storeDefaultIndex('index.html', 2));
-    aboutLink.on('click', storeDefaultIndex('index.html', 3));
-    contactLink.on('click', storeDefaultIndex('index.html', 4));
+    workLink.on('click', storeDefaultIndex(pageNameString, 2));
+    aboutLink.on('click', storeDefaultIndex(pageNameString, 3));
+    contactLink.on('click', storeDefaultIndex(pageNameString, 4));
 
 
         // $('.gridItem').each( function(i) {
