@@ -132,7 +132,7 @@ $(document).ready(function() {
        console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
        console.log('indexArray.projectHtml: ' + indexArray.projectHtml);
        console.log('indexArray: ' + indexArray);
-       getIndexArray = JSON.stringify(indexArray);
+       let getIndexArray = JSON.stringify(indexArray);
        console.log('getIndexArray: ' + getIndexArray);
        return getIndexArray;
    }
