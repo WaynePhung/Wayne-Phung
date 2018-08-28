@@ -103,7 +103,7 @@ $(document).ready(function() {
    function storeDefaultIndex(pageString, index) {
        let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
            stringify = JSON.stringify(getIndexArray);
-       // console.log('stringify: ' + stringify);
+           console.log('stringify: ' + stringify);
            console.log('pageString: ' + pageString);
            pageNameString = pageString;
            console.log('pageNameString: ' + pageNameString);
@@ -148,6 +148,9 @@ $(document).ready(function() {
                 getIndex = parseInt(array.indexHtml);
            break;
        }
+       console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
+       console.log('indexArray.projectHtml: ' + indexArray.projectHtml);
+       console.log('indexArray: ' + indexArray);
        return getIndex;
    }
 
