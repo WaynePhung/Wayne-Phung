@@ -51,24 +51,22 @@ $(document).ready(function() {
    // ----------------------- INTERACTIVE EFFECTS HERE ------------------------
 
    console.log('fullPage width: ' + fullPage.outerWidth() + ' sectionWidth: ' + section.outerWidth());
-   // localStorage.clear();
+   localStorage.clear();
    let htmlPageName = location.href.split('/').slice(-1),
        pageNameString = htmlPageName.toString(),
        indexArray = retrieveIndexArray(),
        defaultIndex;
    console.log(pageNameString);
    console.log(indexArray);
-   if (localStorage.currentIndex) {
-       defaultIndex = getIndex(pageNameString, indexArray);
-   } else {
-       if (pageNameString == null || pageNameString == '') {
-           console.log('pageNameString undefined, changed to index.html.');
-           pageNameString = 'index.html';
-           if (defaultIndex == null) {
-               console.log('defaultIndex undefined, changed to 0.');
-             defaultIndex = getIndex(pageNameString, indexArray);
-           }
+   if (pageNameString == null || pageNameString == '') {
+       console.log('pageNameString undefined, changed to index.html.');
+       pageNameString = 'index.html';
+       if (defaultIndex == null) {
+           console.log('defaultIndex undefined, changed to 0.');
+         defaultIndex = getIndex(pageNameString, indexArray);
        }
+   } else {
+       defaultIndex = getIndex(pageNameString, indexArray);
    }
 
   console.log('Default Index: ' + defaultIndex);
@@ -84,7 +82,7 @@ $(document).ready(function() {
            console.log('Index array: ' + getIndexArray);
            let convertArray = JSON.parse(getIndexArray);
            console.log('Convert array: ' + convertArray);
-           return getIndexArray;
+           return convertArray;
        } else if (typeof(Storage) !== 'undefined') {
            let indices = {
                'indexHtml' : '0',
