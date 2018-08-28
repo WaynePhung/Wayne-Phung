@@ -55,10 +55,16 @@ $(document).ready(function() {
        indexArray = retrieveIndexArray();
    console.log(pageNameString);
    console.log(indexArray);
-   if (pageNameString == null) {
+   if (pageNameString == null || pageNameString == '') {
+       console.log('pageNameString undefined, changed to 0.');
        pageNameString = 'index.html';
+       defaultIndex = 0;
    }
    let defaultIndex = getIndex(pageNameString, indexArray);
+   if (defaultIndex == null) {
+       console.log('Default index undefined, changed to 0.');
+       defaultIndex = 0;
+   }
    console.log('Default Index: ' + defaultIndex);
 
    function retrieveIndexArray() {
