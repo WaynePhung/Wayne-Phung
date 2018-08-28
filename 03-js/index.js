@@ -51,7 +51,7 @@ $(document).ready(function() {
    // ----------------------- INTERACTIVE EFFECTS HERE ------------------------
 
    console.log('fullPage width: ' + fullPage.outerWidth() + ' sectionWidth: ' + section.outerWidth());
-   localStorage.clear();
+   // localStorage.clear();
    let htmlPageName = location.href.split('/').slice(-1),
        pageNameString = htmlPageName.toString(),
        indexArray = retrieveIndexArray(),
