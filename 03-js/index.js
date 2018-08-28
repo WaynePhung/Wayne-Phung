@@ -58,15 +58,17 @@ $(document).ready(function() {
        defaultIndex;
    console.log(pageNameString);
    console.log(indexArray);
-   if (pageNameString == null || pageNameString == '') {
-       console.log('pageNameString undefined, changed to index.html.');
-       // pageNameString = 'index.html';
-       if (defaultIndex == null) {
-           console.log('defaultIndex undefined, changed to 0.');
-         defaultIndex = getIndex('index.html', indexArray);
-       }
-   } else {
+   if (localStorage.currentIndex) {
        defaultIndex = getIndex(pageNameString, indexArray);
+   } else {
+       if (pageNameString == null || pageNameString == '') {
+           console.log('pageNameString undefined, changed to index.html.');
+           pageNameString = 'index.html';
+           if (defaultIndex == null) {
+               console.log('defaultIndex undefined, changed to 0.');
+             defaultIndex = getIndex(pageNameString, indexArray);
+           }
+       }
    }
 
   console.log('Default Index: ' + defaultIndex);
@@ -107,31 +109,30 @@ $(document).ready(function() {
            console.log('pageString: ' + pageString);
            pageNameString = pageString;
            console.log('pageNameString: ' + pageNameString);
-       let changedArray = changeIndexArray(pageNameString, index);
+       let changedArray = changeIndexArray(getIndexArray, pageNameString, index);
        localStorage.setItem('currentIndex', changedArray);
        console.log('Stored index: ' + localStorage.getItem('currentIndex'));
    }
 
-   function changeIndexArray (pageName, index) {
-       let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
-           stringify = JSON.stringify(getIndexArray);
+   function changeIndexArray (indexArray, pageName, index) {
+       let stringify = JSON.stringify(indexArray);
        // console.log('stringify: ' + stringify);
        console.log('pageName: ' + pageName);
        switch (pageName) {
            case 'index.html':
-                getIndexArray.indexHtml = index.toString();
+                indexArray.indexHtml = index.toString();
            break;
            case 'project.html':
-                getIndexArray.projectHtml = index.toString();
+                indexArray.projectHtml = index.toString();
            break;
            case undefined:
-                getIndexArray.indexHtml = index.toString();
+                indexArray.indexHtml = index.toString();
            break;
        }
-       console.log('getIndexArray.indexHtml: ' + getIndexArray.indexHtml);
-       console.log('getIndexArray.projectHtml: ' + getIndexArray.projectHtml);
-       console.log('getIndexArray: ' + getIndexArray);
-       getIndexArray = JSON.stringify(getIndexArray);
+       console.log('indexArray.indexHtml: ' + getIndexArray.indexHtml);
+       console.log('indexArray.projectHtml: ' + getIndexArray.projectHtml);
+       console.log('indexArray: ' + indexArray);
+       getIndexArray = JSON.stringify(indexArray);
        console.log('getIndexArray: ' + getIndexArray);
        return getIndexArray;
    }
@@ -293,6 +294,7 @@ $(document).ready(function() {
        scrollTab(index);
        scrollBody(index, 0);
        switchZIndex(index);
+       console.log('pageNameString from scrolling: ' + pageNameString);
        storeDefaultIndex(pageNameString, index);
        // progressBar(index);
    }
