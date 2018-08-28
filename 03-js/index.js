@@ -153,7 +153,7 @@ $(document).ready(function() {
        return getIndex;
    }
 
-   scrolling(defaultIndex);
+   scrolling(pageNameString, defaultIndex);
    leftArrow.on('click', previousTab);
    rightArrow.on('click', nextTab);
    mainArrow.on('click', toggleMainArrow);
@@ -226,7 +226,7 @@ $(document).ready(function() {
        resizeResponse = setTimeout( function () {
            if (defaultIndex != 0 && defaultIndex < section.length) {
                console.log('Window resized.');
-               scrolling(defaultIndex);
+               scrolling(pageNameString, defaultIndex);
            }
        }, interval);
        // checkBrowserWidth();
@@ -265,7 +265,7 @@ $(document).ready(function() {
            // Do nothing.
        } else {
            defaultIndex -= 1;
-           scrolling(defaultIndex);
+           scrolling(pageNameString, defaultIndex);
        }
    }
 
@@ -274,7 +274,7 @@ $(document).ready(function() {
            // Do nothing.
        } else {
            defaultIndex += 1;
-           scrolling(defaultIndex);
+           scrolling(pageNameString, defaultIndex);
        }
    }
 
@@ -283,19 +283,19 @@ $(document).ready(function() {
        console.log('Extracted index: ' + getDataIndex);
        defaultIndex = getDataIndex;
        console.log('Default Index: ' + defaultIndex);
-       scrolling(defaultIndex);
+       scrolling(pageNameString, defaultIndex);
        console.log('Clicked tab.');
        // $('#flexMenu').animate({'scrollLeft': $(".tabItem").eq(defaultIndex)});
    }
 
-   function scrolling (index) {
+   function scrolling (pageString, index) {
        toggleMainArrow();
        changeIndex(index);
        scrollTab(index);
        scrollBody(index, 0);
        switchZIndex(index);
        console.log('pageNameString from scrolling: ' + pageNameString);
-       storeDefaultIndex(pageNameString, index);
+       storeDefaultIndex(pageString, index);
        // progressBar(index);
    }
 
