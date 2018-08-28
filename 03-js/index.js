@@ -57,11 +57,16 @@ $(document).ready(function() {
    console.log(pageNameString);
    console.log(indexArray);
    if (pageNameString == null || pageNameString == '') {
-       console.log('pageNameString undefined, changed to 0.');
+       console.log('pageNameString undefined, changed to index.html.');
        pageNameString = 'index.html';
-       defaultIndex = 0;
+       if (defaultIndex == null) {
+           console.log('defaultIndex undefined, changed to 0.');
+         defaultIndex = getIndex(pageNameString, indexArray);
+       }
+   } else {
+       defaultIndex = getIndex(pageNameString, indexArray);
    }
-   defaultIndex = getIndex(pageNameString, indexArray);
+
   console.log('Default Index: ' + defaultIndex);
    if (defaultIndex == null) {
        console.log('Default index undefined, changed to 0.');
