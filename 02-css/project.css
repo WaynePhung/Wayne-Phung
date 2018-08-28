@@ -241,6 +241,10 @@
     cursor: pointer;
 }
 
+.menuTab > p {
+    cursor: pointer;
+}
+
 .name {
     font-size: 3em;
     padding: 0.25em;
@@ -256,6 +260,7 @@
 }
 
 #projectMenu, #closeMenu {
+    align-self: center;
     font-size: inherit;
     background: transparent;
 }

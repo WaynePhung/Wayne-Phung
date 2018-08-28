@@ -19,6 +19,17 @@ p {
     margin: 0;
 }
 
+a p{
+    color: black;
+    cursor: pointer;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
 button {
     cursor: pointer;
 }

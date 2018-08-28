@@ -27,7 +27,8 @@ $(document).ready(function() {
            filterItem = $('.filterItem'),
            filter = $('.filter'),
            workBackButton = $('.workBackButton'),
-           menuButton = $('.menuButton')
+           menu = $('.menu'),
+           workLink = $('.workLink')
            // allFilter = $('#allFilter'),
            // shuffleFilter = $('#shuffleFilter');
        ;
@@ -51,7 +52,7 @@ $(document).ready(function() {
 
    console.log('fullPage width: ' + fullPage.outerWidth() + ' sectionWidth: ' + section.outerWidth());
    localStorage.clear();
-   let htmlPageName = location.href.split("/").slice(-1),
+   let htmlPageName = location.href.split('/').slice(-1),
        pageNameString = htmlPageName.toString(),
        indexArray = retrieveIndexArray(),
        defaultIndex;
@@ -82,7 +83,7 @@ $(document).ready(function() {
            let convertArray = JSON.parse(getIndexArray);
            console.log('Convert array: ' + convertArray);
            return convertArray;
-       } else if (typeof(Storage) !== "undefined") {
+       } else if (typeof(Storage) !== 'undefined') {
            let indices = {
                'indexHtml' : '0',
                'projectHtml' : '0'
@@ -102,16 +103,16 @@ $(document).ready(function() {
    function storeDefaultIndex(index) {
        let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
            stringify = JSON.stringify(getIndexArray);
-       console.log('stringify: ' + stringify);
+       // console.log('stringify: ' + stringify);
        let changedArray = changeIndexArray(pageNameString, index);
-       localStorage.setItem("currentIndex", changedArray);
-       console.log('Stored index: ' + localStorage.getItem("currentIndex"));
+       localStorage.setItem('currentIndex', changedArray);
+       console.log('Stored index: ' + localStorage.getItem('currentIndex'));
    }
 
    function changeIndexArray (pageName, index) {
        let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
            stringify = JSON.stringify(getIndexArray);
-       console.log('stringify: ' + stringify);
+       // console.log('stringify: ' + stringify);
        switch (pageName) {
            case 'index.html':
                 getIndexArray.indexHtml = index.toString();
@@ -504,13 +505,15 @@ $(document).ready(function() {
 
     workBackButton.on('click', previousTab);
 
-    menuButton.click (function () {
+    menu.on('click', function () {
         navigation.toggleClass('hideMenu');
         $('.navigation *, #workNav *').not($('.mainMenu, .mainMenu *')).toggleClass('hideNav');
         $('#bar1, #bar2, #bar3').toggleClass('shift');
         mainMenu.toggleClass('showMenu');
         projectPaddingBottom();
     });
+
+    workLink.on('click', storeDefaultIndex(defaultIndex));
 
 
         // $('.gridItem').each( function(i) {
