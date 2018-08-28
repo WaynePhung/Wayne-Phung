@@ -243,9 +243,9 @@ section {
     z-index: -1;
 }
 
-#work * {
+/* #work * {
     border: solid red 1px;
-}
+} */
 
 #work h1, #about h1, #contact h1 {
     position: relative;
@@ -253,7 +253,7 @@ section {
     font-size: 10em;
 }
 
-#work p {
+.someBodyText {
     font-size: 10em;
 }
 
@@ -307,7 +307,7 @@ section {
 .workGallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: 1em;
     position: relative;
     padding: 2.5% 0 0 0;
@@ -344,7 +344,7 @@ section {
     top: 0%;
     left: 0%;
     overflow: hidden;
-    transform: scale(1.1);
+    transform: scale(1);
     width: 100%;
     height: 100%;
     max-height: 60vh;
@@ -354,6 +354,12 @@ section {
     -ms-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     transition:  0.3s ease-in-out;
+}
+
+#fingo {
+    width: 100%;
+    height: auto;
+    transform: scale(0.75);
 }
 
 .workImage:hover {
@@ -383,6 +389,14 @@ section {
 
 .workGridText > p {
     color: white;
+}
+
+.gridItemHead {
+    font-size: 2em;
+}
+
+.gridItemBody {
+    font-size: 1em;
 }
 
 .gallerySpace {
@@ -696,7 +710,7 @@ section {
         font-size: 25vw;
     }
 
-    #work p {
+    .someBodyText {
         font-size: 7.5vw;
     }
 
@@ -796,7 +810,7 @@ section {
         font-size: 3em;
     }
 
-    #work p {
+    .someBodyText {
         font-size: 1.5em;
     }
 }
@@ -892,7 +906,7 @@ section {
         background-position: 37.5% 50%;
     }
 
-    #work p {
+    .someBodyText {
         font-size: 3.5vw;
     }
 }
@@ -932,7 +946,7 @@ section {
         font-size: 2.5vw;
     }
 
-    #work p {
+    .someBodyText {
         font-size: 2.5vw;
     }
 
@@ -950,7 +964,7 @@ section {
         font-size: 2.5vw;
     }
 
-    #work p {
+    .someBodyText {
         font-size: 2.5vw;
     }
 

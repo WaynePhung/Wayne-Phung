@@ -469,11 +469,11 @@ $(document).ready(function() {
            return;
        } else {
            console.log('Hovered');
-           $(event.currentTarget).find(workImage).css('transform', 'scale(1.5)');
+           $(event.currentTarget).find(workImage).css('transform', 'scale(1.1)');
            $(event.currentTarget).find(workGridText).css({'width': '100%', 'opacity' : '1'});
        }
    }, function (event) {
-       $(event.currentTarget).find(workImage).css('transform', 'scale(1.1)');
+       $(event.currentTarget).find(workImage).css('transform', 'scale(1)');
        $(event.currentTarget).find(workGridText).css({'width': '0', 'opacity' : '0'});
    });
 
