@@ -376,10 +376,8 @@ section {
 }
 
 #workNav {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
-    grid-gap: 5% 5%;
+    display: flex;
+    flex-flow: row wrap;
     position: fixed;
     right: 0;
     bottom: 0;
@@ -404,13 +402,22 @@ section {
     align-items: center;
     text-align: center;
     cursor: pointer;
+    padding: 0.5em;
+    background: white;
+    color: black;
     height: 100%;
+    border: none;
     padding: 0.15em auto 0.1em auto;
 }
 
 .workBackButton p {
     cursor: pointer;
 }
+
+.workBackButton {
+    outline: none;
+}
+
 
 .galleryFilter {
     grid-column: 1/-1;
@@ -468,8 +475,6 @@ section {
 }
 
 #workArrow {
-    grid-column: 1/2;
-    grid-row: 2/3;
     margin: 0.1em auto;
     width: 45px;
     height: 36px;
@@ -478,8 +483,6 @@ section {
 }
 
 .menuButton {
-    grid-column: 4/5;
-    grid-row: 2/3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -499,11 +502,14 @@ section {
     cursor: pointer;
 }
 
+#workText {
+    margin: 0;
+}
+
 #menuButton {
-    grid-column: 1/2;
     opacity: 1;
     background-color: transparent;
-    margin: 0.5em auto;
+    margin: auto 0;
     width: 45px;
     height: 36px;
     cursor: pointer;
@@ -538,7 +544,7 @@ section {
     width: 45px;
     -webkit-transform: rotate(-45deg) translate(-12px, 8.25px);
     /*Only for min-width of 700px.*/
-    transform: rotate(-45deg) translate(-12px, 8.25px);
+    transform: rotate(-45deg) translate(-9px, 8.25px);
     /*Only for min-width of 700px.*/
 }
 
@@ -550,7 +556,7 @@ section {
     width: 45px;
     -webkit-transform: rotate(45deg) translate(-13.25px, -10.75px);
     /*Only for min-width of 700px.*/
-    transform: rotate(45deg) translate(-13.25px, -10.75px);
+    transform: rotate(45deg) translate(-13.25px, -13.75px);
     /*Only for min-width of 700px.*/
 }
 
@@ -565,11 +571,6 @@ section {
     -ms-transition:  0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     transition:  0.3s ease-in-out;
-}
-
-.menuButton.showMenu {
-    display: grid;
-    width: 100vw;
 }
 
 
@@ -639,26 +640,26 @@ section {
         text-align: center;
     }
 
+    .workBackButton, .menuButton {
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (min-width: 350px) and (max-width: 475px) {
+    .workBackButton, .menuButton {
+        flex-direction: row;
+    }
 }
 
 @media screen and (max-width: 475px) {
-    #workNav {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .galleryFilter {
-        flex-direction: row;
-    }
-
     .workFilters {
         flex-direction: column;
     }
 
     .workBackButton {
-        grid-column: 1/2;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-self: flex-start;
+        order: 1;
+        width: 50%;
     }
 
     .workBackButton p {
@@ -667,15 +668,18 @@ section {
     }
 
     #workArrow {
-        order: 0;
         margin: 0.1em;
         font-size: 2.5em;
     }
 
+    .galleryFilter {
+        order: 0;
+        width: 100vw;
+    }
+
     .menuButton {
-        grid-column: 2/3;
-        flex-direction: row;
-        justify-content: flex-end;
+        order: 2;
+        width: 50%;
         align-items: center;
     }
 
@@ -689,30 +693,16 @@ section {
         font-size: 1.1em;
     }
 
-    #workNav {
-        grid-template-columns: 0.5fr 4fr 0.5fr;
-        grid-template-rows: repeat(1, 1fr);
-        grid-gap: 1em;
-    }
-
-    #workArrow {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
     .galleryFilter {
-        grid-column: 2/3;
-        grid-row: 1/2;
-        width: auto;
+        width: calc(100% - 12em);
     }
 
     .workFilters {
         flex-direction: row;
     }
 
-    .menuButton {
-        grid-column: 3/4;
-        grid-row: 1/2;
+    .workBackButton, .menuButton {
+        width: 6em;
     }
 
 }

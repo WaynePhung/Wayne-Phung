@@ -11,6 +11,7 @@
         <!-- Font Awesome Icons & CSS -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="02-css/index.css">
+        <link rel="stylesheet" type="text/css" href="02-css/project.css">
 
         <!-- AngularJS script CDN here. -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
@@ -181,7 +182,31 @@
                         <!-- <div class="filterItem filter" id="shuffleFilter">Shuffle</div> -->
                     </div>
                     <button class="menuButton">
-                        <p class="menuText">Menu<p>
+                        <p class="menuText" id="workText">Menu<p>
+                        <div class="menuItem" id="menuButton">
+                            <div class="bars"></div>
+                            <div class="bars"></div>
+                            <div class="bars"></div>
+                        </div>
+                    </button>
+                </nav>
+                <nav class="mainMenu">
+                    <p class="menuTab name">Wayne Phung</p>
+                    <button class="menuTab menuButton">
+                        <i class="menuIcon fas fa-briefcase"></i>
+                        <p>My Work</p>
+                    </button>
+                    <button class="menuTab menuButton">
+                        <p>About Me</p>
+                    </button>
+                    <button class="menuTab menuButton">
+                        <p>Resume</p>
+                    </button>
+                    <button class="menuTab menuButton">
+                        <p>Contact</p>
+                    </button>
+                    <button class="menuButton" id="closeMenu">
+                        <p class="menuText">Close<p>
                         <div class="menuItem" id="menuButton">
                             <div class="bars" id="bar1"></div>
                             <div class="bars" id="bar2"></div>

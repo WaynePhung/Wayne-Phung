@@ -41,7 +41,8 @@ $(document).ready(function() {
             left = $('.left'),
             right = $('.right'),
             tab = $('.tab'),
-            projectMenu = $('#projectMenu');
+            projectMenu = $('#projectMenu'),
+            mainMenu = $('.mainMenu');
 
    // --------------------- END OF VARIABLE DECLARATIONS ----------------------
 
@@ -359,7 +360,7 @@ $(document).ready(function() {
        section.each( function() {
            section.css('z-index', '1');
        });
-       section.eq(index).css('z-index', '5');
+       section.eq(index).css('z-index', '2');
    }
 
    // function scrollUp(scrollHeight, scrollNumber) {
@@ -504,8 +505,11 @@ $(document).ready(function() {
     workBackButton.on('click', previousTab);
 
     menuButton.click (function () {
-        menuButton.toggleClass('showMenu');
+        navigation.toggleClass('hideMenu');
+        $('.navigation *, #workNav *').not($('.mainMenu, .mainMenu *')).toggleClass('hideNav');
         $('#bar1, #bar2, #bar3').toggleClass('shift');
+        mainMenu.toggleClass('showMenu');
+        projectPaddingBottom();
     });
 
 
@@ -615,8 +619,13 @@ $(document).ready(function() {
 
     projectPaddingBottom();
     function projectPaddingBottom () {
-        let projectMenuWidth = projectMenu.outerWidth(true),
-            projectMenuHeight = projectMenu.outerHeight(true);
+    // projectMenuWidth = navigation.outerWidth(true),
+        let projectMenuHeight;
+        if (mainMenu.hasClass('showMenu')) {
+            projectMenuHeight = mainMenu.outerHeight(true);
+        } else {
+            projectMenuHeight = navigation.outerHeight(true);
+        }
         projectSpacing.css('padding-bottom', projectMenuHeight + 'px');
     }
 
