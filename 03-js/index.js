@@ -60,10 +60,10 @@ $(document).ready(function() {
    console.log(indexArray);
    if (pageNameString == null || pageNameString == '') {
        console.log('pageNameString undefined, changed to index.html.');
-       pageNameString = 'index.html';
+       // pageNameString = 'index.html';
        if (defaultIndex == null) {
            console.log('defaultIndex undefined, changed to 0.');
-         defaultIndex = getIndex(pageNameString, indexArray);
+         defaultIndex = getIndex('index.html', indexArray);
        }
    } else {
        defaultIndex = getIndex(pageNameString, indexArray);
@@ -100,11 +100,12 @@ $(document).ready(function() {
        }
    }
 
-   function storeDefaultIndex(index) {
+   function storeDefaultIndex(pageString, index) {
        let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
            stringify = JSON.stringify(getIndexArray);
        // console.log('stringify: ' + stringify);
-       let changedArray = changeIndexArray(pageNameString, index);
+           pageNameString = pageString
+       let changedArray = changeIndexArray(pageString, index);
        localStorage.setItem('currentIndex', changedArray);
        console.log('Stored index: ' + localStorage.getItem('currentIndex'));
    }
@@ -285,7 +286,7 @@ $(document).ready(function() {
        scrollTab(index);
        scrollBody(index, 0);
        switchZIndex(index);
-       storeDefaultIndex(index);
+       storeDefaultIndex(pageNameString, index);
        // progressBar(index);
    }
 
@@ -513,7 +514,7 @@ $(document).ready(function() {
         projectPaddingBottom();
     });
 
-    workLink.on('click', storeDefaultIndex(2));
+    workLink.on('click', storeDefaultIndex('index.html', 2));
 
 
         // $('.gridItem').each( function(i) {
