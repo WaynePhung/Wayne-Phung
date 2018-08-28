@@ -52,7 +52,8 @@ $(document).ready(function() {
    // localStorage.clear();
    let htmlPageName = location.href.split("/").slice(-1),
        pageNameString = htmlPageName.toString(),
-       indexArray = retrieveIndexArray();
+       indexArray = retrieveIndexArray(),
+       defaultIndex;
    console.log(pageNameString);
    console.log(indexArray);
    if (pageNameString == null || pageNameString == '') {
@@ -60,12 +61,13 @@ $(document).ready(function() {
        pageNameString = 'index.html';
        defaultIndex = 0;
    }
-   let defaultIndex = getIndex(pageNameString, indexArray);
+   defaultIndex = getIndex(pageNameString, indexArray);
+  console.log('Default Index: ' + defaultIndex);
    if (defaultIndex == null) {
        console.log('Default index undefined, changed to 0.');
        defaultIndex = 0;
    }
-   console.log('Default Index: ' + defaultIndex);
+  console.log('Default Index: ' + defaultIndex);
 
    function retrieveIndexArray() {
        if (localStorage.currentIndex) {
