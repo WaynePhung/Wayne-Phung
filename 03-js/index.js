@@ -118,13 +118,26 @@ $(document).ready(function() {
        console.log('pageName: ' + pageName);
        switch (pageName) {
            case 'index.html':
-                indexArray.indexHtml = index.toString();
+               if (indexArray.indexHtml == null) {
+                   indexArray.indexHtml = 0;
+               }
+               indexArray.indexHtml = index.toString();
            break;
            case 'project.html':
-                indexArray.projectHtml = index.toString();
+               if (indexArray.projectHtml == null) {
+                    indexArray.projectHtml = 0;
+               }
+               indexArray.projectHtml = index.toString();
            break;
            case undefined:
-                indexArray.indexHtml = index.toString();
+               if (indexArray.indexHtml == null) {
+                   indexArray.indexHtml = 0;
+               }
+               indexArray.indexHtml = index.toString();
+               if (indexArray.projectHtml == null) {
+                    indexArray.projectHtml = 0;
+               }
+               indexArray.projectHtml = index.toString();
            break;
        }
        console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
