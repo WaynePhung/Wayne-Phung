@@ -1,9 +1,9 @@
 .projectBody {
     overflow-y: hidden;
 }
-.fullPage, .navigation, .mainMenu, .navgiation *, .mainMenu * {
+/* .fullPage, .navigation, .mainMenu, .navgiation *, .mainMenu * {
     border: 1px solid red;
-}
+} */
 
 .project {
     padding: 5%;
