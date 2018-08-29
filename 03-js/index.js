@@ -549,7 +549,6 @@ $(document).ready(function() {
         $('#bar1, #bar2, #bar3').toggleClass('shift');
         mainMenu.toggleClass('showMenu');
         projectPaddingBottom();
-
     });
 
     workLink.on('click', function () {
@@ -561,11 +560,6 @@ $(document).ready(function() {
     workLink.on('click', function () {
         storeDefaultIndex(pageNameString, 4);
     });
-
-
-
-
-
 
         // $('.gridItem').each( function(i) {
         //     if ($(this).attr('data-tag') != tag) {
