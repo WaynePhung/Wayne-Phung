@@ -552,13 +552,25 @@ $(document).ready(function() {
     });
 
     workLink.on('click', function () {
-        storeDefaultIndex(pageNameString, 2);
+        if (pageNameString == 'index.html') {
+            scrolling(2);
+        } else {
+            storeDefaultIndex(pageNameString, 2);
+        }
     });
-    workLink.on('click', function () {
-        storeDefaultIndex(pageNameString, 3);
+    aboutLink.on('click', function () {
+        if (pageNameString == 'index.html') {
+            scrolling(3);
+        } else {
+            storeDefaultIndex(pageNameString, 3);
+        }
     });
-    workLink.on('click', function () {
-        storeDefaultIndex(pageNameString, 4);
+    contactLink.on('click', function () {
+        if (pageNameString == 'index.html') {
+            scrolling(4);
+        } else {
+            storeDefaultIndex(pageNameString, 4);
+        }
     });
 
         // $('.gridItem').each( function(i) {
