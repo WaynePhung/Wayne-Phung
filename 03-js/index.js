@@ -270,7 +270,7 @@ $(document).ready(function() {
   //  }
   // checkBrowserWidth();
 
-    $.event.special.swipe.horizontalDistanceThreshold = 100;
+    $.event.special.swipe.horizontalDistanceThreshold = 50;
     section.on("swipeleft", function() {
        // if ($.event.special.swipe.horizontalDistanceThreshold > 60) {
            nextTab();
