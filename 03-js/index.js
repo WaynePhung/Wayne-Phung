@@ -552,21 +552,21 @@ $(document).ready(function() {
     });
 
     workLink.on('click', function () {
-        if (pageNameString == 'index.html') {
+        if (pageNameString == 'index.html' || pageNameString = '' || pageNameString == null) {
             scrolling(2);
         } else {
             storeDefaultIndex(pageNameString, 2);
         }
     });
     aboutLink.on('click', function () {
-        if (pageNameString == 'index.html') {
+        if (pageNameString == 'index.html' || pageNameString = '' || pageNameString == null) {
             scrolling(3);
         } else {
             storeDefaultIndex(pageNameString, 3);
         }
     });
     contactLink.on('click', function () {
-        if (pageNameString == 'index.html') {
+        if (pageNameString == 'index.html' || pageNameString = '' || pageNameString == null) {
             scrolling(4);
         } else {
             storeDefaultIndex(pageNameString, 4);
