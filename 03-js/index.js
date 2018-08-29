@@ -549,9 +549,9 @@ $(document).ready(function() {
         $('#bar1, #bar2, #bar3').toggleClass('shift');
         mainMenu.toggleClass('showMenu');
         projectPaddingBottom();
-        workLink.click(storeDefaultIndex(pageNameString, 2));
-        aboutLink.click(storeDefaultIndex(pageNameString, 3));
-        contactLink.click(storeDefaultIndex(pageNameString, 4));
+        workLink.on('click', storeDefaultIndex(pageNameString, 2));
+        aboutLink.on('click', storeDefaultIndex(pageNameString, 3));
+        contactLink.on('click', storeDefaultIndex(pageNameString, 4));
     });
 
 
