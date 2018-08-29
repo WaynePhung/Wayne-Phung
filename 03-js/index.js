@@ -64,7 +64,7 @@ $(document).ready(function() {
        console.log('pageNameString undefined, changed to index.html.');
        pageNameString = 'index.html';
        if (defaultIndex == null) {
-           console.log('defaultIndex undefined, changed to 0.');
+         console.log('defaultIndex undefined, changed to 0.');
          defaultIndex = getIndex(pageNameString, indexArray);
        }
    } else {
@@ -117,30 +117,53 @@ $(document).ready(function() {
        // console.log('stringify: ' + stringify);
        console.log('pageName: ' + pageName);
        console.log('index: ' + index);
-       switch (pageName) {
-           case 'index.html':
-               if (indexArray.indexHtml == null) {
-                   indexArray.indexHtml = 0;
-               }
-               indexArray.indexHtml = index;
-           break;
-           case 'project.html':
-               if (indexArray.projectHtml == null) {
-                    indexArray.projectHtml = 0;
-               }
-               indexArray.projectHtml = index;
-           break;
-           case undefined:
-               if (indexArray.indexHtml == null) {
-                   indexArray.indexHtml = 0;
-               }
-               indexArray.indexHtml = index;
-               if (indexArray.projectHtml == null) {
-                    indexArray.projectHtml = 0;
-               }
-               indexArray.projectHtml = index;
-           break;
-       }
+        if (indexArray.indexHtml == null) {
+            indexArray.indexHtml = 0;
+        } else {
+            if (pageName == 'index.html') {
+                indexArray.indexHtml = index.toString();
+                console.log('Changed index to: ' + indexArray.indexHtml);
+            }
+        }
+        if (indexArray.projectHtml == null) {
+            indexArray.projectHtml = 0;
+        } else {
+            if (pageName == 'project.html') {
+                indexArray.projectHtml = index.toString();
+                console.log('Changed project index to: ' + indexArray.projectHtml);
+            }
+        }
+       // switch (pageName) {
+       //     case 'index.html':
+       //         if (indexArray.indexHtml == null) {
+       //             indexArray.indexHtml = 0;
+       //         }
+       //         indexArray.indexHtml = String(index);
+       //         console.log('indexArray -index: ' + indexArray.indexHtml);
+       //     break;
+       //     case 'project.html':
+       //         if (indexArray.projectHtml == null) {
+       //              indexArray.projectHtml = 0;
+       //         }
+       //         indexArray.projectHtml = String(index);
+       //         console.log('indexArray - project: ' + indexArray.projectHtml);
+       //     break;
+       //     case undefined:
+       //         if (indexArray.indexHtml == null) {
+       //             indexArray.indexHtml = 0;
+       //         }
+       //         indexArray.indexHtml = String(index);
+       //         console.log('indexArray - index: ' + indexArray.indexHtml);
+       //         if (indexArray.projectHtml == null) {
+       //              indexArray.projectHtml = 0;
+       //         }
+       //         indexArray.projectHtml = String(index);
+       //         console.log('indexArray - project: ' + indexArray.projectHtml);
+       //     break;
+       //     default:
+       //         indexArray.indexHtml = index;
+       //         indexArray.projectHtml = index;
+       // }
        console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
        console.log('indexArray.projectHtml: ' + indexArray.projectHtml);
        let getIndexArray = JSON.stringify(indexArray);
@@ -551,15 +574,15 @@ $(document).ready(function() {
 
     workLink.on('click', function () {
         scrolling(2);
-        storeDefaultIndex(pageNameString, 2);
+        storeDefaultIndex('index.html', 2);
     });
     aboutLink.on('click', function () {
         scrolling(3);
-        storeDefaultIndex(pageNameString, 3);
+        storeDefaultIndex('index.html', 3);
     });
     contactLink.on('click', function () {
         scrolling(4);
-        storeDefaultIndex(pageNameString, 4);
+        storeDefaultIndex('index.html', 4);
     });
 
         // $('.gridItem').each( function(i) {
