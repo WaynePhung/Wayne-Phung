@@ -30,7 +30,9 @@ $(document).ready(function() {
            menu = $('.menu'),
            workLink = $('#workLink'),
            aboutLink = $('#aboutLink'),
-           contactLink = $('#contactLink')
+           contactLink = $('#contactLink'),
+           workToolTip = $('.workToolTip'),
+           toolTipClose = $('.toolTipClose')
            // allFilter = $('#allFilter'),
            // shuffleFilter = $('#shuffleFilter');
        ;
@@ -490,12 +492,29 @@ $(document).ready(function() {
            return;
        } else {
            console.log('Hovered');
-           $(event.currentTarget).find(workImage).css('transform', 'scale(1.3) translateY(-10%)');
-           $(event.currentTarget).find(workGridText).css({'width': '100%', 'opacity' : '1'});
+           $(event.currentTarget).find(workImage).css('transform', 'scale(1.3)');
+           $(event.currentTarget).find(workToolTip).addClass('shown');
+           // $(event.currentTarget).find(workGridText).css({'padding' : '1em 2em', 'height': '30%', 'opacity' : '1'});
+           // $(event.currentTarget).find(workGridText).find('*').css('height', 'auto');
+
        }
    }, function (event) {
-       $(event.currentTarget).find(workImage).css('transform', 'scale(1) translateY(0%)');
-       $(event.currentTarget).find(workGridText).css({'width': '0', 'opacity' : '0'});
+       $(event.currentTarget).find(workImage).css('transform', 'scale(1)');
+       $(event.currentTarget).find(workToolTip).removeClass('shown');
+       // $(event.currentTarget).find(workGridText).css({'padding' : '0', 'height': '0', 'opacity' : '0'});
+       // $(event.currentTarget).find(workGridText).find('*').css('height', '0');
+   });
+
+   assignToolTipType ();
+   function assignToolTipType () {
+      gridItem.each( function(){
+
+      });
+   }
+
+
+   toolTipClose.click( function(event) {
+       $(event.currentTarget).parent().removeClass('shown');
    });
 
    function workPaddingBottom () {
@@ -552,9 +571,11 @@ $(document).ready(function() {
             if ($( filterTag ).hasClass('filterEnabled')) {
                 tag = $( filterTag ).data('multifilter');
                 $('.gridItem[data-tag="' + tag + '"').removeClass('hidden');
+
             } else {
                 tag = $( filterTag ).data('multifilter');
                 $('.gridItem[data-tag="' + tag + '"').addClass('hidden');
+
             }
         });
         if (!$('#designFilter').hasClass('filterEnabled') && !$('#mediaFilter').hasClass('filterEnabled') && !$('#otherFilter').hasClass('filterEnabled')) {

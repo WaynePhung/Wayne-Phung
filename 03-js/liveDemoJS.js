@@ -279,6 +279,15 @@ $(document).ready(function() {
       return width;
     }
 
+    $('.collapsible').collapsible();
+    $(".accordian").accordion({
+      collapsible: true,
+      heightStyle: 'content',
+      animate: 200,
+      active: 'none'
+    });
+
+
 /*Every time a grid cell/container is hovered over, scale up the image for a
   zoom-in animation and make the gradient filter, text, and button appear
   almost instantly after.
