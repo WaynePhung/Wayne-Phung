@@ -22,7 +22,7 @@
 
     <body class="projectBody">
         <div class="fullPage">
-            <section class="section project" id="introduction">
+            <section class="section project" id="section0">
                 <a rel="external" href="http://waynephung.com"><h1>Project Name</h1></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus nulla orci, at posuere tortor cursus ac. Donec blandit leo vel placerat sollicitudin. Fusce tortor libero, dignissim eu orci nec, lobortis dignissim quam. Maecenas tincidunt placerat risus, non euismod tortor. In ornare tincidunt dolor eget venenatis. Duis consectetur tincidunt lectus, sit amet dignissim massa faucibus ac. Curabitur ut sollicitudin mi. Quisque blandit nec mauris quis molestie. Morbi euismod condimentum urna non iaculis. Phasellus viverra lorem eget facilisis bibendum. Etiam et lacus at urna scelerisque molestie.
 
@@ -54,33 +54,63 @@
                 </div>
                 <div class="projectSpacing"></div>
             </section>
-            <section class="section project" id="resume">
+            <section class="section project" id="section1">
                 <h1>Section 2</h1>
                 <div class="projectSpacing"></div>
             </section>
-            <section class="section project" id="contact">
+            <section class="section project" id="section2">
                 <h1>Section 3</h1>
                 <div class="projectSpacing"></div>
             </section>
-            <section class="section project" id="contact">
+            <section class="section project" id="section3">
                 <h1>Section 4</h1>
                 <div class="projectSpacing"></div>
             </section>
-            <section class="section project" id="contact">
+            <section class="section project" id="section4">
                 <h1>Section 5</h1>
                 <div class="projectSpacing"></div>
             </section>
-            <section class="section project" id="contact">
+            <section class="section project" id="section5">
                 <h1>Section 6</h1>
                 <div class="projectSpacing"></div>
             </section>
-            <section class="section project" id="contact">
+            <section class="section project" id="section6">
                 <h1>Section 7</h1>
                 <div class="projectSpacing"></div>
             </section>
         </div>
         <nav class="navigation">
-            <button class="left arrow"><i class="fas fa-arrow-left arrowIcon"></i></button>
+            <button class="left arrow">
+                <i class="fas fa-arrow-left arrowIcon"></i>
+                <p>Previous</p>
+            </button>
+            <div class="dropUpMenu" id="dropUp">
+                <button class="dropUpButton">
+                    <i class="fas fa-sort-up"></i>
+                    <p></p>
+                </button>
+                <div class="dropUpSection" id="menuTabs">
+                    <div class="dropUpTab" data-index="0">Introduction</div>
+                    <div class="dropUpTab" data-index="1">Initial Process</div>
+                    <div class="dropUpTab" data-index="2">First Prototype &amp; Feedback</div>
+                    <div class="dropUpTab" data-index="3">Iterating &amp; More Feedback</div>
+                    <div class="dropUpTab" data-index="4">Results</div>
+                    <div class="dropUpTab" data-index="5">Impact &amp; Lessons Learned</div>
+                    <div class="dropUpTab" data-index="6">Credits &amp; More</div>
+                </div>
+            </div>
+            <div class="dropUpMenu" id="horizMenu">
+                <button class="dropUpButton" id="expandDropUp"><i class="fas fa-sort-up"></i></button>
+                <div class="dropUpSection" id="tabs">
+                    <div class="dropUpTab" data-index="0">Introduction</div>
+                    <div class="dropUpTab" data-index="1">Initial Process</div>
+                    <div class="dropUpTab" data-index="2">First Prototype &amp; Feedback</div>
+                    <div class="dropUpTab" data-index="3">Iterating &amp; More Feedback</div>
+                    <div class="dropUpTab" data-index="4">Results</div>
+                    <div class="dropUpTab" data-index="5">Impact &amp; Lessons Learned</div>
+                    <div class="dropUpTab" data-index="6">Credits &amp; More</div>
+                </div>
+            </div>
             <div class="tabSection">
                 <div class="tab" data-index="0">Introduction</div>
                 <div class="tab" data-index="1">Initial Process</div>
@@ -90,7 +120,10 @@
                 <div class="tab" data-index="5">Impact &amp; Lessons Learned</div>
                 <div class="tab" data-index="6">Credits &amp; More</div>
             </div>
-            <button class="right arrow"><i class="fas fa-arrow-right arrowIcon"></i></button>
+            <button class="right arrow">
+                <i class="fas fa-arrow-right arrowIcon"></i>
+                <p>Next</p>
+            </button>
             <button class="menuButton menu" id="projectMenu">
                 <p class="menuText">Menu<p>
                 <div class="menuItem" id="menuButton">
@@ -103,8 +136,8 @@
         <nav class="mainMenu">
             <p class="menuTab name">Wayne Phung</p>
             <button class="menuTab menuButton">
-                <i class="menuIcon fas fa-briefcase"></i>
                 <a class="menuLink" id="workLink" rel="external" href="http://waynephung.com">
+                    <i class="menuIcon fas fa-briefcase"></i>
                     <p>Work</p>
                 </a>
             </button>
@@ -115,14 +148,14 @@
                 </a>
             </button>
             <button class="menuTab menuButton">
-                <i class="menuIcon far fa-file-alt"></i>
                 <a rel="external" href="mediaFiles/documents/Resume_Wayne_Phung.pdf" target="_blank">
+                    <i class="menuIcon far fa-file-alt"></i>
                     <p>Resume</p>
                 </a>
             </button>
             <button class="menuTab menuButton">
-                <i class="menuIcon far fa-comment-alt"></i>
                 <a class="menuLink" id="contactLink" rel="external" href="http://waynephung.com">
+                    <i class="menuIcon far fa-comment-alt"></i>
                     <p>Contact</p>
                 </a>
             </button>

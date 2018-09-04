@@ -25,9 +25,11 @@ $(document).ready(function() {
            paddingContainer = $('.paddingContainer'),
            workNav = $('#workNav'),
            filterItem = $('.filterItem'),
+           mainGridItem = $('.mainGridItem'),
            filter = $('.filter'),
            workBackButton = $('.workBackButton'),
            menu = $('.menu'),
+           menuButton = $('.menuButton'),
            workLink = $('#workLink'),
            aboutLink = $('#aboutLink'),
            contactLink = $('#contactLink'),
@@ -43,8 +45,16 @@ $(document).ready(function() {
             projectSpacing = $('.projectSpacing'),
             navigation = $('.navigation'),
             tabSection = $('.tabSection'),
+            arrow = $('.arrow'),
             left = $('.left'),
             right = $('.right'),
+            dropUpButton = $('.dropUpButton'),
+            getDropUp = $('#dropUp .dropUpButton'),
+            dropUpSection = $('.dropUpSection'),
+            menuTabs = $('#menuTabs'),
+            dropUpTab = $('.dropUpTab'),
+            dropUp = $('#dropUp'),
+            dropUpText = $('#dropUp p'),
             tab = $('.tab'),
             projectMenu = $('#projectMenu'),
             mainMenu = $('.mainMenu');
@@ -73,6 +83,7 @@ $(document).ready(function() {
        defaultIndex = getIndex(pageNameString, indexArray);
    }
 
+  console.log('pageNameString: ' + pageNameString);
   console.log('Default Index: ' + defaultIndex);
    if (defaultIndex == null) {
        console.log('Default index undefined, changed to 0.');
@@ -283,6 +294,8 @@ $(document).ready(function() {
        // checkBrowserWidth();
        workPaddingBottom();
        projectPaddingBottom();
+       assignToolTipType();
+       adjustDropMenuWidth();
    });
 
   //  function checkBrowserWidth () {
@@ -309,7 +322,23 @@ $(document).ready(function() {
 
     left.on('click', previousTab);
     right.on('click', nextTab);
+    arrow.on('click', replaceDropText);
     tab.on('click', changeTab);
+    dropUpButton.on('click', function () {
+        dropUpSection.toggleClass('showMenu');
+    });
+    replaceDropText();
+    dropUpTab.on('click', changeTab);
+    dropUpTab.on('click', function () {
+        dropUpSection.removeClass('showMenu');
+    });
+
+    function replaceDropText() {
+        console.log('ReplaceDropText: ' + dropUpTab.eq(defaultIndex).text());
+        dropUpText.text(dropUpTab.eq(defaultIndex).text());
+    }
+
+
 
    function previousTab() {
        if (defaultIndex == 0 && defaultIndex - 1 < 0) {
@@ -336,6 +365,7 @@ $(document).ready(function() {
        console.log('Default Index: ' + defaultIndex);
        scrolling(pageNameString, defaultIndex);
        console.log('Clicked tab.');
+       replaceDropText();
        // $('#flexMenu').animate({'scrollLeft': $(".tabItem").eq(defaultIndex)});
    }
 
@@ -494,6 +524,7 @@ $(document).ready(function() {
            console.log('Hovered');
            $(event.currentTarget).find(workImage).css('transform', 'scale(1.3)');
            $(event.currentTarget).find(workToolTip).addClass('shown');
+           mainGridItem.find(workToolTip).addClass('shown');
            // $(event.currentTarget).find(workGridText).css({'padding' : '1em 2em', 'height': '30%', 'opacity' : '1'});
            // $(event.currentTarget).find(workGridText).find('*').css('height', 'auto');
 
@@ -501,17 +532,90 @@ $(document).ready(function() {
    }, function (event) {
        $(event.currentTarget).find(workImage).css('transform', 'scale(1)');
        $(event.currentTarget).find(workToolTip).removeClass('shown');
+       mainGridItem.find(workToolTip).removeClass('shown');
        // $(event.currentTarget).find(workGridText).css({'padding' : '0', 'height': '0', 'opacity' : '0'});
        // $(event.currentTarget).find(workGridText).find('*').css('height', '0');
    });
 
-   assignToolTipType ();
-   function assignToolTipType () {
-      gridItem.each( function(){
+   mainGridItem.hover(function (event) {
+       if ($(event.currentTarget).hasClass('hidden')) {
+           event.stopPropagation();
+           return;
+       } else {
+           $(event.currentTarget).find(workToolTip).addClass('shown');
+       }
+   }, function (event) {
+       $(event.currentTarget).find(workToolTip).removeClass('shown');
+   });
 
-      });
+   configureGrid();
+   assignToolTipType();
+
+   function configureGrid () {
+       let totalTaggedItems = $('.tagged').length,
+           totalGridItems = gridItem.length,
+           rows;
+       if ($(window).width() < 850) {
+           workGallery.css('grid-template-rows', 'repeat(' + totalTaggedItems + ', 1fr)');
+       } else if ($(window).width() >= 850 && $(window).width() < 1150) {
+           if (gridItem.hasClass('tagged')) {
+               rows = parseInt(totalTaggedItems / 2);
+           } else {
+               rows = parseInt(totalGridItems / 2);
+           }
+       } else {
+           if (gridItem.hasClass('tagged')) {
+               rows = parseInt(totalTaggedItems / 3);
+           } else {
+               rows = parseInt(totalGridItems / 3);
+           }
+       }
+       workGallery.css('grid-template-rows', 'repeat(' + rows + ', 1fr)');
+       console.log('There are ' + rows + ' rows.');
    }
 
+   function assignToolTipType () {
+        workToolTip.removeClass('top bottom left right');
+        console.log('workToolTip length: ' + workToolTip.length);
+        workToolTip.removeClass('top bottom left right');
+        if (gridItem.hasClass('tagged')) {
+            configureGrid();
+            console.log('There are ' + $('.tagged').length + ' tagged items.');
+             workToolTip.removeClass('top bottom left right');
+            // if ($(window).width() < 600) {
+            //     // Do nothing.
+            // } else if ($(window).width() >= 600 && $(window).width() < 1150) {
+            //   workToolTip.removeClass('top bottom left right');
+            //   console.log('Attempting to fix tags within 600-1150 view window.');
+            //     $('.tagged:nth-child(2n+1) > .workToolTip').addClass('right');
+            //     $('.tagged:nth-child(2n+2) > .workToolTip').addClass('left');
+            // } else {
+            //     workToolTip.removeClass('top bottom left right');
+            //     $('.tagged:nth-child(3n+1) > .workToolTip').addClass('right');
+            //     $('.tagged:nth-child(3n+2) > .workToolTip').addClass('right');
+            //     $('.tagged:nth-child(3n+3) > .workToolTip').addClass('left');
+            // }
+        } else {
+            console.log('There are NO tagged items.');
+            if ($(window).width() < 850) {
+                // Do nothing.
+            } else if ($(window).width() >= 850 && $(window).width() < 1150) {
+              workToolTip.removeClass('top bottom left right');
+                $('.gridItem:nth-child(2n+1) > .workToolTip').addClass('right');
+                $('.gridItem:nth-child(2n+2) > .workToolTip').addClass('left');
+            } else {
+                workToolTip.removeClass('top bottom left right');
+                $('.gridItem:nth-child(3n+1) > .workToolTip').addClass('right');
+                $('.gridItem:nth-child(3n+2) > .workToolTip').addClass('right');
+                $('.gridItem:nth-child(3n+3) > .workToolTip').addClass('left');
+            }
+       }
+   }
+
+   adjustDropMenuWidth();
+   function adjustDropMenuWidth() {
+       menuTabs.css('width', getDropUp.outerWidth(true));
+   }
 
    toolTipClose.click( function(event) {
        $(event.currentTarget).parent().removeClass('shown');
@@ -567,20 +671,40 @@ $(document).ready(function() {
     filter.on('click', function(event) {
         let tag = $(event.currentTarget).data('multifilter');
         $(event.currentTarget).toggleClass('filterEnabled');
+        gridItem.removeClass('tagged');
         filter.each( function(i, filterTag) {
-            if ($( filterTag ).hasClass('filterEnabled')) {
-                tag = $( filterTag ).data('multifilter');
+            if ($(filterTag).hasClass('filterEnabled')) {
+                tag = $(filterTag).data('multifilter');
                 $('.gridItem[data-tag="' + tag + '"').removeClass('hidden');
-
+                $('.gridItem[data-tag="' + tag + '"').addClass('tagged');
+                $('.gridItem[data-tag="' + tag + '"').fadeIn(0, function(){
+                    $(this).show();
+                });
             } else {
-                tag = $( filterTag ).data('multifilter');
+                tag = $(filterTag).data('multifilter');
                 $('.gridItem[data-tag="' + tag + '"').addClass('hidden');
-
+                $('.gridItem[data-tag="' + tag + '"').removeClass('tagged');
+                $('.gridItem[data-tag="' + tag + '"').fadeOut(0, function(){
+                    $(this).hide();
+                });
             }
         });
-        if (!$('#designFilter').hasClass('filterEnabled') && !$('#mediaFilter').hasClass('filterEnabled') && !$('#otherFilter').hasClass('filterEnabled')) {
-            gridItem.removeClass('hidden');
+        console.log('Tagged items: ' + $('.tagged').length);
+        if ($('.tagged').length <= 3) {
+            workToolTip.removeClass('top bottom left right');
+            $('.tagged:nth-child(2n+1) > .workToolTip').addClass('right');
+            $('.tagged:nth-child(2n+2) > .workToolTip').addClass('left');
+        } else {
+            assignToolTipType();
+            return;
         }
+        if (!$('#designFilter').hasClass('filterEnabled') && !$('#mediaFilter').hasClass('filterEnabled') && !$('#otherFilter').hasClass('filterEnabled')) {
+            gridItem.removeClass('hidden tagged');
+            gridItem.fadeIn(300, function(){
+                $(this).show();
+            });
+        }
+        assignToolTipType();
     });
 
     workBackButton.on('click', previousTab);
@@ -593,16 +717,42 @@ $(document).ready(function() {
         projectPaddingBottom();
     });
 
+    menuButton.not(menu).on('click', function () {
+        navigation.removeClass('hideMenu');
+        $('.navigation *, #workNav *').not($('.mainMenu, .mainMenu *')).removeClass('hideNav');
+        $('#bar1, #bar2, #bar3').removeClass('shift');
+        mainMenu.removeClass('showMenu');
+        projectPaddingBottom();
+    });
+
     workLink.on('click', function () {
-        scrolling(2);
+        console.log('PageNameString: ' + pageNameString);
+        if (pageNameString == 'index.html' || pageNameString == '') {
+        //     workLink.children().find('a').attr('href', '');
+            scrolling(pageNameString, 2);
+        }
+            // workLink.children().find('a').attr('href', 'http://waynephung.com');
+        // }
         storeDefaultIndex('index.html', 2);
     });
     aboutLink.on('click', function () {
-        scrolling(3);
+        console.log('PageNameString: ' + pageNameString);
+        if (pageNameString == 'index.html' || pageNameString == '') {
+        //     aboutLink.children().find('a').attr('href', '');
+            scrolling(pageNameString, 3);
+        }
+        //     workLink.children().find('a').attr('href', 'http://waynephung.com');
+        // }
         storeDefaultIndex('index.html', 3);
     });
     contactLink.on('click', function () {
-        scrolling(4);
+        console.log('PageNameString: ' + pageNameString);
+        if (pageNameString == 'index.html' || pageNameString == '') {
+        //     contactLink.children().find('a').attr('href', '');
+            scrolling(pageNameString, 4);
+        }
+            // workLink.children().find('a').attr('href', 'http://waynephung.com');
+        // }
         storeDefaultIndex('index.html', 4);
     });
 
