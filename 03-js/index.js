@@ -48,6 +48,7 @@ $(document).ready(function() {
             arrow = $('.arrow'),
             left = $('.left'),
             right = $('.right'),
+            dropUpMenu = $('.dropUpMenu'),
             dropUpButton = $('.dropUpButton'),
             getDropUp = $('#dropUp .dropUpButton'),
             dropUpSection = $('.dropUpSection'),
@@ -141,7 +142,7 @@ $(document).ready(function() {
         if (indexArray.projectHtml == null) {
             indexArray.projectHtml = 0;
         } else {
-            if (pageName == 'project.html') {
+            if (pageName == 'fingo.html') {
                 indexArray.projectHtml = index.toString();
                 console.log('Changed project index to: ' + indexArray.projectHtml);
             }
@@ -326,11 +327,17 @@ $(document).ready(function() {
     tab.on('click', changeTab);
     dropUpButton.on('click', function () {
         dropUpSection.toggleClass('showMenu');
+        if (dropUpSection.hasClass('showMenu')) {
+            $('.dropUpButton i').removeClass('fa-angle-up').addClass('fa-angle-down');
+        } else {
+            $('.dropUpButton i').removeClass('fa-angle-down').addClass('fa-angle-up');
+        }
     });
     replaceDropText();
     dropUpTab.on('click', changeTab);
     dropUpTab.on('click', function () {
         dropUpSection.removeClass('showMenu');
+        $('.dropUpButton i').removeClass('fa-angle-down').addClass('fa-angle-up');
     });
 
     function replaceDropText() {
@@ -614,7 +621,7 @@ $(document).ready(function() {
 
    adjustDropMenuWidth();
    function adjustDropMenuWidth() {
-       menuTabs.css('width', getDropUp.outerWidth(true));
+       menuTabs.css('width', dropUpMenu.outerWidth(true));
    }
 
    toolTipClose.click( function(event) {

@@ -128,7 +128,14 @@ section {
 }
 
 #mainImage {
-    background: no-repeat 30%/auto border-box url("../mediaFiles/images/workSection/pic1.jpg");
+    background: no-repeat 50%/auto border-box url("../mediaFiles/images/workSection/pic1.jpg");
+    /* position: absolute;
+    object-fit: cover;
+    right: 0;
+    min-width: 100vw;
+    width: 100%;
+    height: 100%; */
+    /* max-height: 100vh; */
 }
 
 #main h1 {
@@ -144,6 +151,9 @@ section {
 
 .textBody {
     flex-grow: 2;
+    text-align: left;
+    width: 50%;
+    font-size: 1.5em;
 }
 
 #main p, #intro p {
@@ -173,6 +183,18 @@ section {
 .sectionArrows:focus {
     border: none;
     outline: none;
+}
+
+#waynePhung {
+    background: no-repeat 50%/auto border-box url("../mediaFiles/images/workSection/waynePhung.jpg");
+    background-size: cover;
+    object-fit: cover;
+    top: 0%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: brightness(.5);
+    filter: brightness(.5);
 }
 
 #mainArrow {
@@ -227,9 +249,13 @@ section {
     text-decoration: underline;
 }
 
+#intro *{
+    color: white;
+}
+
 #intro h1 {
     flex-grow: 1;
-    font-size: 10em;
+    font-size: 6em;
 }
 
 #intro p {
@@ -249,8 +275,13 @@ section {
 
 #work h1, #about h1, #contact h1 {
     position: relative;
-    flex-grow: 0.25;
+    flex-grow: 0.1;
     font-size: 5em;
+}
+
+#workNav {
+    position: fixed;
+    background: white;
 }
 
 .someBodyText {
@@ -435,11 +466,7 @@ section {
 
 #recapASCE {
     top: 0%;
-    left: 7.5%;
-    width: 15
-
-
-    0%;
+    width: 150%;
     height: 100%;
     transform-origin: 50% 0%;
 }
@@ -471,7 +498,6 @@ section {
 }
 
 #walkTheBlock {
-    left: 20%;
     top: -5%;
     width: auto;
     height: 150%;
@@ -488,6 +514,11 @@ section {
 #rkcbOpia {
     width: 100%;
     transform-origin: 50% 0%;
+}
+
+#actaPus {
+    width: 100%;
+    height: 110%;
 }
 
 .workImage:hover {
@@ -690,6 +721,7 @@ section {
 }
 
 .comingSoon {
+    cursor: default;
     margin: 0.75em 0 0 0;
     padding: 0.25em 0.75em;
     background: transparent;
@@ -718,7 +750,7 @@ section {
     width: 100%;
     min-height: 9em;
     height: auto;
-    background: white;
+    background: transparent;
     z-index: 2;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition:  0.3s ease-in-out;
@@ -895,6 +927,15 @@ section {
     /*Only for min-width of 700px.*/
     transform: rotate(45deg) translate(-13.25px, -13.75px);
     /*Only for min-width of 700px.*/
+}
+
+#about h1{
+    color: white;
+}
+
+#about p {
+    width: 60%;
+    color: white;
 }
 
 .contactText {
@@ -1298,7 +1339,7 @@ section {
     }
 
     #main p {
-        font-size: 3.25em;
+        font-size: 2em;
     }
 
     /* #workNav {
@@ -1319,12 +1360,16 @@ section {
 }
 
 @media screen and (min-width: 850px) and (max-width: 1150px){
-    #intro h1, #work h1, #about h1, #contact h1 {
+    section h1 {
         font-size: 5.5em;
     }
 
     #intro p {
         font-size: 2.5vw;
+    }
+
+    #about p {
+        font-size: 2em;
     }
 
     .someBodyText {

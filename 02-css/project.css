@@ -16,6 +16,53 @@
     transition:  0.3s ease-in-out;
 }
 
+.project h1 {
+    font-size: 5em;
+    margin: 0 0 0.5em 0;
+}
+
+.introGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2em 0;
+}
+
+.introGridItem {
+    padding: 5%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.introGridItem h3 {
+    text-align: center;
+}
+
+.roleList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0.25em 3em;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.prompt {
+    color: rgb(142, 142, 142);
+    text-align: center;
+}
+
+.swipeGesture {
+    margin: auto;
+    justify-content: center;
+    width: 20%;
+    height: 20%;
+}
+
 .projectSpacing {
     position: relative;
     width: 100%;
@@ -73,6 +120,7 @@
 
 #dropUp {
     margin: 0;
+    padding: 0.75em;
     min-width: calc(100vw - 15em);
     width: calc(100vw - 15em);
     border: 3px solid black;
@@ -82,7 +130,7 @@
 .dropUpButton {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     align-self: stretch;
     background: transparent;
@@ -117,7 +165,7 @@
     border-radius: 16px 0em 0em 16px;
 }
 
-.fa-sort-up {
+.fa-angle-up, .fa-angle-down {
     font-size: 2em;
     align-self: center;
 }
@@ -126,7 +174,7 @@
     display: none;
     position: absolute;
     overflow: hidden;
-    left: -1%;
+    left: 0%;
     bottom: 100%;
     width: 15em;
     /* width: 100%;
@@ -399,7 +447,7 @@
         padding: 1em;
     }
 
-    .fa-sort-up {
+    .fa-angle-up, .fa-angle-down {
         font-size: 1.25em;
     }
 
@@ -432,13 +480,13 @@
     }
 }
 
-@media screen and (min-width: 200px) and (max-width: 375px) {
+@media screen and (min-width: 200px) and (max-width: 400px) {
     .tab {
         padding: 1em 2.5em;
     }
 
-    .fa-sort-up {
-        margin: 0.5em 0.25em 0 0.25em;
+    .fa-angle-up, .fa-angle-down {
+        margin: 0.1em;
         font-size: 1.5em;
     }
 
@@ -481,7 +529,7 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 400px) {
     .navigation {
         display: flex;
         flex-flow: row wrap;
@@ -532,20 +580,20 @@
 
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 400px) {
     .arrow p {
         display: none;
     }
 
 }
 
-@media screen and (min-width: 375px) and (max-width: 600px) {
-    .fa-sort-up {
-        margin: 0.25em 0.25em 0 0;
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    .fa-angle-up, .fa-angle-down {
+        margin: 0.25em 0;
     }
 }
 
-@media screen and (min-width: 375px) and (max-width: 450px) {
+@media screen and (min-width: 400px) and (max-width: 450px) {
     .arrow {
         padding: 0.25em;
         width: 1.5em;
