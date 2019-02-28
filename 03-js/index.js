@@ -1,4 +1,4 @@
-"use strict";
+    "use strict";
 
 $(document).ready(function() {
     // ----------------------- VARIABLE DECLARATIONS HERE -----------------------
@@ -344,8 +344,6 @@ $(document).ready(function() {
         console.log('ReplaceDropText: ' + dropUpTab.eq(defaultIndex).text());
         dropUpText.text(dropUpTab.eq(defaultIndex).text());
     }
-
-
 
    function previousTab() {
        if (defaultIndex == 0 && defaultIndex - 1 < 0) {
