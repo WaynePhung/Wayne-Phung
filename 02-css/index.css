@@ -1,1422 +1,1419 @@
-/* section {
+/*Section 1 - CSS code for index.html.*/
+/*Section 1.1 - Universal properties to the general page elements, links, and other miscellaneous elements.*/
+
+html, header, header *, body * {
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition:  0.25s ease-in-out;
+    -ms-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition:  0.25s ease-in-out;
+}
+
+html {
     width: 100%;
     height: 100%;
-} */
-
-html, body {
-    background: transparent;
-}
-
-html.nightMode, body.nightMode {
-
-}
-
-h1, p {
-    cursor: default;
-}
-
-p {
     margin: 0;
+    padding: 0;
 }
 
-a{
-    color: black;
-    cursor: pointer;
+body {
+    display: block;
 }
 
-a:hover {
+body *:active{
+    outline: none;
+}
+
+body p {
+    font-size: 16px;
+}
+
+a, a:hover {
     cursor: pointer;
+    color: inherit;
     text-decoration: none;
 }
 
-button {
-    cursor: pointer;
-}
-
-.pp-tableCell {
-    vertical-align: text-top;
-}
-
-/* #pp-nav {
-    display: none;
-}
-
-#pp-nav{
-    margin: 0 auto !important;
-    left:0;
-    right: 0;
-    top: auto !important;
-    bottom: 17px;
-    display: inline-block;
-}
-#pp-nav li, .pp-slidesNav li{
-    display: inline-block;
-} */
-
 .ui-loader {
-    display: none;
+    display: none !important;
 }
 
-::-webkit-scrollbar{
-    display: none;
-}
-
-.fullPage {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    /* overflow-y: scroll; */
-    width: auto;
-    height: 100vh;
-    touch-action: manipulation;
-    z-index: 1;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
-    float: left;
-    padding: 0.75% 2.5%;
+.ui-page {
+    outline: none;
     width: 100%;
-    height: auto;
-    overflow-x: hidden;
-    z-index: 2;
-    opacity: 0;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
+    min-height: 100%;
 }
 
-.scrollProgressBar {
-    position: absolute;
-    top: 0;
-    height: 8px;
-    background: #4caf50;
-    width: 0%;
-    border-radius: 0 4px 4px 0;
-    z-index: 99;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
-#main {
-    color: white;
+/*END of Section 1.1.*/
+
+/*Section 1.2 -Header and navigation elements.*/
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    margin-top: 0em;
+    padding: 0.5em 0em;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0em 0.1em 2em 0.1em white;
     z-index: 5;
 }
 
-.bgImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    -webkit-filter: brightness(.75);
-    filter: brightness(.75);
-    z-index: -1;
-    background-position: 30% 50%;
+.name {
+    cursor: pointer;
+    color: black;
 }
 
-#mainImage {
-    background: no-repeat 50%/auto border-box url("../mediaFiles/images/workSection/pic1.jpg");
-    /* position: absolute;
-    object-fit: cover;
-    right: 0;
-    min-width: 100vw;
-    width: 100%;
-    height: 100%; */
-    /* max-height: 100vh; */
+.name a{
+    cursor: pointer;
+    margin: 0.5em 0%;
+    font-size: 24px;
+    color: black;
 }
 
-#main h1 {
-    flex-grow: 1;
-    flex-shrink: 1;
-    align-items: flex-start;
-    position: relative;
-    left: 0;
-    width: 100%;
-    text-align: left;
-    font-size: 10em;
-}
-
-.textBody {
-    flex-grow: 2;
-    text-align: left;
-    width: 50%;
-    font-size: 1.5em;
-}
-
-#main p, #intro p {
-    font-size: 3.5em;
-}
-
-.sectionArrows {
-    position: relative;
-    background: transparent;
-    padding: 0;
-    width: auto;
-    height: auto;
-    font-weight: bold;
-    font-size: 2.5em;
-    border: none;
-    border-radius: 25%;
-    outline: none;
-    /* border: 1px solid black;
-    border-radius: 50%; */
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.sectionArrows:focus {
-    border: none;
-    outline: none;
-}
-
-#waynePhung {
-    background: no-repeat 50%/auto border-box url("../mediaFiles/images/workSection/waynePhung.jpg");
-    background-size: cover;
-    object-fit: cover;
-    top: 0%;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-filter: brightness(.5);
-    filter: brightness(.5);
-}
-
-#mainArrow {
+.navGroup {
     display: flex;
-    flex-direction: row;
-    flex-grow: 0.25;
-    position: relative;
-    justify-content: flex-end;
-    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
     vertical-align: middle;
-    right: 2.5%;
-    bottom: 2.5%;
-    padding: 0 0.25em 0 0;
-    color: white;
-}
-
-#continue {
-    position: relative;
-    text-align: right;
-    margin: 0;
-    padding: 0 0.75em 0 0;
-    font-weight: 400;
-    cursor: pointer;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.fa-arrow-right {
-    position: relative;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-#mainRight {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: white;
-}
-
-#disabled {
-    color: rgba(255, 255, 255, 0.8);
-    background: transparent;
-    cursor: default;
-    pointer-events: none;
-    text-decoration: underline;
-}
-
-#intro *{
-    color: white;
-}
-
-#intro h1 {
-    flex-grow: 1;
-    font-size: 6em;
-}
-
-#intro p {
-    font-size: 10em;
-}
-
-#work {
-    display: block;
-    padding: 1em 0;
-    padding: 1em;
-    z-index: -1;
-}
-
-/* #work * {
-    border: solid red 1px;
-} */
-
-#work h1, #about h1, #contact h1 {
-    position: relative;
-    flex-grow: 0.1;
-    font-size: 5em;
-}
-
-#workNav {
-    position: fixed;
-    background: white;
-}
-
-.someBodyText {
-    font-size: 1.5em;
-    text-align: left;
-}
-
-.workGallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(60vh, 60vh);
-    grid-gap: 1em;
-    padding: 1em 0;
-    flex-basis: auto;
-    justify-content: center;
-    align-items: flex-start;
-    align-self: center;
-    min-width: 0;
-    width: 100%;
-    min-height: 60vh;
-    height: auto;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-/* .workGallery {
-    display: flex;
-    flex-flow: row wrap;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 1em;
-    position: relative;
-    padding: 2.5% 0 0 0;
-    width: 100%;
-    min-height: 50vh;
-    height: auto;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-} */
-
-.filtr-container {
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.workGridItem {
-    width: 50%;
-    min-height: 75vh;
-    overflow: hidden;
-    justify-content: space-between;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-/* .filtr-item {
-    margin: 2% 1%;
-} */
-
-.gridItem {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    min-width: 0;
-    width: auto;
-    max-width: 95vw;
-    min-height: 0;
-    height: 100%;
-    max-height: 60vh;
-    justify-content: center;
     align-items: center;
-    border: 3px solid black;
-    border-radius: 1em;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.gridItem.hidden {
-    opacity: 0.3;
-    cursor: default;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.gridItem > a {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-.gridItemWrapper {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: 100%;
-    min-height: calc(60vh - 6px);
-    height: 100%;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    border-radius: calc(1em - 4px);
-}
-
-/* .workImageWrapper {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-} */
-
-.workImage {
-    display: block;
-    position: relative;
-    top: 0%;
-    left: 0%;
-    transform: scale(1);
-    width: auto;
-    min-height: auto;
-    height: 100%;
-    max-height: 70vh;
-    object-fit: cover;
-    transform-origin: 50% 50%;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-#portfolio {
-}
-
-#fingo {
-    width: 70%;
-    height: auto;
-}
-
-#takeMe {
-    height: auto;
-}
-
-#toxicon {
-    transform-origin: 50% 40%;
-}
-
-#yonderURC {
-    width: auto;
-    height: 100%;
-    -webkit-filter: saturate(1.75);
-    filter: saturate(1.75);
-}
-
-#SGF18 {
-    width: 100%;
-}
-
-#recapASCE {
-    top: 0%;
-    width: 150%;
-    height: 100%;
-    transform-origin: 50% 0%;
-}
-
-#mundoGardens {
-    left: 0.5em;
-    width: auto;
-    height: 100%;
-}
-
-#sgfBlackBear {
-    left: 2%;
-    width: 160%;
-    height: 100%;
-    transform-origin: 50% 100%;
-}
-
-#corgant {
-}
-
-#shopList {
-    width: 100%;
-    height: 100%;
-}
-
-#cssa18 {
-    width: 80%;
-    height: auto;
-}
-
-#walkTheBlock {
-    top: -5%;
-    width: auto;
-    height: 150%;
-}
-
-#hullabalooGIF {
-    width: 100%;
-}
-
-#senateDigest {
-    left: 0.3em;
-}
-
-#rkcbOpia {
-    width: 100%;
-    transform-origin: 50% 0%;
-}
-
-#actaPus {
-    width: 100%;
-    height: 110%;
-}
-
-.workImage:hover {
-    transition: 0.3s ease-out;
-}
-
-.workGridText {
-    opacity: 0;
-    display: block;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-start;
-    bottom: 0;
-    left: 0;
-    background: black;
-    padding: 0;
-    width: 100%;
-    height: 0%;
-    text-align: center;
-    margin: 0;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.workGridText > p {
-    height: 0;
-    margin: 0;
-    color: white;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.workToolTip {
-    opacity: 0;
-    display: flex;
-    flex-flow: column wrap;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    align-self: center;
-    padding: 3em 0.5em 1em 0.5em;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: black;
-    border: 3px solid black;
-    border-radius: 1em;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    z-index: 1;
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition:  0.2s ease-in-out;
-    -ms-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    transition:  0.2s ease-in-out;
-}
-
-.workToolTip:after {
-    border: 2em solid black;
-}
-
-/* .top.workToolTip {
-    top: -25%;
-    left: 0%;
-    width: 100%;
-    height: auto;
-}
-
-.top.workToolTip:after {
-    content: " ";
-    position: absolute;
-    bottom: -2em;
-    left: 42%;
-    margin-bottom: -2em;
-    border-color: rgb(182, 182, 182) transparent transparent transparent;
-    z-index: 2;
-} */
-
-/* .bottom.workToolTip {
-    top: 85%;
-    left: 0%;
-    width: 100%;
-    height: auto;
-}
-
-.bottom.workToolTip:after {
-    content: " ";
-    position: absolute;
-    top: -2em;
-    left: 40%;
-    margin-top: -2em;
-    border-color: transparent transparent black transparent;
-    z-index: 2;
-} */
-
-.left.workToolTip, .right.workToolTip {
-    width: calc((100vw / 2) - 4.5em);
-    height: calc(100% + 6px);
-}
-
-.left.workToolTip {
-    right: calc(100% + 1.25em);
-}
-
-.right.workToolTip {
-    left: calc(100% + 1.25em);
-
-}
-
-.left.workToolTip:after, .right.workToolTip:after {
-    content: " ";
-    position: absolute;
-    top: 45%;
-    z-index: 2;
-}
-
-.left.workToolTip:after {
-    right: -2em;
-    margin-right: -2em;
-    border-color: transparent transparent transparent black;
-}
-
-.right.workToolTip:after {
-    left: -2em;
-    margin-left: -2em;
-    border-color: transparent black transparent transparent;
-}
-
-/* .workToolTip:hover {
-    opacity: 1;
-    visibility: visible;
-} */
-
-.workToolTip.hidden {
-    visibility: hidden;
-}
-
-.workToolTip.shown {
-    opacity: 1;
-    visibility: visible;
-}
-
-.workToolTip * {
-    margin: 0.25em;
-}
-
-.toolTipClose {
-    position: absolute;
-    top: 0.25em;
-    right: 0.5em;
-    padding: 0;
-    margin: 0;
-    font-size: 2.5em;
-    width: auto;
-    height: auto;
-    background: transparent;
-    color: black;
-    border: none;
-    outline: none;
-}
-
-.toolTipClose > i {
-    margin: 0;
-}
-
-.gridItemHead {
-    font-size: 2.25em;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.gridItemBody {
-    font-size: 1.1em;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.readMore {
-    margin: 0.75em 0 0 0;
-    padding: 0.25em 0.75em;
-    background: transparent;
-    font-size: 1.25em;
-    color: black;
-    border: 2px solid black;
-    border-radius: 0.5em;
-    outline: none;
-}
-
-.comingSoon {
-    cursor: default;
-    margin: 0.75em 0 0 0;
-    padding: 0.25em 0.75em;
-    background: transparent;
-    font-size: 1.25em;
-    color: rgb(142, 142, 142);
-    border: 2px solid transparent;
-    border-radius: 0.5em;
-    outline: none;
-}
-
-.gallerySpace {
-    width: 100%;
-    height: 10px;
-}
-
-.menuWrapper {
-    display: flex;
-    flex-flow: row wrap;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    justify-content: space-between;
-    align-items: center;
-    align-self: center;
-    padding: 2.5%;
-    width: 100%;
-    min-height: 9em;
-    height: auto;
-    background: transparent;
-    z-index: 2;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.workBackButton {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    padding: 0.5em;
-    background: white;
-    color: black;
-    height: 100%;
-    border: none;
-    padding: 0.15em auto 0.1em auto;
-}
-
-.workBackButton p {
-    cursor: pointer;
-    font-size: 1.5em;
-}
-
-.workBackButton {
-    outline: none;
-}
-
-.galleryFilter {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-.filterItem {
-    grid-column: auto / span 1;
-    justify-content: center;
-    align-self: center;
-    padding: 0.25em;
-    width: auto;
-    height: 50%;
-}
-
-.filterLabel {
-    cursor: default;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0;
-}
-
-.workFilters {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-
-.filter {
-    cursor: pointer;
-    border: 2px solid black;
-    border-radius: 1em;
-    margin: 0.25em;
-    padding: 0.5em;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.filterEnabled {
-    background: red;
-    color: white;
-}
-
-#workArrow {
-    margin: 0.1em auto;
-    width: 45px;
-    height: 36px;
-    border-radius: 0;
-    font-size: 3em;
-}
-
-.menuButton {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    align-self: stretch;
-    padding: 0.5em;
-    background: white;
-    border: none;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition:  0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.menuButton:focus {
-    outline: none;
-}
-
-.menuText {
-    cursor: pointer;
-}
-
-#workText {
-    margin: 0 0.6em;
-}
-
-#menuButton {
-    opacity: 1;
-    background-color: transparent;
-    margin: auto 0;
-    width: 45px;
-    height: 36px;
-    cursor: pointer;
-    z-index: 3;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition:  0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.bars {
-    opacity: 1;
-    margin: 0 0 .5em 0;
-    width: 45px;
-    height: 8px;
-    border-radius: 14px;
-    background: black;
-    z-index: 3;
-    transition: 0.3s ease-in-out;
-}
-
-.bars.nightMode {
-    background: white;
-}
-
-#bar3 {
-    margin-bottom: 0;
-}
-
-#bar1.shift{
-    width: 45px;
-    -webkit-transform: rotate(-45deg) translate(-12px, 8.25px);
-    /*Only for min-width of 700px.*/
-    transform: rotate(-45deg) translate(-9px, 8.25px);
-    /*Only for min-width of 700px.*/
-}
-
-#bar2.shift{
-    opacity: 0;
-}
-
-#bar3.shift{
-    width: 45px;
-    -webkit-transform: rotate(45deg) translate(-13.25px, -10.75px);
-    /*Only for min-width of 700px.*/
-    transform: rotate(45deg) translate(-13.25px, -13.75px);
-    /*Only for min-width of 700px.*/
-}
-
-#about h1{
-    color: white;
-}
-
-#about p {
-    width: 60%;
-    color: white;
-}
-
-.contactText {
-    font-size: 2em;
-    margin-bottom: 2em;
-}
-
-.contactWrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
     align-content: center;
-    position: relative;
-    width: 100%;
-    height: auto;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition:  0.3s ease-in-out;
-    -ms-transition:  0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition:  0.3s ease-in-out;
-}
-
-.contactButton {
-    display: flex;
-    flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: transparent;
-    margin: 1em;
-    padding: 1em;
-    width: 40vw;
-    height: 10vh;
-    border: 3px solid black;
-    border-radius: 2em;
 }
 
-.contactButton a p {
-    font-size: 2em;
-}
-
-.contactIcons {
+.navLink {
+    cursor: pointer;
+    min-height: 20px;
+    height: auto;
+    padding: 0.5em 0.1em;
+    background-color: transparent;
     color: black;
-    font-size: 5em;
+    box-shadow: none;
 }
 
-.portImg {
-    width: 1em;
-    height: 1em;
+.selected, .selected:hover, .workButton.selected, .workButton.selected:hover {
+    border: 0.1em solid transparent;
+    background-color: black;
+    color: white;
+    box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
 }
 
-/* ----------------------------------------------------------- */
-/* -----------------End of Default Properties----------------- */
-/* ----------------------------------------------------------- */
+.navLink:hover, .navButton:hover, .workButton.selected:hover {
+    box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+}
 
 @media screen and (max-width: 250px) {
-    .sectionArrows {
-        flex-direction: column;
-        width: auto;
+    .name {
+        font-size: 24px;
     }
 
-    #mainArrow {
-        flex-direction: column;
-    }
-
-    #main #continue {
-        padding: 0;
-    }
-
-    .workFilters {
-        flex-direction: column;
+    .navLink {
+        margin: 0.25em;
+        padding: 0.4em 0.1em;
+        width: 90%;
     }
 }
 
-@media screen and (min-width: 250px) {
-    .workFilters {
-        flex-direction: row;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    #main h1 {
-        flex-grow: 0.25;
-        font-size: 30vw;
+@media screen and (min-width: 250px) and (max-width: 475px) {
+    .navGroup {
+        margin: 0em;
+        justify-content: center;
     }
 
-    #main p {
-        font-size: 10vw;
-    }
-
-    #intro h1 {
-        font-size: 20vw;
-    }
-
-    #intro p {
-        font-size: 8.5vw;
-    }
-
-    #mainArrow {
-        width: 100%;
-    }
-
-    #main #continue {
-        font-size: 1em;
-    }
-
-    .sectionArrows {
-        font-size: 2em;
-    }
-
-    #mainImage {
-        background-position: 50% 22.5%;
-    }
-
-    #work h1, #about h1, #contact h1 {
-        text-align: center;
-        font-size: 25vw;
-    }
-
-    .someBodyText {
-        font-size: 7.5vw;
-        text-align: center;
-    }
-
-    .workBackButton, .menuButton {
-        flex-direction: column;
-    }
-
-    .workBackButton p {
-        order: 0;
-    }
-
-}
-
-@media screen and (min-width: 350px) and (max-width: 475px) {
-    .workBackButton, .menuButton {
-        flex-direction: row;
-    }
-
-    .workBackButton {
-        flex-direction: row;
-    }
-
-    #main h1 {
-        flex-grow: 0.25;
-        font-size: 6em;
-    }
-
-    #mainBody {
-        flex-grow: 3;
-    }
-
-    #main p {
-        font-size: 8vw;
-    }
-
-    #intro h1, #work h1, #about h1, #contact h1 {
-        font-size: 4em;
-    }
-
-    #intro p {
-        font-size: 1.5em;
-    }
-
-    .sectionArrows {
-        font-size: 3em;
-    }
-
-    .someBodyText {
-        font-size: 1.5em;
-    }
-
-    #mainImage {
-        background-position: 45% 35%;
-    }
-
-    .workBackButton p {
-        order: 1;
+    .navLink {
+        margin: 0.5em 0.25em;
+        padding: 0.35em 0.1em;
+        width: 42.5%;
     }
 }
 
 @media screen and (max-width: 475px) {
-    #work {
+    .navGroup {
         justify-content: center;
     }
+}
 
-    .workBackButton {
-        order: 1;
-        width: 50%;
+@media screen and (min-width: 475px) and (max-width: 750px) {
+    .navGroup {
+        margin: 0em 5%;
+        justify-content: space-between;
     }
 
-    .workBackButton p {
-        font-size: 1.5em;
-        margin: 0.25em;
+    .navLink {
+        margin: 2% 0em;
+        width: 22.5%;
     }
 
-    #workArrow {
-        margin: 0.1em;
-        font-size: 2.5em;
+    #leftLink {
+        margin-left: 0em;
     }
 
-    .galleryFilter {
-        order: 0;
-        width: 100vw;
+    #rightLink {
+        margin-right: 0em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    nav {
+        position: relative;
+        justify-content: space-between;
     }
 
-    .menuButton {
-        order: 2;
-        width: 50%;
-        align-items: center;
-    }
-
-    #menuButton {
-        margin: 0.25em;
-    }
-
-    .filterItem {
-        width: 100%;
-        flex-grow: 1;
-    }
-
-    .workFilters {
+    .name {
         width: 100%;
     }
 
-    .filter {
-        padding: 0.5em;
+    .navGroup {
+        width: 100%;
     }
 
-    .filterLabel {
-        text-align: center;
+    .navLink {
+        border-radius: 2em;
+    }
+
+    .selected {
+        box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+    }
+
+    .navLink:hover {
+        border: 0.025em solid transparent;
+        box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    nav {
+        position: fixed;
+        justify-content: space-between;
+    }
+
+    .name {
         width: auto;
-        /* max-width: 100%; */
+        margin: 0em 0em 0em 5%;
     }
 
-    .sectionArrows {
-        padding: 0;
+    .navGroup {
+        margin: 0em 5% 0em 0em;
+        max-width: 650px;
+        border: none;
+        width: 47.50%;
+        justify-content: flex-end;
     }
 
-    #workLeft {
-        order: 2;
-    }
-
-    #workRight {
-        order: 3;
-    }
-
-    .contactButton {
-        width: 100vw;
+    .navLink {
         margin: 0.5em;
+        width: 20%;
+        border: 0.1em solid transparent;
+        border-radius: 1em;
     }
 
-    .contactIcons {
-        font-size: 2em;
+    .selected {
+        background-color: black;
+        color: white;
+        border: 0.1em solid transparent;
+    }
+
+    #leftLink {
+        margin-left: 0em;
+    }
+
+    #rightLink {
+        margin-right: 0em;
+    }
+
+    .navSideBar {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+    .navGroup {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .navSideBar {
+        display: none;
+    }
+}
+
+/*END of Section 1.2.*/
+
+/*Section 1.3 - Body elements.*/
+
+section, footer {
+    display: inline-block;
+    position: relative;
+    margin: 0em 5%;
+}
+
+.introduction {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: auto;
+}
+
+.introduction h1 {
+    width: 100%;
+}
+
+/* .introduction, .beginning {
+    padding-bottom: 2em;
+} */
+
+.workDescription {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.workDescription p {
+    min-height: 1em;
+}
+
+.homeImage a {
+    overflow: hidden;
+}
+
+.homeImage a img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.work, #aboutMe, .caseStudySol {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.caseStudySol {
+    /* margin-bottom: 3em; */
+    vertical-align: middle;
+}
+
+.work * {
+    align-self: stretch;
+    /* margin-bottom: 3em; */
+}
+
+.workHeading {
+    padding-bottom: 4em;
+}
+
+.workIntro {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-content: stretch;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0em 0.1em 2em 0.1em white;
+    z-index: 4;
+}
+
+.workIntro, .workIntro *:not(.workButton) {
+    -webkit-transition: 0s ease-in-out;
+    -moz-transition:  0s ease-in-out;
+    -ms-transition: 0s ease-in-out;
+    -o-transition: 0s ease-in-out;
+    transition:  0s ease-in-out;
+}
+
+.stickyButtons {
+    text-align: center;
+    width: 100%;
+}
+
+.stickyButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#aboutMe {
+    align-items: flex-start;
+}
+
+.caseStudySol > * {
+    align-self: center;
+}
+
+.gridItem, .imageSlideshow, .imageGroup img, .imageContainer  {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0em 0em;
+    /* margin: 5% 0em 10% 0em; */
+    /* padding: 1em 0em; */
+    /* border: 0.1em solid black; */
+    vertical-align: baseline;
+    align-items: baseline;
+    align-content: baseline;
+    justify-content: space-between;
+    /* border: 0.1em solid black; */
+    border-radius: 25px;
+    box-shadow: 0em 0.25em 1.5em -0.25em black;
+}
+
+.gridItem, .imageSlideshow, .imageContainer  {
+    width: 47.5%;
+}
+
+.imageSlideshow, .imageGroup img {
+    cursor: pointer;
+}
+
+.gridItem {
+    margin-bottom: 3em;
+}
+
+.gridItem:hover {
+    cursor: pointer;
+    transform: scale(1.075, 1.075);
+    box-shadow: 0em 0.25em 2.5em -1em black;
+}
+
+.gridItem a {
+    overflow: hidden;
+    align-items: stretch;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.gridItem h3{
+    text-align: center;
+    font-size: 30px;
+    height: 30%;
+    /* min-height: 75px; */
+}
+
+/* .gridItem img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+} */
+
+.design {
+    width: 100%;
+    height: 25em;
+    object-fit: cover;
+}
+
+#formfactories {
+    object-position: 10% 50%;
+}
+
+#designLeap {
+    object-position: 0% 50%;
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
+}
+
+#cinemunch {
+    object-position: 0% 0%;
+}
+
+.media {
+    width: 100%;
+    min-height: 50%;
+    height: auto;
+    object-fit: contain;
+}
+
+.imageSlideshow img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.gridItem img {
+    border-radius: 25px 25px 0px 0px;
+}
+
+.imageSlideshow img, .imageGroup img, .imageContainer {
+    border-radius: 25px;
+}
+
+.backgroundImage:first-of-type {
+    border-radius: 25px 25px 0px 0px;
+}
+
+/* #ttvReel {
+    object-fit: cover;
+} */
+
+.imageGroup {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-items: stretch;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.imageGroup {
+    width: 100%;
+}
+
+.imageGroup img {
+    height: auto;
+    object-fit: contain;
+    overflow: hidden;
+    align-items: stretch;
+    align-self: stretch;
+}
+
+#careerCenter {
+    object-fit: cover;
+    -webkit-filter: saturate(2);
+    filter: saturate(2);
+}
+
+#hyundaiStudentTeam, #dsgn100 {
+    object-fit: cover;
+}
+
+#cpep {
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
+}
+
+#corgantTeam {
+    object-fit: cover;
+    object-position: left;
+}
+
+.caseStudyIntro {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.projectTitle, .tags {
+    width: 100%;
+}
+
+.projectTitle {
+    text-align: left;
+}
+
+.tags {
+    text-align: center;
+}
+
+.gridItem a *:not(:first-child) {
+    padding: 0em 5%;
+}
+
+.gridItem h6 {
+    margin-bottom: 1em;
+}
+
+.gridItem p {
+    margin-bottom: 5%;
+}
+
+.projectTitle {
+    margin: 0.5em 0;
+}
+
+.greeting {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5em;
+}
+
+.imageContainer {
+    overflow: hidden;
+    width: 100%;
+    z-index: 3;
+}
+
+figcaption {
+    padding: 0.5em;
+    background-color: white;
+    width: 100%;
+    border-radius: 0px 0px 25px 25px;
+    text-align: center;
+    z-index: 4;
+}
+
+.backgroundImage {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.work {
+    display: flex;
+    justify-content: space-between;
+    /* padding-top: 2em; */
+}
+
+.navSideBar {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3%;
+    width: 25%;
+    height: 100vh;
+    margin: 2em 1em 1em 0em;
+    padding: 0em 0.5em 10em 0em;
+    background-color: transparent;
+    overflow-x: visible;
+    overflow-y: scroll;
+    z-index: 4;
+}
+
+.navSideBar::-webkit-scrollbar {
+    display: none;
+}
+
+.navSideBar a {
+    padding-left: 0.5em;
+}
+
+.navSideBar p {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.navButton {
+    cursor: pointer;
+    margin: 0.5em 0;
+    padding: 0.25em 0.75em;
+    text-align: left;
+    background-color: transparent;
+    color: black;
+    border: 0.15em solid transparent;
+    border-radius: 10px;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.navButton a {
+    width: auto;
+}
+
+.navSelected {
+    font-weight: bold;
+    /* font-size: 18px; */
+    color: blue;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0em 0em;
+    height: auto;
+    /* overflow-y: scroll; */
+}
+
+.content::-webkit-scrollbar {
+    opacity: 0;
+}
+
+.section {
+    font-size: 2.5em;
+}
+
+.button {
+    cursor: pointer;
+    min-height: 30px;
+    height: auto;
+    margin: 0em 2em 1em 0em;
+    padding: 1em 1.5em;
+    background-color: transparent;
+    color: black;
+    border: 0.15em solid #707070;
+    border-radius: 1em;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+    border: 0.15em solid transparent;
+    box-shadow: 0em 1em 1.5em -0.25em #636363;
+}
+
+.workButton {
+    margin: 0em 0em 1em 0em;
+    padding: 0.5em;
+}
+
+.workButton:hover {
+    background-color: transparent;
+    color: black;
+    border: 0.15em solid #707070;
+    box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+}
+
+.workButton.selected:hover {
+    box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+}
+
+.workButton.selected {
+    box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+}
+
+.resumeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.viewResume {
+    width: 90%;
+}
+
+footer {
+    margin: 1em 5%;
+    margin-bottom: 2em;
+    width: 90%;
+}
+
+footer * {
+    color: black;
+}
+
+#viewCV {
+    margin: 1em 5%;
+    width: 90%;
+}
+
+.externalLink {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+.video {
+    display: inline-block;
+    position: relative;
+    margin-top: 2em;
+	padding-bottom: 56.25%;
+    width: 100%;
+	height: 0;
+}
+
+.video iframe {
+    position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.mediaContent {
+    padding-top: 0;
+}
+
+.videoSeries {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: top;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.bodyContent {
+    margin: 0em 0em 0.5em 3em;
+}
+
+.subheading {
+    line-height: 1.4;
+}
+
+.bodyContentFlex {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: top;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bodyGrid {
+    display: grid;
+    justify-content: space-between;
+    overflow: visible;
+    margin: 3em 0em;
+}
+
+.imageTile {
+    width: 100%;
+    height: auto;
+    align-items: flex-end;
+    align-self: center;
+    justify-content: flex-end;
+    border-radius: 25px;
+    box-shadow: 0em 0.25em 1.5em -0.25em black;
+    overflow: hidden;
+}
+
+#grid1 h4 {
+    margin-left: 2em;
+}
+
+.grid4 {
+    align-self: stretch;
+}
+
+.stretch {
+    transform: scale(1.2);
+}
+
+#esPoster {
+    height: auto;
+}
+
+#secondaryResearch1 {
+    min-height: 300px;
+    height: 100%;
+    object-position: top;
+}
+
+#interview1 {
+    height: auto;
+    object-position: right;
+}
+
+#interview2, #interview3 {
+    min-height: 300px;
+}
+
+#interview3 {
+    height: 100%;
+    object-position: top;
+}
+
+#journeyMap1 {
+    height: auto;
+    object-position: top;
+}
+
+#journeyMap3 {
+    min-height: 400px;
+    height: 100%;
+}
+
+#grid5 h5, #grid7 h4 {
+    margin-left: 1.5em;
+}
+
+#grid5 p:not(#insightsText):not(#findingsText),
+#grid7 p:not(#problemSpaces):not(#problemText), #grid8 p:not(.ideationText) {
+    margin-left: 4em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0em 0em 0em 2em;
+  padding: 0em 0em 0.5em 0em;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+#designSprint3 {
+    grid-column: span 2;
+}
+
+.noBottom {
+    margin-bottom: 0em;
+}
+
+.marginBottom {
+    margin-bottom: 3em;
+}
+
+#groupedStickies {
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 200px) {
+    /* .introduction, .beginning {
+        padding-top: 45vh;
+    } */
+
+    /* .navSideBar {
+        margin-top: 45vh;
+    } */
+
+    .workButton {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 475px) {
+    /* .introduction, .beginning {
+        padding-top: 29.75vh;
+    } */
+
+    /* .navSideBar {
+        margin-top: 29.75vh;
+    } */
+
+    .workButton {
+        width: 47.5%;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    /* .backgroundImage {
+        object-fit: cover;
+    } */
+
+    .workIntro {
+        margin: 0 5%;
+    }
+
+    .workButton {
+        margin: 0em 0em 1em 0em;
+    }
+
+    .bodyContent {
+        margin-left: 1em;
     }
 }
 
 @media screen and (min-width: 475px) {
-    #main #continue {
-        font-size: 1.1em;
+    .flexItem1 {
+        width: 55%;
     }
 
-    .galleryFilter {
-        width: calc(100% - 15em);
-        flex-direction: column;
+    .flexItem2 {
+        width: 35%;
     }
 
-    .filter{
-        padding: 0.5em 1em;
-        width: 33.33%;
+    #grid1 {
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 1em 2em;
     }
 
-    .workBackButton, .menuButton {
-        width: 6em;
+    .bodyGrid h2 {
+        grid-area: 1 / 1 / 2 / 3;
     }
 
-}
-
-@media screen and (min-width: 475px) and (max-width: 600px) {
-    #main h1 {
-        font-size: 7.5em;
+    #grid1 h4 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        /* margin-left: 1em; */
     }
 
-    #intro h1 {
-        font-size: 5em;
-    }
-
-    #intro p {
-        font-size: 1.5em;
-    }
-
-    #mainImage {
-        background-position: 42.5% 25%;
-    }
-
-    .contactText {
-        font-size: 1.5em;
-        margin-bottom: 1em;
-    }
-
-    .contactIcons {
-        font-size: 3em;
+    #grid1 p {
+        grid-column-start: 2;
+        grid-column-end: 3;
     }
 }
 
-@media screen and (max-width: 600px) {
-    section {
-        padding: 0.75% 5%;
+@media screen and (min-width: 475px) and (max-width: 750px) {
+    /* .introduction, .beginning {
+        padding-top: 22.5vh;
+    } */
+
+    /* .navSideBar {
+        margin-top: 22.5vh;
+    } */
+
+    .introduction {
+        width: 75%;
     }
 
-    #yonderURC {
-        left: 0%;
+    .greeting {
+        font-size: 50px;
     }
 
-    #sgfBlackBear {
-        left: 1%;
+    .introduction p{
+        font-size: 20px;
+    }
+
+    .workDescription {
+        margin: 1em 0 2em 0;
+        width: 45%;
+    }
+
+    .imageContainer {
+        height: 75vh;
+    }
+
+    #matImage {
+        object-fit: fill;
+        transform: translateY(-7.5em) scaleX(1.1) scaleY(1.5);
+    }
+
+    #grid1 {
+        grid-gap: 1em 2em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .work {
+        padding-top: 2em;
+    }
+
+    .workButton {
+        width: auto;
     }
 
     .gridItem {
-        max-width: 95vw;
+        width: 100%;
     }
 
-    .contactText {
-        font-size: 1.5em;
-        margin-bottom: 1em;
-    }
-
-    .contactButton a p {
-        font-size: 1.5em;
+    #grid2 *, #grid3 *, #grid4 *, #grid6 *{
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 }
 
-@media screen and (min-width: 600px) {
-    .contactButton {
-        width: 40vw;
+@media screen and (max-width: 750px) {
+    .imageContainer {
+        position: relative;
+        width: 100%;
+    }
+
+    #aboutMe > * {
+        margin: 0em 0em 3em 0em;
+    }
+
+    .imageGroup img {
+        margin: 0.75em 0em;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .video iframe {
+    	width: 100%;
+    	height: 100%;
+    }
+
+    .bodyGrid {
+        margin: 0em 0em 3em 0em;
+        grid-gap: 2em 0em;
+    }
+
+    #grid1 {
+        grid-gap: 1em 0em;
+    }
+
+    #grid1 h4 {
+        margin-left: 1em;
+    }
+
+    #grid1 p {
+        margin-left: 3em;
+    }
+
+    .bodyGrid:not(#grid4){
+        grid-gap: 2em 1em;
+    }
+
+    #grid2 *, #grid3 *, #grid5 *. #grid6 * {
+        grid-column: span 1;
+    }
+
+    #grid4 {
+        grid-gap: 2em 2em;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .greeting {
+        width: 100%;
+        font-size: 4em;
+    }
+
+    .introduction p {
+        margin: 0% 5% 2.5% 0%;
+        font-size: 22px;
+    }
+
+    .introduction, .beginning {
+        padding-top: 15vh;
+    }
+
+    .opening {
+        min-height: 80vh;
+    }
+
+    .workDescription {
+        margin: 2em 4em 2em 0;
+        width: 40%;
+    }
+
+    .workButton {
+        width: 47.5%;
+        /* max-width: 150px; */
+    }
+
+    .navSideBar {
+        padding-top: 70px;
+        max-width: 250px;
+    }
+
+    .content {
+        padding-top: 12.5vh;
+    }
+
+    .workIntro {
+        justify-content: flex-start;
+    }
+
+    .greeting p {
+        width: 100%;
+        margin-right: 20%;
+    }
+
+    /* .introduction p {
+        width: 45%;
+    } */
+
+    /* .introduction {
+        width: 45%;
+    } */
+
+    #aboutMe > * {
+        margin: 0em 0em 3em 0em;
+    }
+
+    .introImage {
+        width: 47.5%;
+    }
+
+    .caseStudyIntro h1 {
+        width: 100%;
+    }
+
+    .caseStudyIntro p {
+        width: 100%;
+        margin-right: 2em;
+        font-size: 20px;
+    }
+
+    /* .beginning, .mediaStudy {
+        min-height: 80vh;
+    } */
+
+    .mediaStudy p {
+        width: 60%;
+    }
+
+    .seeProcess {
+        /* margin: 0.5em 0;
+        padding: 1em 0; */
+        width: 50%;
+    }
+
+    .backgroundImage {
+        object-fit: cover;
+        transform: scale(1);
+    }
+
+    #dLeapImage {
+        object-position: 50% 0%;
+        transform: scale(1);
+    }
+
+    #formfactoriesMain {
+        object-fit: contain;
+        object-position: 0% 50%;
+        transform: scale(1);
+    }
+
+    .imageGroup img {
+        margin: 1.5em 0em;
+    }
+
+    .contact {
+        font-size: 22px;
+    }
+
+    .video {
+        width: 100%;
+    	height: 85%;
+    }
+
+    .video iframe {
+    	width: 85%;
+    	height: 85%;
+    }
+
+    .videoSeries {
+        width: 80%;
+    }
+
+    #grid2 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-gap: 3em 2em;
+    }
+
+    #grid3, #grid4, #grid6, #grid9, #grid10, #grid11, #grid13 {
+        grid-gap: 3em 3em;
+    }
+
+    #grid2 #probBG {
+        align-self: center;
+    }
+
+    #grid2 img {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    #constraints {
+        grid-area: 3 / 1 / 4 / 3;
+    }
+
+    #solution {
+        grid-area: 4 / 1 / 5 / 3;
+    }
+
+    .indent {
+        margin-left: 3em;
+    }
+
+    #grid3, #grid6, #grid8, #grid9, #grid10, #grid14, #grid15 {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    #grid3 .gridContent {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    #mindMap {
+        transform: scale(1.25);
+    }
+
+    #grid4, #grid5, #grid11, #grid12, #grid13 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #grid4, #grid5, #grid12, #grid13 {
+        grid-gap: 2em 2em;
+    }
+
+    #grid8, #grid11, #grid14, #grid15 {
+        grid-gap: 3em 3em;
+    }
+
+    .stretch {
+        object-fit: cover;
         height: 100%;
-        margin: 0.5em;
-        padding: 1.5em;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 850px) {
-    #main h1 {
-        font-size: 8.25em;
     }
 
-    #main p {
-        font-size: 5.75vw;
+    #grid4Last {
+        grid-column: span 2;
+        -webkit-filter: brightness(150%);
+        filter: brightness(150%);
     }
 
-    #intro h1, #work h1, #about h1, #contact h1 {
-        font-size: 4.5em;
+    #grid5 .heading, #grid7 .heading {
+        grid-column: span 2;
     }
 
-    #intro p {
-        font-size: 3.5vw;
+    .findings {
+        grid-column: span 1;
     }
 
-    #mainImage {
-        background-position: 37.5% 50%;
+    .insights {
+        grid-column: span 2;
     }
 
-    .someBodyText {
-        font-size: 3.5vw;
+    #insightsText {
+        margin-left: 0em;
     }
 
-    .contactText {
-        font-size: 2em;
-        margin-bottom: 2em;
+    .insights p {
+        margin-left: 3em;
     }
 
-}
-
-@media screen and (max-width: 850px) {
-    .workGallery {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media screen and (min-width: 850px) and (max-width: 1150px){
-    .workGallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gridItem, .left.workToolTip, .right.workToolTip {
-        max-width: calc((100vw / 2) - 1.25em);
-    }
-
-    .left.workToolTip, .right.workToolTip {
-        width: calc((100vw / 2) - 1.5em);
-    }
-}
-
-@media screen and (max-width: 850px) {
-
-}
-
-@media screen and (min-width: 850px) {
-    #main h1 {
-        font-size: 8.5em;
-    }
-
-    #main p {
-        font-size: 2em;
-    }
-
-    /* #workNav {
-        grid-template-columns: auto 4fr auto;
-        grid-template-rows: repeat(1, 1fr);
-        grid-gap: 1em;
-        padding: 2.5%;
-    } */
-
-    .galleryFilter {
-        flex-direction: row;
-    }
-
-    #yonderURC {
-        left: 0%;
-    }
-
-}
-
-@media screen and (min-width: 850px) and (max-width: 1150px){
-    section h1 {
-        font-size: 5.5em;
-    }
-
-    #intro p {
-        font-size: 2.5vw;
-    }
-
-    #about p {
-        font-size: 2em;
-    }
-
-    .someBodyText {
-        font-size: 2.5vw;
-    }
-
-}
-
-@media screen and (min-width: 1150px) {
-    #intro h1, #work h1, #about h1, #contact h1 {
-        font-size: 7.5em;
-    }
-
-    #intro p {
-        font-size: 2.5vw;
-    }
-
-    #work {
-        padding: 1em 4em 0 4em;
-    }
-
-    .someBodyText {
-        font-size: 2.5vw;
-    }
-
-    .workGallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    #sgfBlackBear {
-        left: 0%;
-    }
-
-    .gridItem, .left.workToolTip, .right.workToolTip {
-        max-width: calc((100vw / 3) - 3.4em);
-    }
-
-    /* .workGallery {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-    }
-
-    .gridItem {
-        max-width: calc((100vw / 4) - 1.75em);
-    }
-
-    .left.workToolTip, .right.workToolTip {
-        max-width: calc((100vw / 4) - 1.75em);
+    /* #grid8 .imageTile {
+        grid-column: span 1;
     } */
 }
+
+@media screen and (min-width: 750px) and (max-height: 450px){
+    nav {
+        position: relative;
+    }
+
+    .introduction, .beginning {
+        padding-top: 2vh;
+    }
+
+    .navSideBar {
+        top: 10%;
+    }
+
+    .videoSeries {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px){
+    #matImage {
+        transform: translateX(1vw) translateY(-25vh) scale(1.25);
+    }
+
+    .introImage {
+        height: 50%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+
+    /* .caseStudyIntro p {
+        font-size: 20px;
+    } */
+
+    #greeting {
+        font-size: 50px;
+    }
+
+    .introduction p {
+        width: 75%;
+    }
+
+    #grid2, #grid3 {
+        grid-template-columns: 3fr 4fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .imageContainer {
+        height: 50%;
+        max-height: 650px;
+    }
+
+    .imageSlideshow, .imageGroup img {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .introduction p {
+        width: 60%;
+    }
+
+    .introImage {
+        height: 40%;
+        object-fit: cover;
+        object-position: 50% -50%;
+    }
+
+    .imageSlideshow, .introText {
+        width: 47.5%;
+    }
+
+    .caseStudyIntro {
+        margin-right: auto;
+        width: 45%;
+    }
+
+    .caseStudyIntro p {
+        font-size: 26px;
+    }
+
+    .imageContainer {
+        width: 50%;
+        height: 50%;
+        /* height: 50%; */
+    }
+
+    #formIntro {
+        width: 40%;
+    }
+
+    #formFactoriesPic {
+        width: 55%;
+    }
+
+    #matImage {
+        transform: scale(1.5);
+    }
+
+    #greeting {
+        font-size: 64px;
+    }
+
+    .navSideBar {
+        height: 100vh;
+    }
+
+    .content {
+        width: 67.5%;
+    }
+
+    .imageGroup img {
+        width: 47.5%;
+    }
+
+    #grid2, #grid3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+    .content {
+        width: 72.5%;
+    }
+
+}
+
+@media screen and (min-width: 1200px){
+    .content {
+        width: 75%;
+    }
+
+    #grid3 {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+/*END of Section 1.3.*/
+
+/*Section X - Media query changes to element properties for responsive web design.*/
+
+/*END of Section X and CSS file.*/

@@ -1,904 +1,514 @@
-    "use strict";
+"use strict";
+
+let nav = $('nav'),
+    navGroup = $('.navGroup'),
+    introduction = $('.introduction'),
+    workIntro = $('.workIntro'),
+    workIntroHeading = $('.workIntro p'),
+    stickButtons = $('.stickyButtons'),
+    workButton = $('.workButton'),
+    designButton = $('#designButton'),
+    mediaButton = $('#mediaButton'),
+    work = $('.work'),
+    design = $('#design'),
+    media = $('#media'),
+    beginning = $('.beginning'),
+    navSideBar = $('.navSideBar'),
+    anchorLinks = $('.navSideBar a'),
+    navButton = $('.navButton'),
+    imageContainer = $('.imageContainer'),
+    fixedElements = $('section:first-child', '.caseStudyIntro', '.navSideBar'),
+    section = $('.section'),
+    content = $('.content'),
+    embedResume = $('.embedResume');
+
+    fixedElements.addClass('notransition'); // Disable transitions
+    fixedElements.css('padding-top', nav.outerHeight(true) * '1.2');
+    fixedElements.offsetHeight; // Trigger a reflow, flushing the CSS changes
+    fixedElements.removeClass('notransition'); // Re-enable transitions
 
 $(document).ready(function() {
-    // ----------------------- VARIABLE DECLARATIONS HERE -----------------------
+    let htmlPageName = location.href.split('/').slice(-1),
+        pageNameString = htmlPageName.toString().slice(0, -5),
+        defaultIndex, temporaryIndex;
 
-    /* List of variable declarations that specify classes and IDs of elements
-       within the body for index.html.*/
-
-       let scrollProgressBar = $('.scrollProgressBar'),
-           fullPage = $('.fullPage'),
-           section = $('section'),
-           leftArrow = $('.leftArrow'),
-           rightArrow = $('.rightArrow'),
-           mainArrow = $('#mainArrow'),
-           work = $('#work'),
-           workGallery = $('.workGallery'),
-           gridItem = $('.gridItem'),
-           // workGallery = $('.workGallery'),
-           // gridBlock = $('.gridBlock'),
-           // galleryFilter = $('.galleryFilter'),
-           // filterContainer = $('.filtr-container'),
-           // workGridItem = $('.workGridItem'),
-           workImage = $('.workImage'),
-           workGridText = $('.workGridText'),
-           paddingContainer = $('.paddingContainer'),
-           workNav = $('#workNav'),
-           filterItem = $('.filterItem'),
-           mainGridItem = $('.mainGridItem'),
-           filter = $('.filter'),
-           workBackButton = $('.workBackButton'),
-           menu = $('.menu'),
-           menuButton = $('.menuButton'),
-           workLink = $('#workLink'),
-           aboutLink = $('#aboutLink'),
-           contactLink = $('#contactLink'),
-           workToolTip = $('.workToolTip'),
-           toolTipClose = $('.toolTipClose')
-           // allFilter = $('#allFilter'),
-           // shuffleFilter = $('#shuffleFilter');
-       ;
-
-       /* List of variable declarations for project.html.*/
-
-        let introGrid = $('.introGrid'),
-            projectSpacing = $('.projectSpacing'),
-            navigation = $('.navigation'),
-            tabSection = $('.tabSection'),
-            arrow = $('.arrow'),
-            left = $('.left'),
-            right = $('.right'),
-            dropUpMenu = $('.dropUpMenu'),
-            dropUpButton = $('.dropUpButton'),
-            getDropUp = $('#dropUp .dropUpButton'),
-            dropUpSection = $('.dropUpSection'),
-            menuTabs = $('#menuTabs'),
-            dropUpTab = $('.dropUpTab'),
-            dropUp = $('#dropUp'),
-            dropUpText = $('#dropUp p'),
-            tab = $('.tab'),
-            projectMenu = $('#projectMenu'),
-            mainMenu = $('.mainMenu');
-
-   // --------------------- END OF VARIABLE DECLARATIONS ----------------------
-
-
-   // ----------------------- INTERACTIVE EFFECTS HERE ------------------------
-
-   console.log('fullPage width: ' + fullPage.outerWidth() + ' sectionWidth: ' + section.outerWidth());
-   // localStorage.clear();
-   let htmlPageName = location.href.split('/').slice(-1),
-       pageNameString = htmlPageName.toString(),
-       indexArray = retrieveIndexArray(),
-       defaultIndex;
-   console.log(pageNameString);
-   console.log(indexArray);
-   if (pageNameString == null || pageNameString == '') {
-       console.log('pageNameString undefined, changed to index.html.');
-       pageNameString = 'index.html';
-       if (defaultIndex == null) {
-         console.log('defaultIndex undefined, changed to 0.');
-         defaultIndex = getIndex(pageNameString, indexArray);
-       }
-   } else {
-       defaultIndex = getIndex(pageNameString, indexArray);
-   }
-
-  console.log('pageNameString: ' + pageNameString);
-  console.log('Default Index: ' + defaultIndex);
-   if (defaultIndex == null) {
-       console.log('Default index undefined, changed to 0.');
-       defaultIndex = 0;
-   }
-  console.log('Default Index: ' + defaultIndex);
-
-   function retrieveIndexArray() {
-       if (localStorage.currentIndex) {
-           let getIndexArray = JSON.parse(JSON.stringify(localStorage.getItem('currentIndex')));
-           console.log('Index array: ' + getIndexArray);
-           let convertArray = JSON.parse(getIndexArray);
-           console.log('Convert array: ' + convertArray);
-           return convertArray;
-       } else if (typeof(Storage) !== 'undefined') {
-           let indices = {
-               'indexHtml' : '0',
-               'projectHtml' : '0'
-           };
-           console.log(indices);
-           localStorage.setItem('currentIndex', JSON.stringify(indices));
-           let getIndexArray = JSON.parse(JSON.stringify(localStorage.getItem('currentIndex')));
-           console.log('Index array: ' + getIndexArray);
-           let convertArray = JSON.parse(getIndexArray);
-           console.log(convertArray);
-           return convertArray;
-       } else {
-           console.log('Current index not retrieved. Sorry, your browser does not support Web Storage for localStorage...');
-       }
-   }
-
-   function storeDefaultIndex(pageNameString, index) {
-       let getIndexArray = JSON.parse(localStorage.getItem('currentIndex')),
-           stringify = JSON.stringify(getIndexArray);
-           console.log('index: ' + index);
-           console.log('stringify: ' + stringify);
-           console.log('pageNameString: ' + pageNameString);
-       let changedArray = changeIndexArray(getIndexArray, pageNameString, index);
-       localStorage.setItem('currentIndex', changedArray);
-       console.log('Stored index: ' + localStorage.getItem('currentIndex'));
-   }
-
-   function changeIndexArray (indexArray, pageName, index) {
-       // console.log('stringify: ' + stringify);
-       console.log('pageName: ' + pageName);
-       console.log('index: ' + index);
-        if (indexArray.indexHtml == null) {
-            indexArray.indexHtml = 0;
-        } else {
-            if (pageName == 'index.html') {
-                indexArray.indexHtml = index.toString();
-                console.log('Changed index to: ' + indexArray.indexHtml);
-            }
-        }
-        if (indexArray.projectHtml == null) {
-            indexArray.projectHtml = 0;
-        } else {
-            if (pageName == 'fingo.html') {
-                indexArray.projectHtml = index.toString();
-                console.log('Changed project index to: ' + indexArray.projectHtml);
-            }
-        }
-       // switch (pageName) {
-       //     case 'index.html':
-       //         if (indexArray.indexHtml == null) {
-       //             indexArray.indexHtml = 0;
-       //         }
-       //         indexArray.indexHtml = String(index);
-       //         console.log('indexArray -index: ' + indexArray.indexHtml);
-       //     break;
-       //     case 'project.html':
-       //         if (indexArray.projectHtml == null) {
-       //              indexArray.projectHtml = 0;
-       //         }
-       //         indexArray.projectHtml = String(index);
-       //         console.log('indexArray - project: ' + indexArray.projectHtml);
-       //     break;
-       //     case undefined:
-       //         if (indexArray.indexHtml == null) {
-       //             indexArray.indexHtml = 0;
-       //         }
-       //         indexArray.indexHtml = String(index);
-       //         console.log('indexArray - index: ' + indexArray.indexHtml);
-       //         if (indexArray.projectHtml == null) {
-       //              indexArray.projectHtml = 0;
-       //         }
-       //         indexArray.projectHtml = String(index);
-       //         console.log('indexArray - project: ' + indexArray.projectHtml);
-       //     break;
-       //     default:
-       //         indexArray.indexHtml = index;
-       //         indexArray.projectHtml = index;
-       // }
-       console.log('indexArray.indexHtml: ' + indexArray.indexHtml);
-       console.log('indexArray.projectHtml: ' + indexArray.projectHtml);
-       let getIndexArray = JSON.stringify(indexArray);
-       console.log('getIndexArray: ' + getIndexArray);
-       return getIndexArray;
-   }
-
-   function getIndex (pageName, array) {
-       let getIndex;
-       switch (pageName) {
-           case 'index.html':
-               if (array.indexHtml == null) {
-                   array.indexHtml = 0;
-               }
-                getIndex = parseInt(array.indexHtml);
-           break;
-           case 'project.html':
-                if (array.projectHtml == null) {
-                    array.projectHtml = 0;
-                }
-                getIndex = parseInt(array.projectHtml);
-           break;
-           case undefined:
-               if (array.indexHtml == null) {
-                   array.indexHtml = 0;
-               }
-               if (array.projectHtml == null) {
-                   array.projectHtml = 0;
-               }
-                getIndex = parseInt(array.indexHtml);
-           break;
-       }
-       console.log('indexArray.indexHtml: ' + array.indexHtml);
-       console.log('indexArray.projectHtml: ' + array.projectHtml);
-       console.log('indexArray: ' + indexArray);
-       return getIndex;
-   }
-
-   scrolling(pageNameString, defaultIndex);
-   leftArrow.on('click', previousTab);
-   rightArrow.on('click', nextTab);
-   mainArrow.on('click', toggleMainArrow);
-   workPaddingBottom();
-
-   function toggleMainArrow() {
-       mainArrow.css('translate', (defaultIndex > 0) ? 'translateX(100vw)' : 'translateX(0)');
-   }
-
-  let scrollHeight = 0;
-   $(document).keyup(function(e) {
-   switch(e.which) {
-
-       // case 33: //pg up
-       //     scrollUp(scrollHeight, 6);
-       // break;
-       //
-       // case 34: //pg dn
-       //     scrollDown(scrollHeight, 6);
-       // break;
-
-       case 37: // left
-           previousTab();
-       break;
-
-       // case 38: //up
-       //     scrollUp(scrollHeight, 3);
-       // break;
-
-       case 39: //right
-           nextTab();
-       break;
-
-       // case 40: //down
-       //     scrollDown(scrollHeight, 3);
-       // break;
-
-       default: return; // exit this handler for other keys
-       }
-       event.stopImmediatePropagation();
-       // e.preventDefault(); // prevent the default action (scroll / move caret)
-   });
-
-   let lastScrollLeft = 0;
-    // $(window).scroll(function() {
-    //     let getScrollLeft = section.eq(defaultIndex).outerWidth(),
-    //         bodyWidth = fullPage.outerWidth() * (section.length - 1),
-    //         distanceWidth = getScrollLeft/bodyWidth * 100;
-    //     console.log('getScrollLeft: ' + getScrollLeft + ' bodyWidth: ' + bodyWidth + ' distanceWidth: ' + distanceWidth);
-    //
-    //     if (lastScrollLeft < getScrollLeft && distanceWidth >= 20) {
-    //         nextTab();
-    //     }
-    //     if (lastScrollLeft > getScrollLeft && distanceWidth >= 20) {
-    //         previousTab();
-    //     }
-    // });
-
-    // work.on('scroll', function(){
-    //     console.log('Window scrollTop: ' + $(this).scrollTop() + ' Filter top: ' + galleryFilter.offset().top + galleryFilter.outerHeight(true));
-    //     // stickyNav();
-    // });
-
-    filter.on('click', function() {
-        workPaddingBottom();
-    });
-
-   let resizeResponse, interval = 300;
-   $(window).resize(function() {
-       resizeResponse = setTimeout( function () {
-           if (defaultIndex != 0 && defaultIndex < section.length) {
-               console.log('Window resized.');
-               scrolling(pageNameString, defaultIndex);
-           }
-       }, interval);
-       // checkBrowserWidth();
-       workPaddingBottom();
-       projectPaddingBottom();
-       assignToolTipType();
-       adjustDropMenuWidth();
-   });
-
-  //  function checkBrowserWidth () {
-  //      if ($(window).width() <= 600) {
-  //          let options = { filterOutCss: {width: '0'}, filterInCss: {width: '100%'}}
-  //          filterWorkGallery.filterizr('setOptions', options);
-  //      }
-  //  }
-  // checkBrowserWidth();
-
-    $.event.special.swipe.horizontalDistanceThreshold = 50;
-    section.on("swipeleft", function() {
-       // if ($.event.special.swipe.horizontalDistanceThreshold > 60) {
-           nextTab();
-           console.log('Swiped left.');
-       // }
-    });
-    section.on("swiperight", function() {
-       // if ($.event.special.swipe.horizontalDistanceThreshold > 60) {
-           previousTab();
-           console.log('Swiped right.');
-       // }
-    });
-
-    left.on('click', previousTab);
-    right.on('click', nextTab);
-    arrow.on('click', replaceDropText);
-    tab.on('click', changeTab);
-    dropUpButton.on('click', function () {
-        dropUpSection.toggleClass('showMenu');
-        if (dropUpSection.hasClass('showMenu')) {
-            $('.dropUpButton i').removeClass('fa-angle-up').addClass('fa-angle-down');
-        } else {
-            $('.dropUpButton i').removeClass('fa-angle-down').addClass('fa-angle-up');
-        }
-    });
-    replaceDropText();
-    dropUpTab.on('click', changeTab);
-    dropUpTab.on('click', function () {
-        dropUpSection.removeClass('showMenu');
-        $('.dropUpButton i').removeClass('fa-angle-down').addClass('fa-angle-up');
-    });
-
-    function replaceDropText() {
-        console.log('ReplaceDropText: ' + dropUpTab.eq(defaultIndex).text());
-        dropUpText.text(dropUpTab.eq(defaultIndex).text());
+    $.mobile.loading('hide'); //Important to hide the odd "loading" text that appears when jQuery mobile is installed.
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        embedResume.hide();
+    } else {
+        embedResume.show();
     }
 
-   function previousTab() {
-       if (defaultIndex == 0 && defaultIndex - 1 < 0) {
-           // Do nothing.
-       } else {
-           defaultIndex -= 1;
-           scrolling(pageNameString, defaultIndex);
-       }
-   }
+    console.log(pageNameString);
 
-   function nextTab() {
-       if (defaultIndex == section.length - 1 && defaultIndex + 1 >= section.length) {
-           // Do nothing.
-       } else {
-           defaultIndex += 1;
-           scrolling(pageNameString, defaultIndex);
-       }
-   }
+    $(".seeProcess").on('click', function(event) {
+        let hash = this.hash;
+        $('html, body').animate({
+            scrollTop: parseInt($(hash).offset().top - nav.outerHeight(true))
+        }, 250);
+    });
 
-   function changeTab () {
-       let getDataIndex = parseInt($(this).attr('data-index'));
-       console.log('Extracted index: ' + getDataIndex);
-       defaultIndex = getDataIndex;
-       console.log('Default Index: ' + defaultIndex);
-       scrolling(pageNameString, defaultIndex);
-       console.log('Clicked tab.');
-       replaceDropText();
-       // $('#flexMenu').animate({'scrollLeft': $(".tabItem").eq(defaultIndex)});
-   }
+    anchorLinks.on('click', function(event) {
+        let scrollPosition = $(window).scrollTop(),
+            getId = $(this).attr('href').split("#")[1],
+            getSectionId = $('#' + getId + ''),
+            elementTopPos1 = getSectionId.offset().top - (2*nav.outerHeight(true)),
+            elementTopPos2 = getSectionId.offset().top - (nav.outerHeight(true)),
+            elementBottomPos = getSectionId.offset().top + getSectionId.height() - (2*nav.outerHeight(true)),
+            getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
+            getNavIndex = getNavId.index(),
+            sideBarConstant = 2;
+        console.log(getSectionId.offset().top);
+        // console.log('$(this).index(): ' + $(this).index());
+        $(this).find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
 
-   function scrolling (pageNameString, index) {
-       toggleMainArrow();
-       changeIndex(index);
-       scrollTab(index);
-       scrollBody(index, 0);
-       switchZIndex(index);
-       console.log('pageNameString from scrolling: ' + pageNameString);
-       storeDefaultIndex(pageNameString, index);
-       progressBar(index);
-   }
+        // $('html, body').animate({
+        //     scrollTop: elementTopPos2
+        // }, 100);
+        // if (getNavIndex = anchorLinks.length) {
+        //     getNavIndex -= 1;
+        // }
+        // console.log('getNavIndex: ' + (getNavIndex));
+        // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
+        // navSideBar.animate({
+        //     scrollTop: anchorLinks.eq(getNavIndex).offset().top
+        // }, 100);
 
-   function changeIndex(num) {
-       // console.log(tabcontent.length);
-       if (num <= 0) {
-           num = 0;
-           leftArrow.prop('disabled', true);
-           leftArrow.css('opacity', '0.5');
-           rightArrow.prop('disabled', false);
-           rightArrow.css('opacity', '1');
-       } else if (num >= section.length - 1) {
-           num = section.length - 1;
-           leftArrow.prop('disabled', false);
-           leftArrow.css('opacity', '1');
-           rightArrow.prop('disabled', true);
-           rightArrow.css('opacity', '0.5');
-       } else {
-           leftArrow.prop('disabled', false);
-           leftArrow.css('opacity', '1');
-           rightArrow.prop('disabled', false);
-           rightArrow.css('opacity', '1');
-       }
-       if (num >= 0 && num <= section.length - 1) {
-           openPage(num);
-       }
-       defaultIndex = num;
-       console.log('New Index from num: ' + defaultIndex);
-       return defaultIndex;
-   }
-
-   function openPage(num) {
-       console.log('Clicked.');
-       let i;
-       for (i = 0; i < section.length; i++) {
-           // tabcontent[i].style.display = (i == parseInt(num)) ? "block" : "none";
-           section.eq(i).css('opacity', (i == num) ? "1" : "0"); //tabcontent.eq(parse(num)).css('opacity');
-       }
-       // for (i = 0; i < tab.length; i++) {
-       //     tab.eq(i).css({'backgroundColor': (i == parseInt(num)) ? 'black' : 'white', 'color': (i == parseInt(num)) ? 'white' : 'black'});
-       // }
-   }
-
-   function scrollBody (index, scrollHeight) {
-       console.log('New Index from subSection: ' + index);
-       defaultIndex = index;
-       let centerBody = widthAndCenter(section, fullPage, defaultIndex);
-       fullPage.animate({'scrollLeft': centerBody}, 300);
-       section.eq(index).animate({'scrollTop': 0}, 300);
-       scrollHeight = 0;
-       return scrollHeight;
-   }
-
-   function widthAndCenter (link, container, index) {
-     let x = container.outerWidth(),
-         y = link.eq(index).outerWidth(true),
-         z = index,
-         q = 0,
-         m = container.find(link);
-
-     console.log('X: ' + x + ' Y: ' + y + ' Z: ' + z + ' Q: ' + q + ' M: ' + m);
-     //Just need to add up the width of all the elements before our target.
-     for (let i = 0; i < z; i++){
-       q+= $(m[i]).outerWidth(true);
-     }
-     console.log('Q: ' + q);
-     let width = Math.max(0, (q - ((x - y)/2)));
-     console.log('Width: ' + width);
-     return width;
-   }
-
-   function switchZIndex (index) {
-       section.each( function() {
-           section.css('z-index', '1');
-       });
-       section.eq(index).css('z-index', '2');
-   }
-
-   // function scrollUp(scrollHeight, scrollNumber) {
-   //     let sectionHeight = 0;
-   //     section.eq(defaultIndex).children().each( function() {
-   //         sectionHeight += $(this).outerHeight(true);
-   //         console.log('sectionHeight: ' + sectionHeight);
-   //     });
-   //     let actualScroll = sectionHeight / scrollNumber;
-   //     console.log('actualScroll: ' + actualScroll);
-   //     scrollHeight -= actualScroll;
-   //     if (scrollHeight <= 0) {
-   //         scrollHeight = 0;
-   //     }
-   //     section.eq(defaultIndex).animate({'scrollTop': scrollHeight}, 50);
-   //     return scrollHeight;
-   // }
-   //
-   // function scrollDown(scrollHeight, scrollNumber) {
-   //     let sectionHeight = 0;
-   //     section.eq(defaultIndex).children().each( function() {
-   //         sectionHeight += $(this).outerHeight(true);
-   //         console.log('sectionHeight: ' + sectionHeight);
-   //     });
-   //     let actualScroll = sectionHeight / scrollNumber;
-   //     console.log('actualScroll: ' + actualScroll);
-   //     scrollHeight += actualScroll;
-   //     if (scrollHeight >= sectionHeight) {
-   //         scrollHeight = sectionHeight;
-   //     }
-   //     section.eq(defaultIndex).animate({'scrollTop': scrollHeight}, 50);
-   //     return scrollHeight;
-   // }
-
-   function progressBar(index) {
-       let sectionWidth = section.outerWidth(),
-           totalWidth = sectionWidth * (section.length - 1),
-           percentage = ((sectionWidth * (index)) / totalWidth) * 100;
-       scrollProgressBar.css('width', percentage + "%");
-       if (index == section.length - 1) {
-           scrollProgressBar.css({'opacity' : '0', 'transform' : 'translateY(-8px)'});
-       } else {
-           scrollProgressBar.css({'opacity' : '1', 'transform' : 'translateY(0px)'});
-       }
-   }
-
-   // let stickyFilter = galleryFilter.offset().top;
-   // function stickyNav() {
-   //      if (work.scrollTop() >= stickyFilter) {
-   //          galleryFilter.addClass('sticky');
-   //          $('.sticky').css('top', galleryFilter.outerHeight(true) + 'px');
-   //      } else {
-   //          galleryFilter.removeClass('sticky');
-   //          $('.sticky').css('top', '0');
-   //      }
-   //  }
-
-   // workGridItem.hover (function () {
-   //     $(this).find(workImage).css('transform', 'scale(1.5)');
-   // }, function () {
-   //     $(this).find(workImage).css('transform', 'scale(1.1)');
-   // });
-
-   gridItem.hover(function (event) {
-       if ($(event.currentTarget).hasClass('hidden')) {
-           event.stopPropagation();
-           return;
-       } else {
-           console.log('Hovered');
-           $(event.currentTarget).find(workImage).css('transform', 'scale(1.3)');
-           $(event.currentTarget).find(workToolTip).addClass('shown');
-           mainGridItem.find(workToolTip).addClass('shown');
-           // $(event.currentTarget).find(workGridText).css({'padding' : '1em 2em', 'height': '30%', 'opacity' : '1'});
-           // $(event.currentTarget).find(workGridText).find('*').css('height', 'auto');
-
-       }
-   }, function (event) {
-       $(event.currentTarget).find(workImage).css('transform', 'scale(1)');
-       $(event.currentTarget).find(workToolTip).removeClass('shown');
-       mainGridItem.find(workToolTip).removeClass('shown');
-       // $(event.currentTarget).find(workGridText).css({'padding' : '0', 'height': '0', 'opacity' : '0'});
-       // $(event.currentTarget).find(workGridText).find('*').css('height', '0');
-   });
-
-   mainGridItem.hover(function (event) {
-       if ($(event.currentTarget).hasClass('hidden')) {
-           event.stopPropagation();
-           return;
-       } else {
-           $(event.currentTarget).find(workToolTip).addClass('shown');
-       }
-   }, function (event) {
-       $(event.currentTarget).find(workToolTip).removeClass('shown');
-   });
-
-   configureGrid();
-   assignToolTipType();
-
-   function configureGrid () {
-       let totalTaggedItems = $('.tagged').length,
-           totalGridItems = gridItem.length,
-           rows;
-       if ($(window).width() < 850) {
-           workGallery.css('grid-template-rows', 'repeat(' + totalTaggedItems + ', 1fr)');
-       } else if ($(window).width() >= 850 && $(window).width() < 1150) {
-           if (gridItem.hasClass('tagged')) {
-               rows = parseInt(totalTaggedItems / 2);
-           } else {
-               rows = parseInt(totalGridItems / 2);
-           }
-       } else {
-           if (gridItem.hasClass('tagged')) {
-               rows = parseInt(totalTaggedItems / 3);
-           } else {
-               rows = parseInt(totalGridItems / 3);
-           }
-       }
-       workGallery.css('grid-template-rows', 'repeat(' + rows + ', 1fr)');
-       console.log('There are ' + rows + ' rows.');
-   }
-
-   function assignToolTipType () {
-        workToolTip.removeClass('top bottom left right');
-        console.log('workToolTip length: ' + workToolTip.length);
-        workToolTip.removeClass('top bottom left right');
-        if (gridItem.hasClass('tagged')) {
-            configureGrid();
-            console.log('There are ' + $('.tagged').length + ' tagged items.');
-             workToolTip.removeClass('top bottom left right');
-            // if ($(window).width() < 600) {
-            //     // Do nothing.
-            // } else if ($(window).width() >= 600 && $(window).width() < 1150) {
-            //   workToolTip.removeClass('top bottom left right');
-            //   console.log('Attempting to fix tags within 600-1150 view window.');
-            //     $('.tagged:nth-child(2n+1) > .workToolTip').addClass('right');
-            //     $('.tagged:nth-child(2n+2) > .workToolTip').addClass('left');
-            // } else {
-            //     workToolTip.removeClass('top bottom left right');
-            //     $('.tagged:nth-child(3n+1) > .workToolTip').addClass('right');
-            //     $('.tagged:nth-child(3n+2) > .workToolTip').addClass('right');
-            //     $('.tagged:nth-child(3n+3) > .workToolTip').addClass('left');
-            // }
-        } else {
-            console.log('There are NO tagged items.');
-            if ($(window).width() < 850) {
-                // Do nothing.
-            } else if ($(window).width() >= 850 && $(window).width() < 1150) {
-              workToolTip.removeClass('top bottom left right');
-                $('.gridItem:nth-child(2n+1) > .workToolTip').addClass('right');
-                $('.gridItem:nth-child(2n+2) > .workToolTip').addClass('left');
-            } else {
-                workToolTip.removeClass('top bottom left right');
-                $('.gridItem:nth-child(3n+1) > .workToolTip').addClass('right');
-                $('.gridItem:nth-child(3n+2) > .workToolTip').addClass('right');
-                $('.gridItem:nth-child(3n+3) > .workToolTip').addClass('left');
+        $('html, body').animate({
+            scrollTop: elementTopPos2
+        }, 100);
+        $(this).find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
+        event.preventDefault();
+        if (pageNameString == 'ElectricStride') {
+            sideBarConstant = 2;
+        }
+        if (scrollPosition >= elementTopPos1 && scrollPosition <= elementBottomPos) {
+            if ($(this).index() <= ((anchorLinks.length - 1)/sideBarConstant)) {
+                navSideBar.animate({
+                    scrollTop: -1*navSideBar.height()
+                }, 100);
             }
-       }
-   }
+            if ($(this).index() > ((anchorLinks.length - 1)/sideBarConstant)) {
+                navSideBar.animate({
+                    scrollTop: navSideBar.height()
+                }, 100);
+            }
+        }
+    });
 
-   adjustDropMenuWidth();
-   function adjustDropMenuWidth() {
-       menuTabs.css('width', dropUpMenu.outerWidth(true));
-   }
-
-   toolTipClose.click( function(event) {
-       $(event.currentTarget).parent().removeClass('shown');
-   });
-
-   function workPaddingBottom () {
-       let galleryPBottom = workNav.outerHeight(true);
-       paddingContainer.css('padding-bottom', galleryPBottom + 'px');
-   }
-
-    // let workGalHeight = workGallery.outerHeight(true);
-    // filterWorkGallery.filterizr('filter', 'all');
-    //
-    // filter.on('click', function () {
-    //     let tag = $(this).attr('data-filter');
-    //     $(this).toggleClass('filterEnabled');
-    //     shuffleFilter.removeClass('filterEnabled');
-    //     // work.animate({'scrollTop': workGallery.scrollTop()}, 300);
-    //     // workImage.css('height', ($(this).hasClass('filterEnabled')) ? '100%' : '0');
-    //     // workImage.css('transform', (workImage.hasClass('filteredOut')) ? 'scale(0)' : 'scale(1)');
+    // workButton.on('click', function(event) {
+    //     workButton.removeClass('selected');
+    //     $(this).addClass('selected');
+    //     toggleWork();
+    //     $('html, body').animate({
+    //         scrollTop: introduction.offset().top + (1.5*introduction.outerHeight(true))
+    //     }, 100);
     // });
 
-    // let filterWorkGallery = workGallery.filterizr({
-    //     layout: 'sameSize',
-    //     animationDuration: 0.3,
-    //     delay: 2,
-    //     easing: 'ease-in-out',
-    //     filterOutCss: {
-    //         width: '0',
-    //         height: '0',
-    //         'max-height': '0',
-    //         'overflow': 'hidden',
-    //         padding: '0',
-    //         transform: 'scale(0) translate3d(0px, 1542px, 0px)',
-    //         transition: '0.3s ease-in-out'
-    //     },
-    //     filterInCss: {
-    //         width: '50%',
-    //         height: 'auto',
-    //         'max-height': '100%',
-    //         padding: '2.5%',
-    //         transform: 'scale(1) translate3d(0px, 1542px, 0px)',
-    //         transition: '0.3s ease-in-out'
-    //     },
-    //     multifilterLogicalOperator: 'or',
-    //     setupControls: false
-    // });
-    //
-    // shuffleFilter.on('click', function () {
-    //     filterWorkGallery.filterizr('shuffle');
-    // });
+    scrollSpy();
+    change1000Width();
+    toggleSideBar();
+    // stickyButtons();
+    // toggleWork();
 
-    filter.on('click', function(event) {
-        let tag = $(event.currentTarget).data('multifilter');
-        $(event.currentTarget).toggleClass('filterEnabled');
-        gridItem.removeClass('tagged');
-        filter.each( function(i, filterTag) {
-            if ($(filterTag).hasClass('filterEnabled')) {
-                tag = $(filterTag).data('multifilter');
-                $('.gridItem[data-tag="' + tag + '"').removeClass('hidden');
-                $('.gridItem[data-tag="' + tag + '"').addClass('tagged');
-                $('.gridItem[data-tag="' + tag + '"').fadeIn(0, function(){
-                    $(this).show();
-                });
-            } else {
-                tag = $(filterTag).data('multifilter');
-                $('.gridItem[data-tag="' + tag + '"').addClass('hidden');
-                $('.gridItem[data-tag="' + tag + '"').removeClass('tagged');
-                $('.gridItem[data-tag="' + tag + '"').fadeOut(0, function(){
-                    $(this).hide();
-                });
+    $(window).on("resize", function() {
+        scrollSpy();
+        change1000Width();
+        toggleSideBar();
+        // stickyButtons();
+    });
+
+    $(window).bind('scroll', function() {
+        // console.log('defaultIndex: ' + defaultIndex);
+        scrollSpy();
+        change1000Width();
+        toggleSideBar();
+        // stickyButtons();
+    });
+
+    function scrollSpy () {
+        let scrollPosition = $(window).scrollTop(),
+            section = $('.section');
+        // console.log('anchorLinks.length: ' + anchorLinks.length);
+        section.each( function(index) {
+            var elementTopPos = $(this).offset().top - (2*nav.outerHeight(true)),
+                elementBottomPos = $(this).offset().top + $(this).height() - (2*nav.outerHeight(true)),
+                getId = $(this).attr('id'),
+                getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
+                getNavIndex = getNavId.index();
+            if (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos) {
+                getNavId.find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
+                console.log('Running.');
+                // switch(getNavId.index()) {
+                //     case (getNavId.index() < (anchorLinks.length - 1)/2):
+                //         break;
+                //     case (getNavId.index() < (anchorLinks.length - 1)/2):
+                //         break;
+                // }
+                // console.log('getNavIndex: ' + (getNavIndex));
+                // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
+                // if (getNavIndex = anchorLinks.length) {
+                //     getNavIndex -= 1;
+                // }
+                // navSideBar.animate({
+                //     scrollTop: Math.abs(anchorLinks.eq(getNavIndex).position().top)
+                // }, 100);
+                if (getNavIndex <= ((anchorLinks.length - 1)/2)) {
+                    console.log('getNavIndex: ' + getNavIndex);
+                    // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
+                    navSideBar.animate({
+                        scrollTop: -1*navSideBar.height()
+                    }, 100);
+                }
+
+                if (getNavIndex > ((anchorLinks.length - 1)/2)) {
+                    console.log('getNavIndex: ' + getNavIndex);
+                    // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
+                    navSideBar.animate({
+                        scrollTop: navSideBar.height()
+                    }, 100);
+                }
             }
         });
-        console.log('Tagged items: ' + $('.tagged').length);
-        if ($('.tagged').length <= 3) {
-            workToolTip.removeClass('top bottom left right');
-            $('.tagged:nth-child(2n+1) > .workToolTip').addClass('right');
-            $('.tagged:nth-child(2n+2) > .workToolTip').addClass('left');
-        } else {
-            assignToolTipType();
-            return;
-        }
-        if (!$('#designFilter').hasClass('filterEnabled') && !$('#mediaFilter').hasClass('filterEnabled') && !$('#otherFilter').hasClass('filterEnabled')) {
-            gridItem.removeClass('hidden tagged');
-            gridItem.fadeIn(300, function(){
-                $(this).show();
-            });
-        }
-        assignToolTipType();
-    });
+    }
 
-    workBackButton.on('click', previousTab);
-
-    menu.on('click', function () {
-        navigation.toggleClass('hideMenu');
-        $('.navigation *, #workNav *').not($('.mainMenu, .mainMenu *')).toggleClass('hideNav');
-        $('#bar1, #bar2, #bar3').toggleClass('shift');
-        mainMenu.toggleClass('showMenu');
-        projectPaddingBottom();
-    });
-
-    menuButton.not(menu).on('click', function () {
-        navigation.removeClass('hideMenu');
-        $('.navigation *, #workNav *').not($('.mainMenu, .mainMenu *')).removeClass('hideNav');
-        $('#bar1, #bar2, #bar3').removeClass('shift');
-        mainMenu.removeClass('showMenu');
-        projectPaddingBottom();
-    });
-
-    workLink.on('click', function () {
-        console.log('PageNameString: ' + pageNameString);
-        if (pageNameString == 'index.html' || pageNameString == '') {
-        //     workLink.children().find('a').attr('href', '');
-            scrolling(pageNameString, 2);
+    function change1000Width() {
+        if ($(window).width() <= 750) {
+            fixedElements.css('padding-top', 0);
+            // embedResume.css('display', 'none');
         }
-            // workLink.children().find('a').attr('href', 'http://waynephung.com');
-        // }
-        storeDefaultIndex('index.html', 2);
-    });
-    aboutLink.on('click', function () {
-        console.log('PageNameString: ' + pageNameString);
-        if (pageNameString == 'index.html' || pageNameString == '') {
-        //     aboutLink.children().find('a').attr('href', '');
-            scrolling(pageNameString, 3);
+        if ($(window).width() > 750) {
+            if ($(window).height() < 450) {
+                fixedElements.css('padding-top', nav.outerHeight(true)*1.2);
+            }
+            if ($(window).height() >= 450) {
+                fixedElements.css('padding-top', nav.outerHeight(true));
+            }
+            // embedResume.css('display', 'block');
         }
-        //     workLink.children().find('a').attr('href', 'http://waynephung.com');
-        // }
-        storeDefaultIndex('index.html', 3);
-    });
-    contactLink.on('click', function () {
-        console.log('PageNameString: ' + pageNameString);
-        if (pageNameString == 'index.html' || pageNameString == '') {
-        //     contactLink.children().find('a').attr('href', '');
-            scrolling(pageNameString, 4);
-        }
-            // workLink.children().find('a').attr('href', 'http://waynephung.com');
-        // }
-        storeDefaultIndex('index.html', 4);
-    });
-
-        // $('.gridItem').each( function(i) {
-        //     if ($(this).attr('data-tag') != tag) {
-        //         $(this).addClass('hidden');
-        //     } else {
-        //         $(this).removeClass('hidden');
-        //     }
-        // });
-        //else {
-        //     if ($('#designFilter').hasClass('filterEnabled')) {
-        //         tag = $('#designFilter').data('multifilter');
-        //         $('.gridItem[data-tag="' + tag + '"').removeClass('hidden');
-        //     } else {
-        //         tag = $('#designFilter').data('multifilter');
-        //         $('.gridItem[data-tag="' + tag + '"').addClass('hidden');
-        //     }
-        //     if ($('#mediaFilter').hasClass('filterEnabled')) {
-        //         tag = $('#mediaFilter').data('multifilter');
-        //         $('.gridItem[data-tag="' + tag + '"').removeClass('hidden');
-        //     } else {
-        //         tag = $('#mediaFilter').data('multifilter');
-        //         $('.gridItem[data-tag="' + tag + '"').addClass('hidden');
-        //     }
-        //     if ($('#otherFilter').hasClass('filterEnabled')) {
-        //         tag = $('#otherFilter').data('multifilter');
-        //         $('.gridItem[data-tag="' + tag + '"').removeClass('hidden');
-        //     } else {
-        //         tag = $('#otherFilter').data('multifilter');
-        //         $('.gridItem[data-tag="' + tag + '"').addClass('hidden');
-        //     }
-        // }
-        // if ($('.filter[data-multifilter!="' + tag + '"]')).hasClass('filterEnabled') {
-        //     $('.gridItem[data-tag!="' + tag + '"]').removeClass('hidden');
+        // if (($(window).width() > 750 && $(window).height() > 650)) {
+        //     nav.css({
+        //         'position' : 'fixed',
+        //         'justify-content' : 'space-between'
+        //     });
         // } else {
-        //     $('.gridItem[data-tag!="' + tag + '"]').addClass('hidden');
+        //     nav.css({
+        //         'position' : 'relative'
+        //     });
         // }
-        // $('.filter[data-multifilter!="' + tag + '"]').removeClass('filterEnabled');
+    }
 
-        // if ($('#designFilter').hasClass('filterEnabled')) {
-        //     $('.gridItem').filter('[data-tag="' + $('#designFilter').data('multifilter') + '"]').removeClass('hidden');
-        // }
-        // if ($('#mediaFilter').hasClass('filterEnabled')) {
-        //     $('.gridItem').filter('[data-tag="' + $('#mediaFilter').data('multifilter') + '"]').removeClass('hidden');
-        // }
-        // if ($('#otherFilter').hasClass('filterEnabled')) {
-        //     $('.gridItem').filter('[data-tag="' + $('#otherFilter').data('multifilter') + '"]').removeClass('hidden');
-        // }
-    //     if (!filter.hasClass('filterEnabled')) {
-    //         $('.gridItem').removeClass('hidden');
-    //     }
-    // });
-
-    // filter.on('click', function() {
-    //     filter.each( function() {
-    //         if (!$(this).hasClass('filterEnabled')) {
-    //            $('.gridItem').filter('[data-tag="' + tag + '"]').addClass('hidden');
-    //        }
-    //     });
-    // });
-    //
-    // let tag;
-    // $('#designFilter').on('click', function() {
-    //     tag = $(this).data('multifilter');
-    //     $(this).toggleClass('filterEnabled');
-    //     $('.gridItem').addClass('hidden');
-    //     $('.gridItem').filter('[data-tag="' + tag + '"]').removeClass('hidden');
-    //     selectAll();
-    // });
-    // $('#mediaFilter').on('click', function() {
-    //     tag = $(this).data('multifilter');
-    //     $(this).toggleClass('filterEnabled');
-    //     $('.gridItem').addClass('hidden');
-    //     $('.gridItem').filter('[data-tag="' + tag + '"]').removeClass('hidden');
-    //     selectAll();
-    // });
-    // $('#otherFilter').on('click', function() {
-    //     tag = $(this).data('multifilter');
-    //     $(this).toggleClass('filterEnabled');
-    //     $('.gridItem').addClass('hidden');
-    //     $('.gridItem').filter('[data-tag="' + tag + '"]').removeClass('hidden');
-    //     selectAll();
-    // });
-    //
-    // function selectAll () {
-    //     if (filter.not('filterEnabled')) {
-    //         $('.gridItem').removeClass('filterEnabled');
-    //     }
-    // }
-
-        // $('.gridItem').each( function(i) {
-        //     console.log($(this).attr('data-tag'));
-        //     if ($(this).attr('data-tag') != tag) {
-        //         $(this).addClass('hidden');
-        //     } else {
-        //         $(this).removeClass('hidden');
-        //     }
-        // });
-        // filter.each( function(i) {
-        //     if ($(this).hasClass('checked')) {
-        //         $(this).addClass('hidden');
-        //     } else {
-        //         $(this).removeClass('hidden');
-        //     }
-        // });
-
-    projectPaddingBottom();
-    function projectPaddingBottom () {
-    // projectMenuWidth = navigation.outerWidth(true),
-        let projectMenuHeight;
-        if (mainMenu.hasClass('showMenu')) {
-            projectMenuHeight = mainMenu.outerHeight(true);
+    function toggleSideBar() {
+        // console.log('Height of beginning element: ' + imageContainer.innerHeight());
+        // console.log('Window scroll position: ' + $(window).scrollTop());
+        if ($(window).width() > 990) {
+            navSideBar.show();
         } else {
-            projectMenuHeight = navigation.outerHeight(true);
+            navSideBar.hide();
         }
-        projectSpacing.css('padding-bottom', projectMenuHeight + 'px');
+        // if (navSideBar.css('display') == 'none') {
+        //     navButton.css('width', '100%');
+        // } else {
+        //     navButton.css('width', '72.5%');
+        // }
     }
 
-    function scrollTab (index) {
-        console.log('New Index from scrollTab: ' + index);
-        defaultIndex = index;
-        let center = widthAndCenter(tab, tabSection, defaultIndex);
-        tabSection.animate({"scrollLeft": center}, 300);
-        console.log('Data-index property retrieved from tab: ' + $(".tabItem").eq(defaultIndex).attr("data-index"));
+    function stickyButtons() {
+        // if (($(window).scrollTop() > (introduction.offset().top + introduction.outerHeight(true))) && ($(window).width() < 750)) {
+        // if (pageNameString == 'index') {
+        //     if ($(window).scrollTop() >= (introduction.offset().top + introduction.outerHeight(true))) {
+        //         if ($(window).height() <=  450) {
+        //             if ($(window).width() <= 750) {
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '100%'
+        //                 });
+        //             } else {
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '47.5%'
+        //                 });
+        //             }
+        //             nav.css({
+        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
+        //             });
+        //             work.css({
+        //                 'padding-top' : '1.5em'
+        //             });
+        //             workIntro.css({
+        //                 'position' : 'relative',
+        //                 'top' : '',
+        //                 'left' : '',
+        //                 'justify-content' : 'space-between',
+        //                 'margin' : '',
+        //                 'padding' : '2.5% 0em',
+        //                 'width' : 'auto'
+        //             });
+        //             workIntroHeading.css({
+        //                 'margin-left' : ''
+        //             });
+        //         }
+        //         if ($(window).height() >  450) {
+        //             if ($(window).width() <= 750) {
+        //                 nav.css({
+        //                     'box-shadow' : 'none'
+        //                 });
+        //                 work.css({
+        //                     'padding-top' : '25em'
+        //                 });
+        //                 workIntro.css({
+        //                     'position' : 'fixed',
+        //                     'top' : '0',
+        //                     'left' : '0',
+        //                     'justify-content' : 'center',
+        //                     'margin' : '0em 0em',
+        //                     'padding' : '2.5% 5%',
+        //                     'width' : '100%'
+        //                 });
+        //                 workIntroHeading.css({
+        //                     'margin-left' : '',
+        //                     'width' : '100%'
+        //                 });
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '100%'
+        //                 });
+        //             } else {
+        //                 nav.css({
+        //                     'box-shadow' : 'none'
+        //                 });
+        //                 work.css({
+        //                     'padding-top' : '25em'
+        //                 });
+        //                 workIntro.css({
+        //                     'position' : 'fixed',
+        //                     'top' : nav.outerHeight(true),
+        //                     'left' : '0',
+        //                     'justify-content' : 'space-between',
+        //                     'margin' : '0em 0em',
+        //                     'padding' : '0.5em 0',
+        //                     'width' : '100%'
+        //                 });
+        //                 workIntroHeading.css({
+        //                     'margin-left' : '5%',
+        //                     'width' : 'auto'
+        //                 });
+        //                 stickButtons.css({
+        //                     'margin-right' : '5%',
+        //                     'width' : '42.5%'
+        //                 });
+        //             }
+        //         }
+        //     } else {
+        //         if ($(window).height() <=  450) {
+        //             if ($(window).width() <= 750) {
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '100%'
+        //                 });
+        //             } else {
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '47.5%'
+        //                 });
+        //             }
+        //             nav.css({
+        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
+        //             });
+        //             work.css({
+        //                 'padding-top' : '1.5em'
+        //             });
+        //             workIntro.css({
+        //                 'position' : 'relative',
+        //                 'top' : '',
+        //                 'left' : '',
+        //                 'justify-content' : 'space-between',
+        //                 'margin' : '',
+        //                 'padding' : '2.5% 0em',
+        //                 'width' : 'auto'
+        //             });
+        //             workIntroHeading.css({
+        //                 'margin-left' : ''
+        //             });
+        //         }
+        //         if ($(window).height() >  450) {
+        //             if ($(window).width() <= 750) {
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '100%'
+        //                 });
+        //             } else {
+        //                 stickButtons.css({
+        //                     'margin-right' : '',
+        //                     'width' : '47.5%'
+        //                 });
+        //             }
+        //             nav.css({
+        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
+        //             });
+        //             work.css({
+        //                 'padding-top' : '1.5em'
+        //             });
+        //             workIntro.css({
+        //                 'position' : 'relative',
+        //                 'top' : '',
+        //                 'left' : '',
+        //                 'justify-content' : 'space-between',
+        //                 'margin' : '',
+        //                 'padding' : '2.5% 0em',
+        //                 'width' : 'auto'
+        //             });
+        //             workIntroHeading.css({
+        //                 'margin-left' : ''
+        //             });
+                // }
+                    // nav.css({
+                    //     'box-shadow' : 'none'
+                    // });
+                    // workIntro.css({
+                    //     'position' : 'fixed',
+                    //     'top' : '0',
+                    //     'left' : '0',
+                    //     'justify-content' : 'center',
+                    //     'margin' : '0em 0em',
+                    //     'padding' : '2.5% 5%',
+                    //     'width' : '100%'
+                    // });
+                    // workIntroHeading.css({
+                    //     'margin-left' : '',
+                    //     'width' : '100%'
+                    // });
+        //     }
+        // } else {
+        //
+        // }
     }
 
-    function widthAndCenter (link, container, index) {
-        let x = container.outerWidth(),
-            y = link.eq(index).outerWidth(true),
-            z = index,
-            q = 0,
-            m = container.find(link);
+    function toggleWork() {
+        if (pageNameString == 'index') {
+            work.hide();
+            if (designButton.hasClass('selected')) {
+                design.show();
+            }
+            if (mediaButton.hasClass('selected')) {
+                media.show();
+            }
+        } else {
 
-        console.log('X: ' + x + ' Y: ' + y + ' Z: ' + z + ' Q: ' + q + ' M: ' + m);
-        //Just need to add up the width of all the elements before our target.
-        for (let i = 0; i < z; i++){
-            q+= $(m[i]).outerWidth(true);
         }
-        let width = Math.max(0, q - ((x - y)/2));
-        console.log('Width: ' + width);
-        return width;
     }
 });
+        //         stickButtons.css({
+        //             'margin-right' : '',
+        //             'width' : '47.5%'
+        //         });
+        //         nav.css({
+        //             'box-shadow' : '0em 0.1em 2em 0.1em white'
+        //         });
+        //         workIntro.css({
+        //             'position' : 'relative',
+        //             'top' : '',
+        //             'left' : '',
+        //             'justify-content' : 'space-between',
+        //             'margin' : '',
+        //             'padding' : '2.5% 0em',
+        //             'width' : 'auto'
+        //         });
+        //         workIntroHeading.css({
+        //             'margin-left' : ''
+        //         });
+        //     } else {
+        //
+        //     }
+        //     if (($(window).width() <  750) && ($(window).height() >  450)) {
+        //         nav.css({
+        //             'box-shadow' : 'none'
+        //         });
+        //         workIntro.css({
+        //             'position' : 'fixed',
+        //             'top' : '0',
+        //             'left' : '0',
+        //             'justify-content' : 'center',
+        //             'margin' : '0em 0em',
+        //             'padding' : '2.5% 5%',
+        //             'width' : '100%'
+        //         });
+        //         workIntroHeading.css({
+        //             'margin-left' : '',
+        //             'width' : '100%'
+        //         });
+        //         stickButtons.css({
+        //             'margin-right' : '',
+        //             'width' : '100%'
+        //         });
+        //     } else if (($(window).width() >  750) && ($(window).height() >  450)) {
+            //         nav.css({
+            //             'box-shadow' : 'none'
+            //         });
+            //         workIntro.css({
+            //             'position' : 'fixed',
+            //             'top' : nav.outerHeight(true),
+            //             'left' : '0',
+            //             'justify-content' : 'space-between',
+            //             'margin' : '0em 0em',
+            //             'padding' : '0 0',
+            //             'width' : '100%'
+            //         });
+            //         workIntroHeading.css({
+            //             'margin-left' : '5%',
+            //             'width' : 'auto'
+            //         });
+        //         stickButtons.css({
+        //             'margin-right' : '5%',
+        //             'width' : '43%'
+        //         });
+        //     } else {
+        //             stickButtons.css({
+        //                 'margin-right' : '',
+        //                 'width' : '47.5%'
+        //             });
+        //             nav.css({
+        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
+        //             });
+        //             workIntro.css({
+        //                 'position' : 'relative',
+        //                 'top' : '',
+        //                 'left' : '',
+        //                 'justify-content' : 'space-between',
+        //                 'margin' : '',
+        //                 'padding' : '2.5% 0em',
+        //                 'width' : 'auto'
+        //             });
+        //             workIntroHeading.css({
+        //                 'margin-left' : ''
+        //             });
+        //         }
+        //     }
+        // } else {
+        //     if ($(window).width() < 750) {
+        //         stickButtons.css({
+        //             'margin-right' : '',
+        //             'width' : '100%'
+        //         });
+        //     } else {
+        //         stickButtons.css({
+        //             'margin-right' : '',
+        //             'width' : '47.5%'
+        //         });
+        //     }
+        //     nav.css({
+        //         'box-shadow' : '0em 0.1em 2em 0.1em white'
+        //     });
+        //     workIntro.css({
+        //         'position' : 'relative',
+        //         'top' : '',
+        //         'left' : '',
+        //         'justify-content' : 'space-between',
+        //         'margin' : '',
+        //         'padding' : '2.5% 0em',
+        //         'width' : 'auto'
+        //     });
+        //     workIntroHeading.css({
+        //         'margin-left' : ''
+        //     });
+        // }

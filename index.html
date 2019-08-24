@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" class="nightMode">
     <head>
         <!-- Required meta tags -->
@@ -6,472 +5,188 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Latest Version of Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Font Awesome Icons & CSS -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="02-css/index.css">
-        <link rel="stylesheet" type="text/css" href="02-css/project.css">
 
         <!-- AngularJS script CDN here. -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 
-            <!-- Title of Website -->
+        <!-- Title of Website -->
         <title>Wayne Phung</title>
     </head>
 
-    <body class="nightMode">
-        <!-- <video autoplay muted loop id="bgVideo">
-            <source src="../mediaFiles/videos/ShuriT2.mp4" type="video/mp4">Your browser does not support HTML5 video.
-        </video> -->
-        <!-- <nav class="scrollProgressBar"></nav> -->
-        <div class="fullPage">
-            <section class="section" id="main">
-                <h1 id="header1">Wayne Phung</h1>
-                <div class="textBody" id="mainBody">
-                    <p>UI/UX Designer</p>
-                    <p>Video Editor</p>
-                    <p>Human Being</p>
-                </div>
-                <div class="sectionArrows" id="mainArrow">
-                    <p class="rightArrow" id="continue">Continue</p>
-                    <button class="rightArrow" id="mainRight"><i class="fas fa-arrow-right"></i></button>
-                </div>
-                <!-- <img class="bgImage" id="mainImage" src="mediaFiles/images/workSection/waynePhung.jpg"> -->
-                <div class="bgImage" id="mainImage"></div>
-            </section>
-        	<section class="section pp-scrollable" id="intro">
-                <h1 class="sectionHeader">What? Who's this person?</h1>
-                <div class="textBody" id="introBody">
-                    <p>I am a human</p>
-                    <br>
-                    <p>Who cares about human-centered design,</p>
-                    <br>
-                    <p>Who has produced videos that make differences, and...</p>
-                    <br>
-                    <p>Who always makes awesome guacamole. ;)</p>
-                </div>
-                <div>
-                    <img class="bgImage" src="mediaFiles/images/workSection/main.jpg">
-                </div>
-                <div class="menuWrapper">
-                    <button class="sectionArrows leftArrow"><i class="fas fa-arrow-left"></i></button>
-                    <button class="sectionArrows rightArrow"><i class="fas fa-arrow-right"></i></button>
-                </div>
-            </section>
-        	<section class="section" id="work">
-                <h1 class="sectionHeader">Work</h1>
-                <p class="someBodyText">From case studies to media work, it's all here. Enjoy!</p>
-                <div class="workGallery">
-                    <div class="gridItem" data-tag="design">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="portfolio" src="mediaFiles/images/workSection/myPortfolio.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">My Portfolio</p>
-                            <p class="gridItemBody">See how this website came about! It was definitely quite the journey.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="design">
-                    <!-- <a rel="external" href="project.html">-->
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="fingo" src="mediaFiles/images/workSection/fingo.png">
-                        </div>
-                    <!--</a> -->
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Fingo</p>
-                            <p class="gridItemBody">An app to help connect customers to woodworkers for wooden furniture.</p>
-                            <a rel="external" href="fingo.html">
-                                <button class="readMore">Read More</button>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="design">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="takeMe" src="mediaFiles/images/workSection/takeApp.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Take Me</p>
-                            <p class="gridItemBody">An app to help senior people with shopping, wherever and whenever they go.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="design">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="toxicon" src="mediaFiles/images/workSection/Toxicon.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Toxicon</p>
-                            <p class="gridItemBody">A website to improve behavior for toxic gamers.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="yonderURC" src="mediaFiles/images/workSection/YonderURC18.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Yonder Dynamics - URC</p>
-                            <p class="gridItemBody">A video submitted as a part of the 2018 University Rover Challenge.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="SGF18" src="mediaFiles/images/workSection/sgfIcon.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Sun God Festival 2018</p>
-                            <p class="gridItemBody">A trailer for UC San Diego's biggest on-campus event of the 17-18 year.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="recapASCE" src="mediaFiles/images/workSection/recapVideo.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">ASCE&#58; 2017-18 Recap</p>
-                            <p class="gridItemBody">A tribute to all of the events that AS &#38; Concerts has helped host for students, by students.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="other">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="sgfBlackBear" src="mediaFiles/images/workSection/sgfbear.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">SGF Battle of the Bands</p>
-                            <p class="gridItemBody">A GIF made to help market Sun God Festival at UC San Diego, formerly featuring Blackbear.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="design">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="mundoGardens" src="mediaFiles/images/workSection/mundoGardens.jpeg">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Mundo Gardens</p>
-                            <p class="gridItemBody">A non-profit community garden in National City, San Diego where my design team and I helped to address the organization's needs.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="other">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="corgant" src="mediaFiles/images/workSection/corgant.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Team Corgant Logo</p>
-                            <p class="gridItemBody">Corgis &#43; croissants &#61; A simple, yet intuitive logo design for my team's creative and diverse backgrounds for the Take Me case study.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="design">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="shopList" src="mediaFiles/images/workSection/shopList.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">ShopList+</p>
-                            <p class="gridItemBody">An app for people over the age of 40 to facilitate food management for their families.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="cssa18" src="mediaFiles/images/workSection/cssa18.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Cognitive Revolution 2.0 Conference</p>
-                            <p class="gridItemBody">Brief recap of the 2018 National Cognitive Science Conference, hosted by the Cognitive Science Student Association at UC San Diego.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="walkTheBlock" src="mediaFiles/images/workSection/walkTheBlock17.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Walk the Block 2017</p>
-                            <p class="gridItemBody">A video showcasing UC San Diego's marathon walk across campus to support various food organizations and sponsors in San Diego.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="other">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="hullabalooGIF" src="mediaFiles/images/workSection/hullabalooGIF.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Hullabaloo GIF</p>
-                            <p class="gridItemBody">Promotional GIF to showcase artists just a few days before Hullabaloo 2018.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="senateDigest" src="mediaFiles/images/workSection/senateDigest.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">Senate Digest</p>
-                            <p class="gridItemBody">In partnership with Triton Television and the Associated Students (AS) at UC San Diego, this was an episodic series detailing AS senators and AS involvement within the campus community.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="rkcbOpia" src="mediaFiles/images/workSection/rkcbOpia.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">RKCB &#43; Opia</p>
-                            <p class="gridItemBody">A video showcasing a concert held at The Loft, featuring the main artists RKCB &#43; Opia.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="actaPus" src="mediaFiles/images/workSection/actaPus.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">ACTAPus</p>
-                            <p class="gridItemBody">This video would be used to promote the All Campus Transfer Association at UC San Diego, featuring the mysterious blue mascot, the ACTAPus.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                    <div class="gridItem" data-tag="media">
-                        <div class="gridItemWrapper">
-                            <img class="workImage" id="theHub" src="mediaFiles/images/workSection/theHub.png">
-                        </div>
-                        <span class="workToolTip">
-                            <button class="toolTipClose"><i class="fas fa-times"></i></button>
-                            <p class="gridItemHead">The Hub</p>
-                            <p class="gridItemBody">A video about how a recent student-needs organization on campus connect students to Basic Needs resources.</p>
-                            <a rel="external" href="">
-                                <div class="comingSoon">Coming Soon!</div>
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <!-- <div class="workGallery filtr-container">
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem media filtr-item" id="" data-category="media">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Media</p>
-                    </div>
-                    <div class="workGridItem media filtr-item" id="" data-category="media">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Media</p>
-                    </div>
-                    <div class="workGridItem media filtr-item" id="" data-category="media">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Media</p>
-                    </div>
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem design filtr-item" id="" data-category="design">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Design</p>
-                    </div>
-                    <div class="workGridItem other filtr-item" id="" data-category="other">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Other</p>
-                    </div>
-                    <div class="workGridItem other filtr-item" id="" data-category="other">
-                        <img class="workImage" src="https://media.tenor.com/images/ac287fd06319e47b1533737662d5bfe8/tenor.gif">
-                        <p class="workGridText">Other</p>
-                    </div>
-                </div> -->
-                <div class="paddingContainer"></div>
-
-                <nav class="menuWrapper" id="workNav">
-                    <!-- <button class="workBackButton">
-                        <p>Back</p>
-                        <i class="fas fa-arrow-left" id="workArrow"></i>
-                    </button> -->
-                    <button class="sectionArrows leftArrow" id="workLeft"><i class="fas fa-arrow-left"></i></button>
-                    <div class="galleryFilter">
-                        <h3 class="filterItem filterLabel">Search Filters</h3>
-                        <div class="workFilters">
-                            <div class="filterItem filter" id="designFilter" data-multifilter="design">Design</div>
-                            <div class="filterItem filter" id="mediaFilter" data-multifilter="media">Media</div>
-                            <div class="filterItem filter" id="otherFilter" data-multifilter="other">Other</div>
-                        </div>
-                        <!-- <div class="filterItem filter" id="shuffleFilter">Shuffle</div> -->
-                    </div>
-                    <button class="menuButton menu">
-                        <p class="menuText" id="workText">Menu<p>
-                        <div class="menuItem" id="menuButton">
-                            <div class="bars"></div>
-                            <div class="bars"></div>
-                            <div class="bars"></div>
-                        </div>
-                    </button>
-                    <button class="sectionArrows rightArrow" id="workRight"><i class="fas fa-arrow-right"></i></button>
-                </nav>
-                <nav class="mainMenu">
-                    <p class="menuTab name">Wayne Phung</p>
-                    <button class="menuTab menuButton" id="workLink">
-                        <a class="menuLink" rel="external" href="">
-                            <i class="menuIcon fas fa-briefcase"></i>
-                            <p>Work</p>
-                        </a>
-                    </button>
-                    <button class="menuTab menuButton" id="aboutLink">
-                        <a class="menuLink" rel="external" href="">
-                            <i class="menuIcon far fa-smile-wink"></i>
-                            <p>About</p>
-                        </a>
-                    </button>
-                    <button class="menuTab menuButton">
-                        <a rel="external" href="mediaFiles/documents/Resume_Wayne_Phung.pdf" target="_blank">
-                            <i class="menuIcon far fa-file-alt"></i>
-                            <p>Resume</p>
-                        </a>
-                    </button>
-                    <button class="menuTab menuButton" id="contactLink">
-                        <a class="menuLink" rel="external" href="">
-                            <i class="menuIcon far fa-comment-alt"></i>
-                            <p>Contact</p>
-                        </a>
-                    </button>
-                    <button class="menuButton menu" id="closeMenu">
-                        <p class="menuText">Close<p>
-                        <div class="menuItem" id="menuButton">
-                            <div class="bars" id="bar1"></div>
-                            <div class="bars" id="bar2"></div>
-                            <div class="bars" id="bar3"></div>
-                        </div>
-                    </button>
-                </nav>
-            </section>
-        	<section class="section" id="about">
-                <h1>More About Me</h1>
-                <p>Chinese American, native Californian.</p>
-                <br>
-                <p>Striving to empathize with the world, one project at a time.</p>
-                <br>
-                <p>I'm just about to graduate from University of California, San Diego with a B.S. in Cognitive Science under the Human-Computer Interaction specialization.</p>
-                <br>
-                <p>I respect digital technology and it's potential to solve contemporary problems, but I see the need to explore as many ideas within design as possible to find the most preferable solutions out there.</p>
-                <br>
-                <p>With a love to explore the traditional, the radical, and the undiscovered ideas that design has to offer, I'm ready to work with others to make work matter to others.</p>
-                <div>
-                    <img class="bgImage" id="waynePhung"  src="mediaFiles/images/workSection/waynePhung.jpg">
-                </div>
-            </section>
-            <section class="section" id="contact">
-                <h1>Contact Me</h1>
-                <p class="contactText">Feel free to connect with me, the icons will show the way.</p>
-                <div class="contactWrapper">
-                    <button class="contactButton" id="email">
-                        <a rel="external" href="mailto:wphung@ucsd.edu">
-                            <i class="contactIcons far fa-envelope"></i>
-                            <p>Email</p>
-                        </a>
-                    </button>
-                    <button class="contactButton" id="facebook">
-                        <a rel="external" href="https://www.facebook.com/wayne.phung.5" target="_blank">
-                            <i class="contactIcons fab fa-facebook-square"></i>
-                            <p>Facebook</p>
-                        </a>
-                    </button>
-                    <button class="contactButton" id="linkedIn">
-                        <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank">
-                            <i class="contactIcons fab fa-linkedin"></i>
-                            <p>LinkedIn</p>
-                        </a>
-                    </button>
-                    <button class="contactButton" id="Portfolium">
-                        <a rel="external" href="https://portfolium.com/WaynePhung" target="_blank">
-                            <img class="contactIcons portImg" src="mediaFiles/images/workSection/PortfoliumLogo_1.png">
-                            <p>Portfolium</p>
-                        </a>
-                    </button>
-                </div>
-            </section>
-        	<!-- <section class="section" id="contact">
-                <h1>Section 6</h1>
-            </section> -->
+    <nav>
+        <h5 class="name"><a rel="external" href="index.html">Wayne Phung</a></h5>
+        <div class="navGroup">
+            <a rel="external" href="design.html" class="navLink">Design</a>
+            <a rel="external" href="media.html" class="navLink">Media</a>
+            <a rel="external" href="aboutme.html" class="navLink">About Me</a>
+            <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
         </div>
+    </nav>
+
+    <body>
+        <section class="introduction opening">
+            <h1 class="greeting">Hey there!</h1>
+            <p>I’m a recent graduate from University of California - San Diego who wants to use human-centered systems design and media to enable what people seek to do and help them resolve their problems.</p>
+            <p>Within my portfolio website, I have case studies as Design work, but I also have videos and GIFs as my Media work as a separate page. Have a look!</p>
+            <p>Contact me via
+                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
+                 and/or
+                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
+                 to follow up.
+             </p>
+        </section>
+        <section class="workIntro">
+            <article class="workDescription">
+                <h3 class="projectTitle">Design Work</h3>
+                <p>I have case studies and projects that document stories of my experiences within user experience (UX) and design. Some topics include: Parkinson’s, micromobility and transportation, 3-D printing, and others.</p>
+                <button class="button workButton" id="designButton">View My Design Work</button>
+            </article>
+            <article class="workDescription">
+                <h3 class="projectTitle">Media Work</h3>
+                <p>I have videos (and a few GIFs) related to marketing, event promotions, and event recaps. Read through the behind-the-scenes process of how they came to life and how they have impacted various organizations.</p>
+                <button class="button workButton" id="mediaButton">View My Media Work</button>
+            </article>
+        </section>
+
+        <!-- <section class="work" id="design">
+            <article class="workHeading" id="designHeading">
+                <h1 class="greeting">My Design Work</h1>
+                <p>My journey within User Experience (UX) and Design has been documented into articles that outlined topics and problem spaces that I have experienced.</p>
+                <p>Read through at your leisure of my processes, from researching topics to implementing final solutions.</p>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="casestudy.html">
+                    <img src="Wayne-Phung/mediaFiles/images/design/ElectricStride.png" alt="image" class="design" id="electricStride">
+                    <h3 class="projectTitle">Electric Stride - Exercise Mat</h3>
+                    <h6 class="tags">UX Design, UX Research, Rapid Ideation</h6>
+                    <p>An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external">
+                    <img src="Wayne-Phung/mediaFiles/images/design/designLabHyundai.jpg" alt="image" class="design" id="hyundaiDLab">
+                    <h3 class="projectTitle">Hyundai Lab Project</h3>
+                    <h6 class="tags">UX/UI Design, Speculative Design</h6>
+                    <p>An investigation of the roles future autonomous vehicles could potentially within micromobility, development of Robotaxis, and other relevant transportation topics.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external">
+                    <img src="Wayne-Phung/mediaFiles/images/design/designLeap.png" alt="image" class="design" id="designLeap">
+                    <h3 class="projectTitle">Design Leap</h3>
+                    <h6 class="tags">Service Design, Secondary Research</h6>
+                    <p>A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external">
+                    <img src="Wayne-Phung/mediaFiles/images/design/FormfactoriesWebsite.png" alt="image" class="design" id="formfactories">
+                    <h3 class="projectTitle">Formfactories Website Redesign</h3>
+                    <h6 class="tags">UX/UI Design, User Research, Prototyping</h6>
+                    <p>A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. A client project within a design practicum course.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external">
+                    <img src="Wayne-Phung/mediaFiles/images/design/mundoGardens.jpeg" alt="image" class="design" id="mundoGardens">
+                    <h3 class="projectTitle">Mundo Gardens</h3>
+                    <h6 class="tags">UX/UI Design, User Research, Prototyping</h6>
+                    <p>Collaboration with a community garden to help with their volunteer management.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external">
+                    <img src="Wayne-Phung/mediaFiles/images/design/cinemunch.jpg" alt="image" class="design" id="cinemunch">
+                    <h3 class="projectTitle">Cinemunch - Ticketing Kiosk</h3>
+                    <h6 class="tags">UX/UI Design, User Research, Prototyping</h6>
+                    <p>Ordering food and movie tickets within a kiosk as an exploratory design concept in a prototyping college course.</p>
+                </a>
+            </article>
+        </section>
+        <section class="work" id="media">
+            <article class="workHeading" id="mediaHeading">
+                <h1 class="greeting">My Media Work</h1>
+                <p>I have engaged with video production with a specialty and background in video editing.</p>
+                <p>You can read the full disclosure of the process behind the scenes in all of my videos (and a few GIFs that I made).</p>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/tritonTelevisionReel.png" alt="image" class="media" id="ttvReel">
+                    <h3 class="projectTitle">Triton Television Reel</h3>
+                    <p>This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/tclcVideo.png" alt="image" class="media" id="tclcVideo">
+                    <h3 class="projectTitle">Town and Country Learning Center</h3>
+                    <p>A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/sunGodFestivalVid.png" alt="image" class="media">
+                    <h3 class="projectTitle">Sun God Festival Trailers</h3>
+                    <p>Two videos that promoted the biggest student-centered music festival event at University of California - San Diego, one video for each year.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/yonderDynamics.png" alt="image" class="media">
+                    <h3 class="projectTitle">Yonder Dynamics 2019 Competition Videos</h3>
+                    <p>Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/gifs/SGFgif.gif" alt="image" class="media">
+                    <h3 class="projectTitle">Artist GIFs Event Marketing</h3>
+                    <p>These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/asceTribute.png" alt="image" class="media">
+                    <h3 class="projectTitle">AS Concerts and Events 2017-18 Tribute</h3>
+                    <p>This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego, hosted by the Associated Students Concerts and Events.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/wellfest2018.png" alt="image" class="media">
+                    <h3 class="projectTitle">1st Annual Wellfest 2018 Recap Video</h3>
+                    <p>This was a recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/wellnessFair2018.png" alt="image" class="media">
+                    <h3 class="projectTitle">Wellness Fair 2018 Recap Video</h3>
+                    <p> Wellness Fair 2018 was an event focused on the seven dimensions of wellness, which was hosted by Housing Dining and Hospitality (HDH).</p>
+                </a>
+            </article>
+            <article class="gridItem">
+                <a rel="external" href="">
+                    <img src="Wayne-Phung/mediaFiles/images/media/yatlSpotlights.png" alt="image" class="media">
+                    <h3 class="projectTitle">You at the Loft Spotlights</h3>
+                    <p> Wellness Fair 2018 was an event focused on the seven dimensions of wellness, which was hosted by Housing Dining and Hospitality (HDH).</p>
+                </a>
+            </article>
+        </section> -->
+        <footer>
+            <p>All of my work comprises of different projects that I have taken on and documented and does not necessarily reflect the viewpoints of different organizations that I have worked with.</p>
+            <p>Wayne Phung 2019</p>
+        </footer>
     </body>
 
     <script type="application/javascript" src="03-js/Javascript Libraries/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="application/javascript" src="03-js/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <script type="application/javascript" src="03-js/Javascript Libraries/jquery.mobile-1.5.0-alpha.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
-    <!-- <script type="application/javascript" src="03-js/jquery.pagepiling.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.5/jquery.pagepiling.min.js"></script> -->
-    <!-- <script type="application/javascript" src="03-js/bscroll.min.js"></script>
-    <script src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script> -->
-    <!-- <script type="application/javascript" src="03-js/jquery.filterizr.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="application/javascript" src="03-js/index.js"></script>
 </html>
