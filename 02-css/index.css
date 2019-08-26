@@ -768,7 +768,7 @@ footer * {
 .bodyGrid {
     display: grid;
     justify-content: space-between;
-    grid-gap: 3em;
+    grid-gap: 3em 3em;
     overflow: visible;
     margin: 3em 0em;
 }
