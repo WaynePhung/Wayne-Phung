@@ -75,8 +75,7 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: elementTopPos2
         }, 100);
-        anchorLinks.removeClass('navSelected');
-        $(this).addClass('navSelected');
+        $(this).addClass('navSelected').siblings().removeClass('navSelected');
         event.preventDefault();
         if (pageNameString == 'ElectricStride') {
             sideBarConstant = 2;
@@ -136,8 +135,7 @@ $(document).ready(function() {
                 getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
                 getNavIndex = getNavId.index();
             if ((scrollPosition >= content.scrollTop()) && (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos)) {
-                anchorLinks.removeClass('navSelected');
-                getNavId.parent().addClass('navSelected');
+                $(this).addClass('navSelected').siblings().removeClass('navSelected');
                 console.log('Running.');
                 // switch(getNavId.index()) {
                 //     case (getNavId.index() < (anchorLinks.length - 1)/2):
