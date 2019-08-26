@@ -573,7 +573,7 @@ figcaption {
 }
 
 .navSideBar {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-content: center;
     position: -webkit-sticky;
@@ -1305,6 +1305,7 @@ li {
     }
 
     .navSideBar {
+        display: flex;
         height: 100vh;
     }
 
