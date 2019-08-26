@@ -402,7 +402,7 @@ section, footer {
 .gridItem h3{
     text-align: center;
     font-size: 30px;
-    height: 30%;
+    /* height: 30%; */
     /* min-height: 75px; */
 }
 
@@ -586,6 +586,7 @@ figcaption {
     background-color: transparent;
     overflow-x: visible;
     overflow-y: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     z-index: 4;
 }
 
@@ -767,6 +768,7 @@ footer * {
 .bodyGrid {
     display: grid;
     justify-content: space-between;
+    grid-gap: 3em;
     overflow: visible;
     margin: 3em 0em;
 }
@@ -782,13 +784,13 @@ footer * {
     overflow: hidden;
 }
 
-#grid1 h4 {
+.marginLeft {
     margin-left: 2em;
 }
 
-.grid4 {
+/* .grid4 {
     align-self: stretch;
-}
+} */
 
 .stretch {
     transform: scale(1.2);
@@ -814,7 +816,7 @@ footer * {
 }
 
 #interview3 {
-    height: 100%;
+    /* height: 100%; */
     object-position: top;
 }
 
@@ -826,15 +828,6 @@ footer * {
 #journeyMap3 {
     min-height: 400px;
     height: 100%;
-}
-
-#grid5 h5, #grid7 h4 {
-    margin-left: 1.5em;
-}
-
-#grid5 p:not(#insightsText):not(#findingsText),
-#grid7 p:not(#problemSpaces):not(#problemText), #grid8 p:not(.ideationText) {
-    margin-left: 4em;
 }
 
 ul {
@@ -865,6 +858,32 @@ li {
 }
 
 .span2 {
+    grid-column: span 2;
+}
+
+.gridType1 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.gridType2 {
+    grid-template-columns: 1fr 2fr;
+}
+
+.gridType3 {
+    grid-template-columns: 1fr 3fr;
+}
+
+.overviewGrid {
+    grid-gap: 1em;
+}
+
+.strideImageGrid .imageTile {
+    align-self: stretch;
+    min-height: 300px;
+    height: 100%;
+}
+
+.findings.last, .insights.last {
     grid-column: span 2;
 }
 
@@ -909,6 +928,18 @@ li {
         margin: 0em 0em 1em 0em;
     }
 
+    .overviewGrid * {
+        grid-column: span 2;
+    }
+
+    .overviewGrid .marginLeft {
+        margin-left: 2em;
+    }
+
+    .overViewGrid p {
+        margin-left: 4em;
+    }
+
     .bodyContent {
         margin-left: 1em;
     }
@@ -923,24 +954,8 @@ li {
         width: 35%;
     }
 
-    #grid1 {
-        grid-template-columns: 1fr 3fr;
-        grid-gap: 1em 2em;
-    }
-
-    .bodyGrid h2 {
-        grid-area: 1 / 1 / 2 / 3;
-    }
-
-    #grid1 h4 {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        /* margin-left: 1em; */
-    }
-
-    #grid1 p {
-        grid-column-start: 2;
-        grid-column-end: 3;
+    .overviewGrid .marginLeft {
+        margin-left: 1em;
     }
 }
 
@@ -978,10 +993,6 @@ li {
         object-fit: fill;
         transform: translateY(-7.5em) scaleX(1.1) scaleY(1.5);
     }
-
-    #grid1 {
-        grid-gap: 1em 2em;
-    }
 }
 
 @media screen and (max-width: 750px) {
@@ -997,9 +1008,8 @@ li {
         width: 100%;
     }
 
-    #grid2 *, #grid3 *, #grid4 *, #grid6 *{
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .bodyGrid:not(.overviewGrid) *{
+        grid-column: span 2;
     }
 }
 
@@ -1027,32 +1037,11 @@ li {
     }
 
     .bodyGrid {
-        margin: 0em 0em 3em 0em;
-        grid-gap: 2em 0em;
+        margin: 3em 0em;
     }
 
-    #grid1 {
-        grid-gap: 1em 0em;
-    }
-
-    #grid1 h4 {
+    .marginLeft {
         margin-left: 1em;
-    }
-
-    #grid1 p {
-        margin-left: 3em;
-    }
-
-    .bodyGrid:not(#grid4){
-        grid-gap: 2em 1em;
-    }
-
-    #grid2 *, #grid3 *, #grid5 *. #grid6 * {
-        grid-column: span 1;
-    }
-
-    #grid4 {
-        grid-gap: 2em 2em;
     }
 }
 
@@ -1181,82 +1170,18 @@ li {
         width: 80%;
     }
 
-    #grid2 {
-        grid-row-start: 1;
-        grid-row-end: 2;
-        grid-gap: 3em 2em;
-    }
-
-    #grid3, #grid4, #grid6, #grid9, #grid10, #grid11, #grid13 {
-        grid-gap: 3em 3em;
-    }
-
-    #grid2 #probBG {
-        align-self: center;
-    }
-
-    #grid2 img {
-        grid-area: 2 / 2 / 3 / 3;
-    }
-
-    #constraints {
-        grid-area: 3 / 1 / 4 / 3;
-    }
-
-    #solution {
-        grid-area: 4 / 1 / 5 / 3;
-    }
-
-    .indent {
-        margin-left: 3em;
-    }
-
-    #grid3, #grid6, #grid8, #grid9, #grid10, #grid14, #grid15 {
-        grid-template-columns: 1fr 2fr;
-    }
-
-    #grid3 .gridContent {
-        grid-column-start: 1;
-        grid-column-end: 2;
-    }
-
     #mindMap {
         transform: scale(1.25);
     }
 
-    #grid4, #grid5, #grid11, #grid12, #grid13 {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #grid4, #grid5, #grid12, #grid13 {
-        grid-gap: 2em 2em;
-    }
-
-    #grid8, #grid11, #grid14, #grid15 {
-        grid-gap: 3em 3em;
-    }
-
     .stretch {
         object-fit: cover;
-        height: 100%;
     }
 
     #grid4Last {
         grid-column: span 2;
         -webkit-filter: brightness(150%);
         filter: brightness(150%);
-    }
-
-    #grid5 .heading, #grid7 .heading {
-        grid-column: span 2;
-    }
-
-    .findings {
-        grid-column: span 1;
-    }
-
-    .insights {
-        grid-column: span 2;
     }
 
     #insightsText {
@@ -1311,10 +1236,6 @@ li {
 
     .introduction p {
         width: 75%;
-    }
-
-    #grid2, #grid3 {
-        grid-template-columns: 3fr 4fr;
     }
 }
 
@@ -1383,24 +1304,29 @@ li {
         height: 100vh;
     }
 
-    .content {
+    /* .content {
         width: 67.5%;
-    }
+    } */
 
     .imageGroup img {
         width: 47.5%;
     }
 
-    #grid2, #grid3 {
+    .strideProblem, .strideResearch {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1200px){
+@media screen and (min-width: 1010px) and (max-width: 1200px){
     .content {
         width: 72.5%;
     }
+}
 
+@media screen and (max-width: 1200px){
+    .strideResearch * {
+        grid-column: span 2;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -1408,7 +1334,7 @@ li {
         width: 75%;
     }
 
-    #grid3 {
+    .strideResearch {
         grid-template-columns: 1fr 2fr;
     }
 }
