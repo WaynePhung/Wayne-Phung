@@ -1,4 +1,5 @@
-figure<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -10,24 +11,20 @@ figure<html lang="en">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="02-css/index.css">
 
-        <!-- AngularJS script CDN here. -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-
         <!-- Title of Website -->
         <title>Electric Stride - Wayne Phung</title>
     </head>
 
-    <nav>
-        <h5 class="name"><a rel="external" href="index.html">Wayne Phung</a></h5>
-        <div class="navGroup">
-            <a rel="external" href="design.html" class="navLink">Design</a>
-            <a rel="external" href="media.html" class="navLink">Media</a>
-            <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-            <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
-        </div>
-    </nav>
-
     <body>
+        <nav>
+            <h5 class="name"><a rel="external" href="index.html">Wayne Phung</a></h5>
+            <div class="navGroup">
+                <a rel="external" href="design.html" class="navLink">Design</a>
+                <a rel="external" href="media.html" class="navLink">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+            </div>
+        </nav>
         <section class="caseStudySol beginning">
             <article class="caseStudyIntro">
                 <h1 class="greeting">Electric Stride</h1>
@@ -82,9 +79,9 @@ figure<html lang="en">
                     <p class="text">UC San Diego Jacobs Schools of Engineering (ECE Department), IBM, UC San Diego Neurosciences, Design @ UCSD, UC San Diego Design Lab</p>
                 </section>
                 <section class="bodyGrid strideProblem">
-                    <h2 class="section span2" id="designChallenge">Design Challenge</h2></a>
+                    <h2 class="section span2" id="designChallenge">Design Challenge</h2>
                     <article class="gridContent" id="probBG">
-                        <h4 class="subheading" id="problemBackground">Problem Background</h4>
+                        <h4 class="subheading">Problem Background</h4>
                         <p class="text marginLeft">People with Parkinson’s Disease of various stages have varied types of motor and non-motor symptoms that have impacted their lifestyles and how their caregivers attend to them. Within the context of this extended Hack-a-thon competition, it was important to find innovative ways to improve the quality of life for Parkinson’s patients and caregivers.</p>
                     </article>
                     <figure class="imageTile">
@@ -92,7 +89,7 @@ figure<html lang="en">
                         <figcaption><i>ECE Design Competition for Parkinson's.</i></figcaption>
                     </figure>
                     <article class="gridContent span2">
-                        <h4 class="subheading" id="problemBackground">Constraints Faced</h4>
+                        <h4 class="subheading">Constraints Faced</h4>
                         <p class="text marginLeft">We had to structure our design thinking and process around obligatory Hack-a-thon days to attend as well as deliverables along the way, which we needed to address to show our progress to Chelsea and other mentors within the competition.</p>
                         <p class="text marginLeft">The learning gap of the subject of Parkinson’s disease was quite large. None of us initially had a solid understanding of the topic at hand and Parkinson’s was a multi-faceted, systemic disease that had a wide range of existing symptoms, stakeholders, and solutions to consider.</p>
                         <p class="text marginLeft">We had a large group, mostly consisting of designers, but with only one or two engineers. We had to figure out how to collaborate with one another and leverage our strengths to meet project goals.</p>
@@ -130,7 +127,7 @@ figure<html lang="en">
                         <p class="marginLeft">To further inform our understandings of Parkinson's, we talked to about 10-20 people of various backgrounds, including a neurologist, a university lab researcher, an early-stage patient, a caregiver to a patient, and many other patients from visiting support groups. To reach out to them, we scheduled individual meetings with them, went to events that discussed relevant Parkinson's topics, and even visited a Parkinson’s patient’s home.</p>
                         <p class="marginLeft">We had some of the people that we interviewed complete journey maps to understanding their day in a life and how Parkinson’s has some relation to their lives.</p>
                     </article>
-                    <figure class="imageTile" id="interview1">
+                    <figure class="imageTile">
                         <img src="mediaFiles/images/design/ElectricStride/interview1.png" alt="Interviewed a person." class="backgroundImage" id="interview1">
                     </figure>
                 </section>
@@ -155,7 +152,7 @@ figure<html lang="en">
                         <p class="text" id="findingsText">Below are only some among the many themes that emerged from notes in our research.</p>
                     </article>
                     <article class="gridContent findings marginLeft">
-                        <b><h5>Patients’ Personal Awareness of Internal Tremors, Body Movements, and Environments</h5></b>
+                        <h5><b>Patients’ Personal Awareness of Internal Tremors, Body Movements, and Environments</b></h5>
                         <ul>
                             <li>“Now I have to choreograph what I'm doing. Walkin with my dog, pick up your knee, be sure to cock your foot forward.”</li>
                             <li>“After Parkinson’s = hostile world, anything could kill him in a moment”</li>
@@ -163,7 +160,7 @@ figure<html lang="en">
                         </ul>
                     </article>
                     <article class="gridContent findings marginLeft">
-                        <b><h5>Lifestyles Oriented Around Medications</h5></b>
+                        <h5><b>Lifestyles Oriented Around Medications</b></h5>
                         <ul>
                             <li>“Cycle of medications - must adjust activities to on/off of meds When on = do things he could normally do...Off = Parkinson’s symptoms, motor issues, etc”</li>
                             <li>“As soon as you get off your medication, ‘that’s how it’s going to be for the rest of your life’”</li>
@@ -171,7 +168,7 @@ figure<html lang="en">
                         </ul>
                     </article>
                     <article class="gridContent findings marginLeft">
-                        <b><h5>Non-Motor Symptoms and Feelings</h5></b>
+                        <h5><b>Non-Motor Symptoms and Feelings</b></h5>
                         <ul>
                             <li>“Used to be energetic...Consumed with time on managing my time, because of medications and exercise.”</li>
                             <li>“Need a reason or goal to get up in the morning.”</li>
@@ -179,7 +176,7 @@ figure<html lang="en">
                         </ul>
                     </article>
                     <article class="gridContent findings marginLeft">
-                        <b><h5>Experiences of Performing Difficult Activities</h5></b>
+                        <h5><b>Experiences of Performing Difficult Activities</b></h5>
                         <ul>
                             <li>“Inconvenient disease in every way: going to bathroom, standing up/down, crossing the street, putting up clothes, list is endless.”</li>
                             <li>“Any fine motor skills are frustrating and difficult”</li>
@@ -187,7 +184,7 @@ figure<html lang="en">
                         </ul>
                     </article>
                     <article class="gridContent findings marginLeft last">
-                        <b><h5>Observation Notes from Rock Steady Boxing Experiences</h5></b>
+                        <h5><b>Observation Notes from Rock Steady Boxing Experiences</b></h5>
                         <ul>
                             <li>“They loved the bonding experience in being in the boxing session. What helps is the enthusiastic staff, having kinetic feedback in exercises, and remembering [numbers] for punch combos to have something to improve upon in their life.”</li>
                             <li>“With the boxing session, they didn't like being told what to do to learn and would've liked a more inclusive & easy form of learning.""</li>
@@ -443,8 +440,7 @@ figure<html lang="en">
                     </figure>
                 </section>
                 <section class="bodyGrid gridType1">
-                    <h2 class="section span2" id="feedbackPivoting">Feedback and Pivoting</h2></a>
-                    </article>
+                    <h2 class="section span2" id="feedbackPivoting">Feedback and Pivoting</h2>
                     <article class="gridContent span2">
                         <h4 class="subheading">Feedback</h4>
                         <p>
@@ -734,10 +730,10 @@ figure<html lang="en">
         </footer>
     </body>
 
-    <script type="application/javascript" src="03-js/Javascript Libraries/jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script type="application/javascript" src="03-js/Javascript Libraries/jquery.mobile-1.5.0-alpha.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="http://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <script type="application/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.js"></script>
     <script type="application/javascript" src="03-js/index.js"></script>
 </html>
