@@ -59,7 +59,8 @@ $(document).ready(function() {
             sideBarConstant = 2;
         console.log(getSectionId.offset().top);
         // console.log('$(this).index(): ' + $(this).index());
-        $(this).addClass('navSelected').siblings().removeClass('navSelected');
+        $(this).siblings().removeClass('navSelected');
+        $(this).addClass('navSelected');
 
         // $('html, body').animate({
         //     scrollTop: elementTopPos2
@@ -136,7 +137,8 @@ $(document).ready(function() {
                 getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
                 getNavIndex = getNavId.index();
             if (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos) {
-                getNavId.addClass('navSelected').siblings().removeClass('navSelected');
+                getNavId.siblings().removeClass('navSelected');
+                getNavId.addClass('navSelected');
                 console.log('Running.');
                 // switch(getNavId.index()) {
                 //     case (getNavId.index() < (anchorLinks.length - 1)/2):
