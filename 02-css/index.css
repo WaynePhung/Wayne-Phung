@@ -29,8 +29,12 @@ body p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    width: 100%;
+    width: auto;
 }
+
+/* h1 {
+    margin: 0em 5%;
+} */
 
 a * {
     color: black;
@@ -78,6 +82,7 @@ nav {
             align-items: center;
     -ms-flex-line-pack: center;
         align-content: center;
+    top: 0;
     margin-top: 0em;
     padding: 0.5em 0em;
     width: 100%;
@@ -370,6 +375,7 @@ section, footer {
 .caseStudySol {
     /* margin-bottom: 3em; */
     vertical-align: middle;
+    grid-area: heading;
 }
 
 .work * {
@@ -664,10 +670,11 @@ section, footer {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-bottom: 0.5em;
+    /* margin-bottom: 0.5em; */
 }
 
 .imageContainer {
+    grid-area: imageContainer;
     overflow: hidden;
     width: 100%;
     z-index: 3;
@@ -938,15 +945,18 @@ footer * {
     width: 100%;
 }
 
-.bodyGrid {
+.bodyGrid, .intro {
     display: -ms-grid;
     display: grid;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    grid-gap: 3em 3em;
     overflow: visible;
-    margin: 3em 0em;
+}
+
+.bodyGrid {
+    grid-gap: 3em 3em;
+    margin: 1.5em 0em 3em 0em;
 }
 
 .imageTile {
@@ -1067,21 +1077,51 @@ li {
     grid-template-columns: 1fr 3fr;
 }
 
-.overviewGrid {
-    grid-gap: 1em;
-}
-
 .strideImageGrid .imageTile {
     -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
     min-height: 300px;
     height: 100%;
+    margin: 0em 0em;
 }
 
 .findings.last, .insights.last {
     -ms-grid-column-span: 2;
     grid-column: span 2;
+}
+
+.solutionIntro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    vertical-align: middle;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: auto;
+    margin-bottom: 3em;
+}
+
+.intro {
+    grid-gap: 1em 1em;
+    margin: 0 5%;
+}
+
+.intro p {
+    font-size: 1.5em;
+    grid-area: introText;
+}
+
+.objectRight {
+    object-position: right;
 }
 
 @media screen and (max-width: 200px) {
@@ -1125,17 +1165,16 @@ li {
         margin: 0em 0em 1em 0em;
     }
 
-    .overviewGrid * {
-        -ms-grid-column-span: 2;
-        grid-column: span 2;
+    .overviewGrid {
+        grid-gap: 1.5em 0em;
     }
 
     .overviewGrid .marginLeft {
         margin-left: 2em;
     }
 
-    .overViewGrid p {
-        margin-left: 4em;
+    .overviewGrid h3, .overviewGrid p {
+        margin-left: 10%;
     }
 
     .bodyContent {
@@ -1170,12 +1209,12 @@ li {
         width: 75%;
     }
 
-    .greeting {
-        font-size: 50px;
+    .introduction p {
+        font-size: 20px;
     }
 
-    .introduction p{
-        font-size: 20px;
+    .greeting {
+        font-size: 50px;
     }
 
     .workDescription {
@@ -1185,6 +1224,10 @@ li {
 
     .imageContainer {
         height: 75vh;
+    }
+
+    .overviewGrid h3 {
+        margin-left: 10%;
     }
 
     #matImage {
@@ -1209,8 +1252,17 @@ li {
         width: 100%;
     }
 
+    .overviewGrid * {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
+
     .bodyGrid:not(.overviewGrid) *{
         -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
+
+    .intro * {
         grid-column: span 2;
     }
 }
@@ -1239,7 +1291,7 @@ li {
     }
 
     .bodyGrid {
-        margin: 3em 0em;
+        margin: 1.5em 0em 3em 0em;
     }
 
     .marginLeft {
@@ -1248,9 +1300,18 @@ li {
 }
 
 @media screen and (min-width: 750px) {
+    .intro {
+        grid-template-areas: 'heading imageContainer' 'introText imageContainer';
+    }
+
     .greeting {
         width: 100%;
         font-size: 4em;
+    }
+
+    .greeting p {
+        width: 100%;
+        margin-right: 20%;
     }
 
     .introduction p {
@@ -1285,15 +1346,14 @@ li {
         padding-top: 12.5vh;
     }
 
+    .overviewGrid h3 {
+        margin-left: 20%;
+    }
+
     .workIntro {
         -webkit-box-pack: start;
             -ms-flex-pack: start;
                 justify-content: flex-start;
-    }
-
-    .greeting p {
-        width: 100%;
-        margin-right: 20%;
     }
 
     /* .introduction p {
@@ -1439,9 +1499,9 @@ li {
 
 @media screen and (min-width: 750px) and (max-width: 1000px){
     #matImage {
-        -webkit-transform: translateX(1vw) translateY(-25vh) scale(1.25);
-            -ms-transform: translateX(1vw) translateY(-25vh) scale(1.25);
-                transform: translateX(1vw) translateY(-25vh) scale(1.25);
+        -webkit-transform: scale(1.25);
+            -ms-transform: scale(1.25);
+                transform: scale(1.25);
     }
 
     .introImage {
@@ -1466,10 +1526,10 @@ li {
 }
 
 @media screen and (max-width: 1000px) {
-    .imageContainer {
+    /* .imageContainer {
         height: 50%;
         max-height: 650px;
-    }
+    } */
 
     .imageSlideshow, .imageGroup img {
         width: 100%;
@@ -1477,6 +1537,11 @@ li {
 
     .content {
         width: 100%;
+    }
+
+    .strideResearch * {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
     }
 }
 
@@ -1497,20 +1562,18 @@ li {
         width: 47.5%;
     }
 
-    .caseStudyIntro {
-        margin-right: auto;
+    /* .caseStudyIntro, .imageContainer {
         width: 45%;
-    }
+    } */
 
     .caseStudyIntro p {
         font-size: 26px;
     }
 
-    .imageContainer {
+    /* .imageContainer {
         width: 50%;
         height: 50%;
-        /* height: 50%; */
-    }
+    } */
 
     #formIntro {
         width: 40%;
@@ -1545,6 +1608,10 @@ li {
         width: 47.5%;
     }
 
+    .overviewGrid {
+        grid-gap: 1.5em 0.5em;
+    }
+
     .strideProblem, .strideResearch {
         -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -1558,10 +1625,7 @@ li {
 }
 
 @media screen and (max-width: 1200px){
-    .strideResearch * {
-        -ms-grid-column-span: 2;
-        grid-column: span 2;
-    }
+
 }
 
 @media screen and (min-width: 1200px){
