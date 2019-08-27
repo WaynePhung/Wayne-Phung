@@ -59,7 +59,7 @@ $(document).ready(function() {
             sideBarConstant = 2;
         console.log(getSectionId.offset().top);
         // console.log('$(this).index(): ' + $(this).index());
-        $(this).siblings().removeClass('navSelected');
+        anchorLinks.removeClass('navSelected');
         $(this).addClass('navSelected');
 
         // $('html, body').animate({
