@@ -15,7 +15,6 @@ let nav = $('nav'),
     beginning = $('.beginning'),
     navSideBar = $('.navSideBar'),
     anchorLinks = $('.navSideBar a'),
-    navButton = $('.navButton'),
     imageContainer = $('.imageContainer'),
     fixedElements = $('section:first-child', '.caseStudyIntro', '.navSideBar'),
     section = $('.section'),
@@ -60,7 +59,7 @@ $(document).ready(function() {
             sideBarConstant = 2;
         console.log(getSectionId.offset().top);
         // console.log('$(this).index(): ' + $(this).index());
-        $(this).find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
+        $(this).addClass('navSelected').siblings().removeClass('navSelected');
 
         // $('html, body').animate({
         //     scrollTop: elementTopPos2
@@ -137,7 +136,7 @@ $(document).ready(function() {
                 getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
                 getNavIndex = getNavId.index();
             if (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos) {
-                getNavId.find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
+                getNavId.addClass('navSelected').siblings().removeClass('navSelected');
                 console.log('Running.');
                 // switch(getNavId.index()) {
                 //     case (getNavId.index() < (anchorLinks.length - 1)/2):

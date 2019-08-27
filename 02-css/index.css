@@ -30,8 +30,11 @@ body p {
 
 a, a:hover {
     cursor: pointer;
-    color: inherit;
     text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
 }
 
 .ui-loader {
@@ -618,10 +621,9 @@ figcaption {
     border-radius: 10px;
 }
 
-.navButton a {
-    width: 100%;
-    height: 100%;
-}
+/* .navButton:hover {
+    color: blue;
+} */
 
 .navSelected {
     font-weight: bold;
@@ -670,6 +672,7 @@ figcaption {
 }
 
 .workButton {
+    text-align: center;
     margin: 0em 0em 1em 0em;
     padding: 0.5em;
 }
