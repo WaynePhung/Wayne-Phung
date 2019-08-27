@@ -59,9 +59,6 @@ $(document).ready(function() {
             sideBarConstant = 2;
         console.log(getSectionId.offset().top);
         // console.log('$(this).index(): ' + $(this).index());
-        anchorLinks.removeClass('navSelected');
-        $(this).addClass('navSelected');
-
         // $('html, body').animate({
         //     scrollTop: elementTopPos2
         // }, 100);
@@ -77,7 +74,7 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: elementTopPos2
         }, 100);
-        $(this).find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
+        $(this).addClass('navSelected').siblings().removeClass('navSelected');
         event.preventDefault();
         if (pageNameString == 'ElectricStride') {
             sideBarConstant = 2;
