@@ -1,10 +1,10 @@
 /*Section 1 - CSS code for index.html.*/
 /*Section 1.1 - Universal properties to the general page elements, links, and other miscellaneous elements.*/
 
+/* IMPORTANT COMMENT - To automatically apply vendor prefixes for maximum browser compatibility, use Autoprefixer CSS Online: autoprefixer.github.io https://autoprefixer.github.io*/
+
 html, header, header *, body * {
     -webkit-transition: 0.25s ease-in-out;
-    -moz-transition:  0.25s ease-in-out;
-    -ms-transition: 0.25s ease-in-out;
     -o-transition: 0.25s ease-in-out;
     transition:  0.25s ease-in-out;
 }
@@ -53,7 +53,6 @@ a:hover {
 
 .notransition {
   -webkit-transition: none !important;
-  -moz-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
 }
@@ -63,17 +62,24 @@ a:hover {
 /*Section 1.2 -Header and navigation elements.*/
 
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     text-align: center;
     vertical-align: middle;
-    align-items: center;
-    align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     margin-top: 0em;
     padding: 0.5em 0em;
     width: 100%;
     background-color: white;
-    box-shadow: 0em 0.1em 2em 0.1em white;
+    -webkit-box-shadow: 0em 0.1em 2em 0.1em white;
+            box-shadow: 0em 0.1em 2em 0.1em white;
     z-index: 5;
 }
 
@@ -90,13 +96,21 @@ nav {
 }
 
 .navGroup {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     text-align: center;
     vertical-align: middle;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .navLink {
@@ -106,18 +120,21 @@ nav {
     padding: 0.5em 0.1em;
     background-color: transparent;
     color: black;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .selected, .selected:hover, .workButton.selected, .workButton.selected:hover {
     border: 0.1em solid transparent;
     background-color: black;
     color: white;
-    box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+    -webkit-box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+            box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
 }
 
 .navLink:hover, .navButton:hover, .workButton.selected:hover {
-    box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+    -webkit-box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+            box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
 }
 
 @media screen and (max-width: 250px) {
@@ -135,7 +152,9 @@ nav {
 @media screen and (min-width: 250px) and (max-width: 475px) {
     .navGroup {
         margin: 0em;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .navLink {
@@ -147,14 +166,18 @@ nav {
 
 @media screen and (max-width: 475px) {
     .navGroup {
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }
 
 @media screen and (min-width: 475px) and (max-width: 750px) {
     .navGroup {
         margin: 0em 5%;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     .navLink {
@@ -174,7 +197,9 @@ nav {
 @media screen and (max-width: 750px) {
     nav {
         position: relative;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     .name {
@@ -190,19 +215,23 @@ nav {
     }
 
     .selected {
-        box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+        -webkit-box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+                box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
     }
 
     .navLink:hover {
         border: 0.025em solid transparent;
-        box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+        -webkit-box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+                box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
     }
 }
 
 @media screen and (min-width: 750px) {
     nav {
         position: fixed;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     .name {
@@ -215,7 +244,9 @@ nav {
         max-width: 650px;
         border: none;
         width: 47.50%;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
     }
 
     .navLink {
@@ -267,10 +298,16 @@ section, footer {
 }
 
 .introduction {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
     width: auto;
 }
 
@@ -283,9 +320,14 @@ section, footer {
 } */
 
 .workDescription {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .workDescription p {
@@ -299,16 +341,25 @@ section, footer {
 .homeImage a img {
     width: 100%;
     height: 50%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .work, #aboutMe, .caseStudySol {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     vertical-align: middle;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     z-index: 3;
 }
 
@@ -318,7 +369,9 @@ section, footer {
 }
 
 .work * {
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
     /* margin-bottom: 3em; */
 }
 
@@ -327,21 +380,28 @@ section, footer {
 }
 
 .workIntro {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     vertical-align: middle;
-    align-content: stretch;
-    align-items: flex-start;
-    justify-content: space-between;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     background-color: white;
-    box-shadow: 0em 0.1em 2em 0.1em white;
+    -webkit-box-shadow: 0em 0.1em 2em 0.1em white;
+            box-shadow: 0em 0.1em 2em 0.1em white;
     z-index: 4;
 }
 
 .workIntro, .workIntro *:not(.workButton) {
     -webkit-transition: 0s ease-in-out;
-    -moz-transition:  0s ease-in-out;
-    -ms-transition: 0s ease-in-out;
     -o-transition: 0s ease-in-out;
     transition:  0s ease-in-out;
 }
@@ -352,34 +412,52 @@ section, footer {
 }
 
 .stickyButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 #aboutMe {
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
 }
 
 .caseStudySol > * {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }
 
 .gridItem, .imageSlideshow, .imageGroup img, .imageContainer  {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: relative;
     margin: 0em 0em;
     /* margin: 5% 0em 10% 0em; */
     /* padding: 1em 0em; */
     /* border: 0.1em solid black; */
     vertical-align: baseline;
-    align-items: baseline;
-    align-content: baseline;
-    justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -ms-flex-line-pack: baseline;
+        align-content: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     /* border: 0.1em solid black; */
     border-radius: 25px;
-    box-shadow: 0em 0.25em 1.5em -0.25em black;
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em black;
+            box-shadow: 0em 0.25em 1.5em -0.25em black;
 }
 
 .gridItem, .imageSlideshow, .imageContainer  {
@@ -396,13 +474,18 @@ section, footer {
 
 .gridItem:hover {
     cursor: pointer;
-    transform: scale(1.075, 1.075);
-    box-shadow: 0em 0.25em 2.5em -1em black;
+    -webkit-transform: scale(1.075, 1.075);
+        -ms-transform: scale(1.075, 1.075);
+            transform: scale(1.075, 1.075);
+    -webkit-box-shadow: 0em 0.25em 2.5em -1em black;
+            box-shadow: 0em 0.25em 2.5em -1em black;
 }
 
 .gridItem a {
     overflow: hidden;
-    align-items: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     border-radius: 25px 25px 0px 0px;
 }
 
@@ -422,34 +505,40 @@ section, footer {
 .design {
     width: 100%;
     height: 25em;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #formfactories {
-    object-position: 10% 50%;
+    -o-object-position: 10% 50%;
+       object-position: 10% 50%;
 }
 
 #designLeap {
-    object-position: 0% 50%;
+    -o-object-position: 0% 50%;
+       object-position: 0% 50%;
     -webkit-filter: brightness(150%);
     filter: brightness(150%);
 }
 
 #cinemunch {
-    object-position: 0% 0%;
+    -o-object-position: 0% 0%;
+       object-position: 0% 0%;
 }
 
 .media {
     width: 100%;
     min-height: 50%;
     height: auto;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .imageSlideshow img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .gridItem img {
@@ -469,12 +558,20 @@ section, footer {
 } */
 
 .imageGroup {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     vertical-align: middle;
-    align-items: stretch;
-    align-content: center;
-    justify-content: space-between;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
 }
 
@@ -484,20 +581,27 @@ section, footer {
 
 .imageGroup img {
     height: auto;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     overflow: hidden;
-    align-items: stretch;
-    align-self: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
 }
 
 #careerCenter {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     -webkit-filter: saturate(2);
     filter: saturate(2);
 }
 
 #hyundaiStudentTeam, #dsgn100 {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #cpep {
@@ -506,13 +610,18 @@ section, footer {
 }
 
 #corgantTeam {
-    object-fit: cover;
-    object-position: left;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: left;
+       object-position: left;
 }
 
 .caseStudyIntro {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-bottom: 2em;
     width: 100%;
 }
@@ -546,8 +655,11 @@ section, footer {
 }
 
 .greeting {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin-bottom: 0.5em;
 }
 
@@ -569,20 +681,29 @@ figcaption {
 .backgroundImage {
     width: 100%;
     height: inherit;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     z-index: 2;
 }
 
 .work {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     /* padding-top: 2em; */
 }
 
 .navSideBar {
     display: none;
-    flex-direction: column;
-    align-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
     position: -webkit-sticky;
     position: sticky;
     top: 3%;
@@ -615,9 +736,14 @@ figcaption {
     margin: 0.5em 1.5em;
     padding: 0.25em;
     vertical-align: middle;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: left;
     background-color: transparent;
     color: black;
@@ -636,8 +762,13 @@ figcaption {
 }
 
 .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     margin: 0em 0em;
     height: auto;
@@ -663,16 +794,22 @@ figcaption {
     border: 0.15em solid #707070;
     border-radius: 1em;
     vertical-align: middle;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .button:hover {
     background-color: black;
     color: white;
     border: 0.15em solid transparent;
-    box-shadow: 0em 1em 1.5em -0.25em #636363;
+    -webkit-box-shadow: 0em 1em 1.5em -0.25em #636363;
+            box-shadow: 0em 1em 1.5em -0.25em #636363;
 }
 
 .workButton {
@@ -685,21 +822,29 @@ figcaption {
     background-color: transparent;
     color: black;
     border: 0.15em solid #707070;
-    box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+    -webkit-box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+            box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
 }
 
 .workButton.selected:hover {
-    box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+    -webkit-box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
+            box-shadow: 0em 0.5em 1.5em -0.25em #100e17;
 }
 
 .workButton.selected {
-    box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+    -webkit-box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
+            box-shadow: 0em 0.1em 0.5em 0.1em #100e17;
 }
 
 .resumeButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
 }
 
 .viewResume {
@@ -746,12 +891,20 @@ footer * {
 }
 
 .videoSeries {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     vertical-align: top;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     width: 100%;
 }
 
@@ -764,18 +917,29 @@ footer * {
 }
 
 .bodyContentFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     vertical-align: top;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
 }
 
 .bodyGrid {
+    display: -ms-grid;
     display: grid;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     grid-gap: 3em 3em;
     overflow: visible;
     margin: 3em 0em;
@@ -784,11 +948,18 @@ footer * {
 .imageTile {
     width: 100%;
     height: auto;
-    align-items: flex-end;
-    align-self: center;
-    justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     border-radius: 25px;
-    box-shadow: 0em 0.25em 1.5em -0.25em black;
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em black;
+            box-shadow: 0em 0.25em 1.5em -0.25em black;
     overflow: hidden;
 }
 
@@ -801,7 +972,9 @@ footer * {
 } */
 
 .stretch {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 #esPoster {
@@ -811,12 +984,14 @@ footer * {
 #secondaryResearch1 {
     min-height: 300px;
     height: 100%;
-    object-position: top;
+    -o-object-position: top;
+       object-position: top;
 }
 
 #interview1 {
     height: auto;
-    object-position: right;
+    -o-object-position: right;
+       object-position: right;
 }
 
 #interview2, #interview3 {
@@ -825,12 +1000,14 @@ footer * {
 
 #interview3 {
     /* height: 100%; */
-    object-position: top;
+    -o-object-position: top;
+       object-position: top;
 }
 
 #journeyMap1 {
     height: auto;
-    object-position: top;
+    -o-object-position: top;
+       object-position: top;
 }
 
 #journeyMap3 {
@@ -849,6 +1026,7 @@ li {
 }
 
 #designSprint3 {
+    -ms-grid-column-span: 2;
     grid-column: span 2;
 }
 
@@ -866,18 +1044,22 @@ li {
 }
 
 .span2 {
+    -ms-grid-column-span: 2;
     grid-column: span 2;
 }
 
 .gridType1 {
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
 .gridType2 {
+    -ms-grid-columns: 1fr 2fr;
     grid-template-columns: 1fr 2fr;
 }
 
 .gridType3 {
+    -ms-grid-columns: 1fr 3fr;
     grid-template-columns: 1fr 3fr;
 }
 
@@ -886,12 +1068,15 @@ li {
 }
 
 .strideImageGrid .imageTile {
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
     min-height: 300px;
     height: 100%;
 }
 
 .findings.last, .insights.last {
+    -ms-grid-column-span: 2;
     grid-column: span 2;
 }
 
@@ -937,6 +1122,7 @@ li {
     }
 
     .overviewGrid * {
+        -ms-grid-column-span: 2;
         grid-column: span 2;
     }
 
@@ -998,8 +1184,11 @@ li {
     }
 
     #matImage {
-        object-fit: fill;
-        transform: translateY(-7.5em) scaleX(1.1) scaleY(1.5);
+        -o-object-fit: fill;
+           object-fit: fill;
+        -webkit-transform: translateY(-7.5em) scaleX(1.1) scaleY(1.5);
+            -ms-transform: translateY(-7.5em) scaleX(1.1) scaleY(1.5);
+                transform: translateY(-7.5em) scaleX(1.1) scaleY(1.5);
     }
 }
 
@@ -1017,6 +1206,7 @@ li {
     }
 
     .bodyGrid:not(.overviewGrid) *{
+        -ms-grid-column-span: 2;
         grid-column: span 2;
     }
 }
@@ -1092,7 +1282,9 @@ li {
     }
 
     .workIntro {
-        justify-content: flex-start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
     }
 
     .greeting p {
@@ -1141,19 +1333,29 @@ li {
     }
 
     .backgroundImage {
-        object-fit: cover;
-        transform: scale(1);
+        -o-object-fit: cover;
+           object-fit: cover;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
     }
 
     #dLeapImage {
-        object-position: 50% 0%;
-        transform: scale(1);
+        -o-object-position: 50% 0%;
+           object-position: 50% 0%;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
     }
 
     #formfactoriesMain {
-        object-fit: contain;
-        object-position: 0% 50%;
-        transform: scale(1);
+        -o-object-fit: contain;
+           object-fit: contain;
+        -o-object-position: 0% 50%;
+           object-position: 0% 50%;
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1);
     }
 
     .imageGroup img {
@@ -1179,14 +1381,18 @@ li {
     }
 
     #mindMap {
-        transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+            -ms-transform: scale(1.25);
+                transform: scale(1.25);
     }
 
     .stretch {
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
 
     #grid4Last {
+        -ms-grid-column-span: 2;
         grid-column: span 2;
         -webkit-filter: brightness(150%);
         filter: brightness(150%);
@@ -1229,13 +1435,17 @@ li {
 
 @media screen and (min-width: 750px) and (max-width: 1000px){
     #matImage {
-        transform: translateX(1vw) translateY(-25vh) scale(1.25);
+        -webkit-transform: translateX(1vw) translateY(-25vh) scale(1.25);
+            -ms-transform: translateX(1vw) translateY(-25vh) scale(1.25);
+                transform: translateX(1vw) translateY(-25vh) scale(1.25);
     }
 
     .introImage {
         height: 50%;
-        object-fit: cover;
-        object-position: 50% 50%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: 50% 50%;
+           object-position: 50% 50%;
     }
 
     /* .caseStudyIntro p {
@@ -1273,8 +1483,10 @@ li {
 
     .introImage {
         height: 40%;
-        object-fit: cover;
-        object-position: 50% -50%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: 50% -50%;
+           object-position: 50% -50%;
     }
 
     .imageSlideshow, .introText {
@@ -1305,7 +1517,9 @@ li {
     }
 
     #matImage {
-        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+                transform: scale(1.5);
     }
 
     #greeting {
@@ -1313,6 +1527,8 @@ li {
     }
 
     .navSideBar {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         height: 100vh;
     }
@@ -1326,6 +1542,7 @@ li {
     }
 
     .strideProblem, .strideResearch {
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -1338,6 +1555,7 @@ li {
 
 @media screen and (max-width: 1200px){
     .strideResearch * {
+        -ms-grid-column-span: 2;
         grid-column: span 2;
     }
 }
@@ -1348,6 +1566,7 @@ li {
     }
 
     .strideResearch {
+        -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
     }
 }
