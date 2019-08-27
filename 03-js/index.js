@@ -14,7 +14,7 @@ let nav = $('nav'),
     media = $('#media'),
     beginning = $('.beginning'),
     navSideBar = $('.navSideBar'),
-    anchorLinks = $('.navSideBar .navButton'),
+    anchorLinks = $('.navSideBar a'),
     navButton = $('.navButton'),
     imageContainer = $('.imageContainer'),
     fixedElements = $('section:first-child', '.caseStudyIntro', '.navSideBar'),
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     anchorLinks.on('click', function(event) {
         let scrollPosition = $(window).scrollTop(),
-            getId = $(this).find('a').attr('href').split("#")[1],
+            getId = $(this).attr('href').split("#")[1],
             getSectionId = $('#' + getId + ''),
             elementTopPos1 = getSectionId.offset().top - (2*nav.outerHeight(true)),
             elementTopPos2 = getSectionId.offset().top - (nav.outerHeight(true)),
@@ -60,6 +60,8 @@ $(document).ready(function() {
             sideBarConstant = 2;
         console.log(getSectionId.offset().top);
         // console.log('$(this).index(): ' + $(this).index());
+        $(this).find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
+
         // $('html, body').animate({
         //     scrollTop: elementTopPos2
         // }, 100);
@@ -75,7 +77,7 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: elementTopPos2
         }, 100);
-        $(this).addClass('navSelected').siblings().removeClass('navSelected');
+        $(this).find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
         event.preventDefault();
         if (pageNameString == 'ElectricStride') {
             sideBarConstant = 2;
@@ -134,8 +136,8 @@ $(document).ready(function() {
                 getId = $(this).attr('id'),
                 getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
                 getNavIndex = getNavId.index();
-            if ((scrollPosition >= content.scrollTop()) && (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos)) {
-                $(this).addClass('navSelected').siblings().removeClass('navSelected');
+            if (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos) {
+                getNavId.find('button').addClass('navSelected').parents().siblings().find('button').removeClass('navSelected');
                 console.log('Running.');
                 // switch(getNavId.index()) {
                 //     case (getNavId.index() < (anchorLinks.length - 1)/2):
