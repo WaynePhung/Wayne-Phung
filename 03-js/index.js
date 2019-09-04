@@ -12,6 +12,7 @@ let nav = $('nav'),
     work = $('.work'),
     design = $('#design'),
     media = $('#media'),
+    projectTitle = $('.gridItem .projectTitle'),
     beginning = $('.beginning'),
     navSideBar = $('.navSideBar'),
     anchorLinks = $('.navSideBar a'),
@@ -40,6 +41,10 @@ $(document).ready(function() {
 
     console.log(pageNameString);
 
+    let toCHeight = anchorLinks.last().outerHeight(true);
+    console.log('toCHeight: ' + toCHeight);
+    $('.tableOfContents::after').css('height', toCHeight);
+
     $(".seeProcess").on('click', function(event) {
         let hash = this.hash;
         $('html, body').animate({
@@ -47,121 +52,72 @@ $(document).ready(function() {
         }, 250);
     });
 
+    navSideBar.on('mouseenter', function(event) {
+        $('.navSideBar *').addClass('hover');
+    });
+
+    navSideBar.on('mouseleave', function(event) {
+        $('.navSideBar *').removeClass('hover');
+    });
+
     anchorLinks.on('click', function(event) {
         let scrollPosition = $(window).scrollTop(),
             getId = $(this).attr('href').split("#")[1],
             getSectionId = $('#' + getId + ''),
-            elementTopPos1 = getSectionId.offset().top - (2*nav.outerHeight(true)),
+            elementTopPos1 = getSectionId.offset().top - (1.5*nav.outerHeight(true)),
             elementTopPos2 = getSectionId.offset().top - (nav.outerHeight(true)),
-            elementBottomPos = getSectionId.offset().top + getSectionId.height() - (2*nav.outerHeight(true)),
+            elementBottomPos = getSectionId.offset().top + getSectionId.height() - (1.5*nav.outerHeight(true)),
             getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
             getNavIndex = getNavId.index(),
             sideBarConstant = 2;
         console.log(getSectionId.offset().top);
-        // console.log('$(this).index(): ' + $(this).index());
-        // $('html, body').animate({
-        //     scrollTop: elementTopPos2
-        // }, 100);
-        // if (getNavIndex = anchorLinks.length) {
-        //     getNavIndex -= 1;
-        // }
-        // console.log('getNavIndex: ' + (getNavIndex));
-        // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
-        // navSideBar.animate({
-        //     scrollTop: anchorLinks.eq(getNavIndex).offset().top
-        // }, 100);
-
         $('html, body').animate({
-            scrollTop: elementTopPos2
+            scrollTop: elementTopPos1
         }, 100);
-        $(this).addClass('navSelected').siblings().removeClass('navSelected');
-        event.preventDefault();
-        if (pageNameString == 'ElectricStride') {
-            sideBarConstant = 2;
+        for (let i = 0; i < anchorLinks.length; i++) {
+            anchorLinks.eq(i).removeClass('navSelected circleSelected');
         }
-        if (scrollPosition >= elementTopPos1 && scrollPosition <= elementBottomPos) {
-            if ($(this).index() <= ((anchorLinks.length - 1)/sideBarConstant)) {
-                navSideBar.animate({
-                    scrollTop: -1*navSideBar.height()
-                }, 100);
-            }
-            if ($(this).index() > ((anchorLinks.length - 1)/sideBarConstant)) {
-                navSideBar.animate({
-                    scrollTop: navSideBar.height()
-                }, 100);
-            }
-        }
+        $(this).addClass('navSelected circleSelected');
     });
-
-    // workButton.on('click', function(event) {
-    //     workButton.removeClass('selected');
-    //     $(this).addClass('selected');
-    //     toggleWork();
-    //     $('html, body').animate({
-    //         scrollTop: introduction.offset().top + (1.5*introduction.outerHeight(true))
-    //     }, 100);
-    // });
 
     scrollSpy();
     change1000Width();
     toggleSideBar();
-    // stickyButtons();
-    // toggleWork();
+    imageTileHeight();
 
     $(window).on("resize", function() {
         scrollSpy();
         change1000Width();
         toggleSideBar();
-        // stickyButtons();
+        imageTileHeight();
     });
 
     $(window).bind('scroll', function() {
-        // console.log('defaultIndex: ' + defaultIndex);
         scrollSpy();
         change1000Width();
         toggleSideBar();
-        // stickyButtons();
     });
 
     function scrollSpy () {
         let scrollPosition = $(window).scrollTop(),
             section = $('.section');
-        // console.log('anchorLinks.length: ' + anchorLinks.length);
         section.each( function(index) {
             var elementTopPos = $(this).offset().top - (2*nav.outerHeight(true)),
                 elementBottomPos = $(this).offset().top + $(this).height() - (2*nav.outerHeight(true)),
                 getId = $(this).attr('id'),
-                getNavId = $('.navSideBar a[href = "#' + getId + '"]'),
-                getNavIndex = getNavId.index();
+                getNavId = $('.navSideBar ul li a[href = "#' + getId + '"]'),
+                getNavIndex = getNavId.attr('data-index');
             if (scrollPosition >= elementTopPos && scrollPosition <= elementBottomPos) {
-                getNavId.siblings().removeClass('navSelected');
-                getNavId.addClass('navSelected');
+                anchorLinks.removeClass('navSelected circleSelected');
+                getNavId.addClass('navSelected circleSelected');
                 console.log('Running.');
-                // switch(getNavId.index()) {
-                //     case (getNavId.index() < (anchorLinks.length - 1)/2):
-                //         break;
-                //     case (getNavId.index() < (anchorLinks.length - 1)/2):
-                //         break;
-                // }
-                // console.log('getNavIndex: ' + (getNavIndex));
-                // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
-                // if (getNavIndex = anchorLinks.length) {
-                //     getNavIndex -= 1;
-                // }
-                // navSideBar.animate({
-                //     scrollTop: Math.abs(anchorLinks.eq(getNavIndex).position().top)
-                // }, 100);
+                console.log('getNavIndex: ' + getNavIndex);
                 if (getNavIndex <= ((anchorLinks.length - 1)/2)) {
-                    console.log('getNavIndex: ' + getNavIndex);
-                    // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
                     navSideBar.animate({
                         scrollTop: -1*navSideBar.height()
                     }, 100);
                 }
-
                 if (getNavIndex > ((anchorLinks.length - 1)/2)) {
-                    console.log('getNavIndex: ' + getNavIndex);
-                    // console.log('anchorLinks.eq(getNavIndex).position().top: ' + anchorLinks.eq(getNavIndex).position().top);
                     navSideBar.animate({
                         scrollTop: navSideBar.height()
                     }, 100);
@@ -173,7 +129,6 @@ $(document).ready(function() {
     function change1000Width() {
         if ($(window).width() <= 750) {
             fixedElements.css('padding-top', 0);
-            // embedResume.css('display', 'none');
         }
         if ($(window).width() > 750) {
             if ($(window).height() < 450) {
@@ -182,204 +137,15 @@ $(document).ready(function() {
             if ($(window).height() >= 450) {
                 fixedElements.css('padding-top', nav.outerHeight(true));
             }
-            // embedResume.css('display', 'block');
         }
-        // if (($(window).width() > 750 && $(window).height() > 650)) {
-        //     nav.css({
-        //         'position' : 'fixed',
-        //         'justify-content' : 'space-between'
-        //     });
-        // } else {
-        //     nav.css({
-        //         'position' : 'relative'
-        //     });
-        // }
     }
 
     function toggleSideBar() {
-        // console.log('Height of beginning element: ' + imageContainer.innerHeight());
-        // console.log('Window scroll position: ' + $(window).scrollTop());
         if ($(window).width() > 990) {
             navSideBar.show();
         } else {
             navSideBar.hide();
         }
-        // if (navSideBar.css('display') == 'none') {
-        //     navButton.css('width', '100%');
-        // } else {
-        //     navButton.css('width', '72.5%');
-        // }
-    }
-
-    function stickyButtons() {
-        // if (($(window).scrollTop() > (introduction.offset().top + introduction.outerHeight(true))) && ($(window).width() < 750)) {
-        // if (pageNameString == 'index') {
-        //     if ($(window).scrollTop() >= (introduction.offset().top + introduction.outerHeight(true))) {
-        //         if ($(window).height() <=  450) {
-        //             if ($(window).width() <= 750) {
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '100%'
-        //                 });
-        //             } else {
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '47.5%'
-        //                 });
-        //             }
-        //             nav.css({
-        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
-        //             });
-        //             work.css({
-        //                 'padding-top' : '1.5em'
-        //             });
-        //             workIntro.css({
-        //                 'position' : 'relative',
-        //                 'top' : '',
-        //                 'left' : '',
-        //                 'justify-content' : 'space-between',
-        //                 'margin' : '',
-        //                 'padding' : '2.5% 0em',
-        //                 'width' : 'auto'
-        //             });
-        //             workIntroHeading.css({
-        //                 'margin-left' : ''
-        //             });
-        //         }
-        //         if ($(window).height() >  450) {
-        //             if ($(window).width() <= 750) {
-        //                 nav.css({
-        //                     'box-shadow' : 'none'
-        //                 });
-        //                 work.css({
-        //                     'padding-top' : '25em'
-        //                 });
-        //                 workIntro.css({
-        //                     'position' : 'fixed',
-        //                     'top' : '0',
-        //                     'left' : '0',
-        //                     'justify-content' : 'center',
-        //                     'margin' : '0em 0em',
-        //                     'padding' : '2.5% 5%',
-        //                     'width' : '100%'
-        //                 });
-        //                 workIntroHeading.css({
-        //                     'margin-left' : '',
-        //                     'width' : '100%'
-        //                 });
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '100%'
-        //                 });
-        //             } else {
-        //                 nav.css({
-        //                     'box-shadow' : 'none'
-        //                 });
-        //                 work.css({
-        //                     'padding-top' : '25em'
-        //                 });
-        //                 workIntro.css({
-        //                     'position' : 'fixed',
-        //                     'top' : nav.outerHeight(true),
-        //                     'left' : '0',
-        //                     'justify-content' : 'space-between',
-        //                     'margin' : '0em 0em',
-        //                     'padding' : '0.5em 0',
-        //                     'width' : '100%'
-        //                 });
-        //                 workIntroHeading.css({
-        //                     'margin-left' : '5%',
-        //                     'width' : 'auto'
-        //                 });
-        //                 stickButtons.css({
-        //                     'margin-right' : '5%',
-        //                     'width' : '42.5%'
-        //                 });
-        //             }
-        //         }
-        //     } else {
-        //         if ($(window).height() <=  450) {
-        //             if ($(window).width() <= 750) {
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '100%'
-        //                 });
-        //             } else {
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '47.5%'
-        //                 });
-        //             }
-        //             nav.css({
-        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
-        //             });
-        //             work.css({
-        //                 'padding-top' : '1.5em'
-        //             });
-        //             workIntro.css({
-        //                 'position' : 'relative',
-        //                 'top' : '',
-        //                 'left' : '',
-        //                 'justify-content' : 'space-between',
-        //                 'margin' : '',
-        //                 'padding' : '2.5% 0em',
-        //                 'width' : 'auto'
-        //             });
-        //             workIntroHeading.css({
-        //                 'margin-left' : ''
-        //             });
-        //         }
-        //         if ($(window).height() >  450) {
-        //             if ($(window).width() <= 750) {
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '100%'
-        //                 });
-        //             } else {
-        //                 stickButtons.css({
-        //                     'margin-right' : '',
-        //                     'width' : '47.5%'
-        //                 });
-        //             }
-        //             nav.css({
-        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
-        //             });
-        //             work.css({
-        //                 'padding-top' : '1.5em'
-        //             });
-        //             workIntro.css({
-        //                 'position' : 'relative',
-        //                 'top' : '',
-        //                 'left' : '',
-        //                 'justify-content' : 'space-between',
-        //                 'margin' : '',
-        //                 'padding' : '2.5% 0em',
-        //                 'width' : 'auto'
-        //             });
-        //             workIntroHeading.css({
-        //                 'margin-left' : ''
-        //             });
-                // }
-                    // nav.css({
-                    //     'box-shadow' : 'none'
-                    // });
-                    // workIntro.css({
-                    //     'position' : 'fixed',
-                    //     'top' : '0',
-                    //     'left' : '0',
-                    //     'justify-content' : 'center',
-                    //     'margin' : '0em 0em',
-                    //     'padding' : '2.5% 5%',
-                    //     'width' : '100%'
-                    // });
-                    // workIntroHeading.css({
-                    //     'margin-left' : '',
-                    //     'width' : '100%'
-                    // });
-        //     }
-        // } else {
-        //
-        // }
     }
 
     function toggleWork() {
@@ -392,121 +158,33 @@ $(document).ready(function() {
                 media.show();
             }
         } else {
+        }
+    }
 
+    function imageTileHeight() {
+        if ($(window).width() >= 750 && $(window).width() < 1250) {
+            var currentMaxHeight = 0;
+            for (let i = 0; i < projectTitle.length; i++) {
+                let getHeight = projectTitle.eq(i).outerHeight(true);
+                if (getHeight > currentMaxHeight) {
+                    currentMaxHeight = getHeight;
+                }
+            }
+            if (currentMaxHeight > 72) {
+                currentMaxHeight = 72;
+            }
+            // if (currentMaxHeight < 72) {
+            //     currentMaxHeight = 36;
+            // }
+            console.log(currentMaxHeight);
+            projectTitle.css('height', currentMaxHeight);
+        }
+        if ($(window).width() >= 1250) {
+            currentMaxHeight = 36;
+            console.log(currentMaxHeight);
+            projectTitle.css('height', currentMaxHeight);
+        } else {
+            currentMaxHeight = 0;
         }
     }
 });
-        //         stickButtons.css({
-        //             'margin-right' : '',
-        //             'width' : '47.5%'
-        //         });
-        //         nav.css({
-        //             'box-shadow' : '0em 0.1em 2em 0.1em white'
-        //         });
-        //         workIntro.css({
-        //             'position' : 'relative',
-        //             'top' : '',
-        //             'left' : '',
-        //             'justify-content' : 'space-between',
-        //             'margin' : '',
-        //             'padding' : '2.5% 0em',
-        //             'width' : 'auto'
-        //         });
-        //         workIntroHeading.css({
-        //             'margin-left' : ''
-        //         });
-        //     } else {
-        //
-        //     }
-        //     if (($(window).width() <  750) && ($(window).height() >  450)) {
-        //         nav.css({
-        //             'box-shadow' : 'none'
-        //         });
-        //         workIntro.css({
-        //             'position' : 'fixed',
-        //             'top' : '0',
-        //             'left' : '0',
-        //             'justify-content' : 'center',
-        //             'margin' : '0em 0em',
-        //             'padding' : '2.5% 5%',
-        //             'width' : '100%'
-        //         });
-        //         workIntroHeading.css({
-        //             'margin-left' : '',
-        //             'width' : '100%'
-        //         });
-        //         stickButtons.css({
-        //             'margin-right' : '',
-        //             'width' : '100%'
-        //         });
-        //     } else if (($(window).width() >  750) && ($(window).height() >  450)) {
-            //         nav.css({
-            //             'box-shadow' : 'none'
-            //         });
-            //         workIntro.css({
-            //             'position' : 'fixed',
-            //             'top' : nav.outerHeight(true),
-            //             'left' : '0',
-            //             'justify-content' : 'space-between',
-            //             'margin' : '0em 0em',
-            //             'padding' : '0 0',
-            //             'width' : '100%'
-            //         });
-            //         workIntroHeading.css({
-            //             'margin-left' : '5%',
-            //             'width' : 'auto'
-            //         });
-        //         stickButtons.css({
-        //             'margin-right' : '5%',
-        //             'width' : '43%'
-        //         });
-        //     } else {
-        //             stickButtons.css({
-        //                 'margin-right' : '',
-        //                 'width' : '47.5%'
-        //             });
-        //             nav.css({
-        //                 'box-shadow' : '0em 0.1em 2em 0.1em white'
-        //             });
-        //             workIntro.css({
-        //                 'position' : 'relative',
-        //                 'top' : '',
-        //                 'left' : '',
-        //                 'justify-content' : 'space-between',
-        //                 'margin' : '',
-        //                 'padding' : '2.5% 0em',
-        //                 'width' : 'auto'
-        //             });
-        //             workIntroHeading.css({
-        //                 'margin-left' : ''
-        //             });
-        //         }
-        //     }
-        // } else {
-        //     if ($(window).width() < 750) {
-        //         stickButtons.css({
-        //             'margin-right' : '',
-        //             'width' : '100%'
-        //         });
-        //     } else {
-        //         stickButtons.css({
-        //             'margin-right' : '',
-        //             'width' : '47.5%'
-        //         });
-        //     }
-        //     nav.css({
-        //         'box-shadow' : '0em 0.1em 2em 0.1em white'
-        //     });
-        //     workIntro.css({
-        //         'position' : 'relative',
-        //         'top' : '',
-        //         'left' : '',
-        //         'justify-content' : 'space-between',
-        //         'margin' : '',
-        //         'padding' : '2.5% 0em',
-        //         'width' : 'auto'
-        //     });
-        //     workIntroHeading.css({
-        //         'margin-left' : ''
-        //     });
-        // }

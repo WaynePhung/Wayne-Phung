@@ -9,6 +9,8 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- Font Awesome Icons & CSS -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Pro:500&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="02-css/index.css">
 
         <!-- Title of Website -->
@@ -25,113 +27,201 @@
                 <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
             </div>
         </nav>
-        <div class="intro beginning gridType1">
+        <div class="intro beginning gridType2" id="ffIntro">
             <section>
                 <h1 class="caseStudySol greeting span2">Formfactories Website Redesign</h1>
                 <p class="caseStudyIntro">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego.</p>
             </section>
-            <figure class="imageContainer">
-                <img src="mediaFiles/images/design/FormfactoriesWebsite.png" alt="Main page of the redesigned Formfactories website." class="backgroundImage" id="formfactoriesMain">
+            <figure class="imageContainer" id="ffImgContainer">
+                <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="Main page of the redesigned Formfactories website." class="backgroundImage" id="formfactoriesMain">
             </figure>
         </div>
         <div class="work">
-            <section class="navSideBar" id="navSideBar">
-                <h4>Table of Contents</h4>
-                <p>Scroll or swipe down here to quickly navigate through each section of this case study.</p>
-                <a class="navButton" href="#overview" data-index="0">Overview</a>
-                <a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a>
-                <a class="navButton" href="#interviews" data-index="2">Interviews</a>
-                <a class="navButton" href="#personaStoryboards" data-index="3">Personas Storyboards</a>
-                <a class="navButton" href="#scenarios" data-index="4">User Scenarios</a>
-                <a class="navButton" href="#useCases" data-index="5">Use Cases</a>
-                <a class="navButton" href="#creativeBrief" data-index="6">Creative Brief</a>
-                <a class="navButton" href="#prototyping" data-index="7">Prototyping</a>
-                <a class="navButton" href="#userTesting" data-index="8">User Testing</a>
-                <a class="navButton" href="#iterations" data-index="9">Iterations</a>
-                <a class="navButton" href="#finalDesign" data-index="10">Final Design</a>
-                <a class="navButton" href="#results" data-index="11">Results</a>
-                <a class="navButton" href="#reflection" data-index="12">Reflection</a>
-                <a class="navButton" href="#improvements" data-index="13">Improvements</a>
-            </section>
+            <nav class="navSideBar">
+                <ul class="tableOfContents" id="ffTOC">
+                    <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
+                    <li><a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a></li>
+                    <li><a class="navButton" href="#research" data-index="2">Research</a></li>
+                    <li><a class="navButton" href="#dataSynthesis" data-index="3">Data Synthesis</a></li>
+                    <li><a class="navButton" href="#creativeBrief" data-index="4">Creative Brief</a></li>
+                    <li><a class="navButton" href="#prototyping" data-index="5">Prototyping</a></li>
+                    <li><a class="navButton" href="#userTesting" data-index="6">User Testing</a></li>
+                    <li><a class="navButton" href="#iterations" data-index="7">Iterations</a></li>
+                    <li><a class="navButton" href="#finalDesign" data-index="8">Final Design</a></li>
+                    <li><a class="navButton" href="#results" data-index="9">Results</a></li>
+                    <li><a class="navButton" href="#reflection" data-index="10">Reflection</a></li>
+                    <li><a class="navButton" href="#improvements" data-index="11">Improvements</a></li>
+                </ul>
+            </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="designChallenge">Design Challenge</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="interviews">Interviews</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="personaStoryboards">Personas and Storyboards</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="scenarios">User Scenarios</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="useCases">Use Cases</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section span2" id="overview">Overview</h2>
+                <section class="bodyGrid gridType2 overviewGrid">
+                    <h3 class="subheading">Project Type</h3>
+                    <p class="text">This was both a student class project and a client project for a website redesign. The client runs a small startup 3D-printing company, Formfactories.</p>
+                    <h3 class="subheading">Objective</h3>
+                    <p class="text">To make a high-fidelity mockup of the client’s company website for Formfactories that will effectively market his 3D-printing business and services towards potential customers.</p>
+                    <h3 class="subheading">Duration</h3>
+                    <p class="text">10 weeks</p>
+                    <h3 class="subheading">My Role</h3>
+                    <div class="gridContent">
+                        <p class="text">I contributed to most, if not all of the tasks needed for the website redesign. This includes the following.</p>
+                        <ul>
+                            <li><b>User Research</b> - Interviews, Competitive Analysis</li>
+                            <li><b>Data Synthesis</b> - Personas, User Scenarios, and Use Cases</li>
+                            <li><b>Prototyping</b> - Creative Brief, Information Architecture, Sketches, Wireframing</li>
+                            <li><b>Iteration</b> - User Testing, Design Requirements and Feedback Implementation</li>
+                        </ul>
+                    </div>
+                    <h3 class="subheading">Tools</h3>
+                    <p class="text">Google Suite, Figma</p>
+                    <h3 class="subheading">Core Team</h3>
+                    <p class="text">Alexander Chen, Denise Tang, Lixiang (Janice) Zhou</p>
+                    <h3 class="subheading">Mentors</h3>
+                    <div class="gridContent">
+                        <p class="text"><b>David Kirsh</b> - He is a professor within the Cognitive Science department at University of California - San Diego. He taught the course in which this website was revolved around (Practicum in Pro Web Design), helped to teach the fundamentals of working with clients, and give constructive critique on the progress of our team’s website.</p>
+                        <p class="text"><b>Adam Mekrut, Trevor Elwell, and Emily Nguyen</b> - These were the TAs that facilitated the course. They gave insights, guidance, and critique to our group’s progress.</p>
+                    </div>
+                </section>
+                <section class="bodyGrid strideProblem">
+                    <h2 class="section span2" id="designChallenge">Design Challenge</h2>
+                    <article class="gridContent span2" id="probBG">
+                        <h3 class="subheading">Problem Background</h3>
+                        <p class="text marginLeft">
+                            Within our team, Alexander was able to connect us with a client that needed a website. Our client, Michael Armbruster, the owner of Incept 3D,
+                            wanted a website that would automate the process of 3D-printing orders for his partner company, Formfactories.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h3 class="subheading">Solution</h3>
+                        <p class="text marginLeft">
+                            We designed a high-fidelity mockup of Formfactories’ website on both mobile and desktop to incorporate aspects of the
+                            ordering process of obtaining a 3D-printed part, keeping track of orders, and getting information about the 3D printers and materials that
+                            Formfactories hosts.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section span2" id="research">Research</h2>
+                    <article class="gridContent span2">
+                        <h3>Interviews</h3>
+                        <p class="marginLeft">
+                            We interviewed with Michael to pinpoint his needs and understandings of his potential website. We also asked people who were familiar with
+                            3D-printing on what their needs were with 3D-printing. Below are highlights from some of the notes gathered that informed us of prioritizing
+                            specific features of the website.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Client’s Perspectives</h4>
+                        <p>Below are the client's responses  that explain the connection between his company's business and the website.</p>
+                        <ul class="marginLeft">
+                            <li>
+                                <b>Purpose of Business</b> - Formfactories is a 3D printing company and serves the middle market. Formfactories produces quick
+                                prototypes in plastic. The goal of Formfactories is to have as much automation as possible. Customers place orders through
+                                Formfactories, Formfactories prints the file and delivers the file to the client.
+                            </li>
+                            <li>
+                                <b>Purpose of Formfactories’ Website</b> - Be as prestigious as any Silicon Valley tech company, but function like Amazon where
+                                the customer gets to do everything to get their 3D printing part.
+                            </li>
+                            <li>
+                                <b>Types of People that Use the Service</b> - Have a “minimalist feel”, quick, snappy, professional, and techy.
+                            </li>
+                            <li>
+                                <b>Company Brand</b> - Have a “minimalist feel”, quick, snappy, professional, and techy.
+                            </li>
+                            <li>
+                                <b>Types of People that Use the Service</b> - Majority of customers, 90% of them, are mechanical engineers, but there are niche industries that find out about 3D printing.
+                            </li>
+                            <li>
+                                <b>How Formfactories Compares to Competitors</b> - Has direct manufacturing with quick parts versus other places where they outsource their 3D printing. More transparent
+                                in its actual capabilities for 3D printing. However, other competitors claim they have a comprehensive list of 3D printing options and services to choose from.
+                            </li>
+                            <li>
+                                <b>Website Content</b> - Mostly just rewording the way they represent their products, 3D printers, printer specifications, and 3D printing material.
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Other People’s Perspectives</h4>
+                        <p>Below are the considerations when people choose a 3D printing service.</p>
+                        <ul class="marginLeft">
+                            <li>Ability to upload CAD file and get an instant quote with a time estimate of completing the order for the part.</li>
+                            <li>Having control over setting up 3D printed part(s) to make changes if needed.</li>
+                            <li>3D parts can be financially expensive to outsource, so cost is essential to factor into.</li>
+                            <li>Quality assurance and control of the 3D part(s).</li>
+                            <li>It's important that the business knows what their doing to gain trust. There should be a good impression of the business being knowledgeable about their industry and what they do.</li>
+                            <li>Other factors to control for the 3D printed part(s) include size of print, how detailed the part(s) are, how complex they are, are supports and brims needed for the part(s), etc.</li>
+                            <li>3D printing materials and their usage as well as accurate dimensions of the printed part(s) are other considerations.</li>
+                            <li>There should be the ability to print the part with the provided machines.</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent span2">
+                        <h3>Competitive Analysis</h3>
+                        <p class="marginLeft">
+                            We also researched some potential competitors of Incept3D and Formfactories, specifically looking into the websites of other 3D printing companies. We analyzed what notable features they
+                            had based on their branding, website functionality, content, site architecture, site navigation, and visual design that could inspire features to incorporate within our redesign of Formfactories’ website.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis1.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis2.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis3.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis4.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section span2" id="dataSynthesis">Data synthesis</h2>
+                    <p class="marginLeft">
+                        From our competitive analysis, we analyzed what notable features these companies had that could inspire features to incorporate within the website,
+                        within each category (branding, functionality, content, etc.) and in general for all of our competitors.
+                    </p>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/dataSynthesis1.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/dataSynthesis2.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h3>Personas</h3>
+                        <p class="marginLeft">
+                            We summarized our findings and understandings of Formfactories' typical stakeholders into 3 different personas to illustrate their background and needs in relation to 3D printing.
+                        </p>
+                        <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona1.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        </figure>
+                        <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona2.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        </figure>
+                        <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona3.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        </figure>
+                    </article>
+                    <article class="gridContent span2">
+                        <h3>User Scenarios and Use Cases</h3>
+                        <p class="marginLeft">
+                            Within each persona, we illustrated typical activities and needs that the persona would typically need to address the most through our scenarios.
+                            The use cases helped inform the different features that should be addressed, which would made up the overall design of the website.
+                        </p>
+                        <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona1.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        </figure>
+                        <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona2.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        </figure>
+                    </article>
+                </section>
                 <h2 class="section" id="creativeBrief">Creative Brief</h2>
                 <p>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
