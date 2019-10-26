@@ -569,7 +569,6 @@ nav {
 /* .fa-linkedin {
     font-size: 24px;
     color: hsl(214, 100%, 32%);
-}
 
 .fa-linkedin:hover {
     font-size: 24px;
@@ -580,7 +579,7 @@ nav {
     cursor: pointer;
     margin: 0.5em 0%;
     color: hsl(214, 100%, 32%);
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .navGroup {
@@ -968,15 +967,15 @@ footer p.caseStudy {
         align-self: stretch;
 }
 
-.workDescription p.genText1 {
+.workDescription p {
     -ms-flex-item-align: start;
         align-self: flex-start;
-    margin-bottom: 2em;
-    color: hsl(214, 100%, 32%);
     line-height: 1.6;
+    height: 60%;
+    margin-bottom: 0.5em;
 }
 
-.contact, .beginning {
+.contact {
     margin: 0em 5%;
 }
 
@@ -1087,7 +1086,7 @@ footer p.caseStudy {
         align-self: center;
 }
 
-.gridItem, .imageSlideshow {
+.gridItem, .imageSlideshow, .imageContainer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1112,6 +1111,15 @@ footer p.caseStudy {
 
 .imageGroup img {
     cursor: pointer;
+    border-radius: 25px;
+}
+
+.gridItem .designImage {
+    height: 75vh;
+}
+
+.imageContainer {
+    width: 47.5%;
 }
 
 #WaynePhung {
@@ -1119,6 +1127,13 @@ footer p.caseStudy {
     height: 100%;
 }
 
+#WaynePhung {
+    border-radius: 25px;
+    overflow: visible;
+    height: 100%;
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+            box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+}
 
 .gridItem {
     -ms-flex-item-align: stretch;
@@ -1133,6 +1148,18 @@ footer p.caseStudy {
 
 .gridItem * {
     overflow: hidden;
+    background-color: hsl(0, 0%, 95%);
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+            box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+}
+
+.gridItem:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.075, 1.075);
+        -ms-transform: scale(1.075, 1.075);
+            transform: scale(1.075, 1.075);
+    -webkit-box-shadow: 0em 0.25em 2.5em -1em hsl(0, 0%, 29%);
+            box-shadow: 0em 0.25em 2.5em -1em hsl(0, 0%, 29%);
 }
 
 /* .gridItem a {
@@ -1141,14 +1168,14 @@ footer p.caseStudy {
         -ms-flex-align: stretch;
             align-items: stretch;
     height: auto;
-} */
+    border-radius: 25px 25px 0px 0px;
+}
 
 .gridItem h3 {
     text-align: center;
     /* font-size: 30px; */
     /* height: 30%; */
     /* min-height: 75px; */
-}
 
 /* .gridItem img {
     width: 100%;
@@ -1173,9 +1200,6 @@ footer p.caseStudy {
 
 /* #formfactories {
     height: 30em;
-} */
-
-/* #formfactories {
     -o-object-position: 50% 40%;
        object-position: 50% 40%;
 }
@@ -1184,8 +1208,8 @@ footer p.caseStudy {
     -o-object-position: 0% 10%;
        object-position: 0% 10%;
     /* -webkit-filter: brightness(150%);
-    filter: brightness(150%); */
-} */
+    filter: brightness(150%);
+}*/
 
 #cinemunch {
     -o-object-position: top;
@@ -1205,6 +1229,10 @@ footer p.caseStudy {
     height: auto;
     -o-object-fit: cover;
        object-fit: cover;
+}
+
+.gridItem img, .imageSlideshow img, .imageGroup img {
+    border-radius: 25px 25px 0px 0px;
 }
 
 /* .imageContainer {
@@ -1269,6 +1297,9 @@ footer p.caseStudy {
         -ms-grid-row-align: stretch;
         align-self: stretch;
     overflow: hidden;
+    border-radius: 25px;
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 33%);
+            box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 33%);
 }
 
 .imageGroup figure img {
@@ -1327,11 +1358,14 @@ footer p.caseStudy {
 .projectDescription, .tags {
     width: 100%;
 }
-
 .projectDescription {
     display: block;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+}
+
+.projectTitle {
+    display: inline-block;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1868,6 +1902,11 @@ audio {
     grid-gap: 2em 2em;
 }
 
+.bodyGrid, #pivotIdeas {
+    grid-gap: 3em 3em;
+    margin: 1.5em 0em 3em 0em;
+}
+
 #pivotIdeas {
     -ms-grid-columns: 1fr 3em 1fr;
     grid-template-columns: 1fr 1fr;
@@ -2025,6 +2064,27 @@ audio {
 }
 
 /* figcaption {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    border-radius: 25px;
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+            box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+    overflow: hidden;
+}
+
+.defaultBackground {
+    background-color: hsl(0, 0%, 95%);
+}
+
+.svgPadding {
+    background-color: hsl(0, 0%, 95%);
+    width: 100%;
+    height: auto;
+    /* padding: 1em; */
+}
+
+.gifTile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2069,6 +2129,84 @@ audio {
 }
 
 .textGraphic, .audioSpectrum {
+    width: 50%;
+}
+
+#coloredText1, #coloredText2, #colorCollage {
+    width: 100%;
+}
+
+#rainbowStockFootage {
+    -o-object-fit: fill;
+       object-fit: fill;
+    height: 250px;
+    width: 100%;
+    /* margin-bottom: 3em;
+    background-color: hsl(0, 0%, 95%);
+    width: 100%;
+    height: auto;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    border-radius: 25px;
+    -webkit-box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+            box-shadow: 0em 0.25em 1.5em -0.25em hsl(0, 0%, 29%);
+    overflow: hidden; */
+}
+
+/* .gifTile img {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+} */
+
+.autoplayVideo {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    width: 100%;
+    height: auto;
+}
+
+.vidControlsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    vertical-align: middle;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: center;
+    margin: 0.5em 0;
+    width: 100%;
+    background-color: hsl(0, 0%, 95%);
+}
+
+.vidControlsContainer button {
+    background-color: transparent;
+    margin: 0em 0.5em;
+    padding: 0.5em;
+    width: 200px;
+    height: 50px;
+    color: hsl(214, 100%, 32%);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border: 0.1em solid hsl(214, 100%, 32%);
+    border-radius: 1em;
+}
+
+.vidControlIcon {
+    margin: 0em 0.25em 0em 0em;
+    height: 100%;
+}
+
+.iteration1Play, .iteration3Play, .iteration5Play, .textGraphic {
     width: 50%;
 }
 
@@ -2227,6 +2365,11 @@ table {
 
 table th {
     padding: 0.5em;
+}
+
+.span2, .allSpan * {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
 }
 
 table tr, table th, table td {
@@ -2420,10 +2563,12 @@ li {
 }
 
 .gridAreas1 {
-        grid-template-areas:
-        'heading heading heading heading heading heading'
-        'generalText generalText image image image image'
-        'constraints constraints constraints solution solution solution';
+    grid-template-areas:
+    'heading heading heading heading heading heading'
+    'generalText generalText image image image image'
+    'constraints constraints constraints solution solution solution';
+    /* -ms-grid-columns: 2fr 3fr;
+    grid-template-columns: 2fr 3fr; */
 }
 
 .strideImageGrid .imageTile {
@@ -2592,6 +2737,22 @@ li {
     margin: 0 5% 5em 5%;
 }
 
+#ffImgContainer {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+#pivotVote {
+    height: auto;
+}
+
+#pivotProblems {
+    margin-bottom: 3em;
+}
+
 @media screen and (max-width: 200px) {
     /* .introduction, .beginning {
         padding-top: 45vh;
@@ -2757,6 +2918,15 @@ li {
         margin-top: 2em;
     }
 
+    .bodyGrid:not(.overviewGrid) *, .bodyGrid1 {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
+
+    .intro {
+        margin-top: 2em;
+    }
+
     .intro * {
         width: 100%;
         -ms-grid-column-span: 2;
@@ -2782,6 +2952,15 @@ li {
     .comparisonImg {
         height: auto;
     }
+
+    /* .imageGroup img {
+        margin: 0.75em 0em;
+    } */
+
+    /* .imageGroup figure {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    } */
 
     /* .imageGroup img {
         margin: 0.75em 0em;
@@ -2890,6 +3069,10 @@ li {
     footer > p:first-of-type, .contacting {
         margin-bottom: 2em;
     }
+
+    .iteration1Play, .iteration3Play, .iteration5Play, .textGraphic {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 750px) {
@@ -2916,6 +3099,10 @@ li {
 
     .introduction p {
         margin: 0% 5% 2.5% 0%;
+    }
+
+    .introduction, .beginning {
+        padding-top: 17vh;
     }
 
     /* .opening {
@@ -3392,6 +3579,12 @@ li {
         margin: 0% 0%;
     }
 
+    /* .caseStudyIntro p {
+        width: 100%;
+        margin-right: 2em;
+        font-size: 20px;
+    } */
+
     div.workGallery {
         /* overflow: visible; */
         pointer-events: none;
@@ -3429,12 +3622,32 @@ li {
         width: 100%;
     }
 
+    /* .imageGroup img {
+        margin: 1.5em 0em;
+    } */
+
+    /* .contact {
+        font-size: 22px;
+    } */
+
     .imageSlideshow, .imageGroup img {
         width: 100%;
     }
 
     .content {
         width: 100%;
+    	/* height: 75%; */
+    }
+
+
+    .video iframe {
+    	width: 75%;
+    	height: 75%;
+    }
+
+    .video iframe.videoDraft {
+        width: 100%;
+        height: 100%;
     }
 
     #WaynePhung {
@@ -3489,6 +3702,10 @@ li {
         margin: 0em 0em;
     }
 
+    /* .imageContainer {
+        min-height: 75vh;
+    } */
+
     #aboutMe figure, #aboutMe figure img, #WaynePhung {
         border-radius: 0px;
         -webkit-box-shadow: none;
@@ -3497,6 +3714,21 @@ li {
 
     .imageGallery h3, .imageGallery figcaption {
         margin: 0 5%;
+    }
+
+    .overviewGrid p {
+        margin-top: 7px;
+        -ms-flex-item-align: baseline;
+            align-self: baseline;
+    }
+
+    .pivotList {
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+    }
+
+    #pivotVote {
+        height: auto;
     }
 
     .imageGallery figcaption {
@@ -3565,10 +3797,18 @@ li {
         padding: 0em 5%;
     }
 
+    /* #greeting {
+        font-size: 50px;
+    } */
+
     .projectDescription a.projectButton {
         display: none;
         visibility: hidden;
     }
+
+    /* .gridItem h3{
+        font-size: 36px;
+    } */
 
     .mediaIntro.beginning {
         padding-top: 125px;
@@ -3578,9 +3818,47 @@ li {
         padding-top: 100px;
     }
 
+    .gridItem {
+        width: 100%;
+    }
+
+    .imageSlideshow, .imageGroup img {
+        width: 100%;
+    }
+
     .beginning figure {
         max-height: 80vh;
     }
+
+    #WaynePhung {
+        width: 100%;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+    }
+
+    .introText {
+        width: 100%;
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .gridItem .projectTitle{
+        /* font-size: 42px; */
+        /* margin-bottom: 1em; */
+    }
+
+    /* .projectTitle.design {
+        height: 72px;
+        margin-bottom: 1em;
+    } */
+
+    /* .design h3 {
+        font-size: 42px;
+    } */
 
     .introduction p {
         width: 60%;
@@ -3775,6 +4053,7 @@ li {
         width: 50%;
     }
 }
+
 @media screen and (min-width: 1000px) and (max-width: 1200px){
     .content {
         width: 72.5%;
@@ -3858,9 +4137,189 @@ li {
 }
 
 @media screen and (max-width: 1300px){
-
     #dLeapQs, #dotVoting, #fieldNotes *, #ffIntro * {
         -ms-grid-column-span: 2;
         grid-column: span 2;
     }
+
+    #ffIntro * {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
 }
+
+/* ///////////START of Visual Style Guide CSS////////// */
+
+.flexIntro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.visStyle {
+    margin-bottom: 1em;
+    width: 100%;
+    font-size: 30px;
+}
+
+.visStyleSection {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+}
+
+.flexIntro ul {
+    width: 100%;
+    margin-left: 2em;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    margin-left: 0;
+}
+
+.flexIntro ul li{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 2em 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1em 2em;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    width: 100%;
+}
+
+.fontSize {
+    font-size: 16px;
+}
+
+.mainHeading, .sectionHeadings, .subsectionHeadings, .caseBigTitle, .caseStudy {
+    color: hsl(214, 100%, 32%);
+}
+
+.mainHeading {
+    font-size: 70px;
+    margin: 0.75em 0;
+}
+
+.sectionHeadings {
+    font-size: 48px;
+    line-height: 1.6;
+}
+
+.subsectionHeadings {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.caseBigTitle {
+    font-size: 85px;
+}
+
+.caseStudy {
+    font-size: 42px;
+}
+
+.caseTags {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.imageCaption {
+    padding: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.largeText {
+    font-size: 24px;
+}
+
+.boldText {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: hsl(31, 90%, 28%);
+    font-size: 18px;
+}
+
+.largeText, .genText1, .genText2, .genText3 {
+    color: hsl(0, 0%, 29%);
+}
+
+.genText1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.genText2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.genText3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* .navText {
+    font-size: 14px;
+} */
+
+@media screen and (max-width: 475px) {
+    /* .flexIntro ul li, .flexIntro ul li * {
+        grid-column: span 2;
+    } */
+}
+
+@media screen and (max-width: 750px) {
+    /* .flexIntro ul li{
+        grid-column: span 2;
+    } */
+
+    .flexIntro ul li, .flexIntro ul li * {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .flexIntro ul li {
+        -ms-grid-columns: 2fr 2em 1fr;
+        grid-template-columns: 2fr 1fr;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+
+    .mainHeading {
+        margin: 0 0 0.75em 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .flexIntro ul li {
+        -ms-grid-columns: 2fr 2em 3fr;
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+    .flexIntro ul li {
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
+}
+
+/* ///////////END of Visual Style Guide CSS////////// */
