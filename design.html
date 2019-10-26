@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +28,11 @@
 
     <body>
         <nav>
-            <h5 class="name genText1"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
                 <a rel="external" href="design.html" class="navLink genText1 selected">Design</a>
                 <a rel="external" href="media.html" class="navLink genText1">Media</a>
@@ -32,16 +45,16 @@
             <p class="largeText">My journey within User Experience (UX) and Design has been documented into articles called case studies, which outline topics and problem spaces that I have engaged in.</p>
             <p class="largeText">Read through at your leisure of my processes, from researching topics to implementing final solutions.</p>
         </section>
-        <div class="work sectionMargin">
-            <div class="gridItem">
-                <a rel="external" href="ElectricStride.html">
-                    <img src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" class="designImage" id="electricStride">
-                    <article class="projectTitle design">
-                        <h3 class="caseStudy">Electric Stride</h3>
-                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
-                    </article>
+        <div class="work designMediaWork sectionMargin">
+            <div class="gridItem workGallery" id="eStrideItem">
+                <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                <article class="projectDescription design">
+                    <h3 class="caseStudy">Electric Stride</h3>
+                    <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
                     <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
-                </a>
+                    <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                </article>
             </div>
             <!-- <article class="gridItem">
                 <a rel="external">
@@ -51,55 +64,58 @@
                     <p>An investigation of the roles future autonomous vehicles could potentially within micromobility, development of Robotaxis, and other relevant transportation topics.</p>
                 </a>
             </article> -->
-            <!-- <div class="gridItem">
-                <a rel="external" href="DesignLeap.html">
-                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
-                    <article class="projectTitle design">
-                        <h3 class="caseStudy">Design Leap</h3>
-                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
-                    </article>
+            <!-- <div class="gridItem workGallery" onclick="window.location.href = 'DesignLeapencrypted.html';">
+                <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                <article class="projectDescription design">
+                    <h3 class="caseStudy">Design Leap</h3>
+                    <h6 class="tags caseTags"><b class="boldText"><u>Password Protected</u></b>, Service Design, Secondary Research</h6>
                     <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
-                </a>
+                    <a rel="external" href="DesignLeapencrypted.html" class="button projectButton">Read Case Study</a> -->
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                <!-- </article>
             </div> -->
-            <div class="gridItem">
-                <a rel="external" href="FormfactoriesRedesign.html">
-                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
-                    <article class="projectTitle design">
-                        <h3 class="caseStudy">Formfactories Website</h3>
-                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
-                    </article>
+            <div class="gridItem workGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                <article class="projectDescription design">
+                    <h3 class="caseStudy">Formfactories Website</h3>
+                    <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
                     <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
-                </a>
+                    <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                </article>
             </div>
-            <div class="gridItem">
-                <a rel="external" href="MundoGardens.html">
-                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
-                    <article class="projectTitle design">
-                        <h3 class="caseStudy">Mundo Gardens</h3>
-                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
-                    </article>
+            <div class="gridItem workGallery" onclick="window.location.href = 'MundoGardens.html';">
+                <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                <article class="projectDescription design">
+                    <h3 class="caseStudy">Mundo Gardens</h3>
+                    <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
                     <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
-                </a>
+                    <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                </article>
             </div>
-            <div class="gridItem">
-                <a rel="external" href="Cinemunch.html">
-                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
-                    <article class="projectTitle design">
-                        <h3 class="caseStudy">Cinemunch</h3>
-                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
-                    </article>
-                    <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory design concept in a prototyping college course.</p>
-                </a>
+            <div class="gridItem workGallery" onclick="window.location.href = 'Cinemunch.html';">
+                <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                <article class="projectDescription design">
+                    <h3 class="caseStudy">Cinemunch</h3>
+                    <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                    <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                    <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                </article>
             </div>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
-             <p>Wayne Phung 2019</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <p class="genText1">Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

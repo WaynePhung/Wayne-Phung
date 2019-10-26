@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags comment. -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,485 +28,570 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
         <div class="intro beginning gridType1">
             <section>
-                <h1 class="caseStudySol greeting span2">Electric Stride</h1>
-                <p class="caseStudyIntro">An exercise mat for people with Parkinson's Disease to train their gait using embedded LED lights for visual cues and pressure-based location prediction to lengthen their walking strides.</p>
+                <h1 class="caseStudySol greeting caseBigTitle span2">Electric Stride</h1>
+                <p class="caseStudyIntro largeText">An exercise mat for people with Parkinson's Disease to train their gait using embedded LED lights for visual cues and pressure-based location prediction to lengthen their walking strides.</p>
             </section>
             <figure class="imageContainer">
-                <img src="mediaFiles/images/design/ElectricStride.png" alt="Picture of Electric Slide, an exercise mat." class="backgroundImage" id="matImage">
+                <img src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="Picture of Electric Slide, an exercise mat." class="backgroundImage" id="matImage">
             </figure>
         </div>
         <div class="work">
             <nav class="navSideBar">
                 <ul class="tableOfContents" id="esTOC">
-                    <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
-                    <li><a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a></li>
-                    <li><a class="navButton" href="#research" data-index="2">Research</a></li>
-                    <li><a class="navButton" href="#dataSynthesis" data-index="3">Data Synthesis</a></li>
-                    <li><a class="navButton" href="#problemSpaces" data-index="4">Problem Spaces</a></li>
-                    <li><a class="navButton" href="#ideation" data-index="5">Ideation</a></li>
-                    <li><a class="navButton" href="#prototyping" data-index="6">Prototyping</a></li>
-                    <li><a class="navButton" href="#firstPrototype" data-index="7">First Prototype</a></li>
-                    <li><a class="navButton" href="#feedbackPivoting" data-index="8">Feedback and Pivoting</a></li>
-                    <li><a class="navButton" href="#secondPrototype" data-index="9">Second Prototype</a></li>
-                    <li><a class="navButton" href="#userTesting" data-index="10">User Testing</a></li>
-                    <li><a class="navButton" href="#iteration" data-index="11">Iteration</a></li>
-                    <li><a class="navButton" href="#finalSolution" data-index="12">Final Solution</a></li>
-                    <li><a class="navButton" href="#results" data-index="13">Results</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="14">Reflection</a></li>
-                    <li><a class="navButton" href="#nextSteps" data-index="15">Next Steps</a></li>
+                    <li class="genText1"><a class="navButton" href="#overview" data-index="0">Overview</a></li>
+                    <li class="genText1"><a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a></li>
+                    <li class="genText1"><a class="navButton" href="#research" data-index="2">Research</a></li>
+                    <li class="genText1"><a class="navButton" href="#dataSynthesis" data-index="3">Data Synthesis</a></li>
+                    <li class="genText1"><a class="navButton" href="#problemSpaces" data-index="4">Problem Spaces</a></li>
+                    <li class="genText1"><a class="navButton" href="#ideation" data-index="5">Ideation</a></li>
+                    <li class="genText1"><a class="navButton" href="#prototyping" data-index="6">Prototyping</a></li>
+                    <li class="genText1"><a class="navButton" href="#firstPrototype" data-index="7">First Prototype</a></li>
+                    <li class="genText1"><a class="navButton" href="#feedbackPivoting" data-index="8">Feedback and Pivoting</a></li>
+                    <li class="genText1"><a class="navButton" href="#secondPrototype" data-index="9">Second Prototype</a></li>
+                    <li class="genText1"><a class="navButton" href="#userTesting" data-index="10">User Testing</a></li>
+                    <li class="genText1"><a class="navButton" href="#iteration" data-index="11">Iteration</a></li>
+                    <li class="genText1"><a class="navButton" href="#finalSolution" data-index="12">Final Solution</a></li>
+                    <li class="genText1"><a class="navButton" href="#results" data-index="13">Results</a></li>
+                    <li class="genText1"><a class="navButton" href="#reflection" data-index="14">Reflection</a></li>
+                    <li class="genText1"><a class="navButton" href="#nextSteps" data-index="15">Next Steps</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section span2" id="overview">Overview</h2>
-                <section class="bodyGrid gridType2 overviewGrid">
-                    <h3 class="subheading">Project Type</h3>
-                    <p class="text">This was a product design project over a sustained competition.</p>
-                    <h3 class="subheading">Objective</h3>
-                    <p class="text">To improve the quality of life for Parkinson's patients and caregivers.</p>
-                    <h3 class="subheading">Duration</h3>
-                    <p class="text">7 months</p>
-                    <h3 class="subheading">My Role</h3>
-                    <p class="text">I contributed to user research, data synthesis through rapid ideation, to data synthesis, to brainstorming of ideas through research and workshops, to prototyping digital mockups, to facilitating user testing, to final documentation of our solution, and to presenting my team's work.</p>
-                    <h3 class="subheading">Tools</h3>
-                    <p class="text">Google Suite, Figma</p>
-                    <h3 class="subheading">Core Team</h3>
-                    <p class="text">April Gau, Christie Wolters, David Laub, Dawn Ye, Emilia Pokta, Enrique Zavala, Jacqueline Lee, Ludi Sabalburo, Willy Ma</p>
-                    <h3 class="subheading">Mentors</h3>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
+                <div class="bodyGrid gridType2 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">This was a product design project over a sustained competition.</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="text genText1">To improve the quality of life for Parkinson's patients and caregivers.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="text genText1">7 months</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <p class="text genText1">I contributed to user research, data synthesis through rapid ideation, to data synthesis, to brainstorming of ideas through research and workshops, to prototyping digital mockups, to facilitating user testing, to final documentation of our solution, and to presenting my team's work.</p>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="text genText1">Google Suite, Figma</p>
+                    <h3 class="subheading subsectionHeadings">Core Team</h3>
+                    <p class="text genText1">April Gau, Christie Wolters, David Laub, Dawn Ye, Emilia Pokta, Enrique Zavala, Jacqueline Lee, Ludi Sabalburo, Willy Ma</p>
+                    <h3 class="subheading subsectionHeadings">Mentors</h3>
                     <div class="gridContent">
-                        <p class="text"><b>Chelsea Largoza</b> - She was the main event supervisor and coordinator who helped to clarify the roles, responsibilities, and deliverables needed within the competition.</p>
-                        <p class="text"><b>Damon Deaner and Karel Vredenburg</b> - Damon is the director for Employee Experience Design and Karel was the director for Global Academic Programs, both within IBM. They gave guidance and critique about how to best approach our group’s product design and approach to the competition.</p>
+                        <p class="text genText1 mentorNames"><i>Chelsea Largoza</i> - She was the main event supervisor and coordinator who helped to clarify the roles, responsibilities, and deliverables needed within the competition.</p>
+                        <br>
+                        <p class="text genText1"><i>Damon Deaner and Karel Vredenburg</i> - Damon is the director for Employee Experience Design and Karel was the director for Global Academic Programs, both within IBM. They gave guidance and critique about how to best approach our group’s product design and approach to the competition.</p>
                     </div>
-                    <h3 class="subheading">Affiliations</h3>
-                    <p class="text">UC San Diego Jacobs Schools of Engineering (ECE Department), IBM, UC San Diego Neurosciences, Design @ UCSD, UC San Diego Design Lab</p>
-                </section>
-                <section class="bodyGrid strideProblem">
-                    <h2 class="section span2" id="designChallenge">Design Challenge</h2>
-                    <article class="gridContent" id="probBG">
-                        <h4 class="subheading">Problem Background</h4>
-                        <p class="text marginLeft">People with Parkinson’s Disease of various stages have varied types of motor and non-motor symptoms that have impacted their lifestyles and how their caregivers attend to them. Within the context of this extended Hack-a-thon competition, it was important to find innovative ways to improve the quality of life for Parkinson’s patients and caregivers.</p>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">UC San Diego Jacobs Schools of Engineering (ECE Department), IBM, UC San Diego Neurosciences, Design @ UCSD, UC San Diego Design Lab</p>
+                    <!-- <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Project Type</h3>
+                        <p class="text genText1 centeredText">This was a product design project over a sustained competition.</p>
                     </article>
-                    <figure class="imageTile">
-                        <figcaption><i>ECE Design Competition for Parkinson's.</i></figcaption>
-                        <img src="mediaFiles/images/design/ElectricStride/DesignCompetitionPoster.png" alt="Picture of Electric Slide, an exercise mat." class="backgroundImage" id="esPoster">
-                    </figure>
-                    <article class="gridContent span2">
-                        <h4 class="subheading">Constraints Faced</h4>
-                        <p class="text marginLeft">We had to structure our design thinking and process around obligatory Hack-a-thon days to attend as well as deliverables along the way, which we needed to address to show our progress to Chelsea and other mentors within the competition.</p>
-                        <p class="text marginLeft">The learning gap of the subject of Parkinson’s disease was quite large. None of us initially had a solid understanding of the topic at hand and Parkinson’s was a multi-faceted, systemic disease that had a wide range of existing symptoms, stakeholders, and solutions to consider.</p>
-                        <p class="text marginLeft">We had a large group, mostly consisting of designers, but with only one or two engineers. We had to figure out how to collaborate with one another and leverage our strengths to meet project goals.</p>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Objective</h3>
+                        <p class="text genText1 centeredText">To improve the quality of life for Parkinson's patients and caregivers.</p>
                     </article>
-                    <article class="gridContent span2">
-                        <h4 class="subheading">Solution</h4>
-                        <p class="text marginLeft">Our team made Stride, an exercise mat that facilitates physical exercise routines by enabling LED lights to train gait and provide visual cues for patients to lengthen their strides.</p>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Duration</h3>
+                        <p class="text genText1 centeredText">7 months</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Tools</h3>
+                        <p class="text genText1 centeredText">Google Suite, Figma</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">My Role</h3>
+                        <p class="text genText1">I contributed to user research, data synthesis through rapid ideation, to data synthesis, to brainstorming of ideas through research and workshops, to prototyping digital mockups, to facilitating user testing, to final documentation of our solution, and to presenting my team's work.</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Core Team</h3>
+                        <p class="text genText1">April Gau, Christie Wolters, David Laub, Dawn Ye, Emilia Pokta, Enrique Zavala, Jacqueline Lee, Ludi Sabalburo, Willy Ma</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Mentors</h3>
+                        <div class="gridContent">
+                            <p class="text genText1 mentorNames"><i>Chelsea Largoza</i> - She was the main event supervisor and coordinator who helped to clarify the roles, responsibilities, and deliverables needed within the competition.</p>
+                            <br>
+                            <p class="text genText1"><i>Damon Deaner and Karel Vredenburg</i> - Damon is the director for Employee Experience Design and Karel was the director for Global Academic Programs, both within IBM. They gave guidance and critique about how to best approach our group’s product design and approach to the competition.</p>
+                        </div>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Affiliations</h3>
+                        <p class="text genText1">UC San Diego Jacobs Schools of Engineering (ECE Department), IBM, UC San Diego Neurosciences, Design @ UCSD, UC San Diego Design Lab</p>
+                    </article> -->
+                </div>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="designChallenge">Design Challenge</h2>
+                    <article class="gridContent changeSpan1" id="probBG">
+                        <h4 class="subheading subsectionHeadings">Problem Background</h4>
+                        <p class="text genText1">People with Parkinson’s Disease of various stages have varied types of motor and non-motor symptoms that have impacted their lifestyles and how their caregivers attend to them. Within the context of this extended Hack-a-thon competition, it was important to find innovative ways to improve the quality of life for Parkinson’s patients and caregivers.</p>
+                        <p class="text genText1">Maintaining freedom of lifestyle, medication adherence, and lack of effective social interactions amongst patients were some of the main problem topics to address.</p>
+                        <figure class="imageTile">
+                            <figcaption class="imageCaption"><i>ECE Design Competition graphic for Parkinson's. As a reference, you can also check out <a rel="external" href="http://ece.ucsd.edu/design-competition" target="_blank" class="externalLink">more details about the ECE Design Competition</a>.</i></figcaption>
+                            <img src="mediaFiles/images/design/ElectricStride/DesignCompetitionPoster.png" alt="Picture of Electric Slide, an exercise mat." class="backgroundImage" id="esPoster">
+                        </figure>
+                    </article>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Constraints Faced</h4>
+                        <p class="text genText1">We had to structure our design thinking and process around obligatory Hack-a-thon days to attend as well as deliverables along the way, which we needed to address to show our progress to Chelsea and other mentors within the competition.</p>
+                        <p class="text genText1">The learning gap of the subject of Parkinson’s disease was quite large. None of us initially had a solid understanding of the topic at hand and Parkinson’s was a multi-faceted, systemic disease that had a wide range of existing symptoms, stakeholders, and solutions to consider.</p>
+                        <p class="text genText1">We had a large group, mostly consisting of designers, but with only one or two engineers. We had to figure out how to collaborate with one another and leverage our strengths to meet project goals into creating a viable produce.</p>
+                        <br>
+                        <article class="gridContent span2">
+                            <h4 class="subheading subsectionHeadings">Solution</h4>
+                            <p class="text genText1">Our team made Stride, an exercise mat that facilitates physical exercise routines by enabling LED lights to train gait and provide visual cues for patients to lengthen their strides.</p>
+                        </article>
                     </article>
                 </section>
                 <section class="bodyGrid gridType2 strideResearch">
-                    <h2 class="section span2" id="research">Research</h2>
-                    <article class="gridContent" id="infoSession">
-                        <h4>Initial Secondary Research</h4>
-                        <p class="marginLeft">The research began when one of my members, Enrique, and I went to ECE Design Competition information session as a kickoff to the competition, and already we learned about the progression of Parkinson's, associated motor/non-motor symptoms and treatments, fall incidences, and other relevant topics.</p>
-                        <p class="marginLeft">After the team was assembled, we did secondary research on existing articles and topics surrounding Parkinson's to learn more about Parkinson's.</p>
+                    <h2 class="section sectionHeadings span2" id="research">Research</h2>
+                    <article class="gridContent changeSpan1" id="infoSession">
+                        <h4 class="subheading subsectionHeadings">Initial Secondary Research</h4>
+                        <p class="genText1">The research began when one of my members, Enrique, and I went to ECE Design Competition information session as a kickoff to the competition, and already we learned about the progression of Parkinson's, associated motor/non-motor symptoms and treatments, fall incidences, and other relevant topics.</p>
+                        <p class="genText1">After the team was assembled, we did secondary research on existing articles and topics surrounding Parkinson's to learn more about Parkinson's.</p>
                     </article>
-                    <figure class="imageTile">
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/secondaryResearch.png" alt="Secondary articles on a spreadsheet." class="backgroundImage" id="secondaryResearch1">
+                        <figcaption class="imageCaption"><i>Secondary research helped our team to close that knowledge gap about Parkinson's as a whole. We mostly uncovered definitions and conventional understandings of Parkinson's, learned about who was involved in dealing with Parkinson's, and catalogued existing treatments and inventions made.</i></figcaption>
                     </figure>
-                    <article class="gridContent">
-                        <h4>Mind Mapping</h4>
-                        <p class="marginLeft">After our team established a basic understanding of Parkinson's, we had a discussion surrounding what we learned and represented our thoughts around a mind map. We listed out the relevant stakeholders, primary and secondary symptoms that Parkinson’s patients may normally experience, treatments for patients that are available, the internal experiences/emotions that these people experience, and existing organizations dedicated to the topic of Parkinson’s disease.</p>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Mind Mapping</h4>
+                        <p class="genText1">After our team established a basic understanding of Parkinson's, we had a discussion surrounding what we learned and represented our thoughts around a mind map. We listed out the relevant stakeholders, primary and secondary symptoms that Parkinson’s patients may normally experience, treatments for patients that are available, the internal experiences/emotions that these people experience, and existing organizations dedicated to the topic of Parkinson’s disease.</p>
                     </article>
                     <figure class="imageTile">
                         <img src="mediaFiles/images/design/ElectricStride/mindMap.png" alt="Whiteboard mind map." class="backgroundImage" id="mindMap">
+                        <figcaption class="imageCaption"><i>Topics revealed from mind map include relevant symptoms and treatments for Parkinson's, how people share their personal everyday experiences of Parkinson's, existing organizations tackling Parkinson's, and the relevant people involved with dealing with Parkinson's.</i></figcaption>
                     </figure>
-                    <p class="marginLeft">Not only did this help frame our team’s approach to further understanding Parkinson's from existing articles and websites, but this helped us prepare relevant questions to ask for Parkinson’s patients, caregivers, and medical professionals.</p>
+                    <p class="genText1">Not only did this help frame our team’s approach to further understanding Parkinson's from existing articles and websites, but this helped us prepare relevant questions to ask for Parkinson’s patients, caregivers, and medical professionals.</p>
                     <figure class="imageTile">
                         <img src="mediaFiles/images/design/ElectricStride/stakeholderQuestions.png" alt="Questions to consider for each stakeholder." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>After dot voting on questions, this list of prioritized questions to answer for future interviews relate to how Parkinson's affect how patients socialize with others, how caregivers balance between their responsibilities to help treat Parkinson's and their personal life, and how medical professionals implement their knowledge of Parkinson's to help treat patients.</i></figcaption>
                     </figure>
                     <article class="gridContent">
-                        <h4>Talking to People</h4>
-                        <p class="marginLeft">To further inform our understandings of Parkinson's, we talked to about 10-20 people of various backgrounds, including a neurologist, a university lab researcher, an early-stage patient, a caregiver to a patient, and many other patients from visiting support groups. To reach out to them, we scheduled individual meetings with them, went to events that discussed relevant Parkinson's topics, and even visited a Parkinson’s patient’s home.</p>
-                        <p class="marginLeft">We had some of the people that we interviewed complete journey maps to understanding their day in a life and how Parkinson’s has some relation to their lives.</p>
+                        <h4 class="subheading subsectionHeadings">Talking to People</h4>
+                        <p class="genText1">To further inform our understandings of Parkinson's, we talked to about 20 people of various backgrounds, including a neurologist, a university lab researcher, an early-stage patient, a caregiver to a patient, and many other patients from visiting support groups. To reach out to them, we scheduled individual meetings with them, went to events that discussed relevant Parkinson's topics, and even visited a Parkinson’s patient’s home.</p>
+                        <p class="genText1">We had a couple of people that we interviewed complete journey maps to understanding their day in a life and how Parkinson’s has some relation to their lives.</p>
                     </article>
                     <figure class="imageTile" id="interview2">
                         <img src="mediaFiles/images/design/ElectricStride/interview1.png" alt="Interviewed a person." class="backgroundImage" id="interview1">
+                        <figcaption class="imageCaption"><i>A couple of team members who helped to interview a dance instructor who teaches her classes to people with Parkinson's.</i></figcaption>
                     </figure>
                     <div class="bodyGrid gridType1 strideImageGrid span2">
                         <figure class="imageTile">
-                            <img src="mediaFiles/images/design/ElectricStride/interview2.png" alt="Interviewed a person." class="backgroundImage">
-                        </figure>
-                        <figure class="imageTile">
                             <img src="mediaFiles/images/design/ElectricStride/interview3.png" alt="Interviewed a person." class="backgroundImage">
+                            <figcaption class="imageCaption"><i>An in-home visit with one Parkinson's patient. We interviewed her and asked her to draw out her day-in-a-life, represented as a journey map.</i></figcaption>
                         </figure>
                         <figure class="imageTile">
-                            <img src="mediaFiles/images/design/ElectricStride/journeyMap1.png" alt="A journey map from one person our team talked to." class="backgroundImage">
+                            <img src="mediaFiles/images/design/ElectricStride/interview4.png" alt="Interviewed a person." class="backgroundImage">
+                            <figcaption class="imageCaption"><i>During the in-home visit, our team was able to explore around her house to immerse ourselves into her environment, discover what resources enabled her to move around and do some of her everyday tasks, and further inquire about her way of life. I helped to document videos and images related to the visit.</i></figcaption>
                         </figure>
                         <figure class="imageTile">
-                            <img src="mediaFiles/images/design/ElectricStride/journeyMap2.png" alt="A person drawing a journey map." class="backgroundImage">
+                            <img src="mediaFiles/images/design/ElectricStride/journeyMap1.png" alt="A journey map from one person our team talked to." class="backgroundImage" id="journeyMap1">
+                            <figcaption class="imageCaption"><i>During the in-home visit, she also shared her typical day and activities through conversation as she drew a rough outline of her day-in-a-life.</i></figcaption>
+                        </figure>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/ElectricStride/journeyMap2.png" alt="A person drawing a journey map." class="backgroundImage" id="journeyMap2">
+                            <figcaption class="imageCaption"><i>During one of the Hack-a-thon days in the competition, we were able to interview a neurologist who also walked our team through her typical day at work when she visited Parkinson's patients.</i></figcaption>
                         </figure>
                         <figure class="imageTile span2" id="grid4Last">
                             <img src="mediaFiles/images/design/ElectricStride/journeyMap3.png" alt="Finished journey map." class="backgroundImage objectRight">
+                            <figcaption class="imageCaption"><i>After talking with the neurologist about her day-in-a-life, more insights were uncovered about how she approached her visits with patients. Constantly communicating, assessing, and documenting patient's conditions and symptoms seemed to be an everyday problem that she has to deal with.</i></figcaption>
                         </figure>
                     </div>
                 </section>
-                <div class="bodyGrid gridType1 sectionMargin">
+                <div class="bodyGrid gridType1">
                     <article class="gridContent heading span2">
-                        <h4 class="subheading span2">Findings</h4>
-                        <p class="text span2" id="findingsText">Below are only some among the many themes that emerged from notes in our research.</p>
+                        <h4 class="subheading subsectionHeadings span2">Findings</h4>
+                        <p class="text genText1 span2" id="findingsText">Below are only some among the many themes that emerged from our research notes.</p>
                     </article>
-                    <article class="gridContent findings marginLeft">
-                        <h5>Patients’ Personal Awareness of Internal Tremors, Body Movements, and Environments</h5>
-                        <ul>
-                            <li>“Now I have to choreograph what I'm doing. Walkin with my dog, pick up your knee, be sure to cock your foot forward.”</li>
-                            <li>“After Parkinson’s = hostile world, anything could kill him in a moment”</li>
-                            <li>“Tremor is annoying as well, persistent. Takes the fun out of relaxing.”</li>
+                    <article class="gridContent findings marginLeft changeSpan1">
+                        <h5 class="boldText">Patients’ Personal Awareness of Internal Tremors, Body Movements, and Environments</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">“Now I have to choreograph what I'm doing. Walkin with my dog, pick up your knee, be sure to cock your foot forward.”</li>
+                            <li class="genText1">“After Parkinson’s = hostile world, anything could kill him in a moment”</li>
+                            <li class="genText1">“Tremor is annoying as well, persistent. Takes the fun out of relaxing.”</li>
                         </ul>
                     </article>
-                    <article class="gridContent findings marginLeft">
-                        <h5>Lifestyles Oriented Around Medications</h5>
-                        <ul>
-                            <li>“Cycle of medications - must adjust activities to on/off of meds When on = do things he could normally do...Off = Parkinson’s symptoms, motor issues, etc”</li>
-                            <li>“As soon as you get off your medication, ‘that’s how it’s going to be for the rest of your life’”</li>
-                            <li>“7AM First dosage of the day, cannot eat protein 1 hr before or 2 hrs after”</li>
+                    <article class="gridContent findings marginLeft changeSpan1">
+                        <h5 class="boldText">Lifestyles Oriented Around Medications</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">“Cycle of medications - must adjust activities to on/off of meds When on = do things he could normally do...Off = Parkinson’s symptoms, motor issues, etc”</li>
+                            <li class="genText1">“As soon as you get off your medication, ‘that’s how it’s going to be for the rest of your life’”</li>
+                            <li class="genText1">“7AM First dosage of the day, cannot eat protein 1 hr before or 2 hrs after”</li>
                         </ul>
                     </article>
-                    <article class="gridContent findings marginLeft">
-                        <h5>Non-Motor Symptoms and Feelings</h5>
-                        <ul>
-                            <li>“Used to be energetic...Consumed with time on managing my time, because of medications and exercise.”</li>
-                            <li>“Need a reason or goal to get up in the morning.”</li>
-                            <li>“Has to count on his wife to do things he used to do all the time like driving”</li>
+                    <article class="gridContent findings marginLeft changeSpan1">
+                        <h5 class="boldText">Non-Motor Symptoms and Feelings</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">“Used to be energetic...Consumed with time on managing my time, because of medications and exercise.”</li>
+                            <li class="genText1">“Need a reason or goal to get up in the morning.”</li>
+                            <li class="genText1">“Has to count on his wife to do things he used to do all the time like driving”</li>
                         </ul>
                     </article>
-                    <article class="gridContent findings marginLeft">
-                        <h5>Experiences of Performing Difficult Activities</h5>
-                        <ul>
-                            <li>“Inconvenient disease in every way: going to bathroom, standing up/down, crossing the street, putting up clothes, list is endless.”</li>
-                            <li>“Any fine motor skills are frustrating and difficult”</li>
-                            <li>“Hard to get up after falling.”</li>
+                    <article class="gridContent findings marginLeft changeSpan1">
+                        <h5 class="boldText">Experiences of Performing Difficult Activities</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">“Inconvenient disease in every way: going to bathroom, standing up/down, crossing the street, putting up clothes, list is endless.”</li>
+                            <li class="genText1">“Any fine motor skills are frustrating and difficult”</li>
+                            <li class="genText1">“Hard to get up after falling.”</li>
                         </ul>
                     </article>
-                    <article class="gridContent findings marginLeft last">
-                        <h5>Observation Notes from Rock Steady Boxing Experiences</h5>
-                        <ul>
-                            <li>“They loved the bonding experience in being in the boxing session. What helps is the enthusiastic staff, having kinetic feedback in exercises, and remembering [numbers] for punch combos to have something to improve upon in their life.”</li>
-                            <li>“With the boxing session, they didn't like being told what to do to learn and would've liked a more inclusive & easy form of learning.""</li>
-                            <li>They did however like the dignity of not being "babied" to learning how to box.”</li>
+                    <article class="gridContent findings marginLeft changeSpan1 last">
+                        <h5 class="boldText">Observation Notes from Rock Steady Boxing Experiences</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">“They loved the bonding experience in being in the boxing session. What helps is the enthusiastic staff, having kinetic feedback in exercises, and remembering [numbers] for punch combos to have something to improve upon in their life.”</li>
+                            <li class="genText1">“With the boxing session, they didn't like being told what to do to learn and would've liked a more inclusive & easy form of learning.""</li>
+                            <li class="genText1">They did however like the dignity of not being "babied" to learning how to box.”</li>
                         </ul>
                     </article>
                     <article class="gridContent heading span2">
-                        <h4 class="subheading">Insights</h4>
-                        <p class="text">Below are understandings established after interpreting research notes and data.</p>
+                        <h4 class="subheading subsectionHeadings">Insights</h4>
+                        <p class="text genText1">Below are understandings established after interpreting research notes and data.</p>
                     </article>
-                    <article class="gridContent insights marginLeft">
-                        <h5>...from Secondary Research</h5>
-                        <ul>
-                            <li>Medications help with retaining patients’ abilities to do their day-to-day tasks, but the effects of Parkinson’s would be evident if a patient’s medication wears off. The effectiveness of the medication would depend on the stage and progression of a person’s Parkinson’s, rendering medication less effective if a person were more late-stage.</li>
-                            <li>The importance of tracking patient’s symptoms overtime cannot be overstated, as it ensures that medical professionals are both acutely aware and accurately understanding of the patients’ conditions and history with PD.</li>
+                    <article class="gridContent insights changeSpan1 marginLeft">
+                        <h5 class="boldText">...from Secondary Research</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">Medications help with retaining patients’ abilities to do their day-to-day tasks, but the effects of Parkinson’s would be evident if a patient’s medication wears off. The effectiveness of the medication would depend on the stage and progression of a person’s Parkinson’s, rendering medication less effective if a person were more late-stage.</li>
+                            <li class="genText1">The importance of tracking patient’s symptoms overtime cannot be overstated, as it ensures that medical professionals are both acutely aware and accurately understanding of the patients’ conditions and history with PD.</li>
                         </ul>
                     </article>
-                    <article class="gridContent insights marginLeft">
-                        <h5>...from Interviews and Observations</h5>
-                        <ul>
-                            <li>It is often difficult, slow, frustrating, and/or fearful for them to perform basic activities, even walking and taking steps.</li>
-                            <li>Their motor and non-motor symptoms correlate to challenges for performing everyday tasks, or even having the self-esteem/motivation to get up in the morning.</li>
-                            <li>Within rock-steady boxing classes, people with Parkinson’s would preoccupy themselves by focusing on their exercises and achieving them. Although challenging for some of them, they do like to try to keep up with the routines.</li>
+                    <article class="gridContent insights changeSpan1 marginLeft">
+                        <h5 class="boldText">...from Interviews and Observations</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">It is often difficult, slow, frustrating, and/or fearful for them to perform basic activities, even walking and taking steps.</li>
+                            <li class="genText1">Their motor and non-motor symptoms correlate to challenges for performing everyday tasks, or even having the self-esteem/motivation to get up in the morning.</li>
+                            <li class="genText1">Within rock-steady boxing classes, people with Parkinson’s would preoccupy themselves by focusing on their exercises and achieving them. Although challenging for some of them, they do like to try to keep up with the routines.</li>
                         </ul>
                     </article>
-                    <article class="gridContent insights marginLeft last">
-                        <h5>...from Journey Maps</h5>
-                        <ul>
-                            <li>Medical professionals want to understand the patient’s problems and available treatment methods to best help them. How can they also effectively take information about the patient’s symptoms, history, and diagnoses and present/communicate it effectively to other doctors?</li>
-                            <li>Medical professionals do their best to treat and diagnose their patients' symptoms and issues through preparing questions to ask, performing tests, and determining diagnoses to take inventory of the patient's conditions and medical history.</li>
-                            <li>It was essential for medical professionals to document their understandings of the patient into a report as a reference while also maintaining work-life balance.</li>
+                    <article class="gridContent insights changeSpan1 marginLeft last">
+                        <h5 class="boldText">...from Journey Maps</h5>
+                        <ul class="eStrideUList">
+                            <li class="genText1">Medical professionals want to understand the patient’s problems and available treatment methods to best help them. How can they also effectively take information about the patient’s symptoms, history, and diagnoses and present/communicate it effectively to other doctors?</li>
+                            <li class="genText1">Medical professionals do their best to treat and diagnose their patients' symptoms and issues through preparing questions to ask, performing tests, and determining diagnoses to take inventory of the patient's conditions and medical history.</li>
+                            <li class="genText1">It was essential for medical professionals to document their understandings of the patient into a report as a reference while also maintaining work-life balance.</li>
                         </ul>
                     </article>
                 </div>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="dataSynthesis">Data Synthesis</h2>
-                    <p>During one of the Hackathon days, IBM company representatives, an industry designer, a patient, a caregiver, and my group all came together to have a participatory design workshop together to synthesize our collective knowledge of Parkinson’s and classify important topics to consider.</p>
-                    <figure class="imageTile">
+                    <h2 class="section sectionHeadings span2" id="dataSynthesis">Data Synthesis</h2>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Putting It All Together</h4>
+                        <p class="genText1">During one of the Hackathon days, our group hosted a participatory design workshop with IBM company representatives, an industry designer, a patient, and a caregiver to synthesize our collective knowledge of Parkinson’s and classify important topics to consider.</p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/designSprint1.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>People coming together to put their ideas on the wall through sticky-note brainstorming about Parkinson's during the design workshop.</i></figcaption>
                     </figure>
-                    <p>Each person was able to brainstorm different topics on sticky notes and put them up on the wall as an affinity diagram. The ideas were open-sorted into emergent categories that were related to topics of Parkinson's and everyone placed their votes on which topics to focus on.</p>
-                    <figure class="imageTile">
+                    <div class="gridContent changeSpan1">
+                        <p class="genText1">Each person was able to brainstorm different topics on sticky notes and put them up on the wall as an affinity diagram. The ideas were open-sorted into emergent categories that were related to topics of Parkinson's and everyone placed their votes on which topics to focus on.</p>
+                        <p class="genText1">The numbers signify the amount of dot votes placed for each problem space. This democratic process of voting for each category informed the team of which problem spaces that our team should tackle.</p>
+                    </div>
+                    <figure class="imageTile changeSpan1">
+                        <figcaption class="imageCaption"><i>A piece of the sticky note affinity diagram that captured three very prominent problem spaces. Problem spaces emerged from the sorting of the sticky notes into relevant categories.</i></figcaption>
                         <img src="mediaFiles/images/design/ElectricStride/designSprint2.png" alt="One piece of affinity diagram done during design sprint." class="backgroundImage">
                     </figure>
-                    <figure class="imageTile" id="designSprint3">
+                    <figure class="imageTile changeSpan1" id="designSprint3">
                         <img src="mediaFiles/images/design/ElectricStride/designSprint3.png" alt="Affinity diagram with dot voted categories and identified problem spaces." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Affinity diagram overview of all of the different problem spaces that emerged from the design workshop, with all of the dot votes numbered for each problem space.</i></figcaption>
                     </figure>
                 </section>
+                <div class="bodyGrid threeColumnGrid">
+                    <h2 class="section sectionHeadings span3" id="problemSpaces">Problem Spaces</h2>
+                    <p class="text genText1 span3" id="problemText">Based on the votes made from the sorted categories on the affinity diagram, these were some of the topics that were most important to explore.</p>
+                    <div class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Social Interactions</h4>
+                        <p class="genText1">There was a need for support groups, or other ways to promote interactions and bonding between patients. How might we sustain such a commmunity amongst Parkinson's patients to improve their daily life?</p>
+                    </div>
+                    <div class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Maintaining Agency</h4>
+                        <p class="genText1">There was a need from patients and caregivers to live out their daily lifestyles without Parkinson's affecting their daily routines. How might we enable patients and caregivers to have as much time as possible to do daily activities and hobbies that they want to engage in?</p>
+                    </div>
+                    <div class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Live Symptom Awareness</h4>
+                        <p class="genText1">There was a need from patients, caregivers, and medical professionals to actively monitor and manage the progression of a patient's Parkinson's. How might we enable them to stay informed of the issues and treatments needed to address the patient's symptoms?</p>
+                    </div>
+                </div>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="problemSpaces">Problem Spaces</h2>
-                    <p class="text span2" id="problemText">Based on the votes made from the sorted categories on the affinity diagram, these were some of the topics that were most important to explore.</p>
-                    <h4 class="subheading marginLeft">Social Interactions</h4>
-                    <p>There was a need for support groups, or other ways to promote interactions and bonding between patients. How might we sustain such a commmunity amongst Parkinson's patients to improve their daily life?</p>
-                    <h4 class="subheading marginLeft">Maintaining Agency</h4>
-                    <p>There was a need from patients and caregivers to live out their daily lifestyles without Parkinson's affecting their daily routines. How might we enable patients and caregivers to have as much time as possible to do daily activities and hobbies that they want to engage in?</p>
-                    <h4 class="subheading marginLeft">Live Symptom Awareness</h4>
-                    <p>There was a need from patients, caregivers, and medical professionals to actively monitor and manage the progression of a patient's Parkinson's. How might we enable them to stay informed of the issues and treatments needed to address the patient's symptoms?</p>
-                </section>
-                <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="ideation">Ideation</h2>
+                    <h2 class="section sectionHeadings span2" id="ideation">Ideation</h2>
                     <div class="gridContent span2">
-                        <p class="ideationText">We explored existing solutions relative to these problem spaces, as each member in our group conducted additional secondary research to explore different products available. This enabled us to understand existing solutions out there for Parkinson’s and have everyone in our team brainstorm ideas to tackle these issues.</p>
-                        <p class="ideationText noBottom">From rails and support grips, to cups specifically designed for people having difficulty handling objects, and to wearable digital technology, we brainstormed ideas and put them up on the wall to organize them.</p>
+                        <p class="ideationText genText1">We explored existing solutions relative to these problem spaces, as each member in our group conducted additional secondary research to explore different products available. This enabled us to understand existing solutions out there for Parkinson’s and have everyone in our team brainstorm ideas to tackle these issues.</p>
+                        <p class="ideationText genText1 noBottom">From rails and support grips, to cups specifically designed for people having difficulty handling objects, and to wearable digital technology, we brainstormed ideas and put them up on the wall to organize them.</p>
                     </div>
                     <figure class="imageTile span2">
-                        <figcaption><i>Sticky notes from brainstorming different solutions, such as cup designs, tap stimulation on shoulders, <br>shoes with projected lights, and community-based exercises.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Sticky notes from brainstorming different solutions, such as cup designs, tap stimulation on shoulders, shoes with projected lights, and community-based exercises.</i></figcaption>
                         <img src="mediaFiles/images/design/ElectricStride/stickyNotes1.png" alt="Sticky notes from brainstorming different solutions, such as cup designs, tap stimulation on shoulders, shoes with projected lights, and community-based exercises." class="backgroundImage">
                     </figure>
-                    <p class="ideationText span2 noBottom">We sorted similar ideas into groups, dot voted on which ideas to explore, and further eliminated ideas to decide on a solution to explore.</p>
+                    <p class="ideationText genText1 span2 noBottom">We sorted similar ideas into groups, dot voted on which ideas to explore, and further eliminated ideas to decide on a solution to explore.</p>
                     <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes2.jpg" alt="We sorted similar ideas into groups, dot voted on which ideas to explore, and further eliminated ideas to decide on a solution to explore." class="backgroundImage">
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes3.png" alt="We sorted similar ideas into groups, dot voted on which ideas to explore, and further eliminated ideas to decide on a solution to explore." class="backgroundImage">
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes2.jpg" alt="We sorted similar ideas into groups, dot voted on which ideas to explore, and further eliminated ideas to decide on a solution to explore." class="backgroundImage changeImg">
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes3.png" alt="We sorted similar ideas into groups, dot voted on which ideas to explore, and further eliminated ideas to decide on a solution to explore." class="backgroundImage changeImg">
                     </figure>
-                    <p class="ideationText span2 noBottom">The process to eliminate and choose our solution was not easy, as it was necessary to go through a process of elimination to decide on a single solution to explore. Introducing physical components, simplicity of the design, and other factors helped us to decide on an idea.</p>
+                    <p class="ideationText genText1 span2 noBottom">The process to eliminate and choose our solution was not easy, as it was necessary for the team to introduce different factors to help us decide on an idea. Some considerations for choosing our initial idea included how feasible it was to implement the idea, how simple the idea is to make and execute, and the "pivotability" of the idea (how easily the team adapt to a different direction of the idea).</p>
                     <figure class="imageTile span2">
-                        <figcaption><i>Criteria and other considerations to explore that helped us decide on an idea.</i></figcaption>
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes4.png" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Whiteboard notes of the criteria and other considerations to decide on our idea.</i></figcaption>
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes5.png" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
                     </figure>
                     <article class="gridContent span2">
-                        <h4 class="subheading">Idea Chosen - Smart Bottle with App</h4>
-                        <p class="ideationText">The idea that we chose was a smart bottle because there was potential for the idea to address the problem spaces, it was a simple, feasible solution that our group can make, and it was easy to adapt should the bottle fail to initially address the problem spaces.</p>
+                        <h4 class="subheading subsectionHeadings">Initial Idea Chosen - Smart Bottle with App</h4>
+                        <p class="ideationText genText1">The idea that we chose was a smart bottle because there was potential for the idea to address the problem spaces, it was a simple, feasible solution that our group can make with the possibility of integrating Internet of Things into it, and it was easy to shift to a different direction of the idea should the bottle fail to initially address the problem spaces.</p>
                     </article>
-                    <article class="gridContent">
-                        <h4 class="subheading">Feature Ideation</h4>
-                        <p class="ideationText">We repeated a design sprint workshop to focus more on what specific features of our potential smart bottle idea we should prioritize, which started with more brainstorming of features.</p>
-                        <p class="ideationText">Types of features we thought of included the following: </p>
-                        <ul>
-                            <li>Pill Dispensing</li>
-                            <li>Bottle Handling</li>
-                            <li>Stylizing the Bottle</li>
-                            <li>Pill Tracking</li>
-                            <li>Notifications for Pill Ordering/Consumption</li>
-                            <li>Bottle Connectivity to Apps</li>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Feature Ideation</h4>
+                        <p class="ideationText genText1">We repeated a design sprint workshop to focus more on what specific features of our potential smart bottle idea we should prioritize, which started with more brainstorming of features.</p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption"><i>Overview of the features sorted. Other than pill dispensing, other types of features that we thought of included aesthetic personalization of the bottle, connectivity to apps, pill notifications, and physical components of the bottle.</i></figcaption>
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes7.png" alt="Sticky notes of smart bottle features." class="backgroundImage">
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes13.jpg" alt="Sticky notes of smart bottle features." class="backgroundImage">
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes8.jpg" alt="Overview of smart bottle features, which were brainstormed." class="backgroundImage">
+                    </figure>
+                    <div class="gridContent span2">
+                        <p class="ideationText genText1">Types of features we thought of included the following: </p>
+                        <ul class="marginLeft bodyGrid gridType1">
+                            <li class="genText1 changeSpan1"><b class="boldText">Pill Dispensing</b><br>This was feature that was conventional across most medication products, of which there would be a mechanism within the bottle to easily dispense the right amount of medication.</li>
+                            <li class="genText1 changeSpan1"><b class="boldText">Bottle Handling</b><br>Ergonomics of the bottle especially helps patients with motor symptoms (such as tremors) overcome difficulties of steadily holding and using the bottle.</li>
+                            <li class="genText1 changeSpan1"><b class="boldText">Stylizing the Bottle</b><br>Making the design of the bottle dignifying so that Parkinson's patients would want to carry about and use it in public without feeling embarassed about it in front of others. This was to address the social aspect of the social interaction problem space.</li>
+                            <li class="genText1 changeSpan1"><b class="boldText">Pill Tracking</b><br>There was potential to integrate digital technology to aid the patient in effectively monitoring the frequency, dosage, medication type, and timing of taking the medication.</li>
+                            <li class="genText1 changeSpan1"><b class="boldText">Notifications for Pill Ordering/Consumption</b><br>Automation of important push messages to patients and caregivers to help them refill or consume their medications in a timely manner.</li>
+                            <li class="genText1 changeSpan1"><b class="boldText">Bottle Connectivity to Apps</b><br>More potential for incorporating Internet of Things to help make the data collected of the patient's usage of the bottle trackable and understandable for caregivers and medical professionals to analyze.</li>
                         </ul>
-                    </article>
-                    <figure class="imageTile">
-                        <figcaption><i>Overview of the features sorted. Other than pill dispensing, other types of features that we thought of included aesthetic personalization of the bottle, connectivity to apps, pill notifications, and physical components of the bottle.</i></figcaption>
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes6.png" alt="Sticky notes of smart bottle features." class="backgroundImage">
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes7.jpg" alt="Overview of smart bottle features, which were brainstormed." class="backgroundImage">
-                    </figure>
+                    </div>
                     <article class="gridContent span2">
-                        <h4 class="subheading">Feature Prioritization</h4>
-                        <p class="ideationText">Once we sorted the features to categories, we set up and used an Eisenhower Matrix to prioritize which features to focus on for the prototype of our smart bottle.</p>
+                        <h4 class="subheading subsectionHeadings">Feature Prioritization</h4>
+                        <p class="ideationText genText1">Once we sorted the features to categories, we set up and used an Eisenhower Matrix to prioritize which features to focus on for the prototype of our smart bottle.</p>
                     </article>
                     <figure class="imageTile span2">
-                        <!-- <figcaption><i>Overview of the features sorted. Other than pill dispensing, other types of features that we thought of included aesthetic personalization of the bottle, connectivity to apps, pill notifications, and physical components of the bottle.</i></figcaption> -->
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes8.jpg" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
                         <img src="mediaFiles/images/design/ElectricStride/stickyNotes9.jpg" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes10.jpg" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Enrique did most of the sorting of the different sticky notes that we had gathered, but with me and another team member, the categories emerged. Some smart bottle features considered were defined as lights ("LED indicator"), how feasible it was to drink from the bottle ("drinkability"), and having "calm" pill reminders.</i></figcaption>
                     </figure>
-                    <p class="ideationText">
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes14.jpg" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Overview of the Eisenhower matrix, which evaluated how each of the features were valuable to the person using the bottle as well as how easy it was to implement the features.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes11.jpg" alt="Criteria and other considerations to explore that helped us decide on an idea." class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Close-up of smart bottle features in the upper-right quadrant of the matrix that were prioritized.</i></figcaption>
+                    </figure>
+                    <p class="ideationText genText1 span2">
                         Our smart bottle idea would have an accompanying app to facilitate live symptom awaress through medication adherence for Parkinson's patients. Our group would decide to split into two teams.
                         One group would create the actual physical product of the bottle, while the other developed the sofware for an accompanying app for addressing medical adherence and personal agency.
                     </p>
-                    <figure class="imageTile">
-                        <figcaption><i>Categorized features based on physical or digital components of the bottle. Other features were de-prioritized.</i></figcaption>
-                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes11.png" alt="Categorized features based on physical or digital components of the bottle." class="backgroundImage" id="groupedStickies">
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption"><i>Categorized features based on physical or digital components of the bottle. Other features were de-prioritized.</i></figcaption>
+                        <img src="mediaFiles/images/design/ElectricStride/stickyNotes12.png" alt="Categorized features based on physical or digital components of the bottle." class="backgroundImage">
                     </figure>
                 </section>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="prototyping">Prototyping</h2>
+                    <h2 class="section sectionHeadings span2" id="prototyping">Prototyping</h2>
                     <div class="gridContent span2">
-                        <p class="ideationText">Our idea for the smart bottle was still yet to be tested, so I placed myself into the software group to help explore the features of the accompanying app.</p>
-                        <p>My teammates worked on the information architecture. Because of how the app features were explicitly laid out and prioritized, it was a useful reference for me to gather inspiration about the visual designs and implementations of existing water and pill tracking apps.</p>
+                        <p class="ideationText genText1">Our idea for the smart bottle was still yet to be tested, so I placed myself into the software group to help explore the features of the accompanying app.</p>
+                        <p class="genText1">My teammates worked on the information architecture. Because of how the app features were explicitly laid out and prioritized, it was a useful reference for me to gather inspiration about the visual designs and implementations of existing water and pill tracking apps.</p>
                     </div>
                     <figure class="imageTile span2">
-                        <figcaption><i>Information architecture of the smart bottle app for the patient, made by Enrique Zavala and April Gau. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Information architecture of the smart bottle app for the patient, made by Enrique Zavala and April Gau. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history.</i></figcaption>
                         <img src="mediaFiles/images/design/ElectricStride/patientIA.png" alt="Information architecture of the smart bottle app for the patient. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history." class="backgroundImage">
                     </figure>
                     <div class="gridContent span2">
-                        <p>I helped to sort images of existing pill/water tracking app features into the features outlined in the information architecture so that the inspiration can be easily visualized and the prototype would be informed from such features.</p>
-                        <p>The full visualization of the work done to gather the inspiration would be too large to view, but you can check out the following links:</p>
-                        <ul>
-                            <li><a rel="external" href="https://miro.com/app/board/o9J_kxp_TOs=/" class="externalLink">Inspired App Feature Visualization on Miro</a> - There are a lot of screenshots of different app features shown.</li>
-                            <li><a rel="external" href="https://www.figma.com/file/aVcWTgN0a6ojuDa8uTZ4spYE/Wireframes-Dopadaddy-the-Flowmingos?node-id=53%3A118" class="externalLink">User Flow Feature Inspiration on Figma</a> - Screenshots derived from the previous link to app feature inspiration, except there are even more screenshots and these were closed-sorted to the user flow model of the information architecture.</li>
-                        </ul>
+                        <p class="genText1">I helped to sort images of existing pill/water tracking app features into the features outlined in the information architecture so that the inspiration can be easily visualized and the prototype would be informed from such features.</p>
+                        <p class="genText1">The full visualization of the work done to gather the inspiration would be too large to view, but you can check out the following links:</p>
+                        <div class="gridContent marginLeft marginBottom">
+                            <p class="genText1"><a rel="external" href="https://miro.com/app/board/o9J_kxp_TOs=/" target="_blank" class="externalLink">Inspired App Feature Visualization on Miro</a> - There are a lot of screenshots of different app features shown.</p>
+                            <figure class="imageTile span2">
+                                <!-- <figcaption class="imageCaption"><i>More screenshots of app feature inspirations gathered for features of the smart bottle app prototype, seen in the <a rel="external" href="https://miro.com/app/board/o9J_kxp_TOs=/" target="_blank" class="externalLink">Inspired App Feature Visualization on Miro</a>.</i></figcaption> -->
+                                <img src="mediaFiles/images/design/ElectricStride/appInspiration2.png" alt="Information architecture of the smart bottle app for the patient. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history." class="backgroundImage">
+                            </figure>
+                        </div>
+                        <div class="gridContent marginLeft marginBottom">
+                            <p class="genText1"><a rel="external" href="https://www.figma.com/file/aVcWTgN0a6ojuDa8uTZ4spYE/Wireframes-Dopadaddy-the-Flowmingos?node-id=53%3A118" target="_blank" class="externalLink">User Flow Feature Inspiration on Figma</a> - Screenshots derived from the previous link to app feature inspiration, except there are even more screenshots and these were closed-sorted to the user flow model of the information architecture.</p>
+                            <figure class="imageTile span2">
+                                <!-- <figcaption class="imageCaption"><i>More screenshots of app feature inspirations gathered for features of the smart bottle app prototype, seen in the <a rel="external" href="https://miro.com/app/board/o9J_kxp_TOs=/" target="_blank" class="externalLink">Inspired App Feature Visualization on Miro</a>.</i></figcaption> -->
+                                <img src="mediaFiles/images/design/ElectricStride/appInspiration4.png" alt="Information architecture of the smart bottle app for the patient. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history." class="backgroundImage">
+                            </figure>
+                        </div>
                     </div>
-                    <figure class="imageTile span2">
-                        <figcaption>
-                        <img src="mediaFiles/images/design/ElectricStride/appInspiration4.png" alt="Information architecture of the smart bottle app for the patient. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history." class="backgroundImage">
-                            <i>Shown is a preview of only a few groups of screenshots within the </i>
-                            <a rel="external" href="https://www.figma.com/file/aVcWTgN0a6ojuDa8uTZ4spYE/Wireframes-Dopadaddy-the-Flowmingos?node-id=53%3A118" class="externalLink">User Flow Feature Inspiration on Figma</a>
-                            <i>, which captures existing app features for pill intake history, pill tracking display, pill recognition, and caretaker notifications for pill intake and stress.</i>
-                        </figcaption>
-                    </figure>
-                    <figure class="imageTile span2">
-                        <figcaption><i>More screenshots of app feature inspirations gathered for features of the smart bottle app prototype, seen in the </i><a rel="external" href="https://miro.com/app/board/o9J_kxp_TOs=/" class="externalLink">Inspired App Feature Visualization on Miro</a><i>.</i></figcaption>
-                        <img src="mediaFiles/images/design/ElectricStride/appInspiration2.png" alt="Information architecture of the smart bottle app for the patient. Some of the features of the app include device connectivity setup, calibrating pill tracking sensing, and pill/water intake history." class="backgroundImage">
-                    </figure>
                     <div class="gridContent span2">
-                        <p class="span2">
+                        <p class="genText1 span2">
                             The feature inspiration was adapted to fit into the existing information architecture that was initially created, but because this task was undertaken within the weekend of the 2nd Hackathon,
                             filling out the inspiration in relation to all of the features mapped into the architecture would have taken too long to develop the prototype in addition to making the presentation deliverable that was needed on Sunday.
                             It was in the best interest, on behalf of the group, for me to showcase the main features on the smart bottle app and help determine if our group's solution of a smart bottle and app would be appealing to our stakeholders and judges.
                         </p>
-                        <p class="span2">
+                        <p class="genText1 span2">
                             However, it was still necessary to have the work of the mockups be informed back to problem spaces around patients, caregivers, and medical professionals.
                             A teammate decided to create 3 separate storyboards, one for PD patients, another for caregivers, and a third for medical professionals respectively.
                             A group discussion ensured improvements and completeness to the narrative behind the storyboards and to better contextualize how the features of our smart
                             bottle and app were impactful to the problem spaces for each stakeholder.
                         </p>
                     </div>
-                    <h4 class="subheading span2">Storyboard for Patients</h4>
+                    <h4 class="subheading subsectionHeadings span2">Storyboard for Patients</h4>
                     <figure class="imageTile span2">
-                        <figcaption><i>Made by Dawn Ye.</i></figcaption>
                         <img src="mediaFiles/images/design/ElectricStride/storyboard1.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption centeredText"><i>This storyboard relates to the patient who would use the smart bottle app to help remind them of when they need to take their medication. The app would help the patient effectively manage their medication schedule and control onset of symptoms that affect their daily tasks. Made by Dawn Ye.</i></figcaption>
                     </figure>
-                    <h4 class="subheading span2">Storyboard for Caregivers</h4>
+                    <h4 class="subheading subsectionHeadings span2">Storyboard for Caregivers</h4>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/storyboard2.png" alt="" class="backgroundImage">
-                        <figcaption><i>Made by Dawn Ye.</i></figcaption>
+                        <figcaption class="imageCaption centeredText"><i>This storyboard illustrates how the smart bottle app enables the caregiver to remind the patient to take their medication. The app would also send notifications to the caregiver to take needed respites away from their responsibilities of caring for the patient. Made by Dawn Ye.</i></figcaption>
                     </figure>
-                    <h4 class="subheading span2">Storyboard for Medical Professionals</h4>
+                    <h4 class="subheading subsectionHeadings span2">Storyboard for Medical Professionals</h4>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/storyboard3.png" alt="" class="backgroundImage">
-                        <figcaption><i>Made by Dawn Ye.</i></figcaption>
+                        <figcaption class="imageCaption centeredText"><i>This storyboard shows that the smart bottle app could help medical professionals better understand the patient's history of their medication schedule and steer the conversation for them to better help the patients during visits. Made by Dawn Ye.</i></figcaption>
                     </figure>
-                    <p>I helped tag the individual storyboards with phrases involving relevant features that they would include. This would further inform the features incorporated into the visual design elements of the prototype mockups.</p>
-                    <figure class="imageTile">
+                    <p class="genText1 changeSpan1">I helped tag the individual storyboards with phrases involving relevant features that they would include. This would further inform the features incorporated into the user interface components of the prototype mockups.</p>
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/storyboards4.png" alt="" class="backgroundImage">
-                        <figcaption><i>Relevant features from the information architecture and user flow inspiration connected to the storyboards.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Connection of storyboards to relevant features from the information architecture and user flow inspiration.</i></figcaption>
                     </figure>
                 </section>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="firstPrototype">First Prototype</h2>
-                    <p>With the visual style guide as another reference, I quickly made the prototype mockups in the form of wireframes.</p>
-                    <figure class="imageTile">
+                    <h2 class="section sectionHeadings span2" id="firstPrototype">First Prototype</h2>
+                    <p class="genText1 changeSpan1">With the visual style guide as another reference, I quickly made the prototype mockups in the form of wireframes.</p>
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/visualStyleGuide.png" alt="" class="backgroundImage">
-                        <figcaption><i>Visual style guide used to make the wireframes for the prototype mockups. Made by Enrique Zavala and April Gau on Figma.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Visual style guide used to make the wireframes for the prototype mockups. Made by Enrique Zavala and April Gau on Figma.</i></figcaption>
                     </figure>
                     <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/ElectricStride/prototypeWireframes.png" alt="" class="backgroundImage">
-                        <figcaption><i>Wireframes as prototype mockups with labeled features included as a preview of the potential smart bottle app. Made on Figma.</i></figcaption>
+                        <img src="mediaFiles/images/design/ElectricStride/pillIntakeWireframe.svg" alt="" class="backgroundImage imageVertType1">
+                        <img src="mediaFiles/images/design/ElectricStride/pillIntakeFeatures.svg" alt="" class="backgroundImage imageHorizType1">
+                        <figcaption class="imageCaption"><i>Wireframe of the pill intake feature with user interface components to help temporally track a patient's consumption of medication with specific dosage information. Wireframe made on Figma.</i></figcaption>
                     </figure>
-                    <p class="span2">My other teammates helped to officially create the physical components necessary for the smart bottle itself. These presentation slides presented on a Hackathon day was made to illustrate the process of including the smart bottle features.</p>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/ElectricStride/historyWireframe.svg" alt="" class="backgroundImage imageVertType1">
+                        <img src="mediaFiles/images/design/ElectricStride/historyFeatures.svg" alt="" class="backgroundImage imageHorizType1">
+                        <figcaption class="imageCaption"><i>Wireframe of the history feature for caregivers to monitor the patient's medication adherence and to prompt caregivers to help remind patients. Wireframe made on Figma.</i></figcaption>
+                    </figure>
+                    <p class="genText1 span2">My other teammates helped to officially create the physical components necessary for the smart bottle itself. Shown below are presentation slides presented on a Hackathon day to mentors and judges to illustrate the process of including the physical features for the smart bottle.</p>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/bottleFeatures1.png" alt="" class="backgroundImage">
                         <img src="mediaFiles/images/design/ElectricStride/bottleFeatures2.png" alt="" class="backgroundImage">
                         <img src="mediaFiles/images/design/ElectricStride/bottleFeatures3.png" alt="" class="backgroundImage">
                     </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Presentation Slides for First Prototype</h4>
+                        <iframe class="gSlides span2" src="https://docs.google.com/presentation/d/e/2PACX-1vRagDMn8ymkQaz60_Xr4JbfCLeDoXcgva6q1xk3ZP2XenA7CPyAEQqDU2rMTW3iztoiv_lEy4RVrU8h/embed?start=false&loop=false&delayms=15000" style="border: none; width: 100%; height: 400px" allowfullscreen></iframe>
+                    </article>
                 </section>
                 <section class="bodyGrid gridType1">
-                    <h2 class="section span2" id="feedbackPivoting">Feedback and Pivoting</h2>
-                    <article class="gridContent span2">
-                        <h4 class="subheading">Feedback</h4>
-                        <p>
+                    <h2 class="section sectionHeadings span2" id="feedbackPivoting">Feedback and Pivoting</h2>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Feedback</h4>
+                        <p class="genText1">
                             From given feedback with mentors, judges, caregivers, and PD patients, the creation of our smart bottle still entailed issues of the placement of specific components of the bottle,
                             such as inadequately separating the pills from the water as well as how feasible it was to handle the bottle when a PD patient would drink from it.
                         </p>
                     </article>
-                    <article class="gridContent span2">
-                        <h4 class="subheading">Other Considerations</h4>
-                        <p>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Other Considerations</h4>
+                        <p class="genText1">
                             Given plenty of existing solutions (especially in relation to medication adherence) both online and within other teams’ work in their presentations, it didn’t seem that our solution
                             was too novel or impactful enough to adequately resolve the problem spaces that our team established within the scope of the competition. Thus, the team decided to explore other
                             concepts that would reassess what core issues we wanted to tackle.
                         </p>
                     </article>
                     <article class="gridContent span2">
-                        <h4 class="subheading">Need to Further Manage Research Data</h4>
-                        <p>
+                        <h4 class="subheading subsectionHeadings">Need to Further Manage Research Data</h4>
+                        <p class="genText1">
                             However, seeing how much work it was that we had, it was becoming much more difficult to manage a lot of the research and ideation that we performed. Before we moved forward with
                             more ideation and to better ground our ideas into the work we’ve done, I worked with Enrique to further synthesize all of the work so far into a vector-based file on Figma.
                         </p>
                     </article>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/dataSynthesis1.png" alt="" class="backgroundImage">
-                        <img src="mediaFiles/images/design/ElectricStride/dataSynthesis2.png" alt="" class="backgroundImage">
-                        <figcaption>
+                        <figcaption class="imageCaption">
                             <i>Double-diamond visual representation of design process done. This included all of our primary research, secondary research, notes, images, journey maps, problem definitions,
                                 and ideation work captured. This enabled a holistic view of our project as a whole so that future design decisions on continuous ideation would remain informed by existing
-                                research work done. You may explore the </i><a rel="external" href="https://www.figma.com/file/PRv0l0kyQPmbsVdbpFLYDCCs/DopaStorySoFar?node-id=0%3A1" class="externalLink">Data Synthesis Visualization on Figma</a><i>.</i>
+                                research work done. To see the enlarged full version, check out the <a rel="external" href="https://www.figma.com/file/PRv0l0kyQPmbsVdbpFLYDCCs/DopaStorySoFar?node-id=0%3A1" target="_blank" class="externalLink">Data Synthesis Visualization on Figma</a>.
+                            </i>
                         </figcaption>
                     </figure>
-                    <article class="gridContent span2">
-                        <h4 class="subheading">Pivoting</h4>
-                        <p>
-                            Pivoting to a solution took almost a month because there was no clear group consensus on an idea that would be feasible to make and impactfully address the problem spaces. Our new
-                            series of ideations were based on findings from the Data Synthesis Visualization and more secondary research for inspiration. The team had more discussions to compare and evaluate these new ideas against the smart bottle idea.
-                            Some more ideas that our team members came up with included:
-                        </p>
-                    </article>
-                    <ul>
-                        <li>
-                            <b>Digital Gamification</b> - This was similar to the themes of motivating people to perform activities for self-agency while also being community-based, like Pokemon Go’s intrinsic need for the person to walk to a location and perform other activities to get rewards.
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/ElectricStride/dataSynthesis2.png" alt="" class="backgroundImage">
+                    </figure>
+                    <ul class="pivotList">
+                        <li class="genText1">
+                            <p class="genText1">Some more ideas that our team members came up with included: </p>
                         </li>
-                        <li>
-                            <b>Self-Help Guide</b> - This would be a digital platform or app for patients and caregivers to have all information related to Parkinson’s consolidated and centralized. It would have an online forum to find out and interact with others who also deal with Parkinson’s.
+                        <li class="genText1">
+                            <b class="boldText">Digital Gamification</b> - This was similar to the themes of motivating people to perform activities for self-agency while also being community-based, like Pokemon Go’s intrinsic need for the person to walk to a location and perform other activities to get rewards.
                         </li>
-                        <li>
-                            <b>Retrofit House Lights Sensors</b> - These would incorporate some light source, possibly audio and other types of feedback to improve gait and prevent freezing.
+                        <li class="genText1">
+                            <b class="boldText">Self-Help Guide</b> - This would be a digital platform or app for patients and caregivers to have all information related to Parkinson’s consolidated and centralized. It would have an online forum to find out and interact with others who also deal with Parkinson’s.
                         </li>
-                        <li>
-                            <b>Smart Lamps</b> - These would be distributed around the house and leverage the Internet of Things (IoTs), such as app connectivity, to provide medication and other helpful notifications.
+                        <li class="genText1">
+                            <b class="boldText">Retrofit House Lights Sensors</b> - These would incorporate some light source, possibly audio and other types of feedback to improve gait and prevent freezing.
+                        </li>
+                        <li class="genText1">
+                            <b class="boldText">Smart Lamps</b> - These would be distributed around the house and leverage the Internet of Things (IoTs), such as app connectivity, to provide medication and other helpful notifications.
                         </li>
                     </ul>
                     <figure class="imageTile">
-                        <img src="mediaFiles/images/design/ElectricStride/pivotIdeas.png" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/ElectricStride/pivotIdeas.png" alt="" class="backgroundImage" id="pivotVote">
+                        <figcaption class="imageCaption"><i>Remote voting session through a poll, with more ideas created to determine what solution to pivot towards.</i></figcaption>
                     </figure>
                     <article class="gridContent span2">
-                        <h4 class="subheading span2">More Feature Ideation</h4>
-                        <p class="span2">
+                        <h4 class="subheading subsectionHeadings span2">More Feature Ideation</h4>
+                        <p class="genText1 span2">
                             At the time, the team decided to dive deeper into the retrofit house lamp idea because of how well it was informed by existing research for patients’
                             needs to navigate around at night, integration of caregiver respite into the solution, and how it could ease the process of live symptom awareness.
-                            The team gathered more inspiration of features from existing solutions of smart lamps to include. Some of the ideas that we’ve came up with were:
+                            The team gathered more inspiration of features from existing solutions of smart lamps to include. Even more ideas that we’ve came up with were:
                         </p>
                     </article>
-                    <ul class="span2">
-                        <li>
-                            <b>A light-up plant</b> - A potted plant that could communicate to other family members when a person was tending to the plant. Medication reminders and caregiver respite reminders can be integrated within the plant.
+                    <ul class="marginLeft span2">
+                        <li class="genText1">
+                            <b class="boldText">A light-up plant</b> - A potted plant that could communicate to other family members when a person was tending to the plant. Medication reminders and caregiver respite reminders can be integrated within the plant.
                         </li>
-                        <li>
-                            <b>Non-pharmaceutical light therapy</b> - This type of lamp would use an infrared light to stimulate neurons around the head and reverse effects neurodegeneration.
+                        <li class="genText1">
+                            <b class="boldText">Non-pharmaceutical light therapy</b> - This type of lamp would use an infrared light to stimulate neurons around the head and reverse effects neurodegeneration.
                         </li>
-                        <li>
-                            <b>Voice controlled house lamps</b> - This type of lamp involves app connectivity that could potentially change light colors or brightness depending on change in events, such as bedtime, rainy weather, mood etc.
+                        <li class="genText1">
+                            <b class="boldText">Voice controlled house lamps</b> - This type of lamp involves app connectivity that could potentially change light colors or brightness depending on change in events, such as bedtime, rainy weather, mood etc.
                         </li>
                     </ul>
-                    <p class="span2">
-                        As our team decided to segregate the features into physical and digital parts of our retrofit house lamp solution to finalize our pivot from our smart
-                        bottle solution, we quickly ran into issues with that concept as well. A single house lamp would be too localized within the household to effectively
-                        help the person navigate around their home while having many different house lamps requires installation and tedious maintenance, as we previously
-                        witnessed during our in-home visit with Jeanie.
-                    </p>
-                    <p class="span2">
-                        Thus, it was important for us to further converge onto a problem space that we wanted to specifically address while considering other ideas to address
-                        that problem space. There was eventual consensus of focusing on improving patients’ gait, in relation and more emphasis to maintaining agency. We
-                        eventually settled on making house floor tiles, since some of our team members gathered additional inspiration of the mat that visually mimicked a
-                        staircase as well as tying this back to our original research on exercise routines as non-pharmaceutical interventions.
-                    </p>
-                    <figure class="imageTile">
-                        <img src="mediaFiles/images/design/ElectricStride/floorTiles.png" alt="" class="backgroundImage">
+                    <div class="gridContent span2" id="pivotProblems">
+                        <p class="genText1">
+                            As our team decided to segregate the features into physical and digital parts of our retrofit house lamp solution to finalize our pivot from our smart
+                            bottle solution, we quickly ran into issues with that concept as well. A single house lamp would be too localized within the household to effectively
+                            help the person navigate around their home while having many different house lamps requires installation and tedious maintenance, as we previously
+                            witnessed during our in-home visit with Jeanie.
+                        </p>
+                        <p class="genText1">
+                            Thus, it was important for us to further converge onto a problem space that we wanted to specifically address while considering other ideas to address
+                            that problem space. There was eventual consensus of focusing on improving patients’ gait, in relation and more emphasis to maintaining agency. We
+                            eventually settled on making house floor tiles, since some of our team members gathered additional inspiration of the mat that visually mimicked a
+                            staircase as well as tying this back to our original research on exercise routines as non-pharmaceutical interventions.
+                        </p>
+                    </div>
+                    <!-- </div> -->
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/ElectricStride/floorTiles.png" alt="" class="backgroundImage changeImg">
+                        <img src="mediaFiles/images/design/ElectricStride/exerciseInspiration.png" alt="" class="backgroundImage changeImg">
+                        <figcaption class="imageCaption"><i>Image reference of a mat with a staircase formfactor that the team wanted to explore further. Original inspiration for exercise equipment and routines helped to specify the potential usage of the staircase mat idea.</i></figcaption>
                     </figure>
-                    <figure class="imageTile">
-                        <img src="mediaFiles/images/design/ElectricStride/exerciseInspiration.png" alt="" class="backgroundImage">
-                    </figure>
+                    <!-- <div class="gridContent" id="pivotIdeas"> -->
                 </section>
-                <section class="bodyGrid gridType1">
-                    <h2 class="section span2" id="secondPrototype">Second Prototype</h2>
-                    <p class="span2">
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="secondPrototype">Second Prototype</h2>
+                    <p class="genText1">
                         The team split into two different teams again, one for producing the actual mat and another for research and user testing. I was with the user testing team
                         to help contact individuals to potentially test out the mat. To get a general sense of the second prototype, this is what the mat-building team
                         made. This was a low fidelity version of our mat which mimics a 3D staircase, and was inspired by Mileha Soneji’s creation of her staircase mat.
                     </p>
                     <figure class="imageTile">
-                        <img src="mediaFiles/images/design/ElectricStride/matSketch.png" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/ElectricStride/matSketch.png" alt="" class="backgroundImage changeImg">
+                        <img src="mediaFiles/images/design/ElectricStride/lowFidMat.png" alt="" class="backgroundImage changeImg">
+                        <figcaption class="imageCaption"><i>Digital sketch and initial physical prototype of the mat. Both incorporate a 3D-optical illusion of the staircase pattern. The physical prototype has blue and red LED lights with wires connected to an Arduino (Arduino not shown).</i></figcaption>
                     </figure>
-                    <figure class="imageTile">
-                        <img src="mediaFiles/images/design/ElectricStride/lowFidMat.png" alt="" class="backgroundImage">
-                    </figure>
-                    <p class="span2">
+                    <p class="genText1 span2">
                         Since our team’s solution was geared towards leveraging exercise routines and improving gait, it was important for me to help the user testing team contact
                         instructors from rock steady boxing classes since people from earlier interviews suggested to look into groups that host these classes. Since these classes
                         seemed to be aligned with the subject of exercise for people with Parkinson’s, our team thought these would have people who would be representative of using
@@ -505,13 +599,13 @@
                     </p>
                 </section>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="userTesting">User Testing</h2>
-                    <p class="span2">
+                    <h2 class="section sectionHeadings span2" id="userTesting">User Testing</h2>
+                    <p class="genText1 span2">
                         Emilia, April, Dawn, and I composed of the user testing team, and we were able to visit a rock-steady boxing gym to have several Parkinson's patients from
                         rock-steady boxing classes help test out mat. After these people consented to be volunteers, I facilitated each person on the activity that they were going to do,
                         which was to walk normally without the mat, walk again using the mat, and walk on the mat with a metronome sound playing. The prototype was setup
                     </p>
-                    <p class="span2">
+                    <p class="genText1 span2">
                         Ultimately, we, as the user testing team, wanted to understand how the patients would want to viably use the mat. It was important to compare the nature of their
                         gait and length of their strides while they walked normally, while they used the mat, and while there was audio feedback to supplement the mat. We recorded times
                         for each round as well as video recordings to observe how each person walked. Volunteers were also asked to self-report their experience on a 5-point Likert scale
@@ -520,118 +614,159 @@
                     </p>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/userTesting1.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">Rock steady boxing class where the user testing was conducted. Volunteers were shown how to perform each test by walking normally with and without the mat.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/userTesting2.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">Volunteers walking on the mat to help with the user testing.</i></figcaption>
                     </figure>
                     <article class="gridContent span2">
-                        <h4 class="subheading span2">Feedback Gathered</h4>
-                        <p>Much of our feedback was organized and consolidated into a spreadsheet that helped us list out recommendations for improvements for user testing and iterating on
+                        <h4 class="subheading subsectionHeadings span2">Feedback Gathered</h4>
+                        <p class="genText1">Much of our feedback was organized and consolidated into a spreadsheet that helped us list out recommendations for improvements for user testing and iterating on
                             the design of the mat. Other than confounds discovered from user testing protocol, some key themes emerged.</p>
-                        <ul>
-                            <li><b>The staircase pattern was visually disorienting.</b> - The optical illusion of the staircase along with the LED lights were visually overloading to the patients and forced them to step on the black areas of the mat.</li>
-                            <li><b>The volunteers were not used to the metronome playing.</b> - When they walked, they were not accustomed to moving to the beat of the metronome.</li>
-                            <li><b>LED lights helped with the person's walking.</b> - The lights contributed to faster walking time and greater length in their strides.</li>
+                        <ul class="marginLeft">
+                            <li class="genText1 marginLeft"><b class="boldText">The staircase pattern was visually disorienting.</b> - The optical illusion of the staircase along with the LED lights were visually overloading to the patients and forced them to step on the black areas of the mat.</li>
+                            <li class="genText1 marginLeft"><b class="boldText">The volunteers were not used to the metronome playing.</b> - When they walked, they were not accustomed to moving to the beat of the metronome.</li>
+                            <li class="genText1 marginLeft"><b class="boldText">LED lights helped with the person's walking.</b> - The lights contributed to faster walking time and greater length in their strides.</li>
                         </ul>
                     </article>
                     <figure class="imageTile span2">
+                        <figcaption class="imageCaption"><i>Spreadsheet of consolidated feedback based on observations, recorded footage, and volunteer responses from follow-up interview questions.</i></figcaption>
                         <img src="mediaFiles/images/design/ElectricStride/userTestingFeedback1.png" alt="" class="backgroundImage">
                     </figure>
-                    <article class="gridContent">
-                        <h4 class="subheading">A Home Revisit</h4>
-                        <p>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">A Home Revisit</h4>
+                        <p class="genText1">
                             We revisited the same Parkinson's patient's home to have her test out our new mat. We took confounds and recommendations from our feedback gathered into consideration by removing the need
                             to test for sound. We documented her responses to follow-up questions after she performed the activity.
                         </p>
                     </article>
                     <figure class="imageTile">
                         <img src="mediaFiles/images/design/ElectricStride/userTesting3.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>We followed up with the same person from the previous the in-home visit. <br>She would also help us test out the mat by walking on it.</i></figcaption>
                     </figure>
                 </section>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="iteration">Iteration</h2>
-                    <p class="span2">During another group meeting, we showed the feedback that we gathered with the members who focused on the product design and implementation. From additional discussion, we agreed that the mat needed to be simplified.</p>
-                    <p>A two-dimensional, rectangular ladder design with a general yoga mat further minimizes the visual overload the person experiences while use the mat.</p>
-                    <figure class="imageTile">
+                    <h2 class="section sectionHeadings span2" id="iteration">Iteration</h2>
+                    <p class="genText1 span2">
+                        During another group meeting, we showed the feedback that we gathered with the members who focused on the product design and implementation.
+                        From additional discussion, we agreed that the mat needed to be simplified. The following features would be included upon the next iteration
+                        of the mat.
+                    </p>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subsectionHeadings">Flatter Formfactor and Appearance</h4>
+                        <p class="genText1 changeSpan1">A two-dimensional, rectangular ladder design with a general yoga mat further minimizes the visual overload the person experiences while use the mat.</p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/matIteration.png" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Sketch of how placement of LED lights would simplify the design to the desired rectangular formfactor.</i></figcaption>
                     </figure>
-                    <p>This flat, rectangular design with evenly-spaced, smoothly embedded LED lights would also be incorporated unintrusive walking and usage of the mat.</p>
-                    <figure class="imageTile">
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subsectionHeadings">Smoother Integration of Parts</h4>
+                        <p class="genText1 changeSpan1">Smoothly embedded LED lights would also be meshed into the mat to promote safer, unintrusive walking on the mat. More organized or embedded external wiring would be incorporated into the implementation of the mat as well so that the mat can be safely handled and placed on flat floor surfaces.</p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/matIteration2.jpg" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Sketch of how long, narrow gaps that have appropriate tolerances can easily fit LED light strips into the mat without risk of tripping.</i></figcaption>
                     </figure>
-                    <p>Additonally, conductive fabric would be made to better gauge where the person's steps would be located relative to the mat. Less wires and improved wiring attached to the mat would enable the mat to be used on most flat surfaces on the floor.</p>
-                    <figure class="imageTile">
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subsectionHeadings">Improved Haptic Sensing of Location of Person's Feet</h4>
+                        <p class="genText1 changeSpan1">Additonally, conductive fabric would be made to better gauge where the person's steps would be located relative to the mat.</p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
                         <img src="mediaFiles/images/design/ElectricStride/matIteration3.png" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <figcaption class="imageCaption"><i>Conductivity meter used to test within the team if the fabric on the mat could sense the presence of a person's feet through measured conductivity changes in the fabric.</i></figcaption>
                     </figure>
                 </section>
-                <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="finalSolution">Final Solution</h2>
-                    <p class="span2">Stride, an electric mat to improve patients’ gait using LED lights to train their gait and length of strides.</p>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalSolution">Final Solution</h2>
+                    <p class="genText1 span2">Stride, an electric mat to improve patients’ gait using LED lights to train their gait and length of strides.</p>
                     <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/ElectricStride/finalSolutionPlaceholder1.png" alt="" class="backgroundImage">
-                        <img src="mediaFiles/images/design/ElectricStride/finalSolutionPlaceholder2.png" alt="" class="backgroundImage">
-                        <img src="mediaFiles/images/design/ElectricStride/finalSolutionPlaceholder3.png" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <img src="mediaFiles/images/design/ElectricStride/electricStrideFinal.svg" alt="" class="backgroundImage">
+                        <!-- <figcaption class="imageCaption"><i>Caption yet to be completed.</i></figcaption> -->
                     </figure>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subsectionHeadings">Future Directions</h4>
+                        <ul>
+                            <li class="genText1 marginLeft"><b class="boldText">Data capture assessments - Ways to Quantify and Qualify self</b><br>Sensors to measure adherence to heel-to-toe technique, as well as stride length.</li>
+                            <li class="genText1 marginLeft"><b class="boldText">Dancing?</b><br>Due to the modularity of the mat, we envision the mat to be able to fit together and function as a dance floor.</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subsectionHeadings">Applications of Mat Usage</h4>
+                        <ul>
+                            <li class="genText1 marginLeft"><b class="boldText">Physical Therapy / In-home PT exercise</b><br>Improving forward and lateral movement, lengthening stride to combat shuffling behavior.</li>
+                            <li class="genText1 marginLeft"><b class="boldText">Gym / Rock Steady Boxing / Workplace</b><br>Mat could be easily integrated into existing exercises at RSB or into self-or-caregiver mediated exercises.</li>
+                            <li class="genText1 marginLeft"><b class="boldText">Portability, On-the-Go Usage</b><br>Many people we interviewed expressed they have an active lifestyle filled with traveling. This travel-friendly mat could be taken to hotels or relatives’ homes.</li>
+                            <li class="genText1 marginLeft"><b class="boldText">Social Engagement</b><br>Many mats together sounds like a very fun dance party!</li>
+                        </ul>
+                    </article>
                 </section>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="results">Results</h2>
-                    <article class="gridContent span2">
-                        <h4 class="gridContent span2">Final Poster</h4>
-                        <p>Our teammates were able to pull together a final poster to present our work and findings.</p>
+                    <h2 class="section sectionHeadings span2" id="results">Results</h2>
+                    <p class="genText1 span2">Our teammates were able to pull together a final poster and presentation slide deck to present our work and findings.</p>
+                    <article class="gridContent marginBottom span2">
+                        <h4 class="gridContent subsectionHeadings span2">Final Presentation</h4>
+                        <iframe class="gSlides span2" src="https://docs.google.com/presentation/d/e/2PACX-1vTnGe4W2zE2fgNJOQaZFrOJI1LLZjTwVdiNnY1SUN--DmgdI9hLTGJFBo1HssxwCSRONwZPGYt0pYA3/embed?start=false&loop=false&delayms=15000" style="border: none; width: 100%; height: 400px" allowfullscreen></iframe>
                     </article>
-                    <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/ElectricStride/finalPoster.png" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
-                    </figure>
-                    <article class="gridContent span2">
-                        <h4 class="gridContent span2">Presenting Our Work</h4>
-                        <p>We presented our final design, poster, and presentation to the general public and a panel of judges, which consisted of our mentors, other IBM representatives, Parkinson’s patients and caregivers, and other visitors.</p>
+                    <article class="gridContent marginBottom span2">
+                        <h4 class="gridContent subsectionHeadings span2">Final Poster</h4>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/ElectricStride/finalPoster.png" alt="" class="backgroundImage">
+                            <!-- <figcaption class="imageCaption"><i>Caption yet to be completed.</i></figcaption> -->
+                        </figure>
                     </article>
-                    <figure class="imageTile span2">
+                    <article class="gridContent marginBottom span2">
+                        <h4 class="gridContent subsectionHeadings span2">Presenting Our Work</h4>
+                        <p class="genText1">We presented our final design, poster, and presentation to the general public and a panel of judges, which consisted of our mentors, other IBM representatives, Parkinson’s patients and caregivers, and other visitors.</p>
+                    </article>
+                    <figure class="imageTile marginBottom span2">
                         <img src="mediaFiles/images/design/ElectricStride/finalPresentation1.jpg" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <figcaption class="imageCaption"><i class="centeredText">I was amongst the three people in our team who presented our final product.</i></figcaption>
                     </figure>
-                    <figure class="imageTile span2">
+                    <!-- <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/finalPresentation2.jpg" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <figcaption class="imageCaption"><i class="centeredText">Caption yet to be completed.</i></figcaption>
                     </figure>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/finalPresentation3.jpg" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
-                    </figure>
-                    <p class="span2">To our surprise, we happened to win the competition <b>1st place</b>.</p>
+                        <figcaption class="imageCaption"><i class="centeredText">Caption yet to be completed.</i></figcaption>
+                    </figure> -->
+                    <p class="genText1 span2">To our surprise, we happened to win the competition <b class="boldText">1st place</b>!</p>
                     <figure class="imageTile span2">
                         <img src="mediaFiles/images/design/ElectricStride/1stPlace.jpg" alt="" class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <figcaption class="imageCaption"><i class="centeredText">Group photo of the team with a caregiver and patient as a couple of the judges.</i></figcaption>
                     </figure>
                 </section>
                 <br>
                 <br>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="reflection">Reflection</h2>
-                    <p class="span2">
+                    <h2 class="section sectionHeadings span2" id="reflection">Reflection</h2>
+                    <p class="genText1 span2">
                         Thinking back on the experience, it was as if I was running a long marathon, with no certainty of what was to come during the final presentation.
                         But, it definitely was one of the greatest test of my design repertoire thus far with quite a few takeaways.
                     </p>
-                    <article class="gridContent span2 marginLeft">
-                        <h4>The Importance of Design Ownership and Practice Combined With Real-World Constraints</h4>
-                        <p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">The Importance of Design Ownership and Practice Combined With Real-World Constraints</h4>
+                        <p class="genText1">
                             This project inspired me to leverage my background in both design and media to work with others on a large topic such as Parkinson's.
                             From participating in brainstorming workshops, to managing media assets and research work, and to polishing up the final poster, it
                             was important for me to take advantage of opportunities to get to the right design and doing design right all while collaborating with others
                             on dealing with constraints that limit those opportunities.
                         </p>
-                        <h4>People, Research, and Prototyping</h4>
-                        <p>
-                            This seems to be analogous to good design <i>and</i>implementation, since it was important to have a diverse, dedicated team to really understand
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">People, Research, and Prototyping</h4>
+                        <p class="genText1">
+                            This seems to be analogous to good design <i>and</i> implementation, since it was important to have a diverse, dedicated team to really understand
                             the topic of Parkinson's through different approaches and lens while exploring ideas and solutions that were grounded on solid findings.
                             With such a team, rapid prototyping encouraged us to explore lots of different ideas, to validate our assumptions and produced research, and to
                             improve the way that we approach the original problem whilst still coming up with some feasible product.
                         </p>
-                        <h4>Testing to Investigate, Not Just Validating</h4>
-                        <p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Testing to Investigate, Not Just Validating</h4>
+                        <p class="genText1">
                             Feedback on different ideas became especially important to not only understand how relevant stakeholders, competition mentors, and
                             even teammates viewed our team's established prototypes of our solutions, but it also helped us to fail fast and fail forward so
                             that our mat idea was well considered against previous solutions that were formerly thought as novel and impactful.
@@ -639,30 +774,30 @@
                     </article>
                 </section>
                 <section class="bodyGrid gridType2">
-                    <h2 class="section span2" id="nextSteps">Next Steps</h2>
-                    <p class="span2">
+                    <h2 class="section sectionHeadings span2" id="nextSteps">Next Steps</h2>
+                    <p class="genText1 span2">
                         From my observations and current knowledge of how the project went, here is what I would proceed next steps to the project.
                     </p>
-                    <article class="gridContent span2 marginLeft">
-                        <h4>Re-thinking about the implementation of our current mat.</h4>
-                        <p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Re-thinking about the implementation of our current mat.</h4>
+                        <p class="genText1">
                             Given the tight constraints on the implementation of our final solution, there needed to be more assumptions tested on how the Parkinson's
                             patients, caregivers, and experts can take advantage of its features to make the mat applicable to different settings, such as other
                             rock-steady boxing classes, inside and outside of buildings, and even at different treatment centers for doctor visits.
                         </p>
                     </article>
-                    <article class="gridContent span2 marginLeft">
-                        <h4>Understanding other perspectives that affect a Parkinson's patient and caregiver's needs.</h4>
-                        <p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Understanding other perspectives that affect a Parkinson's patient and caregiver's needs.</h4>
+                        <p class="genText1">
                             Factors such as socio-economic status, the current progression of a Parkinson's patient's medical condition, and existing treatments
                             that patients and caregivers resort to are only just a few different questions that need more answers from more Parkinson's patients, caregivers,
                             and experts from more diverse backgrounds. More visits to places where these people typical live in would help to address how those factors affect
                             patients and caregivers' lifestyles.
                         </p>
                     </article>
-                    <article class="gridContent span2 marginLeft">
-                        <h4>Further validation of the usage of the mat.</h4>
-                        <p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Further validation of the usage of the mat.</h4>
+                        <p class="genText1">
                             Much of the functionality and handling of the mat remained largely controlled by the product design team who built and controlled
                             the mat. Further development of the mat should be geared towards how usable and useful the mat can be to Parkinson's patients and caregivers.
                             Testing of the mat would be geared more towards how these people can handle the mat to make useful for improving their gait and length of their strides.
@@ -672,13 +807,115 @@
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
-            <p>Wayne Phung 2019</p>
+            <p class="genText1 maxWidth650">That's the end of the design case study! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or reading another design project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'MundoGardens.html';">
+                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Mundo Gardens</h3>
+                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
+                        <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
+                        <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or maybe explore one of my media projects?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                        <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                        <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TCLCVideo.html';">
+                    <img class="mediaImage" id="tclcVideo" src="mediaFiles/images/media/tclcVideo.png" alt="image" onclick="window.location.href = 'TCLCVideo.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">TCLC Rap Video</h3>
+                        <p class="genText1">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                        <a rel="external" href="TCLCVideo.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                        <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                        <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'YonderDynamics.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/yonderDynamics.png" alt="image" onclick="window.location.href = 'YonderDynamics.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">YD Competition Videos</h3>
+                        <p class="genText1">Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                        <a rel="external" href="YonderDynamics.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <img class="mediaImage" src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="image" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Artist GIFs Event Marketing</h3>
+                        <p class="genText1">These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                        <a rel="external" href="ArtistGIFs.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/asceTribute.png" alt="image" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">ASCE 2017-18 Tribute</h3>
+                        <p class="genText1">This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
+                        <a rel="external" href="ASCETribute1718.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'Wellfest.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellfest2018.png" alt="image" onclick="window.location.href = 'Wellfest.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">1st Annual Wellfest</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                        <a rel="external" href="Wellfest.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'wellnessFair.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellnessFair2018.png" alt="image" onclick="window.location.href = 'wellnessFair.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Wellness Fair</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellness Fair, an event focused on the seven dimensions of wellness.</p>
+                        <a rel="external" href="wellnessFair.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <p class="genText1 span2">Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

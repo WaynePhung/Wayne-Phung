@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,23 +28,37 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
-        <div class="intro beginning gridType2">
+        <div class="bodyGrid gridType6 mediaIntro beginning mediaStudy">
+            <section class="caseStudySol">
+                <h1 class="greeting caseBigTitle">Artist GIFs</h1>
+                <p class="caseStudyIntro largeText">These were GIFs to showcase featured artists for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                <!-- <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a> -->
+            </section>
+            <figure class="imageContainer">
+                <img src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="Artist GIF" class="backgroundImage">
+            </figure>
+        </div>
+        <!-- <div class="intro beginning gridType2">
             <section>
                 <h1 class="caseStudySol greeting span2">Artist GIFs</h1>
                 <p class="caseStudyIntro">These were GIFs to showcase featured artists for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
             </section>
             <figure class="imageContainer">
-                <img src="mediaFiles/gifs/Hunny.gif" alt="Artist GIF" class="backgroundImage">
+                <img src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="Artist GIF" class="backgroundImage">
             </figure>
-        </div>
+        </div> -->
         <div class="work mediaContent">
             <nav class="navSideBar">
                 <ul class="tableOfContents" id="artTOC">
@@ -49,120 +72,356 @@
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="hullabalooGIF">GIF for Hullabaloo Event</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="sgf2018Artists">GIF for Sun God Festival 2018 Artist Lineup</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="sgfbotbGIF">GIF for SGF Battle of the Bands</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="sgf2019Artists">GIFs for Sun God Festival 2019 Artist Lineup</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="resultsGIFs">Results of GIFs</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings" id="overview">Overview</h2>
+                <div class="bodyGrid gridType1 marginBottom">
+                    <p class="genText1 marginBottom span2">
+                        Within my position as a videographer at Associated Students Concerts and Events (AS Concerts and Events or ASCE in short),
+                        I also developed a few creative GIFs, which were used for larger-scale events that demanded social media
+                        engagement from the marketing team. These also marked my first attempts in making GIFs in general. With the help of
+                        Premiere Pro and GIF converting websites, I was able to quickly produce them. With each successive GIF, I grew more
+                        comfortable in exploring different visual effects to succinctly show crucial aspects of each of the events.
+                    </p>
+                </div>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="hullabalooGIF">GIF for Hullabaloo Event</h2>
+                    <p class="genText1 span2">
+                        Hullabaloo is one of the bigger student-led events on campus with an emphasis on a large night concert venue, carnival rides,
+                        and other night festivities. It was relatively simple to make given there was only three artists, artist text, a tagline,
+                        some stock footage, and the Hullabaloo logo needed to showcase. The words that make up the tagline, “One Day Left”, was a
+                        call to action for people to be aware of Hullabaloo coming up in one day away.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Tinting Pictures to the Hullabaloo Brand</h4>
+                        <p class="genText1">
+                            Since the GIF wasn't going to be that long, I decided to select a few pictures that either showcased the artists or best
+                            represented the event. I color corrected, graded, and tinted the photos within Premiere Pro.
+                        </p>
+                    </article>
+                    <figure class="imageContainer transparent span2">
+                        <figcaption class="imageCaption"><i class="centeredText">Comparison of the color graded photos used in the Hullabaloo GIF.</i></figcaption>
+                        <img src="mediaFiles/images/media/ArtistGIFs/Hullabaloo/hullabalooBeforeAfter.png" alt="" class="backgroundImage">
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subsectionHeadings">Visual Effects</h4>
+                        <p class="genText1">
+                            At the time, I was not too familiar with creating GIFs, so I decided to make its message simple, with a strong prompt to action
+                            for people to attend the event. I used zoom-in and crossfade effects as smooth, yet dynamic transitions to the next portion of the GIF.
+                        </p>
+                    </article>
+                    <figure class="gifTile">
+                        <video class="autoplayVideo hullabalooTextGIF" autoplay muted loop>
+                            <source src="mediaFiles/videos/ArtistGIFs/hullabalooTextGIF.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="imageCaption"><i class="centeredText">Zoom-in of artist names and words that would prompt viewer's attention to Hullabaloo.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Final Design</h4>
+                        <br>
+                        <br>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/Hullabaloo.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="sgf2018Artists">GIF for Sun God Festival 2018 Artist Lineup</h2>
+                    <div class="gridContent span2">
+                        <p class="genText1">
+                            Sun God Festival is the biggest all-campus event of the academic year for students, with roughly over 12,000 students
+                            attending the event. Students are generally the most receptive to the artist lineup reveal since they are often informed
+                            by other campuses having artists that are just as well known. I was able to dive deeper into Photoshop and animated stock
+                            footage to make the lineup reveal consistent with the event branding.
+                        </p>
+                        <p class="genText1">
+                            <i>For clarification, these artists were only the first part of the lineup (dubbed "Wave 1 lineup") revealed as the first of a two part campaign for AS Concerts and Events to reveal the artists. This fact is shown through the graphic banner.</i>
+                        </p>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Tinting Pictures to Sun God Festival Branding</h4>
+                        <p class="genText1">
+                            This approach was similar to the tinting of the artists photos for Hullabaloo, but with an emphasis for greater contrast
+                            between the shadows and the highlights.
+                        </p>
+                        <figure class="imageContainer transparent">
+                            <figcaption class="imageCaption"><i>Comparison of the color graded photos used to represent the main artists for the Sun God Festival Lineup.</i></figcaption>
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgfWave1Lineup/sgfWave1ArtistLineup.png" alt="" class="backgroundImage">
+                        </figure>
+                    </article>
+                    <div class="gridContent span2">
+                        <p class="genText1 span2">
+                            For this GIF, it wasn't necessary to reinvent the wheel for the brand and visual design that the original creators intended on the banner.
+                            Rather, by keeping the GIF consistent with the color scheme and words derived from the event banner, it was easier and simpler to establish
+                            the correlation between the featured artists and the event.
+                        </p>
+                        <figure class="imageContainer transparent marginBottom span2">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgfWave1Lineup/sgfWave1GraphicBanner.png" alt="" class="backgroundImage">
+                            <figcaption class="imageCaption"><i>I used the Sun God Festival graphic banner and used Photoshop to extract the banner text such that only the background remained. This enabled me to creatively manipulate the text and background.</i></figcaption>
+                        </figure>
+                        <figure class="imageContainer transparent span2">
+                            <figcaption class="imageCaption"><i>Text and logos used for the GIF derived from the banner to convey the message for people to register for the event.</i></figcaption>
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgfWave1Lineup/sgfTextAssets.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <article class="gridContent">
+                        <h4 class="subsectionHeadings">Visual Effects</h4>
+                        <p class="genText1">
+                            To polish up on tying the artist photos and the event banner together, I used stock footage of light flares as a way to transition from one artist to the next and into the event banner.
+                            To emphasize the aspect of the brighter colors in the event banner and the overall theme of Sun God Festival, I added stock footage of light rays over the event banner.
+                        </p>
+                    </article>
+                    <figure class="gifTile">
+                        <video class="autoplayVideo coloredGraphic" poster="mediaFiles/images/media/ArtistGIFs/sgfWave1Lineup/lightsAndTransition.png" autoplay muted loop>
+                            <source src="mediaFiles/videos/ArtistGIFs/lightsAndTransition.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Final Design</h4>
+                        <p class="genText1">
+                            The GIF ended up with less frames per second with a lower resolution, but it was necessary to be able to upload the GIF with a sufficient file size so that it could be presented on a Facebook post as an actual GIF.
+                        </p>
+                    </article>
+                    <figure class="imageContainer span2">
+                        <img src="mediaFiles/gifs/ArtistGIFs/SGFgif.gif" alt="Artist GIF" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="sgfbotbGIF">GIF for SGF Battle of the Bands</h2>
+                    <div class="gridContent" id="botbIntro">
+                        <p class="genText1">
+                            The next GIF covered all of the student contestants and bands that seek to perform as the opener for Sun God Festival,
+                            which was the biggest spring event for students on campus. It was overwhelming to witness the result of 23 participants,
+                            each with their own names and photos, to be zooming in to the viewer, all within the total span of 18 seconds, but it
+                            was made similarly to the first GIF in an attempt for people to quickly get the gist of who was participating in the
+                            Battle of the Bands.
+                        </p>
+                        <figure class="imageContainer" id="botbGraphic">
+                            <figcaption class="imageCaption"><i>Graphic of the Battle of the Bands event used.</i></figcaption>
+                            <img src="mediaFiles/images/media/ArtistGIFs/SGFbotb/botbheader.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <figure class="imageContainer" id="artistGrid">
+                        <figcaption class="imageCaption"><i>All 23 photos of the main artists and bands for the event.</i></figcaption>
+                        <img src="mediaFiles/images/media/ArtistGIFs/SGFbotb/SGFbotbGrid.png" alt="" class="backgroundImage">
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Final Design</h4>
+                        <p class="genText1">
+                            The GIF's visual effects were identical to that of the Hullabaloo GIF where it used quick zoom-in transitions to show
+                            one artist after the next. The call-to-action text was included to prompt the person to participate through voting
+                            before the March 14th midnight deadline.
+                        </p>
+                    </article>
+                    <figure class="imageContainer span2">
+                        <img src="mediaFiles/gifs/ArtistGIFs/sgfBOTB.gif" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="sgf2019Artists">GIFs for Sun God Festival 2019 Artist Lineup</h2>
+                    <p class="genText1 span2">
+                        This was the most ambitious set of GIFs that I have created, because that were a part of the Sun God Festival's social media
+                        campaign that the marketing team in ASCE wanted to heavily push. With a combination of approved artist photos, discovered
+                        text of their name logos, a Super 8 film look, Sun God Festival graphics, and layered stock footage (dust, fog, and light
+                        effects), I was able to execute a total of 6 GIFs, one for the lineup reveal, and 5 for each of the artists.
+                    </p>
+                    <figure class="imageContainer span2" id="artistsGrid19">
+                        <figcaption class="imageCaption"><i class="centeredText">All of the approved artist photos and original artist texts used for the GIFs.</i></figcaption>
+                        <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/sgf2019LineupGrid.png" alt="" class="backgroundImage">
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Visual Effects</h4>
+                        <p class="genText1">
+                            I employed a combination of color correction and grading, multiple layers of stock footage, and camera movement animations to achieve the desired look of
+                            gradually revealing each artist. Dust, smoke, light rays, film burns, and a bit of artifical film grain helped to achieve a more traditional
+                            filmic appearance while putting the emphasis on the artist and the text itself with respect to the theme of Sun God Festival.
+                        </p>
+                    </article>
+                    <figure class="gifTile span2">
+                        <figcaption class="imageCaption"><i>Video clips shown to show the progression of adding layers of effects and grading to the artist photo.</i></figcaption>
+                        <video class="autoplayVideo sgf2019GifProcess" autoplay muted loop>
+                            <source src="mediaFiles/videos/ArtistGIFs/sgf2019GifProcess1.mp4" type="video/mp4">
+                        </video>
+                        <video class="autoplayVideo sgf2019GifProcess" autoplay muted loop>
+                            <source src="mediaFiles/videos/ArtistGIFs/sgf2019GifProcess2.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Final Designs</h4>
+                        <p class="genText1">
+                            With the use of the Sun God Festival bird logo, relevant text of the event date and website, and a video clip of the ocean used on marketing graphics of the event,
+                            I was able to produce one GIF of the entire artist lineup reveal as well as five individual artist GIFs.
+                        </p>
+                    </article>
+                    <article class="gridContent category span2">
+                        <h5 class="boldText">Lineup Reveal</h5>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/SGF2019LineupReveal.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                    <article class="gridContent category span2">
+                        <h5 class="boldText">Hunny</h5>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/Hunny.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                    <article class="gridContent category span2">
+                        <h5 class="boldText">Whipped Cream</h5>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/WhippedCream.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                    <article class="gridContent category span2">
+                        <h5 class="boldText">Hayley Kiyoko</h5>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/HayleyKiyoko.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                    <article class="gridContent category span2">
+                        <h5 class="boldText">Joji</h5>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/Joji.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                    <article class="gridContent category span2">
+                        <h5 class="boldText">Vince Staples</h5>
+                        <figure class="imageContainer">
+                            <img src="mediaFiles/gifs/ArtistGIFs/VinceStaples.gif" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1" id="fbPostGIFs">
+                    <h2 class="section sectionHeadings span2" id="resultsGIFs">Results of GIFs</h2>
+                    <p class="genText1 span2">
+                        All of these GIFs were released as Facebook posts under their respective event pages.
+                    </p>
+                    <div class="gridContent">
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/vinceStaplesFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/jojiFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/hunnyFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/hayleyKiyokoFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/SGFbotb/sgfBOTBFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/sgf2019RevealFBPost1.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/Hullabaloo/hullabalooFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgfWave1Lineup/sgfWave1LineupFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent marginBottom">
+                            <img src="mediaFiles/images/media/ArtistGIFs/sgf2019Lineup/whippedCreamFBPost.png" alt="Artist GIF" class="backgroundImage">
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="reflection">Reflection</h2>
+                    <p class="genText1 span2">
+                        My prior experiences with video post-production as well as my skills in Premiere Pro, typeface and stock footage finding, and image manipulation to
+                        create these GIFs made me realize how I came quite a long way from not knowing anything about GIFs to being able to understand how different of an
+                        approach and narrative that GIFs have in showing rich storytelling compared to videos. The process was quite fun, as the bit-sized GIFs didn't seem to
+                        take that long to execute, yet I understood the value of a shorter, simpler, more meaningful message that comes from GIFs. I would love to be able to
+                        continue making GIFs for people that are much better caliber than where they currently are now.
+                    </p>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <p class="genText1 maxWidth650">That's concludes the media project! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or reading another media project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                        <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                        <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/asceTribute.png" alt="image" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">ASCE 2017-18 Tribute</h3>
+                        <p class="genText1">This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
+                        <a rel="external" href="ASCETribute1718.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="work designMediaWork noMargin">
+                <h4 class="caseStudy footerCase">...or maybe explore one of my design projects?</h4>
+                <div class="gridItem workGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'DesignLeapencrypted.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeapencrypted.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'MundoGardens.html';">
+                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Mundo Gardens</h3>
+                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
+                        <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
+                        <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'Cinemunch.html';" id="cinemunchItem">
+                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Cinemunch</h3>
+                        <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                        <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                        <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
             <p>Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,24 +28,38 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
-        <section class="caseStudySol beginning mediaStudy">
+        <div class="bodyGrid gridType2 mediaIntro beginning mediaStudy">
+            <section class="caseStudySol">
+                <h1 class="greeting caseBigTitle">Wellness Fair 2018 Recap</h1>
+                <p class="caseStudyIntro largeText">Wellness Fair was an event focused on the seven dimensions of wellness, which was hosted by Housing Dining and Hospitality (HDH).</p>
+                <!-- <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a> -->
+            </section>
+            <div class="video gDriveVideo">
+                <iframe class="gDrive" src="https://drive.google.com/file/d/1l_x-WUhtkRKU29bivjN4mIiq-ynYnPho/preview" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- <section class="caseStudySol beginning mediaStudy">
             <h1 class="caseStudySol greeting span2">Wellness Fair 2018 Recap</h1>
             <p class="caseStudyIntro">Wellness Fair was an event focused on the seven dimensions of wellness, which was hosted by Housing Dining and Hospitality (HDH).</p>
             <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a>
             <div class="video">
                 <iframe class="gDrive" src="https://drive.google.com/file/d/1l_x-WUhtkRKU29bivjN4mIiq-ynYnPho/preview" allowfullscreen></iframe>
             </div>
-        </section>
+        </section> -->
         <div class="work mediaContent">
-            <nav class="navSideBar">
+            <nav class="navSideBar" id="wnfNav">
                 <ul class="tableOfContents" id="wnfTOC">
                     <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
                     <li><a class="navButton" href="#process" data-index="1">Process</a></li>
@@ -45,81 +68,228 @@
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="process">Process</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalDraft">Final Draft</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="resultsReflection">Results and Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
+                <section class="bodyGrid gridType2 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">This was a client project for Housing Dining and Hospitality (HDH).</p>
+                    <h3 class="subheading subsectionHeadings">Background and Objective</h3>
+                    <p class="text genText1">This was a recap video for Wellness, which was an event hosted on March 29th, 2018, hosted by the University of California - San Diego’s main campus organization, Housing Dining and Hospitality (HDH for short). HDH wanted a recap video made from Triton Television (TTV), a student film and media production organization that I was involved in. I was tasked to fulfill HDH’s request for the video.</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <p class="text genText1">I edited a soundtrack, managed the footage, made drafts of the video, and made changes to each draft of the video before handing off the final version to HDH.</p>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="text genText1">Premiere Pro, After Effects</p>
+                    <h3 class="subheading subsectionHeadings">Core Team</h3>
+                    <p class="text genText1">This project was independently made by me, with some critique from student executive members at Triton Television (TTV), a student film and media production organization.</p>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">Triton Television</p>
+                </section>
+                <section class="bodyGrid gridType4">
+                    <h2 class="section sectionHeadings span2" id="process">Process</h2>
+                    <article class="gridContent">
+                        <h4 class="subsectionHeadings">Editing the Soundtrack</h4>
+                        <p class="genText1">
+                            There were no restrictions to the music that I was allowed to use for the video since HDH mentioned that it would take care of copyright issues.
+                            A soundtrack that I used was a remix of the original song Jammin’ by Bob Marley. Its explosive opening instrumental along with its energetic
+                            tune and dynamic sequences seemed appropriate for the different booths, physical activities, and social interactions that were consistently
+                            apparent in the video clips that I looked through.
+                        </p>
+                    </article>
+                    <figure class="imageContainer transparent">
+                        <audio controls>
+                            <source src="mediaFiles/videos/wellnessFair/wellnessFairSoundtrack.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        <figcaption class="imageCaption"><i class="centeredText">Remixed soundtrack.</i></figcaption>
+                    </figure>
+                    <div class="bodyGrid gridType2 noBottom span2">
+                        <article class="gridContent span2">
+                            <h4 class="subsectionHeadings">Visual Effects</h4>
+                            <p class="genText1">
+                                I experimented with creating an audio spectrum on After Effects so that it would be responsive to the beat of the soundtrack.
+                            </p>
+                        </article>
+                        <figure class="gifTile transparent noBottom span2">
+                            <!-- <p class="boldText category">Audio Spectrum - Original Version</p> -->
+                            <video class="autoplayVideo audioSpectrum" poster="mediaFiles/videos/wellnessFair/audioSpectrum1.png" muted loop>
+                                <source src="mediaFiles/videos/wellnessFair/audioSpectrum1.mp4" type="video/mp4">
+                            </video>
+                            <video class="autoplayVideo audioSpectrum" poster="mediaFiles/videos/wellnessFair/audioSpectrum2.png" muted loop>
+                                <source src="mediaFiles/videos/wellnessFair/audioSpectrum2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i class="centeredText">Comparison of the original audio spectrum and how it was applied to the video.</i>
+                                <button class="audioSpectrum playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Videos</button>
+                            </figcaption>
+                        </figure>
+                        <p class="genText1">
+                            I have also made a gradient background for the ending portion of the video using free-to-use stock footage.
+                            This would be used to showcase and thank the sponsors for the event.
+                        </p>
+                        <video class="autoplayVideo visualEffectsBackground" poster="mediaFiles/videos/wellnessFair/visualEffectsBackground.png" autoplay muted loop>
+                            <source src="mediaFiles/videos/wellnessFair/visualEffectsBackground.mp4" type="video/mp4">
+                        </video>
+                        <div class="bodyGrid gridType2 noBottom span2">
+                            <article class="gridContent">
+                                <h4 class="subsectionHeadings">Sponsors</h4>
+                                <p class="genText1">
+                                    I was also requested to showcase the following sponsors towards the end of the video. I chose as an appropriate background for showcasing the
+                                    wellness fair logo and the sponsor logos. However, the resolution and quality of the sponsor logos given to me were quite variable, and some
+                                    of them had colors that had too little contrast to the background, so I decided to make a subtle white background for some of them to improve
+                                    legibility of the logos.
+                                </p>
+                            </article>
+                            <figure class="imageContainer" id="wellfestSponsors">
+                                <img src="mediaFiles/images/media/wellnessFair/wellnessFairSponsors.svg" alt="" class="backgroundImage">
+                                <figcaption class="imageCaption"><i class="centeredText">Logos of sponsors to include for the ending portion of the video.</i></figcaption>
+                            </figure>
+                            <figure class="gifTile transparent span2">
+                                <video class="autoplayVideo sponsors span2" poster="mediaFiles/videos/wellnessFair/sponsors.png" autoplay muted loop>
+                                    <source src="mediaFiles/videos/wellnessFair/sponsors.mp4" type="video/mp4">
+                                </video>
+                                <figcaption class="imageCaption"><i class="centeredText">Combination of an animated gradient background with sponsors.</i></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <article class="gridContent span2">
+                            <h4 class="subsectionHeadings">Phrasing "wellness"</h4>
+                            <p class="genText1">
+                                I was able to play around with the word “wellness” as well as only using one word for each noticeable beat
+                                of the music to conjure different repetitive phrases. Different adjectives would be shown where as the
+                                words “wellness” and “made” would be repeated. The adjectives were chosen carefully so that subsequent
+                                video clips that belonged to the last word would be placed in that specific part of the video after
+                                the adjective.
+                            </p>
+                        </article>
+                        <figure class="gifTile">
+                            <p class="boldText category">"wellness made educational"</p>
+                            <video class="autoplayVideo wellnessTextGraphics2" poster="mediaFiles/videos/wellnessFair/wellnessTextGraphics2.png" muted loop>
+                                <source src="mediaFiles/videos/wellnessFair/wellnessTextGraphics2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i class="centeredText">Clips of guest speakers used to illustrate the crucial part of education to wellness.</i>
+                                <button class="wellnessTextGraphics2 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">"wellness made delicious"</p>
+                            <video class="autoplayVideo wellnessTextGraphics3" poster="mediaFiles/videos/wellnessFair/wellnessTextGraphics3.png" muted loop>
+                                <source src="mediaFiles/videos/wellnessFair/wellnessTextGraphics3.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i class="centeredText">Clips of sponsors and food to demonstrate food as another part of wellness.</i>
+                                <button class="wellnessTextGraphics3 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalDraft">Final Draft</h2>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/1l_x-WUhtkRKU29bivjN4mIiq-ynYnPho/preview" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="resultsReflection">Results and Reflection</h2>
+                    <div class="gridContent span2">
+                        <p class="genText1 span2">
+                            The final video was handed off to HDH, which was published on their YouTube channel. HDH would return to pay TTV to make another video.
+                        </p>
+                        <p class="genText1 span2">
+                            This event recap was one of the earlier videos that helped me learn the basics of translating marketing assets, colors, and feedback derived from the event and associated client
+                            into a narrative-rich video. It was fun learning a bit about making the audio spectrum from After Effects, which was significant in inspiring me to explore other possible
+                            visual effects for my future projects. As a former student member of Triton Television, I can only hope that TTV continue its relationship with HDH and that I can make videos that
+                            would also bridge connections between other future partners.
+                        </p>
+                    </div>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <p class="genText1 maxWidth650">That's concludes the media project! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or reading another media project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                        <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                        <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'Wellfest.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellfest2018.png" alt="image" onclick="window.location.href = 'Wellfest.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">1st Annual Wellfest</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                        <a rel="external" href="Wellfest.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="work designMediaWork noMargin">
+                <h4 class="caseStudy footerCase">...or maybe explore one of my design projects?</h4>
+                <div class="gridItem workGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'DesignLeapencrypted.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeapencrypted.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'MundoGardens.html';">
+                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Mundo Gardens</h3>
+                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
+                        <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
+                        <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'Cinemunch.html';" id="cinemunchItem">
+                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Cinemunch</h3>
+                        <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                        <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                        <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
             <p>Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,35 +28,42 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink selected">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1 selected">Resume/CV</a>
             </div>
         </nav>
         <section class="introduction">
-            <h1 class="greeting">Resume/CV</h1>
-            <p>I have two different types of resumes, one related to my design background and the other for video production. Buttons are below for you to download them in PDF form.</p>
+            <h1 class="greeting mainHeading">Resume/CV</h1>
+            <p class="largeText">I have two different types of resumes, one related to my design background and the other for video production. Buttons are below for you to download them in PDF form.</p>
             <div class="resumeButtons">
                 <a type="application/pdf" rel="external" target="_blank" href="mediaFiles/documents/WaynePhung_Resume.pdf" class="button">Resume - Design</a>
                 <a type="application/pdf" rel="external" target="_blank" href="mediaFiles/documents/WaynePhung_Resume.pdf" class="button">Resume - Media</a>
             </div>
         </section>
-        <div class="viewResume sectionMargin">
+        <div class="viewResume sectionMargin marginBottom">
             <embed src="mediaFiles/documents/WaynePhung_Resume.pdf" type="application/pdf" class="embedResume">
         </div>
-        <div class="sectionMargin" id="viewCV">
+        <!-- <div class="sectionMargin" id="viewCV">
             <p>You may also view my CV below, which outlines my experiences within design, media, and other jobs.</p>
-        </div>
+        </div> -->
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
             <p>Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>

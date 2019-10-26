@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,29 +28,55 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
-        <section class="caseStudySol beginning mediaStudy">
-            <h1 class="caseStudySol greeting span2">Sun God Festival (SGF)</h1>
-            <p class="caseStudyIntro">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+        <section class="beginning mediaStudy">
+            <h1 class="caseStudySol greeting caseBigTitle span2">Sun God Festival (SGF)</h1>
+            <p class="caseStudyIntro largeText">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+            <!-- <a href="#overview2018" class="seeProcess button workButton">Learn How I Made The Videos</a> -->
+            <div class="videoSeries bodyGrid gridType1 marginBottom">
+                <article class="gridContent marginBottom">
+                    <h3 class="subsectionHeadings">SGF Trailer for 2018</h3>
+                    <!-- <div class="video">
+                        <iframe class="gDrive" src="https://drive.google.com/file/d/1mmk6t3DzOwquA-makG1FNu8aeYnDTwgR/preview" allowfullscreen></iframe>
+                    </div> -->
+                    <div class="video span2">
+                        <iframe class="youTube videoDraft" src="https://www.youtube.com/embed/52yrl2Iid2A" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </article>
+                <article class="gridContent marginBottom">
+                    <h3 class="subsectionHeadings">SGF Trailer for 2019</h3>
+                    <div class="video">
+                        <iframe class="gDrive" src="https://drive.google.com/file/d/1Rjn7GxNp0p4UHlBc9_6KBkvX1dBBya02/preview" allowfullscreen></iframe>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- <section class="beginning mediaStudy">
+            <h1 class="caseStudySol caseBigTitle greeting span2">Sun God Festival (SGF)</h1>
+            <p class="caseStudyIntro largeText">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
             <a href="#overview2018" class="seeProcess button workButton">Learn How I Made The Videos</a>
             <article class="videoSeries">
-                <h3>SGF Trailer for 2018</h3>
+                <h3 class="subsectionHeadings">SGF Trailer for 2018</h3>
                 <div class="video">
                     <iframe class="gDrive" src="https://drive.google.com/file/d/1mmk6t3DzOwquA-makG1FNu8aeYnDTwgR/preview" allowfullscreen></iframe>
                 </div>
-                <h3>SGF Trailer for 2019</h3>
+                <h3 class="subsectionHeadings">SGF Trailer for 2019</h3>
                 <div class="video">
                     <iframe class="gDrive" src="https://drive.google.com/file/d/1Rjn7GxNp0p4UHlBc9_6KBkvX1dBBya02/preview" allowfullscreen></iframe>
                 </div>
             </article>
-        </section>
+        </section> -->
         <!-- <section class="mediaStudy">
             <h3>Sun God Festival Trailer for 2018</h3>
             <div class="video">
@@ -55,214 +90,751 @@
         <div class="work mediaContent">
             <nav class="navSideBar">
                 <ul class="tableOfContents" id="sgTOC">
-                    <li><a class="navButton" href="#overview2018" data-index="0">Overview - Trailer 2018</a></li>
-                    <li><a class="navButton" href="#videoProcess" data-index="1">Video Process</a></li>
-                    <li><a class="navButton" href="#background" data-index="2">Background</a></li>
-                    <li><a class="navButton" href="#mediaFiles" data-index="3">Getting Media Files</a></li>
-                    <li><a class="navButton" href="#firstDraft" data-index="4">First Draft</a></li>
-                    <li><a class="navButton" href="#evaluation" data-index="5">Evaluation</a></li>
-                    <li><a class="navButton" href="#iterations" data-index="6">Iterations</a></li>
-                    <li><a class="navButton" href="#finalVideo2018" data-index="7">Final Trailer 2018</a></li>
-                    <li><a class="navButton" href="#results2018" data-index="8">Results of Trailer 2018</a></li>
-                    <li><a class="navButton" href="#videoEditing2019" data-index="9">Video Editing for Trailer 2019</a></li>
-                    <li><a class="navButton" href="#finalVideo2019" data-index="10">Final Trailer 2019</a></li>
-                    <li><a class="navButton" href="#results2019" data-index="11">Results of Trailer 2019</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="12">Reflection</a></li>
+                    <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
+                    <li><a class="navButton" href="#videoProcess" data-index="1">Video Process for 2018 Trailer</a></li>
+                    <li><a class="navButton" href="#firstDraft" data-index="2">First Draft</a></li>
+                    <li><a class="navButton" href="#evaluationFeedback" data-index="3">Evaluation and Feedback</a></li>
+                    <li><a class="navButton" href="#iterations" data-index="4">Iterations</a></li>
+                    <li><a class="navButton" href="#finalVideo2018" data-index="5">Final 2018 Trailer</a></li>
+                    <li><a class="navButton" href="#results2018" data-index="6">Results of 2018 Trailer</a></li>
+                    <li><a class="navButton" href="#videoEditing2019" data-index="7">Video Editing for 2019 Trailer</a></li>
+                    <li><a class="navButton" href="#finalVideo2019" data-index="8">Final 2019 Trailer</a></li>
+                    <li><a class="navButton" href="#results2019" data-index="9">Results of 2019 Trailer</a></li>
+                    <li><a class="navButton" href="#reflection" data-index="10">Reflection</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview2018">Overview - Trailer 2018</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="videoProcess">Video Process</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="background">Background</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="mediaFiles">Getting Media Files</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="firstDraft">First Draft</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="evaluation">Evaluation</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="iterations">Iterations</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalVideo2018">Final Trailer 2018</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="results2018">Results of Trailer 2018</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="videoEditing2019">Video Editing for Trailer 2019</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalVideo2019">Final Trailer 2019</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="results2019">Results of Trailer 2019</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
+                <section class="bodyGrid gridType2 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">These videos were both independently made video projects for ASCE.</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="text genText1">To promote University of California - San Diego's biggest on-campus student events each year through video, Sun God Festival.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="text genText1">About 1 year with 9-10 iterations for the 2018 Trailer, 2 weeks for the 2019 Trailer</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <p class="text genText1">I managed all of the footage gathered, edited all media assets, privately shared the videos for feedback, and made changes to the videos based on feedback received.</p>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="text genText1">Premiere Pro</p>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">Triton Television (TTV), Associated Students Concerts & Events (ASCE) at UC San Diego</p>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="videoProcess">Video Process for 2018 Trailer</h2>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Background</h4>
+                        <p class="text genText1">
+                            Sun God Festival (SGF) is a 6-hour artist festival for current and very recently graduated students. Historically, this festival remains
+                            a campus tradition and each year Associated Students Concerts & Events (ASCE) has spearheaded the task of managing all of the
+                            logistics of the event, including the inclusion of volunteers and invited visitors to help photograph and video record events that
+                            take place during the festival. For the 2018 Trailer, I was more strongly affiliated with Triton Television (TTV, a film
+                            and media production student organization on campus) as an ad-hoc editor who took the initiative to help craft a promotional trailer
+                            for the 2018 Sun God Festival to help ASCE market the event.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Project Beginnings</h4>
+                        <p class="text genText1">
+                            During Sun God Festival 2017 at the time, I was only part of TTV as a producer who helped other admin members and producers in TTV
+                            to gather media footage of that festival on behalf of ASCE. I expressed keen interest in solely taking on the role as the main editor for the
+                            next year's 2018 trailer, so I immersed myself, diving deep at the existing footage gathered from SGF 2017. I was not as experienced in video
+                            editing at the time, but I did my best to improve upon my abilities through subsequent drafts made.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Finding Inspiration</h4>
+                        <p class="text genText1">
+                            To better understand the theme and existing approaches to Sun God Festival, I was inspired to view past videos through YouTube and Vimeo of existing
+                            promotional videos dedicated for SGF. Although older videos promoted SGF as a more day-long event that extends into the night, the 2017 Trailer, in
+                            particular, seemed to best showcase the atmosphere that current students are experiencing. The warm yellow and orange tones of the people, objects, and
+                            social setting combined with the energetic dancing and smiles from students on camera left an impression that SGF was exciting, vibrant, social, carefree,
+                            and idyllic.
+                        </p>
+                    </article>
+                    <figure class="imageContainer transparent span2">
+                        <img src="mediaFiles/images/media/SunGodFestival/inspiration1.jpg" alt="" class="backgroundImage">
+                        <figcaption><i><a rel="external" href="https://vimeo.com/209961091" target="_blank" class="externalLink">Sun God Festival 2017 Official Trailer</a> was one of the main inspirations that informed me on how to effectively market and represent a festival in video form.</i></figcaption>
+                    </figure>
+                    <div class="bodyGrid gridType2 span2">
+                        <article class="gridContent">
+                            <h4 class="subheading subsectionHeadings">Finding a Soundtrack</h4>
+                            <p class="text genText1">
+                                To best reflect the narrative, tone, and intended mood of the SGF 2018 Trailer, I scoured online to find the best kind of music to choose from. The song
+                                <a rel="external" href="https://www.youtube.com/watch?v=Whe-lgQFHyk" target="_blank" class="externalLink">I Want You (Feat. Matthew John Kurz) by Robotaki & Manila Killa</a>
+                                 had a gradual intro with an exciting buildup of tempo as well as an energetic music sequence towards the end, which seemed to be a great match for the trailer.
+                            </p>
+                        </article>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/SunGodFestival/inspiration2.jpg" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Video Editing</h4>
+                        <p class="text genText1">
+                            I wanted to test the waters of the footage and determine what sequences of shots would be appropriately placed in the video to capture what Sun God Festival should feel like.
+                            I assembled the first draft under the assumption that people either may or may not have experienced or known about this event before and I believed that showing clips of the diverse venues
+                            and experiences that the festival has to offer can position the video to have really rich, compelling, and persuasive storytelling for the event. Below were my main considerations for what
+                            sort of footage should be included in the 2018 trailer. These clips were derived from the first draft.
+                        </p>
+                    </article>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <div class="gridContent span2">
+                            <p class="boldText maxWidth800">Event Activities and Experiences</p>
+                            <p class="genText1">
+                                I gathered clips of these activities recorded that help shape a true experience of being at Sun God Festival, such as taking photos, going in water slides, seeing art posters
+                                that paid tribute to the artists that came, and getting a henna.
+                            </p>
+                        </div>
+                        <figure class="gifTile">
+                            <p class="boldText category">Taking Photos</p>
+                            <video class="autoplayVideo photosTaken" poster="mediaFiles/videos/SunGodFestival/2018/photosTaken.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/photosTaken.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Activity of people taking photos in front of objects and in a photo booth.</i>
+                                <button class="photosTaken playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Going Down Water Slides</p>
+                            <video class="autoplayVideo waterSlide" poster="mediaFiles/videos/SunGodFestival/2018/waterSlide.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/waterSlide.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Fun in the sun going down a tall water slide with an inflatable rubber duck.</i>
+                                <button class="waterSlide playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Seeing and Touching Artwork</p>
+                            <video class="autoplayVideo painting" poster="mediaFiles/videos/SunGodFestival/2018/painting.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/painting.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Showcasing artworks that people have of the artists as well as finger painting.</i>
+                                <button class="painting playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Getting a Henna</p>
+                            <video class="autoplayVideo henna" poster="mediaFiles/videos/SunGodFestival/2018/henna.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/henna.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Arts and crafts that offer an alternative to the typical artists and music experience of the festival.</i>
+                                <button class="henna playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <div class="gridContent span2">
+                            <p class="boldText maxWidth800">People Who Attended</p>
+                            <p class="genText1">
+                                Of course, the people were just as important, since capturing people’s interactions with their surrounding environment of the festival is really evocative of how student-centered and social the festival embodied.
+                                Since the intended audience is mostly students, it was important to showcase others who have attended and who sincerely enjoyed the presence of the camera so that the experience of the festival seems relevant and persuasive
+                                to prospective students and viewers who aren't too sure about what the event is like.
+                            </p>
+                        </div>
+                        <figure class="gifTile">
+                            <p class="boldText category"></p>
+                            <video class="autoplayVideo people3" poster="mediaFiles/videos/SunGodFestival/2018/people3.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/people3.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>People who liked being in front of the camera, but also seemed to genuinely enjoy the festival.</i>
+                                <button class="people3 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category"></p>
+                            <video class="autoplayVideo people4" poster="mediaFiles/videos/SunGodFestival/2018/people4.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/people4.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Though, sometimes, unexpected things happen during the festival.</i>
+                                <button class="people4 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <div class="gridContent span2">
+                            <p class="boldText maxWidth800">Capturing the Concert Experience</p>
+                            <p class="genText1">
+                                Sun God Festival always has a large stage and plenty of artists To capture students’ needs of participating in the concert experience, I had to map out a portion of the video towards the end to capture artists performing and the crowds.
+                            </p>
+                        </div>
+                        <figure class="gifTile">
+                            <p class="boldText category">Concert Experience</p>
+                            <video class="autoplayVideo concertExperience" poster="mediaFiles/videos/SunGodFestival/2018/concertExperience.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/concertExperience.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Crowds of people near a stage chosen to illustrate the main attraction of being in a concert.</i>
+                                <button class="concertExperience playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Live Performance of Artists</p>
+                            <video class="autoplayVideo artists" poster="mediaFiles/videos/SunGodFestival/2018/artists.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/artists.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Khalid, KinJaz, Mark Johns, and Manila Killa recorded as some of the artists shown for SGF 2017.</i>
+                                <button class="artists playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="firstDraft">First Draft</h2>
+                    <p class="genText1 span2">
+                        Here was the earliest draft that I made for the SGF 2018 Trailer. Lots of changes were need to the video, but it was in the right direction in terms of showcasing what it would
+                        be to attend Sun God Festival.
+                    </p>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/0B0VcCx3aVba0OUJpakx6c2pRbFE/preview" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="evaluationFeedback">Evaluation and Feedback</h2>
+                    <p class="genText1 span2">
+                        After a few more earlier drafts made, I came to a clear understanding of some of the weaknesses that the 2018 Trailer had.
+                    </p>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            In general, <u class="boldText">the clips were way too short to be able to communicate what was going on</u>, so it would be easy to be dissuaded by the rapid pacing of the video.
+                            It would be important to either give the clips breathing room or find replacing footage that is easier for a person to interpret in a split second.
+                        </p>
+                    </div>
+                    <figure class="imageContainer transparent marginBottom">
+                        <video class="autoplayVideo tooFast" poster="mediaFiles/videos/SunGodFestival/2018/tooFast.png" muted loop>
+                            <source src="mediaFiles/videos/SunGodFestival/2018/tooFast.mp4" type="video/mp4">
+                        </video>
+                        <button class="tooFast playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                    </figure>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            From a color grading standpoint, <u class="boldText">the colors needed to be better balanced</u> to more authentically showcase the festival. The visuals that were colored seem to
+                            make the festival a bit too flamboyant and unrealistically portrayed, with noticeably oversaturated spots on some of the clips. This can potentially led to an unpleasant experience
+                            for the viewer to be distracted by the mistakes made on the video, and leading the viewer's attention away from the content.
+                        </p>
+                    </div>
+                    <figure class="imageContainer transparent marginBottom">
+                        <video class="autoplayVideo tooSaturated" poster="mediaFiles/videos/SunGodFestival/2018/tooSaturated.png" muted loop>
+                            <source src="mediaFiles/videos/SunGodFestival/2018/tooSaturated.mp4" type="video/mp4">
+                        </video>
+                        <button class="tooSaturated playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                    </figure>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            Within the earlier drafts, I initially assumed that visual effects can really help create a sense of flow with the video and a more consistent narrative.
+                            However, after getting feedback from members at Triton Television when I shared one of the drafts, I learned about the drawbacks of transitions. <u class="boldText">If
+                            overused and misused, light flares and blur transitions can really make the content unnecessarily blurred or obscured while making the content too overwhelming and
+                            confusing to understand</u>. These types of transitions also reduce the time the viewer has in understanding the footage. It would make the transitions seem of
+                            greater importance, and not how they reinforce the content and narrative of the experience at SGF.
+                        </p>
+                    </div>
+                    <figure class="imageContainer transparent marginBottom">
+                        <video class="autoplayVideo tooManyTransitions" poster="mediaFiles/videos/SunGodFestival/2018/tooManyTransitions.png" muted loop>
+                            <source src="mediaFiles/videos/SunGodFestival/2018/tooManyTransitions.mp4" type="video/mp4">
+                        </video>
+                        <button class="tooManyTransitions playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                    </figure>
+                    <p class="genText1">
+                        From the people at ASCE, it would be an appreciative gesture if I would be able to <u class="boldText">include logos or any footage that more easily signified a sponsor/product name
+                        (such as Rockstar or Doritos) or a food vendor</u>.
+                    </p>
+                    <figure class="imageContainer transparent">
+                        <img src="mediaFiles/videos/SunGodFestival/2018/sponsors1.png" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="iterations">Iterations</h2>
+                    <p class="genText1 span2">
+                        Besides including sponsor clips and replacing footage, below were the overall following changes and additions made to later drafts of the 2018 Trailer.
+                    </p>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <article class="gridContent span2">
+                            <h4 class="subheading subsectionHeadings">Extended Or Fewer Clips</h4>
+                            <p class="genText1">
+                                This was relatively simple improvement to do. It involved removing clips that were unnessarily short and don't significantly contribute to the overall narrative of the trailer.
+                                Extending most of the remaining clips was just a few clicks away.
+                            </p>
+                        </article>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Before - 2nd Draft</p>
+                            <video class="autoplayVideo change1" poster="mediaFiles/videos/SunGodFestival/2018/before1Draft2.png" autoplay muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/before1Draft2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>In this example from the 2nd draft of the trailer, too many clips were crammed into six seconds towards the beginning of the video, making the trailer seem rushed and overwhelming to view at first glance.</i>
+                                <button class="change1 playVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button>
+                            </figcaption>
+                                <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">After - 5th Draft</p>
+                            <video class="autoplayVideo change2" poster="mediaFiles/videos/SunGodFestival/2018/after1Draft5.png" autoplay muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/after1Draft5.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Some clips were eliminated, while most of the remaining ones were exxtended with fewer switches between clips, giving more time for a viewer to interpret the footage and enjoy the trailer.</i>
+                                <button class="change2 playVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <article class="gridContent span2">
+                            <h4 class="subheading subsectionHeadings">Improved Color Grading</h4>
+                            <p class="genText1">
+                                I did a second attempt on color correcting and grading the footage, with a greater emphasis in more natural skin tones, natural grass colors, and pale blue skies.
+                                I also did my best to improve the consistency of the colors between every clip.
+                            </p>
+                        </article>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Before - 3rd Draft</p>
+                            <video class="autoplayVideo change3" poster="mediaFiles/videos/SunGodFestival/2018/before2Draft3.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/before2Draft3.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>In the 3rd draft, the blue skies were oversaturated with blue and there were magenta tints on the skin tones. If examined more closely, there are unnatural spots and absences of saturated blues.</i>
+                                <button class="change3 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">After - 6th Draft</p>
+                            <video class="autoplayVideo change4" poster="mediaFiles/videos/SunGodFestival/2018/after2Draft6.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/after2Draft6.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Within the 6th draft, colors were desaturated, but they still remain more natural and even make the skin tones and outside environment warm as intended. There are no patches of overly saturated spots that are apparent.</i>
+                                <button class="change4 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <article class="gridContent span2">
+                            <h4 class="subheading subsectionHeadings">Quicker or Alternative Transitions</h4>
+                            <p class="genText1">
+                                Since there were so many transitions throughout the video, I did my best to reduce the amount of necessary transitions and to make these transitions adhere to key changes to the soundtrack.
+                                Light flare transitions would sometimes be switched to quick blurs for less obtrusive flows from one clip to the next.
+                            </p>
+                        </article>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Before - 3rd Draft</p>
+                            <video class="autoplayVideo change5" poster="mediaFiles/videos/SunGodFestival/2018/before3Draft3.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/before3Draft3.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Transitions were a second too long and could make the clips appear too short or too obscured too often.</i>
+                                <button class="change5 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">After - 7th Draft</p>
+                            <video class="autoplayVideo change6" poster="mediaFiles/videos/SunGodFestival/2018/after3Draft7.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/after3Draft7.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Transitions were made shorter and alternatives, such as using stock footage for transitions and shorter blurs, were used.</i>
+                                <button class="change6 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <article class="gridContent span2">
+                            <h4 class="subheading subsectionHeadings">Changes to Graphics and Effects of Beginning and End of Trailer</h4>
+                            <p class="genText1">
+                                As the nature of the drafts changed over time, so did my awareness to the branding of AS Concerts and Events (ASCE) relative to SGF. Since the footage was proprietary to Triton Television (TTV),
+                                it was necessary to indicate the collaboration between TTV and ASCE. The purpose of the video also changed over time, as the video wasn't always tailored as a promotional trailer for the upcoming
+                                Sun God Festival. Text graphics and effects from previous drafts have tailored the video as more of an event recap of SGF, but as the 2018 Trailer was approaching, the video meant more as a
+                                promotional trailer, which meant that I had to include additional details about the date of SGF 2018 and how to register for the event. The different visual effects of starting and ending
+                                the video had also changed over each subsequent draft as well as I started to achieve desired branding of the event.
+                            </p>
+                        </article>
+                        <figure class="gifTile marginBottom span2">
+                            <p class="boldText category">Ending - 1st Draft</p>
+                            <video class="autoplayVideo endingDraft1" poster="mediaFiles/videos/SunGodFestival/2018/endingDraft1.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/endingDraft1.mp4" type="video/mp4">
+                            </video>
+                            <!-- <figcaption class="imageCaption shortCaption"><i>Transitions were a second too long and could make the clips appear too short or too obscured too often.</i></figcaption> -->
+                            <button class="endingDraft1 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Beginning - 5th Draft</p>
+                            <video class="autoplayVideo beginningDraft5" poster="mediaFiles/videos/SunGodFestival/2018/beginningDraft5.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/beginningDraft5.mp4" type="video/mp4">
+                            </video>
+                                <!-- <figcaption class="imageCaption shortCaption"><i>Transitions were made shorter and alternatives, such as using stock footage for transitions and shorter blurs, were used.</i></figcaption> -->
+                            <button class="beginningDraft5 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Ending - 5th Draft</p>
+                            <video class="autoplayVideo endingDraft5" poster="mediaFiles/videos/SunGodFestival/2018/endingDraft5.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/endingDraft5.mp4" type="video/mp4">
+                            </video>
+                            <!-- <figcaption class="imageCaption shortCaption"><i>Transitions were a second too long and could make the clips appear too short or too obscured too often.</i></figcaption> -->
+                            <button class="endingDraft5 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Beginning - 7th Draft</p>
+                            <video class="autoplayVideo beginningDraft7" poster="mediaFiles/videos/SunGodFestival/2018/beginningDraft7.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/beginningDraft7.mp4" type="video/mp4">
+                            </video>
+                            <!-- <figcaption class="imageCaption shortCaption"><i>Transitions were made shorter and alternatives, such as using stock footage for transitions and shorter blurs, were used.</i></figcaption> -->
+                            <button class="beginningDraft7 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                                <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Ending - 7th Draft</p>
+                            <video class="autoplayVideo endingDraft7" poster="mediaFiles/videos/SunGodFestival/2018/endingDraft7.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/endingDraft7.mp4" type="video/mp4">
+                            </video>
+                            <!-- <figcaption class="imageCaption shortCaption"><i>Transitions were a second too long and could make the clips appear too short or too obscured too often.</i></figcaption> -->
+                            <button class="endingDraft7 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                                <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                        <figure class="gifTile marginBottom span2">
+                            <p class="boldText category">Ending - 9th Draft</p>
+                            <video class="autoplayVideo endingDraft9" poster="mediaFiles/videos/SunGodFestival/2018/endingDraft9.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2018/endingDraft9.mp4" type="video/mp4">
+                            </video>
+                            <!-- <figcaption class="imageCaption shortCaption"><i>Transitions were a second too long and could make the clips appear too short or too obscured too often.</i></figcaption> -->
+                            <button class="endingDraft9 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                                <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button> -->
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalVideo2018">Final 2018 Trailer</h2>
+                    <div class="video span2">
+                        <iframe class="youTube videoDraft" src="https://www.youtube.com/embed/52yrl2Iid2A" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="results2018">Results of 2018 Trailer</h2>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            This was posted on the Sun God Festival Facebook page, which was a big part in garnering student engagement with the event.
+                            Within the first day of posting, it had garnered over 2,000 views. As of now, it has over 5,500 views.
+                        </p>
+                    </div>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/media/SunGodFestival/results1.png" alt="" class="backgroundImage">
+                        <!-- <figcaption class="imageCaption"><i>Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            People had fun tagging other people in the comments section of who they saw in the video.
+                        </p>
+                    </div>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/media/SunGodFestival/results2.png" alt="" class="backgroundImage">
+                        <!-- <figcaption class="imageCaption"><i>Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="videoEditing2019">Video Editing for 2019 Trailer</h2>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Background</h4>
+                        <p class="text genText1">
+                            As an official videographer intern for ASCE during the making of SGF 2019 Trailer, I noticed a lot of negativity surrounding the
+                            lack of enthusiasm students had with the logistics of SGF. It was understandable, given the increased budget that ASCE has solely for
+                            SGF, the unpleasantly long lines that occur, the underwhelming student reception to the artist lineups, and the expensive costs for
+                            hiring security crew.
+                        </p>
+                        <p class="text genText1">
+                            Despite how disheartening and distressing it was to see this, it was a valuable opportunity to have people remember of how positive
+                            and timeless the festival was and to reminisce the moments that truly made the event special. The video would be a great medium for
+                            for making this kind of impression for people about the event.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/media/SunGodFestival/backgroundfor2019Video.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>A reference post for an article published by the Triton detailing <a rel="external" href="http://triton.news/2019/05/is-sun-god-really-worth-it-anymore/" target="_blank" class="externalLink">Sun God Festival under skeptical scrutiny</a>.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Process</h4>
+                        <p class="text genText1">
+                            From gaining more hands-on experience with video editing projects, I was more familiar with the video editing process during this project.
+                            Past learnings from making the SGF 2018 Trailer were still fresh in mind to improve upon for the 2019 Trailer, so I quickly found relevant footage
+                            to highlight main activities, to focus on the people enjoying the event, and showcase a montage of artists that performed. The general structure
+                            was very similar to the 2018 video, in that this video also builds up the excitement, energy, and social interactions within the festival.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Finding and Editing the Soundtrack</h4>
+                        <p class="text genText1">
+                            A key soundtrack that helped to make this happen was <a rel="external" href="https://www.youtube.com/watch?v=KZwrGi7O3Lg" target="_blank" class="externalLink">Alive by Ikson</a>.
+                            I experimented with the high-pass audio effect on Premiere Pro to only have high frequency tones audible to have the soundtrack have a more nostalgic tone to it.
+                            By switching the soundtrack back and forth between showing high pitched tones and showing the unedited version of the song across key moments of the video,
+                            an obvious distinction between more mellow moments versus more exciting moments of the soundtrack can be heard. This distinction, along with adding a record scratch effect, helped to develop an
+                            impression from the video of how timeless and nostalgic moments in SGF were.
+                        </p>
+                    </article>
+                    <div class="gridContent span1200" id="aliveIkson">
+                        <figure class="ttvReel imageContainer transparent marginBottom span1200">
+                            <img src="mediaFiles/images/media/SunGodFestival/aliveIkson.jpg" alt="" class="backgroundImage">
+                            <figcaption><i>Visual reference of the YouTube soundtrack found.</i></figcaption>
+                        </figure>
+                        <figure class="ttvReel imageContainer transparent span1200">
+                            <audio controls>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/aliveRemixedSoundtrack.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                            </audio>
+                            <figcaption><i>Remixed soundtrack used for SGF 2019 Trailer, with noticeable high pass effect on the audio that alternates from the original, unedited audio of the soundtrack. Record scratches were included to achieved a more old-fashioned sense of the high pass effect of the soundtrack.</i></figcaption>
+                        </figure>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Selecting Footage</h4>
+                        <p class="text genText1">
+                            Taking past learnings from making the 2018 Trailer, it was easier and more efficient this time around to identify and select footage that would highlight activities
+                            at the festival, people dancing and enjoying themselves in front of the camera, and showcasing the concert experience for students.
+                        </p>
+                    </article>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <figure class="gifTile">
+                            <p class="boldText category">People Dancing</p>
+                            <video class="autoplayVideo peopleDancing" poster="mediaFiles/videos/SunGodFestival/2019/peopleDancing.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/peopleDancing.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>The simple enjoyment of dancing and hanging out with friends was an integral part of the SGF experience to highlight.</i>
+                                <button class="peopleDancing playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">The Concert Experience</p>
+                            <video class="autoplayVideo crowdExperience" poster="mediaFiles/videos/SunGodFestival/2019/crowdExperience.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/crowdExperience.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Being part of live concert performances in a high-energy crowd setting was another experience to remind and get people excited about.</i>
+                                <button class="crowdExperience playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Artists</p>
+                            <video class="autoplayVideo artists2019" poster="mediaFiles/videos/SunGodFestival/2019/artists.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/artists.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Showing how past artists, like Roy Woods, Robotaki and Madeintokyo, performed onstage would be another experience for students to not miss out on for the upcoming SGF.</i>
+                                <button class="artists2019 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Student Group Dance Performances</p>
+                            <video class="autoplayVideo studentDancers" poster="mediaFiles/videos/SunGodFestival/2019/studentDancers.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/studentDancers.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Besides having artists at the festival, student dance groups would be able to show off their choreographed dance moves on stage.</i>
+                                <button class="studentDancers playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Going Up an Inflatable Obstacle Course</p>
+                            <video class="autoplayVideo peopleInflatable" poster="mediaFiles/videos/SunGodFestival/2019/peopleInflatable.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/peopleInflatable.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>One of the many social activities at the festival to showcase, racing against your friends on an inflatable obstacle course.</i>
+                                <button class="peopleInflatable playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Photos with Friends</p>
+                            <video class="autoplayVideo takingPhotos" poster="mediaFiles/videos/SunGodFestival/2019/takingPhotos.png" muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/takingPhotos.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Taking memorable photos in front of booths and displays with groups of friends is another social experience for students to reminisce and look forward to.</i>
+                                <button class="takingPhotos playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Coloring Footage</h4>
+                        <p class="text genText1">
+                            From the previous examples of video clips/reference images shown, there were obvious differences to the coloring. This was because I wanted to reflect the intended nostalgic tone of the video and
+                            to have people reminisce and look forward to the SGF experience. Moments of high pitched tones from the soundtrack would relate more to SGF activities and experiences in the past that are timeless.
+                            An old film look to the visuals with desaturated colors seemed appropriate for those high pitched tones of the soundtrack while a more contemporary look with more saturated colors
+                            and contrast would be used for the original, unedited portions of the soundtrack. Below are example images and clips to illustrate the difference.
+                        </p>
+                    </article>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category"></p>
+                            <video class="autoplayVideo contrastingColors1" poster="mediaFiles/videos/SunGodFestival/2019/contrastingColors1.png" autoplay muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/contrastingColors1.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <button class="contrastingColors1 playVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category"></p>
+                            <video class="autoplayVideo contrastingColors2" poster="mediaFiles/videos/SunGodFestival/2019/contrastingColors2.png" autoplay muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/contrastingColors2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <button class="contrastingColors2 playVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Visual Effects</h4>
+                        <p class="text genText1">
+                            I utilized a few clips of stock footage to achieve the old film look as well as adjustment layers to generate the film grain. From the 1st draft, the old film lines and spots
+                            from the stock footage were way too apparent. Even though the 1st draft was meant to test the composition of the
+                        </p>
+                    </article>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Before - 1st Draft</p>
+                            <video class="autoplayVideo visualEffects1" poster="mediaFiles/videos/SunGodFestival/2019/visualEffects1.png" autoplay muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/visualEffects1.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>Old film lines are too visible and prove to overpower the footage captured of SGF. The shape on the left was meant to achieve a Super 8 look, but was later made more subtle since it is too apparent on the side of the video.</i>
+                                <button class="visualEffects1 playVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button>
+                            </figcaption>
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">After - 3rd Draft</p>
+                            <video class="autoplayVideo visualEffects2" poster="mediaFiles/videos/SunGodFestival/2019/visualEffects2.png" autoplay muted loop>
+                                <source src="mediaFiles/videos/SunGodFestival/2019/visualEffects2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i>A greater emphasis on desaturated colors and subtle film grain would achieve an old film look. The film lines from the stock footage and the shape on the left still remain, but are subtle and almost imperceivable.</i>
+                                <button class="visualEffects2 playVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" alt="" class="vidControlIcon">Pause Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalVideo2019">Final 2019 Trailer</h2>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/1Rjn7GxNp0p4UHlBc9_6KBkvX1dBBya02/preview" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="results2019">Results of 2019 Trailer</h2>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            This was posted on the Sun God Festival Facebook page, which was a big part in garnering student engagement with the event. <a rel="external" href="https://www.facebook.com/ucsdasce/videos/2279142185440800/" target="_blank" class="externalLink">See the post.</a>
+                            Within the first weekend of posting, it had also garnered over 2,000 views. As of now, it has over 5,100 views. Predictably, there were also people who tagged each other that encouraged engagement on the ASCE Facebook page.
+                        </p>
+                    </div>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/media/SunGodFestival/results3.png" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="reflection">Reflection</h2>
+                    <p class="genText1 span2">
+                        This project helped me to learn, apply, and improve upon my existing video post-production skills for upcoming projects. Despite the many small details that I overlooked, I felt that I quickly adapted and recalled these mistakes
+                        into the second Sun God Festival video. I'm glad that I also could showcase the student experience within this event that students at UC San Diego look forward to each year, and even impact social media engagement with the event.
+                        I learned about how research on typeface finding, image assets, free video stock footage, and past SGF videos really helped to solidify the visual design and storytelling of the videos. Most importantly, this experience with the
+                        videos gave me a greater appreciation and empathy of the viewers who want to understand what activities and experiences Sun God Festival had that promises a great concert festival for students, a lesson that I will always take
+                        with me to apply into future video projects.
+                    </p>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <p class="genText1 maxWidth650">That's concludes the media project! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or reading another media project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <img class="mediaImage" src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="image" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Artist GIFs Event Marketing</h3>
+                        <p class="genText1">These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                        <a rel="external" href="ArtistGIFs.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'YonderDynamics.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/yonderDynamics.png" alt="image" onclick="window.location.href = 'YonderDynamics.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">YD Competition Videos</h3>
+                        <p class="genText1">Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                        <a rel="external" href="YonderDynamics.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="work designMediaWork noMargin">
+                <h4 class="caseStudy footerCase">...or maybe explore one of my design projects?</h4>
+                <div class="gridItem workGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'DesignLeapencrypted.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeapencrypted.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'MundoGardens.html';">
+                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Mundo Gardens</h3>
+                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
+                        <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
+                        <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'Cinemunch.html';" id="cinemunchItem">
+                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Cinemunch</h3>
+                        <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                        <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                        <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
             <p>Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>

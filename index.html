@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,37 +37,74 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
         <section class="introduction opening">
-            <h1 class="greeting">Hey there!</h1>
-            <p>I’m a recent graduate from University of California - San Diego who wants to use human-centered systems design and media to enable what people seek to do and help them resolve their problems.</p>
-            <p>Within my portfolio website, I have case studies as Design work, but I also have videos and GIFs as my Media work as a separate page. Have a look!</p>
-            <p>Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <h1 class="greeting mainHeading">Hey there!</h1>
+            <p class="largeText">
+                I’m a recent graduate from University of California - San Diego who wants to use human-centered design to enable other people to solve their problems for what they want to do.
+                I also seek to leverage my experiences in media production to craft narrative-driven videos and services.
+            </p>
         </section>
         <div class="workIntro">
+            <p class="largeText">Within my website, I present two types of work for you to view: </p>
             <article class="workDescription">
-                <h3 class="projectTitle">Design Work</h3>
-                <p>I have case studies and projects that document stories of my experiences within user experience (UX) and design. Some topics include: Parkinson’s, micromobility and transportation, 3-D printing, and others.</p>
-                <a rel="external" href="design.html" class="button workButton" id="designButton">View My Design Work</a>
+                <h3 class="subsectionHeadings">Design Work</h3>
+                <p class="genText3">I have case studies and projects that document stories of my experiences within user experience (UX) and design. Some topics include: Parkinson’s, micromobility and transportation, 3-D printing, and others.</p>
+                <a rel="external" href="design.html" class="button workButton genText1" id="designButton">View My Design Work</a>
             </article>
             <article class="workDescription">
-                <h3 class="projectTitle">Media Work</h3>
-                <p>I have videos (and a few GIFs) related to marketing, event promotions, and event recaps. Read through the behind-the-scenes process of how they came to life and how they have impacted various organizations.</p>
-                <a rel="external" href="media.html" class="button workButton" id="mediaButton">View My Media Work</a>
+                <h3 class="subsectionHeadings">Media Work</h3>
+                <p class="genText3">I have videos (and a few GIFs) related to marketing, event promotions, and event recaps. Read through the behind-the-scenes process of how they came to life and how they have impacted various organizations.</p>
+                <a rel="external" href="media.html" class="button workButton genText1" id="mediaButton">View My Media Work</a>
             </article>
         </div>
+
+        <footer>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <p class="genText1">Wayne Phung 2019</p>
+            <p class="genText1"><span class="highlight">Testing Highlight on hover.</span></p>
+        </footer>
+
+        <!-- <section class="flexIntro beginning">
+            <h1 class="visStyle">Visual Style Guide</h1>
+            <ul class="marginLeft">
+                <li><h1 class="mainHeading">Main Headings</h1><p class="fontSize">Crimson Pro Regular, 60px</p></li>
+                <li><h1 class="mainHeadingSmaller">Main Headings Smaller</h1><p class="fontSize">Crimson Pro Regular, 54px</p></li>
+                <li><h3 class="sectionHeadings">Section Headings</h3><p class="fontSize">Crimson Pro Regular, 48px</p></li>
+                <li><h3 class="subsectionHeadings">Subsection Headings</h1><p class="fontSize">Open Sans Bold, 24px</p></li>
+                <li><p class="largeText">Large Text</p><p class="fontSize">Open Sans Regular, 24px</p></li>
+                <li><p class="boldText">Bold Text</p><p class="fontSize">Open Sans Bold, 18px</p></li>
+                <li><p class="genText1">General Text 1</p><p class="fontSize">Open Sans Regular, 16px</p></li>
+                <li><p class="genText2">General Text 2</p><p class="fontSize">Open Sans Regular, 14px</p></li>
+                <li><p class="genText3">General Text 3</p><p class="fontSize">Open Sans Regular, 18px</p></li>
+            </ul>
+            <ul class="marginLeft">
+                <li><h2 class="caseBigTitle">Case Study Page Big Title</h2><p class="fontSize">Crimson Pro Regular, 85px</p></li>
+                <li><h2 class="caseTitle">Case Study Page Title</h2><p class="fontSize">Crimson Pro Regular, 72px</p></li>
+                <li><h2 class="caseStudy">Case Study Titles</h2><p class="fontSize">Crimson Pro Regular, 42px</p></li>
+                <li><h5 class="caseTags">Tags, Tags, Tags</h1><p class="fontSize">Open Sans Italic, 14px</p></li>
+                <li><h5 class="imageCaption">Image Captions</h1><p class="fontSize">Open Sans Italic, 14px</p></li>
+            </ul>
+        </section> -->
 
         <!-- <section class="work" id="design">
             <article class="workHeading" id="designHeading">
@@ -175,11 +230,8 @@
                     <p> Wellness Fair 2018 was an event focused on the seven dimensions of wellness, which was hosted by Housing Dining and Hospitality (HDH).</p>
                 </a>
             </article>
+                        <p class="genText1">All of my work comprises of different projects that I have taken on and documented and does not necessarily reflect the viewpoints of different organizations that I have worked with.</p>
         </section> -->
-        <footer>
-            <p>All of my work comprises of different projects that I have taken on and documented and does not necessarily reflect the viewpoints of different organizations that I have worked with.</p>
-            <p>Wayne Phung 2019</p>
-        </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="03-js/Javascript%20Libraries/jquery.mobile-1.5.0-alpha.1.min.js"></script>

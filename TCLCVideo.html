@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,27 +23,41 @@
         <link rel="stylesheet" type="text/css" href="02-css/index.css">
 
         <!-- Title of Website -->
-        <title>Town and Country Learning Center Video - Wayne Phung</title>
+        <title>Town and Country Learning Center Rap Video - Wayne Phung</title>
     </head>
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
-        <section class="caseStudySol beginning mediaStudy">
-            <h1 class="caseStudySol greeting span2">Town and Country Learning Center</h1>
-            <p class="caseStudyIntro">A rap-themed video that demonstrates how kids within an affordable housing community collaborate with each other, co-create with university students, and authentically showcase their activities in their afterschool program, which empowered democratic documentation of their lives.</p>
+        <div class="bodyGrid gridType6 mediaIntro beginning mediaStudy">
+            <section class="caseStudySol">
+                <h1 class="greeting caseTitle">Town and Country Learning Center</h1>
+                <p class="caseStudyIntro largeText">A rap-themed video that demonstrates how kids within an affordable housing community collaborate with each other, co-create with university students, and authentically showcase their activities in their afterschool program.</p>
+                <!-- <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a> -->
+            </section>
+            <div class="video gDriveVideo">
+                <iframe class="gDrive" src="https://drive.google.com/file/d/1EJEWn-XShZd5DIGS8_4c_n1o4TSoWpXm/preview" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- <section class="beginning mediaStudy">
+            <h1 class="caseStudySol greeting caseBigTitle span2">Town and Country Learning Center</h1>
+            <p class="caseStudyIntro largeText">A rap-themed video that demonstrates how kids within an affordable housing community collaborate with each other, co-create with university students, and authentically showcase their activities in their afterschool program, which empowered democratic documentation of their lives.</p>
             <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a>
             <div class="video">
                 <iframe class="gDrive" src="https://drive.google.com/file/d/1EJEWn-XShZd5DIGS8_4c_n1o4TSoWpXm/preview" allowfullscreen></iframe>
             </div>
-        </section>
+        </section> -->
         <div class="work mediaContent">
             <nav class="navSideBar">
                 <ul class="tableOfContents" id="tclcTOC">
@@ -46,220 +69,688 @@
                     <li><a class="navButton" href="#mediaExperiment" data-index="5">Media Experimentation</a></li>
                     <li><a class="navButton" href="#firstDraft" data-index="6">First Draft</a></li>
                     <li><a class="navButton" href="#iterations" data-index="7">Iterations</a></li>
-                    <li><a class="navButton" href="#videoEditing" data-index="8">Video Editing</a></li>
-                    <li><a class="navButton" href="#secondDraft" data-index="9">Second Draft</a></li>
-                    <li><a class="navButton" href="#feedback" data-index="10">Additional Feedback</a></li>
-                    <li><a class="navButton" href="#finalVideo" data-index="11">Final Video</a></li>
-                    <li><a class="navButton" href="#results" data-index="12">Results</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="13">Reflection</a></li>
+                    <li><a class="navButton" href="#secondDraft" data-index="8">Second Draft</a></li>
+                    <li><a class="navButton" href="#feedback" data-index="9">Additional Feedback</a></li>
+                    <li><a class="navButton" href="#finalVideo" data-index="10">Final Video</a></li>
+                    <li><a class="navButton" href="#results" data-index="11">Results</a></li>
+                    <li><a class="navButton" href="#reflection" data-index="12">Reflection</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="videoChallenge">Video Challenge</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="videoProcess">Video Process</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="researchFindings">Research and Findings</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="problemDefinition">Problem Definition</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="mediaExperiment">Media Experimentation</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="firstDraft">First Draft</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="iterations">Iterations</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="videoEditing">Video Editing</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="secondDraft">Second Draft</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="feedback">Additional Feedback</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalVideo">Final Video</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="results">Results</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
+                <section class="bodyGrid gridType3 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">This was a group video project related to participatory design, ethnographic studies, and media production within a college communication course.</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="text genText1">To co-create a video with kids that captures their everyday activities by understanding their needs in an afterschool environment and how to best communicate with them with their preferences for the video.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="text genText1">10 weeks</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <p class="text genText1">I made my greatest contributions with project management, media production, and video editing. However, I also employed ethnographic techniques such as journaling written entries and observations within the afterschool environment of Town and Country Learning Center (TCLC).</p>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="text genText1">Ethnographic techniques such as observations and journaling, Premiere Pro, video and audio equipment.</p>
+                    <h3 class="subheading subsectionHeadings">Core Team</h3>
+                    <p class="text genText1">Stephen Luxford, Emily Hardy, Esau Carpenter, Emily Beihold, Jessica Tran, Wayne Phung, Avery Gildner</p>
+                    <h3 class="subheading subsectionHeadings">Mentors</h3>
+                    <div class="gridContent">
+                        <p class="text genText1 mentorNames"><i>Ms. V</i> - She was the supervisor at the Town and Country Learning Center who supervises the kids in the afterschool program that she hosts. With years of experience in managing an afterschool program, she helped inform and evaluate our group's directions and ideas for the activities that we planned for each weekly visit.</p>
+                        <br>
+                        <p class="text genText1 mentorNames"><i>Professor Camille Campion</i> - She is a professor in the University of California - San Diego’s Communications department and has primarily spearheaded efforts in the university’s partnership with Town and Country Learning Center. In the communication course, she has helped led discussions about participatory design, democratic representation of people a community, and enabling empowerment for others.</p>
+                        <br>
+                        <p class="text genText1"><i>Avery Gildner</i> - At the time, she was also a student at UC San Diego who has already taken this course more than once. While she was not busy with Ms. V's projects, she gave our group more insights about her previous experiences with the kids in TCLC.</p>
+                    </div>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">UC San Diego Communication department</p>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="videoChallenge">Video Challenge</h2>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Background</h4>
+                        <p class="text genText1">
+                            Within the 20-year partnership between the Democracy Lab, a research project group hosted by University of California - San Diego,
+                            and Town and Country Learning Center (TCLC), my group tries to address how we can make a video that captures the co-design and
+                            co-production of experiences and media within TCLC. We also needed to showcase strategies of our personal involvement within
+                            TCLC’s afterschool program to utilize and video capture best democratic practices amongst kids as well as advocating collaboration
+                            and empowerment amongst university students and the after school community within TCLC. This project was done in the context of a
+                            college communication course called Practicum in New Media and Community Life.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Project Approach</h4>
+                        <p class="text genText1">
+                            To successfully complete the project, we needed to immerse ourselves into the community space that the kids normally engage in and
+                            anticipate what sort of activities should be organized and documented such that kids express interest in engaging with the team and
+                            ultimately become voluntary co-creators of our video.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Constraints Faced</h4>
+                        <p class="text genText1">
+                            <u class="boldText">It was essential within our group to organize activities and snacks each week.</u>
+                            <br>
+                            This took a considerable amount of time and resources to plan, strategize, and execute the activities that we had in mind for the 10-15 kids we had to serve each week, which meant less time and focus to prepare for the video project.
+                        </p>
+                        <p class="text genText1">
+                            <u class="boldText">Need to accommodate for kids' way of communicating and preferences and democratize the video editing process.</u>
+                            <br>
+                            We had to garner the kids’ interest in even participating with the video project, and this meant gaining their trust, understanding how to effectively communicate with them, and understanding how to navigate interactions with them around their behaviors.
+                        </p>
+                        <p class="text genText1">
+                            <u class="boldText">Democratizing the creation of the video meant adapting practices for video production.</u>
+                            <br>
+                            To truly achieve our group’s vision of enabling the kids to help produce our video project through participation and to enable several people to participate simultaneously in the production process, standard biases and practices within video production had to be adapted while also being able to disseminate knowledge of media equipment usage.
+                        </p>
+                        <p class="text genText1">
+                            <u class="boldText">The final video draft had to be 5-7 minutes long.</u>
+                            <br>
+                            This is quite a length of time set that necessitated a wide range of different video clips to capture as many activities involving the kids and important TCLC people as possible.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Solution at a Glance</h4>
+                        <p class="text genText1">
+                            Town and Country Center is also the title of a rap-themed video that I have made that seeks to combine all of the voices of the kids in the community
+                            and footage of the daily activities that the kids participate in to authentically capture kids' participation and co-documentation of their afterschool community.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/media/tclcVideo.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>The official title of the video.</i></figcaption>
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType3 tclcProcess">
+                    <h2 class="section sectionHeadings span2" id="videoProcess">Video Process</h2>
+                    <p class="boldText">01 - Ethnographic Research</p>
+                    <p class="gentext1">
+                        Each week my group and I visited the Town and Country Learning Center (TCLC) in person. These visits were opportunities for our group
+                        to immerse ourselves into the environment that our group's mentors, kids, and other TCLC community members were a part of.
+                    </p>
+                    <p class="boldText">02 - Field Notes</p>
+                    <p class="gentext1">
+                        Each member of our group within the course would recall their general experiences after each visit at TCLC through written entries.
+                    </p>
+                    <p class="boldText">03 - Group Consensus and Discussion</p>
+                    <p class="gentext1">
+                        My group members and I would discuss about our interactions with the kids, plan on what activities and behaviors to anticipate for our
+                        group's following visit, and align with each other on what we can contribute to the next visit.
+                    </p>
+                    <p class="boldText">04 - Concept Testing and Drafting</p>
+                    <p class="gentext1">
+                        My group members and I would execute different tasks to manage the activities that we outlined for each upcoming visit as we slowly
+                        merged group activities with the kids with camera equipment tasks for media production. We would change up these group activities based on
+                        how the kids' reactions to our group's execution of these activities related to the objectives that our video seek to accomplish. An initial
+                        video draft would be edited and showcased to the TCLC community.
+                    </p>
+                    <p class="boldText">05 - Feedback and Iteration</p>
+                    <p class="gentext1">
+                        My group members and I would execute different tasks to manage the activities that we outlined for each upcoming visit as we slowly
+                        merged group activities with the kids with camera equipment tasks for media production. An initial draft would be edited and showcased
+                        to the TCLC community.
+                    </p>
+                </section>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="researchFindings">Research and Findings</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Understanding TCLC</h4>
+                        <p class="text genText1">
+                            Each week my group and I visited the Town and Country Learning Center (TCLC) in person for about 2 and a half hours, up to a total
+                            of 8 times throughout the duration of the project. Our group's immersion within the environment of TCLC not only established a shared
+                            group understanding of what the environment and circumstances were for the kids and local community members, but we gradually came to
+                            understand their habits, behaviors, and interests. Despite the uncertainty of my role within the community, I focused on observations and
+                            key interactions that I had with some of kids, listening to Ms. V's knowledge about how the kids behave, and participating in group
+                            activities that our group had organized.
+                        </p>
+                    </article>
+                    <div class="gridContent span1200" id="fieldNotes">
+                        <article class="gridContent">
+                            <h4 class="subheading subsectionHeadings">Journaling</h4>
+                            <p class="text genText1">
+                                Each of us individually did a diary study of the project. This took the form of weekly journaling into separate documents called field
+                                notes, so that we would be able to recall and reflect upon our observations and interactions with the kids after each visit. Below are
+                                the main points that I captured from my field notes during the first couple of visits.
+                            </p>
+                        </article>
+                    </div>
+                    <figure class="imageTile span1200">
+                        <img src="mediaFiles/images/media/TCLCVideo/fieldNotes.jpg" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">Digitized journal entries for each weekly visit.</i></figcaption>
+                    </figure>
+                    <article class="bodyGrid threeColumnGrid span2">
+                        <h4 class="genText3 category span3"><u>Field Notes from First Visit</u></h4>
+                        <div class="gridContent">
+                            <p class="boldText">Social Scene</p>
+                            <p class="genText1">General synopsis of events at TCLC</p>
+                            <br>
+                            <p class="genText1"><i class="centeredText">“My group and I mainly faced Ms. V  to hear her chatter and gossip about the behavior of the children...”</i></p>
+                            <p class="genText1"><i>“my classmates and I went with the kids to do all sorts of things they wanted to do outside, which included chasing for tag games, handling the football, or just plain conversations”</i></p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Focused Observations</p>
+                            <p class="genText1">Closer look of captured moments.</p>
+                            <br>
+                            <p class="genText1"><i>“Ms. V had extended conversations with the children walking by our table as she constantly turned herself towards the general direction of where the children were and give questions, polite warnings, and directives to them.”</i></p>
+                            <p class="genText1"><i>“I noticed that two other boys, Jayden and Xavier, also wanted to join in after a couple of throws with each other, but whenever I had a handle with the ball, either Jayden or Xavier wanted me to pass the ball to them or Alexandre just wanted me to pass the ball back to me.”</i></p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Reflections</p>
+                            <p class="genText1">Applicable and practical insights gained, with the help of existing literature.</p>
+                            <br>
+                            <p class="genText1"><i>“I felt that...the activities taken places associated with relevant objects, undergraduate students, and children, really was important to highlight valuable strategies in producing learning experiences”</i></p>
+                            <p class="genText1"><i>“Much of the practices in creating such activities will account for appropriate institutionalized practices/guidelines that the community members (like Ms. V) have placed.”</i></p>
+                        </div>
+                    </article>
+                    <article class="bodyGrid threeColumnGrid span2">
+                        <h4 class="genText3 category span3"><u>Field Notes from Second Visit</u></h4>
+                        <div class="gridContent">
+                            <p class="boldText">Social Scene</p>
+                            <p class="genText1">General synopsis of events at TCLC</p>
+                            <br>
+                            <p class="genText1"><i>“with everyone in Ms. V’s office, we discussed with everyone else at the office about ideas that our group had come up with. Jessica and Emily H. were able to list out some of the ideas that they had, and Ms. V gave feedback to each of the ideas.”</i></p>
+                            <p class="genText1"><i>“ There was Avery and Jessica who supervised with the snack preparation in the kitchen area while the rest of us either assisted children with their homework at the tables or helped with facilitating the musical instrument activity with the guitars that a couple of my group members brought in.”</i></p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Focused Observations</p>
+                            <p class="genText1">Closer look of captured moments.</p>
+                            <br>
+                            <p class="genText1"><i>“Jessica and Emily H...proposed themes such as (but not limited to) having a talent show for children to showcase their personal capabilities, a sports competition based on her understanding of the children, and musical pieces that the children can learn and share together.”</i></p>
+                            <p class="genText1"><i>“She turned down the talent show idea as well as having a sports competition idea because she explained to us there was some flaw with how each idea accounts for the inclusivity of children’s participation with the theme.”</i></p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Reflections</p>
+                            <p class="genText1">Applicable and practical insights gained, with the help of existing literature.</p>
+                            <br>
+                            <p class="genText1"><i>“Perhaps Alexandre still had an impression on me as a ‘stranger’ and one of those ‘adults’ like Ms. V who doesn’t want him to have fun, but I definitely will need to learn other ways to empathize with him so that I can intervene with his practices and interests in mind.”</i></p>
+                            <p class="genText1"><i>“There was a raised consciousness in how my intervention with TCLC has a ripple effect amongst our group, and how we can devise best practices to properly implement the master-apprentice model of our project research during that day, our group enabling the children to have much of the power and say about their world as if they were experts highly specialized with their involvement with the center.”</i></p>
+                        </div>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="problemDefinition">Problem Definition</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Coming Up With Initial Ideas</h4>
+                        <p class="genText1">
+                            Our group came to a rocky start when we established ourselves with the kids within TCLC, but that didn’t stop us from ideating on lots of different ideas.
+                            A couple of my other members asked Ms. V to evaluate them; some of those ideas included a theatrical play, a sports activity, and a talent show. Ms. V
+                            had flatly refused a lot of the ideas offered because some of these ideas would not encourage the kids to think. The ideas were also
+                            susceptible to negative social and power dynamics amongst the kids, notably how there might be unequal levels of engagement for some of the ideas.
+                        </p>
+                    </article>
+                    <p class="genText1">
+                        <i>“We were left with Ms. V to inform us that the ideas should try to have children, even among the brightest ones, to be challenged somehow so that there
+                            is vested interest in participating with the idea while simultaneously making the activities revolving the idea inclusive to everyone.”</i> -
+                            Wayne, Week 3 field notes
+                    </p>
+                    <p class="genText1">
+                        <i>“‘The stronger personalities would just run the show and the quieter personalities would end up doing nothing. You need a project that puts all the
+                            kids on an equal playing field and makes them think.’ Mrs. V said in reasoning.”</i> - Stephen, Week 3 field notes
+                    </p>
+                    <article class="gridContent span1200">
+                        <h4 class="subheading subsectionHeadings">Ideas Picked and Results</h4>
+                        <p class="genText1">
+                            There eventually was a group consensus to try out the following activities that would be conscious and inclusive of the kids' interests while keeping them
+                            challenged and engaged throughout their time at the afterschool program: instrument-making using arts and crafts supplies, a musical session for the kids to
+                            gather and sing a song together, and song writing. During the subsequent visits, my other group members’ had mixed reactions with their observations and
+                            engagements with the kids relative to the activities and when they had their roles to make snacks for the kids. These were the number of themes identified:
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/media/TCLCVideo/makingInstruments.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">Kids making instruments with one of my group members.</i></figcaption>
+                    </figure>
+                    <div class="gridContent span2">
+                        <p class="genText1">Some explained how the children either were thoroughly focused on the instruments, or found it more challenging to make them.</p>
+                        <p class="genText1">My team members had to be self-critical of their roles and involvement around the children as they helped to moderate social dynamics amongst the kids, such as kids having arguments with each other, kids being sneaky with snacks, kids spreading rumors amongst each other, and kids’ need to be listened to when they struggle with an activity.</p>
+                        <p class="genText1">Setting boundaries and understandings for mutual respect between my team members and the kids was critical in communicating to the kids what was okay and not okay to do while simultaneously encouraging or discouraging types of behavior.</p>
+                    </div>
+                    <!-- <ul class="span2">
+                        <li class="genText1">Some explained how the children either were thoroughly focused on the instruments, or found it more challenging to make them.</li>
+                        <li class="genText1">My team members had to be self-critical of their roles and involvement around the children as they helped to moderate social dynamics amongst the kids, such as kids having arguments with each other, kids being sneaky with snacks, kids spreading rumors amongst each other, and kids’ need to be listened to when they struggle with an activity.</li>
+                        <li class="genText1">Setting boundaries and understandings for mutual respect between my team members and the kids was critical in communicating to the kids what was okay and not okay to do while simultaneously encouraging or discouraging types of behavior.</li>
+                    </ul> -->
+                    <h4 class="subheading subsectionHeadings span2">Insights on Needs and Opportunities</h4>
+                    <p class="genText1 span2">
+                        Based on class discussions with Professor Campion and classmates as well as assigned readings, <b class="boldText">the concepts of representation, democracy, and empowerment within the youth community involved
+                        complex socio-technical considerations</b>. These would include how the kids's intents and motives shape both their individual and collective identities and roles within their community, how
+                        available resources and technology afford experiences that are more meaningful and engaging for both the kids and our group to participate in, and how active listening and co-creative usage
+                        of resources and technology can enable the kids to enhance their overall experience within their time at TCLC.
+                    </p>
+                    <p class="genText1 span2">
+                        <b class="boldText">There had to be a way to document activities throughout the rest of the visits without adversely affecting the kids's perceptions of our group in the presence of camera equipment.</b>
+                        It wasn't enough to just be present with camera equipment and have most of my group members simply record the kids. It was important to show that the kids aren't just actors
+                        exoticized in our video, but that they could take ownership of media production as co-creators and directors to authentically represent their own activities.
+                    </p>
+                    <p class="genText1 span2">
+                        <b class="boldText">Project management logistics must be empathetic to the constantly changing interests and representation of the TCLC afterschool community.</b> Ms. V's evaluation of our activities
+                        as well as the kids' mixed reactions with our prescribed activities not only meant that our activities must remain cognizant of the kids's interests, but there had to be a robust
+                        way of effectively capturing a diverse set of activities that the kids engage in and telling an authentic narrative of TCLC informed by those activities.
+                    </p>
+                    <p class="largeText span2">
+                        <i>How might we organize and document activities that best represent the kids’ involvement within the community space while being inclusive
+                        and aware of their potential interest in collaborating with us in the video production process?</i>
+                    </p>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="mediaExperiment">Media Experimentation</h2>
+                    <p class="genText1 span2">
+                        It became quickly apparent during team meetings that there was so much focus on trying to come up with activities and snacks for the kids to support the empowerment amongst kids’
+                        learning experiences that there was nothing really planned for project logistics. I decided to leverage my skills with media equipment and film production to the project to help the
+                        group gather media footage.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Bringing and Sharing the Camcorder</h4>
+                        <p class="genText1">
+                            Starting with the 3rd visit, I decided to bring a camcorder along with me for the kids to try out. There was a general interest for several kids during various times at those
+                            visits to handle and experiment with the camcorder, but it was also necessary for me to instruct them on how to best use it so that the footage didn’t come out too bright, too
+                            dark, or too blurry for later use.
+                        </p>
+                        <p class="genText1">
+                            Although the group and I wanted the kids to feel like they had a lot of freedom to use the camcorder however they pleased, it was important for the kids to exercise care
+                            and proper handling of the equipment. Before I allowed each kid to use the camcorder, I would instruct them that they would have to listen to my instructions and stick by me
+                            the entire time so that I would be able to show them the ropes of how to make adjustents to ensure quality footage captured. Other than that, each kid who handled the camcorder
+                            recorded as they pleased.
+                        </p>
+                    </article>
+                    <figure class="imageContainer transparent span2">
+                        <img src="mediaFiles/images/media/TCLCVideo/holdingCamcorder.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">One of the kids holding the camcorder in front of an iPhone camera.</i></figcaption>
+                    </figure>
+                    <p class="genText1 span2">
+                        These were my field notes during those visits from my observations and reflections of the kids using the camcorder.
+                    </p>
+                    <p class="genText3"><i>“Jayden had a bit of fun with it as he wanted to record Esau singing in front of the camera for a brief moment. He was fixated on the monitor as he attempted to emulate some more close up shots”</i></p>
+                    <p class="genText3"><i>“[I had] Jose’s interests and curiosity for the camcorder in mind, but I remembered earlier about what Stephen did to make sure that Xavier knew the rules about using the camcorder. Unlike the other kids, he seemed to have his hands more steadily on the camcorder, even when I quickly went over how to use the camcorder’s main controls...”</i></p>
+                    <p class="genText3"><i>“Jose started to point the camcorder at me and wanted to interview me. At that moment, that was another surprise that I had not expected, as I thought this sort of interaction would not have happened so soon until I established more rapport with him...Jose wanted to explore a bit more with the camcorder towards the vacant playground area, so I tagged along with him on a mini-adventure.”</i></p>
+                    <p class="genText3"><i>“If our group can moderate and harness the benefits of self-directed play and exploration within our behaviors and planning for the following weeks, there is no doubt that we can easily guide the kids to more frequently share their insights of their own lives embedded within the program and the creation of our group’s project.”</i></p>
+                    <div class="bodyGrid gridType2 span2">
+                        <p class="genText1">
+                            It became more apparent during the later visits that the kids didn’t want to have to go through and remember all of
+                            the instructions that I have given them and instead enable the camcorder to be used ad-hoc to capture key memorable
+                            moments that the kids wanted to record, such as other kids skateboarding.
+                        </p>
+                        <figure class="gifTile">
+                            <video class="autoplayVideo skateboarding2" poster="mediaFiles/videos/TCLCVideo/skateboarding2.png" muted loop>
+                                <source src="mediaFiles/videos/TCLCVideo/skateboarding2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i class="centeredText">One of the kids who brazenly wanted to be recorded in this particular stance on his skateboard.</i>
+                                <button class="skateboarding2 playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <p class="genText1">
+                            So, I tried to automate or preset some of the more complicated camera settings to make it easier for them to capture those moments while still getting quality footage.
+                        </p>
+                        <figure class="gifTile">
+                            <video class="autoplayVideo tclcRunning" poster="mediaFiles/videos/TCLCVideo/running.png" muted loop>
+                                <source src="mediaFiles/videos/TCLCVideo/running.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i class="centeredText">Kids who wanted to race with me and each other to the other side of the TCLC building.</i>
+                                <button class="tclcRunning playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                        <p class="genText1">
+                            Synonymously with my attempts to garner interest in trying out the media equipment, my other teammates had one particular kid named Qhadafi rap out song lyrics that
+                            were related to the Town and Country Center. This was retrospective to how my other teammates wanted to improve upon the activities that we hosted, giving more space
+                            and options for the kids to freely participate in whatever activities best interested them.
+                        </p>
+                        <figure class="gifTile">
+                            <video class="autoplayVideo tclcRapping" poster="mediaFiles/videos/TCLCVideo/rapping.png" muted loop>
+                                <source src="mediaFiles/videos/TCLCVideo/rapping.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption">
+                                <i class="centeredText">Qhadafi free-style rapping and reading song lyrics on a piece of paper.</i>
+                                <button class="tclcRapping playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="firstDraft">First Draft</h2>
+                    <p class="genText1 span2">
+                        Here was a short 1-minute first draft of the rap-music video, which mostly consisted of an audio recording of Qhadafi's rap with lot of footage
+                        recorded of the different activities recorded. Some of these activities included kids doing their homework, using the camcorder to record, making
+                        instruments, and even doing an improv exercise around a circle.
+                    </p>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/1U2ZSGuFzOXoQaJfw_HTsJvGJmyQBaZ4V/preview" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="iterations">Iterations</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Issues with First Draft</h4>
+                        <p class="genText1 span2">
+                            I showed the first draft to Ms. V, Professor Campion, and to some of the kids. Although, there was not a lot of feedback that was captured, Ms. V and Professor Campion
+                            liked how the video authentically captured a story of representing the kids at TCLC. The kids liked how they got to be a part of the video and to see firsthand how they
+                            represented themselves. Other than how relatively short the video was, there was a lot of room for improvement other than audio issues.
+                        </p>
+                    </article>
+                    <div class="bodyGrid gridType1 span2">
+                        <div class="gridContent">
+                            <p class="boldText">Lack of Inclusivity and Representation of Voices</p>
+                            <p class="genText1">
+                                Despite the good variety of clips that attempted to showcase most of the kids, the rap portion of the video only showcased Qhadafi, which isn’t representative of the voices of TCLC.
+                            </p>
+                        </div>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/qhadafiFreestyleLyrics.jpg" alt="" class="backgroundImage">
+                            <figcaption class="imageCaption"><i>A small section of freestyle lyrics that Qhadafi made. All of the song lyrics in the first draft were only rapped by Qhadafi, and not by anyone else.</i></figcaption>
+                        </figure>
+                    </div>
+                    <div class="gridContent span2">
+                        <p class="boldText centeredText">Disconnect Between Song Lyrics and Video Clips Shown</p>
+                        <p class="genText1">
+                            Although the intention to diversify the kids and the typical interactions that would occur at TCLC, there is a disconnect between the rap lyrics and the video clips portrayed in the video, which doesn’t promote a storytelling element that the lyrics have about TCLC.
+                        </p>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/tclcRapDisconnect.svg" alt="" class="backgroundImage">
+                            <figcaption class="imageCaption"><i class="centeredText">There isn't a coherent connection between the mentioned rap lyrics and the clips that were shown.</i></figcaption>
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Need for Greater Authenticity and Representation of TCLC</p>
+                        <p class="genText1">
+                            In conventional videos, the editing process omits much of the behind-the-scenes footage. Much of the content captured throughout the weeks have the potential to authentically capture the environment and interactions that the kids normally engage in, and there were 4-6 additional minutes to fill in with this kind of footage. It was important to not only capture the best moments in relation to the narrative of the video, but to also accurately represent a sense of community that the TCLC has that the rap video inadequately accomplishes.
+                        </p>
+                    </div>
+                    <figure class="imageContainer transparent" id="btsReference">
+                        <img src="mediaFiles/images/media/TCLCVideo/btsReference.png" alt="" class="backgroundImage">
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Greater Interest for Participation in the Video</h4>
+                        <p class="genText1 span2">
+                            Nevertheless, other kids realized how talented Qhadafi’s freestyle rap was and the chance that they had to be a part in the rap video. There was much potential of democratizing
+                            participation of Qhadafi’s song lyrics for other kids and improving the experience of viewing the video. This also meant that I needed to somehow democratize usage of media
+                            equipment for the kids in the TCLC community to participate in.
+                        </p>
+                    </article>
+                    <article class="gridContent span1200">
+                        <h4 class="subheading subsectionHeadings">Bringing in More Equipment to Share</h4>
+                        <p class="genText1">
+                            Managing one existing camcorder alone wasn’t going to be a scalable solution, especially if other kids wanted to rap as part of the video as well.
+                            For the following visits (around the 5th to 7th visits), I decided to try and bring an additional camera and 2 audio recorders.
+                        </p>
+                        <p class="genText1">
+                            I trained my group members on how to manage basic operations of starting audio recordings, stopping recordings, and keeping track of the volume input
+                            of the kids’ voices when they were rapping. Similar instructions were made to the cameras and the camera lens. I trusted that they were able to
+                            help either facilitate the rap recordings the kids made, enable kids to handle the audio and media recordings of what was going on with the kids
+                            or let other kids get a behind-the-scenes experience of operating the equipment themselves.
+                        </p>
+                    </article>
+                    <figure class="imageContainer transparent span1200" id="cameraGear">
+                        <img src="mediaFiles/images/media/TCLCVideo/cameraGear.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>This was the typical set of equipment that I decided to bring in: a few audio recorders with a set of headphones for each (top images), one large camcorder (bottom left image), and a smaller mirrorless camera (bottom right image).</i></figcaption>
+                    </figure>
+                    <p class="genText1 span1200">
+                         It didn’t come without some risk to damaging the equipment or further clarifications on how to perform certain functions with the equipment,
+                         but with trust and minimal guidance, the kids and my group members got along very well with hosting and mediating their own recording sessions outside.
+                    </p>
+                    <figure class="gifTile span1200">
+                        <video class="autoplayVideo recordingSession" poster="mediaFiles/videos/TCLCVideo/recordingSession.png" muted loop>
+                            <source src="mediaFiles/videos/TCLCVideo/recordingSession.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="imageCaption shortCaption">
+                            <i class="centeredText">Kids would use the audio recorders to record their rap voiceovers or help capture video footage of the sessions.</i>
+                            <button class="recordingSession playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                        </figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Democratizing the Post-Production Process</h4>
+                        <p class="genText1">
+                            Even after capturing the footage, another lingering problem faced of how to democratize the process of post-production. Indeed, it was inevitable that no such popular technology
+                            exists right now could combine the performance and video editing capabilities of non-linear editors with online group collaboration features. Even so, there would be a learning
+                            gap of unforeseeable magnitude that the kids would have when directly engaged with editing software.
+                        </p>
+                        <p class="genText1">
+                            It was also necessary to create a document to facilitate the task of manually gathering metadata of the footage. During the post-production process after around the 7th visit, I
+                            helped to create a set of instructions for the rest of my group to help capture relevant information from the unedited video clips that I uploaded that would ease the process of
+                            manually looking up video clips that I needed. This was also suited to the rest of my group’s needs in wanting to help out with the video editing process by enabling each of them
+                            to look through video clips and give context to what they are, other than default numbered titles.
+                        </p>
+                        <figure class="imageContainer transparent marginBottom">
+                            <figcaption class="imageCaption"><i>This document contains its purpose and instructions for my teammates on how to contextualize information from captured footage. This included referencing the found video clip to the corresponding week, describing the video clip, and including tags to more quickly capture clip description.</i></figcaption>
+                            <img src="mediaFiles/images/media/TCLCVideo/footageMetadata.png" alt="" class="backgroundImage">
+                        </figure>
+                        <p class="genText1">
+                            This document helped me to focus only on clips that were usable (not blurry or too bright/dark) and that captured important interactions that the kids had while easily disregarding
+                            footage that were not considered relevant to the main portion of the video.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="secondDraft">Second Draft</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Post-Production Edits Made</h4>
+                        <p class="genText1">
+                            As I edited, I listened through all of the audio recordings that the kids participated in. These recordings helped to ensure that there was a diverse mix of kids mentioning
+                            some portion of the lyrics in the video. An inside look of some of the audio sessions and names of the kids within capturing the metadata of the video clips was also important
+                            to represent the actual audio sessions that the kids participated in as well as memorable moments that were opportunistically captured by either a team member or one of the kids.
+                        </p>
+                    </article>
+                    <p class="genText1 span2">
+                        Here was the second-iteration of the video, with the audio improved, with more kids included within the rapping portions of the video, and with subtitles.
+                        This was presented in-class with other classmates and the professor viewing this. This iteration was also presented at TCLC.
+                    </p>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/1iQaNDwxDk8ca_w5qF50iGMWVGe5Je-IB/preview" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1 span1200">
+                    <h2 class="section sectionHeadings span2" id="feedback">Additional Feedback</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Feedback Captured</h4>
+                        <p class="genText1">
+                            Here was the main feedback that my teammates and I gathered from our mentors and fellow classmates, which was represented as
+                            what was appealing about the video, what was problematic about the video, and what changes should be made to the video. A
+                            comprehensive list of feedback notes and other important considerations can be viewed within the
+                            <a rel="external" href="https://docs.google.com/document/d/1WKmRQ1jznZiwUWeECizJrgKNDp7yBxOx8RrBTKYXDiM/edit?usp=sharing" target="_blank" class="externalLink">Insights and Prioritized Recommendations document</a>.
+                        </p>
+                    </article>
+                    <div class="gridContent">
+                        <p class="boldText category">Likes</p>
+                        <ul class="genText1">
+                            <li>Story was appealing.</li>
+                            <li>There was a lot of apparent involvement with the kids.</li>
+                            <li>Inclusivity was evident as there were other people like Ms. V, Professor Campion, and my team members who were in the video.</li>
+                            <li>Visual effects made the video appear like an actual music video.</li>
+                            <li>Clearly demonstrated the kids using the camera and the process that went into making the video (behind the scenes).</li>
+                        </ul>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText category">Dislikes and Suggestions</p>
+                        <ul class="genText1">
+                            <li>There were audio pops that occurred (audio issues that should be examined and remedied).</li>
+                            <li>A specific kid wanted to be in the video, but accidentally wasn’t. Other kids could have been included as well.</li>
+                            <li>There was a need for subtitles to be included.</li>
+                            <li>Correction was needed for general misspelling of some of the kids’ names and certain words.</li>
+                            <li>Introduction could be shortened and some of the clips for bloopers should be replaced.</li>
+                        </ul>
+                    </div>
+                    <p class="genText1 span2">
+                        Subtitles were included, audio volume and noise from some of the kids was mediated to the best of my ability, and other edits were implemented in place.
+                    </p>
+                </section>
+                <section class="bodyGrid gridType1 span1200">
+                    <h2 class="section sectionHeadings span2" id="finalVideo">Final Video</h2>
+                    <p class="genText1 span2">
+                        This is a rap-themed video named Town and Country Learning Center, aimed to showcase the kids’ activities within the center as well as how they participate
+                        in their own process of making of the video. This helps to reflect the best kind of authentic representation for themselves, not merely as actors of our own
+                        project with staged activities, but active participants in showcasing their lives.
+                    </p>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/1EJEWn-XShZd5DIGS8_4c_n1o4TSoWpXm/preview" allowfullscreen></iframe>
+                    </div>
+                    <div class="bodyGrid gridType1 marginBottom span2">
+                        <article class="gridContent">
+                            <h4 class="subsectionHeadings">Rap-Themed Song</h4>
+                            <p class="genText1">
+                                2 minutes of video clips that highlight memorable moments of the kids, Ms. V., Professor Camille Campion, and my group members. Kids’ audio recordings
+                                of some portion of the rap lyrics are made from a diverse pool of kids who participated in the recording sessions to further demonstrate an inclusive
+                                community and typical behaviors that the kids experience in relation to the narrative.
+                            </p>
+                        </article>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/rapThemeFinal1.png" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/rapThemeFinal2.png" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/rapThemeFinal3.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 marginBottom span2">
+                        <article class="gridContent">
+                            <h4 class="subsectionHeadings">Behind the Scenes Look</h4>
+                            <p class="genText1">
+                                About 50 seconds was dedicated to the production of the rap video that isn't normally portrayed. This was to demonstrate how the kids actually handled
+                                the media equipment and participate in audio recording sessions such that they took on the role as not just the actors, but active co-creators who wanted
+                                to collaborate with our group members and be active contributors to the production of the video.
+                            </p>
+                        </article>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/btsPortionFinal1.png" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/btsPortionFinal2.png" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/btsPortionFinal3.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="bodyGrid gridType1 marginBottom span2">
+                        <article class="gridContent">
+                            <h4 class="subsectionHeadings">Bloopers!</h4>
+                            <p class="genText1">
+                                About 1 minute and 20 seconds attempt to humorously capture memorable moments from the kids that revolve around some of the activities that they do,
+                                whether on a typical day or with some of the pre-planned activities that they did with some of the buddies.
+                            </p>
+                        </article>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/bloopersFinal1.png" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/bloopersFinal2.png" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageContainer transparent">
+                            <img src="mediaFiles/images/media/TCLCVideo/bloopersFinal3.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="results">Results</h2>
+                    <div class="gridContent span2">
+                        <p class="genText1">
+                            The final draft was showcased in a studio room with a projector screen on UC San Diego campus during a time where Ms. V, Professor Campion, and the kids
+                            went on a field trip to tour the campus grounds. After screening it, the kids wondered why not all of the voices seemed to be included within the rap, and
+                            our group explained about the logistics of the sounds that we recorded. Overall, everyone had many different moments of laughter and joy throughout the final
+                            screening of the video.
+                        </p>
+                        <p class="genText1">
+                            The final draft was also submitted as the final assignment for the communication course. Ms. V has been granted permission to view the video so that she could
+                            potentially use it for a future grand opening of TCLC. Professor Campion also has the final draft of the video, which will hopefully be used for future quarters
+                            as a reference for other students to look at.
+                        </p>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="reflection">Reflection</h2>
+                    <p class="genText1 span2">
+                        Visiting the kids each week reminded me of the experiences, blessings, and tribulations that I had to face when I was just like them. I felt humbled and appreciative
+                        of the opportunity for each week to see my team members interact with the kids while I was able to record those small, yet timeless moments from the kids at TCLC.
+                        The effort that I placed into organizing the media equipment, post-production logistics, and making snacks (for one of the weeks) kept me motivated to make a video
+                        that will leave the kids hopeful for more experiences to document their activities. I learned a lot from working with my team members in empathizing with the whimsical
+                        needs and attitudes the kids had each week during our group discussions before and after our visits. With their guidance and help, I learned the impact of youth empowerment
+                        and appreciated more of what a community is all about within TCLC.
+                    </p>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <p class="genText1 maxWidth650">That's concludes the media project! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or reading another media project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                        <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                        <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                        <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                        <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="work designMediaWork noMargin">
+                <h4 class="caseStudy footerCase">...or maybe explore one of my design projects?</h4>
+                <div class="gridItem workGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'DesignLeapencrypted.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeapencrypted.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'MundoGardens.html';">
+                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Mundo Gardens</h3>
+                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
+                        <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
+                        <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'Cinemunch.html';" id="cinemunchItem">
+                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Cinemunch</h3>
+                        <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                        <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                        <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
             <p>Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>

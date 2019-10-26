@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,21 +28,26 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
         <div class="intro beginning gridType1">
             <section>
-                <h1 class="caseStudySol greeting span2">Cinemunch</h1>
-                <p class="caseStudyIntro">Ordering food and movie tickets within a kiosk as an exploratory design concept in a prototyping college course.</p>
+                <h1 class="caseStudySol greeting caseBigTitle span2">Cinemunch</h1>
+                <p class="caseStudyIntro largeText">Ordering food and movie tickets within a kiosk as an exploratory design concept in a prototyping college course.</p>
+                <p class="genText3">See the <a rel="external" href="https://www.figma.com/proto/TrbKFFmtHXJifORc0Cal3WGR/Formfactories?node-id=285%3A562&scaling=scale-down" target="_blank" class="externalLink">final version of the kiosk interface</a>.</p>
             </section>
             <figure class="imageContainer">
-                <img src="mediaFiles/images/design/cinemunch.jpg" alt="" class="backgroundImage">
+                <img src="mediaFiles/images/design/Cinemunch/cinemunch.jpg" alt="" class="backgroundImage" id="cinemunch">
             </figure>
         </div>
         <div class="work">
@@ -42,213 +56,740 @@
                     <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
                     <li><a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a></li>
                     <li><a class="navButton" href="#research" data-index="2">Research</a></li>
-                    <li><a class="navButton" href="#personas" data-index="2">Personas</a></li>
-                    <li><a class="navButton" href="#prototyping" data-index="3">Prototyping</a></li>
-                    <li><a class="navButton" href="#userTesting" data-index="4">User Testing</a></li>
-                    <li><a class="navButton" href="#designConsid" data-index="5">Design Considerations</a></li>
-                    <li><a class="navButton" href="#iterating" data-index="6">Iterating</a></li>
-                    <li><a class="navButton" href="#finalDesign" data-index="7">Final Design</a></li>
-                    <li><a class="navButton" href="#deliverables" data-index="8">Other Deliverables</a></li>
-                    <li><a class="navButton" href="#results" data-index="9">Results</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="10">Reflection</a></li>
-                    <li><a class="navButton" href="#improvements" data-index="11">Improvements</a></li>
+                    <li><a class="navButton" href="#dataSynthesis" data-index="2">Data Synthesis</a></li>
+                    <li><a class="navButton" href="#ideating" data-index="3">Ideating</a></li>
+                    <li><a class="navButton" href="#prototypes" data-index="4">Initial Prototypes</a></li>
+                    <li><a class="navButton" href="#iterating" data-index="5">Iterating</a></li>
+                    <li><a class="navButton" href="#finalDesigns" data-index="6">Final Designs</a></li>
+                    <li><a class="navButton" href="#deliverables" data-index="7">Other Deliverables</a></li>
+                    <li><a class="navButton" href="#resultsReflection" data-index="8">Results and Reflection</a></li>
+                    <li><a class="navButton" href="#improvements" data-index="9">Improvements</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="designChallenge">Design Challenge</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="research">Research</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="personas">Personas</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="prototyping">Prototyping</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="userTesting">User Testing</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="designConsid">Design Considerations</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="iterating">Iterating</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalDesign">Final Design</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="deliverables">Other Deliverables</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
+                <section class="bodyGrid gridType2 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">This was a student group project related to product design for a college prototyping course.</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="text genText1">To create an interactive kiosk that is informed by the problems and opportunities presented from a design brief and user research.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="text genText1">6 weeks</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <p class="text genText1">I contributed to the end-to-end process of making the prototype, with the exception of building the physical kiosk. I made my greatest contributions in the interaction design, visual design, and branding of the digital interface of the kiosk. However, I also helped to conduct user research, data synthesis of our findings, rapid prototyping of the digital interface of the kiosk, user testing, and subsequent iterations of fidelity of the interface.</p>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="text genText1">Google Suite, Figma, Illustrator</p>
+                    <h3 class="subheading subsectionHeadings">Core Team</h3>
+                    <p class="text genText1">Ludi Sabalburo, Dana Chung, Sally U</p>
+                    <h3 class="subheading subsectionHeadings">Mentors</h3>
+                    <div class="gridContent">
+                        <p class="text genText1 mentorNames"><i>Taylor Jackson Scott</i> - He was the professor at the time who hosted the prototyping course. He helped students with questions related to the nature of the course and the project while hosting quite a few presentation sessions to connect teaching assistants with students for critique on student group projects.</p>
+                        <br>
+                        <p class="text genText1"><i>Vanessa Wong</i> - She was our group's teaching assistant and was a main contributor to the feedback that we received about our group's directions with our kiosk.</p>
+                    </div>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">UC San Diego Cognitive Science Department</p>
+                </section>
+                <section class="bodyGrid gridAreas1">
+                    <h2 class="section sectionHeadings span2" id="designChallenge">Design Challenge</h2>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Project Background</h4>
+                        <p class="text genText1">
+                            The college course, called Prototyping, has taught students the fundamentals of ideation, typography, and, of course, prototyping in design.
+                            Within the scope of the project, our group was tasked to incorporate a combination of user research, typography, visual design, and rapid
+                            ideation/prototyping to create a kiosk that is interactive, intelligent, novel, and informed by research findings. A topic that our group
+                            wanted to address was the movie going experience prior to walking through theater doors.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <!-- <img src="mediaFiles/images/design/Cinemunch/designBrief1.png" alt="" class="backgroundImage"> -->
+                        <img src="mediaFiles/images/design/Cinemunch/designBrief2.png" alt="" class="backgroundImage">
+                        <figcaption><i>You can find more information about the project through the <a rel="external" href="http://design100.ucsd.edu/homework-assignments/kiosk" target="_blank" class="externalLink">Assignment page</a> on the course website.</i></figcaption>
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Constraints Faced</h4>
+                        <p class="text genText1 marginLeft">The kiosk had to be mindful of existing digital technologies coupled with physical components since the kiosk must be a physically tangible, real-life representation of a potential product.</p>
+                        <p class="text genText1 marginLeft">As the project was part of a college course, there were set deliverables outlined in the <a rel="external" href="http://design100.ucsd.edu/homework-assignments/kiosk" target="_blank" class="externalLink">assignment page</a>. Thus, it was important to ground our project towards expected timelines and deliverables within the Prototyping course.</p>
+                        <p class="text genText1 marginLeft">Our team, as a whole, had limited working knowledge of constructing physical objects and visual design, especially when it came to connecting our user research and design decisions to the interface and formfactor of the kiosk.</p>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Solution</h4>
+                        <p class="text genText1 marginLeft">Our team made Cinemunch, an immersive, touch-based kiosk that features both ticket and food purchasing to expedite the ticketing and food ordering process for moviegoers.</p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="research">Research</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Initial Brainstorming</h4>
+                        <p class="genText1">The topic of the moviegoing experience was not initially committed, but the team had a group discussion of what sort of topic we wanted to explore with the kiosk. Below are initial assumptions from our group of what sorts of kiosks were out there.</p>
+                    </article>
+                    <div class="gridContent">
+                        <p class="boldText">Types of Kiosks</p>
+                        <ul class="genText1 marginLeft">
+                            <li>ATMs<br>
+                                Street market/festival food stalls<br>
+                                Restaurant cashiers<br>
+                                Restaurant cashiers<br>
+                                Gas station<br>
+                                Vending machines<br>
+                                Soda/ice cream/yogurt refilling machines<br>
+                                Scanners<br>
+                                AMC Ticketing Kiosk<br>
+                                Photo booths<br>
+                                Beauty kiosk - check your skin tone.<br>
+                                Restaurants self-ordering kiosks.<br>
+                                Self-checkout for books in libraries.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Places</p>
+                        <ul class="genText1 marginLeft">
+                            <li>Outside events/festivals (e.g. carnivals)<br>
+                                Malls<br>
+                                Parking structures/lots<br>
+                                Japan (lots of services/kiosks)<br>
+                                Movie theaters/entertainment<br>
+                                Parking on streets<br>
+                                Restaurants<br>
+                                Buffets<br>
+                                Libraries
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="genText1 span2">
+                        Ludi, one of the team members, came up with with the movie kiosk idea and described some of its potential features to explore, such as preordering food and tickets.
+                        We thought there was definitely a few tangible and interesting concepts to delve deeper into with the movie going experience, which was why a potential movie kiosk
+                        was an idea that the group came to a consensus to.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Interviews</h4>
+                        <p class="genText1">
+                            There were about 4 people that we interviewed and the questions that the team asked were revolved around their habits in preparing
+                            themselves to go to the movies. We also wanted to understand people's mental models of ordering tickets and their perspectives
+                            about food to movie theaters. These were findings and commons trends found from the people we interviewed.
+                        </p>
+                    </article>
+                    <div class="gridContent">
+                        <p class="boldText">Discovered Trends</p>
+                        <p class="genText1">
+                            Two people mentioned that they usually skip the trailers and get there when the actual movie starts, and two others said they usually arrive around 5-10 minutes into the trailers.
+                        </p>
+                        <p class="genText1">
+                            The movie-going experience is very likely a social experience. However, addressing hunger when going to the movies can vary from each individual as people's prior experiences from concession stands,
+                            awareness of how expensive food at the movie theaters is, and other people around them can influence people's choices on food purchases.
+                        </p>
+                        <p class="genText1">
+                            The concession stands expensive prices and the long lines are deterrants to purchasing foods at the movie theaters.
+                        </p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Insights</p>
+                        <ul class="genText1">
+                            <li>The kiosk needs to demonstrate a streamlined ordering process for tickets and food to alleviate the concern for long lines and people potentially entering the theatre after their movie times start.</li>
+                            <li>
+                                Although the kiosk must essentially be of reasonable human scale, ordering tickets and/or food within the theater should be an experience with the least amount of friction as possible.
+                                This would be achieved by having a simple, efficient, and intuitive ordering process.
+                            </li>
+                            <li>Some mentioned that they have never used a kiosk at the theaters because it’s either not obvious or because they the kiosks take longer to navigate than it is to order from a person behind the counters.</li>
+                        </ul>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Competitive Analysis</h4>
+                        <p class="genText1">
+                            Ludi and I were able to look into some of the different features that 3 different services in the movie theaters offered.
+                        </p>
+                        <figure class="imageContainer span2" id="compAnalysis">
+                            <img src="mediaFiles/images/design/Cinemunch/compAnalysis.svg" alt="" class="backgroundImage">
+                            <figcaption><i class="centeredText">It was important to consider the reliability, efficiency, and the different purchasing tasks of the services that the movie kiosk would offer.</i></figcaption>
+                        </figure>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="dataSynthesis">Data Synthesis</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Personas</h4>
+                        <p class="genText1">
+                            We came up with a total of 4 personas, but 2 of them were not based on initial research findings, so they were ultimately omitted from the basis
+                            of our group's design decision on the kiosk. These personas below are what we came up with that best represented who we interviewed.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/PersonaChad.svg" alt="" class="backgroundImage svg">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/PersonaDiana.svg" alt="" class="backgroundImage svg">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Storyboard</h4>
+                        <p class="genText1">
+                            Informed by interviews and secondary research, each of us sought to use storyboards to clarify our understandings of the typical habits and issues
+                            of food within the movie-going experience and the intended impact that our potential movie kiosk would have.
+                        </p>
+                        <figure class="imageTile">
+                            <figcaption class="imageCaption">A storyboard that I drew to explain how a group of friends want to get food before their movie starts, but are conflicted with the long concession lines. One of them already pre-ordered their food ahead of time using a ticketing kiosk, which allowed the friends to get their food quickly and have a good movie experience as a result.</figcaption>
+                            <img src="mediaFiles/images/design/Cinemunch/storyboard.png" alt="" class="backgroundImage">
+                        </figure>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="ideating">Ideating</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Initial Sketches of the Physical Kiosk</h4>
+                        <p class="genText1">
+                            Some of the kiosk features that each member of the group sketched out would include a screen interface, ticket dispensers, a laser scanner to scan QR codes of mobile ticket purchases, and a buzzer that can notify a person when their food order would be ready.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Cinemunch/sketches1.png" alt="" class="backgroundImage">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Initial Wireframes of the Kiosk's Digital Interface</h4>
+                        <p class="genText1">
+                            Some of the wireframes that I helped to sketch out were the main menu options for either purchase tickets or verifying ticket purchases, movie selection, and food item selection.
+                            The kiosk features can offer ticket purchases just like staff members working at the front-desk ticketing booths, but enabling food purchases during the time the person spends
+                            ordering or verifying tickets.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/wireframes1.png" alt="" class="backgroundImage equivHeight">
+                        <figcaption class="imageCaption"><i class="centeredText">Kiosk interface sketch of the main screen for ticketing selection.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/wireframes2.png" alt="" class="backgroundImage equivHeight">
+                        <figcaption class="imageCaption"><i class="centeredText">Kiosk interface sketch of how the person can select the movie of their choice.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption"><i class="centeredText">Initial sketch of food item selection that automatically tracks the quantity and price of each item selected as well as the total price of all food items selected.</i></figcaption>
+                        <img src="mediaFiles/images/design/Cinemunch/wireframes3.png" alt="" class="backgroundImage">
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Rough Draft of User Flow</h4>
+                        <p class="genText1 span2">
+                            A couple of my team members would be able to sketch a user flow of the kiosk digital interface, which I used to develop the initial structure of higher-fidelity wireframes of the kiosk interface. Below is one of these user flows, made by Sally, one of my other team members.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption">The sketch of a user flow shown is that after a person selects their movie and food items, they would pay the total cost all in one payment transaction, receive their tickets, and have their food ready.</figcaption>
+                        <img src="mediaFiles/images/design/Cinemunch/wireframes4.png" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="prototypes">Initial Prototypes</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">Wizard of Oz/Live Paper Prototyping</h4>
+                        <p class="genText1 span2">
+                            To quickly visualize and test the typical flow of the interface for the kiosk, we made paper versions of the kiosk interface components that would serve as early versions of our kiosk's wireframes.
+                            Our group had three user testing sessions in which some of our members would manually created the wireframes live using the paper components and the participants would select whatever options to
+                            proceed within each wireframe. We also had follow-up questions after the participants navigating through our Wizard-of-Oz prototyping.
+                        </p>
+                        <p class="genText1 span2">
+                            Below are a series of pictures that depict wireframes that were assembled during testing as well as the typical flow of the paper prototype, from start to finish.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption">Overview of the entire user flow of the Wizard of Oz/Live Paper Prototyping. Paper pieces used for each larger white sheet of paper made up a specific section of the interface, as each section was presented one-by-one to the participant.</figcaption>
+                        <img src="mediaFiles/images/design/Cinemunch/paperPrototypeOverview.svg" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption">Paper prototype interfaces from selecting movies and confirming ticket order to selecting food items. If the person didn't want to purchase food, they would make the payment for their order and grab their tickets.</figcaption>
+                        <img src="mediaFiles/images/design/Cinemunch/paperPrototypePart1.svg" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption">If the person selects their food items, they would select a delivery method followed by a final order confirmation before making their payment.</figcaption>
+                        <img src="mediaFiles/images/design/Cinemunch/paperPrototypePart2.svg" alt="" class="backgroundImage paperPro">
+                    </figure>
+                    <figure class="imageTile span2">
+                        <figcaption class="imageCaption">Once an order has been made for movies and/or food items, the payment screen followed by a confirmation message would appear.</figcaption>
+                        <img src="mediaFiles/images/design/Cinemunch/paperPrototypePart3.svg" alt="" class="backgroundImage paperPro">
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Findings and Insights</h4>
+                        <p class="genText1">
+                            After initial expert reviews from our mentors as well as two user tests on the paper prototype, some of the main concerns were the context of the delivery method, as it may be discouraging and distracting for people nearby trying to watch the movie while the food would be delivered.
+                            This made us rethink about how the delivery method would work in relation to the movie theater environment that the person experiences. One person from user testing did mention about the risk of the food being stolen if they were not present at the movie theater, which would inform
+                            future interaction decisions that the delivery method would remain at the person's seat.
+                        </p>
+                        <p class="genText1">
+                            However, because the user testing participants explained how they were satisfied with existing aspects of ordering tickets from a cashier, it was an important reminder to combine these findings along with our competitive analysis notes on ticketing cashiers and concession stands
+                            to make the ordering process for tickets and food as a viable alternative (not an overpowering substititute) to existing services at movie theater.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Initial Visual Style Guide</h4>
+                        <p class="genText1">
+                            I worked with my team to come up with an initial moodboard that best represented how the movie experience could be viscerally described. The movies seem to be one form of entertainment that charismatically fosters a sense of escapism,
+                            from the typical habits of everyday life into a pleasant, yet adventurous experience. The images and logos that were initially inspired would viscerally represent experiences that were immersive, pleasant, and adventurous.
+                            Because people from our interviews mentioned that they go to the movie theater with friends, I helped to explore other images and logos with other color schemes that seemed to also represent social, safe, and organized experiences.
+                        </p>
+                    </article>
+                    <figure class="imageTile splitImages span2">
+                        <img src="mediaFiles/images/design/Cinemunch/1stmoodboard1.png" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/Cinemunch/1stmoodboard2.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption">A couple of initial collages of image and logo inspirations found that represent immersive, pleasant, adventurous, social, safe, and organized experiences. Made in Google Slides.</figcaption>
+                    </figure>
+                    <figure class="imageTile splitImages span2">
+                        <img src="mediaFiles/images/design/Cinemunch/1stmoodboard3.png" alt="" class="backgroundImage equivHeight">
+                        <img src="mediaFiles/images/design/Cinemunch/1stVisStyleGuide.svg" alt="" class="backgroundImage equivHeight">
+                        <figcaption class="imageCaption">Collage of images that represent the final moodboard along with an initial style guide (made in Google Slides). The style guide (made on Figma) would had red and yellow hues as the dominant colors, with green and light blue hues as accents.</figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">Digital Interface</h4>
+                        <p class="genText1">
+                            Below is a live interactive prototype of the kiosk made, made on Figma.
+                        </p>
+                    </article>
+                    <p class="genText1 span2">
+                        <b class="boldText">How to Interact with the Prototype</b> - The wireframes are set such that the person must scroll down to 5:15 PM for <i>Alita: Battle Angel </i> for the movie selection, pick 2 IMAX tickets, and select seats at E5 and E6.
+                        If the person decides to purchase food, they must choose both 1 popcorn and 1 drink for the food items. Clicking or tapping on the prototype will show area indicators on where you can click or tap.
+                    </p>
+                    <iframe class="span2" style="border: none; width: 100%; height: 600px" title="This is supposed to be a live Figma embed of an interactive prototype of the initial prototype of Cinemunch. This may take some time to load." src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FWmmMrIB9IYqhptKvnJxQ8EEF%2FDSGN-100-Design-Stuff%3Fnode-id%3D18%253A3%26scaling%3Dcontain" allowfullscreen></iframe>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">The Physical Kiosk</h4>
+                        <p class="genText1">
+                            Utilizing Figma's full-screen presentation mode, my laptop was the device needed to simulate a real-life touch-screen display of our kiosk's digital interface since it had the ability to be converted into a tablet
+                            while its touch-screen capabilities enabled the Figma prototype of the kiosk interface to dynamically change wireframe screens in real-time with just a tap.
+                            For the first prototype of the physical kiosk, I supplied the duct tape used to securely mount the laptop so that it would be ready for people to interact with.
+                        </p>
+                        <p class="genText1">
+                            With a few additional cardboard pieces attached to the kiosk as well as cut-out holes made, this was our first version of our physical kiosk.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/1stPrototype.jpg" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption">Our first version of our physical kiosk, with my laptop mounted at an angle for convenient viewing, holes to be developed for future features, and a couple of smaller cardboard components.</figcaption>
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="iterating">Iterating</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Additional Feedback and Insights</h4>
+                        <p class="genText1">
+                            When this kiosk was presented in a symposium-like critique session, Professor Taylor Scott and a few students within the class were rather
+                            impressed by the level of fidelity the kiosk has achieved. However, there have been comments from other people during the symposium that
+                            the branding is too synonymous with McDonald's or traffic lights. So, a team member (Ludi) wanted to take the initiative and remake the kiosk interface.
+                            Overall, I observed and took note of his attempts to remake the kiosk, which would prove useful in the final iteration of the branding,
+                            interaction design, and visual design of the kiosk interface.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">2nd Iteration on Digital Interface</h4>
+                        <p class="genText1">
+                            Below is a video walkthrough of navigating the second iteration of the kiosk interface. The interface itself was created by another the team member.
+                        </p>
+                        <figure class="gifTile span2">
+                            <!-- <figcaption class="imageCaption fullWidth"><i class="centeredText"></i></figcaption> -->
+                            <div class="vidControlsContainer">
+                                <button class="alitaTickets playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </div>
+                            <video class="autoplayVideo alitaTickets" poster="mediaFiles/images/design/Cinemunch/alitaTickets.png" muted loop>
+                                <source src="mediaFiles/videos/Cinemunch/alitaTickets.mp4" type="video/mp4">
+                            </video>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Progression of the Physical Kiosk</h4>
+                        <p class="genText1">
+                            Sally U single-handed managed the construction of the kiosk, so she helped to make the kiosk cleaner and add shaped physical parts that were made specifically
+                            for card swiping, cash insertion, and placement of a phone for QR code scanner. Of course, these were not made obvious since, at the time,
+                            there was not a clear goal on the direction of the visual design of the digital interface and how it is consistent to the aesthetics of the kiosk.
+                            This was reflected in additional feedback received from our teaching assistants, who helped to test out the kiosk.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/2ndPrototype1.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption">Caption to be added.</figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">More Feedback from Mentors</h4>
+                        <p class="genText1">
+                            During a final critique session with other teaching assistants within the course, there were several concerns related to the visual aesthetics and use of digital interface components.
+                            The lack of direction and consistency of our visual design to our current iteration of the kiosk didn't demonstrate improvements made to its physical components, so there was a
+                            need to really move forward with increasing the fidelity of our kiosk's visual aesthetics and physical components within the remaining time that our group had for the project.
+                        </p>
+                        <p class="genText1">
+                            Furthermore, the teaching assistants expressed confusion about the text and buttons shown during the food delivery method, which meant that the current representation of available food delivery
+                            options on the kiosk interface did not adequately address the context of people's concerns of food delivery potentially being obtrusive to the movie experience. The interface for the food
+                            delivery options doesn't not clearly emphasize recommended food delivery options when the person has arrived relative to their selected movie showtime.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">Design Considerations</h4>
+                        <p class="genText1 span2">
+                            Many different factors associated with the kiosk were classified and defined, combining insights found from user research,
+                            user testing, TA feedback, context of use within a movie theater, and technological considerations. Some of these factors
+                            were also meant to explicitly mention again some of the goals and intended features that the kiosk would incorporate.
+                            This was done so that a clearer establishment of what the kiosk should incorporate is outlined and better reflects on
+                            the context of use of the kiosk and feedback received.
+                        </p>
+                        <p class="genText1 span2">
+                            Below is the design criteria to explain what the kiosk should have.
+                        </p>
+                    </article>
+                    <div class="bodyGrid gridType1 span2">
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Purpose</p>
+                            <p class="genText1">
+                                The kiosk functions by allowing customers to purchase or pick-up tickets as well as order food in the same transaction.
+                                They can choose to have their food picked up or delivered to their reserved seat. After purchase, the kiosk will dispense
+                                the ticket and a buzzer for orders being prepared.
+                            </p>
+                            <p class="genText1">
+                                Concerns are mainly with customer coherency due to one kiosk providing multiple services. The whole process should be
+                                designed to be quick enough to avoid line congestion.
+                            </p>
+                        </div>
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Digital Screen</p>
+                            <p class="genText1">
+                                The UI / UX should provide multiple avenues for receiving tickets, e.g., purchase or pickup, and a scanner to redeem
+                                pre-ordered tickets and coupons. This is to be achieved through a linear touch navigation that is understood by the
+                                general moviegoing demographic.
+                            </p>
+                            <p class="genText1">
+                                Potential failures in the form of hardware and software errors may impede customer satisfaction. To alleviate this,
+                                the kiosk can provide a “call for help” button with a speaker system between the user and an employee.
+                            </p>
+                        </div>
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Visual Aesthetics</p>
+                            <p class="genText1">
+                                The look of the kiosk should attract the moviegoers’ attention and be unintimidating by following the theater’s own
+                                provided visual style (e.g., AMC will have kiosks following their black-red-white color palette).
+                            </p>
+                            <p class="genText1">
+                                Multiple kiosks will be placed near the entrance with slow blinking LED lights to signal that the kiosk is available
+                                for use. During use, the LED lights can turn off or fade.
+                            </p>
+                            <p class="genText1">
+                                Diversity of audience opinions on what looks “good” or “bad” is inevitable. LED lights may intimidate some customers
+                                but attract others.
+                            </p>
+                        </div>
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Storage</p>
+                            <p class="genText1">
+                                The kiosk should fit several rolls of ticket-printing paper to withstand at least a day’s worth of sales and must include
+                                enough space for several dispensable buzzers which could be easily reinserted by employees after use.
+                            </p>
+                            <p class="genText1">
+                                Despite this, it shouldn’t take up too much space so that the kiosk is overwhelmingly large. Reloadability issues require
+                                constant employee maintenance and would probably require an interface to show how much is left.
+                            </p>
+                            <p class="genText1">
+                                Consider providing trays or cupholders to be dispensed and taken into the theater.
+                            </p>
+                        </div>
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Multisensory Interactions</p>
+                            <p class="genText1">
+                                Users should be able to touch the screen and receive physical components such as tickets and buzzers. Visual components
+                                should communicate a linear pathway for ordering tickets and food. Audio sound effects should be played to signal
+                                checkpoints and to engage the user with a little fun.
+                            </p>
+                            <p class="genText1">
+                                With a touch screen, tactile feedback could be limited if hardware isn’t as advanced. Also, more components means more
+                                likelihood of needing to be fixed.
+                            </p>
+                            <p class="genText1">
+                                Preferably, a UI that provides tactile feedback so that the user has fun pressing buttons and is ensured that their interaction went through.
+                            </p>
+                        </div>
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Buzzer Feature</p>
+                            <p class="genText1">
+                                Buzzers should enable an interconnected environment that will allow the customer to take a buzzer with them into
+                                their theater screening and return it to an employee in exchange for their food order.
+                            </p>
+                            <p class="genText1">
+                                However, buzzers may vibrate too loudly and be distracting for other moviegoers.
+                            </p>
+                        </div>
+                        <div class="gridContent factorDefinition">
+                            <p class="boldText factor centeredText">Theater Employees</p>
+                            <p class="genText1">
+                                Theater employees should be able to facilitate interactions with the kiosks in that they maintain their storage,
+                                as well as receive buzzers from moviegoers and reinsert them into the kiosk.
+                            </p>
+                        </div>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">Connecting Design Considerations to Features of the Physical Kiosk</h4>
+                        <p class="genText1 span2">
+                            Within the limited time and construction capabilities that our team members had, I did my best to lay out additional labels and physical components
+                            to include for the kiosk. This included labels for cash insertion slots, card swiping, ticket dispensing slots, and storage pockets to dispense tickets and a phone-sized buzzer.
+                        </p>
+                    </article>
+                    <figure class="imageTile splitImages span2">
+                        <img src="mediaFiles/images/design/Cinemunch/physicalKiosk1.svg" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/Cinemunch/physicalKiosk2.svg" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">In the front of the kiosk, I included circles to indicate placement of icons as well as the actual labels based on the placement of the physical features that my teammate built. On the back of the kiosk no labels were intended to be placed, but shapes and labels were used to indicate holes to be cut out and their purpose.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings span2">Redesign of the Kiosk's Branding</h4>
+                        <p class="genText1 span2">
+                            With insights from additional feedback given from our teaching assistants as well as takeaways of the strengths and weaknesses of Ludi's attempt in the second iteration of the kiosk interface,
+                            I went back to making another moodboard and visual style guide from scratch. For the modoboard, I set constraints to pick images that emphasized on experiences that were immersive and
+                            fulfilling with worry-free environments. There were less images used with more limiting colors, which informed the use of only three colors within the new style guide.
+                        </p>
+                    </article>
+                    <div class="gridContent">
+                        <p class="boldText before">Moodboard - Before</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Cinemunch/1stmoodboard3.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText after">Moodboard - After</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Cinemunch/finalMoodboard.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText before">Visual Style Guide - Before</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Cinemunch/1stVisStyleGuide.svg" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText after">Visual Style Guide - After</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Cinemunch/finalizedStyleGuide.svg" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <!-- <figure class="imageTile splitImages span2">
+                        <img src="mediaFiles/images/design/Cinemunch/1stVisStyleGuide.svg" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/Cinemunch/finalizedStyleGuide.svg" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption">Caption to be added.</figcaption>
+                    </figure> -->
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalDesigns">Final Designs</h2>
+                    <p class="genText1 span2">
+                        Cinemunch, a kiosk that makes ordering tickets and food simple to fulfill your movie experience. Below is another live, interactive prototype made on Figma for you to try out the kiosk interface.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Digital Interface</h4>
+                        <iframe style="border: none; width: 100%; height: 600px" title="This is supposed to be an interactive live Figma embed of the final version of the kiosk's digital interface. This may take some time to load." src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FWmmMrIB9IYqhptKvnJxQ8EEF%2FDSGN-100-Design-Stuff%3Fnode-id%3D162%253A73%26scaling%3Dcontain" allowfullscreen></iframe>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Physical Kiosk</h4>
 
-                <h2 class="section" id="results">Results</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="improvements">Improvements</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                            <p class="genText1">
+                                This was the final result of the physical kiosk, which used some of the labeling guidelines and colors to indicate physical components.
+                            </p>
+                    </article>
+                    <div class="gridContent">
+                        <p class="genText1">
+                             In the front of the kiosk, physical components shown are the bill insertion for paper dollar bills, a slot on the left for scanning the QR code for verifying ticket purchases, a ticket dispensing slot right below the scanning code slot, and a larger slot at the bottom to dispense buzzers for food delivery.
+                        </p>
+                        <br>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="" class="backgroundImage">
+                            <figcaption class="imageCaption"><i class="centeredText">Front of the kiosk with the interface with bill insertion, slot for scanning QR codes, ticket dispensing slot, and a larger bottom slot for dispensing food delivery buzzers.</i></figcaption>
+                        </figure>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Cinemunch/buzzer.png" alt="" class="backgroundImage smallWidth">
+                            <figcaption class="imageCaption"><i class="centeredText">Buzzer with a timer shown that is dispensed in the bottom slot.</i></figcaption>
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="genText1">
+                            The side of the kiosk would include a change dispenser. A person would pull the tab with the label on it to reach for the change. Towards the top of the kiosk, a person could swipe their debit or credit card for payment.
+                        </p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Cinemunch/finalPrototype2.png" alt="" class="backgroundImage">
+                            <figcaption class="imageCaption"><i class="centeredText">Change dispenser (bottom right side of kiosk), card swiper (upper right side of kiosk), and buzzer shown. </i></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="deliverables">Other Deliverables</h2>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Poster</h4>
+                        <p class="genText1">
+                            I made a simple poster based on the new visual style guide. The content would emphasize the simplicity and ease of getting movie tickets and food as a way for people to fulfill their movie experience.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Cinemunch/cinemunchPoster.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption">A Cinemunch poster that I made on Illustrator.</figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Presentation Slide Deck</h4>
+                        <p class="genText1">
+                            I helped to consolidate and summarize most of our design process into a slide deck that would be presented in front of others in a class symposium. This summarized only some of the key parts of the design process.
+                        </p>
+                    </article>
+                    <iframe class="gSlides span2" src="https://docs.google.com/presentation/d/e/2PACX-1vTYvRc0ukkAG_87Yh9Nk_C8UnugQ3u8z0WKu-sZ0942gIAmiPZCRCnN30nBKB6KR30QODouyKN7vrd7/embed?start=false&loop=false&delayms=15000" style="border: none; width: 100%; height: 400px" allowfullscreen></iframe>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="resultsReflection">Results and Reflection</h2>
+                    <p class="genText1 span2">
+                        The kiosk and the poster were both presented in a class final symposium. Classmates and other people were able to visit our kiosk and try it out. I helped to present my work along with another teammate to our mentors using the prsentation slide deck.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings span2">Reflection</h4>
+                        <p class="genText1">
+                            This project really pushed my boundaries in translating good visual and interaction design practices into a kiosk interface that is "aware" of the physical components related to the kiosk. I especially learned how
+                            branding of a product would segway into other medium and artifacts for communication, such as a poster. Within working with my team members, we all struggled with keeping up with the multitude of projects to ensure
+                            that the final pieces of branding Cinemunch came together. But, in the end, all of us relied on active communication, trust within our roles, and taking on project initiatives to beautifully craft an experience that
+                            people liked to approach and try out. What kept me motivated to finish this project when the going got tough was a strong personal interest in going out of my comfort zone in research and learning my abilities
+                            to create a solution (and other deliverables) that tied to continuous and iterative feedback.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2" id="cinemGroup">
+                        <img src="mediaFiles/images/aboutMe/dsgn100.jpg" alt="image" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">A group photo taken during the final showcase of our physical kiosk and the Cinemunch poster, with these awesome team members.</i></figcaption>
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="improvements">Improvements</h2>
+                    <p class="genText1 span2">
+                        Here were other things that I wanted to learn and do should there be more available time and energy to continue the project.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Exploring other questions related to the stakeholders and business of the movie industry.</h4>
+                        <p class="genText1">
+                            The desirability of the kiosk remained in question for businesses that may or may not have building environments that support or deter the placement of kiosks. With additional time, a more
+                            robust research approach would entail observations of the existing theater spaces and interviewing both staff and visitors from movie theater companies. Topics that would cover these endeavors would be
+                            how people would evaluate their current movie going experiences, how digital technology contributes to their process of movie going, and how businesses currently address issues that people face with the experiences
+                            of obtaining tickets and food.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Gathering more inspirations from existing interfaces and physical kiosks that also have accessibility in mind.</h4>
+                        <p class="genText1">
+                            Comparing different kiosks that are usable to as many different people as possible with or without digital types of interfaces would ensure best practices are implemented to the implementation of the physical kiosk
+                            while better understanding the user tasks that kiosk interfaces take into account.
+                        </p>
+                    </article>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
-            <p>Wayne Phung 2019</p>
+            <p class="genText1 maxWidth650">That's the end of the design case study! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...Or reading another design project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <!-- <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'DesignLeap.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeap.html" class="button projectButton">Read Case Study</a> -->
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeap.html';">Read Case Study</button> -->
+                    <!-- </article>
+                </div> -->
+                <div class="gridItem workGallery footerGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or maybe explore one of my media projects?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                        <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                        <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TCLCVideo.html';">
+                    <img class="mediaImage" id="tclcVideo" src="mediaFiles/images/media/tclcVideo.png" alt="image" onclick="window.location.href = 'TCLCVideo.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">TCLC Rap Video</h3>
+                        <p class="genText1">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                        <a rel="external" href="TCLCVideo.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                        <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                        <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'YonderDynamics.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/yonderDynamics.png" alt="image" onclick="window.location.href = 'YonderDynamics.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">YD Competition Videos</h3>
+                        <p class="genText1">Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                        <a rel="external" href="YonderDynamics.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <img class="mediaImage" src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="image" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Artist GIFs Event Marketing</h3>
+                        <p class="genText1">These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                        <a rel="external" href="ArtistGIFs.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/asceTribute.png" alt="image" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">ASCE 2017-18 Tribute</h3>
+                        <p class="genText1">This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
+                        <a rel="external" href="ASCETribute1718.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'Wellfest.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellfest2018.png" alt="image" onclick="window.location.href = 'Wellfest.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">1st Annual Wellfest</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                        <a rel="external" href="Wellfest.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'wellnessFair.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellnessFair2018.png" alt="image" onclick="window.location.href = 'wellnessFair.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Wellness Fair</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellness Fair, an event focused on the seven dimensions of wellness.</p>
+                        <a rel="external" href="wellnessFair.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <p class="genText1 span2">Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

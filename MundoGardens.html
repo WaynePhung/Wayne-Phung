@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,21 +28,25 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
         <div class="intro beginning gridType2">
             <section>
-                <h1 class="caseStudySol greeting span2">Mundo Gardens</h1>
-                <p class="caseStudyIntro">A community garden based in National City, with signs and an irrigation system to encourage visibility and more efficient crop management, enabling volunteers to quickly train themselves in agriculture and focus their energy on other efforts.</p>
+                <h1 class="caseStudySol greeting caseTitle span2" id="mgTitle">Mundo Gardens</h1>
+                <p class="caseStudyIntro largeText" id="mgIntroText">A community garden based in National City, with signs and an irrigation system to encourage visibility and more efficient crop management, enabling volunteers to quickly train themselves in agriculture and focus their energy on other efforts.</p>
             </section>
-            <figure class="imageContainer">
-                <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="Mundo Gardens. This is one of the wooden signs." class="backgroundImage">
+            <figure class="imageContainer transparent">
+                <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="Mundo Gardens. This is one of the wooden signs." class="backgroundImage" id="mgIntroImage">
             </figure>
         </div>
         <div class="work">
@@ -41,7 +54,6 @@
                 <ul class="tableOfContents" id="mgTOC">
                     <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
                     <li><a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a></li>
-                    <li><a class="navButton" href="#designProcess" data-index="2">Design Process</a></li>
                     <li><a class="navButton" href="#research" data-index="2">Research</a></li>
                     <li><a class="navButton" href="#dataSynthesis" data-index="3">Data Synthesis</a></li>
                     <li><a class="navButton" href="#problemDefinition" data-index="4">Problem Definition</a></li>
@@ -53,257 +65,1178 @@
                     <li><a class="navButton" href="#iterations" data-index="10">Iterations</a></li>
                     <li><a class="navButton" href="#finalDesigns" data-index="11">Final Designs</a></li>
                     <li><a class="navButton" href="#implementation" data-index="12">Implementation</a></li>
-                    <li><a class="navButton" href="#results" data-index="13">Results</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="14">Reflection</a></li>
-                    <li><a class="navButton" href="#improvements" data-index="15">Improvements</a></li>
+                    <li><a class="navButton" href="#resultsReflection" data-index="13">Results and Reflection</a></li>
+                    <li><a class="navButton" href="#improvements" data-index="14">Improvements</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="designChallenge">Design Challenge</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="designProcess">Design Process</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="research">Research</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="dataSynthesis">Data Synthesis</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="problemDefinition">Problem Definition</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="brainstorming">Brainstorming</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="conceptTesting">Concept Testing</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="designConsid">Design Considerations</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="prototyping">Prototyping</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="userTesting">User Testing</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="iterations">Iterations</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalDesigns">Final Designs</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="implementation">Implementation</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="results">Results</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="improvements">Improvements</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
+                <section class="bodyGrid gridType2 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">This was both a client and student class project. My group and I worked with a non-profit community garden and the program was structured around a college course called Design for Development.</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="text genText1">To assist the community garden's executive director, coordinators, and volunteers with their volunteering management.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="text genText1">7 weeks</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <div class="gridContent">
+                        <p class="genText1">I helped with user research, ideation, rapid prototyping, user testing, execution of high-fidelity solution(s), project management of the group, and documentation of solution implementation.</p>
+                        <p class="genText1">Two solutions were made from this project, but I focused on only one of the solutions.</p>
+                    </div>
+                    <h3 class="subheading subsectionHeadings">Core Team</h3>
+                    <p class="genText1">Tejas Gopal, Alan Thomas, Michael Harasti, Jesus Osuna, Lawrence Ngo</p>
+                    <h3 class="subheading subsectionHeadings">Mentors</h3>
+                    <div class="gridContent">
+                        <p class="genText1"><i>Brandon Reyante</i> - He was a former professor within the Global Ties program who instructed the course that this project revolved around, Design for Development. He taught the class, including our group, the fundamentals of designing effective, sustainable solutions that are informed by ethnographic needs. He also gave essential critique to our assignment deliverables that informed us of the progress of our project.</p>
+                    </div>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">UC San Diego Global TIES</p>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="designChallenge">Design Challenge</h2>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Background of Mundo Gardens</h4>
+                        <p class="text genText1">Mundo Gardens is a non-profit organization within National City, California, which aims to promote well-being, healthy nutrition, and education amongst the city’s residents. It just recovered from the pollution that city management has done to the land, thanks to civic efforts from its founders to fund Mundo Gardens, but it still sought to continue to grow as an organization.</p>
+                    </article>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Project Background</h4>
+                        <p class="text genText1">Despite having volunteers to sustain the community garden, the lack of efficiency and structure within the infrastructure of Mundo Gardens as an organization has led to greater difficulties for Mundo Gardens’ volunteers to recruit and retain volunteers as well as bringing greater awareness to the garden’s local community to become involved.</p>
+                        <p class="text genText1">
+                            Within the Design for Development course hosted by the Global Ties Program at the University of California - San Diego, our group’s original assignment was to design tools and strategies to improve Mundo Garden’s existing volunteer management. However, after talking to the people within the organization at the time, they were dealing with outreaching efforts,
+                            lack of resources, and many other issues that were beyond the initially prescribed tasks.
+                        </p>
+                    </article>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Constraints Faced</h4>
+                        <p class="text genText1">Lack of physical/digital tools and resources within the garden made it more difficult for us to build any type of solution with the intended affordability, fidelity, and impact that the people within the organization expect.</p>
+                        <p class="text genText1">The knowledge gap between the volunteers and using digital platforms make the Internet of Things less viable as a source for our solutions as these types of solutions wouldn’t be usable or maintainable for Mundo Garden volunteers.</p>
+                    </article>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Solution(s)</h4>
+                        <p class="text genText1">A series of painted wooden signage that make it easier to identify crops and garner interest for the garden from visitors and future volunteers.</p>
+                        <p class="text genText1">Another solution was a chalkboard that can be used to either help volunteers organize their tasks or enable outreach to prospective people for different parts outside the garden.</p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="research">Research</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Talking to the Volunteers at Mundo Gardens</h4>
+                        <p class="genText1">Once the team has been assembled and ready to start on the project, we decided to take a trip to National City to visit the garden in-person and meet with the local volunteers. We were able to talk to the executive director of the organization, Janice Reynoso, main coordinators who help Janice manage Mundo Gardens volunteer logistics and infrastructure, and the volunteers themselves.</p>
+                        <p class="genText1">Some of our group members were able to talk to two people at the garden, while other group members also talked with previous students that have worked with Mundo Gardens before. Below is a summary of interview findings from each different type of person that we asked.</p>
+                    </article>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText">Notes from Interviewing the Executive Director</p>
+                        <p class="genText1">There is a lack of consistent volunteer involvement from some of the members and an opportunity for others to take more leadership and accountability for the work their doing. The organizational hierarchy is lenient and she doesn’t want to burn out volunteers. She has volunteers learn naturally about how to do garden tasks and encourages participation.</p>
+                    </div>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText">Notes from Interviewing the Coordinators</p>
+                        <p class="genText1">There’s a lack of volunteers in general and there tends to be lack of guidance on what to accomplish. General watering and weeding doesn’t seem to be enough motivation for the volunteers to be involved, as a sense of ownership would better encourage people to stay involved. There should be some way to gain awareness and interest for more people to join Mundo Gardens.</p>
+                    </div>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText">Notes from Interviewing the Volunteers</p>
+                        <p class="genText1">They visit the garden somewhat regularly to become involved in whatever tasks that the coordinators or the executive director has for them. They have limited communication and commitment with Mundo Gardens and other members of the organization.</p>
+                    </div>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText">Notes from Interviewing Students of Mundo Gardens' Previous Project Team</p>
+                        <p class="genText1">They have perceived Mundo Gardens as disorganized. There was much difficulty in scoping out the project and to understand the problems that they were able to solve within 10 weeks. They have also found out about Mundo Gardens’ lack of funding, resources, and manpower. They informed the team to show commitment and passion for the project.</p>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="dataSynthesis">Data Synthesis</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Personas and Empathy Maps</h4>
+                        <p class="genText1 span2">Three personas and empathy maps each were made to consolidate our understandings of each person’s responses, their way of thinking, activities that they engage in, and thoughts about their life in relation to Mundo Gardens.</p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/PersonaDiego.svg" alt="" class="backgroundImage svg">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/EmpathyMapDiego.svg" alt="" class="backgroundImage svg svgPadding">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/PersonaMaria.svg" alt="" class="backgroundImage svg">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/EmpathyMapMaria.svg" alt="" class="backgroundImage svg svgPadding">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/PersonaJanice.svg" alt="" class="backgroundImage svg">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/EmpathyMapJanice.svg" alt="" class="backgroundImage svg svgPadding">
+                        <!-- <figcaption class="imageCaption">Caption to be added.</figcaption> -->
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Stakeholder Analysis</h4>
+                        <p class="genText1">
+                            Once we definitively established the different types of people involved with Mundo Gardens, we mapped out a relationship for
+                            each stakeholder involved along a grid to determine how much influence and interest each stakeholder has in addressing the
+                            topic of volunteer management. This would inform how our solution would potentially affect each type of people.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/stakeholderAnalysis.svg" alt="" class="backgroundImage svg" id="stakeholderAnalysis">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="problemDefinition">Problem Definition</h2>
+                    <p class="genText span2">
+                        Based on user research and stakeholder analysis, these were the needs and insights that emerged to help define the problem space related to Mundo Garden's volunteer management.
+                    </p>
+                    <figure class="span2">
+                        <figcaption class="imageCaption centeredText">Table of summarized needs and insights for three aspects of the problem space: garden management, community profile and involvement, and visibility and outreach.</figcaption>
+                        <table class="needsInsights">
+                            <tr class="subsectionHeadings">
+                                <th>Topic</th>
+                                <th>Needs</th>
+                                <th>Insights</th>
+                            </tr>
+                            <tr>
+                                <td>Garden Management</td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>The current volunteer group needs a unified leadership system.</li>
+                                        <li>Management needs ways to improve retention from existing volunteers.</li>
+                                        <li>Management needs a way to eliminate manual watering.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>There is uncertainty as to what tasks need to be done at certain times by specific volunteers.</li>
+                                        <li>Many volunteers don’t stay for the long term, due to time constraints or lack of interest and incentives.</li>
+                                        <li>Too much time is wasted on watering when this time could be spent elsewhere. Also, a lot of water is wasted from manual watering.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Community Profile and Involvement</td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Management needs a way to get more people to assist in the garden.</li>
+                                        <li>Management needs a way to shift community mentality to recognize the value of the gardens.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Maintaining the gardens (soil, water, sunlight) is taking more resources (time,people,etc.) to than there are currently.</li>
+                                        <li>Currently, locals do not see the benefit or reason for participating in garden activities or helping its cause.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Visibility and Outreach</td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Management needs help outreaching to the local community.</li>
+                                        <li>Management needs a way to make Mundo Gardens physically more visible.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Some locals do not even know of the garden’s existence, including those on the same block.</li>
+                                        <li>The current signs and operating hours displayed are small and not easily seen. As a result there is confusion as to the purpose of the gardens.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Problem Statement</h4>
+                        <p class="genText1">
+                            Mundo Gardens, a community garden looking to nurture wellness for National City’s youth and families through education and healthy eating,
+                            needs volunteers of all levels of gardening experience to become more empowered and productive so their time could be committed to more
+                            meaningful tasks such as outreach, cultivating plants, and expanding the garden.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid1 gridType1">
+                    <h2 class="section sectionHeadings span2" id="brainstorming">Brainstorming</h2>
+                    <p class="marginBottom span2">
+                        We’ve come up with several different ideas, and established pros and cons with each of them to compare and contrast while having a group
+                        discussion to evaluate each of them. Amongst the numerous ideas, the website, signage, and drip irrigation ideas were ideas that seemed
+                        promising for everyone in our group to implement.
+                    </p>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Volunteer Hub</h4>
+                        <p class="genText1">
+                            This is a software based solution to help alleviate volunteer management issues by automating registration for events and tracking
+                            volunteer attendance. Those who moderate events created are able to send messages/invites to existing volunteers. Current volunteers
+                            can also be automatically reminded to update their information.
+                        </p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
+                        <img src="mediaFiles/images/design/MundoGardens/VolunteerHub.png" alt="" class="backgroundImage" id="volunteerHub">
+                    </figure>
+                    <div class="prosCons span2">
+                        <table>
+                            <tr>
+                                <th class="boldText">Pros</th>
+                                <th class="boldText">Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Has been established as a standard method for watering in agriculture.</li>
+                                        <li>Reliable automation of water distribution to plants.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Both methods are complex and costly to build.</li>
+                                        <li>Requires lots of infrastructure.</li>
+                                        <li>Not scalable to smaller land size, such as the size that Mundo Gardens occupies.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Sprinklers and Irrigation Systems for Agriculture</h4>
+                        <p class="genText1">
+                            These would be defined as two different ways for Mundo Gardens to innovatively and more efficiently water their crops.
+                            One way is dubbed as “Top of Pipe” irrigation, which is useful in areas with different terrain and with crops that
+                            typically grow taller such as corn. The other way is the “Close to the Ground” irrigation, that reduces susceptibility
+                            of water being carried away by drifting winds and thus improves water usage and efficiency.
+                        </p>
+                    </article>
+                    <figure class="imageTile changeSpan1" id="sprinklers">
+                        <img src="mediaFiles/images/design/MundoGardens/IrrigationSystem.png" alt="" class="backgroundImage">
+                    </figure>
+                    <div class="prosCons span2">
+                        <table>
+                            <tr>
+                                <th class="boldText">Pros</th>
+                                <th class="boldText">Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Allows remote organization of many volunteers.</li>
+                                        <li>Automation processes reduce manpower needed to manage current volunteer force.</li>
+                                        <li>People using the software can sign up to volunteer time slots as needed.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Frequent usage requires consistent access to devices that support the software.</li>
+                                        <li>Has various pricing options and not free.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Girl Scouts Selling Cookies</h4>
+                        <p class="genText1">
+                            The ideas that Mundo Gardens can adopt from Girl Scouts cookies is how they help raise revenue and increase visibility.
+                            Additionally, like the girl scouts that actively attempt to sell cookies to their community, Mundo Gardens can leverage
+                            the crops that they produce to generate revenue and provide the community with healthy food options. From generated sales,
+                            this idea can also increase Mundo Gardens’ exposure, give volunteers opportunities for personal development in life skills,
+                            and serves as an avenue for Mundo Gardens to recruit more volunteers.
+                        </p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
+                        <img src="mediaFiles/images/design/MundoGardens/girlScoutCookies.png" alt="" class="backgroundImage" id="gsCookies">
+                    </figure>
+                    <div class="prosCons span2">
+                        <table>
+                            <tr>
+                                <th class="boldText">Pros</th>
+                                <th class="boldText">Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Fundraising revenue from sales.</li>
+                                        <li>An opportunity for people to learn how to sell produce or other relevant skills.</li>
+                                        <li>Potential for greater awareness and exposure for Mundo Gardens.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Produce must be high quality and appealing.</li>
+                                        <li>Incentives such as prizes and earned achievements would be needed to encourage people to undergo selling.</li>
+                                        <li>Could lead to delegation of inexperienced individuals/volunteers without proper training to sell.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Various Types of Signage</h4>
+                        <p class="genText1">
+                            Informative signs related to Mundo Gardens can be placed within the garden. The form factor for signage can be variable,
+                            depending on their function and application. Sign posts can be placed to inform visitors of the Gardens’ hours, inform
+                            volunteers of different types of crops, and even to help organize logistics for keeping track of volunteer work and projects.
+                        </p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
+                        <img src="mediaFiles/images/design/MundoGardens/signage.png" alt="" class="backgroundImage">
+                    </figure>
+                    <div class="prosCons chosenIdea span2">
+                        <table>
+                            <tr>
+                                <th class="boldText">Pros</th>
+                                <th class="boldText">Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Better visibility for local audience.</li>
+                                        <li>More information presented shown on signs.</li>
+                                        <li>Cost efficient and malleable.</li>
+                                        <li>Minimal resources needed, environmentally friendly.</li>
+                                        <li>Room for creativity and change of use.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Available resources may stifle quality of signage.</li>
+                                        <li>Not sustainable for smaller mediums of communication (flyers, disposable banners).</li>
+                                        <li>Must rely on other similar mediums of signs to be effective and integrate with volunteer work flow.</li>
+                                        <li>Must be robust to sustain from weather and general wear and tear.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gridContent ideaReasons span2">
+                        <p class="boldText">Why the Signage Idea Was Chosen</p>
+                        <p class="genText1">
+                            Creating large visible signs, will inform volunteers and visitors about the garden. Signs can be versatile and reformatted, so this template can be adapted to change relevant
+                            information (such as events that change every week). With the given resources in Mundo Gardens, these signs can be constructed easily from wooden boards and paint. This isn’t
+                            limited to wooden boards, but also to the chalkboard that the volunteers can utilize, saving money on invested alternatives and minimizes labor for setup.
+                        </p>
+                    </div>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Drip Irrigation System</h4>
+                        <p class="genText1">
+                            This would be a type of a slow water flow irrigation system implemented using water tanks, meters, and filters,
+                            copper tubing, PVC pipes, natural materials, and nutriments to keep crops within Mundo Gardens hydrated and healthy.
+                            Water would flow from the tank to the pipes, in which the tubing helps to moderate the flow of water that gets delivered
+                            to the crops and plants through a drip mechanism that limits how much water flows out of the tubing.
+                        </p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
+                        <img src="mediaFiles/images/design/MundoGardens/dripIrrigation.jpg" alt="" class="backgroundImage" id="dripIrrgation">
+                    </figure>
+                    <div class="prosCons chosenIdea span2">
+                        <table>
+                            <tr>
+                                <th class="boldText">Pros</th>
+                                <th class="boldText">Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Automates garden task of watering for greater efficiency.</li>
+                                        <li>Can use existing materials in the garden (such as PVC pipes, existing distributors/toolkit).</li>
+                                        <li>Reliably keeps plants adequately nourished from heavily moderated water use.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Technicality of the solution may be a struggle for volunteers at Mundo Gardens to harness and maintain the system.</li>
+                                        <li>Learning curve of maintenance of the solution can be high for people unfamiliar with how to fix breakdowns.</li>
+                                        <li>Needs to be expanded with additional parts if garden expands or if new plants were to be introduced.</li>
+                                        <li>If plants are uprooted, irrigation tubes may need to be fixed or system could break.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gridContent ideaReasons span2">
+                        <p class="boldText">Why the Drip Irrigation Idea Was Chosen</p>
+                        <p class="genText1">
+                            Throughout our user research process, we recognized that several garden coordinators were spending too much time doing menial gardening tasks rather than leading and advising
+                            volunteers. Therefore, the drip irrigation system addresses the core need of automating watering of the plants within the garden. It accomplishes this by slowly distributing
+                            water through PVC pipes and copper tubing wired through the garden. As is observed in Figure 3.2.4 of the sketch, the source is distributed in parallel and targets the roots
+                            of plants through small perforations in the tubing underground. In addition, pressure regulators, nutriments, and filtering are also applied to the original source, ensuring
+                            top quality of water. Drip irrigation systems use very slow water flow and specific target points in the soil to keep plants nourished, which is extremely sustainable and will
+                            save the garden time and water (“Step by Step Drip Irrigation”).
+                        </p>
+                    </div>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">A Mundo Gardens Website</h4>
+                        <p class="genText1">
+                            A centralized digital platform that serves as both a volunteer management tool and a resource for people to get to know Mundo Gardens.
+                            Potential applications of the website could enable Mundo Gardens to manage volunteer announcements and tasks within the website, host
+                            important events for people to know about, and showcase work that Mundo Gardens actively creates.
+                        </p>
+                    </article>
+                    <figure class="imageTile changeSpan1">
+                        <img src="mediaFiles/images/design/MundoGardens/websiteIdea.png" alt="" class="backgroundImage" id="mgWebsite">
+                    </figure>
+                    <div class="prosCons chosenIdea span2">
+                        <table>
+                            <tr>
+                                <th class="boldText">Pros</th>
+                                <th class="boldText">Cons</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Provides a central, organized place for volunteers and administrators to access all necessary management related information.</li>
+                                        <li>Leverages the internet as a tool to increase visibility of outreach efforts to current volunteers and awareness of the garden to interested visitors.</li>
+                                        <li>Ability for coordinators and executive director to broadcast announcements or information to all volunteers.</li>
+                                        <li>Affords new functionality, features, or tools to be added.</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul class="genText1">
+                                        <li>Not all volunteers may have access to the internet or a computer.</li>
+                                        <li>Needs to be hosted on a server, which may be costly.</li>
+                                        <li>Coordinators and executive director will probably be unable to maintain the website as they lack the necessary skills or may not have time to even update the website.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gridContent ideaReasons span2">
+                        <p class="boldText">Why the Website Idea Was Chosen</p>
+                        <p class="genText1">
+                            Perhaps the most important need we identified was help outreach efforts by increasing existing volunteer participation in outreach efforts. This, combined with the need for a
+                            volunteer management system and to improve awareness of the garden, led to the formation of this idea. Additionally, many members of the team have a web development background
+                            which allowed for this idea to be feasible. The website facilitates a system of managing volunteering activity and helps increase participation in outreach efforts. Volunteers
+                            can log into their account to update their calendar of when they check in to the garden, what they did, and what remaining tasks they have to accomplish. The website also serves
+                            as a bulletin board for upcoming outreach opportunities, which will increase visibility of outreach efforts and allow volunteers to register for an event to indicate attendance.
+                            From an administrator (garden facilitator) point of view, logging in will allow them to view all information about every volunteer, which will aid in the coordination and management effort.
+                        </p>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="conceptTesting">Concept Testing</h2>
+                    <p class="genText1">
+                        We shared our three chosen ideas when we met up with Janice and her volunteers at Mundo Gardens for another visit.
+                        After having the discussion, the team consolidated their feedback into capture grids for each solution.
+                    </p>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/conceptTesting.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Group discussion with Janice and David, one of the volunteers, about the ideas that we came up with.</i></figcaption>
+                    </figure>
+                    <article class="bodyGrid gridType1 summaryTable span2">
+                        <h4 class="tableHeading subsectionHeadings span2">Signage Feedback Capture Grid</h4>
+                        <div class="tableBody span2">
+                            <p class="boldText">Summary of Feedback</p>
+                            <p class="genText1">
+                                For the signage prototype, they felt content with the idea because of the simple, yet different types of information that
+                                could be put onto them, such as gardening instructions, contact information, announcements, and scheduling for volunteers.
+                                Additionally, with the availability of resources to build the signs, Janice felt happy having the community help make the
+                                signs, which would also fit the rustic, homemade brand the garden is trying to achieve. The flexibility and feasibility of
+                                the signs could result in having a day to perform sign paintings and postings where local artists can create the wooden signs themselves.
+                            </p>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">What worked?</p>
+                            <ul class="genText1">
+                                <li>Signs are versatile.</li>
+                                <li>Signs are easy to make.</li>
+                                <li>Signs are entertaining.</li>
+                                <li>Templates can be implemented to cheaply prototype designs.</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">What could be improved?</p>
+                            <ul class="genText1">
+                                <li>Make them easier to place in the garden.</li>
+                                <li>Make it easy for the public to view them.</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Questions</p>
+                            <ul class="genText1">
+                                <li>How should the signs actually be posted?</li>
+                                <li>Do we have enough materials to make all of the signs?</li>
+                                <li>What templates should we prioritize making?</li>
+                                <li>What are cases that we should consider that could cause breakdown to signs?</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Ideas</p>
+                            <ul class="genText1">
+                                <li>Bulletin board could be placed on side of shed.</li>
+                                <li>Volunteers have materials, writing utensils, and cutting equipment available for use.</li>
+                                <li>Working on signs could be scheduled another day.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="bodyGrid gridType1 summaryTable span2">
+                        <h4 class="tableHeading subsectionHeadings span2">Drip Irrigation Feedback Capture Grid</h4>
+                        <div class="tableBody span2">
+                            <p class="boldText">Summary of Feedback</p>
+                            <p class="genText1">
+                                Janice and David also sought to have an irrigation system for the garden does need task efficiency,
+                                which would enable volunteers to do other priority tasks like outreaching.
+                            </p>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">What worked?</p>
+                            <ul class="genText1">
+                                <li>Visual Components are appealing, it's feasible, and easy to Understand.</li>
+                                <li>Significantly reduced watering time.</li>
+                                <li>Loved the customizable piping and placement of system.</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">What could be improved?</p>
+                            <ul class="genText1">
+                                <li>More financial details, such as cost of installation and maintenance.</li>
+                                <li>A more comprehensive list of materials needed, hard to visualize.</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Questions</p>
+                            <ul class="genText1">
+                                <li>How will the existing irrigation kit be incorporated or utilized?</li>
+                                <li>How scalable is the water source?</li>
+                                <li>What supplemental materials are needed?</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Ideas</p>
+                            <ul class="genText1">
+                                <li>Use existing kit in implementation somehow (we didn’t know they had one).</li>
+                                <li>Replace copper tubing with thinner plastic tubes.</li>
+                                <li>Start small in one plant bed area and expand later to perimeter.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="bodyGrid gridType1 summaryTable span2">
+                        <h4 class="tableHeading subsectionHeadings span2">Website Feedback Capture Grid</h4>
+                        <div class="tableBody span2">
+                            <p class="boldText">Summary of Feedback</p>
+                            <p class="genText1">
+                                There was a general disinterest from the website idea because Janice and the other volunteers believed
+                                it was too much to invest in and other functions of the website could be achieved through other means,
+                                such as having Google forms for volunteering and event registration.
+                            </p>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">What worked?</p>
+                            <ul class="genText1">
+                                <li>Concepts of scheduling and a calendar with a check in, check out system.</li>
+                                <li>Posting outreach events on website.</li>
+                                <li>Good platform for announcements and visibility.</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">What could be improved?</p>
+                            <ul class="genText1">
+                                <li>Something not as fully fledged as a website that achieves same concept.</li>
+                                <li>Collect concepts of website into a simple link that they can incorporate into their existing web presence.</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Questions</p>
+                            <ul class="genText1">
+                                <li>How can it be maintained?</li>
+                                <li>Who would pay for server costs?</li>
+                                <li>What could happen if they lost server access?</li>
+                            </ul>
+                        </div>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Ideas</p>
+                            <ul class="genText1">
+                                <li>Making a nice organized document that directly connects to current online resources/links.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="designConsid">Design Considerations</h2>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Defining Design Criteria</h4>
+                        <p class="genText1">
+                            The feedback capture grids informed us on how we decided on what solution to explore, but to further substantiate our decision,
+                            we attempted to further narrow our solutions by classifying and defining design criteria and considerations that our solution
+                            should consider. The list of criterion below became relevant to the group discussion about how to objectively choose our solution.
+                        </p>
+                    </article>
+                    <div class="gridContent criteria changeSpan1">
+                        <p class="boldText centeredText">Functionality</p>
+                        <p class="genText1">
+                            This would define how well the solutions would assist in the activities, and experiences within the
+                            garden space that allow volunteers to understand and execute garden operations.
+                        </p>
+                    </div>
+                    <div class="gridContent criteria changeSpan1">
+                        <p class="boldText centeredText">Usability</p>
+                        <p class="genText1">
+                            Usability is classified as how well the solution can be used by volunteers and others to fulfill its intended purpose.
+                        </p>
+                    </div>
+                    <div class="gridContent criteria changeSpan1">
+                        <p class="boldText centeredText">Visibility and Awareness</p>
+                        <p class="genText1">
+                            This would define how well the solutions would help the volunteers visually recognize the different parts of the garden space, as well as
+                            how well it could attract potential visitors to the garden.
+                        </p>
+                    </div>
+                    <div class="gridContent criteria changeSpan1">
+                        <p class="boldText centeredText">Efficiency</p>
+                        <p class="genText1">
+                            This criterion defines how the solution enables Mundo Gardens to effectively and productively complete garden tasks and other initiatives in a timely manner
+                            while minimizing instances and efforts made to more menial tasks that can hinder or slow down their progress on initiatives.
+                        </p>
+                    </div>
+                    <div class="gridContent criteria changeSpan1">
+                        <p class="boldText centeredText">Socio-Cultural Sustainability</p>
+                        <p class="genText1">
+                            This criterion is a more long-term aspect of how beneficial the solution can be to Mundo Gardens' social initiatives for outreach and
+                            civic engagement. For example, socio-cultural sustainability within a solution enables Mundo Gardens to establish more innovative ways for
+                            executing outreach events, sustainable changes to public mentality about wellness and nutrition, and lasting relationships with its
+                            stakeholders and the general public.
+                        </p>
+                    </div>
+                    <div class="gridContent criteria changeSpan1">
+                        <p class="boldText centeredText">Garden Sustainability</p>
+                        <p class="genText1">
+                            This refers to how well the solution can help Mundo Gardens maintain itself so that it can continue operating. This factor also has
+                            economic sustainability, as the solution should also help Mundo Gardens sustain usage of existing resources that it has so that volunteers
+                            can keep performing gardening tasks or organizational initiatives, as opposed to having the volunteers resort to other more costly methods.
+                        </p>
+                    </div>
+                    <div class="gridContent criteria span2">
+                        <p class="boldText centeredText">Ecological Sustainability</p>
+                        <p class="genText1">
+                            As part of Mundo Gardens' approach to promote education and well-being without compromising the environment, this criterion defines
+                            how the solution can continuously reduce the organization's negative footprint on the environment and promote more greener practices
+                            to its initiatives.
+                        </p>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Deciding on a Solution with a Pugh Chart</h4>
+                        <p class="genText1">
+                            How our group came to a solution was through weighing the solutions against the criteria, represented as a Pugh chart. One of the solutions, the website solution, would have a baseline score of zero across all of its criteria while the other two would be compared against the baseline criteria scores.
+                            The signage and drip irrigation solution was not weighed as the baseline, so each of these solutions' criteria was evaluated through a plus/minus system. Each plus indicates one point (1), each minus indicates one negative point (-1). For each plus, zero, or minus, it would be
+                            multiplied by the corresponding weight assigned for each criterion (e.g. two pluses with a criterion weight of three would be 2 times 3, and that would be the score for the solution's criteria, 6). All the total scores for each criterion would be added up to get the total score
+                            for each solution.
+                        </p>
+                    </article>
+                    <table class="pughChart span2">
+                        <tr class="subsectionHeadings">
+                            <th>Criterion</th>
+                            <th>Weight</th>
+                            <th>Website (baseline)</th>
+                            <th>Signage</th>
+                            <th>Drip Irrigation System</th>
+                        </tr>
+                        <tr>
+                            <td><p>Functionality</p></td>
+                            <td><p>3</p></td>
+                            <td><p>0</p></td>
+                            <td><p>0</p></td>
+                            <td><p>++</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Visibility and Awareness</p></td>
+                            <td><p>2</p></td>
+                            <td><p>0</p></td>
+                            <td><p>+</p></td>
+                            <td><p>-</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Socio-Cultural Sustainability</p></td>
+                            <td><p>1</p></td>
+                            <td><p>0</p></td>
+                            <td><p>++</p></td>
+                            <td><p>+</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Usability</p></td>
+                            <td><p>3</p></td>
+                            <td><p>0</p></td>
+                            <td><p>++</p></td>
+                            <td><p>+</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Efficiency</p></td>
+                            <td><p>3</p></td>
+                            <td><p>0</p></td>
+                            <td><p>0</p></td>
+                            <td><p>++</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Garden Sustainability</p></td>
+                            <td><p>2</p></td>
+                            <td><p>0</p></td>
+                            <td><p>+</p></td>
+                            <td><p>++</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Ecological Sustainability</p></td>
+                            <td><p>1</p></td>
+                            <td><p>0</p></td>
+                            <td><p>+</p></td>
+                            <td><p>++</p></td>
+                        </tr>
+                        <tr class="pughWeightedTotal">
+                            <td colspan="2"><p><b>+</b></p></td>
+                            <td><p>0</p></td>
+                            <td><p>13</p></td>
+                            <td><p>22</p></td>
+                        </tr>
+                        <tr class="pughWeightedTotal">
+                            <td colspan="2"><p><b>0</b></p></td>
+                            <td><p>7</p></td>
+                            <td><p>6</p></td>
+                            <td><p>0</p></td>
+                        </tr>
+                        <tr class="pughWeightedTotal">
+                            <td colspan="2"><p><b>-</b></p></td>
+                            <td><p>0</p></td>
+                            <td><p>0</p></td>
+                            <td><p>2</p></td>
+                        </tr>
+                        <tr class="pughWeightedTotal">
+                            <td colspan="2"><p><b>Weighted Total</b></p></td>
+                            <td><p>0</p></td>
+                            <td><p>13</p></td>
+                            <td><p>20</p></td>
+                        </tr>
+                    </table>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Assignment and Reasoning for Different Weights to Criteria</h4>
+                        <p class="genText1">Within the scope of the project, there was a need from Mundo Gardens for us to implement a short-term solution, and so the criteria were weighed accordingly.</p>
+                        <p class="genText1">
+                            <b class="boldText">Functionality, usability, and efficiency had weights of 3, the highest weights assigned.</b> Functionality was really important since the solution should be able to fulfill its
+                            intended purpose and also effectively aid Mundo Gardens's tasks and initatives. Usability was also considered important since the solution must allow people within Mundo Gardens to use it
+                            right to allow the solution to function properly. Finally, efficiency in the solution was also crucial since the solution must be able to help Mundo Gardens execute its tasks and initiatives, rather
+                            than further hindering Mundo Gardens' progress.
+                        </p>
+                        <p class="genText1">
+                            <b class="boldText">Visibility and awareness as well as garden sustainability had weights of 2.</b> Visibility and awareness is important to help Mundo Gardens garner attention and interest
+                            for future prospective people who want to become involved with Mundo Gardens' initiatives and education. Manpower within the organization and advertising its efforts were also painpoints discovered from
+                            user research. However, within the scope of the project, it would take much longer for Mundo Gardens to implement our group's solutions and see a long-term, less tangible impact on the growth and exposure
+                            of their organization as they still have to incorporate the solution into their outreach efforts and gardening tasks. Garden sustainability is important as the solution should help keep the organization running,
+                            but also has these aforementioned considerations, as there would need to have continuous tracking of how the solution aids in maintaining Mundo Gardens operations and keeping costs manageable.
+                        </p>
+                        <p class="genText1">
+                            <b class="boldText">Finally, socio-cultural sustainability and ecological sustainability were ranked lowest with a weight of 1.</b> The impact that the solution would have to the environment, the local people
+                            within National City, and the socio-cultural norms surrounding the city can only be realized long after our group ends its involvement with the project. Volunteer management and retention results from the solution
+                            necessitates time that Mundo Gardens volunteers must place to continuously implement and access the solution's effectiveness in addressing these problem spaces.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">The Chosen Solution</h4>
+                        <p class="genText1">
+                            The drip irrigation and signage ideas had different scores for some of the criteria. While the drip irrigation was most effective in addressing functionality, organizational efficency, garden sustainability, and ecological sustainability of the solution,
+                            the signage idea scored much better in visibility and awareness, socio-cultural sustainability, and usability of the potential solution. It was thus decided through a team consensus that we would incorporate both the signage and drip irrigation ideas
+                            together as a single, hybrid solution.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="prototyping">Prototyping</h2>
+                    <p class="genText1 span2">
+                        To achieve the delivery of both parts of our solution, we had to split the team up to have people working on both parts of our solution to ensure timely development, testing, and deployment of our solution.
+                        I was mostly involved with two teammates working on the signage. The three of us had different ideas about what the signage could potentially be. Below were the different types of signage that our group
+                        envisioned, which were cognizant of the different criterion established.
+                    </p>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText centeredText">Welcoming Signs</p>
+                        <p class="genText1">
+                            These ideally would be large in size, and they would inform visitors about the garden space that Mundo Gardens occupies as well as what Mundo Gardens is.
+                        </p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/MundoGardens/signage1.jpg" alt="" class="backgroundImage">
+                            <img src="mediaFiles/images/design/MundoGardens/signage2.jpg" alt="" class="backgroundImage">
+                            <!-- <figcaption class="imageCaption"><i>Caption to be added.</i></figcaption> -->
+                        </figure>
+                    </div>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText centeredText">Signs with Educational Garden Information</p>
+                        <p class="genText1">
+                            These types of signs could be distributed throughout the outside garden space within Mundo Gardens and could contain insightful information about each crop available throughout the garden.
+                        </p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/MundoGardens/signage3.jpg" alt="" class="backgroundImage">
+                            <img src="mediaFiles/images/design/MundoGardens/signage4.jpg" alt="" class="backgroundImage">
+                            <!-- <figcaption class="imageCaption"><i>Caption to be added.</i></figcaption> -->
+                        </figure>
+                    </div>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText centeredText">Individual Crop Signage</p>
+                        <p class="genText1">
+                            This type of signage would be tailored to each individual crop that is available at the garden. Early concepts would also have fun facts about each of the crops, or even just quirky, personified phrases as if the crops were directly communicating to the viewer.
+                        </p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/MundoGardens/signage7.jpg" alt="" class="backgroundImage">
+                            <img src="mediaFiles/images/design/MundoGardens/signage8.jpg" alt="" class="backgroundImage">
+                            <!-- <figcaption class="imageCaption"><i>Caption to be added.</i></figcaption> -->
+                        </figure>
+                    </div>
+                    <div class="gridContent changeSpan1">
+                        <p class="boldText centeredText">A Chalkboard</p>
+                        <p class="genText1">
+                            Although this enables Mundo Gardens plenty of freedom and adaptability to write whatever content suited best towards achieving the organizations efforts with volunteers, there were initial ideas of what the space on the chalkboard could embody. Early concepts
+                            include having a weekly calendar with gardening tasks assigned each day to a specific volunteer, a sign-in sheet, and even a combination of the previous two ideas.
+                        </p>
+                        <!-- <p class="genText1">
+                            During concept testing, the volunteers, including Janice, appealed to this idea when it was brought up. This type of signage would be oriented towards helping volunteers with gardening tasks, various volunteering efforts, and other organizational initiatives.
+                            Although this enables Mundo Gardens plenty of freedom and adaptability to write whatever content suited best towards achieving the organizations efforts with volunteers, there were initial ideas of what the space on the chalkboard could embody. Early concepts
+                            include having a weekly calendar with gardening tasks assigned each day to a specific volunteer, a sign-in sheet, and even a combination of the previous two ideas.
+                        </p> -->
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/MundoGardens/signage5.jpg" alt="" class="backgroundImage">
+                            <img src="mediaFiles/images/design/MundoGardens/signage6.jpg" alt="" class="backgroundImage">
+                            <!-- <figcaption class="imageCaption"><i>Caption to be added.</i></figcaption> -->
+                        </figure>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Making the Signs</h4>
+                        <p class="genText1">
+                            Despite the potential in executing the signage, the three of us weren't exactly sure which type of signage to further develop and we weren't sure of what available resources Mundo Gardens had that could feasibly make the signs. So, once the entire group decided to
+                            visit Mundo Gardens again, we decided to explore around the garden for available materials. This ensured that the three of us knew exactly what the garden space had and didn't have, which would limit the potential types of signage to make.
+                        </p>
+                        <p class="genText1">
+                            Mundo Gardens was not very well funded and most likely could not invest in financially costly efforts, so the three of us mostly scavenged the garden for available resources.
+                            Most of the resources found were within and behind the garden's small shed. We experimented with cutting tools, branches, a wooden pallet, string, and other materials to
+                            configure and make the signs. There were not any materials or walls that could afford the making and hanging of large, noticable signs, so the prototypes that our team would
+                            be able to develop for the rest of the project would be smaller wooden signs for crops.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/buildingProcess1.png" alt="" class="backgroundImage halfWidth equivHeight">
+                        <img src="mediaFiles/images/design/MundoGardens/buildingProcess2.png" alt="" class="backgroundImage halfWidth equivHeight">
+                        <figcaption class="imageCaption"><i class="centeredText">Branches, a shear, and a wooden pallet were some of the materials that we scavenged to attempt making the signs.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/buildingProcess3.jpg" alt="" class="backgroundImage halfWidth equivHeight">
+                        <img src="mediaFiles/images/design/MundoGardens/buildingProcess5.png" alt="" class="backgroundImage halfWidth equivHeight">
+                        <figcaption class="imageCaption"><i class="centeredText">Wooden boards were made from sawing the pallet, and branches with tied string would be used as support stands for an initial prototype of a sign.</i></figcaption>
+                    </figure>
+                    <p class="genText1 span2">
+                        Janice, the executive director really liked the chalkboard idea that our group suggested during a previous visit, and so she started painting a white section on the side of the shed, where the chalkboard would occupy,
+                        and would apply black chalkboard paint on it. There would also be a bulletin board placement next to the chalkboard. Janice and the volunteers finished building them quickly within the project timeframe.
+                    </p>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/signBoard1.png" alt="" class="backgroundImage halfWidth equivHeight">
+                        <img src="mediaFiles/images/design/MundoGardens/signBoard4.jpg" alt="" class="backgroundImage halfWidth equivHeight">
+                        <figcaption class="imageCaption"><i class="centeredText">Janice painted the section on the side of the shed, where the black chalkboard and accompanying bulletin board would be made.</i></figcaption>
+                    </figure>
+                    <!-- <figure class="imageTile">
+                        <figcaption class="imageCaption"><i class="centeredText">The finished black chalkboard with the bulletin board.</i></figcaption>
+                    </figure> -->
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="userTesting">User Testing</h2>
+                    <p class="genText1 span2">
+                        My teammates helped to print out versions of the digital mockups for the potential signs and even make popsicle stick physical prototypes to mimick signs for garden crops. We presented these and the rough wooden boards of the signage to the volunteers and local visitors.
+                        Each of the 9 people who participated the user testing were able to view the different types of signage and self-report their personal ratings (represented as numbers on a 5-point Likert scale) of the signs based on three different aspects.
+                    </p>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/userTesting1.png" alt="" class="backgroundImage halfWidth">
+                        <img src="mediaFiles/images/design/MundoGardens/userTesting2.jpg" alt="" class="backgroundImage halfWidth">
+                        <figcaption class="imageCaption"><i class="centeredText">Both paper and early physical prototypes were shown as participants were able to look at the signs and provide their responses on user testing handout sheets.</i></figcaption>
+                    </figure>
+                    <div class="gridContent span2">
+                        <p class="genText1">
+                            <b class="boldText">Functionality of the Signs</b> - Do the signs effectively educate the viewer about the crops or the garden?
+                        </p>
+                        <p class="genText1">
+                            <b class="boldText">Visual Aesthetics</b> - How appealing or desirable were the appearances and design of the signs?
+                        </p>
+                        <p class="genText1">
+                            <b class="boldText">Simplicity and Clarity</b> - How clear were the signs in communicating their role of the garden to participants? Was the purpose of the signs intuitive enough to understand?
+                        </p>
+                    </div>
+                    <div class="flexContent span2">
+                        <figure>
+                            <figcaption class="imageCaption"><i class="centeredText">Summary Table of User Testing Results</i></figcaption>
+                            <table class="userFeedback">
+                                <tr class="subsectionHeadings">
+                                    <th>Criterion</th>
+                                    <th>Average Likert Score<br>(out of 5)</th>
+                                    <th>Feedback</th>
+                                </tr>
+                                <tr>
+                                    <td>Functionality</td>
+                                    <td>From 1 being that the signs did not fulfill their purpose in educating the viewer about the crops or the garden, to a 5 being that the signs absolutely educates the viewer, the average score was a <b class="boldText">4.86</b>.</td>
+                                    <td>
+                                        Participants liked a lot of the educational aspects about the signs along with the portrayal of both the images
+                                        on the signs and the materials used to make some of the signs. They thought the signs helped the garden become
+                                        more self-sustaining with navigable crops around the garden. One concern that was mentioned was being able to
+                                        make the signs mobile and interchangeable for longer-term maintainability to switch out the naming of the crops.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Aesthetics</td>
+                                    <td>From 1 being that the signs were not aesthetically pleasing at all, and 5 being that the signs were engaging and well-made, the average score was a <b class="boldText">4.66</b>.</td>
+                                    <td>
+                                        Participants also lieked the portrayal of both the portrayed images and the materials used to make some of the signs.
+                                        Volunteers commented that the colors and content of the signs made them engaging. Finally, participants loved
+                                        the idea of customizable content and formatting of material. One volunteer noted the lack pictures of real plants.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Simplicity and Clarity</td>
+                                    <td>From 1 being that the signs were overly complicated and super unclear, to 5 being that the signs were very simple and clear, the average score was a <b class="boldText">5.0</b>.</td>
+                                    <td>
+                                        Participants seemed to easily understood the signs and their intended purpose. Most of the advice suggested was to
+                                        make sure the content was fully flushed out in the final designs of the signs.
+                                    </td>
+                                </tr>
+                            </table>
+                        </figure>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="iterations">Iterations</h2>
+                    <p class="genText1">
+                        During the process of making the signs, there was a lot of difficulty trying to utilize the wooden stands made of branches to support the signs.
+                        We also noticed that there were plenty of spots near the ground throughout the garden crops that the wooden signs could easily lean against while
+                        still making the signs visible and easy to view, so the three of us decided to abandon the aspect of utilizing stands to properly place the
+                        signage and instead focused our efforts on finishing up on the signage.
+                        <br>
+                        <br>
+                        For the remaining time that we had, we decided to focus on being able to deliver one aspect of the signage, which was to facilitate the
+                        classification of the crops to make them more noticeable around the garden. We quickly sketched out different names of the crops along with
+                        simple drawings associated with the crops.
+                    </p>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/iterationSketches.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i class="centeredText">Sketches of the different types of crop signage with associated drawings of crops for each.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Making More Signs</h4>
+                        <p class="genText1">
+                            With the advent of more art supplies (such as paint, paintbrushes, and cups of water for cleaning paintbrushes) and a better understanding of the available materials and construction tools
+                            at the garden, we cut up more boards to paint them, dried up the boards, and painted some of the sketches afterwards.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/iteration1.png" alt="" class="backgroundImage halfWidth equivHeight">
+                        <img src="mediaFiles/images/design/MundoGardens/iteration2.png" alt="" class="backgroundImage halfWidth equivHeight">
+                        <figcaption class="imageCaption"><i class="centeredText">Wooden boards from wooden pallets were painted brown and left to dry. Then, we incorporated the sketches of the garden crop signs into the painting process of the wooden boards.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Making a Welcoming Sign</h4>
+                        <p class="genText1">
+                            We attempted to make a special community sign that said “Welcome to Mundo Gardens”. We had to find zip-ties, bearings, and thicker rope to create the sign in addition to painting it.
+                            The welcoming sign would be configured with three pieces of painted wooden boards connected through zip-ties and it would have a string that afforded the sign to be hung.
+                        </p>
+                    </article>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/iteration3.png" alt="" class="backgroundImage halfWidth">
+                        <img src="mediaFiles/images/design/MundoGardens/iteration5.png" alt="" class="backgroundImage halfWidth">
+                        <figcaption class="imageCaption"><i class="centeredText">More construction tools and painting were needed to make the desired welcome sign.</i></figcaption>
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalDesigns">Final Designs</h2>
+                    <p class="genText1 span2">
+                        Signage around Mundo Gardens provide simple illustrations for identifying crops and are made of affordable materials, which sustainably enable volunteers to facilitate garden navigation,
+                        improve the garden landscape, and entice future volunteers to curiously engage with the garden better. Potential applications of the signage can expand further to be integrated within
+                        Mundo Gardens community outreach events for painting artists and other people to help paint the signs as well.
+                    </p>
+                    <figure class="imageTile marginBottom span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution1.png" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageTile marginBottom span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution2.png" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageTile marginBottom span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution3.png" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution4.png" alt="" class="backgroundImage">
+                    </figure>
+                    <p class="genText1 span2">
+                        The signs can be easily and cheaply made using the garden's existing resources, while using existing affordances from the crops, bricks, stones, or even fences to help support the wooden signs (or hang the welcome sign).
+                    </p>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution5.png" alt="" class="backgroundImage halfWidth">
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution6.png" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/MundoGardens/finalSolution7.png" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="implementation">Implementation</h2>
+                    <p class="genText1">
+                        In addition to the signage, we helped to create a <a rel="external" href="https://docs.google.com/document/d/1i_n8ar8v2y08Opu2Cm_qPYsfVEG_4GHT0-KfOArkELw/edit?usp=sharing" target="_blank" class="externalLink">Signage Instruction Manual</a> document
+                        to enable the volunteers to understand the process behind making the signage so that they are able to more easily replicate and adapt the signage for their persona usage. This was handed off to Janice and the volunteers for future usage in case
+                        the signage may wear down or if they need to make more signs.
+                    </p>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/MundoGardens/manualImplementation.jpg" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="resultsReflection">Results and Reflection</h2>
+                    <p class="genText1 span2">
+                        We gave them the signs to use for their crops and even shared our knowledge of the signs to them so that they could help themselves figure out how to best utilize the signage, either for their own garden crops, for community outreach events, and other initiatives that they might have.
+                        A follow up conversation with Janice ensured that, at the very least, the chalkboard would prove useful for volunteer management and logistics. Mundo Gardens is currently working with other student group in part of the Global TIES program and course to continue future developments and
+                        projects.
+                    </p>
+                    <p class="genText1 span2">
+                        I was student lead in this project, but I really witnessed first hand just how much of a leader some of my other team members were through their actions. It was the first experience that I
+                        had working with potential client with real-world problems. I learned firsthand just how much of an impact design can potentially have, and just how important implementation was over good
+                        design of an idea as well as designing with both short-term and long-term goals in mind. Showing leadership within the project really was about listening and working with people, for people,
+                        and that has helped me in future projects to not lose sight of the bigger picture in mind when designing anything.
+                    </p>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="improvements">Improvements</h2>
+                    <p class="genText1 span2">
+                        With more time and planning, here is what I would have gone about improving this project differently for next steps.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Reaching Out to More People and Organizations</h4>
+                        <p class="genText1">
+                            Ethnographic research techniques, such as contextual inquiry, seem to be applicable to developing sound findings and insights about how Mundo Garden volunteers currently go about outreaching, in-person,
+                            for other organizations and events that they participate in. More importantly, this could help our team truly understand firsthand how they currently approach managing their volunteers each day, raise
+                            awareness and interest for their cause, and other important dimensions of the volunteer management topic. We could even learn from other organizations that Mundo Gardens partnered with to see how they
+                            currently approach volunteer management that is different from Mundo Gardens' approach.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Researching Alternative, Do-It-Yourself Methods for Signage</h4>
+                        <p class="genText1">
+                            Because the signage was limited to a chalkboard and wooden boards, there could be room to explore on what push and pull factors local residents of National City have to be interested in Mundo Gardens'
+                            cause, thus rethinking on how to market Mundo Gardens to raise National City residents' attention to its cause other than typical advertising and social media presence.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Understanding the Local Mentality for Education and Nutrition</h4>
+                        <p class="genText1">
+                            Social activism and community change for Mundo Gardens' mission to promote well-being and nutritional health for people involved a keen understanding of the culture and attitudes that most residents accept in terms of
+                            food that they resort to, why they resort to the food, how they leverage institutionalized establishments to self-maintain their lifestyles, and their perspectives towards non-profits like Mundo Gardens.
+                            Gaining those insights can further inform Mundo Gardens of just how residents in National City understand their culture and their viewpoint on non-profits.
+                        </p>
+                    </article>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="social">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="social">Email</a>
-                 to follow up.
-             </p>
-            <p>Wayne Phung 2019</p>
+            <p class="genText1 maxWidth650">That's the end of the design case study! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...Or reading another design project?</h4>
+                <!-- <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'DesignLeap.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeap.html" class="button projectButton">Read Case Study</a> -->
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeap.html';">Read Case Study</button> -->
+                    <!-- </article>
+                </div> -->
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or maybe explore one of my media projects?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                        <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                        <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TCLCVideo.html';">
+                    <img class="mediaImage" id="tclcVideo" src="mediaFiles/images/media/tclcVideo.png" alt="image" onclick="window.location.href = 'TCLCVideo.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">TCLC Rap Video</h3>
+                        <p class="genText1">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                        <a rel="external" href="TCLCVideo.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                        <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                        <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'YonderDynamics.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/yonderDynamics.png" alt="image" onclick="window.location.href = 'YonderDynamics.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">YD Competition Videos</h3>
+                        <p class="genText1">Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                        <a rel="external" href="YonderDynamics.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <img class="mediaImage" src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="image" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Artist GIFs Event Marketing</h3>
+                        <p class="genText1">These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                        <a rel="external" href="ArtistGIFs.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/asceTribute.png" alt="image" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">ASCE 2017-18 Tribute</h3>
+                        <p class="genText1">This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
+                        <a rel="external" href="ASCETribute1718.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'Wellfest.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellfest2018.png" alt="image" onclick="window.location.href = 'Wellfest.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">1st Annual Wellfest</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                        <a rel="external" href="Wellfest.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'wellnessFair.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellnessFair2018.png" alt="image" onclick="window.location.href = 'wellnessFair.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Wellness Fair</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellness Fair, an event focused on the seven dimensions of wellness.</p>
+                        <a rel="external" href="wellnessFair.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <p class="genText1 span2">Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

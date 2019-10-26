@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,191 +28,456 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
-        <section class="caseStudySol beginning mediaStudy">
+        <div class="bodyGrid gridType6 mediaIntro beginning mediaStudy">
+            <section class="caseStudySol">
+                <h1 class="caseStudySol caseBigTitle greeting span2">Triton Television Reel</h1>
+                <p class="caseStudyIntro largeText">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                <!-- <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a> -->
+            </section>
+            <div class="video">
+                <iframe class="youTube" src="https://www.youtube.com/embed/uQnnd5la29Q" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- <section class="caseStudySol beginning mediaStudy">
             <h1 class="caseStudySol greeting span2">Triton Television Reel</h1>
             <p class="caseStudyIntro">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
             <a href="#overview" class="seeProcess button workButton">Learn How I Made The Video</a>
             <div class="video">
                 <iframe class="youTube" src="https://www.youtube.com/embed/uQnnd5la29Q" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-        </section>
+        </section> -->
         <div class="work mediaContent">
             <nav class="navSideBar">
                 <ul class="tableOfContents" id="ttvTOC">
                     <li><a class="navButton" href="#overview" data-index="0">Overview</a></li>
-                    <li><a class="navButton" href="#process" data-index="1">Process</a></li>
-                    <li><a class="navButton" href="#projectSetup" data-index="2">Project Setup</a></li>
-                    <li><a class="navButton" href="#mediaFiles" data-index="3">Getting Media Files</a></li>
-                    <li><a class="navButton" href="#firstDraft" data-index="4">First Draft</a></li>
-                    <li><a class="navButton" href="#evaluation" data-index="5">Evaluation</a></li>
-                    <li><a class="navButton" href="#iterating" data-index="6">Iterating</a></li>
-                    <li><a class="navButton" href="#finalDraft" data-index="7">Final Draft</a></li>
-                    <li><a class="navButton" href="#results" data-index="8">Results</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="9">Reflection</a></li>
+                    <li><a class="navButton" href="#videoChallenge" data-index="1">Video Challenge</a></li>
+                    <li><a class="navButton" href="#projectProcess" data-index="2">Project Process</a></li>
+                    <li><a class="navButton" href="#firstDraft" data-index="3">First Draft</a></li>
+                    <li><a class="navButton" href="#iterating" data-index="4">Iterating</a></li>
+                    <li><a class="navButton" href="#finalDraft" data-index="5">Final Draft</a></li>
+                    <li><a class="navButton" href="#results" data-index="6">Results</a></li>
+                    <li><a class="navButton" href="#reflection" data-index="7">Reflection</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section" id="overview">Overview</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="process">Process</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="projectSetup">Project Setup</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="mediaFiles">Getting Media Files</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="firstDraft">First Draft</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="evaluation">Evaluation</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="iterating">Iterating</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalDraft">Final Draft</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="results">Results</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="section sectionHeadings" id="overview">Overview</h2>
+                <section class="bodyGrid gridType3 overviewGrid">
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="text genText1">This was an independent video editing project for Triton Television (TTV).</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="text genText1">To update TTV's existing 2015 reel and represent the diverse pool of student talent in a medium that TTV knows best, through video.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="text genText1">2 months</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
+                    <p class="text genText1">I managed all of the video assets that was gathered and received from other people within TTV. I independently edited all of the drafts and made changes to each iteration.</p>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="text genText1">Google Drive, Premiere Pro.</p>
+                    <h3 class="subheading subsectionHeadings">Affiliations</h3>
+                    <p class="text genText1">Triton Television (TTV)</p>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="videoChallenge">Video Challenge</h2>
+                    <article class="gridContent span1200">
+                        <h4 class="subheading subsectionHeadings">Background</h4>
+                        <p class="text genText1">
+                            Triton Television is a student-led organization at UC San Diego. It has and remains a hub for student filmmakers to learn and apply their craft for photography,
+                            cinematography, creative writing, acting, sound, editing and many other skills. Over the years, many video projects have been showcased during weekly General
+                            Body Meetings (GBMs) that TTV hosts and plenty of projects get handed off to TTV. The reel has served as a way to introduce student talent in film and media
+                            production for those unfamiliar to TTV and persuade prospective students to join.
+                        </p>
+                    </article>
+                    <figure class="ttvReel imageContainer transparent span1200">
+                        <img src="mediaFiles/images/media/TTVReel/ttvWebsite.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Landing page of the <a rel="external" href="http://ttv.ucsd.edu/" target="_blank" class="externalLink">Triton Television website</a>.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Task</h4>
+                        <p class="text genText1">
+                            The reel had not been updated for the past 4 years, which was not reflective of the current student projects and coverage that TTV was involved in. The reel
+                            must be short enough for people to understand the work that TTV has created, but incorporate quite a range of footage that represents what TTV currently does.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Constraints Faced</h4>
+                        <p class="text genText1">
+                            <u class="boldText">The reel must have quality footage.</u>
+                            <br>
+                            It would be impossible to include all of the hours of student films, event coverage, and other projects made into a short reel. Because the reel would be incorporated
+                            in more public settings and mediums, such as YouTube and ad-hoc screenings, there was a certain subjective standard and quality that the chosen footage should have since
+                            the reel is synonymous with TTV's reputation as a student film and media production organization. This made it difficult to decide which footage to showcase in the reel
+                            and which footage to exclude.
+                        </p>
+                        <p class="text genText1">
+                            <u class="boldText">The reel needed to best represent the wide range of projects and settings captured.</u>
+                            <br>
+                            TTV does more than just make student films. Members of TTV have volunteered for event coverage related to on-campus events, directed different school projects for classes,
+                            and even captured amazing moments from concerts. Chosen footage would have to communicate these different settings very quickly for people to understand the footage.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="projectProcess">Project Process</h2>
+                    <article class="gridContent span1200">
+                        <h4 class="subheading subsectionHeadings">Understanding the Project</h4>
+                        <p class="genText1 span1200">
+                            I met with a couple of admin members within TTV to discuss inquiries and considerations for the reel as well as to understand what it meant to create the reel.
+                            They mentioned the importance of not just the brevity of the length of the video, but to include only a widely diverse set of the highest quality footage within the reel.
+                            I understood the stakes that justified the certain level of quality the reel needed to maintain for TTV's branding and marketing reasons, and I sought after
+                            inspiration on YouTube for existing film reels.
+                        </p>
+                    </article>
+                    <figure class="ttvReel imageContainer transparent span1200">
+                        <img src="mediaFiles/images/media/TTVReel/reel2015.jpg" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Looking at the <a rel="external" href="https://www.youtube.com/watch?v=5FUFhGRAVlQ&t=13s" target="_blank" class="externalLink">TTV Reel 2015</a> gave me insights of the best practices of cinemtography and editing that it had.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span1200">
+                        <h4 class="subheading subsectionHeadings">Getting and Managing Media Files</h4>
+                        <p class="genText1">
+                            Over the course of several months, I sent out multiple reminders to a public TTV Slack channel as well as individual private messages for people to upload their
+                            work into a Google Drive folder dedicated to storing footage for the reel. This ensured secure storage and management of files by having a digital back up of
+                            footage, which was sorted by folders named after each individual's submitted work. A similar folder structure would be replicated in Premiere Pro (a video editor program by Adobe).
+                        </p>
+                    </article>
+                    <figure class="ttvReel imageContainer transparent span1200">
+                        <img src="mediaFiles/images/media/TTVReel/gDriveFolder.png" alt="" class="backgroundImage">
+                        <figcaption class="imageCaption"><i>Folder structure that emerged from people who submitted their video work.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span1200">
+                        <h4 class="subheading subsectionHeadings">Finding and Remixing a Soundtrack</h4>
+                        <p class="genText1">
+                            Then, I decided to find a soundtrack that was suitable for the reel. My preference was to find a soundtrack that had tempo changes, some energy in its beat,
+                            a bit of suspense, and plenty of layering of different tunes and beats. Finding a Creative Commons license song on YouTube that had a compelling, dynamic
+                            music track was not an easy endeavor, but I eventually found this song to be a great fit for the video,
+                            <a rel="external" href="https://www.youtube.com/watch?v=2hWwCQFbn5Q" target="_blank" class="externalLink">Interstellar Travel by Mark Tyner</a>.
+                            I remixed the soundtrack to make it fit within slightly over 2 minutes for the reel. Feel free to hear the initial remixed version.
+                        </p>
+                    </article>
+                    <div class="gridContent span1200" id="ttvSoundtrack">
+                        <figure class="ttvReel imageContainer transparent marginBottom span1200">
+                            <img src="mediaFiles/images/media/TTVReel/interStellarTravel.png" alt="" class="backgroundImage">
+                            <figcaption class="imageCaption"><i>YouTube soundtrack found.</i></figcaption>
+                        </figure>
+                        <figure class="ttvReel imageContainer transparent span1200">
+                            <audio controls>
+                                <source src="mediaFiles/videos/TTVReel/1stDraftSoundtrack.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                            </audio>
+                            <figcaption class="imageCaption"><i>Remixed soundtrack used for the first draft.</i></figcaption>
+                        </figure>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Editing and Choosing Footage</h4>
+                        <p class="genText1">
+                            With hours of footage organized and assembled on Premiere Pro and with the soundtrack chosen, I glanced through the video footage and selected those that
+                            have the potential to best showcase the reel. There were some sections of the reel that incorporated a series of related parts for specific video works chosen.
+                            I allowed the initial process to let myself explore and experiment with the footage gathered. Although some of the clips seemed to fit really well with some
+                            of the parts of the soundtrack, I was not too committed with other clips that may not showcase strong cinematography (clips that had interesting, dynamic
+                            framing/movement of objects and camera views), or that didn't contribute to the spectrum of projects that TTV covered (event coverage, film festival works, etc.).
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Example of Initial Clips Considered</h4>
+                        <p class="genText1">
+                            This was a series of clips from Cole Takayama's short film <a rel="external" href="https://www.youtube.com/watch?v=0DETBkANowQ&t=36s" target="_blank" class="externalLink">"A Beautiful View"</a>
+                            that was largely considered as the opening of the reel. These were initially considered because of how well the shots framed the characters and camera movements
+                            between the clips while having outside environments that were uniquely different from other student works. However, it remained at large as to how well it can best
+                            represent TTV's branding and craft for film and media production.
+                        </p>
+                    </article>
+                    <figure class="gifTile">
+                        <video class="autoplayVideo chosenClip2Play" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/ChosenClip2.mp4" type="video/mp4">
+                        </video>
+                        <button class="chosenClip2Play playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                    </figure>
+                    <p class="genText1">
+                        Another series of clips that I felt more committed to was from Trae Whyte's film <a rel="external" href="https://vimeo.com/220423860" target="_blank" class="externalLink">"Koulan"</a>.
+                        The close-up camera views of the dancers' facial expressions and their dynamic dance movements made the clips incredibly simple for anyone to interpret what the clips conveyed in a short
+                        amount of time. The types of clips from this film that would best represent TTV's potential body of work and skills were promising, but yet to be properly ordered to largely contribute to
+                        the storytelling of the reel.
+                    </p>
+                    <figure class="gifTile">
+                        <video class="autoplayVideo chosenClip3Play" poster="mediaFiles/videos/TTVReel/ChosenClip3.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/ChosenClip3.mp4" type="video/mp4">
+                        </video>
+                        <button class="chosenClip3Play playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                    </figure>
+                    <p class="genText1">
+                        These clips were taken from different on-campus events and were more geared towards festivals and concerts. Although the clips were rich with visual details to give the viewer enough context of
+                        what events and concert coverage look like, they seem to be busy with lots of people, lights, and objects happening and a cohesive narrative would be lost. Some of the shots would be carefully
+                        chosen and excluded for future drafts and further experimentation of the order of the clips.
+                    </p>
+                    <figure class="gifTile noBottom">
+                        <video class="autoplayVideo chosenClip4Play" poster="mediaFiles/videos/TTVReel/ChosenClip4.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/ChosenClip4.mp4" type="video/mp4">
+                        </video>
+                        <button class="chosenClip4Play playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                    </figure>
+                </section>
+                <div class="bodyGrid gridType1 span2">
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Visual Effects</h4>
+                        <p class="genText1">
+                            From prior inspiration of film reels found online, most contained little to no added effects to the original footage. This meant that the footage should remain the primary
+                            focus, with minimal amount of edits included to enhance the storytelling or flow of the reel. This was also an exploratory phase to not just experiment with the footage itself
+                            but to determine how transitions and effects crucialy contribute to the reel. Below are a couple of examples of transitions that were later removed or improved.
+                        </p>
+                    </article>
+                    <figure class="gifTile">
+                        <p class="boldText category">Film Grunge</p>
+                        <video class="autoplayVideo chosenClip1Play" poster="mediaFiles/videos/TTVReel/ChosenClip1.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/ChosenClip1.mp4" type="video/mp4">
+                            </video>
+                            <button class="chosenClip1Play playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                        </figure>
+                        <figure class="gifTile">
+                            <p class="boldText category">Light Flare</p>
+                            <video class="autoplayVideo vfx" poster="mediaFiles/videos/TTVReel/vfx.png" muted loop>
+                                <source src="mediaFiles/videos/TTVReel/vfx.mp4" type="video/mp4">
+                                </video>
+                                <button class="vfx playVideo" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Video</button>
+                            </figure>
+                        </div>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="firstDraft">First Draft</h2>
+                    <p class="genText1 span2">
+                        The first draft had more sections of related footage from the same works. But with other sections that had more random footage strewn together, there was something
+                        (or some things) missing within this draft to tell an effective story of what TTV is. Nevertheless, this draft enabled me to truly understand first-hand of how to
+                        paint a picture of student work within TTV.
+                    </p>
+                    <div class="video span2">
+                        <iframe class="gDrive videoDraft" src="https://drive.google.com/file/d/11_WHGzoYC_oQlJz2mvyH9ZPtXF4cPylh/preview" allowfullscreen></iframe>
+                    </div>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Evaluation and Feedback</h4>
+                        <p class="genText1">
+                            I showed the reel to three of the student executive members within TTV as well as around two other random TTV members who happened to be present when I finished
+                            making the draft. Besides the need to eventually incorporate color correction and grading for stylizing the footage, changes were needed to create a stronger,
+                            more interesting narrative of the reel. One person specifically shared his opinions of which shots were good, okay, or not good enough (many were not good
+                            enough) while another person helped to clarify some of the things to look for that qualifies video clips to be included in the reel. It was a reminder for me to
+                            show only the best clips that best contribute to the narrative the reel should capture, and to remain flexible in experimenting with other clips.
+                        </p>
+                        <p class="genText1">
+                            Furthermore, there were some issues with the timing of the clips to certain moments of the soundtrack. some of these clips didn’t have content that was different
+                            enough to contribute within the narrative and the diverse pool of clips that should be represented in the reel. Some of my other peers also voiced that particular
+                            video clips were either not persuasive or compelling enough to want them to view more of what the reel has to offer. This meant not just creative an overarching narrative
+                            for the reel, but to be more critical of the individual contributions that each clip had to the narrative.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="iterating">Iterating</h2>
+                    <p class="genText1 span2">
+                        Future drafts captured some more creative uses of some of the edits by adding more sections dedicated to concerts and events and leveraging sequences of clips to have related movement from each other.
+                        From another person's feedback, there were a lot of faces staring into the camera and just a lot of medium shots of people, so I had to continuously assess if some of the shots were too fast to be
+                        recognized or if there were other shots that could improve the diversity of the clips to tell a more compelling story. Admittedly, some of my choices for some of the clips were more biased towards key
+                        moments towards the music, but if the clips themselves seemed to evoke the right kinds of moments while still connecting well to other clips, they would be fine to keep.
+                    </p>
+                    <p class="genText1 span2">
+                        The following clips are examples of changes made from different drafts.
+                    </p>
+                    <div class="bodyGrid gridType1 videoGallery span2">
+                        <article class="gridContent span2">
+                            <h4 class="subheading subsectionHeadings">Movement and Cinematography</h4>
+                            <p class="genText1">
+                                A visible, seemingly logical connection between the spatial locations and movement of objects within the cinematography of different clips would strongly develop that narrative of TTV having
+                                high-caliber student projects that successfully execute different camera shots and different foreground/background movement of subjects.
+                            </p>
+                                <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" class="vidControlIcon">Pause Video</button> -->
+                        </article>
+                        <button class="iteration1Play playVideo span2" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Videos</button>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Older Draft (Before)</p>
+                            <video class="autoplayVideo iteration1Play" poster="mediaFiles/videos/TTVReel/iteration1.png" muted loop>
+                                <source src="mediaFiles/videos/TTVReel/iteration1.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption"><i>Placement of subjects based on their spatial location in camera shot for an earlier draft.</i></figcaption>
+                        </figure>
+                        <figure class="gifTile marginBottom">
+                            <p class="boldText category">Newer Draft (After)</p>
+                            <video class="autoplayVideo iteration1Play" poster="mediaFiles/videos/TTVReel/iteration2.png" muted loop>
+                                <source src="mediaFiles/videos/TTVReel/iteration2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption class="imageCaption shortCaption"><i>Placement of subjects based on their location and movement relative to the camera shot for a later draft.</i></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <div class="bodyGrid gridType1 videoGallery span2">
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">More Related Grouping of Shots</h4>
+                        <p class="genText1">
+                            Diversity of clips can be represented, even if the framing of the shots are similar, as long as there are notable differences in lighting, facial expressions, and movements (from subjects of the shot or from the camera).
+                            In the examples below, this would be used towards the end of the reel.
+                        </p>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" class="vidControlIcon">Pause Video</button> -->
+                    </article>
+                    <button class="iteration3Play playVideo span2" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Videos</button>
+                    <figure class="gifTile marginBottom">
+                        <p class="boldText category">Older Draft (Before)</p>
+                        <video class="autoplayVideo iteration3Play" poster="mediaFiles/videos/TTVReel/iteration3.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/iteration3.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="imageCaption shortCaption"><i>Random sequence of shots with an unclear purpose and reason why they were included. Some of the clips did not show meaningful, easily interpretable framing of subjects.</i></figcaption>
+                    </figure>
+                    <figure class="gifTile marginBottom">
+                        <p class="boldText category">Newer Draft (After)</p>
+                        <video class="autoplayVideo iteration3Play" poster="mediaFiles/videos/TTVReel/iteration4.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/iteration4.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="imageCaption shortCaption"><i>Montage of close up shots to illustrate cinematic moments from actors, all derived from different clips that can signify .</i></figcaption>
+                    </figure>
+                </div>
+                <div class="bodyGrid gridType1 videoGallery span2">
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">A Subtler, but More Meaningful Ending</h4>
+                        <p class="genText1">
+                            Earlier drafts had lots of film grunge overlays during the climatic beat drop of the soundtrack and towards the end. Keeping the tone subtle helps to achieve a stylistic, grunge look while
+                            letting the footage speak for itself and TTV's potential for achieving quality cinematic work.
+                        </p>
+                            <!-- <button class="iteration1Play pauseVideo" type="button" name="pause button"><img src="mediaFiles/images/pauseIcon.png" class="vidControlIcon">Pause Video</button> -->
+                    </article>
+                    <button class="iteration5Play playVideo span2" type="button" name="play button"><img src="mediaFiles/images/playIcon.png" alt="" class="vidControlIcon">Play Videos</button>
+                    <figure class="gifTile marginBottom">
+                        <p class="boldText category">Older Draft (Before)</p>
+                        <video class="autoplayVideo iteration5Play" poster="mediaFiles/videos/TTVReel/iteration5.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/iteration5.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="imageCaption shortCaption"><i>A lot of vaguely descriptive footage with a heavy overlay of a film grunge look, which doesn't correlate with the previous clips shown throughout the reel and the identity of TTV as a whole.</i></figcaption>
+                    </figure>
+                    <figure class="gifTile marginBottom">
+                        <p class="boldText category">Newer Draft (After)</p>
+                        <video class="autoplayVideo iteration5Play" poster="mediaFiles/videos/TTVReel/iteration6.png" muted loop>
+                            <source src="mediaFiles/videos/TTVReel/iteration6.mp4" type="video/mp4">
+                        </video>
+                        <figcaption class="imageCaption shortCaption"><i>Montage of close up shots to illustrate cinematic moments from actors, all derived from different clips that demonstrate different settings and environments that TTV's work can produce, with a subtler film grunge overlay to bring back TTV's identity.</i></figcaption>
+                    </figure>
+                </div>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="finalDraft">Final Draft</h2>
+                    <div class="video span2">
+                        <iframe class="youTube videoDraft" src="https://www.youtube.com/embed/uQnnd5la29Q" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="results">Results</h2>
+                    <p class="genText1 span2">
+                        The reel is up on YouTube to view. It is currently the featured video on TTV's YouTube channel, which
+                        will help introduce people to the work that TTV does as a student film and media production organization.
+                    </p>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/media/TTVReel/youTubeReel.png" alt="" class="backgroundImage">
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="reflection">Reflection</h2>
+                    <p class="genText1 span2">
+                        This was one of the earliest student organizations at University of California - San Diego that I have joined, and it inspired me to not just learn media and filmmaking, but it empowered me
+                        to go outside of my comfort zones to learn about filmmaking lingo, post-production software like Premiere Pro, and appreciate the power of storytelling and an excellent narrative for people
+                        to be inspired by. I would not have accomplished any of my future video projects without the guidance and support from my peers and student executive members at the organization, and I wanted
+                        this project to be a lasting legacy, an ode to the projects that were never revealed to the general public. The video would be dedicated to alumni who were students just like existing TTV members,
+                        to existing student members who want to remain involved and motivated to do good filmmmaking, and to prospective students who wanted to understand filmmaking from TTV members/students on campus.
+                        Looking back, I still remain hungry to continue learning more about post-production and other aspects of video making for the years to come.
+                    </p>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
+            <p class="genText1 maxWidth650">That's concludes the media project! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or reading another media project?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TCLCVideo.html';">
+                    <img class="mediaImage" id="tclcVideo" src="mediaFiles/images/media/tclcVideo.png" alt="image" onclick="window.location.href = 'TCLCVideo.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">TCLC Rap Video</h3>
+                        <p class="genText1">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                        <a rel="external" href="TCLCVideo.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'wellnessFair.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellnessFair2018.png" alt="image" onclick="window.location.href = 'wellnessFair.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Wellness Fair</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellness Fair, an event focused on the seven dimensions of wellness.</p>
+                        <a rel="external" href="wellnessFair.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="work designMediaWork noMargin">
+                <h4 class="caseStudy footerCase">...or maybe explore one of my design projects?</h4>
+                <div class="gridItem workGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'DesignLeapencrypted.html';">
+                    <img src="mediaFiles/images/design/DesignLeap/designLeap.png" alt="image" class="designImage" id="designLeap">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Design Leap</h3>
+                        <h6 class="tags caseTags">Service Design, Secondary Research</h6>
+                        <p class="genText1">A Design Lab incubated project to create a mentorship program revolving around students interested in UX/Design, mentors, and other relevant stakeholders.</p>
+                        <a rel="external" href="DesignLeapencrypted.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'FormfactoriesRedesign.html';">
+                    <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="image" class="designImage" id="formfactories">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Formfactories Website</h3>
+                        <h6 class="tags caseTags">UX/UI Design, User Research, Prototyping</h6>
+                        <p class="genText1">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego. This was also a client project within a design practicum course.</p>
+                        <a rel="external" href="FormfactoriesRedesign.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'FormfactoriesRedesign.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'MundoGardens.html';">
+                    <img src="mediaFiles/images/design/MundoGardens/MundoGardens.png" alt="image" class="designImage" id="mundoGardens">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Mundo Gardens</h3>
+                        <h6 class="tags caseTags">UX Design, User Research, Prototyping</h6>
+                        <p class="genText1">Collaboration with Mundo Gardens, a community garden based in National City, California, to help with their volunteer management.</p>
+                        <a rel="external" href="MundoGardens.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'MundoGardens.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery" onclick="window.location.href = 'Cinemunch.html';" id="cinemunchItem">
+                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Cinemunch</h3>
+                        <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                        <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                        <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
             <p>Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>

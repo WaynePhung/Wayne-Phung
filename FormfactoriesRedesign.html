@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,26 +23,31 @@
         <link rel="stylesheet" type="text/css" href="02-css/index.css">
 
         <!-- Title of Website -->
-        <title>Formfactories Website Redesign - Wayne Phung</title>
+        <title>Formfactories Website - Wayne Phung</title>
     </head>
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink">Design</a>
-                <a rel="external" href="media.html" class="navLink">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1">Resume/CV</a>
             </div>
         </nav>
         <div class="intro beginning gridType2" id="ffIntro">
             <section>
-                <h1 class="caseStudySol greeting span2">Formfactories Website Redesign</h1>
-                <p class="caseStudyIntro">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego.</p>
+                <h1 class="caseStudySol greeting caseTitle span2">Formfactories Website</h1>
+                <p class="caseStudyIntro largeText">A website redesign to market Formfactories’ business as a reliable 3D-printing service in San Diego.</p>
+                <p class="genText3">See the <a rel="external" href="https://www.figma.com/proto/TrbKFFmtHXJifORc0Cal3WGR/Formfactories?node-id=285%3A562&scaling=scale-down" target="_blank" class="externalLink">final desktop mockup</a> of the redesign.</p>
             </section>
             <figure class="imageContainer" id="ffImgContainer">
-                <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite.png" alt="Main page of the redesigned Formfactories website." class="backgroundImage" id="formfactoriesMain">
+                <img src="mediaFiles/images/design/FormFactories/FormfactoriesWebsite1.png" alt="Main page of the redesigned Formfactories website." class="backgroundImage" id="formfactoriesMain">
             </figure>
         </div>
         <div class="work">
@@ -43,57 +57,95 @@
                     <li><a class="navButton" href="#designChallenge" data-index="1">Design Challenge</a></li>
                     <li><a class="navButton" href="#research" data-index="2">Research</a></li>
                     <li><a class="navButton" href="#dataSynthesis" data-index="3">Data Synthesis</a></li>
-                    <li><a class="navButton" href="#creativeBrief" data-index="4">Creative Brief</a></li>
+                    <li><a class="navButton" href="#ideation" data-index="4">Ideation</a></li>
                     <li><a class="navButton" href="#prototyping" data-index="5">Prototyping</a></li>
                     <li><a class="navButton" href="#userTesting" data-index="6">User Testing</a></li>
                     <li><a class="navButton" href="#iterations" data-index="7">Iterations</a></li>
                     <li><a class="navButton" href="#finalDesign" data-index="8">Final Design</a></li>
-                    <li><a class="navButton" href="#results" data-index="9">Results</a></li>
-                    <li><a class="navButton" href="#reflection" data-index="10">Reflection</a></li>
-                    <li><a class="navButton" href="#improvements" data-index="11">Improvements</a></li>
+                    <li><a class="navButton" href="#resultsReflection" data-index="9">Results and Reflection</a></li>
+                    <li><a class="navButton" href="#improvements" data-index="10">Improvements</a></li>
                 </ul>
             </nav>
             <section class="content" data-spy="scroll" data-target="#navSideBar">
-                <h2 class="section span2" id="overview">Overview</h2>
+                <h2 class="section sectionHeadings span2" id="overview">Overview</h2>
                 <section class="bodyGrid gridType2 overviewGrid">
-                    <h3 class="subheading">Project Type</h3>
-                    <p class="text">This was both a student class project and a client project for a website redesign. The client runs a small startup 3D-printing company, Formfactories.</p>
-                    <h3 class="subheading">Objective</h3>
-                    <p class="text">To make a high-fidelity mockup of the client’s company website for Formfactories that will effectively market his 3D-printing business and services towards potential customers.</p>
-                    <h3 class="subheading">Duration</h3>
-                    <p class="text">10 weeks</p>
-                    <h3 class="subheading">My Role</h3>
+                    <h3 class="subheading subsectionHeadings">Project Type</h3>
+                    <p class="genText1">This was both a student class project and a client project for a website redesign. The client runs a small startup 3D-printing company, Formfactories.</p>
+                    <h3 class="subheading subsectionHeadings">Objective</h3>
+                    <p class="genText1">To make a high-fidelity mockup of the client’s company website for Formfactories that will effectively market his 3D-printing business and services towards potential customers.</p>
+                    <h3 class="subheading subsectionHeadings">Duration</h3>
+                    <p class="genText1">10 weeks</p>
+                    <h3 class="subheading subsectionHeadings">My Role</h3>
                     <div class="gridContent">
-                        <p class="text">I contributed to most, if not all of the tasks needed for the website redesign. This includes the following.</p>
+                        <p class="genText1">I contributed to most, if not all of the tasks needed for the website redesign. This includes the following: </p>
                         <ul>
-                            <li><b>User Research</b> - Interviews, Competitive Analysis</li>
-                            <li><b>Data Synthesis</b> - Personas, User Scenarios, and Use Cases</li>
-                            <li><b>Prototyping</b> - Creative Brief, Information Architecture, Sketches, Wireframing</li>
-                            <li><b>Iteration</b> - User Testing, Design Requirements and Feedback Implementation</li>
+                            <li><b class="boldText">User Research</b> - Interviews, Competitive Analysis</li>
+                            <li><b class="boldText">Data Synthesis</b> - Personas, User Scenarios, and Use Cases</li>
+                            <li><b class="boldText">Prototyping</b> - Creative Brief, Information Architecture, Sketches, Wireframing</li>
+                            <li><b class="boldText">Iteration</b> - User Testing, Design Requirements and Feedback Implementation</li>
                         </ul>
                     </div>
-                    <h3 class="subheading">Tools</h3>
-                    <p class="text">Google Suite, Figma</p>
-                    <h3 class="subheading">Core Team</h3>
-                    <p class="text">Alexander Chen, Denise Tang, Lixiang (Janice) Zhou</p>
-                    <h3 class="subheading">Mentors</h3>
+                    <h3 class="subheading subsectionHeadings">Tools</h3>
+                    <p class="genText1">Google Suite, Figma</p>
+                    <h3 class="subheading subsectionHeadings">Core Team</h3>
+                    <p class="genText1">Alexander Chen, Denise Tang, Lixiang (Janice) Zhou</p>
+                    <h3 class="subheading subsectionHeadings">Mentors</h3>
                     <div class="gridContent">
-                        <p class="text"><b>David Kirsh</b> - He is a professor within the Cognitive Science department at University of California - San Diego. He taught the course in which this website was revolved around (Practicum in Pro Web Design), helped to teach the fundamentals of working with clients, and give constructive critique on the progress of our team’s website.</p>
-                        <p class="text"><b>Adam Mekrut, Trevor Elwell, and Emily Nguyen</b> - These were the TAs that facilitated the course. They gave insights, guidance, and critique to our group’s progress.</p>
+                        <p class="genText1"><i>David Kirsh</i> - He is a professor within the Cognitive Science department at University of California - San Diego. He taught the course in which this website was revolved around (Practicum in Pro Web Design), helped to teach the fundamentals of working with clients, and give constructive critique on the progress of our team’s website.</p>
+                        <p class="genText1"><i>Adam Mekrut, Trevor Elwell, and Emily Nguyen</i> - These were the TAs that facilitated the course. They gave insights, guidance, and critique to our group’s progress.</p>
                     </div>
+                    <!-- <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Project Type</h3>
+                        <p class="genText1">This was both a student class project and a client project for a website redesign. The client runs a small startup 3D-printing company, Formfactories.</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Objective</h3>
+                        <p class="genText1">To make a high-fidelity mockup of the client’s company website for Formfactories that will effectively market his 3D-printing business and services towards potential customers.</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Duration</h3>
+                        <p class="genText1 centeredText">10 weeks</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Tools</h3>
+                        <p class="genText1 centeredText">Google Suite, Figma</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">My Role</h3>
+                        <div class="gridContent">
+                            <p class="genText1">I contributed to most, if not all of the tasks needed for the website redesign. This includes the following.</p>
+                            <ul>
+                                <li><b class="boldText">User Research</b> - Interviews, Competitive Analysis</li>
+                                <li><b class="boldText">Data Synthesis</b> - Personas, User Scenarios, and Use Cases</li>
+                                <li><b class="boldText">Prototyping</b> - Creative Brief, Information Architecture, Sketches, Wireframing</li>
+                                <li><b class="boldText">Iteration</b> - User Testing, Design Requirements and Feedback Implementation</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Core Team</h3>
+                        <p class="genText1 centeredText">Alexander Chen, Denise Tang, Lixiang (Janice) Zhou</p>
+                    </article>
+                    <article class="gridContent">
+                        <h3 class="subheading subsectionHeadings centeredText">Mentors</h3>
+                        <div class="gridContent">
+                            <p class="genText1"><i>David Kirsh</i> - He is a professor within the Cognitive Science department at University of California - San Diego. He taught the course in which this website was revolved around (Practicum in Pro Web Design), helped to teach the fundamentals of working with clients, and give constructive critique on the progress of our team’s website.</p>
+                            <p class="genText1"><i>Adam Mekrut, Trevor Elwell, and Emily Nguyen</i> - These were the TAs that facilitated the course. They gave insights, guidance, and critique to our group’s progress.</p>
+                        </div>
+                    </article> -->
                 </section>
                 <section class="bodyGrid strideProblem">
-                    <h2 class="section span2" id="designChallenge">Design Challenge</h2>
+                    <h2 class="section sectionHeadings span2" id="designChallenge">Design Challenge</h2>
                     <article class="gridContent span2" id="probBG">
-                        <h3 class="subheading">Problem Background</h3>
-                        <p class="text marginLeft">
+                        <h4 class="subheading subsectionHeadings">Problem Background</h4>
+                        <p class="genText1">
                             Within our team, Alexander was able to connect us with a client that needed a website. Our client, Michael Armbruster, the owner of Incept 3D,
                             wanted a website that would automate the process of 3D-printing orders for his partner company, Formfactories.
                         </p>
                     </article>
                     <article class="gridContent span2">
-                        <h3 class="subheading">Solution</h3>
-                        <p class="text marginLeft">
+                        <h4 class="subheading subsectionHeadings">Solution</h4>
+                        <p class="genText1">
                             We designed a high-fidelity mockup of Formfactories’ website on both mobile and desktop to incorporate aspects of the
                             ordering process of obtaining a 3D-printed part, keeping track of orders, and getting information about the 3D printers and materials that
                             Formfactories hosts.
@@ -101,255 +153,1052 @@
                     </article>
                 </section>
                 <section class="bodyGrid gridType1">
-                    <h2 class="section span2" id="research">Research</h2>
+                    <h2 class="section sectionHeadings span2" id="research">Research</h2>
                     <article class="gridContent span2">
-                        <h3>Interviews</h3>
-                        <p class="marginLeft">
+                        <h4 class="subheading subsectionHeadings">Interviews</h4>
+                        <p class="genText1">
                             We interviewed with Michael to pinpoint his needs and understandings of his potential website. We also asked people who were familiar with
                             3D-printing on what their needs were with 3D-printing. Below are highlights from some of the notes gathered that informed us of prioritizing
                             specific features of the website.
                         </p>
                     </article>
-                    <article class="gridContent">
-                        <h4>Client’s Perspectives</h4>
-                        <p>Below are the client's responses  that explain the connection between his company's business and the website.</p>
-                        <ul class="marginLeft">
-                            <li>
-                                <b>Purpose of Business</b> - Formfactories is a 3D printing company and serves the middle market. Formfactories produces quick
-                                prototypes in plastic. The goal of Formfactories is to have as much automation as possible. Customers place orders through
-                                Formfactories, Formfactories prints the file and delivers the file to the client.
-                            </li>
-                            <li>
-                                <b>Purpose of Formfactories’ Website</b> - Be as prestigious as any Silicon Valley tech company, but function like Amazon where
-                                the customer gets to do everything to get their 3D printing part.
-                            </li>
-                            <li>
-                                <b>Types of People that Use the Service</b> - Have a “minimalist feel”, quick, snappy, professional, and techy.
-                            </li>
-                            <li>
-                                <b>Company Brand</b> - Have a “minimalist feel”, quick, snappy, professional, and techy.
-                            </li>
-                            <li>
-                                <b>Types of People that Use the Service</b> - Majority of customers, 90% of them, are mechanical engineers, but there are niche industries that find out about 3D printing.
-                            </li>
-                            <li>
-                                <b>How Formfactories Compares to Competitors</b> - Has direct manufacturing with quick parts versus other places where they outsource their 3D printing. More transparent
-                                in its actual capabilities for 3D printing. However, other competitors claim they have a comprehensive list of 3D printing options and services to choose from.
-                            </li>
-                            <li>
-                                <b>Website Content</b> - Mostly just rewording the way they represent their products, 3D printers, printer specifications, and 3D printing material.
-                            </li>
-                        </ul>
+                    <article class="bodyGrid gridType1 table span2">
+                        <h4 class="tableHeading subsectionHeadings changeSpan1">Client’s Perspective</h4>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Purpose of the business</p>
+                            <p class="genText1">
+                                Formfactories is a 3D printing company and serves the middle market. Formfactories produces quick prototypes in plastic.
+                                The goal of Formfactories is to have as much automation as possible. Customers place orders through Formfactories,
+                                Formfactories prints the file and delivers the file to the client.
+                            </p>
+                            <p class="boldText">Purpose of Formfactories’s Website</p>
+                            <p class="genText1">
+                                Be as prestigious as any Silicon Valley tech company, but function like Amazon where the customer gets to do everything
+                                to get their 3D printing part.
+                            </p>
+                            <p class="boldText">Company Brand</p>
+                            <p class="genText1">Have a “minimalist feel”, quick, snappy, professional, and techy.</p>
+                            <p class="boldText">Types of People that Use the Service</p>
+                            <p class="genText1">
+                                Majority of customers, 90% of them, are mechanical engineers, but there are niche industries that find out about 3D printing.
+                            </p>
+                            <p class="boldText">How Formfactories compares to Competitors</p>
+                            <p class="genText1">
+                                Has direct manufacturing with quick parts versus other places where they outsource their 3D printing. More transparent in its
+                                actual capabilities for 3D printing. However, other competitors claim they have a comprehensive list of 3D printing options
+                                and services to choose from.
+                            </p>
+                            <p class="boldText">Website Content</p>
+                            <p class="genText1">
+                                Mostly just rewording the way they represent their products, 3D printers, printer specifications, and 3D printing material.
+                            </p>
+                        </div>
+                        <h4 class="tableHeading subsectionHeadings changeSpan1">Other People’s Perspectives</h4>
+                        <div class="tableBody changeSpan1">
+                            <p class="boldText">Strong Considerations When 3D Printing a Part</p>
+                            <ul class="genText1">
+                                <li>Ability to upload CAD file and get an instant quote with a time estimate of completing the order for the part.</li>
+                                <li>Control over setting up 3D printed part to make changes if needed.</li>
+                                <li>Financially expensive to outsource.</li>
+                                <li>Quality assurance and control.</li>
+                                <li>Business knows what their doing to gain trust. Impression of being knowledgeable about their business and what they do.</li>
+                                <li>Different factors to control, such as size of print, how detailed it is, how complex, supports and brims, etc.</li>
+                                <li>Have someone print the design for me.</li>
+                                <li>Materials and their usage.</li>
+                                <li>How dimensionally accurate the print is.</li>
+                                <li>Ability to print the part with the provided machines.</li>
+                            </ul>
+                        </div>
                     </article>
-                    <article class="gridContent">
-                        <h4>Other People’s Perspectives</h4>
-                        <p>Below are the considerations when people choose a 3D printing service.</p>
-                        <ul class="marginLeft">
-                            <li>Ability to upload CAD file and get an instant quote with a time estimate of completing the order for the part.</li>
-                            <li>Having control over setting up 3D printed part(s) to make changes if needed.</li>
-                            <li>3D parts can be financially expensive to outsource, so cost is essential to factor into.</li>
-                            <li>Quality assurance and control of the 3D part(s).</li>
-                            <li>It's important that the business knows what their doing to gain trust. There should be a good impression of the business being knowledgeable about their industry and what they do.</li>
-                            <li>Other factors to control for the 3D printed part(s) include size of print, how detailed the part(s) are, how complex they are, are supports and brims needed for the part(s), etc.</li>
-                            <li>3D printing materials and their usage as well as accurate dimensions of the printed part(s) are other considerations.</li>
-                            <li>There should be the ability to print the part with the provided machines.</li>
-                        </ul>
-                    </article>
+                    <!-- <div class="flexContent span2">
+                        <table class="formfactoriesResearch">
+                            <tr class="subsectionHeadings">
+                                <th>Client’s Perspective</th>
+                                <th>Other People’s Perspectives</th>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <p class="boldText">Strong Considerations When 3D Printing a Part</p>
+                                    <ul class="genText1">
+                                        <li>Ability to upload CAD file and get an instant quote with a time estimate of completing the order for the part.</li>
+                                        <li>Control over setting up 3D printed part to make changes if needed.</li>
+                                        <li>Financially expensive to outsource.</li>
+                                        <li>Quality assurance and control.</li>
+                                        <li>Business knows what their doing to gain trust. Impression of being knowledgeable about their business and what they do.</li>
+                                        <li>Different factors to control, such as size of print, how detailed it is, how complex, supports and brims, etc.</li>
+                                        <li>Have someone print the design for me.</li>
+                                        <li>Materials and their usage.</li>
+                                        <li>How dimensionally accurate the print is.</li>
+                                        <li>Ability to print the part with the provided machines.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div> -->
                     <article class="gridContent span2">
-                        <h3>Competitive Analysis</h3>
-                        <p class="marginLeft">
+                        <h4 class="subsectionHeadings">Competitive Analysis</h4>
+                        <p class="genText1">
                             We also researched some potential competitors of Incept3D and Formfactories, specifically looking into the websites of other 3D printing companies. We analyzed what notable features they
                             had based on their branding, website functionality, content, site architecture, site navigation, and visual design that could inspire features to incorporate within our redesign of Formfactories’ website.
                         </p>
                     </article>
                     <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis1.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <img src="mediaFiles/images/design/Formfactories/compAnalysisFictiv.svg" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Notes on fictiv related to their branding.</i></figcaption>
                     </figure>
                     <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis2.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <img src="mediaFiles/images/design/Formfactories/compAnalysisShapeways.svg" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Notes on Shapeways related to their website functionality.</i></figcaption>
                     </figure>
                     <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis3.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                        <img src="mediaFiles/images/design/Formfactories/compAnalysisFathom.svg" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Notes on Fathom related to content provided.</i></figcaption>
                     </figure>
-                    <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis4.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
-                    </figure>
+                    <!-- <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/competitiveAnalysis4.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption>
+                    </figure> -->
                 </section>
                 <section class="bodyGrid gridType1">
-                    <h2 class="section span2" id="dataSynthesis">Data synthesis</h2>
-                    <p class="marginLeft">
+                    <h2 class="section sectionHeadings span2" id="dataSynthesis">Data Synthesis</h2>
+                    <p class=" span2">
                         From our competitive analysis, we analyzed what notable features these companies had that could inspire features to incorporate within the website,
                         within each category (branding, functionality, content, etc.) and in general for all of our competitors.
                     </p>
-                    <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/Formfactories/dataSynthesis1.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
+                    <figure class="imageContainer span2" id="compAnalysisSynthesis">
+                        <img src="mediaFiles/images/design/Formfactories/compAnalysisSynthesis.svg" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Complete table overview of all the main competitors that we looked into, with notes on other factors such as site functionality, site architecture, and navigation.</i></figcaption>
                     </figure>
-                    <figure class="imageTile span2">
-                        <img src="mediaFiles/images/design/Formfactories/dataSynthesis2.png" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        <figcaption><i>Caption yet to be completed.</i></figcaption>
-                    </figure>
-                    <article class="gridContent span2">
-                        <h3>Personas</h3>
-                        <p class="marginLeft">
-                            We summarized our findings and understandings of Formfactories' typical stakeholders into 3 different personas to illustrate their background and needs in relation to 3D printing.
-                        </p>
-                        <figure class="imageTile span2">
-                            <img src="mediaFiles/images/design/Formfactories/persona1.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        </figure>
-                        <figure class="imageTile span2">
-                            <img src="mediaFiles/images/design/Formfactories/persona2.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        </figure>
-                        <figure class="imageTile span2">
-                            <img src="mediaFiles/images/design/Formfactories/persona3.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        </figure>
+                    <!-- <div class="flexContent span2" id="compAnalysisSynthesis">
+                        <table class="compAnalysisSynthesis">
+                            <tr class="subsectionHeadings">
+                                <th>Company</th>
+                                <th>Branding</th>
+                                <th>Functionality</th>
+                                <th>Content</th>
+                                <th>Site Architecture</th>
+                                <th>Navigation</th>
+                                <th>Design</th>
+                            </tr>
+                            <tr>
+                                <td><img src="mediaFiles/images/design/Formfactories/fictivLogo.png" alt="" class="backgroundImage"></td>
+                                <td><p class="genText1">Professional and reliable, with quality you can count on.</p></td>
+                                <td><p class="genText1">Walks you through the process of customizing your part, getting feedback, and tracking your order status.</p></td>
+                                <td><p class="genText1">High quality images, with an appeal to speed.</p></td>
+                                <td><p class="genText1">Exploratory, providing a balance of resources, information, 3D printing services, and what the company is about.</p></td>
+                                <td><p class="genText1">Informative top navigation with a clear separation of services following.</p></td>
+                                <td><p class="genText1">Great consistency. Clear presentation of information and clear layout.</p></td>
+                            </tr>
+                            <tr>
+                                <td><img src="mediaFiles/images/design/Formfactories/3DHubsLogo.png" alt="" class="backgroundImage"></td>
+                                <td><p class="genText1">Bare-bones, clear-cut information. Get the services you need.</p></td>
+                                <td><p class="genText1">Instant and automatic pricing based on specifications on types of material, attachments, and print quality applied.</p></td>
+                                <td><p class="genText1">Shows you metrics and sequential process of using service to establish credibility and clear structure of services.</p></td>
+                                <td><p class="genText1">Simple and straightforward with online management for 3D printing orders only.</p></td>
+                                <td><p class="genText1">Pick a service, select customized specifications, and schedule your order.</p></td>
+                                <td><p class="genText1">Minimalism and simplicity makes the website straight to its point.</p></td>
+                            </tr>
+                            <tr>
+                                <td><img src="mediaFiles/images/design/Formfactories/shapewaysLogo.png" alt="" class="backgroundImage"></td>
+                                <td><p class="genText1">There is a nice balance of professionalism and creativity to help onboard people.</p></td>
+                                <td><p class="genText1">Can order your part, consult a designer to walk you through your order, learn 3D printing, and shop for specific 3D printed products.</p></td>
+                                <td><p class="genText1">Can be explored in various subgroups of 3D printing: quotes for parts, 3D printing for businesses, tutorials, articles, product shopping.</p></td>
+                                <td><p class="genText1">Shows services depending on the the needs of the customer, whether its consulting, ordering a part, or making a business from ordered parts.</p></td>
+                                <td><p class="genText1">Order a part, inquire for your business 3D printing needs, explore our blogs, learn about 3D printing, there’s a lot to explore.</p></td>
+                                <td><p class="genText1">Simple but meaningful picture. The 3 steps with brief explanation work well on the mobile as on the desktop. </p></td>
+                            </tr>
+                            <tr>
+                                <td><img src="mediaFiles/images/design/Formfactories/fathomLogo.png" alt="" class="backgroundImage"></td>
+                                <td><p class="genText1">They exude expertise and being knowledgeable about specific 3D printing needs.</p></td>
+                                <td><p class="genText1">Uploading files and getting instant quotes, can change printing process.</p></td>
+                                <td><p class="genText1">Heavily informational, with tables, data, and grid structures for exploring more content.</p></td>
+                                <td><p class="genText1">Mostly articles and reviews about specific 3D printing manufacturing and materials. Other pages with careers and company values in services.</p></td>
+                                <td><p class="genText1">A great list of illustration with text that shows the process and services.</p></td>
+                                <td><p class="genText1">Monochrome.</p></td>
+                            </tr>
+                        </table>
+                    </div> -->
+                    <p class="genText1 span2">We had key takeaways and a few ideas that would help inform us of the potential features that the redesigned website could include.</p>
+                    <article class="bodyGrid gridType1 table span2">
+                        <h4 class="tableHeading subsectionHeadings changeSpan1">Takeaways</h4>
+                        <div class="tableBody changeSpan1">
+                            <p class="genText1">
+                                Some notable factors that the competitors' websites included were lead-times for finishing the 3D-printed part, cost of their services,
+                                efficiency of their 3D printing process, ability to customize 3D printed parts, how easy-to-use their service is, and an adaptive user
+                                flow that conveniently and efficiently walks the person through ordering their 3D printed part(s).
+                            </p>
+                            <p class="genText1">
+                                The overall appearance of a website can exude many different forms of professionalism and communication of 3D printed services. This
+                                would be dependent upon what specific needs and services Formfactories can provide.
+                            </p>
+                            <p class="genText1">
+                                There must be a balance between prompting the person to get a quote on their orders and showcasing information about Formfactories services
+                                so that the person can easily access relevant information that will ease their use of Formfactories's 3D printing service.
+                            </p>
+                        </div>
+                        <h4 class="tableHeading subsectionHeadings changeSpan1">Ideas from Competitors' Websites to Include</h4>
+                        <div class="tableBody changeSpan1">
+                            <p class="genText1">
+                                <b class="boldText">Action-oriented buttons</b> to encourage users to submit their files clearly visible on every page.
+                            </p>
+                            <p class="genText1">
+                                Include <b class="boldText">clear photos/graphics when listing the various 3D printing techniques</b> to help the user decide which is right for them.
+                            </p>
+                            <p class="genText1">
+                                <b class="boldText">Instant quote and estimated delivery date</b> are important to include upfront to address people's primary concerns about the costs and waiting times for Formfactories's services.
+                            </p>
+                            <p class="genText1">
+                                More novel features, such as <b class="boldText">recommendations for material usage to a CAD file</b> can differentiate Formfactories's from its competitors.
+                            </p>
+                        </div>
                     </article>
+                    <!-- <div class="flexContent span2">
+                        <table class="formfactoriesResearch">
+                            <tr class="subsectionHeadings">
+                                <th>Takeaways</th>
+                                <th>Ideas from Competitors' Websites to Include</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="genText1">
+                                        Some notable factors that the competitors' websites included were lead-times for finishing the 3D-printed part, cost of their services,
+                                        efficiency of their 3D printing process, ability to customize 3D printed parts, how easy-to-use their service is, and an adaptive user
+                                        flow that conveniently and efficiently walks the person through ordering their 3D printed part(s).
+                                    </p>
+                                    <p class="genText1">
+                                        The overall appearance of a website can exude many different forms of professionalism and communication of 3D printed services. This
+                                        would be dependent upon what specific needs and services Formfactories can provide.
+                                    </p>
+                                    <p class="genText1">
+                                        There must be a balance between prompting the person to get a quote on their orders and showcasing information about Formfactories services
+                                        so that the person can easily access relevant information that will ease their use of Formfactories's 3D printing service.
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="genText1">
+                                        <b>Action-oriented buttons</b> to encourage users to submit their files clearly visible on every page.
+                                    </p>
+                                    <p class="genText1">
+                                        Include <b>clear photos/graphics when listing the various 3D printing techniques</b> to help the user decide which is right for them.
+                                    </p>
+                                    <p class="genText1">
+                                        <b>Instant quote and estimated delivery date</b> are important to include upfront to address people's primary concerns about the costs and waiting times for Formfactories's services.
+                                    </p>
+                                    <p class="genText1">
+                                        More novel features, such as <b>recommendations for material usage to a CAD file</b> can differentiate Formfactories's from its competitors.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div> -->
+                    <!-- <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/dataSynthesis1.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile span2">
+                        <img src="mediaFiles/images/design/Formfactories/dataSynthesis2.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption>
+                    </figure> -->
                     <article class="gridContent span2">
-                        <h3>User Scenarios and Use Cases</h3>
-                        <p class="marginLeft">
+                        <h4 class="subsectionHeadings">Personas, User Scenarios, and Use Cases</h4>
+                        <p class="genText1">
+                            We summarized our findings and understandings of Formfactories' typical stakeholders into 3 different personas,
+                            each with their set of circumstances and typical tasks that they would need to do on a website. This was to
+                            illustrate their background and needs in relation to 3D printing.
+                        </p>
+                    </article>
+                    <div class="gridContent">
+                        <p class="boldText centeredText">Persona - Steve</p>
+                        <p class="genText1">Steve needs to conscientiously, but efficiently, make reliable prototypes of expected quality to conplete stringent deadlines.</p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Formfactories/personaSteve.svg" alt="" class="backgroundImage personaSvg svgPadding">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText centeredText">User Scenarios and Use Cases - Steve</p>
+                        <p class="genText1">Steve typically needs quality prints as well as bulk orders of parts. Below are some of the tasks that he would need to know and do when using a 3D-printing service online.</p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Formfactories/scenarioCasesSteve.svg" alt="" class="backgroundImage personaSvg svgPadding">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText centeredText">Persona - Jonathan</p>
+                        <p class="genText1">Jonathan, another persona, prefers quality and control over his parts to suit his personal projects, and would like to know if any businesses that he outsource his parts to can ensure parts are properly made.</p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Formfactories/personaJonathan.svg" alt="" class="backgroundImage personaSvg svgPadding">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText centeredText">User Scenarios and Use Cases - Jonathan</p>
+                        <p class="genText1">Jonathan probably needs his part(s) made that he can't do on his own with the current 3D-printing capabilities that he has. These are his tasks that he needs to know an do when considering a 3D-printing service online.</p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Formfactories/scenarioCasesJonathan.svg" alt="" class="backgroundImage personaSvg svgPadding">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText centeredText">Persona - Sandra</p>
+                        <p class="genText1">Sandra, another persona, needs complex parts to be produced quickly and cheaply for the constant lab projects and tests that she needs to run.</p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Formfactories/personaSandra.svg" alt="" class="backgroundImage personaSvg svgPadding">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText centeredText">User Scenarios and Use Cases - Sandra</p>
+                        <p class="genText1">Sandra quickly needs parts that are custom-made, have specific materials that she cannot easily print, or of both qualities. These are some of the things she has to go through to use a 3D-printing service online.</p>
+                        <figure class="imageTile">
+                            <img src="mediaFiles/images/design/Formfactories/scenarioCasesSandra.svg" alt="" class="backgroundImage personaSvg svgPadding">
+                        </figure>
+                    </div>
+                    <!-- <article class="gridContent span2">
+                        <h4>User Scenarios and Use Cases</h4>
+                        <p class="">
                             Within each persona, we illustrated typical activities and needs that the persona would typically need to address the most through our scenarios.
                             The use cases helped inform the different features that should be addressed, which would made up the overall design of the website.
+                        </p> -->
+                        <!-- <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona1.jpg" alt="" class="backgroundImage">
+                        </figure>
+                        <figure class="imageTile span2">
+                            <img src="mediaFiles/images/design/Formfactories/persona2.jpg" alt="" class="backgroundImage">
+                        </figure> -->
+                    <!-- </article>-->
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="ideation">Ideation</h2>
+                    <p class="genText1 span2">
+                        Based on our primary and secondary research, our team sketched out different layouts of the potential webpages that the Formfactories' websites would have.
+                        We had rough ideas on the general content of the landing page, the organization of different 3D printers and materials shown, and the walkthrough of the
+                        ordering process for 3D-printed parts.
+                    </p>
+                    <figure class="imageTile sketches">
+                        <img src="mediaFiles/images/design/Formfactories/wireframeSketch1.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption">Simple headline with the message emphasizing Formfactories's 3D-printing service as a quick, streamlined process.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile sketches">
+                        <img src="mediaFiles/images/design/Formfactories/wireframeSketch2.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption">This sketch is intended to show how people who may use Formfactories' website can learn about the 3D printer technologies (SLA and FDM) and materials (PLA) the company provides.</i></figcaption>
+                    </figure>
+                    <figure class="imageTile sketches">
+                        <img src="mediaFiles/images/design/Formfactories/wireframeSketch3.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption">The sketch would show the beginning portion of the ordering process. The person would 1) upload their 3D Computer-Aided Design (CAD) file (with the supported file extensions) followed by 2) making changes to the type of material and 3D-printer settings to have the part(s) printed on.</i></figcaption>
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subsectionHeadings">Information Architecture</h4>
+                        <p class="genText1">
+                            I helped to visualize what pages were needed for the website and how these pages are related to one another through making a rough draft of the information architecture.
+                            This was to help the team prioritize on what webpages to develop that would make Formfactories to be informative, transparent, and efficient
+                            about its services. This information architecture was iterated upon later once we fulfilled making the main wireframes of the main sections of the initial site architecture.
                         </p>
-                        <figure class="imageTile span2">
-                            <img src="mediaFiles/images/design/Formfactories/persona1.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        </figure>
-                        <figure class="imageTile span2">
-                            <img src="mediaFiles/images/design/Formfactories/persona2.jpg" alt="Design sprint with team and stakeholders." class="backgroundImage">
-                        </figure>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/currentSiteArchitecture.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">This site architecture was initially laid out on what specific webpages needed to be created to facilitate the ordering process of 3D-printed parts and to learn more about Formfactories' services.</i></figcaption>
+                    </figure>
+                </section>
+                <div class="bodyGrid gridType2">
+                    <div class="gridContent">
+                        <h4 class="subsectionHeadings">Moodboard</h4>
+                        <p class="genText1">We had a moodboard to inform us of the visual design and branding of the website to make it techy, simple, and professional, as the client preferred.</p>
+                        <p class="genText1">A group consensus would be reached to use a blue monochrome color palette, though no formal visual style guide has been established in the iterations.</p>
+                    </div>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/moodboard.svg" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Images inspired from other websites mostly showed colors that were either black and white monochrome, or that were darker shades of blues.</i></figcaption>
+                    </figure>
+                </div>
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="prototyping">Prototyping</h2>
+                    <p class="genText1 span2">
+                        Our earlier prototypes referred to the earlier information architecture. The wireframes are in a landscape orientation and assume to take up the resolution of a conventional computer instead of a phone because of how
+                        the industry work done for manufacturing and 3D-printing parts mainly come from computer-based, CAD software. Conventional, industry-standard software, like SolidWorks and Autodesk Inventor, that produces files
+                        compatible for 3D-printers are widely available and used on computers, and not necessarily on phones. Below are the main wireframes that I had developed.
+                    </p>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Comparison of 3D Printers</h4>
+                        <p class="genText1">
+                            Because Formfactories only supports printers that can do stereolithography (SLA) or fusion deposition modeling (FDM), there would a simple side-by-side comparison between the available materials, resolutions, potential applications, and other factors that each printer supports.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/earlyPrototype1.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Descriptions listed for each printer that explain their subtler differences amongst relevant factors, such as application and available materials.</i></figcaption>
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Available Materials and Characteristics</h4>
+                        <p class="genText1">
+                            Other than 3D-printing capabilities, available materials and different material types would be shown (represented as PLA and Standard Resin). Included are benefits and drawbacks for using each material type.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/earlyPrototype2.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Stock photos of materials shown as a visual reference with checkmarks and minuses used to indicate strengths and weaknesses of using one material type over the other.</i></figcaption>
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Customizing Printer Settings</h4>
+                        <p class="genText1">
+                            After someone selects which 3D printer to use (SLA or FDM), they would be able to upload their CAD file of the desired printed part(s) and adjust the color, material, and other settings of their part. An estimated price would be automatically calculated and shown based on the current settings shown for the person.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/earlyPrototype3.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">The left section of the wireframe shows a preview of the 3D-CAD file that a person can upload using the "Upload New File" button. To the right are the adjustable settings available and an estimated price for ordering the 3D-printed part(s).</i></figcaption>
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Completing the Order</h4>
+                        <p class="genText1">
+                            To ensure delivery of the part, the person would input their billing address, shipping address, desired payment option, and production speed of the ordered parts. Along with the final price, an estimated time of delivery would be shown.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/earlyPrototype4.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption centeredText">Logistics of delivery and payment details needed to be entered, which would affect the price and delivery time for the person's order.</i></figcaption>
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">Live Interactive Prototype of the Website - First Iteration</h4>
+                        <p class="genText1">
+                            Below is an embedded version of the first prototype for the Formfactories' website redesign, which has scrollable pages. Tap, swipe, click, or mousewheel scroll to interact with it. This was made on Figma.
+                        </p>
+                    </article>
+                    <iframe class="span2" style="border: none; width: 100%; height: 600px" title="This is supposed to be a live Figma embed of an interactive prototype of the Formfactories website redesign. This may take some time to load." src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTrbKFFmtHXJifORc0Cal3WGR%2FFormfactories%3Fnode-id%3D1%253A2%26scaling%3Dscale-down" allowfullscreen></iframe>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="userTesting">User Testing</h2>
+                    <article class="gridContent changeSpan2">
+                        <h4 class="subheading subsectionHeadings">Approach</h4>
+                        <p class="genText1">The team asked two people about their knowledge in 3D printing and what their most important considerations were for successfully obtaining their 3D printed part(s).</p>
+                        <p class="genText1">We had participants interact with the prototype so that we could observe and record how the participants uploaded CAD files and submitted orders for their 3D printed part, how the participants learned more about the types of 3D printers and materials that were available, and how the participants searched for answers to questions that they had in mind about Formfactories’s services.</p>
+                        <p class="genText1">Finally, we asked the participants follow-up questions related to how they engaged with these tasks and any feedback that they wanted to share to inform changes to the website.</p>
+                    </article>
+                    <article class="gridContent changeSpan2">
+                        <h4 class="subheading subsectionHeadings">Findings</h4>
+                        <p class="genText1">What participants liked about our website were that there were design considerations that helped to provide applicable use for materials, yet there was a need to clarify what the post-processing service of 3D printed parts.</p>
+                        <p class="genText1">Participants considered cost, speed, and reliability as important considerations for their willingness to use Formfactories’s services.</p>
+                        <p class="genText1">Participants expressed a preference to be able to keep track of their history of orders and payment information that they had.</p>
+                        <p class="genText1">There was general confusion on some of the specific text on the website. One person was confused about what "post-processing" means as a service during the ordering process, another mentioned that there should be a clear difference between lead time and shipping time.</p>
                     </article>
                 </section>
-                <h2 class="section" id="creativeBrief">Creative Brief</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="prototyping">Prototyping</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="userTesting">User Testing</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="iterations">Iterations</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="finalDesign">Final Design</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="results">Results</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <br>
-                <br>
-                <h2 class="section" id="reflection">Reflection</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <h2 class="section" id="improvements">Improvements</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="iterations">Iterations</h2>
+                    <article class="gridContent">
+                        <h4 class="subsectionHeadings">Background of the First Iterations</h4>
+                        <p class="genText1">
+                            Despite initial successes with drafting out the features derived from user research, consolidated design artifacts, and the information architecture,
+                            findings from user testing and an initial examination of the wireframes informed issues with the features that needed to be fixed. Many of the changes
+                            that followed for the first iteration also followed an expanded version of the information architecture for the website.
+                        </p>
+                        <p class="genText1">
+                            Below are the changes made to some of the features and wireframes of the initial prototype of the redesign.
+                        </p>
+                    </article>
+                    <figure class="imageContainer">
+                        <img src="mediaFiles/images/design/Formfactories/newSiteArchitecture.png" alt="" class="backgroundImage">
+                        <figcaption><i class="imageCaption">New information architecture. The only changes included were the addition of an account login that would enable the person to manage their orders and account settings, as well as separating the information shown for printer types and materials.</i></figcaption>
+                    </figure>
+                    <article class="bodyGrid gridType1 comparison span2">
+                        <h4 class="subsectionHeadings span2">Ordering Process</h4>
+                        <div class="gridContent changeSpan1">
+                            <p class="boldText">Problems with the Initial Design</p>
+                            <p class="genText1">
+                                Despite how the initial wireframes tried to streamline the ordering process through smaller and manageable sequential tasks,
+                                there was a need to improve the consistency and clarity of the overall layout and content of the wireframes that show the ordering process.
+                            </p>
+                            <p class="genText1">
+                                The ordering process has an interface that is styled very differently from other sections of the Formfactories website, and the lack of navigation bar reduces accessibility for the person to navigate
+                                away from the ordering process and into other sections of the website. This would seem as if the ordering process is disconnected and largely removed from the website itself.
+                            </p>
+                            <p class="genText1">
+                                The available space on the interface on each section of the ordering process seemed small and the interface had a vague, large background image with no real purpose or use behind it.
+                            </p>
+                            <p class="genText1">
+                                Finally, the indication of the steps within the ordering process doesn’t effectively explain the tasks the person has to do before finalizing their order of their 3D-printed part.
+                            </p>
+                        </div>
+                        <div class="gridContent changeSpan1">
+                            <!-- <p class="boldText">Before</p> -->
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem1.svg" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                        <div class="gridContent changeSpan1">
+                            <p class="boldText">Changes Made to the Feature</p>
+                            <p class="genText1">
+                                To improve the consistency and layout, the re-addition of the navigation bar and greater usage of space of the custom settings was a start.
+                                This helped bring greater visibility and accessibility to both user interface components for custom 3D-printing settings and to navigation links.
+                            </p>
+                            <p class="genText1">
+                                For greater clarity to the different steps of the ordering process, a step progress bar with labels grouped to each circle was redesigned to provide
+                                enough information for the person to more intuitively understand what they need to do to fulfill their order for their part(s).
+                            </p>
+                            <p class="genText1">
+                                A description is added to the asterisk symbol to inform the person of default settings applied and another description explains the pricing and
+                                definition of the post-processing service.
+                            </p>
+                        </div>
+                        <div class="gridContent changeSpan1">
+                            <!-- <p class="boldText">After</p> -->
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration1.svg" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="bodyGrid gridType1 comparison span2">
+                        <h4 class="subsectionHeadings span2">Information about 3D Printers and Materials</h4>
+                        <div class="gridContent changeSpan1">
+                            <p class="boldText">Problems with the Initial Design</p>
+                            <p class="genText1">
+                                The first wireframes to help people learn more about the types of 3D printers and materials tried to incorporate a two-column grid that would easily
+                                compare 3D printers and materials side by side. However, when comparing between the 3D printing types, many pieces of information seemed to be
+                                scattered along a single page, which made materials and design recommendations inconveniently located towards the bottom of the page and much of the
+                                information for 3D printing types very dense and disorganized.
+                            </p>
+                        </div>
+                        <div class="gridContent changeSpan1">
+                            <!-- <p class="boldText">Before</p> -->
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem2.svg" alt="" class="backgroundImage">
+                            </figure>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem3.svg" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                        <div class="gridContent changeSpan1">
+                            <p class="boldText">Changes Made to the Feature</p>
+                            <p class="genText1">
+                                Improved typography and use of negative space helped to organize text that corresponded to each type of 3D printer, in which the configuration of a
+                                grid-like table would emerge. An added sticky header to label the types of 3D printing would remain at the top of the page when the person scrolls
+                                down to compare the printers, making it easier to reference the descriptions and differences of each printer to each associated factor (i.e.
+                                applications, leadtime, resolution, infill).
+                            </p>
+                            <p class="genText1">
+                                An anchor link underlined and labeled “Materials and Recommendations” would be visible at the top of the page, which would consolidate information
+                                of all material types and their design recommendations into a pop-up modal window. Within the modal window, a tab ribbon between FDM and SLA makes
+                                it convenient for the person to switch viewing materials from material types of SLA to FDM and vice versa. People would be able to scroll down to
+                                reveal more information of all other materials and view design recommendations.
+                            </p>
+                        </div>
+                        <div class="gridContent changeSpan1">
+                            <!-- <p class="boldText">After</p> -->
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration2.svg" alt="" class="backgroundImage">
+                            </figure>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration3.svg" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="gridContent changeSpan1">
+                        <h4 class="subheading subsectionHeadings">Additional Features Added</h4>
+                        <p class="genText1">From individuals during user testing, there was an expressed need to incorporate a history of previous orders and payments. The addition of a login system and account creation would help catalogue and manage the person's orders.</p>
+                    </article>
+                    <figure class="imageContainer iterationImage changeSpan1">
+                        <img src="mediaFiles/images/design/Formfactories/loginWindow.png" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageContainer iterationImage changeSpan1">
+                        <img src="mediaFiles/images/design/Formfactories/currentOrders.png" alt="" class="backgroundImage">
+                    </figure>
+                    <figure class="imageContainer iterationImage changeSpan1">
+                        <img src="mediaFiles/images/design/Formfactories/orderHistory.png" alt="" class="backgroundImage">
+                    </figure>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">"Final" Handoff</h4>
+                        <p class="genText1">In the end, there was no strong follow-up with the client and this version of the redesign was handed off to the professor and mentors for final feedback. Our group never had the chance to meet with our client again. This was the second iteration that the group ended on before our group went our separate ways. Below is another live embed of the Formfactories redesign.</p>
+                    </article>
+                    <iframe class="span2" style="border: none; width: 100%; height: 600px" title="This is supposed to be a live Figma embed of an interactive prototype of the final Formfactories website redesign. This may take some time to load." src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTrbKFFmtHXJifORc0Cal3WGR%2FFormfactories%3Fnode-id%3D1770%253A5688%26scaling%3Dscale-down" allowfullscreen></iframe>
+                    <article class="gridContent span2">
+                        <h4 class="subheading subsectionHeadings">More Changes Made</h4>
+                        <p class="genText1">Several months after the second iteration of the website was handed off, I independently re-reviewed the user research, personas, user scenarios, use cases, and user testing. Based on this review, I changed the information shown on different pages of the ordering process and on the modal window for materials and design recommendations.</p>
+                    </article>
+                    <article class="bodyGrid gridType1 comparison span2">
+                        <h4 class="subsectionHeadings span2">Ordering Process - Customizing the 3D Printed Part(s)</h4>
+                        <div class="gridContent">
+                            <p class="boldText">Reasons for Changes</p>
+                            <p class="genText1">
+                                When the person goes to make any custom changes to 3D printer settings on their part(s), there would be labels indicating the dimensions of the part(s) and technical details of the printer settings. There was consideration from more than one user scenarios of our personas when a person may need to mass produce more than one part as well as incorporating user feedback about adding more helpful hints from the FAQ page to the ordering process.
+                            </p>
+                            <p class="genText1">
+                                Although the post-processing service has a description outlining the benefits of using the service and its cost, the different labels for the dimensions of the part(s) and technical details of the printer settings may not effectively clarify how they affect the printed part. The post-processing service also doesn't explain how it affects the speed of the delivery of the part(s).
+                            </p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Before</p>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem4.png" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Changes Made</p>
+                            <p class="genText1">
+                                Rewording the dimensions and adding descriptions to the labels were needed to iterate upon these discovered issues. For the dimensions, "Length", "Width", and "Height" would better ensure that the printed part(s) would adhere to the desired size that the person expects from the part(s), rather than a vague lettering system for labels ("X", "Y", "Z").
+                            </p>
+                            <p class="genText1">
+                                Quantity of parts, as an additional custom setting, would afford the person to order multiple quantities of the same part. since it would be the case for people to need to order multiple copies of a printed part for prototyping and testing purposes (as outlined from user scenarios). The substitution of the material color of the part for quantity of parts to order is only to visually represent the functionality for ordering multiple parts. The potential list of printer settings shown for the wireframes is not exhaustive.
+                            </p>
+                            <p class="genText1">
+                                Since speed of completion for 3D printed parts was evidenced from prior user research and use scenarios, I added "+ 2 hours" to clarify how long the post-processing service would potentially take as well as an estimated time for delivery. Similar to the estimated price shown, the estimated delivery time would dynamically change based on how the person would customize their printer settings.
+                            </p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">After</p>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration4.png" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="bodyGrid gridType1 comparison span2">
+                        <h4 class="subsectionHeadings span2">Ordering Process - Confirming Order for Parts</h4>
+                        <div class="gridContent">
+                            <p class="boldText">Reasons for Changes</p>
+                            <p class="genText1">
+                                The second iteration of the confirmation page effectively showed a lot of relevant information organized in a scannable manner, but there was essential information that was missing on this page. For instance, other than "Edit" buttons that vaguely describe the person to make changes, nothing else is shown to inform the person of what to do during this confirmation page.
+                                Ironically, even though the estimated price and delivery time is shown when the person makes changes to printer settings of their custom part(s), this information is also not shown when the person needs to review every aspect of their order. This could result in the person needing to navigate back through other sections of the ordering process to remember how much
+                                their quote and estimated delivery time.
+                            </p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Before</p>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem5.png" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Changes Made</p>
+                            <p class="genText1">
+                                "Confirm your Order?" would be an appropriate title shown to succinctly illustrate that the person is approaching their final step of ordering their 3D-printed part(s). An added description below the title clarifies exactly what the person should do by informing the person to carefully and deliberately review the information shown before proceeding to finalize their decision on their order.
+                                Changes to wording of the buttons below each section (from "Edit" to "Make Changes") as well as the buttons' appearance make the buttons more recognizable to the person to make those necessary changes. Information that was changed from the previous step of customizing the person's 3D-printed part has been reflected in the confirmation page. The distinction between the cost of the post-processing
+                                service and the price of printing the part(s) is also made apparent in the third section regarding payment and delivery information.
+                            </p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">After</p>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration5.png" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                    </article>
+                    <article class="bodyGrid gridType1 comparison span2">
+                        <h4 class="subsectionHeadings span2">Information Shown for Materials and Design Recommendations</h4>
+                        <div class="gridContent">
+                            <p class="boldText">Reasons for Changes</p>
+                            <p class="genText1">
+                                The second iteration of presenting information of the materials and design recommendations for SLA and FDM printers had limited amount of space to view within the modal window, which reduces the accessibility of showing design recommendations since the design recommendations were placed all the way at the bottom of the list of materials shown. There was a lack of
+                                incorporation and detail of the design recommendations and how to make them scannable to quickly read them.
+                            </p>
+                        </div>
+                        <div class="gridContent" id="compareInfo">
+                            <p class="boldText">Before</p>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem6.png" alt="" class="backgroundImage">
+                            </figure>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/designProblem7.png" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">Changes Made</p>
+                            <p class="genText1">
+                                Besides increasing the height of the modal window, design recommendations would be presented first, formatted as a list of questions on one side, and answers on the other side. Eventually, a scrollbar would be integrated within the modal window to afford the person to scroll down for viewing the materials.
+                            </p>
+                        </div>
+                        <div class="gridContent">
+                            <p class="boldText">After</p>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration6.png" alt="" class="backgroundImage">
+                            </figure>
+                            <figure class="imageContainer comparisonImg">
+                                <img src="mediaFiles/images/design/Formfactories/iteration7.png" alt="" class="backgroundImage">
+                            </figure>
+                        </div>
+                    </article>
+                </section>
+                <!-- <h2 class="section sectionHeadings span2" id="iterations">Iterations</h2>
+                <p class="genText1 span2">There were design iterations considered from user testing, client feedback, mentor feedback, and other discovered design problems from the following features.</p>
+                <div class="bodyGrid gridType1 comparison">
+                    <h4 class="subsectionHeadings span2">Customizing Settings to 3D Printed Part</h4>
+                    <div class="gridContent">
+                        <p class="boldText">Initial Design - Problems</p>
+                        <p class="genText1">
+                            The ordering process of our website, the business called the process of “get a quote”, is complicated that involves several steps range from providing technical information to
+                            payment and delivery. The original web design of this process and that of many competitors are overwhelmed by technical settings, and the process is usually finished on a
+                            single page with a long scrolling. From our user research, this was a horrible and tedious experience that definitely needed changes.
+                        </p>
+                        <p class="genText1">The earlier design of this specific page did not explain additional cost incurred for selecting that a part be cleaned and did not offer an explanation for what exactly the service included.</p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Before</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Formfactories/comparison1.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Iterated Design - Changes Made</p>
+                        <p class="genText1">
+                            From the feedback we received, we found our initial designs to be inconsistent with
+                            other pages we had designed in terms of layout and style. The content layout was
+                            additionally constrained. The overall indication of steps was ambiguous since the top tile
+                            and the four dots didn’t correspond with one another. The style of the getting a quote
+                            pages were a noticeable deviation from other pages. The background image wasn’t
+                            intuitive and had limited value in content of the purpose of the page. There was no
+                            navigation bar and footer on these pages which resulted in a feeling of disconnect with
+                            other pages of the site.
+                        </p>
+                        <p class="genText1">
+                            When iterating on our prototype, we focused on creating a more consistent style and better layout.
+                            The final design of getting a quote pages consisted of adding relevant page titles and a
+                            timeline diagram with circles and section titles. This was to better illustrate where the
+                            person is current at with respect to completing their order and what additional steps are
+                            needed to complete the order. In this final design shown, there would be a confirmation
+                            page illustrating all of the information the person has confirmed so far with respect to the
+                            type of 3D printing selected, what their selected CAD file would be as their printed part,
+                            all the custom options selected, delivery methods, payment information, and finally the
+                            cost of the services provided. This serves to act as a sanity check for the person of
+                            everything that is included in their order before they commit and submit their order.
+                            There would be edit buttons that would enable the person to go back to their selections
+                            to make necessary edits, otherwise the person can click on the blue button to finally
+                            confirm and commit to their order.
+                        </p>
+                        <p class="genText1">
+                            We utilized the real estate of the entire screen to display the part and various selections to provide more breathing room between each selection and minimize the
+                            potential for error by clicking on the wrong drop-down menu. We changed the selection of adding Post-Processing from a drop-down menu to a checkbox design with
+                            additional text to explain exactly what the service included and the additional cost of the service.
+                        </p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">After</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Formfactories/comparison2.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                </div>
+                <div class="bodyGrid gridType1 comparison">
+                    <h4 class="subsectionHeadings span2">Confirming a 3D Printed Order</h4>
+                    <div class="gridContent">
+                        <p class="boldText">Initial Design - Problems</p>
+                        <p class="genText1">
+                        From the feedback we received, we found our initial designs to be inconsistent with other pages we had designed in terms of layout and style. The content layout was
+                        additionally constrained. The overall indication of steps was ambiguous since the top tile and the four dots didn’t correspond with one another. The style of the
+                        getting a quote pages were a noticeable deviation from other pages. The background image wasn’t intuitive and had limited value in content of the purpose of the page.
+                        There was no navigation bar and footer on these pages which resulted in a feeling of disconnect with other pages of the site.
+                        </p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Before</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Formfactories/comparison3.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Iterated Design - Changes Made</p>
+                        <p class="genText1">
+                            When iterating on our prototype, we focused on creating a more consistent style and better layout.The final design of getting a quote pages consisted of adding
+                            relevant page titles and a timeline diagram with circles and section titles. This was to better illustrate where the person is current at with respect to completing
+                            their order and what additional steps are needed to complete the order. In this final design shown, there would be a confirmation page illustrating all of the information
+                            the person has confirmed so far with respect to the type of 3D printing selected, what their selected CAD file would be as their printed part, all the custom options
+                            selected, delivery methods, payment information, and finally the cost of the services provided. This serves to act as a sanity check for the person of everything that is
+                            included in their order before they commit and submit their order. There would be edit buttons that would enable the person to go back to their selections to make
+                            necessary edits, otherwise the person can click on the blue button to finally confirm and commit to their order.
+                        </p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">After</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Formfactories/comparison4.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                </div>
+                <div class="bodyGrid gridType1 comparison">
+                    <h4 class="subsectionHeadings span2">Information about 3D Printers, Specifications, and Materials</h4>
+                    <div class="gridContent">
+                        <p class="boldText">Initial Design - Problems</p>
+                        <p class="genText1">
+                            3D printing is a very technical field that requires a page to introduce the technology and
+                            the technical services Formfactories provides. For our site, the printers page is where we
+                            put most of our information about printers and materials used for 3D printing.
+                        </p>
+                        <p class="genText1">
+                            According to our user research, most users we interviewed hoped that the website
+                            would offer information on a single page in a form of summary or table so that they could
+                            access all the information at once without navigating to several different pages on the
+                            website.
+                        </p>
+                        <p class="genText1">
+                            In our initial design, we tried putting all the information in two columns on the same page
+                            which allowed users to compare and contrast the various technologies, specifically FDM
+                            and SLA. However, there were many problems we encountered with this design early on.
+                            Space was limited for each printer, the text was difficult to align with the rest of the
+                            content, and there were many pieces of information related to a subcategory for each
+                            type of 3d printer that was scattered, forcing the person to tediously scroll down to read
+                            through everything about the printers and their types of materials. In summary, the layout
+                            was unnatural and not intuitive with regards to comparison.
+                        </p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Before</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Formfactories/comparison5.png" alt="" class="backgroundImage">
+                            <img src="mediaFiles/images/design/Formfactories/comparison6.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">Iterated Design - Changes Made</p>
+                        <p class="genText1">
+                            How we addressed this in our final design was making use of negative space and
+                            organizing the text that corresponded to each type of 3D printer to make a grid-like table.
+                            This organization of text in this fashion would make side-by-side comparison of each 3D
+                            printer possible based on the different factors given (such as applications, build bed size,
+                            leadtime, resolution, etc.). Types of materials would have their information laid out in an
+                            popup modal window that would have a tab ribbon to switch between different types of
+                            FDM and SLA materials. People would be able to scroll down to reveal more information
+                            of all other materials and view design recommendations.
+                        </p>
+                        <p class="genText1">
+                            When iterating on our prototype, we focused on creating a more consistent style and better layout.The final design of getting a quote pages consisted of adding
+                            relevant page titles and a timeline diagram with circles and section titles. This was to better illustrate where the person is current at with respect to completing
+                            their order and what additional steps are needed to complete the order. In this final design shown, there would be a confirmation page illustrating all of the information
+                            the person has confirmed so far with respect to the type of 3D printing selected, what their selected CAD file would be as their printed part, all the custom options
+                            selected, delivery methods, payment information, and finally the cost of the services provided. This serves to act as a sanity check for the person of everything that is
+                            included in their order before they commit and submit their order. There would be edit buttons that would enable the person to go back to their selections to make
+                            necessary edits, otherwise the person can click on the blue button to finally confirm and commit to their order.
+                        </p>
+                    </div>
+                    <div class="gridContent">
+                        <p class="boldText">After</p>
+                        <figure class="imageContainer comparisonImg">
+                            <img src="mediaFiles/images/design/Formfactories/comparison7.png" alt="" class="backgroundImage">
+                            <img src="mediaFiles/images/design/Formfactories/comparison8.png" alt="" class="backgroundImage">
+                        </figure>
+                    </div>
+                </div> -->
+                <section class="bodyGrid gridType2">
+                    <h2 class="section sectionHeadings span2" id="finalDesign">Final Design</h2>
+                    <iframe class="span2" style="border: none; width: 100%; height: 600px" title="This is supposed to be a live Figma embed of an interactive prototype of the final Formfactories website redesign. This may take some time to load." src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTrbKFFmtHXJifORc0Cal3WGR%2FFormfactories%3Fnode-id%3D740%253A0%26scaling%3Dscale-down" allowfullscreen></iframe>
+                    <p class="genText1 span2">
+                        3D-printing just had simpler ordering. Within the company's website, Formfactories aims to digitize 3D-printing orders for customers to get their parts.
+                    </p>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Upload files and get an estimated quote.</h4>
+                        <p class="genText1">
+                            There are default settings for people less familiar with 3D printing, but others have the option to customize different
+                            aspects of the 3D printed part and even include a service to ensure the part is properly cleaned and ready.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/iteration4.png" alt="" class="backgroundImage">
+                        <!-- <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Verify and editng order information.</h4>
+                        <p class="genText1">
+                            From choosing a preferred printer to payment and delivery information, the person can check if their order is correct
+                            while being able to go back and make changes.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/iteration5.png" alt="" class="backgroundImage">
+                        <!-- <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Track current and previous order histories.</h4>
+                        <p class="genText1">
+                            People can view what they have ordered, where it was shipped to, and when they purchased it so that repeat purchases are easier to recall.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/finalFeature3.png" alt="" class="backgroundImage">
+                        <!-- <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Compare different printers and their capabilities.</h4>
+                        <p class="genText1">
+                            People can easily scan through and compare specifications for the FDM and SLA printers that Formfactories has to offer by having different categories on the left and descriptions side-by-side that are underneath the types of printers named (e.g. FDM and SLA).
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/finalFeature4.png" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/Formfactories/finalFeature5.png" alt="" class="backgroundImage">
+                        <!-- <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Compare 3D printing materials and recommendations.</h4>
+                        <p class="genText1">
+                            People can also look through the different types of materials available for both printers offers, and even gain recommendations for which materials to use.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/iteration8.png" alt="" class="backgroundImage">
+                        <img src="mediaFiles/images/design/Formfactories/iteration7.png" alt="" class="backgroundImage">
+                        <!-- <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                    <article class="gridContent">
+                        <h4 class="subheading subsectionHeadings">Get answers about what Formfactories is.</h4>
+                        <p class="genText1">
+                            For further inquiries of Formfactories’ services, a FAQ page is set up to have people get the answers they need quickly about Formfactories’ business capabilities.
+                        </p>
+                    </article>
+                    <figure class="imageTile">
+                        <img src="mediaFiles/images/design/Formfactories/finalFeature7.png" alt="" class="backgroundImage">
+                        <!-- <figcaption><i class="imageCaption centeredText">Caption yet to be completed.</i></figcaption> -->
+                    </figure>
+                </section>
+                <section class="bodyGrid gridType1">
+                    <h2 class="section sectionHeadings span2" id="resultsReflection">Results and Reflection</h2>
+                    <p class="genText1 span2">
+                        The current status of the implementation of our design remains uncertain as the actual Formfactories do not currently reflect redesign efforts. However, our client also owns his partner company, Incept 3D, and has been able to incorporate best practices from the competitive analysis research that we have given him. Aspects of our website do appear to be incorporated in
+                        <a rel="external" href="http://www.incept3d.com/sla" target="_blank" class="externalLink">Incept 3D's current website</a>.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings span2">Reflection</h4>
+                        <p class="genText1">
+                            Human-centered systems design, as Don Norman currently puts it, really necessitates active listening to important stakeholders. This not only includes the client(s), but also team members who have different personal opinions and
+                            priorities about how to proceed with a project. From many of the failures that have resided in the implementation of the website, I understood better on the importance of work ethics, time management, the ability to decide and execute
+                            deliberate design decisions within real-world constraints, and social dynamics within a team. The output of the website redesign had its visual design equivalent to a fully-functional website, and even though more must be done to include
+                            more interactions and links, I could not have been more proud of my team to help produce something that no individual could have accomplished for the client.
+                        </p>
+                    </article>
+                </section>
+                <section class="bodyGrid gridType1">
+                <h2 class="section sectionHeadings span2" id="improvements">Improvements</h2>
+                    <p class="genText1 span2">
+                        If there was more time for the project, here is how I would have proceeded.
+                    </p>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Greater Client and Company Staff Engagement</h4>
+                        <p class="genText1">
+                            I would have strategized a way to proceed making the rest of the project more inclusive to the staff members that work under our client and his companies (Formfactories and Incept 3D) and figure out how to best engage with them with
+                            our current research findings. This would incorporate more participatory design by having more people related to the company explain their perspectives about 3D printing and how the company's customers engage with their services.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Executing Methods to Better Understand People's Experiences to 3D Printing</h4>
+                        <p class="genText1">
+                            The redesign of the website entailed an understanding of how to connect needs uncovered from research into potential features and experiences within the website. I would have explored more in-depth with other research methods that would have
+                            helped me uncover insights of how people evaluate a 3D-printing service, how do people normally go about choosing a 3D-printing service when they need to, and how do they use information that they have about 3D-printing to make informed
+                            decisions about outsourcing their 3D-printed parts. Rapid ideation on user flows and rapid prototyping could effectively bridge the gap between what the design features are and how these features are better informed by research and
+                            effectively translate into a desireable experience of outsourcing 3D printed parts.
+                        </p>
+                    </article>
+                    <article class="gridContent span2">
+                        <h4 class="subsectionHeadings">Seamless Translation from High-Fidelity Mockup to Implementation</h4>
+                        <p class="genText1">
+                            Implementation of good design practices for the client to adhere to for the execution of the website is a completely different task that would have led to real-world impact. Being able to communicate our team's insights to the client
+                            and other people involved with Formfactories' website development would empower them to make smarter, more actionable decisions on how to replicate our knowledge of making the website work for them. Being able to visit the client again, with
+                            a prepared deliverable (such as a guide) to give to the client, would be one of the many ways that the translation to website implementation would have been possible.
+                        </p>
+                    </article>
+                </section>
             </section>
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
-            <p>Wayne Phung 2019</p>
+            <p class="genText1 maxWidth650">That's the end of the design case study! Thank you. I really do appreciate you taking a bit of your time reading what I have produced and learned. I only hope that you have learned something new from this project.</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...Or reading another design project?</h4>
+                <div class="gridItem workGallery footerGallery" id="eStrideItem">
+                    <img class="designImage" id="electricStride" src="mediaFiles/images/design/ElectricStride/ElectricStride.png" alt="image" onclick="window.location.href = 'ElectricStride.html';">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Electric Stride</h3>
+                        <h6 class="tags caseTags">UX Design, UX Research, Rapid Ideation</h6>
+                        <p class="genText1">An exercise mat for people with Parkinson’s to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                        <a rel="external" href="ElectricStride.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'ElectricStride.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'Cinemunch.html';">
+                    <img src="mediaFiles/images/design/Cinemunch/Cinemunch.jpg" alt="image" class="designImage" id="cinemunch">
+                    <article class="projectDescription design">
+                        <h3 class="caseStudy">Cinemunch</h3>
+                        <h6 class="tags caseTags">UX/UI Design, Visual Design, Prototyping, Branding</h6>
+                        <p class="genText1">A ticketing kiosk to order food and movie tickets as an exploratory concept in a student prototyping course.</p>
+                        <a rel="external" href="Cinemunch.html" class="button projectButton">Read Case Study</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'Cinemunch.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
+            <article class="bodyGrid gridType1 contacting">
+                <h4 class="caseStudy span2">...or maybe explore one of my media projects?</h4>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                        <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                        <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'TCLCVideo.html';">
+                    <img class="mediaImage" id="tclcVideo" src="mediaFiles/images/media/tclcVideo.png" alt="image" onclick="window.location.href = 'TCLCVideo.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">TCLC Rap Video</h3>
+                        <p class="genText1">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                        <a rel="external" href="TCLCVideo.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                        <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                        <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'YonderDynamics.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/yonderDynamics.png" alt="image" onclick="window.location.href = 'YonderDynamics.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">YD Competition Videos</h3>
+                        <p class="genText1">Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                        <a rel="external" href="YonderDynamics.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <img class="mediaImage" src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="image" onclick="window.location.href = 'ArtistGIFs.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Artist GIFs Event Marketing</h3>
+                        <p class="genText1">These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                        <a rel="external" href="ArtistGIFs.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/asceTribute.png" alt="image" onclick="window.location.href = 'ASCETribute1718.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">ASCE 2017-18 Tribute</h3>
+                        <p class="genText1">This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
+                        <a rel="external" href="ASCETribute1718.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'Wellfest.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellfest2018.png" alt="image" onclick="window.location.href = 'Wellfest.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">1st Annual Wellfest</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                        <a rel="external" href="Wellfest.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+                <div class="gridItem workGallery footerGallery" onclick="window.location.href = 'wellnessFair.html';">
+                    <img class="mediaImage" src="mediaFiles/images/media/wellnessFair2018.png" alt="image" onclick="window.location.href = 'wellnessFair.html';">
+                    <article class="projectDescription media">
+                        <h3 class="projectTitle caseStudy">Wellness Fair</h3>
+                        <p class="genText1">This was a 2018 event recap of Wellness Fair, an event focused on the seven dimensions of wellness.</p>
+                        <a rel="external" href="wellnessFair.html" class="button projectButton">Read About Project</a>
+                        <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                    </article>
+                </div>
+            </article>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

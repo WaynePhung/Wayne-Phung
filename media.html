@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150909302-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-150909302-1');
+        </script>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,93 +28,117 @@
 
     <body>
         <nav>
-            <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+            <article class="nameContact">
+                <h5 class="name"><a rel="external" href="http://waynephung.com">Wayne Phung</a></h5>
+                <img src="mediaFiles/images/linkedInIcon.svg" alt="" class="icon" onclick="window.location.href = 'https://www.linkedin.com/in/wayne-phung-8a8242102/';">
+                <img src="mediaFiles/images/emailIcon.svg" alt="" class="icon" onclick="window.location.href = 'mailto:wphung@ucsd.edu';">
+            </article>
             <div class="navGroup">
-                <a rel="external" href="design.html" class="navLink" id="leftLink">Design</a>
-                <a rel="external" href="media.html" class="navLink selected">Media</a>
-                <a rel="external" href="aboutme.html" class="navLink">About Me</a>
-                <a rel="external" href="resumecv.html" class="navLink" id="rightLink">Resume/CV</a>
+                <a rel="external" href="design.html" class="navLink genText1" id="leftLink">Design</a>
+                <a rel="external" href="media.html" class="navLink genText1 selected">Media</a>
+                <a rel="external" href="aboutme.html" class="navLink genText1">About Me</a>
+                <a rel="external" href="resumecv.html" class="navLink genText1" id="rightLink">Resume/CV</a>
             </div>
         </nav>
         <section class="introduction">
-            <h1 class="greeting">My Media Work</h1>
-            <p>I have engaged with video production with a specialty and background in video editing.</p>
-            <p>You can read the full disclosure of the process behind the scenes in all of my videos (and a few GIFs that I made).</p>
+            <h1 class="greeting mainHeading">My Media Work</h1>
+            <p class="largeText">I have engaged with video production with a specialty and background in video editing.</p>
+            <p class="largeText">You can read the full disclosure of the process behind the scenes in all of my videos (and a few GIFs that I made).</p>
         </section>
-        <div class="work">
-            <article class="gridItem">
-                <a rel="external" href="TritonTelevisionReel.html">
-                    <img src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" class="media" id="ttvReel">
-                    <h3 class="projectTitle">Triton Television Reel</h3>
-                    <p>This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
-                </a>
-            </article>
-            <article class="gridItem">
-                <a rel="external" href="TCLCVideo.html">
-                    <img src="mediaFiles/images/media/tclcVideo.png" alt="image" class="media" id="tclcVideo">
-                    <h3 class="projectTitle">Town & Country Learning Center</h3>
-                    <p>A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
-                </a>
-            </article>
-            <article class="gridItem">
-                <a rel="external" href="SunGodFestival.html">
-                    <img src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" class="media">
-                    <h3 class="projectTitle">Sun God Festival Trailers</h3>
-                    <p>Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
-                </a>
-            </article>
-            <article class="gridItem">
-                <a rel="external" href="YonderDynamics.html">
-                    <img src="mediaFiles/images/media/yonderDynamics.png" alt="image" class="media">
-                    <h3 class="projectTitle">Yonder Dynamics Competition Videos</h3>
-                    <p>Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
-                </a>
-            </article>
-            <article class="gridItem">
-                <a rel="external" href="ArtistGIFs.html">
-                    <img src="mediaFiles/gifs/SGFgif.gif" alt="image" class="media">
-                    <h3 class="projectTitle">Artist GIFs Event Marketing</h3>
-                    <p>These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
-                </a>
-            </article>
-            <!--Comment.-->
-            <article class="gridItem">
-                <a rel="external" href="ASCETribute1718.html">
-                    <img src="mediaFiles/images/media/asceTribute.png" alt="image" class="media">
-                    <h3 class="projectTitle">AS Concerts and Events 2017-18 Tribute</h3>
-                    <p>This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
-                </a>
-            </article>
-            <article class="gridItem">
-                <a rel="external" href="Wellfest.html">
-                    <img src="mediaFiles/images/media/wellfest2018.png" alt="image" class="media">
-                    <h3 class="projectTitle">1st Annual Wellfest 2018 Recap</h3>
-                    <p>This was a recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
-                </a>
-            </article>
-            <article class="gridItem">
-                <a rel="external" href="wellnessFair.html">
-                    <img src="mediaFiles/images/media/wellnessFair2018.png" alt="image" class="media">
-                    <h3 class="projectTitle">Wellness Fair 2018 Recap</h3>
-                    <p>Wellness Fair was an event focused on the seven dimensions of wellness, which was hosted by Housing Dining and Hospitality (HDH).</p>
-                </a>
-            </article>
-            <article class="gridItem">
+        <div class="work designMediaWork">
+            <div class="gridItem workGallery" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                <img class="mediaImage" id="ttvReel" src="mediaFiles/images/media/tritonTelevisionReel.png" alt="image" onclick="window.location.href = 'TritonTelevisionReel.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">Triton Television Reel</h3>
+                    <p class="genText1">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                    <a rel="external" href="TritonTelevisionReel.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'TCLCVideo.html';">
+                <img class="mediaImage" id="tclcVideo" src="mediaFiles/images/media/tclcVideo.png" alt="image" onclick="window.location.href = 'TCLCVideo.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">TCLC Rap Video</h3>
+                    <p class="genText1">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                    <a rel="external" href="TCLCVideo.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'SunGodFestival.html';">
+                <img class="mediaImage" src="mediaFiles/images/media/sunGodFestivalVid.png" alt="image" onclick="window.location.href = 'SunGodFestival.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">Sun God Festival Trailers</h3>
+                    <p class="genText1">Two videos, one for each year, promote the biggest on-campus music festival event for undergraduates and very recent student alumni at University of California - San Diego.</p>
+                    <a rel="external" href="SunGodFestival.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'YonderDynamics.html';">
+                <img class="mediaImage" src="mediaFiles/images/media/yonderDynamics.png" alt="image" onclick="window.location.href = 'YonderDynamics.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">YD Competition Videos</h3>
+                    <p class="genText1">Yonder Dynamics, a student robotics team at University of California - San Diego, sent a video submission of their rover for the 2019 rover competition, the University Rover Challenge, as well another video to fundraise for their efforts.</p>
+                    <a rel="external" href="YonderDynamics.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'ArtistGIFs.html';">
+                <img class="mediaImage" src="mediaFiles/gifs/ArtistGIFs/ArtistGIFs.gif" alt="image" onclick="window.location.href = 'ArtistGIFs.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">Artist GIFs Event Marketing</h3>
+                    <p class="genText1">These were GIFs to showcase featured artists and bands for the biggest events on-campus at University of California - San Diego, including Hullabaloo and (mostly) Sun God Festival.</p>
+                    <a rel="external" href="ArtistGIFs.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'ASCETribute1718.html';">
+                <img class="mediaImage" src="mediaFiles/images/media/asceTribute.png" alt="image" onclick="window.location.href = 'ASCETribute1718.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">ASCE 2017-18 Tribute</h3>
+                    <p class="genText1">This was a tribute to most of the student campus events that happened within the 2017-18 academic year at University of California - San Diego. These events were hosted by the Associated Students Concerts and Events.</p>
+                    <a rel="external" href="ASCETribute1718.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'Wellfest.html';">
+                <img class="mediaImage" src="mediaFiles/images/media/wellfest2018.png" alt="image" onclick="window.location.href = 'Wellfest.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">1st Annual Wellfest</h3>
+                    <p class="genText1">This was a 2018 event recap of Wellfest, an event at University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability.</p>
+                    <a rel="external" href="Wellfest.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <div class="gridItem workGallery" onclick="window.location.href = 'wellnessFair.html';">
+                <img class="mediaImage" src="mediaFiles/images/media/wellnessFair2018.png" alt="image" onclick="window.location.href = 'wellnessFair.html';">
+                <article class="projectDescription media">
+                    <h3 class="projectTitle caseStudy">Wellness Fair</h3>
+                    <p class="genText1">This was a 2018 event recap of Wellness Fair, an event focused on the seven dimensions of wellness.</p>
+                    <a rel="external" href="wellnessFair.html" class="button projectButton">Read About Project</a>
+                    <!-- <button type="button" class="button projectButton" onclick="window.location.href = 'DesignLeapencrypted.html';">Read Case Study</button> -->
+                </article>
+            </div>
+            <!-- <article class="gridItem">
                 <a rel="external" href="YouAtTheLoftSpotlights.html">
                     <img src="mediaFiles/images/media/yatlSpotlights.png" alt="image" class="media">
-                    <h3 class="projectTitle">You at the Loft Spotlights</h3>
-                    <p>These videos were a series to help feature students who anticipated to attend a student talent performance event called You at the Loft, at University of California - San Diego.</p>
+                    <article class="projectTitle">
+                        <h3 class="projectTitle caseStudy">You at the Loft Spotlights</h3>
+                        <p class="genText1">These videos were a series to help feature students who anticipated to attend a student talent performance event called You at the Loft, at University of California - San Diego.</p>
+                    </article>
                 </a>
-            </article>
+            </article> -->
         </div>
         <footer>
-            <p class="contact">Contact me via
-                <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" class="externalLink">LinkedIn</a>
-                 and/or
-                <a rel="external" href="mailto:wphung@ucsd.edu" class="externalLink">Email</a>
-                 to follow up.
-             </p>
-            <p>Wayne Phung 2019</p>
+            <article class="contacting">
+                <h4 class="caseStudy openConvo">Open to a conversation?</h4>
+                <p class="genText1 maxWidth650">I'm eager to talk to you about what we can do together for your needs and goals. Contact me via
+                    <a rel="external" href="https://www.linkedin.com/in/wayne-phung-8a8242102/" target="_blank" class="externalLink">LinkedIn</a>
+                    and/or
+                    <a rel="external" href="mailto:wphung@ucsd.edu" target="_blank" class="externalLink">Email</a>
+                    to follow up.
+                </p>
+            </article>
+            <p class="genText1">Wayne Phung 2019</p>
         </footer>
         <script src="03-js/Javascript%20Libraries/jquery-3.4.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
