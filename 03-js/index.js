@@ -127,9 +127,9 @@ $(document).ready(function() {
                 }
             } else {
                 if (getVideo.length > 1) {
-                    $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
+                    $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
                 } else {
-                    $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
+                    $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
                 }
             }
         // if ($('.autoplayVideo.' + getClass).hasClass('playing')) {
@@ -153,9 +153,9 @@ $(document).ready(function() {
         //     console.log(getVideo.length);
         //     // let newText = $(this).text().replace("Pause Video", "Play Video");
         //     if (getVideo.length > 1) {
-        //         $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
+        //         $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
         //     } else {
-        //         $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
+        //         $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
         //     }
         //     getVideo.each( function(index) {
         //         getVideo[index].pause();
@@ -171,9 +171,9 @@ $(document).ready(function() {
                 // console.log(getVideo.length);
                 // let newText = $(this).text().replace("Pause Video", "Play Video");
                 // if (getVideo.length > 1) {
-                //     $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
+                //     $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
                 // } else {
-                //     $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
+                //     $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
                 // }
             //     getVideo[index].play();
             // } else {
@@ -189,9 +189,9 @@ $(document).ready(function() {
                 // }
                 // getVideo[index].pause();
                 // if (getVideo.length > 1) {
-                //     $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
+                //     $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
                 // } else {
-                //     $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
+                //     $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
                 // }
         //     }
         // });
@@ -204,9 +204,9 @@ $(document).ready(function() {
         //     }
         // } else {
         //     if (getVideo.length > 1) {
-        //         $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
+        //         $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
         //     } else {
-        //         $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
+        //         $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
         //     }
         // }
     });
@@ -568,15 +568,15 @@ $(document).ready(function() {
             });
             if ($('.autoplayVideo.' + getClass).hasClass('playing')) {
                 if (getVideo.length > 1) {
-                    $(this).html('<img src="mediaFiles/images/pauseIcon.png" alt="Pause Button" class="vidControlIcon">Pause Videos');
+                    $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/pauseIcon.png" alt="Pause Button" class="vidControlIcon">Pause Videos');
                 } else {
-                    $(this).html('<img src="mediaFiles/images/pauseIcon.png" alt="Pause Button" class="vidControlIcon">Pause Video');
+                    $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/pauseIcon.png" alt="Pause Button" class="vidControlIcon">Pause Video');
                 }
             } else {
                 if (getVideo.length > 1) {
-                    $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
+                    $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Videos');
                 } else {
-                    $(this).html('<img src="mediaFiles/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
+                    $(this).html('<img src="https://res.cloudinary.com/waynephung/image/upload/c_scale,dpr_auto,f_auto,q_100,w_75/v1572331951/images/playIcon.png" alt="Play Button" class="vidControlIcon">Play Video');
                 }
             }
         }
