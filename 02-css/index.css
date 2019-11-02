@@ -2913,6 +2913,11 @@ li {
         width: 50%;
     }
 
+    #finalBOTB {
+        margin: 0em auto;
+        width: 60%;
+    }
+
     .greeting {
         width: 100%;
     }
@@ -3828,7 +3833,7 @@ li {
     }
 
     #ydSideBar {
-        width: 30%;
+        width: 25%;
         max-width: 300px;
     }
 

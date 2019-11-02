@@ -373,7 +373,7 @@ $(document).ready(function() {
 
     function gridItemHeight1() {
         $('.imageGroup figure:nth-of-type(even) img').css('height', $('.imageGroup figure:nth-of-type(odd) img').outerHeight(true));
-        if ($(window).width() >= 1000) {
+        if ($(window).width() >= 750) {
             for (let i = 0; i < videoGallery.length; i++) {
                 let videoGalTile = videoGallery.eq(i).children('.gifTile'),
                     even,
@@ -476,10 +476,10 @@ $(document).ready(function() {
     }
 
     function gridItemHeight2() {
-        if ($(window).width() >= 1000) {
+        if ($(window).width() >= 750) {
             let even, odd;
             for (let i = (videoImageContainer.length - 1)/2; i > 0; i--) {
-                if (videoImageContainer.length <= 2) {
+                if (videoGalTile.length <= 2) {
                     even = 0;
                     odd = 1;
                 } else {
@@ -495,18 +495,26 @@ $(document).ready(function() {
                     videoGalTile.eq(0).find('figcaption i').css('height', 'auto');
                     videoGalTile.eq(0).find('p.category').css('height', 'auto');
                 } else {
-                    let figheight1 = videoImageContainer.eq(even).find('figcaption i').outerHeight(true),
-                        figheight2 = videoImageContainer.eq(odd).find('figcaption i').outerHeight(true);
+                    let figheight1 = videoGalTile.eq(even).find('figcaption i').outerHeight(true),
+                        pheight1 = videoGalTile.eq(even).find('p.category').outerHeight(true),
+                        figheight2 = videoGalTile.eq(odd).find('figcaption i').outerHeight(true),
+                        pheight2 = videoGalTile.eq(odd).find('p.category').outerHeight(true);
                     if (figheight1 >= figheight2) {
                         // console.log('true');
-                        videoImageContainer.eq(odd).find('figcaption i').css('height', figheight1);
+                        videoGalTile.eq(odd).find('figcaption i').css('height', figheight1);
                     } else {
-                        videoImageContainer.eq(even).find('figcaption i').css('height', figheight2);
+                        videoGalTile.eq(even).find('figcaption i').css('height', figheight2);
+                    }
+                    if (pheight1 >= pheight2) {
+                        // console.log('true');
+                        videoGalTile.eq(odd).find('p.category').css('height', pheight1);
+                    } else {
+                        videoGalTile.eq(even).find('p.category').css('height', pheight2);
                     }
                 }
             }
         } else {
-            $('.videoGallery .imageContainer figcaption i, .videoGallery .gifTile figcaption i').css('height', 'auto');
+            $('.videoGallery .imageContainer figcaption i, .imageContainer .videoGallery .gifTile figcaption i, .gifTile p.category').css('height', 'auto');
         }
         for (let i = 0; i < gSlides.length; i++) {
             let gSlidesWidth = gSlides.eq(i).outerWidth(true);
