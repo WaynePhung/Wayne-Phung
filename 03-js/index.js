@@ -24,6 +24,7 @@ let nav = $('nav'),
     content = $('.content'),
     changeSpan1 = $('.changeSpan1'),
     changeSpan2 = $('.changeSpan2'),
+    changeSpan3 = $('.changeSpan3'),
     embedResume = $('.embedResume'),
     video = $('video'),
     videoButton = $('.playVideo'),
@@ -55,7 +56,7 @@ $(document).ready(function() {
         embedResume.show();
     }
 
-    console.log(pageNameString);
+    // console.log(pageNameString);
 
     // let toCHeight = anchorLinks.last().outerHeight(true);
     // console.log('toCHeight: ' + toCHeight);
@@ -88,7 +89,7 @@ $(document).ready(function() {
             sideBarConstant = 2,
             getDataIndex = $(this).attr('data-index');
         navIndex = getDataIndex;
-        console.log(getSectionId.offset().top);
+        // console.log(getSectionId.offset().top);
         scrollSpy();
         $('html, body').animate({
             scrollTop: elementTopPos1
@@ -291,6 +292,11 @@ $(document).ready(function() {
         } else {
             changeSpan2.removeClass('span2');
         }
+        if ($(window).width() <= 1000) {
+            changeSpan3.addClass('span3');
+        } else {
+            changeSpan3.removeClass('span3');
+        }
     }
 
     function showHide() {
@@ -367,7 +373,7 @@ $(document).ready(function() {
                 lineHeight += anchorLinks.eq(i).outerHeight;
             }
         }
-        console.log('lineHeight: ' + lineHeight);
+        // console.log('lineHeight: ' + lineHeight);
         $('.tableOfContents::after, .tableOfContents:after').css('height', lineHeight);
     }
 
@@ -455,7 +461,7 @@ $(document).ready(function() {
                 }
             }
             $('#journeyMap2').css('height', $('#journeyMap1').outerHeight(true));
-            console.log(equivHeight.length);
+            // console.log(equivHeight.length);
             for (let i = (equivHeight.length - 1)/2; i > 0; i--) {
                 let even = 2*i - 1,
                     odd = 2*i;
@@ -556,7 +562,7 @@ $(document).ready(function() {
 
     function checkVideoPlaying() {
         for (let i = 0; i < autoplayVideo.length; i++) {
-            console.log('autoplayVideo length: ' + autoplayVideo.length);
+            // console.log('autoplayVideo length: ' + autoplayVideo.length);
             let getButton = autoplayVideo.eq(i).siblings('figcaption').children('.playVideo'),
                 getClass = getButton.attr('class').split(' ')[0],
                 getVideoClass = $('video').attr('class').split(' ')[1],
@@ -608,11 +614,11 @@ $(document).ready(function() {
     }
 
     function centerLastElement() {
-        if ($(window).width() >= 1000 && gridItem.length % 2 == 1) {
-            $('.gridItem.workGallery:last-of-type').last().css('margin', 'auto');
-        } else {
-            $('.gridItem.workGallery:last-of-type').last().css('margin', '0em inherit 3em inherit');
-        }
+        // if ($(window).width() >= 1000 && gridItem.length % 2 == 1) {
+        //     $('.gridItem.workGallery:last-of-type').last().css('margin', 'auto');
+        // } else {
+        //     $('.gridItem.workGallery:last-of-type').last().css('margin', 'inherit');
+        // }
         if ($(window).width() >= 1000 && criteria.length % 2 == 1) {
             $('.criteria:last-of-type').css('margin', '0em auto 3em auto');
             $('.criteria:last-of-type *').css('width', $('.criteria:nth-last-child(2)').outerWidth(true));
