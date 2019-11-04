@@ -2610,6 +2610,11 @@ li {
     margin: 0 5% 5em 5%;
 }
 
+#finalBOTB {
+    margin: auto;
+    max-width: 400px;
+}
+
 @media screen and (max-width: 200px) {
     /* .introduction, .beginning {
         padding-top: 45vh;
