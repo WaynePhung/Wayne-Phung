@@ -1,50 +1,50 @@
     "use strict";
 
-let nav = $('nav'),
-    navGroup = $('.navGroup'),
-    introduction = $('.introduction'),
-    workIntro = $('.workIntro'),
-    workIntroHeading = $('.workIntro p'),
-    stickButtons = $('.stickyButtons'),
-    projectButton = $('button.projectButton'),
-    workButton = $('.workButton'),
-    designButton = $('#designButton'),
-    mediaButton = $('#mediaButton'),
-    work = $('.work'),
-    design = $('#design'),
-    media = $('#media'),
-    projectTitle = $('.gridItem .projectTitle'),
-    beginning = $('.beginning'),
-    navSideBar = $('.navSideBar'),
-    anchorLinks = $('.navSideBar a'),
-    figure = $('figure'),
-    imageContainer = $('.imageContainer'),
-    fixedElements = $('section:first-child', '.caseStudyIntro', '.navSideBar'),
-    section = $('.section'),
-    content = $('.content'),
-    changeSpan1 = $('.changeSpan1'),
-    changeSpan2 = $('.changeSpan2'),
-    changeSpan3 = $('.changeSpan3'),
-    embedResume = $('.embedResume'),
-    video = $('video'),
-    videoButton = $('.playVideo'),
-    navIndex = 0,
-    videoGallery = $('.videoGallery'),
-    autoplayVideo = $('.autoplayVideo'),
-    // videoGalTile = $('.videoGallery .gifTile'),
-    videoImageContainer = $('.videoGallery .imageContainer'),
-    highlight = $('.highlight'),
-    gridItem = $('.gridItem.workGallery'),
-    criteria = $('.criteria'),
-    gSlides = $('.gSlides'),
-    equivHeight = $('.equivHeight');
-
-    fixedElements.addClass('notransition'); // Disable transitions
-    fixedElements.css('padding-top', nav.outerHeight(true) * '1.2');
-    fixedElements.offsetHeight; // Trigger a reflow, flushing the CSS changes
-    fixedElements.removeClass('notransition'); // Re-enable transitions
-
 $(document).ready(function() {
+    let nav = $('nav'),
+        navGroup = $('.navGroup'),
+        introduction = $('.introduction'),
+        workIntro = $('.workIntro'),
+        workIntroHeading = $('.workIntro p'),
+        stickButtons = $('.stickyButtons'),
+        projectButton = $('button.projectButton'),
+        workButton = $('.workButton'),
+        designButton = $('#designButton'),
+        mediaButton = $('#mediaButton'),
+        work = $('.work'),
+        design = $('#design'),
+        media = $('#media'),
+        projectTitle = $('.gridItem .projectTitle'),
+        beginning = $('.beginning'),
+        navSideBar = $('.navSideBar'),
+        anchorLinks = $('.navSideBar a'),
+        figure = $('figure'),
+        imageContainer = $('.imageContainer'),
+        fixedElements = $('section:first-child', '.caseStudyIntro', '.navSideBar'),
+        section = $('.section'),
+        content = $('.content'),
+        changeSpan1 = $('.changeSpan1'),
+        changeSpan2 = $('.changeSpan2'),
+        changeSpan3 = $('.changeSpan3'),
+        embedResume = $('.embedResume'),
+        video = $('video'),
+        videoButton = $('.playVideo'),
+        navIndex = 0,
+        videoGallery = $('.videoGallery'),
+        autoplayVideo = $('.autoplayVideo'),
+        // videoGalTile = $('.videoGallery .gifTile'),
+        videoImageContainer = $('.videoGallery .imageContainer'),
+        highlight = $('.highlight'),
+        gridItem = $('.gridItem.workGallery'),
+        criteria = $('.criteria'),
+        gSlides = $('.gSlides'),
+        equivHeight = $('.equivHeight');
+
+        fixedElements.addClass('notransition'); // Disable transitions
+        fixedElements.css('padding-top', nav.outerHeight(true) * '1.2');
+        fixedElements.offsetHeight; // Trigger a reflow, flushing the CSS changes
+        fixedElements.removeClass('notransition'); // Re-enable transitions
+
     let htmlPageName = location.href.split('/').slice(-1),
         pageNameString = htmlPageName.toString().slice(0, -5),
         defaultIndex, temporaryIndex;
@@ -614,11 +614,11 @@ $(document).ready(function() {
     }
 
     function centerLastElement() {
-        // if ($(window).width() >= 1000 && gridItem.length % 2 == 1) {
-        //     $('.gridItem.workGallery:last-of-type').last().css('margin', 'auto');
-        // } else {
-        //     $('.gridItem.workGallery:last-of-type').last().css('margin', 'inherit');
-        // }
+        if ($(window).width() >= 1000 && gridItem.length % 2 == 1) {
+            $('.gridItem.workGallery:last-of-type').last().css('margin', 'auto');
+        } else {
+            // $('.gridItem.workGallery:last-of-type').last().css('margin', 'inherit');
+        }
         if ($(window).width() >= 1000 && criteria.length % 2 == 1) {
             $('.criteria:last-of-type').css('margin', '0em auto 3em auto');
             $('.criteria:last-of-type *').css('width', $('.criteria:nth-last-child(2)').outerWidth(true));
