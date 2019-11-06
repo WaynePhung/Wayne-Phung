@@ -626,5 +626,7 @@ $(document).ready(function() {
         }
     }
 
-    $.mobile.loading('hide'); //Important to hide the odd "loading" text that appears when jQuery Mobile is installed.
+    if ($.mobile != 'undefined') {
+        $.mobile.loading('hide'); //Important to hide the odd "loading" text that appears when jQuery Mobile is installed.
+    }
 });
