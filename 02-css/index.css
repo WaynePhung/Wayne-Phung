@@ -243,6 +243,8 @@ a, a:hover {
     display: none;
 }
 
+/* Testing comment. */
+
 .highlight {
     /* background-image: linear-gradient(to right, transparent 30%, yellow 50%); */
     background-image: -o-linear-gradient(top, transparent 0%, hsl(128, 61%, 75%) 0%);
