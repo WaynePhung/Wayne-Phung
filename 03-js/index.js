@@ -49,8 +49,7 @@ $(document).ready(function() {
         pageNameString = htmlPageName.toString().slice(0, -5),
         defaultIndex, temporaryIndex;
 
-    $.mobile.loading('hide'); //Important to hide the odd "loading" text that appears when jQuery Mobile is installed.
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         embedResume.hide();
     } else {
         embedResume.show();
@@ -626,4 +625,6 @@ $(document).ready(function() {
             $('.criteria:last-of-type, .criteria:last-of-type *').css('margin', 'auto');
         }
     }
+
+    $.mobile.loading('hide'); //Important to hide the odd "loading" text that appears when jQuery Mobile is installed.
 });
