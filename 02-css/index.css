@@ -2703,6 +2703,19 @@ li {
     .overviewGrid .marginLeft {
         margin-left: 1em;
     }
+
+    #mgProblemTopics > .tableBody {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+
+    #mgProblemTopics > .tableBody > ul {
+        padding: 0em 1em;
+        width: 50%;
+    }
 }
 
 @media screen and (min-width: 475px) and (max-width: 750px) {
@@ -3206,7 +3219,8 @@ li {
 
     .bodyGrid.table, .bodyGrid.flexTable {
         margin: auto;
-        max-width: 750px;
+        width: 90%;
+        /* max-width: 750px; */
         grid-gap: 4px 3px;
     }
 
@@ -3216,6 +3230,15 @@ li {
         width: 100%;
         outline: 3px solid hsl(31, 90%, 28%);
     }
+
+    /* .bodyGrid.flexTable > .tableBody:nth-of-type(2n) {
+        margin-left: 1em;
+        width: 60%;
+    }
+
+    .bodyGrid.flexTable > .tableBody:nth-of-type(2n + 1) {
+        width: 120%;
+    } */
 
     .bodyGrid.flexTable h4 {
         margin: 0px auto 16px auto;
