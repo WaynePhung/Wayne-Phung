@@ -1369,7 +1369,7 @@ footer p.caseStudy {
         -ms-flex-pack: center;
             justify-content: center;
     /* text-align: center; */
-    margin: 0.5em 0em;
+    margin: 0.5em 1.5em;
     width: 100%;
 }
 
@@ -1394,8 +1394,9 @@ footer p.caseStudy {
 }
 
 .gridItem h6 {
-    padding-bottom: 2em;
-    margin-bottom: 0em;
+    line-height: 1.6;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .projectTitle.caseStudy {
@@ -2141,7 +2142,13 @@ audio {
     max-height: 300px;
 }
 
+.maxWidth450 {
+    margin: 0em auto;
+    max-width: 450px;
+}
+
 .maxWidth650 {
+    margin: 0em auto;
     max-width: 650px;
 }
 
@@ -2978,6 +2985,10 @@ li {
     #headwithRoots {
         margin: auto;
         max-width: 150px;
+    }
+
+    .maxWidth450, .maxWidth650 {
+        max-width: 100%;
     }
 }
 
