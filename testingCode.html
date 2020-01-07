@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    /* display: block;
+    margin: 0em; */
+}
+
+.mainBody {
+    margin: 0em 5%;
+}
+
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    vertical-align: middle;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    z-index: 3;
+}
+
+.wrapper > * {
+    flex: 1;
+}
+
+.navSideBar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    order: 2;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3%;
+    left: 0%;
+    max-width: 200px;
+    height: auto;
+    margin: 2em 5% 1em 5%;
+    padding: 0em 0em;
+    background-color: transparent;
+    text-align: left;
+    z-index: 4;
+}
+
+.accordion {
+    background-color: #eee;
+}
+
+.panel {
+    background-color: #ccc;
+}
+
+.accordion {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+/* .accordion:last-of-type {
+    padding-bottom: 1em;
+} */
+
+.accordion > a {
+    padding: 1em;
+    width: 100%;
+}
+
+/* .active, .accordion:hover {
+  background-color: #ccc;
+} */
+
+.panel {
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.sideBarButton {
+    display: block;
+    position: relative;
+    margin-left: 15%;
+    padding: 1em;
+    width: calc(85% - 2em);
+}
+
+.currentAnchor {
+    background-color: red;
+}
+
+.content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    order: 1;
+    /* -ms-flex-wrap: wrap;
+        flex-wrap: wrap; */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-item-align: start;
+            -ms-grid-row-align: start;
+            align-self: flex-start;
+    margin: 0em 0em;
+    padding: 3em 5%;
+    width: 60%;
+    height: auto;
+    z-index: 4;
+}
+</style>
+</head>
+<body>
+    <div class="mainBody">
+        <article>
+            <h2 class="heading">Introduction</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </article>
+    </div>
+    <div class="wrapper">
+    <nav class="navSideBar">
+        <h2>Animated Accordion</h2>
+        <p>Click on the buttons to open the collapsible content.</p>
+        <div class="accordion">
+          <a class="mainLink" href="#projectOverview" data-index="1">Project Overview</a>
+          <div class="panel nestedButtons">
+            <a class="sideBarButton" href="#objective">Objective</a>
+            <a class="sideBarButton" href="#problems">Problems Discovered</a>
+          </div>
+        </div>
+        <div class="accordion">
+          <a class="mainLink" href="#designProcess" data-index="2">Design Process</a>
+          <div class="panel nestedButtons">
+              <a class="sideBarButton" href="#research">Research</a>
+              <a class="sideBarButton" href="#dataSynthesis">Data Synthesis</a>
+              <a class="sideBarButton" href="#problemSpaces">Problem Spaces</a>
+              <a class="sideBarButton" href="#ideation">Ideation</a>
+          </div>
+        </div>
+        <div class="accordion">
+          <a class="mainLink" href="#finalSolution" data-index="3">Final Solution</a>
+          <div class="panel nestedButtons">
+              <a class="sideBarButton" href="#results">Results</a>
+              <a class="sideBarButton" href="#reflection">Reflection</a>
+              <a class="sideBarButton" href="#nextSteps">Next Steps</a>
+          </div>
+        </div>
+    </nav>
+    <div class="content">
+    	<article>
+            <h2 class="section heading" id="projectOverview" data-index="1">Project Overview</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="objective">Objective</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="problems">Problems Discovered</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </article>
+    	<article>
+            <h2 class="section heading" id="designProcess" data-index="2">Design Process</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="research">Research</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="dataSynthesis">Data Synthesis</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="problemSpaces">Problem Spaces</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="ideation">Ideation</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </article>
+    	<article>
+            <h2 class="section heading" id="finalSolution" data-index="3">Final Solution</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="results">Results</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="reflection">Reflection</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h4 class="section subHeading" id="nextSteps">Next Steps</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </article>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        "use strict";
+        $(document).ready( function() {
+            var storedIndex = 0;
+            toggleAnchorLinks();
+            console.log('Link length: ' + $('.accordion').find('a').length);
+            $(window).bind('scroll', function() {
+                toggleAnchorLinks();
+            });
+                // let getNavLinks = $('.accordion').find('a'),
+                //     getNavIndex;
+                // getNavLinks.each( function(index) {
+                //     let scrollPosition = $(window).scrollTop(),
+                //         elementTopPos = $(this).offset().top;
+                //     if (scrollPosition >= $('.mainBody article').offset().top) {
+                //         console.log('Past first');
+                //         acc.each( function(i) {
+                //             var getId = $(this).find('a').attr('href').split("#")[1],
+                //                 getSectionId = $('#' + getId + ''),
+                //                 getIdPosition = getSectionId.offset().top;
+                //             if (scrollPosition >= $(this).offset().top && $(this).hasClass('mainLink')) {
+                //                     let allPanel = $(".panel"),
+                //                     panel = $(this).next(".panel"),
+                //                     sideBarButton = panel.find(".sideBarButton"),
+                //                     sumSideBarHeight = 0;
+                //                     allPanel.css({
+                //                     'max-height': 0,
+                //                     'padding': '0em 0em'
+                //                 });
+                //                 sideBarButton.each( function(j) {
+                //                     sumSideBarHeight += sideBarButton.eq(j).outerHeight(true)
+                //                 });
+                //                 panel.css({
+                //                     'max-height': sumSideBarHeight + "px"
+                //                 });
+                //                 $('html, body').animate({
+                //                     scrollTop: getIdPosition
+                //                 }, 300);
+                //                 return false;
+                //             }
+                //             if (scrollPosition >= $(this).offset().top && $(this).hasClass('sideBarButton')) {
+                //                 $('html, body').animate({
+                //                     scrollTop: getIdPosition
+                //                 }, 300);
+                //                 return false;
+                //             }
+                //         });
+                //     } else {
+                //         console.log('Before first');
+                //         $(".panel").css({
+                //             'max-height': 0,
+                //             'padding': '0em 0em'
+                //         });
+                //     }
+                // });
+            function toggleAnchorLinks() {
+                let scrollPosition = $(window).scrollTop();
+                if (scrollPosition >= $('.content article').offset().top) {
+                    console.log('After project overview section.');
+                    for (let i = 0; i < storedIndex; i++) {
+                        let sideBarButton = $(".panel").eq(i).find(".sideBarButton"),
+                            sumSideBarHeight = 0;
+                        sideBarButton.each( function(j) {
+                            sumSideBarHeight += sideBarButton.eq(j).outerHeight(true);
+                        });
+                        $(".panel").eq(i).css({
+                            'max-height': sumSideBarHeight + "px"
+                        });
+                    }
+                    let getSections = $('.section');
+                    getSections.each( function(i) {
+                        let elementTopPos = $(this).offset().top;
+                            // getId = $(this).find('a').attr('href').split("#")[1],
+                            // getSectionId = $('#' + getId + ''),
+                            // getIdPosition = getSectionId.offset().top;
+                        // console.log(getNavLinks.eq(index).attr('href'));
+                        // console.log($(this));
+                        if (scrollPosition >= (elementTopPos - 10)) {
+                            console.log('Main anchor link accessed.');
+                            let getId = $(this).attr('id'),
+                                getNavId = $('.accordion a[href = "#' + getId + '"]');
+                            console.log(getId);
+                            if (getNavId.hasClass('mainLink')) {
+                                console.log('Found a mainLink.');
+                                let allPanel = $(".panel"),
+                                    panel = getNavId.next(".panel"),
+                                    sideBarButton = panel.find(".sideBarButton"),
+                                    sumSideBarHeight = 0;
+                                // allPanel.css({
+                                //     'max-height': 0,
+                                //     'padding': '0em 0em'
+                                // });
+                                sideBarButton.each( function(j) {
+                                    sumSideBarHeight += sideBarButton.eq(j).outerHeight(true);
+                                });
+                                panel.css({
+                                    'max-height': sumSideBarHeight + "px"
+                                });
+                                let tempIndex = getNavId.attr('data-index');
+                                console.log('tempIndex: ' + tempIndex + ' storedIndex: ' + storedIndex);
+                                if (storedIndex > allPanel.length) {
+                                    storedIndex = allPanel.length;
+                                    console.log('storedIndex maxed out.');
+                                    return false;
+                                }
+                                if (tempIndex > storedIndex) {
+                                    storedIndex = tempIndex;
+                                    return false;
+                                }
+                            }
+                            $('.accordion a').removeClass('currentAnchor');
+                            getNavId.addClass('currentAnchor');
+                        } else {
+                            //Do nothing.
+                        }
+                    });
+                } else {
+                    $('.accordion a').removeClass('currentAnchor');
+                    console.log('Before project overview section.');
+                    $(".panel").css({
+                        'max-height': 0,
+                        'padding': '0em 0em'
+                    });
+                }
+            }
+            var acc = $('.accordion'),
+                i;
+            acc.each( function(i) {
+                acc.eq(i).find('a').on("click", function() {
+                    var getId = $(this).attr('href').split("#")[1],
+                        getSectionId = $('#' + getId + ''),
+                        getIdPosition = getSectionId.offset().top;
+                    $('html, body').animate({
+                        scrollTop: getIdPosition
+                    }, 300);
+                    return false;
+                    // if ($(this).hasClass('mainLink')) {
+                    //     let allPanel = $(".panel"),
+                    //         panel = $(this).next(".panel"),
+                    //         sideBarButton = panel.find(".sideBarButton"),
+                    //         sumSideBarHeight = 0;
+                    //     // $(this).addClass(".normal");
+                    //     console.log('getId: ' + getId + 'getSectionId: ' + getSectionId);
+                    //     allPanel.css({
+                    //         'max-height': 0,
+                    //         'padding': '0em 0em'
+                    //     });
+                    //     sideBarButton.each( function(j) {
+                    //         sumSideBarHeight += sideBarButton.eq(j).outerHeight(true)
+                    //     });
+                    //     console.log('Total height: ' + sumSideBarHeight);
+                    //     panel.css({
+                    //         'max-height': sumSideBarHeight + "px"
+                    //     });
+                    //
+                    // }
+                    // if ($(this).hasClass('sideBarButton')) {
+                    //     $('html, body').animate({
+                    //         scrollTop: getIdPosition
+                    //     }, 300);
+                    //     return false;
+                    // }
+                    // panel.find(".sideBarButton").css('margin-left', '15%');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
