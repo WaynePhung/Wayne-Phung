@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head tag: Organizes metadata information of the HTML document, such as character sets, scripts, stylesheets, and other types of metadata.-->
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-security-policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/"><!--'strict-dynamic' 'unsafe-hashes' 'nonce-wwa0gx65d93mtk023bhz'-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio">
+
+    <!--CSS stylesheet(s).-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of this page's browser tab.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>Electric Stride - Wayne Phung's Portfolio Case Study</title>
+
+</head>
+
+<!--Body tag: Specifies all elements of the HTML document. This is what a person typically sees or interacts with in a webpage.-->
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!--Header tag: Specifies top portion of the page. This would contain a logo, main navigation links, and call-to-action buttons.-->
+    <header role="banner" aria-label="navigation links">
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork" class="navLink diffURL"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork" class="navLink diffURL"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink diffURL"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection" class="navLink diffURL"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink diffURL"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink diffURL" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <div class="progressContainer" id="headerProgressBar-caseStudy">
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <!-- main tag: Container for the majority of content shown in this webpage, excluding the footer. -->
+    <main role="main" id="title">
+        <aside role="navigation" class="navSideBar" id="sideBar-EStride">
+            <!-- The ToC button that would only appear on mobile screen sizes. -->
+            <button class="button" id="tableOfContents-MobileButton">
+                <!-- Wrapper for icon image. -->
+                <picture class="ratio-1-1 vectorIcon">
+                    <!-- Source of icon image. -->
+                    <img src="01-other-images/icons/icon-tableOfContents.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" id="mobileToC">
+                </picture>
+                <!-- Button text. -->
+                <p>Open ToC</p>
+            </button>
+            <!-- 
+                When the "Top of Page" button is selected, the very top/beginning of the web page would be shown. 
+                This specific button is the one that appears for tablet/desktop screen sizes.
+            -->
+            <a class="navButton sideBarButton desktopButton" href="#title" id="toTop">
+                <!-- Wrapper for icon image. -->
+                <picture class="ratio-1-1 vectorIcon">
+                    <!-- Source of icon image. -->
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <!-- Button text. -->
+                <p data-href="title">Top of Page</p>
+            </a>
+            <!-- Container for all ToC buttons and vertical progress bar. -->
+            <div class="navButtons">
+                <!-- nav tag containing all of the ToC buttons. -->
+                <nav class="accordion withIcons">
+                    <!-- 
+                        When the "Top of Page" button is selected, the very top/beginning of the web page would be shown. 
+                        This specific button is the one that appears for mobile screen sizes.
+                    -->
+                    <a class="navButton sideBarButton" href="#title" id="toTop-mobile">
+                        <!-- Wrapper for icon image. -->
+                        <picture class="ratio-1-1 vectorIcon">
+                            <!-- Source of icon image. -->
+                            <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                        </picture>
+                        <!-- Button text. -->
+                        <p data-href="title">Top of Page</p>
+                    </a>
+                    <!-- Button to direct to the "Introduction" heading title. -->
+                    <a class="navButton sideBarButton" href="#introduction">
+                        <!-- Wrapper for icon image. -->
+                        <picture class="ratio-1-1 vectorIcon">
+                            <!-- Source of icon image. -->
+                            <img src="01-other-images/icons/icon-book.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="introduction">
+                        </picture>
+                        <!-- Button text. -->
+                        <p data-href="introduction">Introduction</p>
+                    </a>
+                    <!-- Button to direct to the "Initial Research" heading title. -->
+                    <a class="navButton sideBarButton" href="#initialResearch">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-intitialResearch.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="initialResearch">
+                        </picture>
+                        <p data-href="initialResearch">Initial Research</p>
+                    </a>
+                    <!-- Button to direct to the "Data Synthesis" heading title. -->
+                    <a class="navButton sideBarButton" href="#dataSynthesis">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-dataSynthesis.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="dataSynthesis">
+                        </picture>
+                        <p data-href="dataSynthesis">Data Synthesis</p>
+                    </a>
+                    <!-- Button to direct to the "Ideation" heading title. -->
+                    <a class="navButton sideBarButton" href="#ideation">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-ideation.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="ideation">
+                        </picture>
+                        <p data-href="ideation">Ideation</p>
+                    </a>
+                    <!-- Button to direct to the "Prototyping" heading title. -->
+                    <a class="navButton sideBarButton" href="#prototyping">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-prototyping-1.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="prototyping">
+                        </picture>
+                        <p data-href="prototyping">Prototyping</p>
+                    </a>
+                    <!-- Button to direct to the "Solution Pivoting" heading title. -->
+                    <a class="navButton sideBarButton" href="#solutionPivoting">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-solutionPivoting.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="solutionPivoting">
+                        </picture>
+                        <p data-href="solutionPivoting">Solution Pivoting</p>
+                    </a>
+                    <!-- Button to direct to the "User Testing" heading title. -->
+                    <a class="navButton sideBarButton" href="#userTesting">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-userTesting.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="userTesting">
+                        </picture>
+                        <p data-href="userTesting">User Testing</p>
+                    </a>
+                    <!-- Button to direct to the "Final Deliverables" heading title. -->
+                    <a class="navButton sideBarButton" href="#finalDeliverables">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-finalDeliverables.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="finalDeliverables">
+                        </picture>
+                        <p data-href="finalDeliverables">Final Deliverables</p>
+                    </a>
+                    <!-- Button to direct to the "Reflection" heading title. -->
+                    <a class="navButton sideBarButton" href="#reflection">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                        </picture>
+                        <p data-href="reflection">Reflection</p>
+                    </a>
+                    <!-- Button to direct to the "Other Case Studies" heading title. -->
+                    <a class="navButton sideBarButton" href="#projectsText" id="toBottom-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                        </picture>
+                        <p data-href="projectsText">Other Case Studies</p>
+                    </a>
+                </nav>
+                <!-- Progress bar. When in tablet/desktop screen sizes, it is shown as a long, thin vertical bar.
+                The bar will disappear in mobile screen sizes.  -->
+                <div class="progressContainer" id="sideProgressBar">
+                    <!-- 
+                        Indicator that dynamically changes in length based on how far down the person has scrolled down the web page.
+                        It appears as a black bar that constantly changes in length based on far down the page has been scrolled.
+                    -->
+                    <div class="progressBar"></div>
+                </div>
+            </div>
+            <!-- Button to direct to the "Initial Research" heading title. -->
+            <a class="navButton sideBarButton" href="#projectsText" id="toBottom">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                </picture>
+                <p data-href="projectsText">Other Case Studies</p>
+            </a>
+        </aside>
+        <!-- section tag as a container for the title section. -->
+        <section class="titleSection grid gridType3">
+            <!-- Title section heading and body text. -->
+            <article class="titleArticle gridContent">
+                <h1>Electric Stride</h1>
+                <p>
+                    An exercise mat for people with Parkinson's Disease to train their gait using embedded LED lights for visual cues and pressure-based location prediction to lengthen their walking strides.
+                    <br><br>
+                    Scroll down to read more.
+                </p>
+            </article>
+            <figure class="gridContent shadow" id="electricStride">
+                <picture class="ratio-3-4">
+                    <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                    <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                    <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                </picture>
+            </figure>
+        </section>
+        <!-- Container for the main content of the project. -->
+        <section class="content caseStudyContent">
+            <section class="pageSection" id="introduction">
+                <h2>
+                    <span>Introduction</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-book.svg" alt="" loading="eager" data-href="introduction">
+                    </picture>
+                </h2>
+                <section class="grid gridType4">
+                    <!-- Series of nested containers, each with a subheading and body text. -->
+                    <article class="gridContent">
+                        <h3>Project Background</h3>
+                        <p>
+                            People with Parkinson's Disease of various stages have varied types of motor and non-motor symptoms that impact their lifestyles and how their caregivers attend to them.
+                            <br><br>
+                            Within the context of this <a rel="external" target="_blank" href="http://ece.ucsd.edu/design-competition">extended Hack-a-thon competition</a>, I worked in a student group of ten to find innovative ways to improve the quality of life for Parkinson's patients and caregivers.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <h3>I Interacted With...</h3>
+                        <p>
+                            <i><b>Teammates</b></i><br>April Gau, Christie Wolters, David Laub, Dawn Ye, Emilia Pokta, Enrique Zavala, Jacqueline Lee, Ludi Sabalburo, Willy Ma
+                            <br><br>
+                            <i><b>Event Supervisor and Coordinator</b></i><br>Chelsea Largoza
+                            <br><br>
+                            <i><b>Competition Mentors from IBM</b></i><br>Damon Deaner and Karel Vredenburg
+                            <br><br>
+                            <i><b>People Impacted By Parkinson's</b></i><br>Patients, Caregivers, and Domain Experts
+                        </p>
+                    </article>
+                </section>
+                <article>
+                    <h3>My Contributions Summarized</h3>
+                    <!-- Body text represented as a numbered list. -->
+                    <ol>
+                        <li>supporting user research activities and photo/video documentation</li>
+                        <li>supporting data synthesis and ideation efforts for different problem spaces and solutions</li>
+                        <li>creating the initial interfaces for the first version of our team's solution</li>
+                        <li>scheduling and facilitating in-person, moderated user testing sessions with Parkinson's patients in a rock steady boxing class</li>
+                        <li>contributing to final competition deliverables and live presentation</li>
+                    </ol>
+                    <!-- Design process diagram used to illustrate contributions to the project.
+                         The image has different dimensions and aspect ratios depending if a screen size is above or below 1024px.
+                    -->
+                    <!-- figure tag to wrap image. -->
+                    <figure class="toggle-350 gridContent noMargin">
+                        <!-- picture tag to set the shadow and default aspect ratio of the image. -->
+                        <picture class="ratio-9-4 noMargin" id="eStride-DesignProcess">
+                            <!-- Sources of image, mainly in SVG format. Different images of differing sizes and aspect ratios will appear depending on the screen width. -->
+                            <source type="image/svg+xml" media="(max-width: 1024px)" srcset="01-designWork-images/electricStride/01-original-svg/designProcess-ElectricStride-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1024px)" srcset="01-designWork-images/electricStride/01-original-svg/designProcess-ElectricStride-1400w.svg">
+                            <img src="01-designWork-images/electricStride/designProcess-ElectricStride-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/designProcess-ElectricStride-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom noMaxWidth noMaxHeight noMarginBottom noShadow">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="initialResearch">
+                <h2>
+                    <span>Initial Research</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-intitialResearch.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <!-- Content describes research efforts taken. -->
+                <section class="grid gridType10-2Column-AutoRight">
+                    <article class="gridContent">
+                        <p class="noMarginBottom noMaxWidth">Desk research contributed to a mind map for understanding topics in Parkinson's:</p>
+                        <ul>
+                            <li>symptoms and treatments</li>
+                            <li>relevant people involved with Parkinson's and their everyday experiences</li>
+                            <li>existing organizations tackling Parkinson's</li>
+                        </ul>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="gridContent designProcessPart-250">
+                        <picture id="eStride-initialResearch">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/initialResearch-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/initialResearch-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/initialResearch-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/initialResearch-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom noShadow">
+                        </picture>
+                    </figure>
+                </section>
+                <!-- Image of mind map. -->
+                <figure>
+                    <!-- <figcaption>Mind map of subtopics for Parkinson's, which included:</figcaption> -->
+                    <picture class="ratio-9-5 shadow">
+                        <source type="image/webp" media="(max-width: 400px)" srcset="01-designWork-images/electricStride/03-original-webp/mindMap.webp">
+                        <source type="image/png" media="(min-width: 400px)" srcset="01-designWork-images/electricStride/02-compressed-png/mindMap-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/mindMap-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/mindMap.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure>
+                <!-- Content describing research efforts converted into initial questions to explore for different groups of people. -->
+                <section class="grid gridType3">
+                    <p class="gridContent">These efforts informed my facilitation of team dot-voting of topics and questions to ask for patients, caregivers, and domain experts (initially named as “medical professionals”).</p>
+                    <!-- Image of dot-voted list of questions. -->
+                    <figure class="gridContent shadow">
+                        <!-- <figcaption>Dot-voted list of questions for three different groups of people involved with Parkinson's: patients, caregivers, and medical professionals.</figcaption> -->
+                        <picture class="ratio-4-3 preventOverflow" id="eStride-questionsGroupsOfPeople">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/questionsGroupsOfPeople.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/questionsGroupsOfPeople-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/questionsGroupsOfPeople-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/questionsGroupsOfPeople.png" loading="lazy" class="lazyload blur-up objectFitCover">
+                        </picture>
+                    </figure>
+                </section>
+            </section>
+            <section class="pageSection" id="dataSynthesis">
+                <h2>
+                    <span>Data Synthesis</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-dataSynthesis.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <section class="grid gridType10-2Column-AutoRight designProcessGrid">
+                    <article class="gridContent noMarginTop">
+                        <h3>Brainstormed with team to inform initial problem spaces.</h3>
+                        <ul>
+                            <li>Contributed to sticky note ideas to an affinity diagram.</li>
+                            <li>Dot voted during a brainstorming workshop to contribute group consensus of prioritized problem spaces from my teammates, IBM competition mentors, an industry designer, a patient, and a caregiver.</li>
+                        </ul>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="gridContent designProcessPart-250">
+                        <picture id="eStride-dataSynthesis">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/dataSynthesis-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/dataSynthesis-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/dataSynthesis-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/dataSynthesis-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </section>
+                <!-- Image of people co-creatively participating in a design workshop affinity diagram. -->
+                <figure class="maxWidth550 shadow">
+                    <!-- <figcaption>People coming together to put their ideas on the wall through sticky-note brainstorming about Parkinson's during the affinity mapping group activity.</figcaption> -->
+                    <picture class="ratio-4-3 preventOverflow" id="eStride-designSprint1">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/designSprint1.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/designSprint1-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/designSprint1-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/designSprint-1.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure>
+                <!-- Image of sticky notes organized as an affinity diagram. -->
+                <figure class="maxWidth750 shadow">
+                    <picture class="ratio-9-5 preventOverflow" id="eStride-designSprint2">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/designSprint2.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/designSprint2-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/designSprint2-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/designSprint2.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure>
+                <!-- Subheading of initial problem spaces. -->
+                <article class="grid gridType2">
+                    <h3 class="gridContent">Based on this dot voting, initial problem spaces emerged.</h3>
+                    <!-- Image of a double-diamond design phase representation of initial problem spaces. -->
+                    <figure class="gridContent designProcessPart-250">
+                        <picture class="ratio-5-4" id="eStride-problemSpaces">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/problemSpaces-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/problemSpaces-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/problemSpaces-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/problemSpaces-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <!-- On desktop screen sizes, initial problem spaces are shown in a 3-column grid.
+                    Each grid cell contains the name of the problem space, a vector image representation, and a brief description. -->
+                <article class="grid gridType-ProblemIcon eStride-problemGrid gridType7">
+                    <article class="grid gridType1 gridContent">
+                        <h4>Maintaining Agency</h4>
+                        <figure class="noMargin gridContent justifyFlexStart heightAuto">
+                            <picture class="problemSpaceIcon ratio-1-1 noMargin">
+                            <img src="01-designWork-images/electricStride/01-original-svg/problemIcon1.svg" data-src="01-designWork-images/electricStride/01-original-svg/problemIcon1.svg" loading="lazy" class="lazyload blur-up problemSpaceIcon">
+                            </picture>
+                        </figure>
+                        <p class="gridContent">
+                            Need from patients and caregivers to live out their daily lifestyles without Parkinson's affecting their daily routines.
+                            <br><br>
+                            How might we enable patients and caregivers to have as much time as possible to do daily activities and hobbies that they want to engage in?
+                        </p>
+                    </article>
+                    <article class="grid gridType1 gridContent">
+                        <h4>Live Symptom Awareness</h4>
+                        <figure class="noMargin gridContent justifyFlexStart heightAuto">
+                            <picture class="problemSpaceIcon ratio-1-1 noMargin">
+                                <img src="01-designWork-images/electricStride/01-original-svg/problemIcon2.svg" data-src="01-designWork-images/electricStride/01-original-svg/problemIcon2.svg" loading="lazy" class="lazyload blur-up problemSpaceIcon">
+                            </picture>
+                        </figure>
+                        <p class="gridContent">
+                            Need from patients, caregivers, and medical professionals to actively monitor and manage the progression of a patient's Parkinson's.
+                            <br><br>
+                            How might we enable them to stay informed of the issues and treatments needed to address the patient's symptoms?
+                        </p>
+                    </article>
+                    <article class="grid gridType1 gridContent">
+                        <h4>Social interactions</h4>
+                        <figure class="noMargin gridContent justifyFlexStart heightAuto">
+                            <picture class="problemSpaceIcon ratio-1-1 noMargin">
+                                <img src="01-designWork-images/electricStride/01-original-svg/problemIcon3.svg" data-src="01-designWork-images/electricStride/01-original-svg/problemIcon3.svg" loading="lazy" class="lazyload blur-up problemSpaceIcon">
+                            </picture>
+                        </figure>
+                        <p class="gridContent">
+                            Need for support groups, or other ways to promote interactions and bonding between patients.
+                            <br><br>
+                            How might we sustain such a commmunity amongst Parkinson's patients to improve their daily life?
+                        </p>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="ideation">
+                <h2>
+                    <span>Ideation</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-intitialResearch.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <section class="grid gridType2 designProcessGrid">
+                    <!-- Text describing the ideation process. -->
+                    <article class="gridContent">
+                        <h3>Helped Ideate Aspects of Team's Initial Solution</h3>
+                        <p class="noMarginBottom">Contributed to more sticky note brainstorming and affinity diagramming sessions to figure out:</p>
+                        <ol>
+                            <li>the first solution that the team wanted to focus on.</li>
+                            <li>which features of the first solution we wanted to prioritize making.</li>
+                        </ol>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="toggle-475 gridContent designProcessPart-250">
+                        <picture id="eStride-ideation">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/ideation-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/ideation-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/ideation-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/ideation-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </section>
+                <section class="grid gridType1 adjustImages">
+                    <!-- Image of my stick notes for solution features. -->
+                    <figure class="gridContent shadow">
+                        <picture class="ratio-4-3">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/stickyNotes1.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/stickyNotes1-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/stickyNotes1-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/stickyNotes1.png" loading="lazy" class="lazyload blur-up objectFitCover">
+                        </picture>
+                        <figcaption>My sticky notes of smart bottle solution features.</figcaption>
+                    </figure>
+                    <!-- Image of sorted sticky notes into a priority matrix. -->
+                    <figure class="gridContent shadow">
+                        <picture class="ratio-9-5">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/stickyNotes2.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/stickyNotes2-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/stickyNotes2-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/stickyNotes2.png" loading="lazy" class="lazyload blur-up objectFitCover objectPositionRight">
+                        </picture>
+                        <figcaption>Someone else helped to group and sort team priority of features to build based on each feature's ease of building and potential value to Parkinson's patients and caregivers.</figcaption>
+                    </figure>
+                </section>
+            </section>
+            <section class="pageSection" id="prototyping">
+                <h2>
+                    <span>Prototyping</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-prototyping-1.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <!-- Content describes efforts taken to prototype solution. -->
+                <section class="grid gridType10-2Column-AutoRight designProcessGrid">
+                    <article class="gridContent">
+                        <h3>Prototyped Two Interface Mockups of the Smart Bottle App</h3>
+                        <p class="gridContent">Translated research, storyboard, and visual design artifacts into two software interface mockups, shown in one of our team's slide deck presentations.</p>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="gridContent designProcessPart-250">
+                        <picture>
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/prototypingSolution-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/prototypingSolution-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/prototypingSolution-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/prototypingSolution-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </section>
+                <!-- Two images of app-interface mockups, shown as a two-column grid in dekstop screen sizes. -->
+                <section class="grid gridType1">
+                    <figure class="gridContent" id="eStride-pillIntakeFeatures">
+                        <figcaption><b>Pill Intake Tracking</b> - Caregivers can temporally track a patient's consumption of medication with specific dosage information.</figcaption>
+                        <picture class="ratio-1-1" id="eStride-pillIntakeFeatures">
+                            <img src="01-designWork-images/electricStride/01-original-svg/pillIntakeFeatures.svg" data-src="01-designWork-images/electricStride/01-original-svg/pillIntakeFeatures.svg" loading="lazy" class="lazyload blur-up noShadow"><!--class: maxHeight400-->
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <figcaption><b>Pill Intake History and Caregiver Messages</b> - Caregivers can  monitor and remind the patient on their medication adherence.</figcaption>
+                        <picture class="ratio-1-1" id="eStride-historyFeatures">
+                            <img src="01-designWork-images/electricStride/01-original-svg/historyFeatures.svg" data-src="01-designWork-images/electricStride/01-original-svg/historyFeatures.svg" loading="lazy" class="lazyload blur-up noPanzoom noShadow"><!--class: maxHeight400-->
+                        </picture>
+                    </figure>
+                </section>
+                <!-- Content describes a slide deck made to present initial solution. -->
+                <article>
+                    <h3>Presented a 
+                        <a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRagDMn8ymkQaz60_Xr4JbfCLeDoXcgva6q1xk3ZP2XenA7CPyAEQqDU2rMTW3iztoiv_lEy4RVrU8h/embed?start=false&amp;loop=false&amp;delayms=15000" target="_blank">Slide Deck</a> 
+                        Showing Team's Initial Solution
+                    </h3>
+                    <!-- Image preview of slide deck. When clicked, this will show a viewable version of the slide deck. -->
+                    <figure class="maxWidth750 shadow">
+                        <a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRagDMn8ymkQaz60_Xr4JbfCLeDoXcgva6q1xk3ZP2XenA7CPyAEQqDU2rMTW3iztoiv_lEy4RVrU8h/embed?start=false&amp;loop=false&amp;delayms=15000">
+                            <picture class="ratio-9-5">
+                                <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/slideDeck-HackAThon2.webp">
+                                <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/slideDeck-HackAThon2-compressed.png">
+                                <img src="01-designWork-images/electricStride/02-compressed-png/slideDeck-HackAThon2-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/slideDeck-HackAThon2.png" loading="lazy" class="lazyload blur-up noShadow">
+                            </picture>
+                        </a>
+                    </figure>
+                    <!-- Obsolete usage of live embedding of the Google slide deck, since it takes too long to load everything from the slide deck. -->
+                    <!-- <iframe class="gSlides span2" src="https://docs.google.com/presentation/d/e/2PACX-1vRagDMn8ymkQaz60_Xr4JbfCLeDoXcgva6q1xk3ZP2XenA7CPyAEQqDU2rMTW3iztoiv_lEy4RVrU8h/embed?start=false&amp;loop=false&amp;delayms=15000" allowfullscreen=""></iframe> -->
+                </article>
+            </section>
+            <section class="pageSection" id="solutionPivoting">
+                <h2>
+                    <span>Solution Pivoting</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-solutionPivoting.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <!-- Subsection of content describing the reasoning behind the solution pivot. -->
+                <article class="grid gridType10-2Column-AutoRight">
+                    <article class="gridContent">
+                        <h3>Revisited Online Research to Help Redefine Problem Spaces and Solutions to Pivot</h3>
+                        <p>This effort was based on the competition judges critiques of my team's solution. In comparison to other teams' solutions, our team's lack of novelty and potential impact were other factors that informed team's decision to pivot.</p>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="gridContent designProcessPart-250">
+                        <picture class="ratio-5-4" id="eStride-pivoting">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/pivoting-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/pivoting-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/pivoting-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/pivoting-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <article class="grid gridType4 gridType-ProblemIcon eStride-problemGrid adjustImages min750-rowgap-xl">
+                    <h3 class="columnSpan-all width100 min1024-textAlign-center">New Problem Spaces</h3>
+                    <article class="grid gridType1 gridContent">
+                        <h4>Maintaining Agency</h4>
+                        <figure class="gridContent">
+                            <picture class="ratio-1-1 problemSpaceIcon noMargin noShadow" id="maintainingAgency">
+                                <img src="01-designWork-images/electricStride/01-original-svg/problemIcon1.svg" data-src="01-designWork-images/electricStride/01-original-svg/problemIcon1.svg" loading="lazy" class="lazyload blur-up problemSpaceIcon noShadow">
+                            </picture>
+                        </figure>
+                        <p class="gridContent">Need from patients and caregivers to live out their daily lifestyles without Parkinson's affecting their daily routines.</p>
+                    </article>
+                    <article class="grid gridType1 gridContent">
+                        <h4>Parkinson's Gait</h4>
+                        <figure class="gridContent">
+                            <picture class="ratio-1-2 problemSpaceIcon problemIcon4 noMargin noShadow">
+                                <img src="01-designWork-images/electricStride/01-original-svg/problemIcon4.svg" data-src="01-designWork-images/electricStride/01-original-svg/problemIcon4.svg" loading="lazy" class="lazyload blur-up problemSpaceIcon problemIcon4 noShadow">
+                            </picture>
+                        </figure>
+                        <p class="gridContent">Unusual gait and related motor symptoms are highly disruptive to people with Parkinson's and can interfere with their movement and daily activities. Experiences of shuffling and leaning forward make them susceptible to possibly fatal falls.</p>
+                    </article>
+                </article>
+                <article>
+                    <h3>Final Solution Chosen - Exercise Floor Tiles</h3>
+                    <article class="grid gridType2">
+                        <article class="gridContent">
+                            <p>
+                                Two reasons why my team chose this solution:
+                            </p>
+                            <ol>
+                                <li>Inspiration of 3D optical illusions in floor rugs and exercise equipment complimented previously explored non-pharmaceutical interventions: exercise routines.</li>
+                                <li>Strong relevance to new prioritized problem spaces.</li>
+                            </ol>
+                            <!-- Collage of images of online inspiration to solution. -->
+                        </article>
+                        <figure class="gridContent shadow">
+                            <picture class="ratio-1-1" id="eStride-finalSolutionIdea">
+                                <img src="01-designWork-images/electricStride/01-original-svg/finalSolutionIdea.svg" data-src="01-designWork-images/electricStride/01-original-svg/finalSolutionIdea.svg" loading="lazy" class="lazyload blur-up">
+                            </picture>
+                        </figure>
+                        <article class="gridContent">
+                            <p>My other team members built the first version of the mat.</p>
+                            <!-- Image of first prototype of the mat. -->
+                        </article>
+                        <figure class="gridContent maxHeight500 shadow">
+                            <picture class="ratio-7-10" id="eStride-lowFidMat">
+                                <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/lowFidMat.webp">
+                                <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/lowFidMat-compressed.png">
+                                <img src="01-designWork-images/electricStride/02-compressed-png/lowFidMat-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/lowFidMat.png" loading="lazy" class="lazyload objectFitCover blur-up noPanzoom noShadow">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="userTesting">
+                <h2>
+                    <span>User Testing</span>
+                    <picture class="ratio-1-1 vectorIcon noShadow">
+                        <img src="01-other-images/icons/icon-userTesting.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <section class="grid gridType10-2Column-AutoRight">
+                    <article class="gridContent">
+                        <h3 class="gridContent">Helped to Test and Gather Feedback</h3>
+                        <p>
+                            Half the team developed the mat. I was with the other half to test the floor tiles.
+                            <br><br>
+                            I handled schedule coordination, media documentation, and user testing facilitation within a previously visited home and a rock-steady-boxing gym class that had a group of people with Parkinson's.
+                        </p>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="gridContent toggle-475 designProcessPart-250 rowSpan2 noMargin noShadow">
+                        <picture class="noShadow" id="eStride-userTesting">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/userTesting-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/userTesting-1400w.svg">
+                            <img src="01-designWork-images/electricStride/01-original-svg/userTesting-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/userTesting-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </section>
+                <!-- Three images of testing the mat with seniors with Parkinson's from a rock-steady boxing class. -->
+                <figure class="maxWidth750">
+                    <picture class="ratio-9-5 preventOverflow shadow" id="eStride-userTesting1">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/userTesting1.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/userTesting1-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/userTesting1-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/userTesting1.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure>
+                <figure class="maxWidth750">
+                    <picture class="ratio-5-3 preventOverflow shadow" id="eStride-userTesting2">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/userTesting2.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/userTesting2-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/userTesting2-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/userTesting2.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure>
+                <figure class="maxWidth750">
+                    <picture class="ratio-16-9 preventOverflow shadow" id="eStride-userTesting3">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/userTesting3.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/userTesting3-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/userTesting3-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/userTesting3.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure>
+                <!-- Text and image explaining how the feedback was consolidated. -->
+                <article>
+                    <p>Eventually, I contributed to consolidating the feedback as a spreadsheet that would be used for other team members to further iterate on the final version of the mat.</p>
+                    <figure class="maxWidth750">
+                        <picture class="ratio-4-3 preventOverflow shadow" id="eStride-userTestingFeedback1">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/userTestingFeedback1.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/userTestingFeedback1-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/userTestingFeedback1.png" data-src="01-designWork-images/electricStride/01-original-png/userTestingFeedback1.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="finalDeliverables">
+                <h2>
+                    <span>Final Deliverables</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-finalDeliverables.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article class="grid gridType10-2Column-AutoRight designProcessGrid">
+                    <article class="gridContent">
+                        <h3>Stride, the Electric Mat</h3>
+                        <!-- Elevator pitch of the final solution. -->
+                        <p>
+                            Stride aims to improve patients' gait using LED lights for training their gait and walking stride length.
+                        </p>
+                    </article>
+                    <!-- Image of a double-diamond design phase representation of this section. -->
+                    <figure class="gridContent">
+                        <picture id="eStride-finalDeliverables">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/finalDeliverables-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/electricStride/01-original-svg/finalDeliverables-1400w.svg">
+                            <img src="01-designWork-images/electricStride/finalDeliverables-1400w.svg" data-src="01-designWork-images/electricStride/01-original-svg/finalDeliverables-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <!-- Image of the electric mat, with its physical features labeled. -->
+                    <figure class="maxWidth900 noShadow">
+                        <picture class="ratio-13-11" id="eStride-electricStrideFinal">
+                            <img src="01-designWork-images/electricStride/01-original-svg/electricStrideFinal.svg" data-src="01-designWork-images/electricStride/01-original-svg/electricStrideFinal.svg" loading="lazy" class="lazyload blur-up maxWidth900 noMaxHeight">
+                        </picture>
+                    </figure>
+                </article>
+                <!-- Container for subsection, explaining the poster deliverable. -->
+                <article>
+                    <h3>Final Poster</h3>
+                    <ul>
+                        <li>Initially worked with one teammate to provide guidelines of the visual style guide.</li>
+                        <li>Drafted initial and finalized content & layout of poster, other members later pitched in.</li>
+                    </ul>
+                    <p>Visitors and judges saw the printed poster and the final design of our mat during a public symposium.</p>
+                    <figure class="shadow">
+                        <!-- Image of final poster. -->
+                        <picture class="ratio-3-4" id="eStride-finalPoster">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/finalPoster.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/finalPoster-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/finalPoster-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/finalPoster.png" loading="lazy" class="lazyload blur-up noMaxHeight">
+                        </picture>
+                    </figure>
+                </article>
+                <!-- Container for subsection, explaining the poster deliverable. -->
+                <article>
+                    <h3>Final Presentation (Slide Deck)</h3>
+                    <p>Drafted slides that summarized our team's design process, testing, and future iterations of our final solution.</p>
+                    <!-- Image of slide deck preview. When clicked, directs to the slide deck. -->
+                    <figure class="maxWidth550 shadow">
+                        <a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vTnGe4W2zE2fgNJOQaZFrOJI1LLZjTwVdiNnY1SUN--DmgdI9hLTGJFBo1HssxwCSRONwZPGYt0pYA3/embed?start=false&amp;loop=false&amp;delayms=15000">
+                            <picture class="ratio-9-5" id="eStride-slideDeck-FinalPresentation">
+                                <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/slideDeck-FinalPresentation.webp">
+                                <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/slideDeck-FinalPresentation-compressed.png">
+                                <img src="01-designWork-images/electricStride/02-compressed-png/slideDeck-FinalPresentation-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/slideDeck-FinalPresentation.png" loading="lazy" class="lazyload blur-up noMaxHeight">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <!-- Container for subsection, explaining how the work was presented and results. -->
+                <article>
+                    <h3>Presenting Our Work</h3>
+                    <p>
+                        Presented with two other people our final design, poster, and presentation to a panel of judges.
+                        <br>
+                        Panel consisted of our mentors, other IBM representatives, Parkinson's patients and caregivers, and other visitors.</p>
+                    <!-- Image of me presenting on-stage. -->
+                    <figure class="maxWidth550 shadow">
+                        <picture class="ratio-3-2" id="eStride-finalPresentation1">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/finalPresentation1.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/finalPresentation1-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/finalPresentation1-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/finalPresentation1.png" loading="lazy" class="lazyload blur-up noMaxHeight">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <h3>We won 1st place in the competition!</h3>
+                    <!-- Group photo with winning check prize. -->
+                    <figure class="maxWidth750 shadow">
+                        <picture class="ratio-7-5" id="eStride-1stPlace">
+                            <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/1stPlace.webp">
+                            <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/1stPlace-compressed.png">
+                            <img src="01-designWork-images/electricStride/02-compressed-png/1stPlace-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/1stPlace.png" loading="lazy" class="lazyload blur-up noMaxHeight">
+                        </picture>
+                        <figcaption>Group photo of the team with a Parkinson's caregiver and patient as part of the judge panel.</figcaption>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="reflection">
+                <h2>
+                    <span>Reflection</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                    </picture>
+                </h2>
+                <article>
+                    <p>This project was one of the greatest tests to my design skill set, but also one the most rewarding learning experiences I've ever had. I learned the importance of:</p>
+                    <ul>
+                        <li>design ownership and practice combined with real-world constraints</li>
+                        <li>continuously learning about your team members' way of collaborating to ensure successful execution of the design process</li>
+                        <li>applicability of feedback to fail fast, move forward, and rethink our team's chosen solutions and approaches to building solutions</li>
+                    </ul>
+                    <p>If I had more time, I would:</p>
+                    <ul>
+                        <li>re-test assumptions about how patients, caregivers, and domain experts would use the mat in different situations, environments, and activities</li>
+                        <li>better understand how other topics such as socio-economic status, current market forces, and diverse backgrounds of more people would impact lifestyles of people involved with Parkinson's</li>
+                        <li>further investigate how desirable and usable the mat is for patients, caregivers, and domain experts</li>
+                    </ul>
+                </article>
+            </section>
+        </section>
+    </main>
+    <!-- 
+        Container for other projects.
+        On tablet/desktop screen sizes, this is a two-column grid:
+        - heading, text, and button(s) on the left side
+        - accompanying image on the right side
+    -->
+    <section class="pageSection" id="otherCaseStudies">
+        <h2 class="projectsText" id="projectsText">Other Case Studies</h2>
+        <article class="grid gridType3-900Width projectList">
+            <!--
+                Container for the OSP Project:
+                - heading
+                - tags
+                - case study description (same as text in index.html)
+                - call-to-action button to project case study
+                - accompanying image
+            -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Open Speech Platform</h3>
+                <h4 class="tags">Team Support, App/Website/Forum Design, Research</h4>
+                <p class="noMarginBottom">I facilitated clearer communication and development of research-oriented hearing aid software across various projects among engineers and software developers.</p>
+                <!-- 
+                    Button containing the following:
+                    - a tag wrapper to make the button clickable
+                    - button text
+                    - wrapper and source for icon image
+                -->
+                <button class="button diffURL">
+                    <a rel="external" href="osp.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- 
+                Container for image:
+                - a tag wrapper to make the image clickable to the case study page.
+                - Wrapper and source of image.
+            -->
+            <figure class="projectImage gridContent noMargin noShadow">
+                <a rel="external" href="osp.html">
+                    <picture class="ratio-8-5 preventOverflow noMargin noShadow" id="globalImage-ospDevice">
+                        <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                        <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the Automation Playground project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Automation Playground</h3>
+                <!-- <h4 class="tags">Web Design, Prototyping</h4> -->
+                <p>
+                    Automation Playground is a research subgroup of UC San Diego's Design Lab.<br>
+                    Helped to spearhead a web design project to showcase the research group for the former founder.
+                </p>
+                <button class="button diffURL">
+                    <a rel="external" href="automationPlayground.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+                <button class="button secondaryButton diffURL">
+                    <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                        <p>Visit Website</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the Automation Playground project. -->
+            <figure class="gridContent">
+                <a rel="external" href="automationPlayground.html">
+                    <picture class="ratio-2-1">
+                        <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TTV project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Triton Television Reel</h3>
+                <p class="noMarginBottom">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="tritonTelevisionReel.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TTV project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo shadow" src="https://www.youtube.com./embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TCLC Rap Video project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">TCLC Rap Video</h3>
+                <p class="noMarginBottom">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="TCLCVideo.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TCLC Rap Video project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com./embed/WQDrVQvYCAQ?si=M9ZOJaEjUJotCbTY&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm//finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+    </section>
+    <!-- footer tag: Informational content, typically located at the bottom of a page shown or as last remaining content. -->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html"><p>CV</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" rel="external" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+    <!-- END of main content for body. -->
+
+    <!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.1.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-throttle.min.js"></script><!--Plugin to throttle and debounce events (for limiting how many functions get called from different event handlers), in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</body>
+</html>

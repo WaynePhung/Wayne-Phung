@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head tag: Organizes metadata information of the HTML document, such as character sets, scripts, stylesheets, and other types of metadata.-->
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-security-policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/"><!--'strict-dynamic' 'unsafe-hashes' 'nonce-wwa0gx65d93mtk023bhz'-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio">
+
+    <!--CSS stylesheet(s).-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of a browser tab used.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>Automation Playground Website Design - Wayne Phung's Portfolio Case Study</title>
+
+</head>
+
+<!--Body tag: Specifies all elements of the HTML document. This is what a person typically sees or interacts with in a webpage.-->
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!--Header tag: Specifies top portion of the page. This would contain a logo, main navigation links, and call-to-action buttons.-->
+    <header role="banner" aria-label="navigation links">
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork" class="navLink diffURL"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork" class="navLink diffURL"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink diffURL"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection" class="navLink diffURL"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink diffURL"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink diffURL" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <div class="progressContainer" id="headerProgressBar-caseStudy">
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <main role="main" id="title">
+        <aside role="navigation" class="navSideBar" id="sideBar-AP">
+            <button class="button" id="tableOfContents-MobileButton">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-tableOfContents.svg" alt="" loading="eager" class="lazyload blur-up vectorIcon noPanzoom active" id="mobileToC">
+                </picture>
+                <p>Open ToC</p>
+            </button>
+            <a class="navButton sideBarButton desktopButton" href="#title" id="toTop">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p data-href="title">Top of Page</p>
+            </a>
+            <div class="navButtons">
+                <nav class="accordion withIcons">
+                    <a class="navButton sideBarButton" href="#title" id="toTop-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                        </picture>
+                        <p data-href="title">Top of Page</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#keyTakeaways">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-key.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="keyTakeaways">
+                        </picture>
+                        <p data-href="keyTakeaways">Key Takeaways</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectBackground">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-info.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="projectBackground">
+                        </picture>
+                        <p data-href="background">Project Background</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectMonitoring">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-folder.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="projectMonitoring">
+                        </picture>
+                        <p data-href="documentation">Project Monitoring</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#ideation">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-ideation.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="ideation">
+                        </picture>
+                        <p data-href="ideation">Ideation</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#prototyping">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-prototyping-2.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="prototyping">
+                        </picture>
+                        <p data-href="prototyping">Prototyping</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#feedbackIterations">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-feedbackIterations.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="feedbackIterations">
+                        </picture>
+                        <p data-href="feedbackIterations">Feedback & Iterations</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#websiteDeveloped">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-website.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="websiteDeveloped">
+                        </picture>
+                        <p data-href="websiteDeveloped">Website Developed</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectDocumentation">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-documentation.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="projectDocumentation">
+                        </picture>
+                        <p data-href="projectDocumentation">Project Documentation</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#reflection">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                        </picture>
+                        <p data-href="reflection">Reflection</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectsText" id="toBottom-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                        </picture>
+                        <p data-href="projectsText">Other Case Studies</p>
+                    </a>
+                    <!-- <a class="navButton sideBarButton" href="#nextSteps">Next Steps</a> -->
+                </nav>
+                <div class="progressContainer" id="sideProgressBar">
+                    <div class="progressBar"></div>
+                </div>
+            </div>
+            <a class="navButton sideBarButton" href="#projectsText" id="toBottom">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                </picture>
+                <p data-href="projectsText">Other Case Studies</p>
+            </a>
+        </aside>
+        <section class="titleSection grid gridType3">
+            <article class="titleArticle gridContent">
+                <h1>Automation Playground</h1>
+                <p>
+                    Automation Playground is a research subgroup of UC San Diego's Design Lab.
+                    <br><br>
+                    Helped to spearhead a web design project to showcase the research group for the former founder.
+                </p>
+                <button class="button secondaryButton diffURL">
+                    <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                        <p>Visit Website</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <figure class="gridContent">
+                <picture class="ratio-2-1 width100-height100 positionTop preventOverflow">
+                    <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/automationPlayground-DesktopMobile-826.webp"> -->
+                    <!-- <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/automationPlayground-DesktopMobile-compressed.png"> -->
+                    <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                </picture>
+            </figure>
+        </section>
+        <section class="content caseStudyContent" id="content-AP">
+            <section class="pageSection" id="keyTakeaways">
+                <h2>
+                    <span>Key Takeaways</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-key.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article>
+                    <ul>
+                        <li>I led a small group of two students to implement a website, from project conception to documentation handoff.</li>
+                        <li>Combined co-founders' feedback, teammates' considerations for project priorities, and online inspiration to inform website improvements, execution, and documentation.</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="pageSection" id="projectBackground">
+                <h2>
+                    <span>Project Background</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-info.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="projectBackground">
+                    </picture>
+                </h2>
+                <article>
+                    <h3>What is Automation Playground?</h3>
+                    <p>
+                        Automation Playground is a research group within the <a rel="external" target="_blank" href="https://designlab.ucsd.edu/">Design Lab at University of California - San Diego</a>, centered around research efforts in transportation, autonomous vehicles and systems, and healthcare to name a few.
+                        <br>
+                        The former founder wanted me and a couple of students to develop a WordPress website dedicated to showcasing the research group's work and research philosophy.
+                    </p>
+                </article>
+                <article>
+                    <h3>Work Environment</h3>
+                    <ul>
+                        <li>Minimal supervision from the founder.</li>
+                        <li>Many possible project directions towards successful website implementation.</li>
+                        <li>First time learning WordPress.</li>
+                        <li>Research was mainly literature review due to confidentiality of research group's projects.</li>
+                        <li>Tentative status on publishable content for group's case studies.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>People Who I Worked With</h3>
+                    <ul>
+                        <li><b>Research Group Co-Founders</b> - Colleen Emmenegger & Deborah Forster</li>
+                        <li><b>Student Members</b> - Sahba Mobini, Cang Le, Brian Han</li>
+                        <li><b>Systems Administrator</b> - Silas Horton<br>Provided WordPress admin access and customer support to our team members</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Web Design Process</h3>
+                    <ul>
+                        <li>Emphasis on ideation, prototyping, and implementation of the website.</li>
+                        <li>Continuous feedback from founder informed website direction and changes.</li>
+                        <li>If more time, permissions, and resources were allowed, user experience research methods would be incorporated to recruit, screen, and interview people that the co-founders</li>
+                    </ul>
+                    <figure>
+                        <picture>
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/01-original-svg/designProcess-automationPlayground-600w.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/01-original-svg/designProcess-automationPlayground-1400w.svg">
+                            <img src="01-designWork-images/automationPlayground/01-original-svg/designProcess-automationPlayground-1400w.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/designProcess-automationPlayground-1400w.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom noMaxWidth noMaxHeight">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="projectMonitoring">
+                <h2>
+                    <span>Project Monitoring</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-folder.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="projectMonitoring">
+                    </picture>
+                </h2>
+                <article class="grid gridType2">
+                    <article class="gridContent">
+                        <p>I created a <a rel="external" target="_blank" href="https://docs.google.com/document/d/1tIRdCc_2CV2aNl-L6Jes9XhDCkmMRJ5l5NwUR1RdAaQ/edit?usp=sharing">Google Doc</a> and <a rel="external" target="_blank" href="https://docs.google.com/spreadsheets/d/1bvurhliR9E0JnsAgLm1DD6h5E7Wx-BTVNL8ct_p0GFE/edit?usp=sharing">a spreadsheet</a> to explain to prospective members of the research group the following: project background, current tasks, roles, and responsibilities.</p>
+                    </article>
+                    <figure class="gridContent designProcessPart-250">
+                        <picture class="maxHeight-250">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-mobile/ideation-v.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-desktop/ideation-h.svg">
+                            <img src="01-designWork-images/automationPlayground/designProcess-desktop/ideation-h.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/ideation-h.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <figure class="maxWidth750 shadow">
+                    <figcaption class="noTopPadding">Front page of <a rel="external" target="_blank" href="https://docs.google.com/document/d/1tIRdCc_2CV2aNl-L6Jes9XhDCkmMRJ5l5NwUR1RdAaQ/edit?usp=sharing">Google Doc</a>.</figcaption>
+                    <a rel="external" target="_blank" href="https://docs.google.com/document/d/1tIRdCc_2CV2aNl-L6Jes9XhDCkmMRJ5l5NwUR1RdAaQ/edit?usp=sharing">
+                        <picture>
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/projectOnboarding.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/projectOnboarding-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/projectOnboarding.png" data-src="01-designWork-images/automationPlayground/01-original-png/projectOnboarding.png" alt="image" loading="lazy" class="lazyload blur-up"  id="projectOnboarding">
+                        </picture>
+                    </a>
+                </figure>
+                <article>
+                    <h3>Project Activities and Management</h3>
+                    <p>Initially, a <a rel="external" target="_blank" href="https://docs.google.com/presentation/d/1HRfj0kGIFwtOCbY4OJwU7FR2YIO03WSUpjH_0FiueoA/edit?usp=sharing">slide deck</a> was used for communicating updates to the founder in a digestible manner.</p>
+                    <figure class="noMargin">
+                        <picture class="ratio-16-9 maxWidth750 preventOverflow shadow">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/updateLog-WhatDone.png" data-src="01-designWork-images/automationPlayground/01-original-png/updateLog-WhatDone.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <p>Led meetings with team members and/or co-founders to address project topics, document changed priorities, and review action items via Google Docs and Asana.</p>
+                    <figure class="shadow">
+                        <picture class="ratio-7-3">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/asana.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/asana-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/asana.png" data-src="01-designWork-images/automationPlayground/01-original-png/asana.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight" id="asana">
+                        </picture>
+                    </figure>
+                    <figure class="shadow">
+                        <picture class="ratio-9-5">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/asana-meetingNotes.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/asana-meetingNotes-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/asana-meetingNotes.png" data-src="01-designWork-images/automationPlayground/01-original-png/asana-meetingNotes.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="ideation">
+                <h2>
+                    <span>Ideation</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-ideation.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="ideation">
+                    </picture>
+                </h2>
+                <article class="grid gridType2 designProcessGrid">
+                    <p class="gridContent">Early draft of the website's information architecture informed what aspects of the research group can be showcased, as well as what kind of interfaces should be experimented.</p>
+                    <figure class="gridContent designProcessPart-250">
+                        <picture class="maxHeight-250">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-mobile/ideation-v.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-desktop/ideation-h.svg">
+                            <img src="01-designWork-images/automationPlayground/designProcess-desktop/ideation-h.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/ideation-h.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="noMarginTop">
+                        <figcaption>Initial information architecture of the website.</figcaption>
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/informationArchitecture.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/informationArchitecture-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/informationArchitecture.png" data-src="01-designWork-images/automationPlayground/01-original-png/informationArchitecture.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+                <article class="grid gridType4">
+                    <p>Initial website prototypes had visual style guides and interface components inspired by the <a rel="external" target="_blank" href="https://designlab.ucsd.edu/">Design Lab website</a>.</p>
+                    <figure class="gridContent shadow">
+                        <picture class="ratio-1-1 maxWidth500">
+                            <img src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-fonts-compressed-1.png" data-src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-fonts-compressed-1.png" alt="image" loading="lazy" class="lazyload blur-up maxWidth500" id="typefaces">
+                        </picture>
+                    </figure>
+                    <!-- <figure class="gridContent">
+                        <picture class="autoWidth">
+                            <img src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-fonts-compressed-2.png" data-src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-fonts-compressed-2.png" alt="image" loading="lazy" class="lazyload blur-up maxWidth" id="typefaces">
+                        </picture>
+                    </figure> -->
+                    <figure class="gridContent shadow">
+                        <picture class="ratio-1-1 maxWidth500">
+                            <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/visualStyleGuide-colors.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-colors-compressed.png"> -->
+                            <img src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-colors-compressed.png" data-src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-colors-compressed.png" alt="image" loading="lazy" class="lazyload blur-up maxWidth500"  id="visualStyleGuide-colors">
+                        </picture>
+                    </figure>
+                </article>
+                <figure class="shadow">
+                    <picture class="ratio-4-5 maxWidth500">
+                        <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/visualStyleGuide-uiElementsSmall.webp">
+                        <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-uiElementsSmall-compressed.png"> -->
+                        <img src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-uiElementsSmall-compressed.png" data-src="01-designWork-images/automationPlayground/02-compressed-png/visualStyleGuide-uiElementsSmall-compressed.png" alt="image" loading="lazy" class="lazyload blur-up maxWidth500">
+                    </picture>
+                </figure>
+            </section>
+            <section class="pageSection" id="prototyping">
+                <h2>
+                    <span>Prototyping</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-prototyping-2.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="prototyping">
+                    </picture>
+                </h2>
+                <article class="grid gridType2 designProcessGrid">
+                    <p class="gridContent">Spearheaded the interface design and website implementation for all website prototypes.</p>
+                    <figure class="gridContent designProcessPart-250">
+                        <picture class="maxHeight-250">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-mobile/webDev-Prototyping-v.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-desktop/webDev-Prototyping-h.svg">
+                            <img src="01-designWork-images/automationPlayground/designProcess-desktop/webDev-Prototyping-h.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/webDev-Prototyping-h.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <figure class="shadow">
+                    <figcaption>Version 1 of website interfaces done in Figma (desktop), introductory content in the top portion of the webpage and tabbed content: research group members, list of projects, and motivational content for prospective visitors.</figcaption>
+                    <picture class="ratio-20-13">
+                        <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/01-original-png/figma-desktopWireframes-version1.png"> -->
+                        <!-- <source type="image/png" srcset="01-designWork-images/automationPlayground/01-original-png/figma-desktopWireframes-version1.png"> -->
+                        <img src="01-designWork-images/automationPlayground/01-original-png/figma-desktopWireframes-version1.png" data-src="01-designWork-images/automationPlayground/01-original-png/figma-desktopWireframes-version1.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight">
+                    </picture>
+                </figure>
+                <figure class="shadow">
+                    <figcaption>
+                        Version 2 of website interfaces done in Figma (mobile).
+                        <br>
+                        From left to right: landing page, list of projects, and explanation of research group and members.
+                    </figcaption>
+                    <picture class="ratio-9-8 maxWidth900">
+                        <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/mobileWireframes-version2.webp">
+                        <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/mobileWireframes-version2-compressed.png"> -->
+                        <img src="01-designWork-images/automationPlayground/01-original-png/mobileWireframes-version2.png" data-src="01-designWork-images/automationPlayground/01-original-png/mobileWireframes-version2.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight">
+                    </picture>
+                </figure>
+                <article>
+                    <h3>
+                        <span>Website Development</span>
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-info.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </h3>
+                    <p>Students and I learned and applied Wordpress plugins from the admin dashboard to develop the website (content, layout, etc.).</p>
+                    <figure class="shadow">
+                        <figcaption>List of plugins within WordPress admin interface. Elementor and its plugin variations had website editor interfaces to construct webpages.</figcaption>
+                        <picture class="ratio-2-1 maxWidth900">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/wordPressAdmin-plugins1.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/wordPressAdmin-plugins1-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/wordPressAdmin-plugins1.png" data-src="01-designWork-images/automationPlayground/01-original-png/wordPressAdmin-plugins1.png" alt="image" loading="lazy" class="lazyload blur-up maxWidth900">
+                        </picture>
+                    </figure>
+                </article>
+                <!-- <p>I ideated and prototyped multiple different versions of the website from creating the information architecture to editing the details of the final webpages in a Wordpress webpage builder plugin.</p>
+                <figure class="noMaxWidth">
+                    <figcaption>Information architecture and multiple iterations of the webpages done via Figma.</figcaption>
+                    <picture>
+                        <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/informationArchitecture.webp">
+                        <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/informationArchitecture-compressed.png">
+                        <img src="01-designWork-images/automationPlayground/01-original-png/informationArchitecture.png" data-src="01-designWork-images/automationPlayground/01-original-png/informationArchitecture.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight">
+                    </picture>
+                </figure> -->
+            </section>
+            <section class="pageSection" id="feedbackIterations">
+                <h2>
+                    <span>Feedback & Iterations</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-feedbackIterations.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="feedbackIterations">
+                    </picture>
+                </h2>
+                <article class="grid gridType2">
+                    <p class="gridContent">Screenshots, annotations, and analysis of online inspirations informed organization and structure of website in later prototypes and versions. Documentation done in Figma.</p>
+                    <figure class="gridContent designProcessPart-250">
+                        <picture class="" id="feedBack-Iterations">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-mobile/feedBack-Iterations-v.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-desktop/feedBack-Iterations-h.svg">
+                            <img src="01-designWork-images/automationPlayground/designProcess-desktop/feedBack-Iterations-h.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/feedBack-Iterations-h.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <figure class="shadow">
+                    <picture class="ratio-2-1">
+                        <img src="01-designWork-images/automationPlayground/01-original-png/layoutInspiration.png" data-src="01-designWork-images/automationPlayground/01-original-png/layoutInspiration.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight">
+                    </picture>
+                </figure>
+                <article>
+                    <p>Although my other group members ideated a different color scheme to improve website aesthetics, the founder preferred use of blue and a simple visual design implementation. The founder's additional feedback and suggested changes informed future website iterations and priorities.</p>
+                    <figure class="shadow">
+                        <figcaption>Webpages of the fifth website version. From left to right: Explanation of group's research and design philosophy, email form submission for research group contacting, and viewable publications.</figcaption>
+                        <picture class="ratio-7-3">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/figma-desktop-version5.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/figma-desktop-version5-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/figma-desktop-version5.png" data-src="01-designWork-images/automationPlayground/01-original-png/figma-desktop-version5.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <p>To better templatize interface components for faster web development, an updated visual style guide was implemented as a private page within a WordPress plugin called Elementor.</p>
+                    <figure class="shadow">
+                        <figcaption>Height and padding details for a title banner and text above the fold.</figcaption>
+                        <picture class="ratio-2-1">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/elementor-dummyPage1.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/elementor-dummyPage1-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage1.png" data-src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage1.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                    <figure class="shadow">
+                        <picture class="ratio-2-1 maxWidth750">
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/elementor-dummyPage-Title.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/elementor-dummyPage-Title-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-Title.png" data-src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-Title.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                    <figure class="shadow">
+                        <figcaption>Image below shows 3-column layout of images, text, and buttons as well as padding values for desktop and mobile screens.</figcaption>
+                        <picture class="ratio-3-2 maxWidth750">
+                            <source type="image/svg+xml" srcset="01-designWork-images/automationPlayground/01-original-svg/elementor-dummyPage-3ColumnLayout.svg">
+                            <img src="01-designWork-images/automationPlayground/01-original-svg/elementor-dummyPage-3ColumnLayout.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/elementor-dummyPage-3ColumnLayout.svg" alt="image" loading="lazy" class="lazyload blur-up">
+                            <!-- <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/elementor-dummyPage-3ColumnLayout-compressed.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-3ColumnLayout.png" data-src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-3ColumnLayout.png" alt="image" loading="lazy" class="lazyload blur-up"> -->
+                        </picture>
+                        <!-- <picture>
+                            <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/elementor-dummyPage-3ColumnLayoutDetails.webp">
+                            <source type="image/png" srcset="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-3ColumnLayoutDetails.png">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-3ColumnLayoutDetails.png" data-src="01-designWork-images/automationPlayground/01-original-png/elementor-dummyPage-3ColumnLayoutDetails.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture> -->
+                    </figure>
+                </article>
+                <article>
+                    <h3>Website Updates After Project Handoff</h3>
+                    <p>Long after official project handoff, I resolved an issue with Silas on the website's Wordpress theme crashing and made more changes to the spacing issues and layout components for the website pages.</p>
+                    <figure class="shadow">
+                        <figcaption>Critical error message after updating a Wordpress theme.</figcaption>
+                        <picture class="ratio-9-2">
+                            <source type="image/svg+xml" srcset="01-designWork-images/automationPlayground/01-original-svg/criticalErrorIssue.svg">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/criticalErrorIssue.png" data-src="01-designWork-images/automationPlayground/01-original-png/criticalErrorIssue.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <p>Added a 404 error page.</p>
+                    <figure class="shadow">
+                        <picture class="ratio-3-2 maxWidth750">
+                            <source type="image/svg+xml" srcset="01-designWork-images/automationPlayground/01-original-svg/404ErrorPage.svg">
+                            <img src="01-designWork-images/automationPlayground/01-original-png/404ErrorPage.png" data-src="01-designWork-images/automationPlayground/01-original-png/404ErrorPage.png" alt="image" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+                <!-- <p>A finalized version of the website would be developed based on the updated visual style guide, updated content, and layout templates.</p>
+                <figure class="noMaxWidth">
+                    <figcaption>With another student, I learned and used the Wordpress admin dashboard and plugins to create the website.</figcaption>
+                    <picture>
+                        <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/website-finalVersion.webp">
+                        <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/website-finalVersion-compressed.png">
+                        <img src="01-designWork-images/automationPlayground/01-original-png/website-finalVersion.png" data-src="01-designWork-images/automationPlayground/01-original-png/website-finalVersion.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight">
+                    </picture>
+                </figure> -->
+            </section>
+            <section class="pageSection" id="websiteDeveloped">
+                <h2>
+                    <span>Website Developed</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-website.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="websiteDeveloped">
+                    </picture>
+                </h2>
+                <article>
+                    <figure class="designProcessPart-250">
+                        <picture id="websiteDeveloped">
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-mobile/websiteDeveloped-v.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-desktop/websiteDeveloped-h.svg">
+                            <img src="01-designWork-images/automationPlayground/designProcess-desktop/websiteDeveloped-h.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/websiteDeveloped-h.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Landing page on Desktop View</h3>
+                    <figure class="shadow">
+                        <figcaption><a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">Landing page</a> has a sticky navigation header, long title banner, and website section summaries.</figcaption>
+                        <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                            <picture class="ratio-9-5">
+                                <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/website-finalVersion.webp"> -->
+                                <source type="image/svg+xml" srcset="01-designWork-images/automationPlayground/01-original-svg/website-finalVersion.svg">
+                                <source type="image/png" srcset="01-designWork-images/automationPlayground/02-compressed-png/website-finalVersion-compressed.png">
+                                <img src="01-designWork-images/automationPlayground/02-compressed-png/website-finalVersion-826-compressed.png" data-src="01-designWork-images/automationPlayground/01-original-png/website-finalVersion.png" alt="image" loading="lazy" class="lazyload blur-up noMaxWidth noMaxHeight noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>List of Projects</h3>
+                        <p>
+                            Each project has: title, tagline, description, call-to-action button to read more, and image.
+                        </p>
+                        <button class="button secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/projects/">
+                                <p>View Page</p>
+                                <picture class="vectorIcon ratio-1-1">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/projects/">
+                            <picture class="ratio-3-2">
+                                <!-- <source type="image/webp" srcset="01-designWork-images/automationPlayground/03-original-webp/iteration09-Desktop-Projects_Page.webp"> -->
+                                <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-Projects_Page.svg">
+                                <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-Projects_Page.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-Projects_Page.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>About the Research Group</h3>
+                        <p>
+                            Explaining Automation Playground's background and projects approaches from design and research perspectives.
+                        </p>
+                        <button class="button secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/about-us/">
+                                <p>View Page</p>
+                                <picture class="vectorIcon ratio-1-1">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </article>
+                    <article class="gridContent">
+                        <figure class="shadow">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/about-us/">
+                                <picture class="ratio-7-6">
+                                    <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-AboutUs_Page-1.svg">
+                                    <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-AboutUs_Page-1.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-AboutUs_Page-1.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                                </picture>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/about-us/">
+                                <picture class="ratio-8-7">
+                                    <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-AboutUs_Page-2.svg">
+                                    <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-AboutUs_Page-2.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-AboutUs_Page-2.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                                </picture>
+                            </a>
+                        </figure>
+                    </article>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>Member Showcase</h3>
+                        <p>
+                            Gallery of people, each with defined roles, involvement, disciplines, and background.
+                        </p>
+                        <button class="button secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/people/">
+                                <p>View Page</p>
+                                <picture class="vectorIcon ratio-1-1">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/people/">
+                            <picture class="ratio-2-3">
+                                <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-People_Page.svg">
+                                <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-People_Page.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-People_Page.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>Involvement</h3>
+                        <p>
+                            Contact form for potential followups from visitors to the research group.
+                        </p>
+                        <button class="button secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/get-involved/">
+                                <p>View Page</p>
+                                <picture class="vectorIcon ratio-1-1">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/get-involved/">
+                            <picture class="ratio-1-1">
+                                <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-GetInvolved_Page.svg">
+                                <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-GetInvolved_Page.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-GetInvolved_Page.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>Publications</h3>
+                        <p>
+                            Two posters and one paper of research group's case studies.
+                        </p>
+                        <button class="button secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/publications/">
+                                <p>View Page</p>
+                                <picture class="vectorIcon ratio-1-1">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/publications/">
+                            <picture class="ratio-9-8">
+                                <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-Publications_Page.svg">
+                                <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-Publications_Page.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-Publications_Page.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>404 Error Page</h3>
+                        <p>
+                            Should an error occur, there is a button to the landing page, a helpful message, and links to other website pages.
+                        </p>
+                        <button class="button secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/404-error-page/">
+                                <p>View Page</p>
+                                <picture class="vectorIcon ratio-1-1">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/404-error-page/">
+                            <picture class="ratio-2-1">
+                                <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-404_Error_Page.svg">
+                                <img src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-404_Error_Page.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/iteration09-Desktop-404_Error_Page.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="projectDocumentation">
+                <h2>
+                    <span>Project Documentation</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-documentation.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="projectDocumentation">
+                    </picture>
+                </h2>
+                <!-- https://docs.google.com/presentation/d/e/2PACX-1vRzbudSeBs6gHqbOOTENHQNXJUacSjZytAfRoqq_qJwrUPPF0RXzugrh49d4ZuxsO7SRvg9fY3DwNW6/pub -->
+                <article class="grid gridType2">
+                    <p class="gridContent">The founder reviewed and approved two slides decks that one student member and I made. I provided a majority of the content, images, and hyperlinks.</p>
+                    <figure class="gridContent designProcessPart-250">
+                        <picture>
+                            <source type="image/svg+xml" media="(max-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-mobile/projectHandoff-v.svg">
+                            <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/automationPlayground/designProcess-desktop/projectHandoff-h.svg">
+                            <img src="01-designWork-images/automationPlayground/designProcess-desktop/projectHandoff-h.svg" data-src="01-designWork-images/automationPlayground/designProcess-desktop/projectHandoff-h.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <figure class="shadow">
+                    <figcaption><a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRzbudSeBs6gHqbOOTENHQNXJUacSjZytAfRoqq_qJwrUPPF0RXzugrh49d4ZuxsO7SRvg9fY3DwNW6/pub">First slide deck.</a> High level introduction to the project.</figcaption>
+                    <a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vRzbudSeBs6gHqbOOTENHQNXJUacSjZytAfRoqq_qJwrUPPF0RXzugrh49d4ZuxsO7SRvg9fY3DwNW6/pub">
+                        <picture class="ratio-2-1">
+                            <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/slideDeckDocumentation-1.svg">
+                            <img src="01-designWork-images/automationPlayground/01-original-svg/slideDeckDocumentation-1.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/slideDeckDocumentation-1.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </a>
+                </figure>
+                <figure class="shadow">
+                    <figcaption><a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vSUM3omoAKZw24yyI3QxjmKrsw0HO4eqE3UTkk07MPwTxLBWIiLKNgDQ51T9HYUpc9KHBWIFmTdiRg6/pub">Second slide deck.</a> Explained the digital workspaces, resources, and insights behind the website.</figcaption>
+                    <a rel="external" target="_blank" href="https://docs.google.com/presentation/d/e/2PACX-1vSUM3omoAKZw24yyI3QxjmKrsw0HO4eqE3UTkk07MPwTxLBWIiLKNgDQ51T9HYUpc9KHBWIFmTdiRg6/pub">
+                        <picture class="ratio-2-1">
+                            <source type="image/svg" srcset="01-designWork-images/automationPlayground/01-original-svg/slideDeckDocumentation-2.svg">
+                            <img src="01-designWork-images/automationPlayground/01-original-svg/slideDeckDocumentation-2.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/slideDeckDocumentation-2.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </a>
+                </figure>
+            </section>
+            <section class="pageSection subsection" id="reflection">
+                <h2>
+                    <span>Reflection</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                    </picture>
+                </h2>
+                <article>
+                    <p>
+                        I learned about how important a visual style guide was and how simplifying content and layout requirements eased the project difficulty and testability of assumptions for the founder's requirements and preferences.
+                        <br><br>
+                        The following explains next steps if there was more time, attention, and resources:
+                    </p>
+                    <ol>
+                        <li>Content completion of case studies from the research group's individual projects.</li>
+                        <li>Execution of user research techniques, such as interviews, user testing, and usability testing of website to people from the Design Lab.</li>
+                        <li>Explore and incorporate web accessibility and inclusive design best practices.</li>
+                    </ol>
+                </article>
+            </section>
+            <section class="pageSection" id="keyTakeaways">
+                <h2>
+                    <span>Key Takeaways</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-key.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article>
+                    <ul>
+                        <li>I led a small group of two students to implement a website, from project conception to documentation handoff.</li>
+                        <li>Combined co-founders' feedback, teammates' considerations for project priorities, and online inspiration to inform website improvements, execution, and documentation.</li>
+                    </ul>
+                </article>
+            </section>
+            <!-- <section class="pageSection subsection" id="nextSteps">
+                <h2>Next Steps</h2>
+                <p><i><b>User research, user testing, and usability testing.</b></i> - Early on in the project, I created a spreadsheet of Design Lab contracts to recruit and form a testing script, but my founder wanted to keep website development under wraps. If there was more freedom, time, and team members, quickly getting informed feedback from real people would have been the highest priority.</p>
+                <p><i><b>Accessibility and inclusive design best practices.</b></i> - These two concepts hand-in-hand would have ideally been incorporated into the process of website development, but competed with other priorities to efficiently complete the website and close the project. I would have wanted to dedicate research efforts to these topics when updating the website again.</p>
+                <p><i><b>More fleshed out content.</b></i> - At the time, the founder wanted control over what projects to showcase, the content explaining the nature of the projects, and the timing of their delivery. Getting text and image content into the project pages remained the only task that hindered full completion of the website.</p>
+            </section> -->
+        </section>
+    </main>
+
+    <!-- 
+        Container for other projects.
+        On tablet/desktop screen sizes, this is a two-column grid:
+        - heading, text, and button(s) on the left side
+        - accompanying image on the right side
+    -->
+    <section class="pageSection" id="otherCaseStudies">
+        <h2 class="projectsText" id="projectsText">Other Case Studies</h2>
+        <article class="grid gridType3-900Width projectList">
+            <!--
+                Container for the OSP Project:
+                - heading
+                - tags
+                - case study description (same as text in index.html)
+                - call-to-action button to project case study
+                - accompanying image
+            -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Open Speech Platform</h3>
+                <h4 class="tags">Team Support, App/Website/Forum Design, Research</h4>
+                <p class="noMarginBottom">I facilitated clearer communication and development of research-oriented hearing aid software across various projects among engineers and software developers.</p>
+                <!-- 
+                    Button containing the following:
+                    - a tag wrapper to make the button clickable
+                    - button text
+                    - wrapper and source for icon image
+                -->
+                <button class="button diffURL">
+                    <a rel="external" href="osp.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- 
+                Container for image:
+                - a tag wrapper to make the image clickable to the case study page.
+                - Wrapper and source of image.
+            -->
+            <figure class="projectImage gridContent noMargin noShadow">
+                <a rel="external" href="osp.html">
+                    <picture class="ratio-8-5 preventOverflow noMargin noShadow" id="globalImage-ospDevice">
+                        <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                        <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <article class="gridContent">
+                <h3 class="caseStudy">Electric Stride</h3>
+                <h4 class="tags">UX Design, UX Research, Rapid Ideation</h4>
+                <p class="noMarginBottom">An exercise mat for people with Parkinson's to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="electricStride.html">
+                        <p>See Case Study</p>
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <figure class="projectImage gridContent noShadow" id="electricStride">
+                <a rel="external" href="electricStride.html">
+                    <picture class="ratio-3-4 preventOverflow shadow">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TTV project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Triton Television Reel</h3>
+                <p class="noMarginBottom">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="tritonTelevisionReel.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TTV project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo shadow" src="https://www.youtube.com./embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TCLC Rap Video project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">TCLC Rap Video</h3>
+                <p class="noMarginBottom">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="TCLCVideo.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TCLC Rap Video project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com./embed/WQDrVQvYCAQ?si=M9ZOJaEjUJotCbTY&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm//finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+    </section>
+    <!-- footer tag: Informational content, typically located at the bottom of a page shown or as last remaining content. -->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html"><p>CV</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" rel="external" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+    <!--END of main content for body.-->
+
+    <!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.0.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</body>
+</html>
+
+<!--Commented content saved for later use, but is NOT part of the current HTML template.-->
+
+<!--Unused Javascript files for Cloudinary SDK file upload implementation.-->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script> -->

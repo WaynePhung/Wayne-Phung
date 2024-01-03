@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head tag: Organizes metadata information of the HTML document, such as character sets, scripts, stylesheets, and other types of metadata.-->
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-security-policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/"><!--'strict-dynamic' 'unsafe-hashes' 'nonce-wwa0gx65d93mtk023bhz'-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio">
+
+    <!--CSS stylesheet(s).-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of this page's browser tab.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>CV, Curriculum Vitae - Wayne Phung</title>
+
+</head>
+
+<!--Body tag: Specifies all elements of the HTML document. This is what a person typically sees or interacts with in a webpage.-->
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!--Header tag: Specifies top portion of the page. This would contain a logo, main navigation links, and call-to-action buttons.-->
+    <header role="banner" aria-label="navigation links">
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork" class="navLink diffURL"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork" class="navLink diffURL"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink diffURL"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection" class="navLink diffURL"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink diffURL"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink diffURL" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <div class="progressContainer" id="headerProgressBar-caseStudy">
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <main role="main" id="title">
+        <aside role="navigation" class="navSideBar">
+            <button class="button" id="tableOfContents-MobileButton">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-tableOfContents.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" id="mobileToC">
+                </picture>
+                <p>Open ToC</p>
+            </button>
+            <div class="navButtons">
+                <nav class="accordion withIcons">
+                    <a class="navButton sideBarButton" href="#education">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-education.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="education">
+                        </picture>
+                        <p data-href="education">Education</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#experience">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-briefcase.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="experience">
+                        </picture>
+                        <p data-href="experience">Experience</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#skills">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-gear.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="skills">
+                        </picture>
+                        <p data-href="skills">Skills</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#tools">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-prototyping-1.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="tools">
+                        </picture>
+                        <p data-href="tools">Tools</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#title" id="toTop-mobile">
+                        <picture class="vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                        </picture>
+                        <p data-href="title">Top of Page</p>
+                    </a>
+                    <!-- <a class="navButton sideBarButton" href="#reflection">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="introduction">
+                        </picture>
+                        <p data-href="reflection">Reflection</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#nextSteps">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-nextSteps.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="nextSteps">
+                        </picture>
+                        <p data-href="nextSteps">Next Steps</p>
+                    </a> -->
+                    <!-- <a class="navButton sideBarButton" href="#projectsText" id="toBottom-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                        </picture>
+                        <p data-href="projectsText">Other Case Studies</p>
+                    </a> -->
+                </nav>
+                <div class="progressContainer" id="sideProgressBar">
+                    <div class="progressBar"></div>
+                </div>
+            </div>
+            <a class="navButton sideBarButton desktopButton" href="#title" id="toTop">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p data-href="title">Top of Page</p>
+            </a>
+            <!-- <a class="navButton sideBarButton" href="#projectsText" id="toBottom">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                </picture>
+                <p data-href="projectsText">Other Case Studies</p>
+            </a> -->
+        </aside>
+        <!-- <button role="button" aria-labelledby="button to top of the page" href="#title" clas="navLink" id="toTopPageFixed320px">
+            <a href="#title">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p>Top of Page</p>
+            </a>
+        </button> -->
+        <section class="pageSection titleSection">
+            <h1>CV (Curriculum Vitae)</h1>
+            <p>Below represents my education, career timeline of my job experiences with links to deliverables, working skills, and tools.</p>
+        </section>
+        <section class="content caseStudyContent">
+            <section class="pageSection" id="education">
+                <h2>
+                    <span>Education</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-education.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="education">
+                    </picture>
+                </h2>
+                <article>
+                    <h3>University of California - San Diego</h3>
+                    <h4>
+                        Bachelors of Science - Cognitive Science
+                        <br>
+                        Human-Computer Interaction Specialization
+                    </h4>
+                    <p>
+                        <b>September 2015 - June 2019</b>
+                        <br>
+                        Minor: Design
+                        <br>
+                        GPA: 3.5
+                    </p>
+                </article>
+            </section>
+            <section class="pageSection" id="experience">
+                <h2>
+                    <span>Experience</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-briefcase.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="education">
+                    </picture>
+                </h2>
+                <!-- <article class="cvText"> -->
+                <article>
+                    <h3>User Experience (UX) Researcher and Technical Writer</h3>
+                    <h4>
+                        Nadi LLC
+                        <br>
+                        June - October 2022
+                    </h4>
+                    <!-- <p><b>June - October 2022</b></p> -->
+                    <article class="grid gridType2">
+                        <p class="gridContent">
+                            Drafted research proposal documents to an external Institutional Review Board for clinical usability testing of some aspects of a hearing software toolkit called the Open Speech Platform (OSP).
+                            <br><br>
+                            <b>All work produced in this position is considered <u>strictly confidential</u></b>.
+                            <br><br>
+                            Other responsibilities were similar to the previous position.
+                        </p>
+                        <figure class="gridContent alignItemsCenter">
+                            <picture class="ratio-4-1" id="THELab-picture">
+                                <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/logo-THELab.svg">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/logo-THELab.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/logo-THELab.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Applications Programmer II</h3>
+                    <h4>
+                        Hal&#305;c&#305;oğlu Data Science Institute (HDSI)
+                        <br>
+                        remote, May 2020 - June 2022
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <button class="button diffURL">
+                                <a rel="external" href="osp.html">
+                                    <p>See Case Study</p>
+                                    <picture class="ratio-1-1 vectorIcon">
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                                    </picture>
+                                </a>
+                            </button>
+                            <p>
+                                Redesigned documentation of a software toolkit, called the Open Speech Platform (OSP), to help researchers and audiologists harness the toolkit for hearing and healthcare-related investigations.
+                                <br><br>
+                                Communicated with a web designer to ensure alignment and resolution of  server-side issues with the OSP Wordpress website.
+                                <br><br>
+                                Redesigned and managed the OSP website with minimal direction.
+                                <br><br>
+                                Gathered and published staff members' bios on the OSP website.
+                                <br><br>
+                                Created an initial Discord forum to bridge OSP-related communication between staff members, researchers, and other people using OSP.
+                                <br><br>
+                                Prototyped initial mockups of the OSP website and different functionality aspects of the toolkit.
+                                <br><br>
+                                Drafted research proposal documents to UC San Diego Institutional Review Board for data collection.
+                                <br><br>
+                                Assisted student member and founder in editing posters for two upcoming conferences.
+                                <br><br>
+                                Facilitated meeting scheduling and requests from research collaborators, on founder's behalf.
+                                <br><br>
+                                Supported internal testing efforts on software features to reveal important bugs and issues to software developers.
+                            </p>
+                        </article>
+                        <figure class="gridContent projectImage noShadow">
+                            <picture class="ratio-8-5 preventOverflow noMargin noShadow" id="globalImage-ospDevice">
+                                <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Web Designer</h3>
+                    <h4>
+                        Automation Playground Subgroup - Design Lab at UC San Diego
+                        <br>
+                        La Jolla, CA and remote; April 2019 - May 2021
+                    </h4>
+                    <div class="buttons flexRow">
+                        <button class="diffURL">
+                            <a rel="external" href="automationPlayground.html">
+                                <p>See Case Study</p>
+                                <picture class="ratio-1-1 vectorIcon">
+                                    <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                                </picture>
+                            </a>
+                        </button>
+                        <button class="secondaryButton diffURL">
+                            <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                                <p>Visit Website</p>
+                                <picture class="ratio-1-1 vectorIcon">
+                                    <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                </picture>
+                            </a>
+                        </button>
+                    </div>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Created a public WordPress website to showcase a subgroup's projects, publications, and research processes.
+                                <br><br>
+                                Created 5 versions of Figma mockups that informed 5 of 9 versions of published website pages based on two subgroup founders' feedback, initial information architecture, existing online inspiration, and interface components.
+                                <br><br>
+                                Managed project activities with two students via Asana tasks and weekly meetings.
+                                <br><br>
+                                Learned admin interface of Wordpress and plugins to inform priorities on website development activities.
+                                <br><br>
+                                Interacted with the co-founders on website progress and feedback via slide decks and ad-hoc meetings.
+                            </p>
+                        </article>
+                        <figure class="gridContent projectImage">
+                            <picture class="ratio-2-1 width100-height100 positionTop preventOverflow noShadow">
+                                <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Videographer</h3>
+                    <h4>
+                        Rap Video Project, Communications college course
+                        <br>
+                        La Jolla, CA and remote; April - June 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <button class="button diffURL">
+                                <a rel="external" href="TCLCVideo.html">
+                                    <p>See Case Study</p>
+                                    <picture class="ratio-1-1 vectorIcon">
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                                    </picture>
+                                </a>
+                            </button>
+                            <p>
+                                Documented research findings of ethnographic experiences in an afterschool program at Town and Country Learning Center (TCLC), which informed decisions for kid-friendly, supervisor-approved activities and interactions for 10-15 kids.
+                                <br><br>
+                                Edited a 6 and a 1/2 minute, rap-themed video to capture the kids' activities within TCLC, in which continued improvement from classmates' feedback garnered unanimous applause and praise from the kids and supervisor upon final presentation
+                                <br><br>
+                                Supervised video and audio equipment usage to empower 4 other teammates and at least 5 kids at TCLC to produce 300 video and audio clips for video editing.
+                            </p>
+                        </article>
+                        <figure class="gridContent shadow">
+                            <figcaption>Final video draft. You can select the image thumbnail to start watching the video.</figcaption>
+                            <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm//finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Teaching Assistant</h3>
+                    <h4>
+                        Career Services Center at UC San Diego
+                        <br>
+                        La Jolla, CA; April - June 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Disseminated knowledge related to career strengths and competencies to 30 students in an academic human development course, in collaboration with 3 career coaches.
+                                <br><br>
+                                Presented 2 different topics during class related to <a rel="external" target="_blank" href="https://drive.google.com/open?id=1wNBkWf5UTrNOn8VPW3IVZ1019O3FrH7H">LinkedIn best practices</a> and an online self-help interviewing platform.
+                                <br><br>
+                                Facilitated group session activities with 9-10 students regarding their project on 3 specific career competencies and strengths.
+                            </p>
+                        </article>
+                        <figure class="gridContent shadow" id="careerCenter">
+                            <picture class="ratio-1-1">
+                                <source type="image/png" srcset="01-aboutMe-images/careerCenter-TAgroupPhoto.png">
+                                <img src="aboutMe-images/careerCenter-TAgroupPhoto.png" data-src="aboutMe-images/careerCenter-TAgroupPhoto.png" alt="image" loading="lazy" class="lazyload blur-up">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>UX Designer</h3>
+                    <h4>
+                        Product Design Project for Parkinson's Disease Competition
+                        <br>
+                        La Jolla, CA; January - June 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <button class="diffURL">
+                                <a rel="external" href="electricStride.html">
+                                    <p>See Case Study</p>
+                                    <picture class="ratio-1-1 vectorIcon">
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                                    </picture>
+                                </a>
+                            </button>
+                            <p>
+                                Developed an award-winning exercise mat from research and prototyping methods within a team of 9 in a Design-a-thon competition to enable people with Parkinson's to resolve their issues with gait and personal agency.
+                                <br><br>
+                                Gathered findings and insights about Parkinson's Disease from secondary research and in-person interviews that classified 3 core problem spaces from a group participatory design sprint.
+                                <br><br>
+                                Ideated upon focused problem spaces based on gathered research and inspiration of existing solutions that enabled rapid prototyping and pivoting of 3 different solutions to explore.
+                                <br><br>
+                                Documented hundreds of photos and at least 30 video clips of research sessions and team design process to further inform research insights, multiple pivoting decisions, and content strategy for 5 project deliverables.
+                                <br><br>
+                                Presented work publicly within 2 Design-a-thon workshops and a final presentation showcase, which translated to a $2,000 award for first-place ranking in the competition.
+                            </p>
+                        </article>
+                        <figure class="gridContent projectImage" id="electricStride">
+                            <a rel="external" href="electricStride.html">
+                                <picture class="ratio-3-4 preventOverflow shadow">
+                                    <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                                    <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                                    <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                                </picture>
+                            </a>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>UX Designer</h3>
+                    <h4>
+                        Website Redesign, Information Architecture college course
+                        <br>
+                        La Jolla, CA; January - March 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <p class="gridContent">
+                            Designed a high-fidelity, interactive mockup of a website in a team of 4 within an information architecture course for the CEO of a 3D-printing startup company, which served as a platform for automating customer orders for 3-D printed parts.
+                            <br><br>
+                            Documented prioritized needs and functionalities of the website based on client expectations, interviews, and competitive analysis of existing websites, which informed the team of 3 personas, 6 user scenarios, and several use cases to base website design decisions on.
+                            <br><br>
+                            Drafted the information architecture and sketches of the website to follow design considerations of the ordering process of 3D printed parts, order history, and other main features of the website.
+                            <br><br>
+                            Iterated on wireframes of the website that streamlined the ordering process experience and clarified information about available services and materials, informed from feedback from mentor critiques, client feedback, and user testing.
+                        </p>
+                        <figure class="gridContent" id="formfactories">
+                            <!-- <a rel="external" href="formfactories.html"> -->
+                                <picture class="ratio-3-2">
+                                    <source type="image/webp" srcset="01-designWork-images/formfactories/03-original-webp/formfactories.webp">
+                                    <source type="image/png" srcset="01-designWork-images/formfactories/02-compressed-png/formfactories-compressed.png">
+                                    <img id="formfactoriesImage" src="01-designWork-images/formfactories/02-compressed-png/formfactories-compressed.png" data-src="01-designWork-images/formfactories/01-original-png/formfactories.png" alt="image" loading="lazy" class="lazyload blur-up">
+                                </picture>
+                            <!-- </a> -->
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>UX Designer</h3>
+                    <h4>
+                        Ticketing Kiosk Project, design college course
+                        <br>
+                        La Jolla, CA; January - March 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Designed the digital interface of a physical movie-theater kiosk called Cinemunch with a team of 4 in a prototyping course that would enable moviegoers to order movie tickets and food in one place.
+                                <br><br>
+                                Generated user testing findings and insights for kiosk and digital interface features, based on research artifacts, sketches of solution features and user flow, and rapid prototyping.
+                                <br><br>
+                                Converted user testing feedback, design specifications, and visual style guides into the interaction design of 2 different wireframe prototypes of the kiosk digital interface and features, which would be implemented as a digital screen on a laptop installed within the physical kiosk.
+                                <br><br>
+                                Spearheaded visual design efforts to generate and finalize physical kiosk aesthetics, digital interface functionality, final presentation slide deck, and a marketing poster that received positive reviews from teaching assistants, and the professor.
+                            </p>
+                            <hr>
+                            <h4>Sources of Work</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://docs.google.com/presentation/d/1WFTqY8gwSkmSUwfh-4ENZ_wCVfgQNZLvuUWRkLe6Tqs/edit?usp=sharing">Final Presentation Slide Deck</a></li>
+                                <li><a rel="external" target="_blank" href="https://www.figma.com/proto/WmmMrIB9IYqhptKvnJxQ8EEF/DSGN-100?node-id=18%3A3&scaling=min-zoom">Initial Interface Design - Figma Prototype</a></li>
+                                <li><a rel="external" target="_blank" href="https://www.figma.com/proto/WmmMrIB9IYqhptKvnJxQ8EEF/DSGN-100-Design-Stuff?embed_host=share&node-id=162%3A73&scaling=contain">Final Interface Design - Figma Prototype</a></li>
+                                <li><a rel="external" target="_blank" href="https://docs.google.com/document/d/1uVisZHVu_ZWGnKpThB8dO0oVaL3Hmb1x2TUZxJDGVTI/edit?usp=sharing">Final Project Report</a></li>
+                            </ol>
+                        </article>
+                        <figure class="gridContent shadow">
+                            <picture class="ratio-10-11">
+                                <source type="image/svg+xml" srcset="01-designWork-images/cinemunch/01-original-svg/cinemunch.svg">
+                                <img src="01-designWork-images/cinemunch/01-original-svg/cinemunch.svg" data-src="01-designWork-images/cinemunch/01-original-svg/cinemunch.svg" alt="image" loading="lazy" class="lazyload blur-up noMaxHeight">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>User Researcher</h3>
+                    <h4>
+                        Hyundai Lab Project for Automation Playground subgroup - UC San Diego Design Lab
+                        <br>
+                        La Jolla, CA; October 2018 - January 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Conducted fieldwork within the local campus area to observe and investigate the normal behavior of vehicles and pedestrians, with a total of 85 annotated observations, 341 images, and approximately 50 video clips gathered for analysis.
+                                <br><br>
+                                Annotated digitized research data to assist project facilitators with data gathering, consolidation, and synthesis of relevant issues to transportation, which contributed to team prototyping and discussion within ideation workshops.
+                                <br><br>
+                                Captured additional photos of team sketches for potential autonomous vehicles (AVs), the interior design of AVs, and personal items carried that informed final research findings and presentations related to robotaxis and micro-mobility topics.
+                                <br><br>
+                                Made early iterations of a Hyundai driving app as well as features for an entertainment dashboard hub system using Figma, which paved the way for more higher fidelity designs for user testing and project handoff.
+                            </p>
+                        </article>
+                        <figure class="gridContent" id="hyundaiDesignLab">
+                            <!-- <a rel="external" href="cinemunch.html"> -->
+                                <picture class="ratio-1-1">
+                                    <source type="image/svg+xml" srcset="01-designWork-images/hyundaiDesignLab/01-original-svg/hyundaiDesignLab.svg">
+                                    <img src="01-designWork-images/hyundaiDesignLab/01-original-png/hyundaiDesignLab.png" data-src="01-designWork-images/hyundaiDesignLab/01-original-svg/hyundaiDesignLab.svg" alt="image" loading="lazy" class="lazyload blur-up">
+                                </picture>
+                            <!-- </a> -->
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Career Peer Educator</h3>
+                    <h4>
+                        Career Services Center at UC San Diego
+                        <br>
+                        La Jolla, CA; September 2018 - June 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Advised 10-20 students per week during drop-in advising hours to help answer career-related questions, review job/graduate school application materials, and share relevant resources offered at the Career Center, which empowered students to resolve their career questions.
+                                <br><br>
+                                Presented in weekly/bi-weekly outreach programs for various campus groups to disseminate relevant and informed career information regarding resume writing, dressing up for interviews, and several other career-related topics.
+                                <br><br>
+                                Compiled spreadsheets of requested quantities and preferences for 49 different types of giveaway items based on responses from 11 staff members, which enabled the executive director of the Career Center to gain an informed understanding on how to establish a budget around giveaway item requests.
+                            </p>
+                            <hr>
+                            <h4>Slide Decks for Outreach Programs</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1WLGNZPUUpgz0QWm1nySQdkUHVcmncVVW">Resume and CV Workshop</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1HbFDLVKlO1vxzqgzIZqf2vjsGuB-oIl8">Advanced Resume Workshop</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1KI4nIxoWJaO5auE8ImXudCSvCKdOkO9E">Networking Strategies Workshop</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=172-2quZEHsC7_PCN2YwxRDF9vGFMJRh0">Dress for Success and LinkedIn Workshop</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1GfZMvSMwCVfI2iM32nPvLYUH9FRsUyES">Interview Prep and BigInterview Workshop</a></li>
+                            </ol>
+                        </article>
+                        <figure class="gridContent shadow">
+                            <picture class="ratio-16-9">
+                                <source type="image/png" srcset="01-aboutMe-images/careerCenter-resumeCVWorkshop.png">
+                                <img src="01-aboutMe-images/careerCenter-resumeCVWorkshop.png" data-src="01-aboutMe-images/careerCenter-resumeCVWorkshop.png" alt="image" loading="lazy" class="lazyload blur-up">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>UX Designer</h3>
+                    <h4>
+                        Shoperone Mobile App Project, design college course
+                        <br>
+                        La Jolla, CA; August - September 2018
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Designed a hi-fidelity Figma prototype of a mobile app with a team of 7 called Shoperone to help seniors with their grocery shopping by connecting them to assistive volunteers, which won 2nd place in a fictitious Shark Tank Challenge.
+                                <br><br>
+                                Guided team members on best practices for user research, initial design artifacts, and prototyping, which ensured that research and design efforts are understandable, operationalized, and backed by group consensus. 
+                                <br><br>
+                                Conducted interviews and competitive analysis to inform problem spaces and existing services that were most relevant to seniors.
+                                <br><br>
+                                Contributed to team discussions of solution feature ideation and wireframing of low to medium fidelity wireframe prototypes of the app.
+                                <br><br>
+                                Documented user testing results and user research to be implemented into the iteration of our prototype and final presentation slide deck.
+                                <br><br>
+                                Managed the entire production of a commercial video, from scriptwriting and direction of production shoots to media equipment management and post-production, which was successfully incorporated and played during the team's final presentation.
+                            </p>
+                            <hr>
+                            <h4>Sources of Work</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=178mlu6MNefUl6uVXuZWEGe5ZsM1Cpqg8">PDF Case Study</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1Z9zCfQ2mBs498dJFATf3yZIAPuFvQ-vcQOZ5quMf4ck">Final Presentation</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1-f-adchWFr0OKG9p_IpNmxJ_zVZBjCkw">Shoperone Marketing Video</a></li>
+                                <li><a rel="external" target="_blank" href="https://www.figma.com/proto/N072w32YNeChnCQqdisv6pT1/Shoperone?node-id=134%3A260&scaling=scale-down">Shoperone Final Prototype</a></li>
+                            </ol>
+                        </article>
+                        <figure class="gridContent projectImage noMargin noShadow">
+                            <picture class="ratio-8-7 preventOverflow noShadow">
+                                <source type="image/svg+xml" srcset="01-aboutMe-images/shoperone-finalMockups.svg">
+                                <img src="aboutMe-images/shoperone-finalMockups.svg" data-src="aboutMe-images/shoperone-finalMockups.svg" alt="image" loading="lazy" class="lazyload blur-up">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>UX Designer</h3>
+                    <h4>
+                        Mundo Gardens Community Project, Global TIES college course
+                        <br>
+                        La Jolla, CA; January - March 2018
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Managed a team of 7 to collaborate with Mundo Gardens, a non-profit community garden in National City, to create wooden signage and a drip irrigation system to resolve volunteer and garden management issues.
+                                <br><br>
+                                Scheduled regular in-person meetings with the executive director and other volunteers that enabled research and design efforts to be consistently aligned and supported from stakeholders.
+                                <br><br>
+                                Prioritized signage and drip irrigation solution ideas based on interviews, identified problem spaces, stakeholder feedback, online inspiration, and a Pugh chart for objective design decision making.
+                                <br><br>
+                                Ideated different forms of signage by making Google Slides and live physical construction and prototyping of wooden boards to represent and test the potential design of signage.
+                                <br><br>
+                                Generated feedback from 6-7 participants during user testing sessions using user testing parameters and materials that tested 3 key aspects of the different signage prototypes produced.
+                                <br><br>
+                                Implemented documents that outlined sustainable production and maintenance for the signage and drip irrigation solutions for Mundo Gardens to use in the future.
+                                <br><br>
+                                Compiled a 78 page final report to document the team's end-to-end process within our collaboration with Mundo Gardens.
+                            </p>
+                            <hr>
+                            <h4>Sources of Work</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=16ApxkV78tSKG9fgIOascCg3s_g44Idyh">Final Report - 78 pages</a></li>
+                                <li><a rel="external" target="_blank" href="https://docs.google.com/presentation/d/1FB75aMxbfxLjJ68Nb0E0GPaJ8Fj8SI2Ap4iKv1qcW_c/edit?usp=sharing">Final Presentation Slide Deck</a></li>
+                            </ol>
+                        </article>
+                        <figure class="gridContent projectImage noMargin">
+                            <picture class="ratio-16-9 preventOverflow shadow">
+                                <source type="image/png" srcset="01-aboutMe-images/MundoGardens.png">
+                                <img src="aboutMe-images/MundoGardens.png" data-src="aboutMe-images/MundoGardens.png" alt="image" loading="lazy" class="lazyload blur-up">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>UX Designer</h3>
+                    <h4>
+                        Fingo Mobile App Project, design college course
+                        <br>
+                        La Jolla, CA; January - March 2018
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Developed an app service for woodworkers and customers called Fingo that make services for custom wooden furniture more accessible and transparent, with a team of 5 and within a startup studio design course.
+                                <br><br>
+                                Generated competitive analyses and storyboards to define and ideate upon our problem space.
+                                <br><br>
+                                Executed Google Ad campaigns, online A/B user testing, and service enactments to evaluate and iterate on our app concept based on success metrics, data mining results, and live feedback from task analysis paper prototyping sessions.
+                                <br><br>
+                                Developed high-fidelity wireframes of the mobile app prototype that reflected desired needs and value proposition models from user research and design specifications.
+                                <br><br>
+                                Managed the entire video production process of a final marketing video to persuade investment of the development of the Fingo app via a Kickstarter page, which enabled the team to win 2nd place out of 6 different groups in a fictitious money investment game challenge.
+                            </p>
+                            <hr>
+                            <h4>Sources of Work</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://www.figma.com/proto/caDooQQcSTF6poeolQA8okOw/Fingo---Interactive-Prototype?node-id=42%3A696&scaling=min-zoom">Interactive Prototype - Final Version</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1lj45r0b6hQZ9192wjS1u1k-Dt56wVOm-">Final Video</a></li>
+                            </ol>
+                        </article>
+                        <figure class="gridContent projectImage noMargin" id="fingo-mainMenuScreen">
+                            <picture class="ratio-4-7 preventOverflow shadow">
+                                <source type="image/svg+xml" srcset="01-aboutMe-images/fingo-mainMenuScreen.svg">
+                                <img src="aboutMe-images/fingo-mainMenuScreen.svg" data-src="aboutMe-images/fingo-mainMenuScreen.svg" alt="image" loading="lazy" class="lazyload blur-up noMaxHeight">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Videographer Intern</h3>
+                    <h4>
+                        Yonder Dynamics
+                        <br>
+                        La Jolla, CA; November 2017 - March 2018, November 2018 - March 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Produced fundraising videos that justified what Yonder Dynamics needed to help support their endeavors for constructing competition-ready rovers, which contributed to the $7,300 funding on Kickstarter in 2018 and $1,950 funding on Indiegogo in 2019.
+                                <br><br>
+                                Edited videos of the Systems Acceptance Review (SAR) of the rover that demonstrated how the rover is ready for the competition, which enabled UC San Diego to be featured as one of the selected teams for the URC 2018.
+                                <br><br>
+                                Recorded hundreds of video clips to direct coverage of the student organization's construction of the rover and its physical capabilities related to URC's tasks.
+                                <br><br>
+                                Coordinated scheduled times, locations, and required shots with the business lead, project manager, and other student executive members to ensure coverage of the requirements outlined in the University Rover Challenge (URC) guidelines to showcase the rover.
+                            </p>
+                            <hr>
+                            <h4>Sources of Work</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1K8BQDRso6WwXPMPJ8oBcGhlPF7b-Tqoi">Yonder Dynamics 2017-18 Fundraising Video</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=15AKgxTfrPmkS9IWokZhLQKHEIRw7yURO">2018 Yonder Dynamics Systems Acceptance Review (Revised Version)</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1qGMLfaHdSYcJ-l1Hnbes2QZiiqGErXFd">2019 Yonder Dynamics Systems Acceptance Review</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1z4tJdw7SdueOubkQ6knb2wylSctjqhlq">2019 Yonder Dynamics Indiegogo Fundraising Video</a></li>
+                            </ol>
+                        </article>
+                        <article class="gridContent">
+                            <figure class="shadow">
+                                <picture class="ratio-16-9">
+                                    <source type="image/svg+xml" srcset="01-mediaWork-images/yonderDynamics/01-original-png/yonderDynamics-robot.png">
+                                    <img src="01-mediaWork-images/yonderDynamics/01-original-png/yonderDynamics-robot.png" data-src="01-mediaWork-images/yonderDynamics/01-original-png/yonderDynamics-robot.png" alt="image" loading="lazy" class="lazyload blur-up">
+                                </picture>
+                            </figure>
+                            <figure class="shadow">
+                                <picture class="ratio-16-9">
+                                    <source type="image/svg+xml" srcset="01-mediaWork-images/yonderDynamics/01-original-png/yonderDynamics-logov1.png">
+                                    <img src="01-mediaWork-images/yonderDynamics/01-original-png/yonderDynamics-logov1.png" data-src="01-mediaWork-images/yonderDynamics/01-original-png/yonderDynamics-logov1.png" alt="image" loading="lazy" class="lazyload blur-up">
+                                </picture>
+                            </figure>
+                        </article>
+                    </article>
+                </article>
+                <article>
+                    <h3>Videographer Intern</h3>
+                    <h4>
+                        Associated Students, Concerts and Events (ASCE)
+                        <br>
+                        La Jolla, CA; October 2017 - June 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p>
+                                Produced a total of 10 event promo and recap videos for marketing coordinators and directors related to various student-centric on-campus events, which have been publicized within ASCE’s Facebook event pages and YouTube channel.
+                                <br><br>
+                                Directed production shoots related to 6 produced videos with more ambitious marketing initiatives for advertising smaller student events.
+                                <br><br>
+                                Directed production shoots related to more ambitious marketing initiatives for advertising smaller student events.
+                                <br><br>
+                                Supported tabling, poster-hanging, and other marketing initiatives to garner engagement from hundreds of students, which ensured interest and student attendance at various ASCE-hosted events.
+                            </p>
+                            <hr>
+                            <h4>Videos Made</h4>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/file/d/1Rjn7GxNp0p4UHlBc9_6KBkvX1dBBya02/view?usp=sharing">Sun God Festival 2019 Trailer</a></li>
+                                <li><a rel="external" target="_blank" href="https://www.youtube.com/watch?v=2Og2kC4UzLE">ASCE End-of-Academic Year Tribute</a></li>
+                                <li><a rel="external" target="_blank" href="https://www.youtube.com/watch?v=52yrl2Iid2A">Sun God Festival 2018 Trailer</a></li>
+                                <li><a rel="external" target="_blank" href="https://www.youtube.com/watch?v=2j7r-JuvUbg">"Seas the Day" for Bear Garden Event</a></li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1r0ogL8KtlPb20SPR_W3dvTkYaoo8Fbs4">Bearwatch for "Seas the Day" Bear Garden Event</a></li>
+                            </ol>
+                        </article>
+                        <article class="gridContent">
+                            <figure class="shadow">
+                                <figcaption>2019 Trailer for ASCE's biggest concert event of the year, Sun God Festival.</figcaption>
+                                <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/sunGodFestival/sunGodFestivalVid.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                                    <source src="01-mediaWork-videos/sunGodFestival_2019/2019_Trailer_SGF_compressed.mp4" type="video/mp4">
+                                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                                </video>
+                            </figure>
+                            <figure class="shadow">
+                                <figcaption>Preview of various artists in multiple social media marketing videos.</figcaption>
+                                <video class="ratio-16-9 mainVideo cursorDefault" poster="01-mediaWork-videos/artistGIFs/artistGIFs_compressed.png" preload="none" controlsList="nodownload noplaybackrate" autoplay muted loop disablepictureinpicture playsinline>
+                                    <source src="01-mediaWork-videos/artistGIFs/artistGIFs.mp4" type="video/mp4">
+                                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                                </video>
+                            </figure>
+                        </article>
+                    </article>
+                </article>
+                <article>
+                    <h3>Student Fundraiser</h3>
+                    <h4>
+                        UCSD Telephone Outreach Program Calling Center
+                        <br>
+                        La Jolla, CA; April - June 2017, September 2017 - January 2018
+                    </h4>
+                    <article>
+                        <p>
+                            Called UCSD alumni to listen to their feedback about their undergraduate/graduate experiences and to ask them to pledge for a specific university fund to support.
+                            <br><br>
+                            Educated alumni about the different funds and organizations on campus to promote a philanthropic understanding about giving back to the university.
+                            <br><br>
+                            Recorded results of calls to a digital database to help supervisors keep track of different categories that alumni fall under based on their donation statuses.
+                            <br><br>
+                            Returned voicemails to alumni that did not initially respond to student calls for outreach.
+                        </p>
+                    </article>
+                </article>
+                <article>
+                    <h3>Senior Producer, Producer, and Intern</h3>
+                    <h4>
+                        Triton Television (TTV)
+                        <br>
+                        La Jolla, CA; September 2016 - June 2019
+                    </h4>
+                    <article class="grid gridType4">
+                        <article class="gridContent">
+                            <p><b>Senior Producer, September 2018 - June 2019</b></p>
+                            <p>
+                                Produced videos related to event promos, event recaps, student projects, and student films for various on-campus groups, student representatives, and clients.
+                                <br><br>
+                                Mentored different TTV members on using/managing media equipment and applying best practices for post-production to ensure proper media equipment lending and more efficient video editing workflows.
+                                <br><br>
+                                Spearheaded video editing of projects with greater stakes and impact within the discretion of admin members and in tandem with Associated Students Concerts and Events (ASCE).
+                            </p>
+                            <hr>
+                            <hr>
+                            <p><b>Producer, September 2017 - June 2018</b></p>
+                            <p>
+                                Produced videos related to event promos, event recaps, student projects, and student films for various on-campus groups, student representatives, and clients.
+                                <br><br>
+                                Handled media equipment from volunteering opportunities in production shoots for student projects to ensure the successful execution of desired video footage for other directors to use.
+                                <br><br>
+                                Acted in some production shoots for student projects to fulfill desired roles from directors' scripts.
+                                <br><br>
+                                Communicated with TTV executive members on updates with media drafts for different clients.
+                                <br><br>
+                                Edited videos for directors within student teams during 48-hour film festivals, a reoccurring TTV event where student teams are to produce a specifically-themed video within a 48 hour weekend.
+                            </p>
+                            <hr>
+                            <hr>
+                            <p><b>Intern, September 2016 - June 2017</b></p>
+                            <p>
+                                Learned general concepts and basics of scriptwriting, camera equipment usage, cinematography, sound, and video editing to be applied to initial projects, which contributed to the creation of 3 different video projects to be screened.
+                                <br><br>
+                                Directed a film production of one of the first videos ever produced through scriptwriting, actor recruitment, media equipment management, execution of production shoots, and post-production video editing, which led to the video's successful screening as a final deliverable to be initiated into the second phase of the internship program.
+                                <br><br>
+                                Edited earlier video projects through the usage of Adobe Premiere Pro to be published on YouTube.
+                            </p>
+                            <hr>
+                            <hr>
+                            <p><b>Videos as Sources of Work</b></p>
+                            <ol>
+                                <li><a rel="external" target="_blank" href="https://www.youtube.com/watch?v=uQnnd5la29Q">TTV Reel</a> - This video showcases student projects within Triton Television (TTV), a film and media production student organization at the University of California - San Diego. It would be used as a marketing video for recruitment and advertising for the organization for years to come.</li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=14F2w2_WEZf4Y95pPinbmXZSYvOAX30vZ">Wellfest</a> - This was a recap of Wellfest, an event at the University of California - San Diego campus geared towards awareness of zero waste, health, well-being, and sustainability. This video was made for Housing, Dining, and Hospitality, a well-known organization at UC San Diego that oversees student housing, local markets, and dining halls on campus.</li>
+                                <li><a rel="external" target="_blank" href="https://drive.google.com/open?id=1l_x-WUhtkRKU29bivjN4mIiq-ynYnPho">Wellness Fair</a> - This was a video recap of Wellness Fair. Although this event focused on the seven dimensions of wellness, the video emphasized the educational, social, and fitness aspects of health and well being. This video was made for Housing, Dining, and Hospitality, a well-known organization at UC San Diego that oversees student housing, local markets, and dining halls on campus.</li>
+                            </ol>
+                        </article>
+                        <article class="gridContent">
+                            <figure class="shadow">
+                                <figcaption>Trition Television Reel</figcaption>
+                                <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                                </video>
+                            </figure>
+                            <figure class="shadow">
+                                <figcaption>Wellfest Recap Video</figcaption>
+                                <video class="ratio-16-9 mainVideo" poster="01-mediaWork-videos/wellFest2018/wellfest2018_1.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                                    <source src="01-mediaWork-videos/wellFest2018/wellFest2018.mp4" type="video/mp4">
+                                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                                </video>
+                            </figure>
+                        </article>
+                    </article>
+                </article>
+                <article>
+                    <h3>Secretary</h3>
+                    <h4>
+                        Triton-3D
+                        <br>
+                        La Jolla, CA; May 2016 - April 2017
+                    </h4>
+                    <article>
+                        <p>
+                            Moderated and organized a list of email recipients within the student organization by email alphabetical order with strict confidentiality and high fidelity.
+                            <br><br>
+                            Sent final email drafts for mass email announcements to over 200 people within an email list to inform students of General Body Meetings (GBMs) and updates.
+                            <br><br>
+                            Assisted check-in and recordings of all competition teams during the commencement of a MakeAThon event, managed 3-D printers for participants to use during competition, and designed plaque awards to present to sponsor representatives of the event.
+                            <br><br>
+                            <a rel="external" target="_blank" href="https://drive.google.com/file/d/0ByAFkqNA2AG_TXpMN0xkd0hvbjg/view?usp=sharing">Hack-a-thon Video</a> - This was a video created a long time ago to illustrate an event recap at one of the student 3-D printing Hack-a-thons.
+                        </p>
+                    </article>
+                </article>
+                <article>
+                    <h3>Intern/Volunteer</h3>
+                    <h4>
+                        California Public Interest Research Group (CALPIRG)
+                        <br>
+                        La Jolla, CA; September 2015 - June 2016
+                    </h4>
+                    <article>
+                        <p>
+                            Coordinated with group members in weekly meetings, conference calls, and scheduling to actively discuss current topics and to organize for future events.
+                            <br><br>
+                            Informed and persuaded other students in person to sign important forms concerning local and state-wide issues and to help fundraise for the organization.
+                            <br><br>
+                            Databased contact information from petition and pledge forms completed by students into privately shared Google spreadsheets and online CALPIRG servers.
+                            <br><br>
+                            Phone banked students with other volunteers using secured contact forms to notify students of future volunteering opportunities.
+                        </p>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="skills">
+                <h2>
+                    <span>Skills</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-gear.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="skills">
+                    </picture>
+                </h2>
+                <article class="grid gridType1">
+                    <h3>User Experience (UX) Design</h3>
+                    <article class="gridContent">
+                        <h4>UX Research</h4>
+                        <ul>
+                            <li>Ethnography</li>
+                            <li>Field Observations</li>
+                            <li>Contextual Inquiry</li>
+                            <li>User Interviews (In-Person/Remote)</li>
+                            <li>Secondary Research (Online Research, Literature Review)</li>
+                            <li>Competitive Analysis</li>
+                            <li>Comparative Analysis</li>
+                            <li>Heuristic Evaluations</li>
+                            <li>Survey Design</li>
+                            <li>Research Protocols</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Data Synthesis</h4>
+                        <ul>
+                            <li>Data Analysis</li>
+                            <li>Storyboards</li>
+                            <li>Personas</li>
+                            <li>Scenarios and Use Cases</li>
+                            <li>Affinity Diagramming</li>
+                            <li>Empathy Maps</li>
+                            <li>User Journeys and Journey Maps</li>
+                            <li>Problem Statements</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Ideation and Prototyping</h4>
+                        <ul>
+                            <li>Prioritization Matrices</li>
+                            <li>Moodboarding</li>
+                            <li>Paper & Digital Mockups</li>
+                            <li>User Interface (UI) Design</li>
+                            <li>User Flows</li>
+                            <li>Design Systems and Specifications</li>
+                            <li>Visual Style Guides</li>
+                            <li>Wizard-of-Ozing</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Testing and Iteration</h4>
+                        <ul>
+                            <li>User Testing</li>
+                            <li>Usability Testing</li>
+                            <li>Translation of Feedback to Project/Solution Changes</li>
+                            <li>Solution Pivoting</li>
+                        </ul>
+                    </article>
+                </article>
+                <article class="grid gridType1">
+                    <article class="gridContent">
+                        <h3>Front-End Web Development</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>Sass</li>
+                            <li>CSS</li>
+                            <li>jQuery</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h3>Media Production</h3>
+                        <ul>
+                            <li>Scriptwriting</li>
+                            <li>Shot Lists</li>
+                            <li>Camera and Production Gear Handling</li>
+                            <li>Cinematography</li>
+                            <li>Soundtrack Finding</li>
+                            <li>Post-Production Video and Audio Editing</li>
+                        </ul>
+                    </article>
+                </article>
+                <article class="grid gridType1">
+                    <article class="gridContent">
+                        <h3>Content Creation</h3>
+                        <ul>
+                            <li>Websites</li>
+                            <li>Online Forum</li>
+                            <li>Interactive App/Physical Prototypes</li>
+                            <li>Design Systems</li>
+                            <li>Iconography</li>
+                            <li>Edited Videos</li>
+                            <li>GIFs</li>
+                            <li>Software Installation Guides & Manuals</li>
+                            <li>Slide Decks</li>
+                            <li>Academic Posters</li>
+                            <li>Document Reports</li>
+                            <li>Illustrative PDFs</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h3>Other Skills</h3>
+                        <ul>
+                            <li>Technical Writing and Proofreading</li>
+                            <li>Project Management</li>
+                            <li>Translation of Feedack to Requested Changes</li>
+                            <li>Self-Learning of Digital Tools and Platforms</li>
+                        </ul>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="tools">
+                <h2>
+                    <span>Tools</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-prototyping-1.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="education">
+                    </picture>
+                </h2>
+                <article class="grid gridType1">
+                    <article class="gridContent">
+                        <h3>Design</h3>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Adobe Photoshop & Illustrator</li>
+                            <li>Miro</li>
+                            <li>Lucidchart</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h3>Front-End Web Development</h3>
+                        <ul>
+                            <li>Visual Studio Code</li>
+                            <li>WordPress</li>
+                            <li>BitBucket</li>
+                            <li>GitHub (terminal and desktop app)</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h3>Media Production</h3>
+                        <ul>
+                            <li>Adobe Premiere Pro, Audition, Media Encoder, After Effects</li>
+                            <li>Blackmagic DaVinci Resolve Studio</li>
+                            <li>Audacity</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h3>File Management</h3>
+                        <ul>
+                            <li>Google Suite (Drive, Docs, Sheets, Slides, Forms, Calendar)</li>
+                            <li>Office 365 Suite (Word, Excel, Powerpoint, OneNote)</li>
+                            <li>Notion</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <h3>Online Communication</h3>
+                        <ul>
+                            <li>Slack</li>
+                            <li>Zoom</li>
+                            <li>Discord</li>
+                            <li>Google Hangouts</li>
+                        </ul>
+                    </article>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <!-- footer tag: Informational content, typically located at the bottom of a page shown or as last remaining content. -->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" rel="external" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+</body>
+    <!--END of main content for body.-->
+
+<!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+<script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.1.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+<script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+<script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+<script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+<script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-throttle.min.js"></script><!--Plugin to throttle and debounce events (for limiting how many functions get called from different event handlers), in jQuery.-->
+<script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</html>

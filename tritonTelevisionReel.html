@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head tag: Organizes metadata information of the HTML document, such as character sets, scripts, stylesheets, and other types of metadata.-->
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-security-policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio Case Study - Triton Television">
+
+    <!--CSS stylesheet(s).-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of a browser tab used.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>Triton Television Reel - Wayne Phung's Portfolio Case Study</title>
+
+</head>
+
+<!--Body tag: Specifies all elements of the HTML document. This is what a person typically sees or interacts with in a webpage.-->
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!--Header tag: Specifies top portion of the page. This would contain a logo, main navigation links, and call-to-action buttons.-->
+    <header role="banner" aria-label="navigation links">
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork" class="navLink diffURL"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork" class="navLink diffURL"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink diffURL"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection" class="navLink diffURL"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink diffURL"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink diffURL" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <div class="progressContainer" id="headerProgressBar-caseStudy">
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <main role="main" id="title">
+        <aside role="navigation" class="navSideBar" id="sideBar-TTV">
+            <button class="button" id="tableOfContents-MobileButton">
+                <img src="01-other-images/icons/icon-tableOfContents.svg" alt="" loading="eager" class="lazyload blur-up vectorIcon noPanzoom active ratio-1-1" id="mobileToC">
+                <p>Open ToC</p>
+            </button>
+            <a class="navButton sideBarButton desktopButton" href="#title" id="toTop">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p data-href="title">Top of Page</p>
+            </a>
+            <div class="navButtons">
+                <nav class="accordion withIcons">
+                    <a class="navButton sideBarButton" href="#title" id="toTop-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                        </picture>
+                        <p data-href="title">Top of Page</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#introduction">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-book.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="introduction">
+                        </picture>
+                        <p data-href="introduction">Introduction</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#initialProcess">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-gear.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="initialProcess">
+                        </picture>
+                        <p data-href="initialProcess">Initial Process</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#firstDraft">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-firstIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="firstDraft">
+                        </picture>
+                        <p data-href="firstDraft">First Draft</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#iterating">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-gearIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="iterating">
+                        </picture>
+                        <p data-href="iterating">Iterating</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#finalVideo">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-video.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="finalVideo">
+                        </picture>
+                        <p data-href="finalVideo">Final Video</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#results">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-clipboard.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="results">
+                        </picture>
+                        <p data-href="results">Results</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#reflection">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                        </picture>
+                        <p data-href="reflection">Reflection</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectsText" id="toBottom-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                        </picture>
+                        <p data-href="projectsText">Other Case Studies</p>
+                    </a>
+                </nav>
+                <div class="progressContainer" id="sideProgressBar">
+                    <div class="progressBar"></div>
+                </div>
+            </div>
+            <a class="navButton sideBarButton" href="#projectsText" id="toBottom">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                </picture>
+                <p data-href="projectsText">Other Case Studies</p>
+            </a>
+        </aside>
+        <section role="" class="titleSection grid gridType1">
+            <article class="titleArticle gridContent">
+                <h1>Triton Television Reel</h1>
+                <p>
+                    This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.
+                    <!-- <br><br> -->
+                    <!-- Also available on <a rel="external" target="_blank" href="https://www.youtube.com/watch?v=uQnnd5la29Q">YouTube</a>.</p> -->
+            </article>
+            <!-- <figure> -->
+            <figure class="gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com/embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+            <!-- <iframe class="youTube gridContent" src="https://www.youtube.com/embed/uQnnd5la29Q" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!-- </figure> -->
+        </section>
+        <section class="content caseStudyContent">
+            <section role="" class="pageSection mainSection" id="introduction">
+                <h2 class="noMarginTop flexRow width100">
+                    <span>Introduction</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-book.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="introduction">
+                    </picture>
+                </h2>
+                <article>
+                    <p>
+                        Triton Television (TTV) is a student-led organization at UC San Diego for student filmmakers to learn and apply their craft for photography, cinematography, creative writing, acting, sound, editing and many other skills.
+                        <br><br>
+                        Every two or more years, a reel would be updated to showcase a diverse set of the most recent student projects made in TTV.
+                        <br><br>
+                        The reel would be leveraged for marketing and recruitment purposes to showcase TTV's prowess in teaching and producing quality cinematography, acting, video/sound editing, etc.
+                    </p>
+                </article>
+                <article class="grid gridType4">
+                    <h3>Summary of My Contributions</h3>
+                    <ol>
+                        <li>I gathered video files from student members.</li>
+                        <li>I analyzed, edited, and iterated upon the video files, a soundtrack found on YouTube, and found visual effects.</li>
+                        <li>I iterated upon the different reel versions, based on feedback from both regular and executive student members in TTV.</li>
+                    </ol>
+                </article>
+            </section>
+            <section role="" class="pageSection" id="initialProcess">
+                <h2>
+                    <span>Initial Process</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-gear.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="initialProcess">
+                    </picture>
+                </h2>
+                <article>
+                    <h3>Understanding Project Requirements</h3>
+                    <p class="noMarginBottom">After inquiring a couple of admin members within TTV, reviewing the <a rel="external" target="_blank" href="https://www.youtube.com/watch?v=5FUFhGRAVlQ">2015 TTV Reel video on YouTube</a>, and researching other reels, I concluded that the reel must:</p>
+                    <ul>
+                        <li class="adjustMarginBottom">be short (about one to two minutes)</li>
+                        <li class="adjustMarginBottom">have quality footage</li>
+                        <li class="adjustMarginBottom">demonstrate strong but moderate usage of cinematography, storytelling, and editing</li>
+                        <li class="noMarginBottom">incorporate different, diverse student projects and videos covered in TTV</li>
+                    </ul>
+                </article>
+                <article class="grid gridType4">
+                    <h3>Setting Up the Project</h3>
+                    <article class="gridContent">
+                        <p>I messaged student members via Slack to submit video files of their projects to a Google Drive folder for me to set up the videos into Adobe Premiere Pro.</p>
+                        <figure class="gridContent">
+                            <picture class="ratio-3-2 shadow">
+                                <source type="image/webp" srcset="01-mediaWork-images/ttvReel/03-original-webp/gDriveFolder.webp">
+                                <source type="image/png" srcset="01-mediaWork-images/ttvReel/02-compressed-png/gDriveFolder-compresssed.png">
+                                <img src="01-mediaWork-images/ttvReel/02-compressed-png/gDriveFolder-compressed.png" data-src="01-mediaWork-images/ttvReel/01-original-png/gDriveFolder.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                            <figcaption>Folder structure in Google Drive that emerged from 20 student members who submitted their video work.</figcaption>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p>
+                            I also found a Creative Commons licensed soundtrack on YouTube and remixed it.
+                            <br>
+                            I thought this soundtrack had the right tempo changes, beat, and mood to reinforce TTV's storytelling and branding within the reel.
+                        </p>
+                        <figure>
+                            <picture class="ratio-5-3 shadow">
+                                <source type="image/webp" srcset="01-mediaWork-images/ttvReel/03-original-webp/interStellarTravel.webp">
+                                <source type="image/png" srcset="01-mediaWork-images/ttvReel/02-compressed-png/interStellarTravel-compresssed.png">
+                                <img src="01-mediaWork-images/ttvReel/02-compressed-png/interStellarTravel-compressed.png" data-src="01-mediaWork-images/ttvReel/01-original-png/interStellarTravel.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                            <figcaption>YouTube soundtrack found, <a rel="external" target="_blank" href="https://www.youtube.com/watch?v=5FUFhGRAVlQ&t=13s">Interstellar Travel by Mark Tyner</a>.</figcaption>
+                        </figure>
+                        <figure class="bottomMargin-1rem audioPlayer justifyFlexStart noShadow">
+                            <audio controls>
+                                <source src="01-mediaWork-videos/ttvReel/1stDraftSoundtrack.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element. Please try viewing this on a different device, such as a computer or tablet.
+                            </audio>
+                            <figcaption>Remixed soundtrack used for the first draft.</figcaption>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Initial Choosing of Videos</h3>
+                    <p>As I made progress on the reel, the following were some example clips that I initially considered, each with my reasoning behind choosing them.</p>
+                    <!-- <ol>
+                        <li><b>Strong cinematography</b> -  Video footage chosen would have interesting, dynamic framing/movement of objects or have different camera views.</li>
+                        <li><b>Diverse and effective demonstration of other types of projects that TTV covered</b> - This included event coverage on the UC San Diego campus, film festivals that TTV hosted, music concerts, or other types of projects that were inherently different from existing student films.</li>
+                    </ol> -->
+                </article>
+                <article class="grid gridType1">
+                    <article class="gridContent">
+                        <h4>Cole Takayama's Film - A Beautiful View</h4>
+                        <ul>
+                            <li>Excellent framing of characters</li>
+                            <li>Good camera movements between clips</li>
+                            <li class="noMarginBottom">Outside environments stand out from other student works.</li>
+                        </ul>
+                        <p class="noMarginBottom">
+                            Published on <a rel="external" target="_blank" href="https://www.youtube.com/watch?v=0DETBkANowQ&t=36s">YouTube</a>.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <button class="chosenClip2Play videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="ratio-1-1 vectorIcon">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                            </picture>
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="smallMarginBottom justifyFlexStart shadow">
+                            <video class="autoplayVideo chosenClip2Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/ChosenClip2-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/ChosenClip2-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ChosenClip2-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+                <article class="grid gridType1">
+                    <article class="gridContent">
+                        <h4>Trae Whyte's Film - Koulan</h4>
+                        <ul>
+                            <li>easy to interpret video segments</li>
+                            <li>close-up camera views of the dancers' facial expressions</li>
+                            <li class="noMarginBottom">dynamic dance movements contributed to diversity of video projects</li>
+                        </ul>
+                        <p class="noMarginBottom">
+                            Published on <a rel="external" target="_blank" href="https://vimeo.com/220423860">Vimeo</a>.
+                        </p>
+                    </article>
+                    <article class="gridContent">
+                        <button class="chosenClip3Play videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="ratio-1-1 vectorIcon">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                            </picture>
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="smallMarginBottom justifyFlexStart shadow">
+                            <video class="autoplayVideo chosenClip3Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/ChosenClip3-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/ChosenClip3-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ChosenClip3-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+                <article class="grid gridType1">
+                    <article class="gridContent">
+                        <h4>Footage from Various Student Events</h4>
+                        <ul>
+                            <li>clearly shows that TTV contributes to recording live student-centered events</li>
+                            <li class="noMarginBottom">easy to accurately portray the themes and contexts behind events</li>
+                        </ul>
+                    </article>
+                    <article class="gridContent">
+                        <button class="chosenClip4Play videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="ratio-1-1 vectorIcon">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                            </picture>
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="shadow">
+                            <video class="autoplayVideo chosenClip4Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/ChosenClip4-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/ChosenClip4-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ChosenClip4-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+                <article class="subsection">
+                    <h3>Visual Effects</h3>
+                    <p>
+                        Visual effects are manipulations to moving imagery to enhance some aspect of a video's storytelling.
+                        <br><br>
+                        Despite these effects being used sparingly in most reels, I experimented with such effects to enhance video transitions or beat changes to the soundtrack.
+                    </p>
+                </article>
+                <article class="grid gridType4 adjustParagraph rowGap-3rem">
+                    <article class="gridContent">
+                        <h4>Film Grunge</h4>
+                        <p class="noMarginBottom">
+                            <span>This visual effect consisted of messy black spots with a faded white background, which overlapped two different video clips.</span>
+                        </p>
+                        <button class="chosenClip1Play videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="ratio-1-1 vectorIcon">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                            </picture>
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="noShadow justifyFlexStart shadow">
+                            <video class="autoplayVideo chosenClip1Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/ChosenClip1-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/ChosenClip1-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ChosenClip1-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Light Flare</h4>
+                        <p class="noMarginBottom">
+                            <span>A brief flash of orange and pink light would be shown between two clips.</span>
+                        </p>
+                        <button class="vfx videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="ratio-1-1 vectorIcon">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                            </picture>
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="shadow">
+                            <video class="autoplayVideo vfx" poster="01-mediaWork-videos/ttvReel/02-compressed-png/vfx-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/vfx-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/vfx-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="firstDraft">
+                <h2>
+                    <span>First Draft</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-firstIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="firstDraft">
+                    </picture>
+                </h2>
+                <article>
+                    <p>This draft was more experimental with videos shown, rather than having a cohesive storytelling to brand TTV.</p>
+                    <figure class="preventOverflow shadow">
+                        <video class="mainVideo gridContent" poster="01-mediaWork-videos/ttvReel/02-compressed-png/ttvReel-1stDraft-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                            <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-1stDraft-compressed.mp4" type="video/mp4">
+                            Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                        </video>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Feedback from TTV Members</h3>
+                    <!-- <p class="noMarginBottom">The following explains areas of improvement that members suggested for the reel.</p> -->
+                    <ol>
+                        <li>Video clips chosen were not visually compelling enough to pique and maintain interest to keep watching.</li>
+                        <li>The overall video lacked diversity, as there were too many clips of zoomed-in faces.</li>
+                    </ol>
+                </article>
+            </section>
+            <section class="pageSection" id="iterating">
+                <h2>
+                    <span>Iterating</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-gearIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="iterating">
+                    </picture>
+                </h2>
+                <article>
+                    <p>Aside from replacing clips, I tackled three aspects that were directly tied to TTV's intended branding/storytelling.</p>
+                </article>
+                    <!-- <ol>
+                        <li>I added video clips that provided a more diverse coverage of live concerts and events.</li>
+                        <li>I replaced parts of the reel with other video clips that emphasized diverse movements of camera objects and views.</li>
+                        <li>I kept the rest of videos in the reel if they evoked the right kinds of moments and strongly contributed to the reel's storytelling.</li>
+                    </ol> -->
+                <article>
+                    <h3>Improvement #1: Related Movements</h3>
+                    <p class="forceFlexBreak-Row">I made sure that foreground subjects for some video clips were also related to each other in terms of directional movements, thus showing TTV's caliber for cinematography.</p>
+                    <!-- <p class="noMarginBottom">These two video clips demonstrate an improvement to how TTV successfully delivers high-caliber camera shots within its projects by forming more noticeable connections between the spatial locations and movements of camera objects.</p> -->
+                    <button class="iteration1Play videoButton span2" type="button" name="play/pause button" data-play-pause="play">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                        </picture>
+                        <p>Play Videos</p>
+                    </button>
+                </article>
+                <article class="grid gridType4 adjustParagraph">
+                    <article class="gridContent">
+                        <h4>Older Draft (Before)</h4>
+                        <!-- <p class="noMarginBottom">Placement of subjects based on their spatial location in camera shot for an earlier draft.</p> -->
+                        <figure class="heightAuto smallMarginBottom noMarginTop shadow">
+                            <video class="autoplayVideo iteration1Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/iteration1-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/iteration1-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/iteration1-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Newer Draft (After)</h4>
+                        <!-- <p class="noMarginBottom">Placement of subjects based on their location and movement relative to the camera shot for a later draft.</p> -->
+                        <figure class="heightAuto noMarginTop shadow">
+                            <video class="autoplayVideo iteration1Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/iteration2-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/iteration2-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/iteration2-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Improvement #2: Balancing Diversity and Grouping of Video Parts</h3>
+                    <p class="noMarginBottom">I made some parts of the reel grouped together based on how similarly they were framed while ensuring that there were noticeable visual differences between each video part used.</p>
+                    <button class="iteration2Play videoButton span2" type="button" name="play/pause button" data-play-pause="play">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                        </picture>
+                        <p>Play Videos</p>
+                    </button>
+                </article>
+                <article class="grid gridType4 adjustParagraph">
+                    <article class="gridContent">
+                        <h4>Older Draft (Before)</h4>
+                        <!-- <p class="noMarginBottom">Random sequence of shots with an unclear purpose and reason why they were included. Some of the clips did not show meaningful, easily interpretable framing of subjects.</p> -->
+                        <figure class="smallMarginBottom noMarginTop shadow">
+                            <video class="autoplayVideo iteration2Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/iteration3-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/iteration3-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/iteration3-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Newer Draft (After)</h4>
+                        <!-- <p class="noMarginBottom">Montage of close up shots to illustrate how strong cinematography affects the appearance of actors, all derived from different clips.</p> -->
+                        <figure class="noMarginTop shadow">
+                            <video class="autoplayVideo iteration2Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/iteration4-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/iteration4-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/iteration4-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h3>Improvement #3: A Subtler, but More Meaningful Ending</h3>
+                    <p class="noMarginBottom">Towards the end of the reel, I dialed down the film grunge overlay used in earlier drafts just enough to let the footage speak for itself without the overlay being too distracting.</p>
+                    <button class="iteration3Play videoButton span2" type="button" name="play/pause button" data-play-pause="play">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-5-6">
+                        </picture>
+                        <p>Play Videos</p>
+                    </button>
+                </article>
+                <article class="grid gridType4 adjustParagraph">
+                    <article class="gridContent">
+                        <h4>Older Draft (Before)</h4>
+                        <!-- <p class="noMarginBottom">A lot of vaguely descriptive footage with a heavy overlay of a film grunge look, which doesn't correlate with the previous clips shown throughout the reel and the identity of TTV as a whole.</p> -->
+                        <figure class="preventOverflow shadow">
+                            <video class="autoplayVideo iteration3Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/iteration5-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/iteration5-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/iteration5-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Newer Draft (After)</h4>
+                        <!-- <p class="noMarginBottom">Montage of close up shots to illustrate cinematic moments from actors, all derived from different clips that demonstrate different settings and environments that TTV's work can produce, with a subtler film grunge overlay to bring back TTV's identity.</p> -->
+                        <figure class="preventOverflow shadow">
+                            <video class="autoplayVideo iteration3Play" poster="01-mediaWork-videos/ttvReel/02-compressed-png/iteration6-650-compressed.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-webm/iteration6-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/iteration6-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                        </figure>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="finalVideo">
+                <h2>
+                    <span>Final Video</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-video.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="finalVideo">
+                    </picture>
+                </h2>
+                <article>
+                    <!-- <p>Also available on <a rel="external" target="_blank" href="https://www.youtube.com/watch?v=uQnnd5la29Q">YouTube</a>.</p> -->
+                    <figure class="shadow">
+                        <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com/embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                            <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                            Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                        </video> -->
+                    </figure>
+                </article>
+                <!-- <iframe class="youTube mainVideo" src="https://www.youtube.com/embed/uQnnd5la29Q" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            </section>
+            <section class="pageSection" id="results">
+                <h2>
+                    <span>Results</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-clipboard.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="results">
+                    </picture>
+                </h2>
+                <article>
+                    <p>An earlier version of the reel was publicly shown during a student organization showcase on Triton Day, a day where undergraduate freshmen were able to preview some of the organizations and groups that UC San Diego had to offer.</p>
+                </article>
+                <!-- <figure class="gridContent">
+                    <figcaption>The reel is up on <span><a rel="external" target="_blank" href="https://www.youtube.com/watch?v=uQnnd5la29Q">YouTube</a></span> to view, which may have inspired more students to get involved and update the reel.</figcaption>
+                    <picture>
+                        <img src="01-mediaWork-images/ttvReel/youTubeReel.png" data-src="01-mediaWork-images/ttvReel/youTubeReel.png" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </figure> -->
+            </section>
+            <section class="pageSection" id="reflection">
+                <h2>
+                    <span>Reflection</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                    </picture>
+                </h2>
+                <article>
+                    <p>
+                        This was one of the earliest student organizations at University of California - San Diego that I have joined, 
+                        and it inspired me to not just learn media and filmmaking, but it empowered me to go outside of my comfort zones 
+                        to learn about filmmaking lingo, post-production software like Premiere Pro, and appreciate the power of storytelling 
+                        and an excellent narrative for people to be inspired by.
+                        <br><br>
+                        I would not have accomplished any of my future video projects without the guidance and support from my peers and 
+                        student executive members at the organization, and I wanted this project to be a lasting legacy, an ode to the projects 
+                        that were never revealed to the general public.
+                        <br><br>
+                        The video would be dedicated to alumni who were students just like existing TTV members, to existing student members who 
+                        want to remain involved and motivated to do good filmmmaking, and to prospective students who wanted to understand filmmaking 
+                        from TTV members/students on campus.
+                        <br><br>
+                        Looking back, I still remain hungry to continue learning more about post-production and other aspects of video making for the years to come.
+                    </p>
+                </article>
+            </section>
+        </section>
+    </main>
+    <!-- 
+        Container for other projects.
+        On tablet/desktop screen sizes, this is a two-column grid:
+        - heading, text, and button(s) on the left side
+        - accompanying image on the right side
+    -->
+    <section class="pageSection" id="otherCaseStudies">
+        <h2 class="projectsText" id="projectsText">Other Case Studies</h2>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TCLC Rap Video project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">TCLC Rap Video</h3>
+                <p class="noMarginBottom">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="TCLCVideo.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TCLC Rap Video project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com./embed/WQDrVQvYCAQ?si=M9ZOJaEjUJotCbTY&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm//finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!--
+                Container for the OSP Project:
+                - heading
+                - tags
+                - case study description (same as text in index.html)
+                - call-to-action button to project case study
+                - accompanying image
+            -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Open Speech Platform</h3>
+                <h4 class="tags">Team Support, App/Website/Forum Design, Research</h4>
+                <p class="noMarginBottom">I facilitated clearer communication and development of research-oriented hearing aid software across various projects among engineers and software developers.</p>
+                <!-- 
+                    Button containing the following:
+                    - a tag wrapper to make the button clickable
+                    - button text
+                    - wrapper and source for icon image
+                -->
+                <button class="button diffURL">
+                    <a rel="external" href="osp.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- 
+                Container for image:
+                - a tag wrapper to make the image clickable to the case study page.
+                - Wrapper and source of image.
+            -->
+            <figure class="projectImage gridContent noMargin noShadow">
+                <a rel="external" href="osp.html">
+                    <picture class="ratio-8-5 preventOverflow noMargin noShadow" id="globalImage-ospDevice">
+                        <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                        <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <article class="gridContent">
+                <h3 class="caseStudy">Electric Stride</h3>
+                <h4 class="tags">UX Design, UX Research, Rapid Ideation</h4>
+                <p class="noMarginBottom">An exercise mat for people with Parkinson's to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="electricStride.html">
+                        <p>See Case Study</p>
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <figure class="projectImage gridContent noShadow" id="electricStride">
+                <a rel="external" href="electricStride.html">
+                    <picture class="ratio-3-4 preventOverflow shadow">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the Automation Playground project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Automation Playground</h3>
+                <!-- <h4 class="tags">Web Design, Prototyping</h4> -->
+                <p>
+                    Automation Playground is a research subgroup of UC San Diego's Design Lab.<br>
+                    Helped to spearhead a web design project to showcase the research group for the former founder.
+                </p>
+                <button class="button diffURL">
+                    <a rel="external" href="automationPlayground.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+                <button class="button secondaryButton diffURL">
+                    <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                        <p>Visit Website</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the Automation Playground project. -->
+            <figure class="gridContent">
+                <a rel="external" href="automationPlayground.html">
+                    <picture class="ratio-2-1">
+                        <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+    </section>
+    <!-- footer tag: Informational content, typically located at the bottom of a page shown or as last remaining content. -->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html"><p>CV</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" rel="external" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+    <!--END of main content for body.-->
+
+    <!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.1.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</body>
+</html>
+
+<!--Commented content saved for later use, but is NOT part of the current HTML template.-->
+
+<!--Unused Javascript files for Cloudinary SDK file upload implementation.-->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script> -->

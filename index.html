@@ -1,0 +1,544 @@
+<!--
+    File name: "index.html"
+    This file MUST be named "index.html".
+    No changes to the name should be allowed unless otherwise.
+    This is because this file serves as the skeleton structure for the default landing page.
+
+    The landing page involves the following visual elements.
+        - A navigation header with a button to direct to the homepage; and 
+          buttons that serve to redirect to anchored sections, to the CV page, 
+          or to the contact section.
+        - An introduction section labeled "Wayne Phung", to describe a brief elevator pitch about myself.
+        - A "Design Work" section to display every case study pertaining to design projects.
+        - A "Media Work" section to display every case study pertaining to video (and, in the future, GIF) projects.
+        - An "About Me" section to briefly elaborate about who I am as well as a picture of me.
+        - A "Contact Me" section with two buttons linking to my LinkedIn page and email.
+
+    On desktop, there is a horizontal progress bar in the navigation header that dynamically changes based on how far down the page a person has scrolled.
+    On tablet, the location of the navigation header is switched to the bottom.
+    On mobile, the navigation header is not made sticky and returns to the top of the page.
+-->
+
+<!-- MUST include the DOCTYPE and html tags to ensure the browser properly interprets this as a HTML to render on the webpage. -->
+<!DOCTYPE html>
+<html lang="en">
+    
+<!--
+    Head tag: 
+    Organizes metadata information of the HTML document, 
+    such as character sets, scripts, stylesheets, 
+    and other types of metadata.
+-->
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/"><!--'strict-dynamic' 'unsafe-hashes' 'nonce-wwa0gx65d93mtk023bhz' -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio">
+
+    <!--CSS stylesheet(s).-->
+    <!-- <link rel="preload prefetch" href="02-css/openSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload prefetch" href="02-css/crimsonPro.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload prefetch" href="02-css/openSans.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload prefetch" href="02-css/crimsonPro.woff" as="font" type="font/woff" crossorigin="anonymous"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+    </style>
+    <!-- <link rel="stylesheet" href="02-css/testSass.css" type="text/css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of this page's browser tab.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>Wayne Phung</title>
+
+</head>
+
+<!--
+    body tag: Specifies all elements of the HTML document. 
+    This is the content that a person should only see and interact with in a webpage.
+-->
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!-- <script>
+        var preloader = document.getElementById('preloader');
+        function fadeInPage() {
+            if (!window.AnimationEvent) {
+                return;
+            }
+            preloader.classList.remove('fade-in');
+            preloader.classList.add('fade-out');
+        }
+        document.addEventListener("DOMContentLoaded", function(event) {
+            if (!window.AnimationEvent) {
+                return;
+            }
+            let buttonToPage = document.querySelectorAll("button a, .anchorLinks a, .navigationBar a"),
+                selectorArray = ['index.html', '#designWork', '#mediaWork', '#aboutMeSection', '.diffURL', '#contactButton', '#contactButton-mobile', '#linkedInButton', '#emailButton', '#tableOfContents-MobileButton', 'https://www.linkedin.com/in/wayne-phung-8a8242102/', 'mailto:waynephung1@gmail.com', '#tableOfContents-MobileButton'];
+            for (var index = 0; index < buttonToPage.length; index += 1) {
+                let buttonIndex = buttonToPage[index];
+                for (var j = 0; j < selectorArray.length; j += 1) {
+                    console.log('buttonIndex: ' + buttonIndex + ' selectArray[j]: ' + selectorArray[j]);
+                    // if (buttonIndex.getAttribute('href')) {
+                    //     console.log('buttonIndex.href: ' + buttonIndex.getAttribute('href'));
+                    // }
+                    // if (buttonIndex.getAttribute('id')) {
+                    //     console.log('buttonIndex.id: ' + buttonIndex.getAttribute('id'));
+                    // }
+                    if ((selectorArray[j] == buttonIndex.getAttribute('href')) || (selectorArray[j] == buttonIndex.getAttribute('id') || (buttonIndex.getAttribute('id') == 'contactButton-mobile'))) {
+                        if (buttonIndex.getAttribute('href')) {
+                            console.log('buttonIndex.href: ' + buttonIndex.getAttribute('href'));
+                        }
+                        if (buttonIndex.getAttribute('id')) {
+                            console.log('buttonIndex.id: ' + buttonIndex.getAttribute('id'));
+                        }
+                        console.log('Not added.');
+                        continue;
+                    } else {
+                        if (buttonIndex.getAttribute('href')) {
+                            console.log('buttonIndex.href: ' + buttonIndex.getAttribute('href'));
+                        }
+                        if (buttonIndex.getAttribute('id')) {
+                            console.log('buttonIndex.id: ' + buttonIndex.getAttribute('id'));
+                        }
+                        console.log('Added click event to element: ' + buttonIndex);
+                        buttonIndex.addEventListener('click', function(event) {
+                            var element = event.target,
+                                getTagName = element.tagName,
+                                getHref;
+                            console.log('event target: ' + getTagName);
+                            if (getTagName == 'button') {
+                                getHref = element.querySelector('a').getAttribute('href');
+                            }
+                            if (getTagName == 'A') {
+                                getHref = element.getAttribute('href');
+                            }
+                            if (getTagName == 'P') {
+                                getHref = element.closest('a').getAttribute('href');
+                            }
+                            if (getTagName == 'IMG') {
+                                getHref = element.closest('a').getAttribute('href');
+                            }
+                            var listener = function() {
+                                window.location = getHref;
+                                preloader.removeEventListener('animationend', listener);
+                            };
+                            preloader.addEventListener('animationend', listener);
+                            if ((selectorArray[j] == buttonIndex.getAttribute('href')) || (selectorArray[j] == buttonIndex.getAttribute('id'))) {
+                                //Do nothing.
+                            } else {
+                                event.preventDefault();
+                                preloader.classList.remove('fade-out');
+                                preloader.classList.add('fade-in');
+                            }
+                        });
+                    }
+                }
+            }
+        });
+        window.addEventListener('pageshow', function (event) {
+            if (!event.persisted) {
+            return;
+            }
+            preloader.classList.remove('fade-in');
+            preloader.classList.add('fade-out');
+        });
+        fadeInPage();
+    </script> -->
+    <!--
+        header tag: Specifies top portion of the page. 
+        This would contain the main navigation links and a call-to-action buttons.
+    -->
+    <header role="banner" aria-label="navigation links">
+        <!-- navigation tab: Container for all of the buttons, but not the progress bar. -->
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <!-- "Wayne Phung" button to redirect to the home page. -->
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <!-- 
+                Buttons to direct to general sections of the website, including design work, media work, description about me, and contact section.
+                The "Contact Me" button appears contained only in the mobile view.
+            -->
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" href="#designWork" class="navLink"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" href="#mediaWork" class="navLink"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <!-- The "Contact Me" button here appears on the lower/upper-right side of the screen for tablet and desktop screen sizes. -->
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <!-- Horizontal progress bar that only appears on tablet/desktop screen sizes. -->
+        <div class="progressContainer">
+            <!-- Indicator that dynamically changes in length based on how far down the person has scrolled down the web page. -->
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <!-- main tag: Contains the majority of scrollable content, including headings, body text, images, and videos. Not the footer however. -->
+    <main role="main" class="indexSection" id="title">
+        <button role="button" aria-labelledby="button to top of the page" href="#title" clas="navLink" id="toTopPageFixed320px">
+            <a href="#title">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p>Top of Page</p>
+            </a>
+        </button>
+        <!-- An introduction section labeled "Wayne Phung", to describe a brief elevator pitch about myself. -->
+        <section class="pageSection titleSection" id="title">
+            <!-- Heading -->
+            <h1>Wayne Phung</h1>
+            <!-- Body text. -->
+            <p>
+                <b>My last role</b>
+                <br>
+                small academic group at the University of California - San Diego that was working on improving their <a rel="external" target="_blank" href="https://thelab.ucsd.edu/">open-source hearing research toolkit</a>
+            </p>
+        </section>
+        <section class="content">
+            <!-- A "Design Work" section to display every case study pertaining to design projects. -->
+            <section class="pageSection gridGap-3em-4em" id="designWork">
+                <!-- Section heading title. -->
+                <h2>Design Work</h2>
+                <!-- Nesting container for all design case studies. -->
+                <article class="projectList">
+                    <!-- Container for the OSP project. -->
+                    <article class="grid gridType3 projectDescription">
+                        <article class="gridContent">
+                            <!-- Case study title and tags. -->
+                            <h3>Open Speech Platform</h3>
+                            <!-- <h4 class="tags">Team Support, App/Website/Forum Design, Research</h4> -->
+                            <!-- Short description of case study. -->
+                            <p class="noMarginBottom">I facilitated clearer communication and development of research-oriented hearing aid software across various projects among engineers and software developers.</p>
+                            <!-- Call-to-action button to view the case study. -->
+                            <button class="button diffURL">
+                                <!-- a tag wrapper to make the button clickable. -->
+                                <a rel="external" href="osp.html">
+                                    <!-- Button text. -->
+                                    <p>See Case Study</p>
+                                    <!-- Wrapper for icon image. -->
+                                    <picture class="vectorIcon ratio-1-1">
+                                        <!-- Source of icon image. -->
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                                    </picture>
+                                </a>
+                            </button>
+                        </article>
+                        <!-- Wrapper for image related to case study. -->
+                        <figure class="projectImage gridContent" id="ospDevice">
+                            <!-- a tag wrapper to make the image clickable to the case study page. -->
+                            <a rel="external" href="osp.html">
+                                <!-- Image related to case study. -->
+                                <picture class="ratio-8-5 preventOverflow noMargin" id="globalImage-ospDevice">
+                                    <!-- Source of image. -->
+                                    <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                                    <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                                </picture>
+                            </a>
+                            <!-- <div class="gradientBlobShadow blue bottom-10-right-5"></div>
+                            <div class="gradientBlobShadow red top-25-left-10 animateReverse"></div> -->
+                        </figure>
+                    </article>
+                    <!-- Container for the Automation Playground project. -->
+                    <article class="grid gridType3 projectDescription">
+                        <article class="gridContent">
+                            <!-- Case study title and tags. -->
+                            <h3>Automation Playground</h3>
+                            <!-- <h4 class="tags">Web Design, Prototyping</h4> -->
+                            <!-- Short description of case study. -->
+                            <p>
+                                Automation Playground is a research subgroup of UC San Diego's Design Lab.<br>
+                                Helped to spearhead a web design project to showcase the research group for the former founder.
+                            </p>
+                            <!-- Call-to-action button to view the case study. -->
+                            <div class="buttons">
+                                <button class="button projectButton diffURL">
+                                    <!-- a tag wrapper to make the button clickable. -->
+                                    <a rel="external" href="automationPlayground.html">
+                                        <!-- Button text. -->
+                                        <p>See Case Study</p>
+                                        <!-- Wrapper for icon image. -->
+                                        <picture class="vectorIcon ratio-1-1">
+                                            <!-- Source of icon image. -->
+                                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                                        </picture>
+                                    </a>
+                                </button>
+                                <button class="button secondaryButton diffURL">
+                                    <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                                        <p>Visit Website</p>
+                                        <picture class="vectorIcon ratio-1-1">
+                                            <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                                        </picture>
+                                    </a>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Wrapper for image related to case study. -->
+                        <figure class="gridContent">
+                            <!-- a tag wrapper to make the image clickable to the case study page. -->
+                            <a rel="external" href="automationPlayground.html">
+                                <!-- Image related to case study. -->
+                                <picture class="ratio-2-1">
+                                    <!-- Source of image. -->
+                                    <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                                </picture>
+                            </a>
+                            <!-- <div class="gradientBlobShadow blue top-20-left-25"></div>
+                            <div class="gradientBlobShadow red bottom-5-right-30 animateReverse"></div> -->
+                        </figure>
+                    </article>
+                    <!-- Container for the Electric Stride project. -->
+                    <article class="grid gridType3 projectDescription">
+                        <article class="gridContent">
+                            <!-- Case study title and tags. -->
+                            <h3>Electric Stride</h3>
+                            <h4 class="tags">UX Design, UX Research, Rapid Ideation</h4>
+                            <!-- Short description of case study. -->
+                            <p class="noMarginBottom">An exercise mat for people with Parkinson's to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                            <!-- Call-to-action button to view the case study. -->
+                            <button class="button diffURL">
+                                <!-- a tag wrapper to make the button clickable. -->
+                                <a rel="external" href="electricStride.html">
+                                    <!-- Button text. -->
+                                    <p>See Case Study</p>
+                                    <!-- Wrapper for icon image. -->
+                                    <picture class="vectorIcon ratio-1-1">
+                                        <!-- Source of icon image. -->
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                                    </picture>
+                                </a>
+                            </button>
+                        </article>
+                        <!-- Wrapper for image related to case study. -->
+                        <figure class="projectImage gridContent shadow" id="electricStride">
+                            <!-- a tag wrapper to make the image clickable to the case study page. -->
+                            <a rel="external" href="electricStride.html" class="shadow">
+                                <!-- Image related to case study. -->
+                                <picture class="ratio-3-4 preventOverflow">
+                                    <!-- Source of image. -->
+                                    <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                                    <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                                    <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                                </picture>
+                            </a>
+                        </figure>
+                    </article>
+                </article>
+            </section>
+            <!-- A "Media Work" section to display every case study pertaining to video projects. -->
+            <section class="pageSection gridGap-3em-4em" id="mediaWork">
+                <!-- Section heading title. -->
+                <h2 class="pageSectionHeading">
+                    <span>Media Work</span>
+                </h2>
+                </h2>
+                <!-- Nesting container for all media case studies. -->
+                <article class="projectList">
+                    <!-- Container for the Triton Television Reel project. -->
+                    <article class="grid gridType3 projectDescription">
+                        <article class="gridContent">
+                            <!-- Case study title and tags. -->
+                            <h3>Triton Television Reel</h3>
+                            <!-- Short description of case study. -->
+                            <p class="noMarginBottom">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                            <!-- Call-to-action button to view the case study. -->
+                            <button class="button projectButton diffURL">
+                                <!-- a tag wrapper to make the button clickable. -->
+                                <a rel="external" href="tritonTelevisionReel.html">
+                                    <!-- Button text. -->
+                                    <p>See Case Study</p>
+                                    <!-- Wrapper for icon image. -->
+                                    <picture class="vectorIcon ratio-1-1">
+                                        <!-- Source of icon image. -->
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                                    </picture>
+                                </a>
+                            </button>
+                        </article>
+                        <!-- Wrapper for image related to case study. -->
+                        <figure class="projectImage gridContent shadow">
+                            <iframe class="ratio-16-9 youTube mainVideo shadow" src="https://www.youtube.com./embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- <iframe class="ratio-16-9 mainVideo gDrive" src="https://drive.google.com/file/d/1p4YJDwYfq3CP40-XwYSD5y3u4jvj7aLC/preview" allowfullscreen></iframe> -->
+                                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                                </video> -->
+                        </figure>
+                    </article>
+                    <!-- Container for the TCLC Rap Video project. -->
+                    <article class="grid gridType3 projectDescription">
+                        <article class="gridContent">
+                            <!-- Case study title. -->
+                            <h3>TCLC Rap Video</h3>
+                            <!-- Short description of case study. -->
+                            <p class="noMarginBottom">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                            <!-- Call-to-action button to view the case study. -->
+                            <button class="button projectButton diffURL">
+                                <!-- a tag wrapper to make the button clickable. -->
+                                <a rel="external" href="TCLCVideo.html">
+                                    <!-- Button text. -->
+                                    <p>See Case Study</p>
+                                    <!-- Wrapper for icon image. -->
+                                    <picture class="vectorIcon ratio-1-1">
+                                        <!-- Source of icon image. -->
+                                        <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                                    </picture>
+                                </a>
+                            </button>
+                        </article>
+                        <!-- Wrapper for image related to case study. -->
+                        <figure class="projectImage gridContent shadow">
+                            <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com./embed/WQDrVQvYCAQ?si=M9ZOJaEjUJotCbTY&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm//finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video> -->
+                        </figure>
+                    </article>
+                </article>
+            </section>
+            <!-- An "About Me" section to briefly elaborate about who I am as well as a picture of me. -->
+            <section class="pageSection" id="aboutMeSection">
+                <!-- Section heading title. -->
+                <h2 class="pageSectionHeading span2" id="aboutMe">
+                    <span>About Me</span>
+                </h2>
+                <!-- Grid container for body text and profile picture. -->
+                <article class="grid gridType3">
+                    <!-- Container for body text. -->
+                    <article class="gridContent">
+                        <!-- Body text. -->
+                        <p class="beforeList">
+                            I have previously worked full-time at a small group at University of California - San Diego and helped an engineering-majority group of people advance their open-source platform for hearing-related research.
+                            <br><br>
+                            My other prior experiences in projects varies from product design, to website design and management, to project leading, and to editing video content.
+                            <br><br>
+                            I aim to continue solving complex problems in the world by:
+                        </p>
+                        <ul>
+                            <li>immersing myself in social-technical systems</li>
+                            <li>learning about the people within these systems</li>
+                            <li>applying design thinking to figure out how existing systems can be improved for humanity</li>
+                        </ul>
+                    </article>
+                    <!-- Container for profile picture. -->
+                    <figure class="gridContent noMargin noMaxHeight shadow">
+                        <!-- Profile picture. -->
+                        <picture class="widthAuto noMaxHeight preventOverflow" id="globalImage-aboutMe">
+                            <!-- Source of profile picture. -->
+                            <img src="01-aboutMe-images/WaynePhung.png" alt="image" loading="lazy" class="lazyload blur-up noMaxHeight objectFit-cover-1024">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <!-- footer tag: Mainly used to display two buttons linking to my LinkedIn page and email.-->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to design section of the homepage" href="#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to media section of the homepage" href="#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink" role="link" aria-label="anchor link to media section of the homepage" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html"><p>CV</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+    <!--END of main content for body.-->
+
+    <!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.1.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-throttle.min.js"></script><!--Plugin to throttle and debounce events (for limiting how many functions get called from different event handlers), in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</body>
+</html>
+
+<!--Commented content saved for later use, but is NOT part of the current HTML template.-->
+
+<!--Unused Javascript files for Cloudinary SDK file upload implementation.-->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script> -->

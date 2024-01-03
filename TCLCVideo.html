@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Head tag: Organizes metadata information of the HTML document, such as character sets, scripts, stylesheets, and other types of metadata.-->
+
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-security-policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/;">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio Case Study - Town and Country Learning Center Rap Video">
+
+    <!--CSS stylesheet(s).-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of a browser tab used.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>Town and Country Learning Center Rap Video - Wayne Phung's Portfolio Case Study</title>
+
+</head>
+
+<!--Body tag: Specifies all elements of the HTML document. This is what a person typically sees or interacts with in a webpage.-->
+
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!--Header tag: Specifies top portion of the page. This would contain a logo, main navigation links, and call-to-action buttons.-->
+    <header role="banner" aria-label="navigation links">
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork" class="navLink diffURL"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork" class="navLink diffURL"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink diffURL"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection" class="navLink diffURL"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink diffURL"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink diffURL" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <div class="progressContainer" id="headerProgressBar-caseStudy">
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <main role="main" id="title">
+        <aside role="navigation" class="navSideBar">
+            <button class="button" id="tableOfContents-MobileButton">
+                <img src="01-other-images/icons/icon-tableOfContents.svg" alt="" loading="eager" class="lazyload blur-up vectorIcon noPanzoom active ratio-1-1" id="mobileToC">
+                <p>Open ToC</p>
+            </button>
+            <a class="navButton sideBarButton" href="#title" id="toTop">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p data-href="title">Top of Page</p>
+            </a>
+            <div class="navButtons">
+                <nav class="accordion withIcons">
+                    <a class="navButton sideBarButton" href="#title" id="toTop-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                        </picture>
+                        <p data-href="title">Top of Page</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#introduction">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-book.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="introduction">
+                        </picture>
+                        <p data-href="introduction">Introduction</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#primaryResearch">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-intitialResearch.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="initialResearch">
+                        </picture>
+                        <p data-href="primaryResearch">Primary Research</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#firstDraftAndIterations">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-firstIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="firstDraft">
+                        </picture>
+                        <p data-href="firstDraftAndIterations">First Draft & Iterations</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#secondDraftAndIterations">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-secondIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="iterating">
+                        </picture>
+                        <p data-href="secondDraftAndIterations">Second Draft & Iterations</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#finalVideo">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-video.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="finalVideo">
+                        </picture>
+                        <p data-href="finalVideo">Final Video</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#finalResults">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-clipboard.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="results">
+                        </picture>
+                        <p data-href="finalResults">Final Results</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#reflection">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                        </picture>
+                        <p data-href="reflection">Reflection</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectsText" id="toBottom-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                        </picture>
+                        <p data-href="projectsText">Other Case Studies</p>
+                    </a>
+                </nav>
+                <div class="progressContainer" id="sideProgressBar">
+                    <div class="progressBar"></div>
+                </div>
+            </div>
+            <a class="navButton sideBarButton" href="#projectsText" id="toBottom">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                </picture>
+                <p data-href="projectsText">Other Case Studies</p>
+            </a>
+        </aside>
+        <section role="" class="titleSection grid gridType1">
+            <article class="titleArticle gridContent">
+                <h1>Town and Country Learning Center</h1>
+                <p>A rap-themed video that demonstrates how kids within an affordable housing community collaborate with each other, co-create with university students, and authentically showcase their activities in their afterschool program.</p>
+            </article>
+            <figure class="gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo shadow" src="https://www.youtube.com./embed/WQDrVQvYCAQ?si=M9ZOJaEjUJotCbTY&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm/finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+            <!-- <iframe class="gDrive gridContent" src="https://drive.google.com/file/d/1EJEWn-XShZd5DIGS8_4c_n1o4TSoWpXm/preview" allowfullscreen></iframe> -->
+            <!-- <figure class="gridContent">
+                <picture>
+                </picture>
+            </figure> -->
+        </section>
+        <section role="" class="content caseStudyContent">
+            <section class="pageSection" id="introduction">
+                <h2>
+                    <span>Introduction</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-book.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="introduction">
+                    </picture>
+                </h2>
+                <article>
+                    <p>This was a 10-week group video project related to participatory design, ethnographic studies, and media production within a college Communications course called Practicum in New Media and Community Life.</p>
+                    <p>This project and the course was situated around assisting an afterschool program within an affordable housing community called Town and Country Learning Center (TCLC).</p>
+                </article>
+                <article>
+                    <h3>Project Objective</h3>
+                    <p>Within a group of seven, our group had to co-create a video with the kids at TCLC that captures their everyday activities within their time at the afterschool program.</p>
+                </article>
+                <article>
+                    <h3>My Role</h3>
+                    <ol>
+                        <li>I was primarily responsible in managing all aspects of media production and video editing.</li>
+                        <li>I supported the team by joining them in weekly in-person meetups with the afterschool supervisor and kids.</li>
+                    </ol>
+                </article>
+                <article>
+                    <h3>My Contributions</h3>
+                    <ol>
+                        <li>I independently managed video and audio equipment that was brought to TCLC so that video footage would be consistently captured.<br>I even taught my teammates and the kids on how to properly use the equipment.</li>
+                        <li>To facilitate and democratize the video editing process for my teammates, I organized a document with detailed instructions to have them generate necessary metadata from the video footage to make the process of finding specific footage more efficient.</li>
+                        <li>From the video editing process, I published and presented different drafts of the video to stakeholders, other classmates, the kids themselves, and other community members in TCLC to encourage open feedback about the video drafts that informed video draft iterations.</li>
+                    </ol>
+                </article>
+                <article>
+                    <h3>I interacted with...</h3>
+                    <ol>
+                        <li><i>former UC San Diego teammates</i> - Stephen Luxford, Emily Hardy, Esau Carpenter, Emily Beihold, Jessica Tran, Wayne Phung, Avery Gildner</li>
+                        <li><i>a professor within the college Communications course</i> - Camille Campion</li>
+                        <li><i>the afterschool program supervisor at TCLC</i> - Veverly Anderson (Ms. V)</li>
+                        <li>several kids at the afterschool program</li>
+                    </ol>
+                </article>
+            </section>
+            <section class="pageSection" id="primaryResearch">
+                <h2>
+                    <span>Primary Research</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-intitialResearch.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="initialResearch">
+                    </picture>
+                </h2>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>I Visited and Journaled My Experiences in the Afterschool Program</h3>
+                        <p>During eight weekly visits, I participated in the group's in-person engagement with the kids and local community members at TCLC to understand them, their lived experiences of TCLC, and the social environments and constructs surrounding them.</p>
+                        <p>I did weekly journaled reflections of my visits.</p>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <picture class="ratio-9-5">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/fieldNotes.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/fieldNotes-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/fieldNotes-compressed.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/fieldNotes.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <figcaption>Digitized journal entries in Google Docs for each weekly visit.</figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <h3>I Identified Insights, Problem Spaces, and Ideas for An Inclusive, Kid-Friendly Video Production Process</h3>
+                    <p>Around the third visit when my team members presented three ideas of possible kid-centered group activities to the TCLC supervisor, Ms. V, she refuted some of the ideas because of these considerations:</p>
+                    <ol>
+                        <li>The ideas haven't encouraged the kids across different intelligence levels to have a collected interest to be challenged and to think.</li>
+                        <li>The ideas didn't establish an inclusive common ground for both outspoken and more quieter kids to participate.</li>
+                        <li>The ideas may encourage negative social and power dynamics among the kids, due to different levels of activity engagement.</li>
+                    </ol>
+                    <h4>Key Insights</h4>
+                    <ol>
+                        <li>There were abstract, complex social relationships in play; such as how other people, resources, and technology shape and enhance both an individual and commmunity's experiences of engaging in daily afterschool activities.</li>
+                        <li>It was important that our group's execution and audio/video recording of kid-centered activities portrayed kids as both actors and, more importantly, co-creators/directors of how they authentically represented their afterschool community.</li>
+                        <li>During internal team meetings, there was so much focus around supporting the day-to-day after school activities for the kids that there was not enough focus around how getting the video portion of the project done.</li>
+                    </ol>
+                </article>
+                <article class="grid gridType4">
+                    <article class="gridContent">
+                        <h3>I Introduced Video Equipment to Kids and my Team Members</h3>
+                        <p class="noMarginBottom">During the third visit and onwards, I decided to bring a camcorder to my visits to have the kids learn how to use them. Under my close supervision and discretion, I instructed them how to properly handle and use the camcorder.</p>
+                        <p class="noMarginTop">Because the kids wanted a seamless plug-and-play experience using the camcorder, I automated the settings within the camcorder to make it easier for them to capture moments while ensuring usable footage will be reliably produced.</p>
+                    </article>
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/holdingCamcorder.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/holdingCamcorder-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/holdingCamcorder-compressed.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/holdingCamcorder-compressed.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <figcaption>One of the kids holding the camcorder in front of an iPhone camera.</figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <h4>Observations</h4>
+                    <p>These were my journaled quotes highlighting the kids' behavior with the camcorder usage.</p>
+                </article>
+                <article class="grid gridType4">
+                    <p class="gridContent"><i>“Jayden had a bit of fun with it as he wanted to record Esau singing in front of the camera for a brief moment. He was fixated on the monitor as he attempted to emulate some more close up shots”</i></p>
+                    <p class="gridContent"><i>“[I had] Jose's interests and curiosity for the camcorder in mind,...Unlike the other kids, he seemed to have his hands more steadily on the camcorder, even when I quickly went over how to use the camcorder's main controls...”</i></p>
+                    <p class="gridContent"><i>“Jose started to point the camcorder at me and wanted to interview me. At that moment, that was another surprise that I had not expected, as I thought this sort of interaction would not have happened so soon until I established more rapport with him...”</i></p>
+                    <p class="gridContent"><i>“If our group can moderate and harness the benefits of self-directed play and exploration...we can easily guide the kids to more frequently share their insights of their own lives embedded within TCLC and the creation of our group's project.”</i></p>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h3>A Rap That Inspired the Video Theme</h3>
+                        <p>My other teammates really liked the way one particular kid, named Qhadafi, shared his song lyrics that were related to the Town and Country Center. This would inform the theme behind the rest of the videos that I created.</p>
+                    </article>
+                    <article class="gridContent">
+                        <button class="tclcRapping videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="vectorIcon ratio-1-1">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                            </picture>
+                            <!-- <i class="fas fa-play"></i> -->
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="shadow">
+                            <video class="ratio-16-9 autoplayVideo tclcRapping" poster="01-mediaWork-videos/tclcVideo/02-compressed-png/rapping-compressed.png" preload="none" controlsList="nodownload noplaybackrate" muted loop playsinline>
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm/rapping-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/rapping-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                            <figcaption>Qhadafi free-style rapping and reading song lyrics to my teammates from a piece of paper as I record on the side.</figcaption>
+                        </figure>
+                    </article>
+                </article>
+                <!-- <article>
+                    <article class="grid gridType7">
+                        <h3>I Identified Insights, Problem Spaces, and Ideas for An Inclusive, Kid-Friendly Video Production Process</h3>
+                        <p>Around the third visit when my team members presented three ideas of possible kid-centered group activities to the TCLC supervisor, Ms. V, she refuted some of the ideas because of these considerations:</p>
+                        <p class="gridContent"><i>The ideas haven't encouraged the kids across different intelligence levels to have a collected interest to be challenged and to think.</i></p>
+                        <p class="gridContent"><i>The ideas were not yet inclusive and didn't establish a common ground for both outspoken and more quieter kids to participate.</i></p>
+                        <p class="gridContent"><i>The ideas may encourage negative social and power dynamics among the kids, due to different levels of activity engagement.</i></p>
+                    </article>
+                </article> -->
+            </section>
+            <section class="pageSection grid gridType6" id="firstDraftAndIterations">
+                <h2>
+                    <span>First Draft & Iterations</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-firstIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="firstDraft">
+                    </picture>
+                </h2>
+                <article>
+                    <p>Here is a 1-minute first draft, which includes an audio recording of Qhadafi's rap with footage related to the different group activities amongst team members and kids.</p>
+                </article>
+                <figure class="shadow">
+                    <video class="mainVideo ratio-16-9" poster="01-mediaWork-videos/tclcVideo/02-compressed-png/firstDraftTCLCVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                        <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm/firstDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                        <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/firstDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                        Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                    </video>
+                </figure>
+                <article>
+                    <h3>Feedback</h3>
+                    <ol>
+                        <li>Ms. V and Professor Campion liked how the video authentically captured a story of representing the kids at TCLC.</li>
+                        <li class="noMarginBottom">Some of the kids liked how they were a part of the video and how they represented themselves.</li>
+                    </ol>
+                </article>
+                <article>
+                    <h3>Three Areas of Improvement</h3>
+                    <article class="grid gridType6">
+                        <article class="gridContent">
+                            <h4>Better Inclusivity and Representation of Voices</h4>
+                            <p>Despite the good variety of clips that attempted to showcase most of the kids, the rap portion of the video only showcased Qhadafi, which isn't representative of everyone from TCLC.</p>
+                        </article>
+                        <figure class="gridContent shadow">
+                            <picture class="ratio-3-2">
+                                <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/qhadafiFreestyleLyrics.webp">
+                                <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/qhadafiFreestyleLyrics-compressed.png">
+                                <img src="01-mediaWork-images/tclcVideo/02-compressed-png/qhadafiFreestyleLyrics-compressed.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/qhadafiFreestyleLyrics.png" loading="lazy" class="lazyload blur-up">
+                            </picture>
+                            <figcaption>A small section of freestyle lyrics that Qhadafi made. No one else participating in rapping within the video.</figcaption>
+                        </figure>
+                    </article>
+                </article>
+                <article>
+                    <h4>Better Cohesion Between Song Lyrics and Video Clips Shown</h4>
+                    <p>Although the first draft intended to have diverse video clips the activities and kids involved at TCLC, the rap lyrics were not at all aligned with the video clips.</p>
+                    <figure>
+                        <picture class="ratio-10-3">
+                            <!-- <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/tclcRapDisconnect.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/tclcRapDisconnect-compressed.png"> -->
+                            <img src="01-mediaWork-images/tclcVideo/01-original-svg/tclcRapDisconnect-650.svg" data-src="01-mediaWork-images/tclcVideo/01-original-svg/tclcRapDisconnect.svg" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <figcaption>There wasn't a coherent connection between the mentioned rap lyrics and the clips that were shown.</figcaption>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h4>Improved Portrayal of the Kids as Co-Creators of Their Activities</h4>
+                        <p>There was room to not only subjectively evaluate the video clips deemed best for the narrative, but to capture a more authentic experience of how the kids' contributed to the video production process.</p>
+                    </article>
+                    <figure class="gridContent shadow">
+                        <picture class="ratio-3-2">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/btsReference.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/btsReference-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/btsReference.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/btsReference.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <figcaption>To go beyond selecting video clips that best represent the narrative behind the video would be to also present the kids' contributions to the video production process.</figcaption>
+                    </figure>
+                </article>
+                <article class="grid gridType6">
+                    <article class="gridContent">
+                        <h4>Iterating via Group Recording Sessions</h4>
+                        <p>With the proper training and guidance that I provided, my teammates were able to facilitate recording sessions with the kids and enable other kids to take a more active role in operating the equipment themselves.</p>
+                    </article>
+                    <article class="gridContent">
+                        <button class="recordingSession videoButton" type="button" name="play/pause button" data-play-pause="play">
+                            <picture class="vectorIcon ratio-1-1">
+                                <img src="01-other-images/icons/icon-play.svg" data-src="01-other-images/icons/icon-play.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                            </picture>
+                            <p>Play Video</p>
+                        </button>
+                        <figure class="shadow">
+                            <!-- <video class="autoplayVideo recordingSession" poster="01-mediaWork-videos/tclcVideo/recordingSession.png" muted loop playsinline>
+                                <source src="01-mediaWork-videos/tclcVideo/recordingSession.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video> -->
+                            <video class="ratio-16-9 autoplayVideo recordingSession" poster="01-mediaWork-videos/tclcVideo/02-compressed-png/recordingSession-compressed.png" preload="none" controlsList="nodownload noplaybackrate" disablepictureinpicture muted loop playsinline>
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm/recordingSession-650-compressed.webm" type="video/webm">
+                                <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/recordingSession-650-compressed.mp4" type="video/mp4">
+                                Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                            </video>
+                            <figcaption>Both my teammates and the kids would use the audio recorders to record the kids' rap voiceovers or help capture video footage of the sessions.</figcaption>
+                        </figure>
+                    </article>
+                    <!-- <iframe class="gDrive gridContent" src="https://drive.google.com/file/d/1U2ZSGuFzOXoQaJfw_HTsJvGJmyQBaZ4V/preview" allowfullscreen></iframe> -->
+                </article>
+            </section>
+            <section class="pageSection" id="secondDraftAndIterations">
+                <h2>
+                    <span>Second Draft & Iterations</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-secondIteration.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="iterating">
+                    </picture>
+                </h2>
+                <article>
+                    <p>I edited the second draft of the video, with the help my teammates to sort through and describe the footage. This draft attempted the following improvements:</p>
+                    <ol>
+                        <li>more behind-the-scenes footage of kids co-creating the video production process</li>
+                        <li>more kids included in all of the rap lyric parts</li>
+                        <li>reducing audio noise for improved audio quality</li>
+                    </ol>
+                </article>
+                <figure class="shadow">
+                    <video class="mainVideo ratio-16-9" poster="01-mediaWork-videos/tclcVideo/02-compressed-png/firstDraftTCLCVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                        <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm/secondDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                        <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/secondDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                        Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                    </video>
+                </figure>
+                <!-- <iframe class="gDrive videoDraft gridContent" src="https://drive.google.com/file/d/1iQaNDwxDk8ca_w5qF50iGMWVGe5Je-IB/preview" allowfullscreen></iframe> -->
+                <article>
+                    <h3>More Feedback Captured</h3>
+                    <p>I documented feedback after presenting the second draft to various people, and grouped them based on what aspects of the video people (dis)liked and areas of improvements to explore.<br><br>These people included other classmates in the Practicum course, professor Campion, the kids at TCLC, and the supervisor (Ms. V) at TCLC.</p>
+                </article>
+                <article class="grid gridType4">
+                    <article class="gridContent">
+                        <h4>What People Liked About the Video</h4>
+                        <ol>
+                            <!-- <li>Story was appealing.</li> -->
+                            <li>There were plenty of video clips to show team's involvement with the kids.</li>
+                            <li>Video was inclusive of other people involved in TCLC (like Ms. V, Professor Campion, and my team members who were in the video.</li>
+                            <!-- <li>Visual effects made the video appear like an actual music video.</li> -->
+                            <li>Video clearly demonstrated the kids using the camera and their involvement in the video production process.</li>
+                        </ol>
+                    </article>
+                    <article class="gridContent">
+                        <h4>Aspects for Further Improvement</h4>
+                        <ol>
+                            <li>Lingering audio issues (such as audio pops that occurred (audio issues that should be examined and remedied).</li>
+                            <li>A specific kid wanted to be in the video, but accidentally wasn't. Other kids could have been included as well.</li>
+                            <li>More subtitles and corrections to kids' names.</li>
+                            <!-- <li>Correction was needed for general misspelling of some of the kids' names and certain words.</li> -->
+                            <!-- <li>Introduction could be shortened and some of the clips for bloopers should be replaced.</li> -->
+                        </ol>
+                    </article>
+                </article>
+                <article>
+                    <p>A more comprehensive list can be viewed in this <a rel="external" target="_blank" href="https://docs.google.com/document/d/1WKmRQ1jznZiwUWeECizJrgKNDp7yBxOx8RrBTKYXDiM/edit?usp=sharing">document</a>.</p>
+                </article>
+            </section>
+            <section class="pageSection" id="finalVideo">
+                <h2>
+                    <span>Final Video</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-video.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="finalVideo">
+                    </picture>
+                </h2>
+                <article>
+                    <p>
+                        The final video is six and a half minutes long, titled <i>Town and Country Learning Center</i>, aimed to showcase the kids's experiences and activities in their afterschool program at TCLC as well as their process for creating the video.
+                        <br><br>
+                        With more post-production editing, subtitles were included, audio volume and noise from some of the kids 
+                        was mediated to the best of my ability, and other edits were implemented in place.
+                    </p>
+                </article>
+                <figure class="shadow">
+                    <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                        <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                        Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                    </video>
+                </figure>
+                <!-- <iframe class="gDrive" src="https://drive.google.com/file/d/1EJEWn-XShZd5DIGS8_4c_n1o4TSoWpXm/preview" allowfullscreen></iframe> -->
+                <article class="grid gridType4">
+                    <h3>Rap-Themed Song</h3>
+                    <p>
+                        2 minutes of video clips that highlight memorable moments of the kids, Ms. V., Professor Camille Campion, and my group members.
+                        <br><br>
+                        Kids' audio recordings of some portion of the rap lyrics are made from a diverse pool of kids who participated in the recording sessions to further demonstrate an inclusive community and typical behaviors that the kids experience in relation to the narrative.
+                    </p>
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/rapThemeFinal2.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/rapThemeFinal2-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/rapThemeFinal2.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/rapThemeFinal2.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/rapThemeFinal3.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/rapThemeFinal3-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/rapThemeFinal3.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/rapThemeFinal3.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Behind the Scenes Look</h3>
+                    <p>
+                        About 50 seconds was dedicated to the production of the rap video that isn't normally portrayed.
+                        This was to demonstrate how the kids actually handled the media equipment and participate in audio 
+                        recording sessions such that they took on the role as not just the actors, but active co-creators 
+                        who wanted to collaborate with our group members and be active contributors to the production of the video.
+                    </p>
+                </article>
+                <article class="grid gridType4">
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/btsPortionFinal1.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/btsPortionFinal1-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/btsPortionFinal1.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/btsPortionFinal1.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/btsPortionFinal3.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/btsPortionFinal3-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/btsPortionFinal3.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/btsPortionFinal3.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Bloopers!</h3>
+                    <p>
+                        About 1 minute and 20 seconds attempt to humorously capture memorable moments from the kids 
+                        that revolve around some of the activities that they do, whether on a typical day or with 
+                        some of the pre-planned activities that they did with some of the buddies.
+                    </p>
+                </article>
+                <article class="grid gridType4">
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/bloopersFinal1.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/bloopersFinal1-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/bloopersFinal1.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/bloopersFinal1.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <picture class="ratio-16-9 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-mediaWork-images/tclcVideo/03-original-webp/bloopersFinal3.webp">
+                            <source type="image/png" srcset="01-mediaWork-images/tclcVideo/02-compressed-png/bloopersFinal3-compressed.png">
+                            <img src="01-mediaWork-images/tclcVideo/02-compressed-png/bloopersFinal3.png" data-src="01-mediaWork-images/tclcVideo/01-original-png/bloopersFinal3.png" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section role="" class="pageSection" id="finalResults">
+                <h2>
+                    <span>Final Results</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-clipboard.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="results">
+                    </picture>
+                </h2>
+                <article>
+                    <p>
+                        The final draft was showcased in a studio room with a projector screen on UC San Diego campus 
+                        during a time where Ms. V, Professor Campion, and the kids went on a field trip to tour the 
+                        campus grounds. After screening it, the kids wondered why not all of the voices seemed to be 
+                        included within the rap, and our group explained about the logistics of the sounds that we 
+                        recorded. Overall, everyone had many different moments of laughter and joy throughout the 
+                        final screening of the video.
+                        <br><br>
+                        The final draft was also submitted as the final assignment for the communication course. 
+                        Ms. V has been granted permission to view the video so that she could potentially use it 
+                        for a future grand opening of TCLC. Professor Campion also has the final draft of the video, 
+                        which will hopefully be used for future quarters as a reference for other students to look at.
+                    </p>
+                </article>
+            </section>
+            <section class="pageSection" id="reflection">
+                <h2>
+                    <span>Reflection</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-thoughtBubble.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="reflection">
+                    </picture>
+                </h2>
+                <article>
+                    <p>
+                        Visiting the kids each week reminded me of the experiences, blessings, and tribulations 
+                        that I had to face when I was just like them. I felt humbled and appreciative of the 
+                        opportunity for each week to see my team members interact with the kids while I was able 
+                        to record those small, yet timeless moments from the kids at TCLC.
+                        <br><br>
+                        The effort that I placed into organizing the media equipment, post-production logistics, 
+                        and making snacks (for one of the weeks) kept me motivated to make a video that will leave 
+                        the kids hopeful for more experiences to document their activities.
+                        <br><br>
+                        I learned a lot from working with my team members in empathizing with the whimsical needs 
+                        and attitudes the kids had each week during our group discussions before and after our visits. 
+                        With their guidance and help, I learned the impact of youth empowerment and appreciated more 
+                        of what a community is all about within TCLC.
+                    </p>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <!-- 
+        Container for other projects.
+        On tablet/desktop screen sizes, this is a two-column grid:
+        - heading, text, and button(s) on the left side
+        - accompanying image on the right side
+    -->
+    <section class="pageSection" id="otherCaseStudies">
+        <h2 class="projectsText" id="projectsText">Other Case Studies</h2>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TTV project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Triton Television Reel</h3>
+                <p class="noMarginBottom">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="tritonTelevisionReel.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TTV project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo shadow" src="https://www.youtube.com./embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!--
+                Container for the OSP Project:
+                - heading
+                - tags
+                - case study description (same as text in index.html)
+                - call-to-action button to project case study
+                - accompanying image
+            -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Open Speech Platform</h3>
+                <h4 class="tags">Team Support, App/Website/Forum Design, Research</h4>
+                <p class="noMarginBottom">I facilitated clearer communication and development of research-oriented hearing aid software across various projects among engineers and software developers.</p>
+                <!-- 
+                    Button containing the following:
+                    - a tag wrapper to make the button clickable
+                    - button text
+                    - wrapper and source for icon image
+                -->
+                <button class="button diffURL">
+                    <a rel="external" href="osp.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- 
+                Container for image:
+                - a tag wrapper to make the image clickable to the case study page.
+                - Wrapper and source of image.
+            -->
+            <figure class="projectImage gridContent noMargin noShadow">
+                <a rel="external" href="osp.html">
+                    <picture class="ratio-8-5 preventOverflow noMargin noShadow" id="globalImage-ospDevice">
+                        <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                        <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up noPanzoom">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <article class="gridContent">
+                <h3 class="caseStudy">Electric Stride</h3>
+                <h4 class="tags">UX Design, UX Research, Rapid Ideation</h4>
+                <p class="noMarginBottom">An exercise mat for people with Parkinson's to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="electricStride.html">
+                        <p>See Case Study</p>
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <figure class="projectImage gridContent noShadow" id="electricStride">
+                <a rel="external" href="electricStride.html">
+                    <picture class="ratio-3-4 preventOverflow shadow">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the Automation Playground project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Automation Playground</h3>
+                <!-- <h4 class="tags">Web Design, Prototyping</h4> -->
+                <p>
+                    Automation Playground is a research subgroup of UC San Diego's Design Lab.<br>
+                    Helped to spearhead a web design project to showcase the research group for the former founder.
+                </p>
+                <button class="button diffURL">
+                    <a rel="external" href="automationPlayground.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+                <button class="button secondaryButton diffURL">
+                    <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                        <p>Visit Website</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the Automation Playground project. -->
+            <figure class="gridContent">
+                <a rel="external" href="automationPlayground.html">
+                    <picture class="ratio-2-1">
+                        <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+    </section>
+    <!-- footer tag: Informational content, typically located at the bottom of a page shown or as last remaining content. -->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html"><p>CV</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" rel="external" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+    <!--END of main content for body.-->
+
+    <!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.1.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</body>
+</html>
+
+<!--Commented content saved for later use, but is NOT part of the current HTML template.-->
+
+<!--Unused Javascript files for Cloudinary SDK file upload implementation.-->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script> -->

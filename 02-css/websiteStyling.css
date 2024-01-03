@@ -1,0 +1,3892 @@
+/* 
+    File name: websiteStyling.scss
+    Purposes:
+        - To create clean, non-repetitive, efficient development code for manipulating visual elements 
+          from static HTML files.
+
+    General Description:
+        This file is essential for proper visual rendering/behavior of one or more elements, tags, 
+        class names, id names, or a combination of these. Throughout this file, there will be 
+        explanation of the intended uses of each and what the properties do, especially for each 
+        group of nested references of elements/tags/etc.
+
+    CSS Properties Description:
+        Below is a list of how to interpret the CSS properties and values.
+        These mostly cover the most frequently used ones.
+        More may be added in the future.
+
+        "width" and "height" properties
+            - Used for setting the dimensions of elements, including paragraph text, 
+              images, figcaptions, and even containers for grouping a combination of 
+              these elements.
+            - Values for these range from pixels (exact unit of measurement), em, or rem.
+              Em is relative to the parent of the target element (an example is the sizing 
+              of the actual image relative to the figure container). Rem is relative to 
+              the document's root element (best used for setting large containers).
+
+        "max-width" and "max-width" properties
+            - Used for specifying the maximum sizes of the width and height of elements, 
+              typically for preventing them to be shown as too wide, too long, or just too 
+              large for spacing purposes.
+
+        "margin" and "padding" properties
+            - "margin" is used for spacing between the element's edges and its outside borders 
+              (or outer edges).
+            - "padding" is used for spacing inside of the element, typically used for adding 
+               space between the element and the parent container.
+            - Values are usually in rem, though there may be values set to em (this is not ideal due 
+              to lack of consistency with units of measurement usage).
+
+        "display" properties
+            - Used for configuring the intended structure or visibility of any element.
+            - Values are these following phrases, which have vastly different uses and use cases.
+                - "none" value hides the element and completely removes it from the document, thus 
+                  not taking any space. This is very useful for removing the appearance of an element 
+                  on specific screen widths, thus manipulating the element's intended appearance.
+                - "block" value puts the element in its own line and adds a line break after it, 
+                  which doesn't allow any other elements to be placed to the left or right of it.
+                - "inline-block" value is similar to "block", except that it does not put a line break 
+                  after it, allowing other elements to be placed to the left or right of it.
+                - "flex" value arranges its children elements along a linear direction. Two examples 
+                  would be 1) having a group of similar buttons shown as a row, left to right then top 
+                  to bottom and 2) arranging a mix of text nad images images in a column in reverse order, 
+                  bottom to top then right to left. Note that elements, by default, wrap within the 
+                  width and height confines of the parent container, but they can exist as a single row 
+                  or column only without wrapping. Flex has other properties and values related to its 
+                  usage, which are further explained in the "displayFlex" @mixin.
+                - "grid" value arranges its children elements as a table with cells. Best used for 
+                  forming groups or large sections of content to nest and/or spatially associate multiple 
+                  elements or even containers. They have similar properties as flex, but with additional 
+                  properties for handling the ordering, placement, and (automatic) sizing of one or 
+                  multiple cells.
+*/
+/* Important Sass packages. */
+/* Merriweather-normal-light */
+@font-face {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+}
+/* Merriweather-normal-regular */
+@font-face {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+/* Merriweather-normal-medium */
+@font-face {
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+}
+/* Merriweather-normal-semi_bold */
+@font-face {
+  font-family: "Merriweather", serif;
+  font-weight: 600;
+}
+/* Merriweather-normal-bold */
+@font-face {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+/* Merriweather-Sans-light */
+@font-face {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 300;
+}
+/* Merriweather-Sans-regular */
+@font-face {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 400;
+}
+/* Merriweather-Sans-medium */
+@font-face {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 500;
+}
+/* Open Sans-latin-semi_bold */
+@font-face {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 600;
+}
+/* END GOOGLE FONT TYPEFACE STYLE GUIDE */
+/*
+    These three mixins makes a container of code reusable for specifying the minimum 
+    and/or maximum width condition(s) to apply the CSS properties and values.
+        - "mediaQuery-minOnly" sets up a media query for only the minimum width used in 
+          the media query's condition.
+          - "mediaQuery-maxOnly" sets up a media query for only the maximum width used in 
+          the media query's condition.
+          - "mediaQuery-minMax" sets up a media query for a range between the minimum and 
+          maximum widths used in the media query's condition.
+
+    These mixins uses two or three of the following:
+        - "$min" is a variable used as this mixin's argument to specify the number value 
+          for the minimum width used in the media query's condition.
+        - "$max" is a variable used as this mixin's argument to specify the number value 
+          for the maximum width used in the media query's condition.
+        - "@content" is a Sass directive that allows flexibile input of different CSS 
+          properties and values, whether to apply the same properties for multiple elements 
+          or tailor different properties to specific elements.
+*/
+/*
+    This mixin is used to position and wrap children elements relative to the parent 
+    container element. It takes the following arguments to define flexbox properties 
+    for container elements:
+        1. Sets the display to flex (essential for any of the other flex properties 
+           to function as intended).
+        2. Enables/disables the wrapping of the children elements based on the 
+           "$flexWrap" variable argument
+            - "wrap" to have the children elements populate within the space 
+              of the container
+            - "nowrap" to have the children elements instead populate within 
+              the same row/column
+        3. Sets the orientation of the wrapping, whether in a row or column. This 
+           is based on the "$flexDirection" variable argument.
+        4. Sets the starting position of each children element relative to the 
+           container element. This is based on the "$alignItems" variable argument:
+            - "flex-start" to start from the beginning portion of the container
+            - "center" to start from the middle portion
+            - "flex-end" to start from the bottom portion
+            - "stretch" to take up the available space of the container
+        - Sets the positioning of all children elements relative to the 
+          container element. This is based on the "$alignContent" variable argument:
+            - "flex-start" to orient all the children elements from the 
+              beginning portion of the container
+            - "center" to orient all the children elements from the middle portion
+            - "flex-end" to orient all the children elements from the bottom portion
+            - "stretch" to take up the available space of the container
+        - Sets the alignment of all children elements when they don't 
+          take up all of the available space in the container. This is 
+          based on the "$justifyContent" variable argument:
+
+*/
+/*
+    This mixin uses two different variables to toggle the display of an element.
+
+    If value of the "$state" variable is "show", the element would appear 
+    with either of these display properties.
+        - If the element is a ToC container, the default display would be in flex to 
+          display the children elements as a horizontal row.
+        - Otherwise, set the display of that element to what it originally had, as 
+          defined within this CSS file.
+
+    If the value of the "$state" variable is "hide", that element would not appear 
+    at all. The space that it took up would also not appear.
+
+    This mixin doesn't do anything if the value of the "$state" variable is neither 
+    "show" or "hide".
+*/
+/* Inset applies to the padding of an element. */
+/* Stack applies to bottom vertical space (mainly between elements or establishing negative space). */
+/* Inline applies to right horizontal space (mainly between elements or establishing negative space). */
+/* Default inset spacing for */
+/*
+    UPDATE COMMENT
+    Mixin to define the space between each children element in a 
+    container with flex display. For grid display, this defines the 
+    space between each grid cell. Varaible arguments are defined below.
+        - "$rowGap" is the horizontal spacing between elements in a 
+          flexbox container or grid cells.
+        - "$columnGap" is the horizontal spacing between elements in a 
+          flexbox container or grid cells.
+        - By default, each argument has a default value of zero (no space), 
+          even if the argument is empty. However, the value of either or both 
+          arguments can be non-zero if specified.
+*/
+/* Default padding for left and right sides of a page. */
+body, nav.navigationBar, #waynephung, a {
+  padding: 0;
+}
+
+.sideBarButton {
+  padding: 4px 4px 4px 4px;
+}
+
+/* Setting padding structure below 750px screen width for organizing spacing between and within different elements. */
+@media only screen and (max-width: 1024px) {
+  h1, p.subtitle {
+    padding: 0 0 32px 0;
+  }
+  nav.navigationBar {
+    padding: 8px 16px;
+  }
+  nav.navigationBar .anchorLinks .navLink {
+    padding: 8px 16px 8px 16px;
+  }
+  main {
+    padding: 64px 0 96px 0;
+  }
+  main.indexSection > * {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  main section.titleSection, main section.content {
+    padding: 0 24px 64px 24px;
+  }
+  main section.titleSection {
+    gap: 32px 64px;
+  }
+  main section.titleSection.grid > .gridContent {
+    gap: 20px 16px;
+  }
+  main section.content {
+    gap: 96px 0;
+  }
+  main section.content:last-child {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > article.h2-wrapper {
+    padding: 24px 0 48px 0;
+  }
+  main section.content .pageSection > article.h2-wrapper > h2 {
+    padding: 24px 0 16px 0;
+    margin-bottom: 8px;
+  }
+  main section.content .pageSection > article.h2-wrapper > h2.sticky {
+    gap: 16px 16px;
+    padding: 24px 24px 24px 24px;
+  }
+  main section.content .pageSection > h2 {
+    gap: 16px 16px;
+    padding: 24px 0 40px 0;
+    margin-bottom: 8px;
+  }
+  main section.content .pageSection > h2.sticky {
+    padding: 24px 24px 24px 24px;
+  }
+  main section.content .pageSection > h3, main section.content .pageSection > div.buttons {
+    padding-bottom: 24px;
+  }
+  main section.content .pageSection > p, main section.content .pageSection > ol, main section.content .pageSection > ul {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > p:has(+ .article h3), main section.content .pageSection > ol:has(+ .article h3), main section.content .pageSection > ul:has(+ .article h3) {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > p:last-child:not(button), main section.content .pageSection > p > :last-child:not(button), main section.content .pageSection > ol:last-child:not(button), main section.content .pageSection > ol > :last-child:not(button), main section.content .pageSection > ul:last-child:not(button), main section.content .pageSection > ul > :last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > figure {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > article {
+    padding-bottom: 64px;
+  }
+  main section.content .pageSection > article > p, main section.content .pageSection > article > ol, main section.content .pageSection > article > ul, main section.content .pageSection > article > figure {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > article > h2, main section.content .pageSection > article > h3 {
+    padding-bottom: 24px;
+  }
+  main section.content .pageSection > article > h4 {
+    padding-bottom: 20px;
+  }
+  main section.content .pageSection > article > p + figure:first-of-type:not(:only-of-type, :last-child) {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > article > figure + figure:not(:last-of-type, :last-child) {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > article > .grid {
+    padding-bottom: 64px;
+  }
+  main section.content .pageSection > article > .grid > h3, main section.content .pageSection > article > .grid > p, main section.content .pageSection > article > .grid > ol, main section.content .pageSection > article > .grid > ul, main section.content .pageSection > article > .grid > figure {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > article > .grid > h4, main section.content .pageSection > article > .grid > p {
+    padding-bottom: 20px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent > h3 {
+    padding-bottom: 8px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent > figure {
+    padding-bottom: 24px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent > h4, main section.content .pageSection > article > .grid > .gridContent > p, main section.content .pageSection > article > .grid > .gridContent > ol, main section.content .pageSection > article > .grid > .gridContent > ul {
+    padding-bottom: 20px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent > p.beforeList {
+    padding-bottom: 8px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent > button:not(:only-child, :last-child) {
+    margin-bottom: 16px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent:has(+ .gridContent > h4) {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent:has(+ figure) {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > article > .grid > .gridContent:last-child:not(button), main section.content .pageSection > article > .grid > .gridContent > :last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > article > .grid > figure.gridContent {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > article > .grid > figure.gridContent:only-of-type, main section.content .pageSection > article > .grid > figure.gridContent:only-child {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > article > .grid > figure.gridContent:last-child {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > article > .grid:last-child {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > article.cvText {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > article.cvText > h3, main section.content .pageSection > article.cvText > h4 {
+    padding-bottom: 16px;
+  }
+  main section.content .pageSection > article:last-child:not(button), main section.content .pageSection > article > :last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > .grid {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > .grid > h3, main section.content .pageSection > .grid > p, main section.content .pageSection > .grid > ol, main section.content .pageSection > .grid > ul, main section.content .pageSection > .grid > figure {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > .grid > h4, main section.content .pageSection > .grid > p, main section.content .pageSection > .grid > ol, main section.content .pageSection > .grid > ul {
+    padding-bottom: 20px;
+  }
+  main section.content .pageSection > .grid > .gridContent {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > .grid > .gridContent > h3 {
+    padding-bottom: 8px;
+  }
+  main section.content .pageSection > .grid > .gridContent > figure {
+    padding-bottom: 24px;
+  }
+  main section.content .pageSection > .grid > .gridContent > h4, main section.content .pageSection > .grid > .gridContent > p, main section.content .pageSection > .grid > .gridContent > ol, main section.content .pageSection > .grid > .gridContent > ul {
+    padding-bottom: 20px;
+  }
+  main section.content .pageSection > .grid > .gridContent > p.beforeList {
+    padding-bottom: 8px;
+  }
+  main section.content .pageSection > .grid > .gridContent > button:not(:only-child, :last-child) {
+    margin-bottom: 16px;
+  }
+  main section.content .pageSection > .grid > .gridContent:has(+ .gridContent > h4) {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > .grid > .gridContent:has(+ figure) {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > .grid > .gridContent:last-child:not(button), main section.content .pageSection > .grid > .gridContent > :last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > .grid > figure.gridContent {
+    padding-bottom: 48px;
+  }
+  main section.content .pageSection > .grid > figure.gridContent:only-of-type, main section.content .pageSection > .grid > figure.gridContent:only-child {
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > .grid > figure.gridContent:last-child {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > .grid:last-child:not(button), main section.content .pageSection > .grid > :last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > p.noPadding {
+    padding: 0;
+  }
+  main section.content .pageSection > p:has(+ ol, + ul) {
+    padding-bottom: 16px;
+  }
+  main section.content .pageSection > .projectList > .grid {
+    padding: 0 0 96px 0;
+  }
+  main section.content .pageSection > .projectList > .grid > .gridContent {
+    gap: 16px 0;
+  }
+  main section.content .pageSection > .projectList > .grid > .gridContent > *:not(button, .buttons) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > .projectList > .grid > .gridContent > p:has(+ button, + .buttons) {
+    padding-bottom: 8px;
+  }
+  .pageSection#otherCaseStudies {
+    padding: 0 24px 64px 24px;
+    gap: 48px 0;
+  }
+  .pageSection#otherCaseStudies h2#projectsText:not(.sticky) {
+    padding: 32px 0;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList {
+    gap: 32px 24px;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList:not(:last-of-type) {
+    padding: 0 0 64px 0;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList > .gridContent {
+    gap: 16px 0;
+  }
+  section > article.h2-wrapper {
+    padding: 24px 0 24px 0;
+  }
+  section > article.h2-wrapper > h2 {
+    padding: 24px 0 16px 0;
+    margin-bottom: 8px;
+  }
+  section > article.h2-wrapper > h2.sticky {
+    gap: 16px 32px;
+    padding: 24px 24px 24px 24px;
+  }
+  footer {
+    gap: 64px 24px;
+    padding: 64px 24px 128px 24px;
+  }
+  footer article#endNavLinks {
+    gap: 16px 16px;
+  }
+}
+/* Setting padding structure above 750px screen width for organizing spacing between and within different elements. */
+@media only screen and (min-width: 1024px) {
+  h1, p.subtitle {
+    padding: 0 0 32px 0;
+  }
+  nav.navigationBar {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  nav.navigationBar .anchorLinks .navLink {
+    padding: 0 24px 0 24px;
+  }
+  main {
+    padding: 64px 0 64px 0;
+  }
+  main.indexSection > * {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  main .navSideBar {
+    padding-left: 0;
+    padding-right: 64px;
+  }
+  main section.titleSection, main section.content {
+    padding: 0 64px 96px 64px;
+  }
+  main section.titleSection.title-404, main section.content.title-404 {
+    padding-bottom: 64px;
+  }
+  main section.titleSection {
+    gap: 32px 64px;
+  }
+  main section.titleSection.grid > .gridContent > p {
+    padding-bottom: 24px;
+  }
+  main section.content {
+    gap: 96px 0;
+  }
+  main section.content#cvContent {
+    gap: 128px 0;
+  }
+  main section.content:last-child {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > article.h2-wrapper {
+    padding: 32px 0 24px 0;
+    margin-bottom: 8px;
+  }
+  main section.content .pageSection > article.h2-wrapper > h2 {
+    padding: 32px 0 32px 0;
+    margin-bottom: 32px;
+  }
+  main section.content .pageSection > article.h2-wrapper > h2.sticky {
+    gap: 16px 32px;
+    padding: 16px 64px 16px 64px;
+  }
+  main section.content .pageSection > h2 {
+    gap: 16px 32px;
+    padding: 32px 0 24px 0;
+    margin-bottom: 8px;
+  }
+  main section.content .pageSection > h2:has(+ p, + .grid > p.gridContent) {
+    margin-bottom: 0;
+  }
+  main section.content .pageSection > h2.sticky {
+    padding: 16px 64px 16px 64px;
+  }
+  main section.content .pageSection > h3 {
+    padding: 0 0 24px 0;
+  }
+  main section.content .pageSection > p {
+    padding: 0 0 24px 0;
+  }
+  main section.content .pageSection > p.noPadding {
+    padding: 0;
+  }
+  main section.content .pageSection > p:has(+ ol, + ul) {
+    padding: 0 0 16px 0;
+  }
+  main section.content .pageSection > p:has(+ figure) {
+    padding: 0 0 32px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a), main section.content .pageSection .grid, main section.content .pageSection .grid > *:not(button), main section.content .pageSection .grid > .grid, main section.content .pageSection .grid > .grid > *:not(button) {
+    padding: 0 0 64px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid, main section.content .pageSection .grid.grid, main section.content .pageSection .grid > *:not(button).grid, main section.content .pageSection .grid > .grid.grid, main section.content .pageSection .grid > .grid > *:not(button).grid {
+    gap: 32px 64px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid:has(> h3, > * > h3), main section.content .pageSection .grid.grid:has(> h3, > * > h3), main section.content .pageSection .grid > *:not(button).grid:has(> h3, > * > h3), main section.content .pageSection .grid > .grid.grid:has(> h3, > * > h3), main section.content .pageSection .grid > .grid > *:not(button).grid:has(> h3, > * > h3) {
+    gap: 32px 64px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid > h3, main section.content .pageSection .grid.grid > h3, main section.content .pageSection .grid > *:not(button).grid > h3, main section.content .pageSection .grid > .grid.grid > h3, main section.content .pageSection .grid > .grid > *:not(button).grid > h3 {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid.min750-rowgap-xl, main section.content .pageSection .grid.grid.min750-rowgap-xl, main section.content .pageSection .grid > *:not(button).grid.min750-rowgap-xl, main section.content .pageSection .grid > .grid.grid.min750-rowgap-xl, main section.content .pageSection .grid > .grid > *:not(button).grid.min750-rowgap-xl {
+    row-gap: 32px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid > .grid, main section.content .pageSection .grid.grid > .grid, main section.content .pageSection .grid > *:not(button).grid > .grid, main section.content .pageSection .grid > .grid.grid > .grid, main section.content .pageSection .grid > .grid > *:not(button).grid > .grid {
+    gap: 24px 64px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid > article, main section.content .pageSection .grid.grid > article, main section.content .pageSection .grid > *:not(button).grid > article, main section.content .pageSection .grid > .grid.grid > article, main section.content .pageSection .grid > .grid > *:not(button).grid > article {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid > .gridContent, main section.content .pageSection .grid.grid > .gridContent, main section.content .pageSection .grid > *:not(button).grid > .gridContent, main section.content .pageSection .grid > .grid.grid > .gridContent, main section.content .pageSection .grid > .grid > *:not(button).grid > .gridContent {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid > .gridContent > h4, main section.content .pageSection .grid.grid > .gridContent > h4, main section.content .pageSection .grid > *:not(button).grid > .gridContent > h4, main section.content .pageSection .grid > .grid.grid > .gridContent > h4, main section.content .pageSection .grid > .grid > *:not(button).grid > .gridContent > h4 {
+    padding: 0 0 16px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a).grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid.grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > *:not(button).grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > .grid.grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > .grid > *:not(button).grid > .gridContent > button:not(:only-child, :last-child) {
+    margin-bottom: 16px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > h3, main section.content .pageSection .grid > h3, main section.content .pageSection .grid > *:not(button) > h3, main section.content .pageSection .grid > .grid > h3, main section.content .pageSection .grid > .grid > *:not(button) > h3 {
+    padding: 0 0 24px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > h3:has(+ figure.gridContent), main section.content .pageSection .grid > h3:has(+ figure.gridContent), main section.content .pageSection .grid > *:not(button) > h3:has(+ figure.gridContent), main section.content .pageSection .grid > .grid > h3:has(+ figure.gridContent), main section.content .pageSection .grid > .grid > *:not(button) > h3:has(+ figure.gridContent) {
+    padding: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > h3.span2, main section.content .pageSection .grid > h3.span2, main section.content .pageSection .grid > *:not(button) > h3.span2, main section.content .pageSection .grid > .grid > h3.span2, main section.content .pageSection .grid > .grid > *:not(button) > h3.span2 {
+    padding: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > h4, main section.content .pageSection .grid > h4, main section.content .pageSection .grid > *:not(button) > h4, main section.content .pageSection .grid > .grid > h4, main section.content .pageSection .grid > .grid > *:not(button) > h4 {
+    padding: 0 0 20px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a):has(+ * > h3), main section.content .pageSection .grid:has(+ * > h3), main section.content .pageSection .grid > *:not(button):has(+ * > h3), main section.content .pageSection .grid > .grid:has(+ * > h3), main section.content .pageSection .grid > .grid > *:not(button):has(+ * > h3) {
+    padding: 0 0 64px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > p, main section.content .pageSection .grid > p, main section.content .pageSection .grid > *:not(button) > p, main section.content .pageSection .grid > .grid > p, main section.content .pageSection .grid > .grid > *:not(button) > p {
+    padding: 0 0 24px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > p.noPadding, main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > p:only-child, main section.content .pageSection .grid > p.noPadding, main section.content .pageSection .grid > p:only-child, main section.content .pageSection .grid > *:not(button) > p.noPadding, main section.content .pageSection .grid > *:not(button) > p:only-child, main section.content .pageSection .grid > .grid > p.noPadding, main section.content .pageSection .grid > .grid > p:only-child, main section.content .pageSection .grid > .grid > *:not(button) > p.noPadding, main section.content .pageSection .grid > .grid > *:not(button) > p:only-child {
+    padding: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > p:has(+ ol, + ul), main section.content .pageSection .grid > p:has(+ ol, + ul), main section.content .pageSection .grid > *:not(button) > p:has(+ ol, + ul), main section.content .pageSection .grid > .grid > p:has(+ ol, + ul), main section.content .pageSection .grid > .grid > *:not(button) > p:has(+ ol, + ul) {
+    padding: 0 0 16px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > p:has(+ figure), main section.content .pageSection .grid > p:has(+ figure), main section.content .pageSection .grid > *:not(button) > p:has(+ figure), main section.content .pageSection .grid > .grid > p:has(+ figure), main section.content .pageSection .grid > .grid > *:not(button) > p:has(+ figure) {
+    padding: 0 0 32px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > ol, main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > ul, main section.content .pageSection .grid > ol, main section.content .pageSection .grid > ul, main section.content .pageSection .grid > *:not(button) > ol, main section.content .pageSection .grid > *:not(button) > ul, main section.content .pageSection .grid > .grid > ol, main section.content .pageSection .grid > .grid > ul, main section.content .pageSection .grid > .grid > *:not(button) > ol, main section.content .pageSection .grid > .grid > *:not(button) > ul {
+    padding-left: 24px;
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > figure, main section.content .pageSection .grid > figure, main section.content .pageSection .grid > *:not(button) > figure, main section.content .pageSection .grid > .grid > figure, main section.content .pageSection .grid > .grid > *:not(button) > figure {
+    padding: 0 0 48px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid, main section.content .pageSection .grid > .grid, main section.content .pageSection .grid > *:not(button) > .grid, main section.content .pageSection .grid > .grid > .grid, main section.content .pageSection .grid > .grid > *:not(button) > .grid {
+    gap: 32px 64px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > .gridContent, main section.content .pageSection .grid > .grid > .gridContent, main section.content .pageSection .grid > *:not(button) > .grid > .gridContent, main section.content .pageSection .grid > .grid > .grid > .gridContent, main section.content .pageSection .grid > .grid > *:not(button) > .grid > .gridContent {
+    padding: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > .grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > *:not(button) > .grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > .grid > .grid > .gridContent > button:not(:only-child, :last-child), main section.content .pageSection .grid > .grid > *:not(button) > .grid > .gridContent > button:not(:only-child, :last-child) {
+    margin-bottom: 16px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > h3:not(:only-child), main section.content .pageSection .grid > .grid > h3:not(:only-child), main section.content .pageSection .grid > *:not(button) > .grid > h3:not(:only-child), main section.content .pageSection .grid > .grid > .grid > h3:not(:only-child), main section.content .pageSection .grid > .grid > *:not(button) > .grid > h3:not(:only-child) {
+    padding: 0 0 24px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > h4, main section.content .pageSection .grid > .grid > h4, main section.content .pageSection .grid > *:not(button) > .grid > h4, main section.content .pageSection .grid > .grid > .grid > h4, main section.content .pageSection .grid > .grid > *:not(button) > .grid > h4 {
+    padding: 0 0 20px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > p, main section.content .pageSection .grid > .grid > p, main section.content .pageSection .grid > *:not(button) > .grid > p, main section.content .pageSection .grid > .grid > .grid > p, main section.content .pageSection .grid > .grid > *:not(button) > .grid > p {
+    padding: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > * > ol:not(:last-child), main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > * > ul:not(:last-child), main section.content .pageSection .grid > .grid > * > ol:not(:last-child), main section.content .pageSection .grid > .grid > * > ul:not(:last-child), main section.content .pageSection .grid > *:not(button) > .grid > * > ol:not(:last-child), main section.content .pageSection .grid > *:not(button) > .grid > * > ul:not(:last-child), main section.content .pageSection .grid > .grid > .grid > * > ol:not(:last-child), main section.content .pageSection .grid > .grid > .grid > * > ul:not(:last-child), main section.content .pageSection .grid > .grid > *:not(button) > .grid > * > ol:not(:last-child), main section.content .pageSection .grid > .grid > *:not(button) > .grid > * > ul:not(:last-child) {
+    padding-left: 24px;
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > ol:not(:last-child), main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > ul:not(:last-child), main section.content .pageSection .grid > .grid > ol:not(:last-child), main section.content .pageSection .grid > .grid > ul:not(:last-child), main section.content .pageSection .grid > *:not(button) > .grid > ol:not(:last-child), main section.content .pageSection .grid > *:not(button) > .grid > ul:not(:last-child), main section.content .pageSection .grid > .grid > .grid > ol:not(:last-child), main section.content .pageSection .grid > .grid > .grid > ul:not(:last-child), main section.content .pageSection .grid > .grid > *:not(button) > .grid > ol:not(:last-child), main section.content .pageSection .grid > .grid > *:not(button) > .grid > ul:not(:last-child) {
+    padding-left: 24px;
+    padding-bottom: 32px;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .grid > :last-child:not(button), main section.content .pageSection .grid > .grid > :last-child:not(button), main section.content .pageSection .grid > *:not(button) > .grid > :last-child:not(button), main section.content .pageSection .grid > .grid > .grid > :last-child:not(button), main section.content .pageSection .grid > .grid > *:not(button) > .grid > :last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > .buttons, main section.content .pageSection .grid > .buttons, main section.content .pageSection .grid > *:not(button) > .buttons, main section.content .pageSection .grid > .grid > .buttons, main section.content .pageSection .grid > .grid > *:not(button) > .buttons {
+    padding: 0 0 24px 0;
+  }
+  main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a):last-child:not(button), main section.content .pageSection > *:not(article.h2-wrapper, h2, h3, button, button > a) > *:last-child:not(button), main section.content .pageSection .grid:last-child:not(button), main section.content .pageSection .grid > *:last-child:not(button), main section.content .pageSection .grid > *:not(button):last-child:not(button), main section.content .pageSection .grid > *:not(button) > *:last-child:not(button), main section.content .pageSection .grid > .grid:last-child:not(button), main section.content .pageSection .grid > .grid > *:last-child:not(button), main section.content .pageSection .grid > .grid > *:not(button):last-child:not(button), main section.content .pageSection .grid > .grid > *:not(button) > *:last-child:not(button) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection.cvText > h3, main section.content .pageSection.cvText > h4 {
+    padding-bottom: 20px;
+  }
+  main section.content .pageSection > button {
+    padding: 12px 24px 12px 24px;
+  }
+  main section.content .pageSection > .projectList > .grid {
+    padding: 0 0 96px 0;
+  }
+  main section.content .pageSection > .projectList > .grid > .gridContent {
+    gap: 16px 0;
+  }
+  main section.content .pageSection > .projectList > .grid > .gridContent > *:not(button, .buttons) {
+    padding-bottom: 0;
+  }
+  main section.content .pageSection > .projectList > .grid > .gridContent > p:has(+ button, + .buttons) {
+    padding-bottom: 24px;
+  }
+  .pageSection#otherCaseStudies {
+    padding: 64px 64px 128px 64px;
+  }
+  .pageSection#otherCaseStudies h2#projectsText:not(.sticky) {
+    padding: 32px 0;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList {
+    gap: 96px 48px;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList:not(:last-of-type) {
+    padding: 0 0 128px 0;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList:first-of-type {
+    padding: 8px 0 64px 0;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList > .gridContent {
+    gap: 16px 0;
+  }
+  .pageSection#otherCaseStudies > .grid.projectList > .gridContent > p {
+    padding: 0 0 20px 0;
+  }
+  section h2, section article.h2-wrapper {
+    padding: 32px 0;
+  }
+  section h2.sticky, section article.h2-wrapper.sticky {
+    gap: 16px 32px;
+    padding: 16px 64px 16px 64px;
+  }
+  footer {
+    gap: 64px 64px;
+    padding: 64px 64px 128px 64px;
+  }
+  footer article#endNavLinks {
+    gap: 24px 24px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 510px) {
+  footer {
+    padding-bottom: 228px;
+  }
+}
+@media only screen and (min-width: 510px) and (max-width: 1024px) {
+  footer {
+    padding-bottom: 206px;
+  }
+}
+/* 
+    UPDATE COMMENT
+
+    This Sass variable creates a map key value pairs, where each pair consists of the following:
+    - the expression on the left represents a key
+    - the expression on the right is value associated with that key
+
+    In this case, the values on the right represent the corresponding values for hue, saturation, and lightness 
+    of the color names on the left, which are the exact colors intended for usage in the visual 
+    appearance of text, buttons, and other visual elements.
+    For example "darkBlue" is a key that is a color name, and "hsl(" is a hexcode value that is 
+    associated with "darkBlue".
+
+    The map below is used for a simple, but reproducible function called "color($colorName)" that 
+    can be used to clearly communicate which color is being to for one or more selected elements.
+
+    This map can be expanded to include more colors other than the ones already listed, and the 
+    hexcode values can be conveniently changed so that all elements that uses the same color will 
+    have their colors updated to reflect this change.
+
+    For more information on maps and key-value pairs, copy and paste this URL on an article about 
+    maps from the Sass official website: https://sass-lang.com/documentation/values/maps/
+*/
+/*
+    UPDATE COMMENT
+    This function uses the map from the "$colors" variable to return the desired color included from 
+    the map.
+
+    The mapping of color names is necessary to avoid confusion from using color hexcodes on which 
+    colors each element is using and to make the code usage of the CSS color property reproducible, 
+    more understandable, and with less repetitive code.
+*/
+/*
+    This variable has a constant value of 16 to represent the intended default pixel ("px") size 
+    for body text. This will serve as a baseline for harmonizing the sizes of the different headings, 
+    as well as calculating the "rem" equivalent value ("rem" is a different measurement for font size 
+    relative to the root element, generally preferred over "px" for adjusting the spacing of an element).
+
+    The function below is meant to convert values in "px" to "rem", using a specified value 
+    for the "$pixelValue" variable argument.
+        - The "$remValue" variable is set to the calculated division between "$pixelValue" and "$browserValue".
+        - @return directive will provide the resulting "$remValue" value in "rem".
+
+    The function would be repeatedly called to get and set the CSS property value in units of "rem".
+*/
+/*
+    The name "%hover" defines a placeholder selector.
+    Placeholder selectors have the percent (%) character before the selector name, 
+    and they have a use case of templatizing repetitive lines of code that need to 
+    define reusable CSS properties and values for multiple elements.
+
+    The reusable aspect of placeholder selectors is that the CSS properties and values defined 
+    won't be constantly reproduced in the outputed CSS file, reducing repetitive code and the 
+    size of the CSS file. Instead, they are used in "@extend" directives where elements that 
+    mention these directives would inherit the CSS elements, properties, and values defined 
+    in the corresponding placeholder selector.
+
+    For example, the "%hover" placeholder selector below mentions elements that are also not 
+    the ficaption element to have the mouse cursor set to the pointer appearance and to have 
+    the text of children paragraph (p) elements to be underlined. 
+    An element that has the class name ".class" may use the extend directive to 
+    inherit the elements, cursor property, and the text-decoration property from "%hover".
+
+    .class {
+        @extend hover;
+    }
+
+    Resulting CSS output would be...
+
+    .class {
+        &:not(figcaption) {
+            cursor: pointer;
+        }
+        p {
+            text-decoration: underline;
+        }
+    }
+*/
+footer article#endNavLinks > article.grid a:not(figcaption):hover, main.indexSection button#toTopPageFixed320px:not(figcaption):hover, .navLink:not(figcaption), .sideBarButton:not(figcaption):not(.active):hover, .sideBarButton#toTop:not(figcaption):hover, .sideBarButton#toTop-mobile:not(figcaption):hover, .sideBarButton#toBottom:not(figcaption):hover, .sideBarButton#toBottom-mobile:not(figcaption):hover, figure figcaption > a:not(figcaption), .navigationBar a:not(figcaption):hover, .anchorLinks a:not(figcaption):hover, .videoButton:not(figcaption):hover, .sideBarButton:not(figcaption):hover, #tableOfContents-MobileButton:not(figcaption):hover, button.secondaryButton:not(figcaption):hover, button#toTopPageFixed320px:not(figcaption):hover, .anchorLinks a#contactButton-mobile:not(figcaption):hover, div.contactButtons button:not(figcaption):hover, button#contactButton:not(figcaption):hover, button:not(figcaption):hover {
+  cursor: pointer;
+}
+
+/*
+    Different placeholder selectors that each set the element(s) to have 
+    the properties of the Crimson Pro typeface and the extra bold font weight.
+*/
+h1, h2 {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  color: hsl(220, 55%, 37%);
+}
+
+/*
+    UPDATE COMMENT
+*/
+h3, h4, figure figcaption, figure picture img {
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+/*
+    UPDATE COMMENT
+*/
+h3 {
+  font-weight: 500;
+  color: hsl(220, 55%, 37%);
+}
+
+/*
+    UPDATE COMMENT
+*/
+h4 {
+  font-weight: 400;
+  color: hsl(21, 55%, 37%);
+}
+
+/*
+    UPDATE COMMENT
+*/
+figure figcaption, figure picture img {
+  font-weight: 300;
+  color: hsl(0, 0%, 30%);
+}
+
+/*
+    UPDATE COMMENT
+*/
+p.subtitle {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 600;
+  color: hsl(0, 0%, 30%);
+}
+
+/*
+    UPDATE COMMENT
+*/
+p, li {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 400;
+  color: hsl(0, 0%, 30%);
+}
+
+/* 
+    UPDATE COMMENT
+
+    Placeholder selector for styling heading 1 tags (used for titles).
+        - Sets the width to 100% (takes up the entire container width).
+        - Sets the text color to dark blue.
+        - Sets the font-size ranging from 48px to 96px (in rem units).
+    Placeholder selector for styling heading 2 tags (used for ToC main sections).
+        - Sets the width to 100% (takes up the entire container width).
+        - Sets the text color to dark blue.
+        - Sets the font-size ranging from 48px to 96px (in rem units).
+    Placeholder selector for styling heading 3 tags (used for subsections within the main sections).
+        - Sets the typeface to Open Sans, font style to semi-bold.
+        - Sets the text color to dark brown.
+        - Sets the font-size ranging from 25px to 40px (in rem units).
+    Placeholder selector for styling paragraph tags (used for body text).
+        - Sets the typeface to Open Sans, font style to regular.
+        - Sets the font-size to 16px for window widths below 1920px, 24px 
+        above 1920px (in rem units).
+        - Sets the line height to 1.5 for window widths below 1024px, 1.75 
+        above 1024px.
+*/
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 1.375;
+  }
+  p.subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  p, li {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 80px;
+    line-height: 1.15;
+  }
+  h2 {
+    font-size: 52px;
+    line-height: 1.23;
+  }
+  h3 {
+    font-size: 36px;
+    line-height: 1.3333;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 1.3333;
+  }
+  p.subtitle {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  p, li {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+footer article#endNavLinks > article.grid a p, .navLink, #tableOfContents-MobileButton p, .sideBarButton a p, button.secondaryButton a p, button.videoButton a p, button#toTopPageFixed320px a p, .anchorLinks a#contactButton-mobile a p, div.contactButtons button a p, button#contactButton a p, button a p, .navLink#waynephung:not(.currentSection) p, .navLink .anchorLinks a.navLink:not(.currentSection) p, .sideBarButton p, .anchorLinks a p, figure figcaption, figure picture img {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*
+    Placeholder selector for styling heading 4 (h4) tags (used for 
+    subsections within subsections on subtopics).
+        - Sets the typeface to Open Sans, font style to semi-bold.
+        - Sets the font-size ranging from 18px to 30px (in rem units).
+*/
+/*
+    Placeholder selector to set the the behavior of how overflowing 
+    text should be wrapped, the default max width when the window width 
+    is equal or below 1024px, and removal of max width with the class 
+    name "noMaxWidth".
+*/
+h1, h2, h3, h4, p, ol, ol li, ul, ul li, figcaption {
+  overflow-wrap: anywhere;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+
+/*
+    Placeholder selector to set max-widths across 1024px and 
+    1920px window widths. Any max-width value above 1024px is 
+    in rem.
+*/
+body, header, .anchorLinks, h1, h3, h4, p, ol, ul, li, button, figure, picture, img, .gridContent {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+/*
+    UPDATE COMMENT
+
+    Place to organize z-indices.
+*/
+figure picture.threeDHover:before {
+  z-index: -2;
+}
+figure picture.threeDHover:after {
+  z-index: -1;
+}
+
+.sideBarButton:before, #tableOfContents-MobileButton:before, button.secondaryButton:before, button.videoButton:before, button#toTopPageFixed320px:before, .anchorLinks a#contactButton-mobile:before, div.contactButtons button:before, button#contactButton:before, button:before {
+  z-index: 0;
+}
+.sideBarButton:after, #tableOfContents-MobileButton:after, button.secondaryButton:after, button.videoButton:after, button#toTopPageFixed320px:after, .anchorLinks a#contactButton-mobile:after, div.contactButtons button:after, button#contactButton:after, button:after {
+  z-index: 1;
+}
+.sideBarButton a, #tableOfContents-MobileButton a, button.secondaryButton a, button.videoButton a, button#toTopPageFixed320px a, .anchorLinks a#contactButton-mobile a, div.contactButtons button a, button#contactButton a, button a {
+  z-index: 2;
+}
+.sideBarButton a p, #tableOfContents-MobileButton a p, button.secondaryButton a p, button.videoButton a p, button#toTopPageFixed320px a p, .anchorLinks a#contactButton-mobile a p, div.contactButtons button a p, button#contactButton a p, button a p, .sideBarButton a picture.vectorIcon, #tableOfContents-MobileButton a picture.vectorIcon, button#toTopPageFixed320px a picture.vectorIcon, .anchorLinks a#contactButton-mobile a picture.vectorIcon, button#contactButton a picture.vectorIcon, button a picture.vectorIcon {
+  z-index: 2;
+}
+.sideBarButton p, #tableOfContents-MobileButton p, button.secondaryButton p, button.videoButton p, button#toTopPageFixed320px p, .anchorLinks a#contactButton-mobile p, div.contactButtons button p, button#contactButton p, button p, .sideBarButton picture.vectorIcon, #tableOfContents-MobileButton picture.vectorIcon, button#toTopPageFixed320px picture.vectorIcon, .anchorLinks a#contactButton-mobile picture.vectorIcon, button#contactButton picture.vectorIcon, button picture.vectorIcon {
+  z-index: 2;
+}
+
+button#toTopPageFixed320px a {
+  z-index: 2;
+}
+button#toTopPageFixed320px a picture, button#toTopPageFixed320px a img, button#toTopPageFixed320px a p {
+  z-index: 3;
+}
+@media only screen and (max-width: 320px) {
+  button#toTopPageFixed320px {
+    z-index: 8;
+  }
+}
+
+figure div.gradientBlobShadow {
+  z-index: 4;
+}
+
+footer article#endNavLinks > article.grid .gridContent:not(figure.gridContent) > *, .projectList.grid .gridContent:not(figure.gridContent) > *, main section .grid .gridContent:not(figure.gridContent) > *, main .content article.grid .gridContent:not(figure.gridContent) > *, main .content article.grid > main .content article.grid .gridContent:not(figure.gridContent) > *, main .titleSection.grid .gridContent:not(figure.gridContent) > *, main.indexSection.grid .gridContent:not(figure.gridContent) > *, main.indexSection.grid > main.indexSection.grid .gridContent:not(figure.gridContent) > *, figure.grid .gridContent:not(figure.gridContent) > * {
+  z-index: 6;
+}
+
+footer {
+  z-index: 7;
+}
+
+main {
+  z-index: 7;
+}
+@media only screen and (max-width: 1024px) {
+  main {
+    z-index: 8;
+  }
+}
+main .navSideBar *, main .navSideBar #tableOfContents-MobileButton {
+  position: relative;
+  z-index: 8;
+}
+main .navSideBar .navButtons, main .navSideBar .navButtons.show {
+  z-index: 8;
+}
+@media only screen and (max-width: 1024px) {
+  main .navSideBar {
+    z-index: 8;
+  }
+}
+
+header {
+  z-index: 9;
+}
+
+div#preloader {
+  z-index: 10;
+}
+div#preloader.fade-out {
+  z-index: -1;
+}
+div#preloader.fade-in {
+  z-index: 10;
+}
+div#preloader picture.loader-inner {
+  z-index: 10;
+}
+
+/*
+    Placeholder selector to set default text properties, 
+    rounded corners, and underlined text styling upon 
+    cursor hovering on any button. Mainly used for other 
+    placeholder selectors for primary and secondary button 
+    styling.
+*/
+.sideBarButton, #tableOfContents-MobileButton, button.secondaryButton, button.videoButton, button#toTopPageFixed320px, .anchorLinks a#contactButton-mobile, div.contactButtons button, button#contactButton, button {
+  gap: 16px 16px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: default;
+  transition: background-image 0.3 ease-out;
+  padding: 0;
+}
+.sideBarButton a, #tableOfContents-MobileButton a, button.secondaryButton a, button.videoButton a, button#toTopPageFixed320px a, .anchorLinks a#contactButton-mobile a, div.contactButtons button a, button#contactButton a, button a {
+  position: relative;
+  gap: 16px 16px;
+  text-decoration: none;
+  width: 100%;
+  min-height: 24px;
+}
+.sideBarButton a p, #tableOfContents-MobileButton a p, button.secondaryButton a p, button.videoButton a p, button#toTopPageFixed320px a p, .anchorLinks a#contactButton-mobile a p, div.contactButtons button a p, button#contactButton a p, button a p, .sideBarButton a picture.vectorIcon, #tableOfContents-MobileButton a picture.vectorIcon, button#toTopPageFixed320px a picture.vectorIcon, .anchorLinks a#contactButton-mobile a picture.vectorIcon, button#contactButton a picture.vectorIcon, button a picture.vectorIcon {
+  position: relative;
+}
+.sideBarButton:before, #tableOfContents-MobileButton:before, button.secondaryButton:before, button.videoButton:before, button#toTopPageFixed320px:before, .anchorLinks a#contactButton-mobile:before, div.contactButtons button:before, button#contactButton:before, button:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 12px;
+  transform: translate(-50%, -50%);
+  width: 141.421356237%;
+  padding-bottom: 141.421356237%;
+  opacity: 0;
+  transition: animation-play-state 0.3s linear;
+  animation: spin 1.2s cubic-bezier(0.4, 0.53, 0.67, 0.8) infinite;
+  animation-play-state: paused;
+}
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.sideBarButton:after, #tableOfContents-MobileButton:after, button.secondaryButton:after, button.videoButton:after, button#toTopPageFixed320px:after, .anchorLinks a#contactButton-mobile:after, div.contactButtons button:after, button#contactButton:after, button:after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+}
+.sideBarButton:hover a p:after, #tableOfContents-MobileButton:hover a p:after, button.secondaryButton:hover a p:after, button.videoButton:hover a p:after, button#toTopPageFixed320px:hover a p:after, .anchorLinks a#contactButton-mobile:hover a p:after, div.contactButtons button:hover a p:after, button#contactButton:hover a p:after, button:hover a p:after {
+  width: 100%;
+  left: 0;
+}
+.sideBarButton:hover:before, #tableOfContents-MobileButton:hover:before, button.secondaryButton:hover:before, button.videoButton:hover:before, button#toTopPageFixed320px:hover:before, .anchorLinks a#contactButton-mobile:hover:before, div.contactButtons button:hover:before, button#contactButton:hover:before, button:hover:before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+/*
+    Applies a dark blue background color and light blue text color 
+    to a primary button (any button that emphasizes a key action, 
+    such as reading more about a case study or finding methods to 
+    contact).
+*/
+.anchorLinks a#contactButton-mobile, div.contactButtons button, button#contactButton, button {
+  background-color: hsl(215, 60%, 44%);
+}
+.anchorLinks a#contactButton-mobile a, div.contactButtons button a, button#contactButton a, button a {
+  padding: 12px 24px 12px 24px;
+  width: 100%;
+}
+.anchorLinks a#contactButton-mobile a p, div.contactButtons button a p, button#contactButton a p, button a p {
+  color: hsl(190, 95%, 93%);
+}
+.anchorLinks a#contactButton-mobile a p:after, div.contactButtons button a p:after, button#contactButton a p:after, button a p:after {
+  background-color: hsl(190, 95%, 93%);
+}
+.anchorLinks a#contactButton-mobile a picture.vectorIcon img, button#contactButton a picture.vectorIcon img, button a picture.vectorIcon img {
+  filter: invert(95%) sepia(10%) saturate(1177%) hue-rotate(170deg) brightness(103%) contrast(99%);
+}
+.anchorLinks a#contactButton-mobile p, div.contactButtons button p, button#contactButton p, button p {
+  color: hsl(190, 95%, 93%);
+}
+.anchorLinks a#contactButton-mobile p:after, div.contactButtons button p:after, button#contactButton p:after, button p:after {
+  background-color: hsl(190, 95%, 93%);
+}
+.anchorLinks a#contactButton-mobile picture.vectorIcon img, button#contactButton picture.vectorIcon img, button picture.vectorIcon img {
+  filter: invert(95%) sepia(10%) saturate(1177%) hue-rotate(170deg) brightness(103%) contrast(99%);
+}
+.anchorLinks a#contactButton-mobile:before, div.contactButtons button:before, button#contactButton:before, button:before, .anchorLinks a#contactButton-mobile:after, div.contactButtons button:after, button#contactButton:after, button:after {
+  background-color: hsl(215, 60%, 44%);
+}
+.anchorLinks a#contactButton-mobile:hover, div.contactButtons button:hover, button#contactButton:hover, button:hover {
+  background-image: linear-gradient(to right bottom, hsla(215, 60%, 44%, 0.65), hsl(215, 60%, 44%));
+}
+.anchorLinks a#contactButton-mobile:hover:before, button#contactButton:hover:before, button:hover:before {
+  background: conic-gradient(hsl(215, 60%, 44%), hsl(190, 95%, 93%));
+}
+
+/*
+    Applies a transparent background color and dark blue text color 
+    to a second button (any button that provides an action that 
+    doesn't need to be emphasized as much, such as visiting 
+    an external website related to a case study).
+*/
+#tableOfContents-MobileButton, button.secondaryButton, button.videoButton, button#toTopPageFixed320px {
+  border: 2px solid hsl(215, 60%, 44%);
+}
+#tableOfContents-MobileButton a, button.secondaryButton a, button.videoButton a, button#toTopPageFixed320px a {
+  padding: 8px 16px 8px 16px;
+  width: 100%;
+}
+#tableOfContents-MobileButton a p, button.secondaryButton a p, button.videoButton a p, button#toTopPageFixed320px a p {
+  color: hsl(215, 60%, 44%);
+}
+#tableOfContents-MobileButton a p:after, button.secondaryButton a p:after, button.videoButton a p:after, button#toTopPageFixed320px a p:after {
+  background-color: hsl(215, 60%, 44%);
+}
+#tableOfContents-MobileButton a picture.vectorIcon img, button.secondaryButton a picture.vectorIcon img, button.videoButton a picture.vectorIcon img, button#toTopPageFixed320px a picture.vectorIcon img {
+  filter: invert(32%) sepia(87%) saturate(828%) hue-rotate(186deg) brightness(75%) contrast(88%);
+}
+#tableOfContents-MobileButton p, button.secondaryButton p, button.videoButton p, button#toTopPageFixed320px p {
+  color: hsl(215, 60%, 44%);
+}
+#tableOfContents-MobileButton p:after, button.secondaryButton p:after, button.videoButton p:after, button#toTopPageFixed320px p:after {
+  background-color: hsl(215, 60%, 44%);
+}
+#tableOfContents-MobileButton picture.vectorIcon img, button.secondaryButton picture.vectorIcon img, button.videoButton picture.vectorIcon img, button#toTopPageFixed320px picture.vectorIcon img {
+  filter: invert(32%) sepia(87%) saturate(828%) hue-rotate(186deg) brightness(75%) contrast(88%);
+}
+#tableOfContents-MobileButton:before, button.secondaryButton:before, button.videoButton:before, button#toTopPageFixed320px:before, #tableOfContents-MobileButton:after, button.secondaryButton:after, button.videoButton:after, button#toTopPageFixed320px:after {
+  background-color: hsl(0, 0%, 100%);
+}
+#tableOfContents-MobileButton:after, button.secondaryButton:after, button.videoButton:after, button#toTopPageFixed320px:after {
+  border-radius: 8px;
+}
+#tableOfContents-MobileButton:hover:before, button.secondaryButton:hover:before, button.videoButton:hover:before, button#toTopPageFixed320px:hover:before {
+  background: conic-gradient(hsl(215, 60%, 44%) 0deg, hsl(0, 0%, 100%) 25deg);
+}
+
+button#contactButton {
+  margin: 8px 0;
+}
+@media only screen and (max-width: 1024px) {
+  button#contactButton {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  button#contactButton {
+    display: inherit;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  button#contactButton {
+    display: none !important;
+  }
+}
+.buttons {
+  gap: 8px 8px;
+}
+div.contactButtons {
+  gap: 8px 8px;
+}
+@media only screen and (max-width: 1200px) {
+  div.contactButtons {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  div.contactButtons {
+    display: inherit;
+  }
+}
+div.contactButtons button {
+  margin: 8px 0;
+}
+
+.anchorLinks a#contactButton-mobile {
+  padding: 12px 24px 12px 24px;
+}
+@media only screen and (max-width: 320px) {
+  .anchorLinks a#contactButton-mobile {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .anchorLinks a#contactButton-mobile {
+    display: inherit;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .anchorLinks a#contactButton-mobile {
+    display: none !important;
+  }
+}
+.anchorLinks a#contactButton-mobile p {
+  color: hsl(190, 95%, 93%);
+}
+.anchorLinks a#contactButton-mobile p:after {
+  background-color: hsl(190, 95%, 93%);
+}
+
+/*
+    Applies a transparent background to any button associated with the playing/pausing 
+    actions of video playback. Colors for text, vector icon, and border are set to 
+    dark blue. Margin and padding spacings are set.
+*/
+.videoButton {
+  padding: 8px 16px 8px 16px !important;
+}
+.videoButton p:after {
+  background-color: hsl(215, 60%, 44%);
+}
+
+/*
+    Applies secondary button styling to the ToC button, which is 
+    only visible below 750px window width.
+*/
+#tableOfContents-MobileButton {
+  align-self: flex-end;
+  flex-grow: initial;
+  margin: 0 auto;
+  padding: 8px 16px 8px 16px;
+  text-decoration: none;
+}
+#tableOfContents-MobileButton p, #tableOfContents-MobileButton picture.vectorIcon {
+  position: relative;
+}
+#tableOfContents-MobileButton p:after {
+  background-color: hsl(215, 60%, 44%);
+}
+#tableOfContents-MobileButton img.vectorIcon {
+  filter: invert(32%) sepia(87%) saturate(828%) hue-rotate(186deg) brightness(75%) contrast(88%);
+}
+#tableOfContents-MobileButton:hover p:after {
+  width: 100%;
+  left: 0;
+}
+#tableOfContents-MobileButton:hover:before {
+  opacity: 1;
+  animation-play-state: running;
+}
+@media only screen and (max-width: 1024px) {
+  #tableOfContents-MobileButton {
+    display: inherit;
+    min-height: 52px;
+    order: 1;
+  }
+  #tableOfContents-MobileButton p {
+    color: hsl(215, 60%, 44%);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #tableOfContents-MobileButton {
+    display: none !important;
+  }
+}
+
+/*
+    Placeholder selector to style the underline element for text.
+*/
+footer article#endNavLinks > article.grid a p:after, main.indexSection button#toTopPageFixed320px a p:after, .sideBarButton.active p:after, .navigationBar a p:after, .anchorLinks a p:after, a.sideBarButton p:after, .videoButton p:after, .sideBarButton a p:after, button a p:after, button#contactButton a p:after, button.secondaryButton a p:after, button.videoButton a p:after, button#toTopPageFixed320px a p:after, div.contactButtons button a p:after, .anchorLinks a#contactButton-mobile a p:after, #tableOfContents-MobileButton p:after {
+  display: block;
+  position: relative;
+  left: 50%;
+  bottom: 0;
+  content: "";
+  width: 0;
+  height: 2px;
+  transform: translateY(2px);
+  transition: width 0.1s linear 0s, left 0.1s linear 0s;
+}
+
+.navigationBar a p:after, .anchorLinks a p:after, a.sideBarButton p:after, .videoButton p:after {
+  background-color: hsl(0, 0%, 50%);
+}
+.navigationBar a:hover p:after, .anchorLinks a:hover p:after, a.sideBarButton:hover p:after, .videoButton:hover p:after {
+  width: 100%;
+  left: 0;
+}
+
+/*
+    Placeholder selectors for the flex display of a container:
+        - column flex direction, wrapping along the column for
+          children elements, top-left starting point and alignment
+          of children elements and text
+*/
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+/*
+        - same as previous, except no wrapping of children elements
+*/
+footer .conversation, .navSideBar .navButtons, main .content article:not(.grid, .grid > .gridContent, article.h2-wrapper), main .content, main.indexSection .content, .projectList.grid .gridContent:not(figure.gridContent, p.gridContent), main section .grid .gridContent:not(figure.gridContent, p.gridContent), main.indexSection.grid .gridContent:not(figure.gridContent, p.gridContent), main.indexSection.grid > main.indexSection.grid .gridContent:not(figure.gridContent, p.gridContent), figure.grid .gridContent:not(figure.gridContent, p.gridContent), footer article#endNavLinks > article.grid .gridContent, .projectList.grid .gridContent, .projectList.grid > .projectList.grid .gridContent, main section .grid .gridContent, main .content article.grid .gridContent, main .content article.grid > main .content article.grid .gridContent, main .titleSection.grid .gridContent, main .titleSection.grid > main .titleSection.grid .gridContent, main.indexSection.grid .gridContent, main.indexSection.grid > main.indexSection.grid .gridContent, figure.grid .gridContent, figure.grid > figure.grid .gridContent, figure {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+/*
+        - column flex direction, wrapping, center starting point
+          and alignment of children elements and text
+*/
+div#preloader {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/*
+        - row flex direction, wrapping, top-left starting point 
+          and alignment of children elements and text
+*/
+footer article#endNavLinks, footer article, footer, .projectList, h2.projectsText, .navSideBar .navButtons .accordion, main .content .pageSection, main, .navButtons, header, .buttons.flexRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+/*
+        - same as previous, except no wrapping of children elements
+*/
+/*
+        - row flex direction, wrapping, center starting point
+          and alignment of children elements and text
+*/
+footer article#endNavLinks > article.grid a, h3.flexRow, h2, .navLink#waynephung, .accordion.withIcons .sideBarButton, .sideBarButton, .contactButtons, .anchorLinks a, .anchorLinks, nav.navigationBar, h2 picture.vectorIcon, .sideBarButton .vectorIcon, h2 picture, .sideBarButton a picture.vectorIcon, button a picture.vectorIcon, button#contactButton a picture.vectorIcon, button.secondaryButton a picture.vectorIcon, button.videoButton a picture.vectorIcon, button#toTopPageFixed320px a picture.vectorIcon, div.contactButtons button a picture.vectorIcon, .anchorLinks a#contactButton-mobile a picture.vectorIcon, #tableOfContents-MobileButton a picture.vectorIcon, #tableOfContents-MobileButton img.vectorIcon, figure#electricStride, figure picture, figure > a picture, .sideBarButton, .sideBarButton a, button, button a, button#contactButton, button#contactButton a, button.secondaryButton, button.videoButton, button#toTopPageFixed320px, button.secondaryButton a, button.videoButton a, button#toTopPageFixed320px a, div.contactButtons button, div.contactButtons button a, .anchorLinks a#contactButton-mobile, .anchorLinks a#contactButton-mobile a, #tableOfContents-MobileButton, #tableOfContents-MobileButton a {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/*
+    Placeholder selector to incorporate all the default properties of 
+    a figure container to visually present images and figure captions.
+        - This container will have a column flex direction, no 
+          wrapping of the individual children elements, and 
+          fixed row and column gaps of 1rem each.
+        - No overflow is expected so that each image's size will not 
+          appear to be larger than its corresponding figure container.
+        - Each figure is expected to take up the entire width of its 
+          corresponding parent container (such as a grid cell), with 
+          the height automatically set to the intended image's height.
+*/
+/*
+    - Each figure container with the class name "shadow" is expected 
+      to have a dark gray shadow surrounding its borders to enhance 
+      the presentation of the image.
+*/
+/*
+    - This element represents a figure caption, where text describing
+      what the image represents is shown and a person can read it.
+      By default, the caption would be horizontally aligned center 
+      to the rest of the figure container and have the the italic 
+      font variation of the regular body text.
+    - If the window width is less than 1024px, there is no maximum 
+      width to the figure caption. Otherwise, it set to the default 
+      max width as defined in the placeholder selector.
+    - Any children links (as a tags) will have the same hover behavior 
+      as any other links.
+*/
+/*
+    Default properties for any figure container across web pages; 
+    these containers are used for grouping images and image captions.
+
+    Inherits all properties of the both the default figure and 
+    grid placeholder selectors.
+
+    There is one class to place the children element to the 
+    left portion within the figure container.
+
+    There are specific class and id names to specify exact 
+    max widths for images that need specific sizes.
+
+    For the few audio players, specific justify-content and max-width 
+    properties are set.
+*/
+figure {
+  gap: 16px 16px;
+  position: relative;
+  width: 100%;
+  height: auto;
+  /*
+      The default properties of the picture container are inherited.
+      Most of these containers will show a shadow effect under the image's edges.
+
+      The "problemSpaceIcon" class is used for images that illustrate different phases 
+      of the design process.
+  */
+  /*
+      - This element represents a figure caption, where text describing
+        what the image represents is shown and a person can read it.
+        By default, the caption would be horizontally aligned center 
+        to the rest of the figure container and have the the italic 
+        font variation of the regular body text.
+      - If the window width is less than 1024px, there is no maximum 
+        width to the figure caption. Otherwise, it set to the default 
+        max width as defined in the placeholder selector.
+      - Any children links (as a tags) will have the same hover behavior 
+        as any other links.
+  */
+  /*Update comment.*/
+  /*
+      Properties used for specific sizing and appearance of 
+      the Formfactories preview image.
+
+      "object-fit: cover" will cut out a majority of the image, 
+      so "contain" is the better value in this case.
+  */
+  /*
+      Specific sizing for the icon images used in the osp.html page 
+      for the OSP case study. This is to prevent them from appearing  
+      too large and taking up too much space.
+  */
+  /*
+      Class addition to the figure container for images that show one phase 
+      of the design process diagram for a case study.
+  */
+  /*
+      Properties to limit the maximum height of the preview image 
+      of the Electric Stride case study to (less than) 400px to 
+      remove extraneous objects in the image other than the mat 
+      and the floor.
+  */
+}
+figure.gridContent picture {
+  overflow: hidden;
+}
+figure.shadow picture, figure.shadow video, figure.shadow .youTube, figure.shadow .mainVideo {
+  box-shadow: 0 2px 8px 2px hsl(0, 0%, 30%);
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+figure.shadow.preventOverflow {
+  box-shadow: 0 2px 8px 2px hsl(0, 0%, 30%);
+  overflow: hidden;
+  padding: 0 !important;
+}
+figure.shadow.preventOverflow picture, figure.shadow.preventOverflow video {
+  height: 100%;
+}
+figure.justifyFlexStart {
+  justify-content: flex-start;
+}
+figure.alignItemsCenter, figure.gridContent.alignItemsCenter {
+  align-items: center;
+}
+figure.designProcessPart-250 {
+  max-width: 250px;
+  max-height: 250px;
+}
+figure#bufferWheel {
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+}
+figure.maxHeight500 {
+  max-height: 500px;
+}
+@media only screen and (min-width: 1400px) {
+  figure.maxWidth550 {
+    max-width: 550px !important;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  figure.maxWidth750 {
+    max-width: 750px !important;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  figure.maxWidth900 {
+    max-width: 900px !important;
+  }
+}
+figure#hyundaiDesignLab {
+  margin: 0 auto;
+  max-width: 250px;
+}
+figure#fingo-mainMenuScreen, figure#careerCenter {
+  margin: 0 auto;
+  max-width: 500px;
+}
+figure#kualiNotifications {
+  max-width: 650px;
+}
+@media only screen and (min-width: 1024px) {
+  figure.alignItemsCenter {
+    align-items: center;
+  }
+  figure.noMax {
+    max-width: none;
+    max-height: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  figure.audioPlayer {
+    max-width: 100%;
+    justify-self: flex-start;
+    justify-content: space-between;
+  }
+  figure.audioPlayer audio {
+    max-width: 650px;
+  }
+}
+figure > a {
+  border: none;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: auto;
+  z-index: 5;
+}
+figure > a.shadow {
+  box-shadow: 0 2px 8px 2px hsl(0, 0%, 30%);
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+figure > a picture {
+  -o-object-position: center;
+     object-position: center;
+  position: relative;
+  /*
+      Each picture container with the class name "shadow" is expected 
+      to have a dark gray shadow surrounding its borders to enhance 
+      the presentation of the image.
+  */
+  -o-object-fit: contain;
+     object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+@media only screen and (max-width: 1024px) {
+  figure > a picture {
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+  }
+}
+figure > a picture.objectFitCover {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+figure > a picture.objectPositionLeft {
+  -o-object-position: left;
+     object-position: left;
+}
+figure > a picture.objectPositionRight {
+  -o-object-position: right;
+     object-position: right;
+}
+figure > a picture.inheritMaxHeight {
+  max-height: inherit;
+}
+@media only screen and (min-width: 1024px) {
+  figure > a picture.positionTop {
+    -o-object-position: top;
+       object-position: top;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  figure > a picture.objectFit-cover-1024 {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  figure > a picture {
+    height: 100%;
+  }
+}
+figure picture {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  touch-action: pan-x pan-y pinch-zoom;
+  /*
+      Each picture container with the class name "shadow" is expected 
+      to have a dark gray shadow surrounding its borders to enhance 
+      the presentation of the image.
+  */
+}
+figure picture.shadow {
+  box-shadow: 0 2px 8px 2px hsl(0, 0%, 30%);
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+figure picture#maintainingAgency {
+  max-width: 128px;
+}
+figure picture.problemSpaceIcon {
+  padding-bottom: 0;
+  max-width: 128px;
+  max-height: 128px;
+}
+figure picture.problemSpaceIcon.noMaxWidth {
+  max-width: none;
+}
+figure picture.threeDHover img {
+  width: 100%;
+  border-radius: inherit;
+}
+figure picture img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+figure picture img.objectFitCover {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
+figure picture img.objectPositionLeft {
+  -o-object-position: left;
+     object-position: left;
+}
+figure picture img.objectPositionRight {
+  -o-object-position: right;
+     object-position: right;
+}
+figure picture img.inheritMaxHeight {
+  max-height: inherit;
+}
+@media only screen and (min-width: 1024px) {
+  figure picture img.positionTop {
+    -o-object-position: top;
+       object-position: top;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  figure picture img {
+    max-width: 100%;
+  }
+  figure picture img.objectFit-cover-1024 {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  figure picture img {
+    height: 100%;
+  }
+}
+figure figcaption {
+  display: inline-block;
+}
+figure video {
+  position: relative;
+  cursor: pointer;
+  -o-object-fit: contain;
+     object-fit: contain;
+  align-self: flex-start;
+}
+figure video.cursorDefault {
+  cursor: default;
+}
+figure iframe {
+  width: 100%;
+  border: none;
+}
+figure iframe.gDrive.mainVideo, figure iframe.youTube.mainVideo {
+  background: transprent url("01-other-files/spinner-1400ms-200px.gif") no-repeat center center;
+}
+figure iframe.shadow {
+  box-shadow: 0 2px 8px 2px hsl(0, 0%, 30%);
+}
+figure div.gradientBlobShadow {
+  filter: blur(4px);
+  position: absolute;
+  transform-origin: center;
+  width: 300px;
+  height: 300px;
+  animation: rotate 10s linear infinite;
+}
+figure div.gradientBlobShadow:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: shapeshiftBlob 10s linear infinite;
+}
+figure div.gradientBlobShadow.blue:before {
+  background: radial-gradient(blue 10%, transparent 75%);
+}
+figure div.gradientBlobShadow.red:before {
+  background: radial-gradient(red 0%, transparent 65%);
+}
+figure div.gradientBlobShadow.top-20-left-25 {
+  top: calc(20% - 150px);
+  left: calc(25% - 150px);
+  transform-origin: 40% 40%;
+}
+figure div.gradientBlobShadow.top-25-left-10 {
+  top: calc(25% - 150px);
+  left: calc(10% - 150px);
+  transform-origin: 45% 45%;
+}
+figure div.gradientBlobShadow.bottom-5-right-30 {
+  bottom: calc(5% - 150px);
+  right: calc(30% - 150px);
+  transform-origin: 50% 50%;
+}
+figure div.gradientBlobShadow.bottom-10-right-5 {
+  bottom: calc(10% - 150px);
+  right: calc(5% - 150px);
+  transform-origin: 50% 50%;
+}
+figure div.gradientBlobShadow.animateReverse {
+  animation: rotateReverse 10s linear infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateReverse {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes shapeshiftBlob {
+  0%, 100% {
+    border-radius: 64% 36% 27% 73%/55% 58% 42% 45%;
+  }
+  25% {
+    border-radius: 73% 27% 26% 38%/73% 36% 64% 27%;
+  }
+  50% {
+    border-radius: 28% 72% 44% 56%/49% 40% 60% 51%;
+  }
+  75% {
+    border-radius: 40% 60% 70% 30%/47% 62% 38% 53%;
+  }
+}
+figure#electricStride {
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
+}
+figure#electricStride > a {
+  max-height: 400px;
+  height: 100%;
+}
+figure#electricStride picture, figure#electricStride a picture {
+  height: 100%;
+}
+figure#electricStride picture img, figure#electricStride a picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*
+    Placeholder selector for any images showing a preview of a 
+    case study, which would be used in the landing page sections, 
+    "Other Case Studies" section in the footer of each case study, 
+    and the cv.html page.
+
+    Flex direction would be column, with no wrapping of the 
+    children elements, and the text aligned to the left 
+    of the container.
+*/
+/*
+    Placeholder selector to set the default property of the 
+    direct child element of the figure container. The 
+    children element would position the image container 
+    to take up the children element's available space and 
+    be horizontally and vertically aligned center.
+
+    The "touch-action" property may be obsolete due to its 
+    usage with the Panzoom Javascript library, which is 
+    currently not used.
+*/
+/*
+    This placeholder selector is mainly used with the picture container 
+    and is applied to any container that has the class name "preventOverflow".
+    This adjusts the maximum width and height of that container to be 
+    slightly below 100% so that the shadows are properly shown and not 
+    cut off from the edges. The cutting of the shadows is due to the 
+    overflow of the shadows being hidden when the picture container 
+    has a 100% width.
+
+    For images with certain class names, the maximum height would be 
+    decreased to less than 400px or the maximum width would be 
+    decreased to less than 275px.
+*/
+/*
+    Placeholder selector for figure containers with an a tag 
+    for the direct child element. The a tag makes the image 
+    clickable such that, as a result, the URL would be redirected 
+    to an external link that is within or outside of the website.
+
+    With the "autoWidth" class, the width is automatically calculated 
+    by the browser.
+*/
+/*
+    Placeholder selector for figure containers with an a tag 
+    for the direct child element, followed by a picture grandchild 
+    element. The a tag makes the image clickable such that, as a 
+    result, the URL would be redirected to an external link that 
+    is within or outside of the website.
+
+    If the window width is at most 1024px, align the picture container 
+    to the left of the a or figure container.
+*/
+/*
+    Placeholder selector to set the default property of the 
+    picture element (child of the figure container). The 
+    children element would position the image container 
+    to take up the children element's available space,  
+    show the entirety of the original image with its aspect 
+    ratio maintained, and be horizontally and vertically 
+    aligned center.
+
+    The "touch-action" property may be obsolete due to its 
+    usage with the Panzoom Javascript library, which is 
+    currently not used.
+*/
+figure picture.threeDHover {
+  border-radius: 1rem;
+  transform-style: preserve-3d;
+  transform: perspective(5000px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  transition: transform 1s "ease-in-out";
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  /* shadow */
+  /* gradient thingy */
+}
+@keyframes defaultState {
+  from {
+    transform: perspective(5000px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  }
+  to {
+    transform: perspective(5000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+@keyframes hoveringState {
+  from {
+    transform: perspective(5000px) rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(5000px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+  }
+}
+figure picture.defaultState.threeDHover {
+  animation-name: defaultState;
+  transform: perspective(5000px) rotateX(0deg) rotateY(0deg);
+}
+figure picture.hoveringState.threeDHover {
+  animation-name: hoveringState;
+  transform: perspective(5000px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
+figure picture.threeDHover:before, figure picture.threeDHover:after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+figure picture.threeDHover:before {
+  inset: 0.75rem;
+  border-radius: inherit;
+  background: yellow;
+  transform: translate3d(-50px, 20px, -50px);
+  filter: blur(15px);
+  opacity: 0.5;
+}
+figure picture.threeDHover:after {
+  inset: -1rem;
+  background: linear-gradient(-45deg, red, blue);
+  transform: translate3d(-50px, 20px, -100px);
+}
+
+/*
+    Placeholder selector for the figure container's shadow.
+    The exact values show the distance of the shadow relative 
+    to all four edges of the container. The order of the values 
+    are for the top edge, right edge, bottom edge, and left edge
+    of the container.
+*/
+/*
+    Placeholder selector for the class which will set the 
+    object, width, and height properties for containers of 
+    small icon images associated with each ToC Section.
+
+    No right border is to prevent a miscellaneous line 
+    to the right of the image from appearing.
+*/
+h2 picture.vectorIcon, .sideBarButton .vectorIcon, h2 picture, .sideBarButton a picture.vectorIcon, button a picture.vectorIcon, button#contactButton a picture.vectorIcon, button.secondaryButton a picture.vectorIcon, button.videoButton a picture.vectorIcon, button#toTopPageFixed320px a picture.vectorIcon, div.contactButtons button a picture.vectorIcon, .anchorLinks a#contactButton-mobile a picture.vectorIcon, #tableOfContents-MobileButton a picture.vectorIcon, #tableOfContents-MobileButton img.vectorIcon {
+  -o-object-fit: contain;
+     object-fit: contain;
+  line-height: 0;
+  border-right: none !important;
+}
+@media only screen and (max-width: 1920px) {
+  h2 picture.vectorIcon, .sideBarButton .vectorIcon, h2 picture, .sideBarButton a picture.vectorIcon, button a picture.vectorIcon, button#contactButton a picture.vectorIcon, button.secondaryButton a picture.vectorIcon, button.videoButton a picture.vectorIcon, button#toTopPageFixed320px a picture.vectorIcon, div.contactButtons button a picture.vectorIcon, .anchorLinks a#contactButton-mobile a picture.vectorIcon, #tableOfContents-MobileButton a picture.vectorIcon, #tableOfContents-MobileButton img.vectorIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  h2 picture.vectorIcon, .sideBarButton .vectorIcon, h2 picture, .sideBarButton a picture.vectorIcon, button a picture.vectorIcon, button#contactButton a picture.vectorIcon, button.secondaryButton a picture.vectorIcon, button.videoButton a picture.vectorIcon, button#toTopPageFixed320px a picture.vectorIcon, div.contactButtons button a picture.vectorIcon, .anchorLinks a#contactButton-mobile a picture.vectorIcon, #tableOfContents-MobileButton a picture.vectorIcon, #tableOfContents-MobileButton img.vectorIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
+h2 picture.vectorIcon img, .sideBarButton .vectorIcon img, h2 picture img, .sideBarButton a picture.vectorIcon img, button a picture.vectorIcon img, button#contactButton a picture.vectorIcon img, button.secondaryButton a picture.vectorIcon img, button.videoButton a picture.vectorIcon img, button#toTopPageFixed320px a picture.vectorIcon img, div.contactButtons button a picture.vectorIcon img, .anchorLinks a#contactButton-mobile a picture.vectorIcon img, #tableOfContents-MobileButton a picture.vectorIcon img, #tableOfContents-MobileButton img.vectorIcon img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1920px) {
+  h2 picture {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  h2 picture {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/*
+    Placeholder selector to set the width and height of the 
+    actual small icon images to fill up the container.
+    With the "active" class, use the filter property to change 
+    the color of the icon to white when the ToC section button 
+    is the current one.
+*/
+/*
+    Placeholder selector for the image.
+    All images will have their height equal to the height of the picture container 
+    and will not repeatedly appear in the background, unless stated otherwise.
+
+    The "objectFitCover" class will have the image's width also 
+    cover the entire width of the container, but may have parts of the 
+    image cropped off to preserve the aspect ratio.
+
+    There are two classes that will position the image to the left, right, or 
+    top portion of the picture container.
+
+    There are three classes to set the maximum image height to a fixed amount, 
+    set the maximum image height equal to the picture container, or remove the 
+    maximum image height restriction.
+
+    Across the 750px and 1024px width checkpoints, the maximum width, maximum height, 
+    and object fit type of the image may change with or without needing the specific 
+    class name.
+*/
+/*
+    Placeholder selector for the default properties of the grid.
+*/
+footer article#endNavLinks > article.grid, .projectList.grid, .projectList.grid > .projectList.grid, main section .grid, main section .grid > .grid, main .content article.grid, main .content article.grid > main .content article.grid, main .titleSection.grid, main .titleSection.grid > main .titleSection.grid, main.indexSection.grid, main.indexSection.grid > main.indexSection.grid, figure.grid, figure.grid > figure.grid {
+  display: grid;
+  /*
+      Any grid item that has the "span2" class name or not 
+      tagged with the "gridContent" class name will have 
+      their width take up the entire width of the grid container.
+  */
+  /*
+      Any article tag that has the "h2-wrapper" class name or not 
+      tagged with the "gridContent" class name will have the flex
+      display properties and values.
+  */
+  /*
+      "gridContent" is a class name for classifying all nested containers in the 
+      grid container to be a grid cell.
+  */
+}
+@media only screen and (min-width: 1024px) {
+  footer article#endNavLinks > article.grid, .projectList.grid, .projectList.grid > .projectList.grid, main section .grid, main section .grid > .grid, main .content article.grid, main .content article.grid > main .content article.grid, main .titleSection.grid, main .titleSection.grid > main .titleSection.grid, main.indexSection.grid, main.indexSection.grid > main.indexSection.grid, figure.grid, figure.grid > figure.grid {
+    justify-items: flex-start;
+  }
+}
+footer article#endNavLinks > article.grid > *:not(.gridContent), .projectList.grid > *:not(.gridContent), .projectList.grid > .projectList.grid > *:not(.gridContent), main section .grid > *:not(.gridContent), main section .grid > .grid > *:not(.gridContent), main .content article.grid > *:not(.gridContent), main .content article.grid > main .content article.grid > *:not(.gridContent), main .titleSection.grid > *:not(.gridContent), main .titleSection.grid > main .titleSection.grid > *:not(.gridContent), main.indexSection.grid > *:not(.gridContent), main.indexSection.grid > main.indexSection.grid > *:not(.gridContent), figure.grid > *:not(.gridContent), figure.grid > figure.grid > *:not(.gridContent), footer article#endNavLinks > article.grid .span2, .projectList.grid .span2, .projectList.grid > .projectList.grid .span2, main section .grid .span2, main .content article.grid .span2, main .content article.grid > main .content article.grid .span2, main .titleSection.grid .span2, main .titleSection.grid > main .titleSection.grid .span2, main.indexSection.grid .span2, main.indexSection.grid > main.indexSection.grid .span2, figure.grid .span2, figure.grid > figure.grid .span2 {
+  grid-column: 1/-1;
+}
+footer article#endNavLinks > article.grid article:not(.gridContent, article.h2-wrapper).rowFlex, .projectList.grid article:not(.gridContent, article.h2-wrapper).rowFlex, main section .grid article:not(.gridContent, article.h2-wrapper).rowFlex, main .content article.grid article:not(.gridContent, article.h2-wrapper).rowFlex, main .titleSection.grid article:not(.gridContent, article.h2-wrapper).rowFlex, main.indexSection.grid article:not(.gridContent, article.h2-wrapper).rowFlex, main.indexSection.grid > main.indexSection.grid article:not(.gridContent, article.h2-wrapper).rowFlex, figure.grid article:not(.gridContent, article.h2-wrapper).rowFlex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+footer article#endNavLinks > article.grid .columnSpan-all, .projectList.grid .columnSpan-all, .projectList.grid > .projectList.grid .columnSpan-all, main section .grid .columnSpan-all, main .content article.grid .columnSpan-all, main .content article.grid > main .content article.grid .columnSpan-all, main .titleSection.grid .columnSpan-all, main .titleSection.grid > main .titleSection.grid .columnSpan-all, main.indexSection.grid .columnSpan-all, main.indexSection.grid > main.indexSection.grid .columnSpan-all, figure.grid .columnSpan-all, figure.grid > figure.grid .columnSpan-all {
+  grid-column: 1/-1;
+}
+footer article#endNavLinks > article.grid .gridContent, .projectList.grid .gridContent, .projectList.grid > .projectList.grid .gridContent, main section .grid .gridContent, main .content article.grid .gridContent, main .content article.grid > main .content article.grid .gridContent, main .titleSection.grid .gridContent, main .titleSection.grid > main .titleSection.grid .gridContent, main.indexSection.grid .gridContent, main.indexSection.grid > main.indexSection.grid .gridContent, figure.grid .gridContent, figure.grid > figure.grid .gridContent {
+  position: relative;
+  /* 
+     There is an i tag in the osp.html page that is meant to be 
+     as a figure caption, but isn't to conserve vertical space.
+     The inline-block display value ensures that the text is 
+     properly wrapped.
+  */
+}
+footer article#endNavLinks > article.grid .gridContent.marginBottom, .projectList.grid .gridContent.marginBottom, main section .grid .gridContent.marginBottom, main .content article.grid .gridContent.marginBottom, main .content article.grid > main .content article.grid .gridContent.marginBottom, main .titleSection.grid .gridContent.marginBottom, main .titleSection.grid > main .titleSection.grid .gridContent.marginBottom, main.indexSection.grid .gridContent.marginBottom, main.indexSection.grid > main.indexSection.grid .gridContent.marginBottom, figure.grid .gridContent.marginBottom {
+  margin-bottom: 1rem !important;
+}
+footer article#endNavLinks > article.grid .gridContent.alignItemsCenter, .projectList.grid .gridContent.alignItemsCenter, main section .grid .gridContent.alignItemsCenter, main .content article.grid .gridContent.alignItemsCenter, main .content article.grid > main .content article.grid .gridContent.alignItemsCenter, main .titleSection.grid .gridContent.alignItemsCenter, main .titleSection.grid > main .titleSection.grid .gridContent.alignItemsCenter, main.indexSection.grid .gridContent.alignItemsCenter, main.indexSection.grid > main.indexSection.grid .gridContent.alignItemsCenter, figure.grid .gridContent.alignItemsCenter {
+  align-items: center;
+}
+footer article#endNavLinks > article.grid .gridContent i, .projectList.grid .gridContent i, .projectList.grid > .projectList.grid .gridContent i, main section .grid .gridContent i, main .content article.grid .gridContent i, main .content article.grid > main .content article.grid .gridContent i, main .titleSection.grid .gridContent i, main .titleSection.grid > main .titleSection.grid .gridContent i, main.indexSection.grid .gridContent i, main.indexSection.grid > main.indexSection.grid .gridContent i, figure.grid .gridContent i {
+  display: inline-block;
+}
+footer article#endNavLinks > article.grid p.noMarginBottom, .projectList.grid p.noMarginBottom, .projectList.grid > .projectList.grid p.noMarginBottom, main section .grid p.noMarginBottom, main .content article.grid p.noMarginBottom, main .content article.grid > main .content article.grid p.noMarginBottom, main .titleSection.grid p.noMarginBottom, main .titleSection.grid > main .titleSection.grid p.noMarginBottom, main.indexSection.grid p.noMarginBottom, main.indexSection.grid > main.indexSection.grid p.noMarginBottom, figure.grid p.noMarginBottom {
+  margin-bottom: 0;
+}
+
+/*
+    Placeholder selector for setting the default amount of columns for grids to one 
+    below 1024px width.
+*/
+@media only screen and (max-width: 1024px) {
+  footer article#endNavLinks > article.gridType1-320Width.grid, .gridType1-320Width.projectList.grid, .projectList.grid > .gridType1-320Width.projectList.grid, main section .gridType1-320Width.grid, main .content article.gridType1-320Width.grid, main .content article.grid > main .content article.gridType1-320Width.grid, main .gridType1-320Width.titleSection.grid, main .titleSection.grid > main .gridType1-320Width.titleSection.grid, main.gridType1-320Width.indexSection.grid, main.indexSection.grid > main.gridType1-320Width.indexSection.grid, figure.gridType1-320Width.grid, figure.grid > figure.gridType1-320Width.grid, footer article#endNavLinks > article.gridType3-900Width.grid, .gridType3-900Width.projectList.grid, .projectList.grid > .gridType3-900Width.projectList.grid, main section .gridType3-900Width.grid, main .content article.gridType3-900Width.grid, main .content article.grid > main .content article.gridType3-900Width.grid, main .gridType3-900Width.titleSection.grid, main .titleSection.grid > main .gridType3-900Width.titleSection.grid, main.gridType3-900Width.indexSection.grid, main.indexSection.grid > main.gridType3-900Width.indexSection.grid, figure.gridType3-900Width.grid, figure.grid > figure.gridType3-900Width.grid, footer article#endNavLinks > article.gridType10-2Column-AutoRight.grid, .gridType10-2Column-AutoRight.projectList.grid, .projectList.grid > .gridType10-2Column-AutoRight.projectList.grid, main section .gridType10-2Column-AutoRight.grid, main .content article.gridType10-2Column-AutoRight.grid, main .content article.grid > main .content article.gridType10-2Column-AutoRight.grid, main .gridType10-2Column-AutoRight.titleSection.grid, main .titleSection.grid > main .gridType10-2Column-AutoRight.titleSection.grid, main.gridType10-2Column-AutoRight.indexSection.grid, main.indexSection.grid > main.gridType10-2Column-AutoRight.indexSection.grid, figure.gridType10-2Column-AutoRight.grid, figure.grid > figure.gridType10-2Column-AutoRight.grid, footer article#endNavLinks > article.gridType10.grid, .gridType10.projectList.grid, .projectList.grid > .gridType10.projectList.grid, main section .gridType10.grid, main .content article.gridType10.grid, main .content article.grid > main .content article.gridType10.grid, main .gridType10.titleSection.grid, main .titleSection.grid > main .gridType10.titleSection.grid, main.gridType10.indexSection.grid, main.indexSection.grid > main.gridType10.indexSection.grid, figure.gridType10.grid, figure.grid > figure.gridType10.grid, footer article#endNavLinks > article.gridType7.grid, .gridType7.projectList.grid, .projectList.grid > .gridType7.projectList.grid, main section .gridType7.grid, main .content article.gridType7.grid, main .content article.grid > main .content article.gridType7.grid, main .gridType7.titleSection.grid, main .titleSection.grid > main .gridType7.titleSection.grid, main.gridType7.indexSection.grid, main.indexSection.grid > main.gridType7.indexSection.grid, figure.gridType7.grid, figure.grid > figure.gridType7.grid, footer article#endNavLinks > article.gridType8.grid, .gridType8.projectList.grid, .projectList.grid > .gridType8.projectList.grid, main section .gridType8.grid, main .content article.gridType8.grid, main .content article.grid > main .content article.gridType8.grid, main .gridType8.titleSection.grid, main .titleSection.grid > main .gridType8.titleSection.grid, main.gridType8.indexSection.grid, main.indexSection.grid > main.gridType8.indexSection.grid, figure.gridType8.grid, figure.grid > figure.gridType8.grid, footer article#endNavLinks > article.gridType6.grid, .gridType6.projectList.grid, .projectList.grid > .gridType6.projectList.grid, main section .gridType6.grid, main .content article.gridType6.grid, main .content article.grid > main .content article.gridType6.grid, main .gridType6.titleSection.grid, main .titleSection.grid > main .gridType6.titleSection.grid, main.gridType6.indexSection.grid, main.indexSection.grid > main.gridType6.indexSection.grid, figure.gridType6.grid, figure.grid > figure.gridType6.grid, footer article#endNavLinks > article.gridType5.grid, .gridType5.projectList.grid, .projectList.grid > .gridType5.projectList.grid, main section .gridType5.grid, main .content article.gridType5.grid, main .content article.grid > main .content article.gridType5.grid, main .gridType5.titleSection.grid, main .titleSection.grid > main .gridType5.titleSection.grid, main.gridType5.indexSection.grid, main.indexSection.grid > main.gridType5.indexSection.grid, figure.gridType5.grid, figure.grid > figure.gridType5.grid, footer article#endNavLinks > article.gridType4.grid, .gridType4.projectList.grid, .projectList.grid > .gridType4.projectList.grid, main section .gridType4.grid, main .content article.gridType4.grid, main .content article.grid > main .content article.gridType4.grid, main .gridType4.titleSection.grid, main .titleSection.grid > main .gridType4.titleSection.grid, main.gridType4.indexSection.grid, main.indexSection.grid > main.gridType4.indexSection.grid, figure.gridType4.grid, figure.grid > figure.gridType4.grid, footer article#endNavLinks > article.gridType3.grid, .gridType3.projectList.grid, .projectList.grid > .gridType3.projectList.grid, main section .gridType3.grid, main .content article.gridType3.grid, main .content article.grid > main .content article.gridType3.grid, main .gridType3.titleSection.grid, main .titleSection.grid > main .gridType3.titleSection.grid, main.gridType3.indexSection.grid, main.indexSection.grid > main.gridType3.indexSection.grid, figure.gridType3.grid, figure.grid > figure.gridType3.grid, footer article#endNavLinks > article.gridType2.grid, .gridType2.projectList.grid, .projectList.grid > .gridType2.projectList.grid, main section .gridType2.grid, main .content article.gridType2.grid, main .content article.grid > main .content article.gridType2.grid, main .gridType2.titleSection.grid, main .titleSection.grid > main .gridType2.titleSection.grid, main.gridType2.indexSection.grid, main.indexSection.grid > main.gridType2.indexSection.grid, figure.gridType2.grid, figure.grid > figure.gridType2.grid, footer article#endNavLinks > article.gridType1.grid, .gridType1.projectList.grid, .projectList.grid > .gridType1.projectList.grid, main section .gridType1.grid, main .content article.gridType1.grid, main .content article.grid > main .content article.gridType1.grid, main .gridType1.titleSection.grid, main .titleSection.grid > main .gridType1.titleSection.grid, main.gridType1.indexSection.grid, main.indexSection.grid > main.gridType1.indexSection.grid, figure.gridType1.grid, figure.grid > figure.gridType1.grid, footer article#endNavLinks > article.gridType9.grid, .gridType9.projectList.grid, .projectList.grid > .gridType9.projectList.grid, main section .gridType9.grid, main .content article.gridType9.grid, main .content article.grid > main .content article.gridType9.grid, main .gridType9.titleSection.grid, main .titleSection.grid > main .gridType9.titleSection.grid, main.gridType9.indexSection.grid, main.indexSection.grid > main.gridType9.indexSection.grid, figure.gridType9.grid, figure.grid > figure.gridType9.grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+    Placeholder selectors for column variations of grid containers.
+    They are useful for having a limited, but good-enoough selection of columns 
+    with different widths (relative to the grid container) to support different 
+    layouts of grouped text, images and/or other visual elements across different 
+    window widths.
+        - "gridType1" is to set two grid columns of equal widths above 1024px window width.
+        - "gridType2" is to set two grid columns, with the left column to 2/3 of the entire 
+          grid container width above 1024px window width.
+        - "gridType3" is to set two grid columns, with the right column to 2/3 of the entire 
+          grid container width above 1024px window width.
+        - "gridType4" is to set two grid columns of equal widths above 1300px window width.
+        - "gridType5" is to set two grid columns, with the left column to 2/3 of the entire 
+          grid container width above 1400px window width.
+        - "gridType6" is to set two grid columns, with the right column to 2/3 of the entire 
+          grid container width above 1400px window width.
+        - "gridType7" is to set three grid columns of equal widths above 1400px window width.
+        - "gridType8" is to set two grid columns of equal widths between 450px and 1400px 
+          window widths and three grid columns of equal widths above 1400px.
+        - "gridType9" is to set one grid column below 475px window width, two columns of 
+          equal widths between 450px and 1400px, and four columns of equal widths above 1400px.
+        - "gridType10" is to set two grid columns, with the right column to 2/3 of the entire 
+          grid container width above 1200px window width.
+        - "gridType10-2Column-AutoRight" is to set two grid columns of automatic sizing 
+          above 1024px window width.
+        - "gridType3-900Width" is almost the same as "gridType3" except that the window 
+        width used is above 900px.
+*/
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType1.grid, .gridType1.projectList.grid, .projectList.grid > .gridType1.projectList.grid, main section .gridType1.grid, main .content article.gridType1.grid, main .content article.grid > main .content article.gridType1.grid, main .gridType1.titleSection.grid, main .titleSection.grid > main .gridType1.titleSection.grid, main.gridType1.indexSection.grid, main.indexSection.grid > main.gridType1.indexSection.grid, figure.gridType1.grid, figure.grid > figure.gridType1.grid, footer article#endNavLinks > article.gridType9.grid, .gridType9.projectList.grid, .projectList.grid > .gridType9.projectList.grid, main section .gridType9.grid, main .content article.gridType9.grid, main .content article.grid > main .content article.gridType9.grid, main .gridType9.titleSection.grid, main .titleSection.grid > main .gridType9.titleSection.grid, main.gridType9.indexSection.grid, main.indexSection.grid > main.gridType9.indexSection.grid, figure.gridType9.grid, figure.grid > figure.gridType9.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType2.grid, .gridType2.projectList.grid, .projectList.grid > .gridType2.projectList.grid, main section .gridType2.grid, main .content article.gridType2.grid, main .content article.grid > main .content article.gridType2.grid, main .gridType2.titleSection.grid, main .titleSection.grid > main .gridType2.titleSection.grid, main.gridType2.indexSection.grid, main.indexSection.grid > main.gridType2.indexSection.grid, figure.gridType2.grid, figure.grid > figure.gridType2.grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType3.grid, .gridType3.projectList.grid, .projectList.grid > .gridType3.projectList.grid, main section .gridType3.grid, main .content article.gridType3.grid, main .content article.grid > main .content article.gridType3.grid, main .gridType3.titleSection.grid, main .titleSection.grid > main .gridType3.titleSection.grid, main.gridType3.indexSection.grid, main.indexSection.grid > main.gridType3.indexSection.grid, figure.gridType3.grid, figure.grid > figure.gridType3.grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType4.grid, .gridType4.projectList.grid, .projectList.grid > .gridType4.projectList.grid, main section .gridType4.grid, main .content article.gridType4.grid, main .content article.grid > main .content article.gridType4.grid, main .gridType4.titleSection.grid, main .titleSection.grid > main .gridType4.titleSection.grid, main.gridType4.indexSection.grid, main.indexSection.grid > main.gridType4.indexSection.grid, figure.gridType4.grid, figure.grid > figure.gridType4.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType5.grid, .gridType5.projectList.grid, .projectList.grid > .gridType5.projectList.grid, main section .gridType5.grid, main .content article.gridType5.grid, main .content article.grid > main .content article.gridType5.grid, main .gridType5.titleSection.grid, main .titleSection.grid > main .gridType5.titleSection.grid, main.gridType5.indexSection.grid, main.indexSection.grid > main.gridType5.indexSection.grid, figure.gridType5.grid, figure.grid > figure.gridType5.grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType6.grid, .gridType6.projectList.grid, .projectList.grid > .gridType6.projectList.grid, main section .gridType6.grid, main .content article.gridType6.grid, main .content article.grid > main .content article.gridType6.grid, main .gridType6.titleSection.grid, main .titleSection.grid > main .gridType6.titleSection.grid, main.gridType6.indexSection.grid, main.indexSection.grid > main.gridType6.indexSection.grid, figure.gridType6.grid, figure.grid > figure.gridType6.grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType7.grid, .gridType7.projectList.grid, .projectList.grid > .gridType7.projectList.grid, main section .gridType7.grid, main .content article.gridType7.grid, main .content article.grid > main .content article.gridType7.grid, main .gridType7.titleSection.grid, main .titleSection.grid > main .gridType7.titleSection.grid, main.gridType7.indexSection.grid, main.indexSection.grid > main.gridType7.indexSection.grid, figure.gridType7.grid, figure.grid > figure.gridType7.grid, footer article#endNavLinks > article.gridType8.grid, .gridType8.projectList.grid, .projectList.grid > .gridType8.projectList.grid, main section .gridType8.grid, main .content article.gridType8.grid, main .content article.grid > main .content article.gridType8.grid, main .gridType8.titleSection.grid, main .titleSection.grid > main .gridType8.titleSection.grid, main.gridType8.indexSection.grid, main.indexSection.grid > main.gridType8.indexSection.grid, figure.gridType8.grid, figure.grid > figure.gridType8.grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 1400px) {
+  footer article#endNavLinks > article.gridType8.grid, .gridType8.projectList.grid, .projectList.grid > .gridType8.projectList.grid, main section .gridType8.grid, main .content article.gridType8.grid, main .content article.grid > main .content article.gridType8.grid, main .gridType8.titleSection.grid, main .titleSection.grid > main .gridType8.titleSection.grid, main.gridType8.indexSection.grid, main.indexSection.grid > main.gridType8.indexSection.grid, figure.gridType8.grid, figure.grid > figure.gridType8.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  footer article#endNavLinks > article.gridType9.grid, .gridType9.projectList.grid, .projectList.grid > .gridType9.projectList.grid, main section .gridType9.grid, main .content article.gridType9.grid, main .content article.grid > main .content article.gridType9.grid, main .gridType9.titleSection.grid, main .titleSection.grid > main .gridType9.titleSection.grid, main.gridType9.indexSection.grid, main.indexSection.grid > main.gridType9.indexSection.grid, figure.gridType9.grid, figure.grid > figure.gridType9.grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 475px) and (max-width: 1400px) {
+  footer article#endNavLinks > article.gridType9.grid, .gridType9.projectList.grid, .projectList.grid > .gridType9.projectList.grid, main section .gridType9.grid, main .content article.gridType9.grid, main .content article.grid > main .content article.gridType9.grid, main .gridType9.titleSection.grid, main .titleSection.grid > main .gridType9.titleSection.grid, main.gridType9.indexSection.grid, main.indexSection.grid > main.gridType9.indexSection.grid, figure.gridType9.grid, figure.grid > figure.gridType9.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1400px) {
+  footer article#endNavLinks > article.gridType9.grid, .gridType9.projectList.grid, .projectList.grid > .gridType9.projectList.grid, main section .gridType9.grid, main .content article.gridType9.grid, main .content article.grid > main .content article.gridType9.grid, main .gridType9.titleSection.grid, main .titleSection.grid > main .gridType9.titleSection.grid, main.gridType9.indexSection.grid, main.indexSection.grid > main.gridType9.indexSection.grid, figure.gridType9.grid, figure.grid > figure.gridType9.grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  footer article#endNavLinks > article.gridType10.grid, .gridType10.projectList.grid, .projectList.grid > .gridType10.projectList.grid, main section .gridType10.grid, main .content article.gridType10.grid, main .content article.grid > main .content article.gridType10.grid, main .gridType10.titleSection.grid, main .titleSection.grid > main .gridType10.titleSection.grid, main.gridType10.indexSection.grid, main.indexSection.grid > main.gridType10.indexSection.grid, figure.gridType10.grid, figure.grid > figure.gridType10.grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  footer article#endNavLinks > article.gridType10-2Column-AutoRight.grid, .gridType10-2Column-AutoRight.projectList.grid, .projectList.grid > .gridType10-2Column-AutoRight.projectList.grid, main section .gridType10-2Column-AutoRight.grid, main .content article.gridType10-2Column-AutoRight.grid, main .content article.grid > main .content article.gridType10-2Column-AutoRight.grid, main .gridType10-2Column-AutoRight.titleSection.grid, main .titleSection.grid > main .gridType10-2Column-AutoRight.titleSection.grid, main.gridType10-2Column-AutoRight.indexSection.grid, main.indexSection.grid > main.gridType10-2Column-AutoRight.indexSection.grid, figure.gridType10-2Column-AutoRight.grid, figure.grid > figure.gridType10-2Column-AutoRight.grid {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  footer article#endNavLinks > article.gridType3-900Width.grid, .gridType3-900Width.projectList.grid, .projectList.grid > .gridType3-900Width.projectList.grid, main section .gridType3-900Width.grid, main .content article.gridType3-900Width.grid, main .content article.grid > main .content article.gridType3-900Width.grid, main .gridType3-900Width.titleSection.grid, main .titleSection.grid > main .gridType3-900Width.titleSection.grid, main.gridType3-900Width.indexSection.grid, main.indexSection.grid > main.gridType3-900Width.indexSection.grid, figure.gridType3-900Width.grid, figure.grid > figure.gridType3-900Width.grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  footer article#endNavLinks > article.gridType1-320Width.grid, .gridType1-320Width.projectList.grid, .projectList.grid > .gridType1-320Width.projectList.grid, main section .gridType1-320Width.grid, main .content article.gridType1-320Width.grid, main .content article.grid > main .content article.gridType1-320Width.grid, main .gridType1-320Width.titleSection.grid, main .titleSection.grid > main .gridType1-320Width.titleSection.grid, main.gridType1-320Width.indexSection.grid, main.indexSection.grid > main.gridType1-320Width.indexSection.grid, figure.gridType1-320Width.grid, figure.grid > figure.gridType1-320Width.grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*
+    Placeholder selector to attach the properties and values of each gridType selector 
+    to each corresponding gridType class name.
+*/
+/*
+    Placeholder selector used for the html element to set the default transition time to 0.25 seconds
+    with an ease-in and ease-out transition smoothness.
+*/
+html {
+  transition: 0.25s ease-in-out;
+}
+
+/*
+    Placeholder selector to set the default background color of the entire page (html element) and 
+    the navigation header to light blue using the color function.
+*/
+header, html {
+  background-color: hsl(0, 0%, 100%);
+}
+
+/*
+    Mixin for using numbers as numerators and denominators into a system of class names 
+    that attach calculated aspect ratios to corresponding images.
+*/
+/*
+    Many repeated callings of the aspectRatioClass mixin 
+    to establish class names of aspect ratios.
+*/
+.ratio-1-5 {
+  aspect-ratio: calc(1 / 5);
+}
+
+.ratio-1-2 {
+  aspect-ratio: calc(1 / 2);
+}
+
+.ratio-9-16 {
+  aspect-ratio: calc(9 / 16);
+}
+
+.ratio-4-7 {
+  aspect-ratio: calc(4 / 7);
+}
+
+.ratio-23-40 {
+  aspect-ratio: calc(23 / 40);
+}
+
+.ratio-3-5 {
+  aspect-ratio: calc(3 / 5);
+}
+
+.ratio-5-8 {
+  aspect-ratio: calc(5 / 8);
+}
+
+.ratio-13-20 {
+  aspect-ratio: calc(13 / 20);
+}
+
+.ratio-2-3 {
+  aspect-ratio: calc(2 / 3);
+}
+
+.ratio-7-10 {
+  aspect-ratio: calc(7 / 10);
+}
+
+.ratio-3-4 {
+  aspect-ratio: calc(3 / 4);
+}
+
+.ratio-4-5 {
+  aspect-ratio: calc(4 / 5);
+}
+
+.ratio-5-6 {
+  aspect-ratio: calc(5 / 6);
+}
+
+.ratio-10-11 {
+  aspect-ratio: calc(10 / 11);
+}
+
+.ratio-40-43 {
+  aspect-ratio: calc(40 / 43);
+}
+
+.ratio-1-1 {
+  aspect-ratio: calc(1 / 1);
+}
+
+.ratio-9-8 {
+  aspect-ratio: calc(9 / 8);
+}
+
+.ratio-8-7 {
+  aspect-ratio: calc(8 / 7);
+}
+
+.ratio-7-6 {
+  aspect-ratio: calc(7 / 6);
+}
+
+.ratio-13-11 {
+  aspect-ratio: calc(13 / 11);
+}
+
+.ratio-6-5 {
+  aspect-ratio: calc(6 / 5);
+}
+
+.ratio-5-4 {
+  aspect-ratio: calc(5 / 4);
+}
+
+.ratio-4-3 {
+  aspect-ratio: calc(4 / 3);
+}
+
+.ratio-20-13 {
+  aspect-ratio: calc(20 / 13);
+}
+
+.ratio-8-5 {
+  aspect-ratio: calc(8 / 5);
+}
+
+.ratio-13-8 {
+  aspect-ratio: calc(13 / 8);
+}
+
+.ratio-5-3 {
+  aspect-ratio: calc(5 / 3);
+}
+
+.ratio-12-7 {
+  aspect-ratio: calc(12 / 7);
+}
+
+.ratio-7-4 {
+  aspect-ratio: calc(7 / 4);
+}
+
+.ratio-16-9 {
+  aspect-ratio: calc(16 / 9);
+}
+
+.ratio-9-5 {
+  aspect-ratio: calc(9 / 5);
+}
+
+.ratio-20-11 {
+  aspect-ratio: calc(20 / 11);
+}
+
+.ratio-15-8 {
+  aspect-ratio: calc(15 / 8);
+}
+
+.ratio-48-25 {
+  aspect-ratio: calc(48 / 25);
+}
+
+.ratio-2-1 {
+  aspect-ratio: calc(2 / 1);
+}
+
+.ratio-20-9 {
+  aspect-ratio: calc(20 / 9);
+}
+
+.ratio-9-4 {
+  aspect-ratio: calc(9 / 4);
+}
+
+.ratio-8-3 {
+  aspect-ratio: calc(8 / 3);
+}
+
+.ratio-5-2 {
+  aspect-ratio: calc(5 / 2);
+}
+
+.ratio-10-3 {
+  aspect-ratio: calc(10 / 3);
+}
+
+.ratio-4-1 {
+  aspect-ratio: calc(4 / 1);
+}
+
+.ratio-9-2 {
+  aspect-ratio: calc(9 / 2);
+}
+
+.ratio-5-1 {
+  aspect-ratio: calc(5 / 1);
+}
+
+.ratio-6-1 {
+  aspect-ratio: calc(6 / 1);
+}
+
+.ratio-19-3 {
+  aspect-ratio: calc(19 / 3);
+}
+
+/*
+    Mixin to map one or a list of IDs associated with images 
+    with the corresponding aspect ratio.
+
+    If the max-width is not specified, the max width of the 
+    image(s) is reset to auto.
+*/
+/*
+    Mixin to map aspect ratios to one or a list of IDs associated with images 
+    across different minimum and/or maximum (window width) breakpoint range(s).
+    Breakpoints are meant to be only in units of pixels (px).
+
+    An applicable use case is using two similarly-looking images for the same 
+    figure container where each image has a different width and height relative 
+    to the other (and thus a different aspect ratio), and you want to only 
+    show one of these images above or below certain window widths.
+*/
+/*
+    Three lists of strings of ID names for specific images, mostly from the electricStride.html file (one from the osp.html file).
+*/
+/*
+    Many calls to the aspect ratio mixin to set different aspect ratios 
+    to specific images across various window width breakpoints.
+*/
+@media only screen and (max-width: 1024px) {
+  #eStride-DesignProcess {
+    max-width: 500px;
+    aspect-ratio: calc(2 / 3);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #eStride-DesignProcess {
+    aspect-ratio: calc(9 / 4);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #eStride-pivoting {
+    aspect-ratio: calc(7 / 10);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #eStride-pivoting {
+    aspect-ratio: calc(3 / 2);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #eStride-initialResearch, #eStride-dataSynthesis, #eStride-problemSpaces {
+    max-width: 500px;
+    aspect-ratio: calc(5 / 7);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #eStride-initialResearch, #eStride-dataSynthesis, #eStride-problemSpaces {
+    aspect-ratio: calc(5 / 4);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #eStride-ideation, #eStride-prototypingSolution, #eStride-userTesting, #eStride-finalDeliverables {
+    max-width: 500px;
+    aspect-ratio: calc(3 / 5);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #eStride-ideation, #eStride-prototypingSolution, #eStride-userTesting, #eStride-finalDeliverables {
+    aspect-ratio: calc(3 / 2);
+  }
+}
+@media only screen and (max-width: 450px) {
+  #ospHardware-real {
+    max-width: 500px;
+    aspect-ratio: calc(1 / 5);
+  }
+}
+@media only screen and (min-width: 450px) {
+  #ospHardware-real {
+    aspect-ratio: calc(2 / 1);
+  }
+}
+@media only screen and (max-width: 900px) {
+  #ospSoftware {
+    max-width: 500px;
+    aspect-ratio: calc(7 / 4);
+  }
+}
+@media only screen and (min-width: 900px) {
+  #ospSoftware {
+    aspect-ratio: calc(5 / 2);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #feedbackToIterations {
+    max-width: 500px;
+    aspect-ratio: calc(7 / 4);
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  #feedbackToIterations {
+    aspect-ratio: calc(19 / 3);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #feedbackToIterations {
+    max-width: 500px;
+    aspect-ratio: calc(7 / 4);
+  }
+}
+@media only screen and (min-width: px) {
+  #websiteDeveloped {
+    max-width: 500px;
+    aspect-ratio: calc(3 / 2);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #websiteDeveloped {
+    aspect-ratio: calc(1 / 1);
+  }
+}
+/*
+    Applies the default 0.25 seconds transition, light blue background color, spacing properties, 
+    and row/column gap properties across many elements within the html tag container.
+*/
+html {
+  overflow-x: hidden;
+}
+
+/*
+    Applies a background gif to the preloader container and sets the container to fill the entire page.
+    The preloader will disappear via a function in the main jQuery file.
+*/
+div#preloader {
+  gap: 16px 16px;
+  position: fixed;
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+div#preloader.fade-out {
+  opacity: 0;
+  animation-name: fade-out;
+}
+div#preloader.fade-in {
+  opacity: 1;
+  animation-name: fade-in;
+}
+div#preloader picture.loader-inner {
+  width: 100%;
+  height: 100%;
+}
+div#preloader picture.loader-inner img {
+  width: 256px;
+  height: 256px;
+}
+div#preloader p {
+  text-align: center;
+}
+
+/*
+    Applies fixed display for the header and positions it 
+    to the top of the screen above 320px window width.
+*/
+header {
+  align-items: stretch;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  /*
+      Applies the long and thin width/height properties of the scroll progress bar.
+      Applies the dark blue color for the indicator bar.
+      Removes the default transition time.
+  */
+  /*
+      Only shows the progress bar at the bottom of any case study page 
+      not in the landing page (index.html) when the window with is 
+      below 750px.
+  */
+}
+@media only screen and (max-width: 320px) {
+  header {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 510px) {
+  header {
+    min-height: 132px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+  header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: auto;
+    min-height: 78px;
+  }
+}
+header .progressContainer, header #headerProgressBar-caseStudy {
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 4px;
+  scroll-padding: 0;
+  transition: 0s ease-in-out;
+}
+header .progressContainer .progressBar, header #headerProgressBar-caseStudy .progressBar {
+  width: 0%;
+  height: 4px;
+  background-color: hsl(215, 60%, 44%);
+  color: hsl(0, 0%, 30%);
+  scroll-padding: 0;
+  transition: 0s ease-in-out;
+}
+@media only screen and (max-width: 550px) {
+  header #headerProgressBar-caseStudy {
+    order: 1;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header #headerProgressBar-caseStudy {
+    display: inherit;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header #headerProgressBar-caseStudy {
+    display: none !important;
+  }
+}
+
+/*
+    Sets the alignment properties for the header's navigation buttons.
+*/
+nav.navigationBar {
+  position: relative;
+  align-items: stretch;
+  justify-content: space-between;
+  order: 0;
+  width: 100%;
+  height: 100%;
+  /*
+      Applies the default dark blue background color and text sizes to the 
+      "Contact Me" button. The button would only appear above 750px window width.
+  */
+}
+@media only screen and (min-width: 525px) and (max-width: 1024px) {
+  nav.navigationBar {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  nav.navigationBar {
+    order: 2;
+    max-width: 100%;
+  }
+}
+nav.navigationBar#waynephung p, nav.navigationBar .anchorLinks a.navLink p {
+  background-image: radial-gradient(transparent);
+  transition: background-image 0.3s linear;
+}
+nav.navigationBar#waynephung:hover p p, nav.navigationBar .anchorLinks a.navLink:not(#contactButton-mobile):hover p {
+  background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+  transition: background-image 0.3s linear;
+}
+nav.navigationBar a:hover p:after {
+  width: 100%;
+  left: 0;
+}
+nav.navigationBar a p:after {
+  background-color: hsl(0, 0%, 50%);
+}
+
+/*
+    Applies left margin, right margin, horizontal flex direction, and centering 
+    for the element containing the four grouped main navigation buttons, which 
+    is only slightly larger above 1920px window width.
+*/
+.anchorLinks {
+  align-items: stretch;
+  width: auto;
+}
+@media only screen and (max-width: 525px) {
+  .anchorLinks {
+    gap: 8px 8px;
+  }
+}
+@media only screen and (min-width: 525px) and (max-width: 1024px) {
+  .anchorLinks {
+    justify-content: center;
+    gap: 8px 32px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .anchorLinks a {
+    gap: 8px 0;
+    height: initial;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .anchorLinks a {
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .anchorLinks {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .anchorLinks > *:not(#contactButton-mobile) {
+    width: 30%;
+  }
+}
+
+.contactButtons {
+  gap: 8px 16px;
+  justify-content: flex-start;
+}
+
+/*
+    Class name for the ToC buttons. By default, they should appear to be as borderless 
+    buttons with a transparent background. The text is right aligned, the sizes for the icon 
+    images are generally small, and both have a dark gray color.
+
+    When the ToC button indicates that the content on the left shows the associated section/heading, 
+    the ToC button is considered "active". Only one is active at a time, and that active button 
+    will have a dark brown background color while the color of the text and vector icon image is 
+    changed to white.
+
+    There are four buttons, of which each pair has the identical button text - either "Top of Page" 
+    (tagged as id name "toTop") or "Other Case Studies" (tagged as id name "toBottom"). One version 
+    of each button appear below 750px window width, the other version of each appear above 750px width.
+*/
+.sideBarButton {
+  justify-content: flex-end;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  text-decoration: none;
+  transition: background-image 0.3s linear;
+}
+.sideBarButton p, .sideBarButton .vectorIcon {
+  background-image: radial-gradient(transparent);
+  animation-name: noBackground;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+.sideBarButton p {
+  color: hsl(0, 0%, 70%);
+}
+@media only screen and (max-width: 1024px) {
+  .sideBarButton p {
+    max-width: calc(100% - 1rem - 28px);
+    color: hsl(0, 0%, 30%);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .sideBarButton p {
+    max-width: calc(100% - 1rem - 28px);
+  }
+}
+.sideBarButton .vectorIcon {
+  transition: background-image 0s linear, filter 0s linear;
+}
+.sideBarButton .vectorIcon img {
+  filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(240deg) brightness(101%) contrast(95%);
+}
+@media only screen and (max-width: 1920px) {
+  .sideBarButton .vectorIcon {
+    max-width: 2rem;
+    max-height: 2rem;
+  }
+}
+.sideBarButton:not(.active):hover p, .sideBarButton#toTop:hover p, .sideBarButton#toTop-mobile:hover p, .sideBarButton#toBottom:hover p, .sideBarButton#toBottom-mobile:hover p {
+  color: hsl(0, 0%, 30%);
+}
+.sideBarButton:not(.active):hover .vectorIcon img, .sideBarButton#toTop:hover .vectorIcon img, .sideBarButton#toTop-mobile:hover .vectorIcon img, .sideBarButton#toBottom:hover .vectorIcon img, .sideBarButton#toBottom-mobile:hover .vectorIcon img {
+  filter: none;
+}
+.sideBarButton.active p, .sideBarButton.active .vectorIcon:not(.iconEmpty) {
+  animation-name: activeBackground;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+}
+.sideBarButton.active p {
+  color: hsl(0, 0%, 30%);
+}
+.sideBarButton.active p:after {
+  width: 100%;
+  left: 0;
+  background-color: hsl(0, 0%, 50%);
+}
+.sideBarButton.active .vectorIcon img {
+  filter: none;
+}
+@keyframes noBackground {
+  from {
+    background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+  }
+  to {
+    background-image: radial-gradient(transparent);
+  }
+}
+@keyframes activeBackground {
+  from {
+    background-image: radial-gradient(transparent);
+  }
+  to {
+    background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+  }
+}
+.sideBarButton.mobileOnly-750 {
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 1024px) {
+  .sideBarButton {
+    margin-right: 0;
+    width: 100%;
+  }
+  .sideBarButton#toTop, .sideBarButton#toBottom {
+    display: none !important;
+  }
+  .sideBarButton#toTop-mobile, .sideBarButton#toBottom-mobile, .sideBarButton.mobileOnly-750 {
+    display: inherit;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .sideBarButton {
+    margin-right: 1rem;
+  }
+  .sideBarButton#toTop, .sideBarButton#toBottom {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+    justify-content: space-between;
+  }
+  .sideBarButton#toTop-mobile, .sideBarButton#toBottom-mobile, .sideBarButton.mobileOnly-750 {
+    display: none !important;
+  }
+}
+
+/*
+    "navButtons" is a class name for the container of most of the ToC section buttons.
+    Sets the max height, width, height, inner padding, and border styling when it has 
+    the class name to enable its visibility.
+*/
+.navButtons {
+  justify-content: space-between;
+  position: relative;
+}
+@media only screen and (max-width: 1024px) {
+  .navButtons {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navButtons {
+    width: 100%;
+  }
+}
+.navButtons.show {
+  background-color: hsl(0, 0%, 100%);
+}
+@media only screen and (max-width: 400px) {
+  .navButtons.show {
+    max-height: 300px;
+    width: 90%;
+    height: 65%;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .navButtons.show {
+    max-height: 300px;
+    width: 60%;
+    height: 65%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navButtons.show {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+    display: block !important;
+    overflow-y: scroll;
+    background-color: hsl(190, 95%, 93%);
+    border: 8px solid hsl(215, 60%, 44%);
+    border-radius: 4px;
+  }
+}
+
+/*
+    Applies adjusted padding to any container of ToC section buttons that 
+    have vector icons as children elements.
+*/
+.accordion.withIcons .sideBarButton {
+  justify-content: space-between;
+}
+@media only screen and (min-width: 1024px) {
+  .accordion.withIcons .sideBarButton > #toTop, .accordion.withIcons .sideBarButton > #toBottom {
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+  }
+}
+
+/*
+    Sets the default inner padding, text alignment, and border styling to each 
+    main navigation buttons. Removes the transition timer.
+    Text is underlined when hovered.
+    When one main navigation button is considered "active", it would have a 
+    dark blue border.
+
+    Hides the "Wayne Phung" button below 1024px window width.
+    Hides one version of the "Contact Me" button when below 750px window width.
+
+    Sets the visual style of the "Contact Me" button to that of a primary button.
+*/
+.navLink {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0s ease-in-out;
+}
+.navLink#waynephung p, .navLink .anchorLinks a.navLink p {
+  background-image: radial-gradient(transparent);
+  transition: background-image 0.3s linear;
+}
+.navLink#waynephung:hover p, .navLink .anchorLinks a.navLink:hover p {
+  background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+  transition: background-image 0.3s linear;
+}
+@media only screen and (max-width: 200px) {
+  .navLink {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+  .navLink {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .navLink {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .navLink {
+    text-align: auto;
+  }
+}
+.navLink#waynephung:not(.currentSection) p, .navLink .anchorLinks a.navLink:not(.currentSection) p {
+  background-image: radial-gradient(transparent);
+  transition: background-image 0.3s linear;
+}
+.navLink.currentSection {
+  background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+  transition: background-image 0.3s linear;
+}
+.navLink.currentSection p:after {
+  width: 100%;
+  left: 0;
+}
+.navLink#waynephung {
+  align-items: stretch;
+}
+@media only screen and (max-width: 1024px) {
+  .navLink#waynephung {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navLink#waynephung {
+    display: inherit;
+  }
+}
+/*
+    Styling for the main tag element, which hosts the rest of the 
+    content that isn't the footer or the header.
+    Default left and right padding is applied to set proper side 
+    spacing and help set the structural foundation of the majority 
+    of the content.
+*/
+main {
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  /*
+      "titleSection" is the class name for the top-most section of content.
+      It is used for displaying a short blurb of the case study and is 
+      accompanied with either an image or a video.
+      Width is set to the entire width of the main tag container (up to the 
+      left and right padding limits).
+  */
+  /*
+      "content" class name is for the rest of the body text and images not included in the 
+      title sections and footer within a web page. By default, it's flex direction is column 
+      with no wrapping and top-left starting alignment for consistent scannability of text 
+      and images.
+  */
+  /*
+      Any child and grandchild subcontainer having the "grid" class name 
+      will inherit the grid appearance properties.
+  */
+}
+@media only screen and (max-width: 1024px) {
+  main {
+    align-content: center;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    align-content: flex-start;
+  }
+}
+main.indexSection {
+  /*
+      Sets left alignment and very wide width 
+      for the heading 2 tag.
+  */
+  /*
+      "content" class name is for the rest of the body text and images not included in the 
+      title sections and footer within a web page. By default, it's flex direction is column 
+      with no wrapping and top-left starting alignment for consistent scannability of text 
+      and images.
+  */
+  /*
+      Sets max width to the initial value placed 
+      on the figure container.
+
+      Inherents default properties set in the previously 
+      declared placeholder selectors for a, picture, and img tags.
+
+      The a tag children element would make the image clickable.
+
+      Picture tag has the adjusted width and height properties 
+      to be slightly below 100% of the figurecontainer's width 
+      and height.
+  */
+  /*
+      Attaches the default properies and values of the 
+      grid placeholder selector to any element with the 
+      "grid" class name.
+  */
+}
+@media only screen and (max-width: 1024px) {
+  main.indexSection {
+    max-width: 100%;
+  }
+}
+main.indexSection > h2 {
+  text-align: left;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+@media only screen and (max-width: 1024px) {
+  main.indexSection > h2 {
+    text-align: left;
+  }
+}
+main.indexSection button#toTopPageFixed320px a p:after {
+  background-color: hsl(215, 60%, 44%);
+}
+@media only screen and (max-width: 320px) {
+  main.indexSection button#toTopPageFixed320px {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    margin: 8px 16px;
+    width: calc(100% - 32px);
+  }
+}
+@media only screen and (min-width: 320px) {
+  main.indexSection button#toTopPageFixed320px {
+    display: none;
+  }
+}
+main.indexSection button#toTopPageFixed320px:hover a p:after {
+  width: 100%;
+  left: 0;
+}
+main.indexSection .content {
+  /*
+      Above 750px window width, the "content" container will 
+      be as a single column, while the ToC sidebar will 
+      occupy the second column. Because the "content" container 
+      cannot occupy 100% of the width of the main tag container, 
+      it must accommodate space for the sidebar. 
+      The value of the intended width of the sidebar is taken 
+      into account during width calculations across the 750px 
+      and 1920px window width checkpoints.
+  */
+}
+@media only screen and (max-width: 1024px) {
+  main.indexSection .content {
+    width: calc(100% - 48px);
+  }
+}
+main .titleSection {
+  width: 100%;
+  /*
+      "titleArticle" class name is the container for the title 
+      of the case study and a short blurb (text).
+      Width is set to auto.
+  */
+  /*
+      Grid columns and image properties are set for the title section 
+      and figure containers.
+  */
+  /*
+      "placeholder" id name is used for the template image used 
+      in the caseStudy-template.html file. Sets the maximum 
+      height to 350px.
+  */
+  /*
+      Sets the primary and secondary button styling to the selected elements.
+      Applies the default padding and hover state behavior.
+  */
+  /*
+      Obsolete element for embedded Google Drive slide decks and YouTube videos.
+      Removes the default border set for these.
+  */
+}
+main .titleSection#placeholder {
+  max-height: 350px;
+}
+main .titleSection iframe {
+  border: none;
+}
+main .content {
+  width: 100%;
+  /*
+      Maximizes the width up to the width of the main element container.
+  */
+  /*
+      Modifies the grid columns of the grid containers in the electricStride.html 
+      page, by allowing two columns to exist between 475px and 1400px window widths 
+      while fixing the left grid column to 100px.
+
+      Block display for text is important for line break tags (<br>) to properly work.
+  */
+  /*
+      "pageSection" class name is the container for text and images 
+      related to a single topic or major section.
+  */
+  /*
+      The article tag is a section subcontainer for grouped text and figures.
+      Multiple article subcontainers would exist under each section to describe 
+      separate subtopics related to a single section.
+  */
+  /*
+      The span subcontainer within figures is mainly used to 
+      limit the size of videos.
+  */
+  /*
+      The audio container is used for displaying an interface for manipulating 
+      playback of uploaded audio.
+  */
+  /*
+      Various properties set for the children elements in section and article 
+      (sub)containers. Specific details are explained for each.
+  */
+  /*
+      Any direct children article subcontainers within section containers 
+      will take up the width of their respective section container.
+  */
+}
+main .content.caseStudyContent {
+  /*
+      Above 750px window width, the "content" container will 
+      be as a single column, while the ToC sidebar will 
+      occupy the second column. Because the "content" container 
+      cannot occupy 100% of the width of the main tag container, 
+      it must accommodate space for the sidebar. 
+      The value of the intended width of the sidebar is taken 
+      into account during width calculations across the 750px 
+      and 1920px window width checkpoints.
+  */
+}
+@media only screen and (max-width: 1024px) {
+  main .content.caseStudyContent {
+    width: calc(100% - 48px);
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {
+  main .content.caseStudyContent {
+    width: calc(95% - 64px - 128px - 250px);
+  }
+}
+@media only screen and (min-width: 1920px) {
+  main .content.caseStudyContent {
+    width: calc(95% - 64px - 128px - 350px);
+  }
+}
+main .content.errorPage, main .content.width100 {
+  width: 100%;
+}
+@media only screen and (min-width: 475px) and (max-width: 1400px) {
+  main .content .grid.gridType-ProblemIcon.eStride-problemGrid > .gridContent {
+    display: grid !important;
+    gap: 0 24px;
+    grid-template-columns: 100px auto;
+    padding-bottom: 48px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  main .content .grid.gridType-ProblemIcon.eStride-problemGrid > .gridContent {
+    display: flex;
+  }
+}
+main .content .grid.gridType-ProblemIcon.eStride-problemGrid > .gridContent > p.gridContent {
+  display: inline-block;
+}
+main .content .grid.gridType-ProblemIcon.eStride-problemGrid > .gridContent > h4 {
+  width: 100%;
+  text-align: center;
+}
+main .content .pageSection {
+  width: 100%;
+  /*
+      "h2-wrapper" name is for the parent container to contain 
+      the heading 2 tag and its corresponding vector icon image.
+      It may be used without its children elements as a necessary 
+      space placeholder to prevent issues with sudden shifts in scroll 
+      position for jQuery value calculations during jQuery function usage.
+  */
+}
+main .content .pageSection article.h2-wrapper {
+  display: block;
+  width: 100%;
+  /*
+      Sets the light blue background color and other background properties 
+      for the heading 2 tag.
+  */
+}
+main .content article {
+  /*
+      Any article (children) container not having a "grid" class name would have the 
+      default flex display. These take up the full width of the section 
+      container and don't have any grid columns.
+  */
+  /*
+      Any (children) container having a "grid" class name would have the default properties 
+      from the default grid placeholder selector.
+  */
+}
+main .content audio {
+  max-width: 850px;
+  height: 50px;
+}
+main .content section, main .content article {
+  /*
+      Sets the default flex display for any body text (p tags) tagged with 
+      the "gridContent" class name.
+  */
+  /*
+      Sets article subcontainers to the full width of the parent containers.
+  */
+  /*
+      Fixes the max width of a specific icon image to 150px.
+  */
+  /*
+      Video tag would show the video.
+      Most videos will not have the playback controls shown, 
+      but are only clickable to set the play/pause state.
+      Maximum width is set to 650px above the 1400px window 
+      width to prevent the videos from being too big in size.
+  */
+  /*
+      The span tag may be sometimes used to also act as a container 
+      for the video, similar to the picture tag as the container for 
+      the image element). Thus, these span containers will have 
+      a similar edge shadow effect by inheriting the properties and 
+      values from these placeholder selectors.
+  */
+  /*
+      "keyActivities" class name is mainly for a container in osp.html 
+      to showcase a group of vectorized images and corresponding text 
+      regarding the different sections of the case study (not part of 
+      the ToC section buttons).
+
+      Below 1400px window width, The text shown is centered aligned.
+  */
+}
+main .content section.grid > p.gridContent, main .content article.grid > p.gridContent {
+  display: inline-block;
+}
+main .content section.grid > p.gridContent.noMarginBottom, main .content article.grid > p.gridContent.noMarginBottom {
+  margin-bottom: 0;
+}
+main .content section article, main .content article article {
+  width: 100%;
+}
+@media only screen and (max-width: 1400px) {
+  main .content section.keyActivities article p, main .content article.keyActivities article p {
+    width: 100%;
+    text-align: center;
+  }
+}
+main .content > article {
+  width: 100%;
+}
+main .content > article h2 {
+  gap: 16px 32px;
+}
+/*
+    "navSideBar" class name is the container for the ToC section buttons.
+    By default it will appear as a sidebar on the right side of the 
+    screen with the buttons visible when the window width is above 750px. 
+    Below 750px, it will appear only as a button that toggles the visibility 
+    of the buttons.
+*/
+.navSideBar {
+  gap: 16px 0;
+  text-align: right;
+  position: sticky;
+  max-height: 85vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /*
+      Widths of the sidebar across the 750px and 1920px checkpoints.
+  */
+  /*
+      Applies a small transition time of 0.075 seconds for 
+      all children (first descendant) elements.
+  */
+  /*
+      Only show the ToC as a toggleable button below 750px
+      window width.
+  */
+}
+.navSideBar:-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .navSideBar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 3em;
+    margin: 0 auto;
+    width: auto;
+  }
+  .navSideBar .desktopButton {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navSideBar {
+    top: 2em;
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+  }
+  .navSideBar .desktopButton {
+    display: inherit;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navSideBar {
+    gap: 32px 0;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1920px) {
+  .navSideBar {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .navSideBar {
+    width: 350px;
+  }
+}
+.navSideBar * {
+  transition: 0.075s ease-in-out;
+}
+.navSideBar .navButtons {
+  justify-content: space-between;
+  /*
+      Only show the ToC section buttons when they 
+      have the "show" class name (usually after 
+      when the ToC container button is selected.
+  */
+  /*
+      Subcontainer for the ToC section buttons. Centers the container in a 
+      flexbox (flex display).
+  */
+  /*
+      "sideProgressBar" id name is the progress bar container specifically 
+      as part of the ToC sidebar and only appears above 750px window width 
+      and in case study pages.
+      "progressBar" class name is the soft black progress indicator bar 
+      that dynamically changes its height based on the current scroll position 
+      of the case study content container.
+  */
+}
+.navSideBar .navButtons.show {
+  /*
+      Stylize the ToC section buttons container 
+      with rounded corners, light blue background 
+      color, and a dark blue border.
+  */
+}
+@media only screen and (max-width: 400px) {
+  .navSideBar .navButtons.show {
+    width: 90%;
+    height: 65%;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 1024px) {
+  .navSideBar .navButtons.show {
+    width: 300px;
+    height: 65%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navSideBar .navButtons.show {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+    display: block !important;
+    overflow-y: scroll;
+    background-color: hsl(0, 0%, 100%);
+    border: 2px solid hsl(0, 0%, 30%);
+    border-radius: 0.75rem;
+    max-height: 300px;
+  }
+  .navSideBar .navButtons.show:-webkit-scrollbar-thumb {
+    width: 12px;
+    background-color: hsl(0, 0%, 30%);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navSideBar .navButtons.show {
+    width: 100%;
+  }
+}
+.navSideBar .navButtons .accordion {
+  align-content: flex-end;
+  justify-content: flex-end;
+  height: auto;
+}
+@media only screen and (max-width: 1024px) {
+  .navSideBar .navButtons .accordion {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-end;
+    justify-content: center;
+  }
+  .navSideBar .navButtons .accordion .sideBarButton {
+    padding: 12px 24px;
+    width: 100%;
+  }
+  .navSideBar .navButtons .accordion .sideBarButton:first-child {
+    padding-top: 24px;
+  }
+  .navSideBar .navButtons .accordion .sideBarButton:last-child {
+    padding-bottom: 24px;
+  }
+}
+.navSideBar .navButtons #sideProgressBar {
+  position: absolute;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  scroll-padding: 0;
+  border: 1px solid hsl(0, 0%, 50%);
+  transition: 0s ease-in-out;
+}
+@media only screen and (max-width: 1024px) {
+  .navSideBar .navButtons #sideProgressBar {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .navSideBar .navButtons #sideProgressBar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-end;
+  }
+}
+.navSideBar .navButtons #sideProgressBar .progressBar {
+  background-color: hsl(0, 0%, 50%);
+  color: hsl(0, 0%, 50%);
+  scroll-padding: 0;
+  transition: 0s ease-in-out;
+}
+.navSideBar:hover .sideBarButton:not(.active) p {
+  color: hsl(0, 0%, 30%);
+}
+.navSideBar:hover .sideBarButton:not(.active) .vectorIcon img {
+  filter: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    max-width: 100%;
+  }
+}
+
+h2 {
+  justify-content: flex-start;
+  position: relative;
+  text-align: left;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-image: linear-gradient(to bottom, transparent 0%, hsl(190, 95%, 93%) 0%);
+  background-origin: 0%;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: 200% 100%;
+  backdrop-filter: blur(8px);
+  width: auto;
+  transition: background-position 0.25s ease-in-out;
+  z-index: 7;
+  /*
+      "projectsText" class name is designated for the heading 2 of "Other Case Studies" text.
+  */
+}
+h2.noMaxWidth {
+  max-width: 100% !important;
+}
+h2.projectsText {
+  width: 100%;
+  text-align: left;
+}
+h2.sticky {
+  position: fixed;
+  left: 0;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  width: 100%;
+  z-index: 7;
+}
+@media only screen and (max-width: 1024px) {
+  h2.sticky {
+    top: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  h2.sticky {
+    top: 78px;
+    max-width: 100%;
+  }
+}
+
+.content article.pageSection h2 {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  main.indexSection section article.h2-wrapper h2.sticky {
+    top: 77px;
+  }
+}
+
+/*
+    "conversation" class name is the container for the "Contact Me" section.
+    Removes padding for the heading 2 tag in the container with the h2 text "Contact Me".
+*/
+/*
+    "h3" and "h4" is the name of the heading 3 and heading 4. 
+    h3 is mainly for subsections, h4 is for subtopics within 
+    those subsections.
+
+    h3 flex display will have text displayed to the left 
+    of the container.
+    h4 will have its font size properties set.
+*/
+h3.noMaxWidth {
+  max-width: 100% !important;
+}
+h3.flexRow {
+  justify-content: flex-start;
+}
+
+/*
+    "ol" is an ordered list element, used for having numbered bullet points 
+    for indenting a list of contextually-separate text items where the 
+    order of the text items matters.
+    "ul" is an unordered list element, used for having bullet points 
+    for indenting a list of contextually-separate text items where the 
+    order of the text items doesn't matter.
+    "li" is a list item of text within each type of list.
+
+    All three elements have automatically-sized widths.
+*/
+ol, ol li, ul, ul li {
+  width: auto;
+}
+
+/*
+    Due to the indentation of the bullet/numbered points, width is 
+    set to slightly less than 100% below 550px window width.
+
+    The right padding helps to manipulate the amount of identation 
+    for the bullet/numbered points.
+*/
+ol, ul {
+  max-width: 660px;
+  /*
+      Adjusts bottom margin for list items 
+      when below 1024px window width or having 
+      the "adjustMarginBottom" class name.
+  */
+}
+ol li:not(:last-child), ul li:not(:last-child) {
+  margin-bottom: 8px;
+}
+@media only screen and (max-width: 1024px) {
+  ol li:last-of-type, ul li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+ol li.adjustMarginBottom, ul li.adjustMarginBottom {
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 1024px) {
+  ol li, ul li {
+    max-width: 100%;
+  }
+}
+
+/*
+    "p" is the paragraph tag, mainly for body text.
+    By default, body text will have 100% max width, but 
+    "span" children elements or having the "cvMaxWidth" 
+    class name (mostly for the cv.html page) will 
+    modify the max width.
+*/
+p {
+  max-width: 660px;
+}
+p.width-100 {
+  max-width: 100%;
+}
+
+/*
+    "projectList" class name is the container element located in the 
+    footer for hosting different preview content of other case studies.
+    It has a grid system for organizing the preview content.
+
+    The "tags" class name 
+*/
+.projectList {
+  width: 100%;
+  /*
+      Sets total number of columns of all grid types to one below 750px window width.
+  */
+  /*
+      "tags" class name are children text items to show 
+      a comma-separate list of tags to succinctly 
+      show topics that a case study covers.
+  */
+}
+@media only screen and (max-width: 1024px) {
+  .projectList {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  .projectList p {
+    margin-bottom: 0;
+  }
+}
+.projectList article {
+  width: 100%;
+}
+.projectList .tags {
+  font-style: italic;
+  text-decoration: none;
+}
+
+/*
+    "footer" is a container located at the bottom of a web page for 
+    showing content that is less relevant than the rest of the content 
+    above it. Usually used for showing buttons for contact information 
+    or other case studies.
+*/
+footer {
+  position: relative;
+  margin: auto;
+  background-color: hsl(185, 90%, 86%);
+  /*
+      "conversation" class name is the container for the "Contact Me" section.
+      Applies a bottom padding to visually separate it from the "Other Case Studies 
+      Section" and the end of the "content" container.
+  */
+}
+footer .endNavigation #endMessage h2 {
+  background-color: transparent;
+}
+footer .conversation {
+  justify-content: flex-start;
+  width: 100%;
+}
+@media only screen and (max-width: 1200px) {
+  footer .conversation {
+    display: inherit;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  footer .conversation {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer article {
+    gap: 0;
+  }
+  footer article:nth-child(1) {
+    width: calc(66.6666666667% - 64px);
+  }
+  footer article:nth-child(2) {
+    width: calc(33.3333333333% - 64px);
+  }
+}
+footer article#endMessage {
+  gap: 16px 16px;
+}
+footer article#endMessage > * {
+  width: 100%;
+}
+footer article#endNavLinks {
+  max-width: 300px;
+  width: 100%;
+}
+footer article#endNavLinks h4 {
+  color: hsl(0, 0%, 30%);
+}
+footer article#endNavLinks hr {
+  display: inline-block;
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 0;
+  content: "";
+  background-color: hsl(0, 0%, 30%);
+  width: 100%;
+  height: 2px;
+}
+footer article#endNavLinks > article.grid {
+  width: 100%;
+  gap: 16px 16px;
+}
+footer article#endNavLinks > article.grid a {
+  gap: 16px 16px;
+  text-decoration: none;
+}
+footer article#endNavLinks > article.grid a p {
+  position: relative;
+  background-image: radial-gradient(transparent);
+  transition: background-image 0.3s linear;
+}
+footer article#endNavLinks > article.grid a p:after {
+  background-color: hsl(0, 0%, 30%);
+}
+footer article#endNavLinks > article.grid a:hover p {
+  background-image: radial-gradient(hsl(185, 90%, 86%) 0%, transparent 75%);
+  transition: background-image 0.3s linear;
+}
+footer article#endNavLinks > article.grid a:hover p:after {
+  width: 100%;
+  left: 0;
+}
+
+/*
+    Prevents the miscellaneous "Loading" text from appearing within the 
+    "ui-loader" class name container.
+*/
+.ui-loader {
+  display: none !important;
+}
+
+/*
+    "highlighted" class name is used to change the background color of h2 elements 
+    from transparent (showing the default light blue background color) to light green.
+    Due to the linear-gradient and transition values, the change of background color 
+    will animate from left to right, then right to left.
+*/
+.highlighted:not(#thankYouForVisiting) {
+  background-image: linear-gradient(to bottom, transparent 0%, hsl(190, 95%, 93%) 0%);
+  background-origin: 0%;
+  background-size: 200% 100%;
+  background-position: 0% 100%;
+  transition: background-position 0.25s ease-in-out;
+}
+
+.autoWidth {
+  width: auto !important;
+}
+
+.noMaxHeight {
+  max-height: none !important;
+}
+
+@media only screen and (min-width: 1024px) {
+  .min1024-textAlign-center {
+    text-align: center;
+  }
+}
+
+.width100 {
+  width: 100%;
+}/*# sourceMappingURL=websiteStyling.css.map */

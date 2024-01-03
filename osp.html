@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head tag: Organizes metadata information of the HTML document, such as character sets, scripts, stylesheets, and other types of metadata.-->
+<head>
+    <!--Required meta tags.-->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-security-policy" content="default-src *; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/"><!--'strict-dynamic' 'unsafe-hashes' 'nonce-wwa0gx65d93mtk023bhz'-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YW010u-P5MrmISRhz9cNTTidPTJ2B472v_yUcW71SSs" />
+    <meta name="description" content="Wayne Phung's Portfolio">
+
+    <!--CSS stylesheet(s).-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="02-css/websiteStyling.css" type="text/css">
+
+    <!--Image representative of a browser tab used.-->
+    <link rel="shortcut icon" type="image/x-icon" href="01-other-images/favicon.ico">
+
+    <!--Title of webpage, shown as text in a browser tab.-->
+    <title>Open Speech Platform - Wayne Phung's Portfolio Case Study</title>
+
+</head>
+
+<!--Body tag: Specifies all elements of the HTML document. This is what a person typically sees or interacts with in a webpage.-->
+<body role="document" aria-label="html webpage content" id="top">
+    <!--
+        Container for any content to show before a page loads.
+    -->
+    <div id="preloader">
+        <figure id="bufferWheel">
+            <picture class="loader-inner ratio-1-1">
+                <!-- Source of icon image. -->
+                <img src="01-other-files/spinner-1400ms-200px.gif" alt="" loading="eager" class="lazyload blur-up noPanzoom">
+            </picture>
+        </figure>
+        <span class="loader-inner"></span>
+        <p>
+            Page not loading?
+            <br><br>
+            <a rel="external" href="#" class="refreshLink">Refresh the Page</a>
+        </p>
+    </div>
+    <!--Header tag: Specifies top portion of the page. This would contain a logo, main navigation links, and call-to-action buttons.-->
+    <header role="banner" aria-label="navigation links">
+        <nav role="navigation" aria-label="main" class="navigationBar">
+            <a role="link" aria-label="home button" tabindex="0" class="navLink" id="waynephung" rel="external" href="index.html"><p>Wayne Phung</p></a>
+            <section role="anchorLinks" class="anchorLinks">
+                <a role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork" class="navLink diffURL"><p>Design</p></a>
+                <a role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork" class="navLink diffURL"><p>Media</p></a>
+                <!-- <a role="link" aria-label="anchor link to about me section of the homepage" href="#aboutMeSection" class="navLink diffURL"><p>Other</p></a> -->
+                <a role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection" class="navLink diffURL"><p>About Me</p></a>
+                <a role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html" class="navLink diffURL"><p>CV</p></a>
+                <a role="link" aria-label="anchor link to about me section of the homepage" href="#conversation" class="navLink diffURL" id="contactButton-mobile"><p>Contact Me</p></a>
+            </section>
+            <button role="button" aria-labelledby="contactButton" href="#conversation" class="navLink" id="contactButton">
+                <a href="#conversation">
+                    <p>Contact Me</p>
+                </a>
+            </button>
+            <div class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </div>
+        </nav>
+        <div class="progressContainer" id="headerProgressBar-caseStudy">
+            <div class="progressBar"></div>
+        </div>
+    </header>
+
+    <main role="main" id="title">
+        <aside role="navigation" class="navSideBar" id="sideBar-OSP">
+            <button class="button" id="tableOfContents-MobileButton">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-tableOfContents.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" id="mobileToC">
+                </picture>
+                <p>Open ToC</p>
+            </button>
+            <a class="navButton sideBarButton" href="#title" id="toTop">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                </picture>
+                <p data-href="title">Top of Page</p>
+            </a>
+            <div class="navButtons">
+                <nav class="accordion withIcons">
+                    <a class="navButton sideBarButton" href="#title" id="toTop-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-up.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="title">
+                        </picture>
+                        <p data-href="title">Top of Page</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#keyTakeaway">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-key.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="keyTakeaway">
+                        </picture>
+                        <p data-href="keyTakeaway">Key Takeaway</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#background">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-info.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="background">
+                        </picture>
+                        <p data-href="background">Background</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#documentation">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-documentation.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="documentation">
+                        </picture>
+                        <p data-href="documentation">Documentation</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#websitesReDesign">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-website.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="websitesReDesign">
+                        </picture>
+                        <p data-href="websitesReDesign">Websites (Re)Design</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#surveyPublishing">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-surveyPublishing.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="surveyPublishing">
+                        </picture>
+                        <p data-href="surveyPublishing">Survey Publishing</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#forumDesign">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-forum.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="forumDesign">
+                        </picture>
+                        <p data-href="forumDesign">Forum Design</p>
+                    </a>
+                    <!-- <a class="navButton sideBarButton" href="#projectManagement">Project Management</a> -->
+                    <a class="navButton sideBarButton" href="#rpSubmissions">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-researchProposals.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="rpSubmissions">
+                        </picture>
+                        <p data-href="rpSubmissions">Research Proposals</p>
+                    </a>
+                    <!-- <a class="navButton sideBarButton" href="#adminstration">Coordination</a> -->
+                    <a class="navButton sideBarButton" href="#nextSteps">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-nextSteps.svg" alt="" loading="eager" class="lazyload blur-up noPanzoom" data-href="nextSteps">
+                        </picture>
+                        <p data-href="nextSteps">Next Steps</p>
+                    </a>
+                    <a class="navButton sideBarButton" href="#projectsText" id="toBottom-mobile">
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                        </picture>
+                        <p data-href="projectsText">Other Case Studies</p>
+                    </a>
+                </nav>
+                <div class="progressContainer" id="sideProgressBar">
+                    <div class="progressBar"></div>
+                </div>
+            </div>
+            <a class="navButton sideBarButton" href="#projectsText" id="toBottom">
+                <picture class="ratio-1-1 vectorIcon">
+                    <img src="01-other-images/icons/icon-horizontalDots.svg" alt="" loading="lazy" class="lazyload blur-up noPanzoom" data-href="projectsText">
+                </picture>
+                <p data-href="projectsText">Other Case Studies</p>
+            </a>
+        </aside>
+        <section class="titleSection grid gridType10">
+            <article class="titleArticle gridContent">
+                <h1 class="noMaxWidth">Open Speech Platform</h1>
+                <p>
+                    I facilitated clearer communication and project development of a research and hearing-related software platform among engineers and software developers.
+                    <br><br>
+                    <b>Role:</b> Mediator of project activities and addressing requests/questions with collaborators on the founder's behalf.</p>
+            </article>
+            <figure class="gridContent">
+                <picture class="ratio-8-5" id="globalImage-ospDevice">
+                    <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg">
+                    <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-websiteForum.svg" alt="image" loading="lazy" class="lazyload blur-up positionTop noPanzoom">
+                </picture>
+            </figure>
+        </section>
+        <section class="content caseStudyContent" id="content-OSP">
+            <section class="pageSection" id="keyTakeaway">
+                <h2>
+                    <span>Key Takeaways</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-key.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <figure>
+                    <picture class="ratio-9-5">
+                        <img src="01-designWork-images/openSpeechPlatform/01-original-svg/mainTakeaway.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/mainTakeaway.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                    </picture>
+                </figure>
+                <p>
+                    Implemented deliverables and redesigns to improve how the founder, students, and colleagues communicated different unique value propositions of the group's  hardware/software capabilities across multiple projects.
+                    <br><br>
+                    The rest of this case study emphasizes my greatest contributions to THELab team.
+                    <br>
+                    I made other contributions, but low-level details of these will be ommitted due to <b>strict confidentiality reasons</b>.
+                </p>
+                <!-- <article class="grid gridType1">
+                    <p class="gridContent">
+                        Implemented deliverables and redesigns to improve how the founder, students, and colleagues communicated different unique value propositions of the group's  hardware/software capabilities across multiple projects.
+                    </p>
+                    <p class="gridContent">
+                        The rest of this case study emphasizes my greatest contributions to THELab team.
+                        <br>
+                        I spearheaded other contributions to the THELab team, but lower-level details of those aspects will be ommitted due to <b>strict confidentiality reasons</b>.
+                    </p>
+                </article> -->
+                <!-- <article class="grid gridType8 showHideToggle-mobile-1200 keyActivities">
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#documentation">Software & Hardware Documentation Redesign</a>
+                        </p>
+                        <figure class="logoOSP">
+                            <picture class="ratio-3-2" id="softwareHardwareDoc">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/simplifyingDocumentation.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/simplifyingDocumentation.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#websitesReDesign">Websites (Re)Design</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-1-1 preventOverflow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/websiteDevelopment.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/websiteDevelopment.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#surveyPublishing">Survey Publishing</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-1-1 preventOverflow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackCollection.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackCollection.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#forumDesign">Forum Design</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-6-5 preventOverflow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/forumDevelopment.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/forumDevelopment.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#rpSubmissions"> Research Proposals</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-5-3 preventOverflow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/irbResearchProposals.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/irbResearchProposals.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                </article> -->
+            </section>
+            <section class="pageSection" id="background">
+                <h2>
+                    <span>Background</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-info.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article class="grid gridType2">
+                    <p class="gridContent">
+                        <a rel="external" target="_blank" href="https://thelab.ucsd.edu/"><b>The Technology, Healthcare, and Education Lab (THELab)</b></a> is a group from University of California - San Diego (UCSD) striving to provide open access to its academic research and development of a novel hearing healthcare and research toolkit, known as the <b>Open Speech Platform (OSP)</b>.
+                    </p>
+                    <figure class="gridContent alignItemsCenter">
+                        <picture class="ratio-4-1" id="THELab-picture">
+                            <source type="image/svg+xml" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/logo-THELab.svg">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/logo-THELab.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/logo-THELab.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <article class="grid gridType1">
+                    <h3 class="span2">People I've Worked With</h3>
+                    <ul class="gridContent">
+                        <li><b>1 principal investigator, founder of THELab</b></li>
+                        <li>2 project staff members</li>
+                        <li>~6 graduate Students</li>
+                        <li>~6 undergraduate Students</li>
+                    </ul>
+                    <ul class="gridContent">
+                        <li>6+ collaborators from UCSD and other universities</li>
+                        <li>1 software vendor</li>
+                        <li>1 website manager from Qualcomm Institute</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>THELab's Aims:</h3>
+                    <p>With NIH funding and a donation from Marty Cooper, the groups aspired to:</p>
+                    <article class="grid gridType3 noMarginTop">
+                        <p class="gridContent">
+                            <b>1. develop new or improved browser-based software applications</b>
+                            <!-- <i class="showHideToggle-desktop-1024">
+                                <u>Note for right image</u>: The OSP interfaces were created from former team members.
+                            </i> -->
+                        </p>
+                        <figure class="gridContent noMargin">
+                            <picture class="marginBottom-2rem" id="ospSoftware">
+                                <source type="image/png" media="(max-width: 900px)" srcset="01-designWork-images/openSpeechPlatform/01-original-png/ospSoftware-mobile.png">
+                                <source type="image/png" media="(min-width: 900px)" srcset="01-designWork-images/openSpeechPlatform/01-original-png/ospSoftware-desktop.png">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-png/ospSoftware-desktop.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/ospSoftware-desktop.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                            <figcaption class="showHideToggle-mobile-1024"><b>Note</b>: The OSP interfaces were created from former team members.</figcaption>
+                        </figure>
+                    </article>
+                    <article class="grid gridType3 noMarginTop">
+                        <p class="gridContent">
+                            <b>2. form and retain collaborations with academic researchers and audiologists to sustainably make informed changes to OSP's software</b>
+                        </p>
+                        <figure class="gridContent alignItemsCenter">
+                            <picture class="ratio-7-4 noMargin" id="feedbackToIterations">
+                                <source type="image/svg+xml" media="(max-width: 1024px)" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackToIterations-mobile.svg">
+                                <source type="image/svg+xml" media="(min-width: 1024px) and (max-width: 1200px)" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackToIterations-desktop.svg">
+                                <source type="image/svg+xml" media="(min-width: 1200px)" srcset="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackToIterations-mobile.svg">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackToIterations-desktop.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackToIterations-desktop.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="documentation">
+                <h2>
+                    <span>Documentation</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-documentation.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <p>Across multiple iterations and software releases, this alleviated difficulties people had of setting up and understanding OSP software and hardware and enabled initial credibility to take on other projects and tasks.</p>
+                <article class="grid gridType4 adjustParagraph">
+                    <figure class="gridContent noMax">
+                        <figcaption>
+                            Initial documentation for installing the OSP software, spanned across two releases: 2019A and <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2020A-gettingStartedGuide.pdf">2020A (PDF)</a>.
+                        </figcaption>
+                        <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2020A-gettingStartedGuide.pdf" class="heightAuto">
+                            <picture class="ratio-1-1 width100-heightAuto preventOverflow shadow">
+                                <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/2020a-quickStartGuide.webp">
+                                <source type="image/jpg" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/2020a-quickStartGuide-compressed.png">
+                                <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/2020a-quickStartGuide-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/2020a-quickStartGuide.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure class="gridContent noMax">
+                        <figcaption>
+                            New layout, structure, and content for one of my redesigned OSP software guides for release 2020B, made on Figma. 
+                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2021A-gettingStartedGuide.pdf">view PDF</a>
+                        </figcaption>
+                        <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2021A-gettingStartedGuide.pdf">
+                            <picture class="ratio-4-3 preventOverflow shadow" id="Doc-2020b-Version1">
+                                <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/2020bDoc-Version1.webp">
+                                <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/2020bDoc-Version1-compressed.png">
+                                <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/2020bDoc-Version1-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/2020bDoc-Version1.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure class="gridContent noMax">
+                        <figcaption>Final draft of an OSP software guide for 2020B, made on Figma. <a rel="external" target="_blank" href="">view PDF</a></figcaption>
+                        <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2020B-quickStartGuide-final.pdf">
+                            <picture class="ratio-5-4 preventOverflow shadow" id="Doc-2020b-Version2">
+                                <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/2020bDoc-Version2.webp">
+                                <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/2020bDoc-Version2-compressed.png">
+                                <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/2020bDoc-Version2-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/2020bDoc-Version2.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure class="gridContent noMax">
+                        <figcaption>For release 2021A, incorporated installation steps and other explanation of the software and hardware setup into a series of Google Docs. The image preview shown is a document for setting up the OSP hardware. <a rel="external" target="_blank" href="">view PDF</a></figcaption>
+                        <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2020B-quickStartGuide-final.pdf">
+                            <picture class="ratio-3-2 preventOverflow shadow" id="Doc-2020b-Version3">
+                                <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/2020bDoc-Version3.webp">
+                                <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/2020bDoc-Version3-compressed.png">
+                                <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/2020bDoc-Version3-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/2020bDoc-Version3.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Where to Find My Documentation Work?</h3>
+                    <p>Published in <a rel="external" target="_blank" href="https://thelab.ucsd.edu/osp-documentation/">THELab website under "OSP Documentation"</a>, <a rel="external" target="_blank" href="https://github.com/nihospr01/OpenSpeechPlatform">OSP's GitHub page</a>, or in the direct links below.</p>
+                    <article class="grid gridType1">
+                        <article class="gridContent">
+                            <h4>Links to OSP Hardware Documentation</h4>
+                            <ul>
+                                <li>2021 Guides
+                                    <ul>
+                                        <li>Quick Installation Guides: 
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/01-QuickGuide-macOS_Linux-Hardware.pdf">macOS/Linux</a>, 
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/01-QuickGuide-Windows-Hardware.pdf">Windows</a>
+                                        </li>
+                                        <li> 
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/02-GettingStartedGuide_Hardware.pdf">Getting Started Guide</a> - more detailed steps to install OSP hardware and check functionality
+                                        </li>
+                                        <li> 
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/03-Manual-Hardware.pdf">Hardware Manual</a> - comprehensive hardware installation with additional sections to customize hardware operation
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>2020B Guides
+                                    <ul class="noPaddingBottom">
+                                        <li>
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Hardware Quick Start Guide - Release 2020B.pdf">OSP Hardware Quick Start Guide</a>
+                                        </li>
+                                        <li>OSP Hardware Sanity Check Documents: 
+                                            <ul class="noPaddingBottom">
+                                                <li>
+                                                    <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Hardware Sanity Check - Nodejs Version of EWS.pdf">for Node.js/React version of OSP's interface</a>
+                                                </li>
+                                                <li>
+                                                    <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Hardware Sanity Check - PHP_Laravel Version of EWS.pdf">for PHP/Laravel version of OSP's interface</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </article>
+                        <article class="gridContent">
+                            <h4>Links to OSP Software Documentation</h4>
+                            <p class="noMarginBottom">primarily for macOS computers</p>
+                            <ul>
+                                <li>2021 Guides
+                                    <ul>
+                                        <li> 
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/01-QuickGuide-macOS-Software.pdf">Quick Installation Guide</a>
+                                        </li>
+                                        <li>
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/02-GettingStartedGuide-macOS-Software.pdf">Getting Started Guide</a> - more detailed steps to install OSP software and check functionality
+                                        </li>
+                                        <li> 
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/03-Manual-Software.pdf">Software Manual</a> - comprehensive hardware installation with additional sections to customize hardware operation
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    2020 Guides
+                                    <ul>
+                                        <li>
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/2020B-quickStartGuide-final.pdf">OSP Software Quick Start Guide</a>
+                                        </li>
+                                        <li>OSP Software Sanity Check Documents: 
+                                            <ul class="noPaddingBottom">
+                                                <li>
+                                                    <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Software Sanity Check - Nodejs Version of EWS.pdf">for Node.js/React version of OSP's interface</a>
+                                                </li>
+                                                <li>
+                                                    <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Software Sanity Check - PHP_Laravel Version of EWS.pdf">for PHP/Laravel version of OSP's interface</a>
+                                                </li>
+                                                <li class="noMarginBottom">
+                                                    <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Software Sanity Check - Audio Input_Output Sources.pdf">for checking audio input and output</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/OSP Software Troubleshooting Quick Start Guide (macOS Installer) - Release 2020B.pdf">Troubleshooting Quick Start Guide</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Other Guides
+                                    <ul>
+                                        <li>
+                                            <a rel="external" target="_blank" href="01-other-files/openSpeechPlatform/Manual - Calibration and Goldilocks.pdf">Outdated Documentation on Two Web-Based Interfaces: Calibration and Goldilocks</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                    </article>
+                </article>
+            </section>
+            <section class="pageSection" id="websitesReDesign">
+                <h2>
+                    <span>Websites (Re)Design</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-website.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article>
+                    <h3>WordPress Websites Involved</h3>
+                    <ul>
+                        <li><a rel="external" target="_blank" href="https://thelab.ucsd.edu/">THELab</a><br></li>
+                        <li><a rel="external" target="_blank" href="https://openspeechplatform.ucsd.edu/">Open Speech Platform (OSP)</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Resolving Server-Side Connection Issues</h3>
+                    <p class="noMarginBottom">Worked with a website designer from Qualcomm Insitute to:</p>
+                    <ul>
+                        <li>resolve server-side connection issues with WordPress Management of the old OSP website (see images of my email communication)</li>
+                        <li>gain WordPress admin access and confirm SSL certificates to two other websites</li>
+                    </ul>
+                    <figure>
+                        <picture class="ratio-1-1">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/resolveUserAccess.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/resolveUserAccess.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <!-- <article class="grid gridType4 adjustParagraph"> -->
+                <article>
+                    <h3>THELab Website Development</h3>
+                    <p>The entire THELab website was a redesign of the older <a rel="external" target="_blank" href="https://openspeechplatform.ucsd.edu/">OSP website</a> that the website designer helped to clone.</p>
+                    <figure>
+                        <figcaption>Before - Old OSP website, 2020 version of landing page shown</figcaption>
+                        <picture class="ratio-4-3 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/ospWebsiteOld-landingPage.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/ospWebsiteOld-landingPage.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure id="THELabWebsite-after">
+                        <figcaption>After - Portions of the OSP website become a subset of <a rel="external" target="_blank" href="https://thelab.ucsd.edu/">THELab Website</a>, accessible via subnavigation</figcaption>
+                        <a rel="external" target="_blank" href="https://thelab.ucsd.edu/osp/" class="height100 autoWidth">
+                            <picture class="ratio-1-1 autoWidth preventOverflow shadow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSPMenu.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSPMenu.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a rel="external" target="_blank" href="https://thelab.ucsd.edu/osp/" class="height100">
+                            <picture class="ratio-5-3 preventOverflow shadow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSP.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSP.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a rel="external" target="_blank" href="https://thelab.ucsd.edu/osp-installation/" class="height100">
+                            <picture class="ratio-5-3 preventOverflow shadow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSPInstallation.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSPInstallation.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure>
+                        <a rel="external" target="_blank" href="https://thelab.ucsd.edu/osp-documentation/" class="height100">
+                            <picture class="ratio-5-3 preventOverflow shadow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSPDocumentation.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Desktop-OSPDocumentation.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article class="grid gridType1 adjustParagraph">
+                    <p>Since June 2020, created a system for members to provide bios to showcase themselves publicly within the redesigned <a rel="external" target="_blank" href="https://thelab.ucsd.edu/people/">People Page of THELab Website</a>.</p>
+                    <figure class="gridContent">
+                        <figcaption>1. Document template for others to copy and provide their bio information.</figcaption>
+                        <picture class="ratio-5-3 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/website-bio-template.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/website-bio-template.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <figcaption>2. Slack instructions on providing bio info.</figcaption>
+                        <picture class="ratio-5-3 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/website-bio-slack.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/website-bio-slack.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <figcaption>3. Bios and profile images created by other team members within a Google Drive folder.</figcaption>
+                        <picture class="ratio-1-1 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-png/website-bio-googleDrive.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/website-bio-googleDrive.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <figcaption>4. Bio published within the <a rel="external" target="_blank" href="https://openspeechplatform.ucsd.edu/people/">People Page of OSP website</a>.</figcaption>
+                        <a rel="external" target="_blank" href="https://openspeechplatform.ucsd.edu/people/">
+                            <picture class="ratio-1-1 preventOverflow shadow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-png/website-bio-published.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/website-bio-published.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure class="gridContent">
+                        <figcaption>Before - People Page on Old OSP Website</figcaption>
+                        <picture class="ratio-5-8 height100 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-png/osp-peoplePage-before.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/osp-peoplePage-before.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="gridContent">
+                        <figcaption>After - <a rel="external" target="_blank" href="https://thelab.ucsd.edu/people/">Redesigned People Page on THELab website</a></figcaption>
+                        <picture class="ratio-5-8 preventOverflow shadow">
+                            <a rel="external" target="_blank" href="https://thelab.ucsd.edu/people/" class="noMarginBottom height100">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-png/THELab-peoplePage-after.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/THELab-peoplePage-after.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </a>
+                        </picture>
+                    </figure>
+                </article>
+                <!-- <article class="grid gridType1 adjustParagraph">
+                </article>
+                <article class="grid gridType1 adjustParagraph">
+                </article> -->
+            </section>
+            <section class="pageSection" id="surveyPublishing">
+                <h2 class="noMarginTop flexRow">
+                    <span>Survey Publishing</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-surveyPublishing.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <p>
+                    During websites development, published three different surveys using Google Forms, two of which are confidential.<br>
+                    They were designed to help the founder collect background information from academic researchers and people with hearing impairment(s).
+                </p>
+                <article class="grid gridType4 adjustImages">
+                    <figure class="gridContent">
+                        <a rel="external" target="_blank" href="https://forms.gle/rGk3F7cvqchCcxQp9" class="noMarginBottom maxHeight400 width100">
+                            <picture class="ratio-1-1 preventOverflow shadow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-contactForm.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-contactForm.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                    <figure class="gridContent">
+                        <picture class="ratio-1-2 maxWidth275 preventOverflow shadow">
+                            <!-- <a rel="external" target="_blank" href="https://forms.gle/rGk3F7cvqchCcxQp9" class="noMarginBottom"> -->
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Mobile-Contact Us.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELab-Version1-Mobile-Contact Us.svg" loading="lazy" class="lazyload blur-up noPanzoom maxHeight500 width100">
+                            <!-- </a> -->
+                        </picture>
+                    </figure>
+                    <!-- <figure class="gridContent">
+                    </figure> -->
+                </article>
+            </section>
+            <section class="pageSection" id="forumDesign">
+                <h2 class="noMarginTop flexRow">
+                    <span>Forum Design</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-forum.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article>
+                    <p>For the old OSP website and PI's request, created an online platform from a WordPress plugin from PI's request to enable visitors to find and communicate information related to OSP software & hardware documentation, changes, issues, and suggestions.</p>
+                    <figure>
+                        <figcaption>Before - Outdated, spam-filled forum posts.</figcaption>
+                        <picture class="autoWidth ratio-4-3 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/ospWebsiteOld-forum1.webp">
+                            <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/ospWebsiteOld-forum1-compressed.png">
+                            <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/ospWebsiteOld-forum1-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/webp/ospWebsiteOld-forum1.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure>
+                        <picture class="autoWidth ratio-5-3 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-png/ospWebsiteOld-forum2.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/ospWebsiteOld-forum2.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure>
+                        <figcaption>Compiled research on multiple aspects of online community platforms and services, including onboarding experience, forum navigation, posting features, pricing, etc.</figcaption>
+                        <picture class="autoWidth ratio-13-8 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/forumResearch.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/forumResearch.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure>
+                        <figcaption>After - New Forum Version 1, far more interface customization and searching affordances, but more overwhelming to learn, use, and manage.</figcaption>
+                        <picture class="autoWidth ratio-1-1 maxHeight800 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/ospWebsiteOld-forum3.webp">
+                            <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/ospWebsiteOld-forum3-compressed.png">
+                            <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/ospWebsiteOld-forum3-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/webp/ospWebsiteOld-forum3.png" loading="lazy" class="lazyload blur-up noPanzoom">                            
+                        </picture>
+                    </figure>
+                    <figure>
+                        <figcaption>
+                            After - New Forum Version 2, balance between forum editing features and a simpler interface and navigation experience.<br>
+                            <a rel="external" target="_blank" href="https://openspeechplatform.ucsd.edu/forum/">View forum on OSP website.</a></figcaption>
+                        <a rel="external" target="_blank" href="https://openspeechplatform.ucsd.edu/forum/" class="autoWidth">
+                            <picture class="ratio-2-1 preventOverflow shadow">
+                                <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/ospWebsiteNew-forum.webp">
+                                <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/ospWebsiteNew-forum-compressed.png">
+                                <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/ospWebsiteNew-forum-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/ospWebsiteNew-forum.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </a>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Another Transition to a Different Forum Platform</h3>
+                    <p>
+                        The website designer opted for Discord, as it could help to avoid the messy repercussions of a WordPress security breach/server malfunctioning. I kept the PI's familiarity with Slack and importance of adequate forum moderation features in mind and revisited online research comparing Slack versus Discord.
+                        <br><br>
+                        Discord was chosen as it offered just as much (if not more) flexibility, control, and chat-based features to Slack's paid plans.
+                    </p>
+                </article>
+                <article>
+                    <h4>THELab Forum Initial Structure on Discord</h4>
+                    <p>You can visit the forum through this <a rel="external" target="_blank" href="https://discord.gg/E6r3NaekjD">invite link</a> (requires the Discord app on your computer or smartphone).</p>
+                    <figure>
+                        <picture class="ratio-3-2">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-laptop-welcome.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-laptop-welcome.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <p>
+                        Visitors would read and react to the rules first before gaining the ability to message in the channels. At the time, a majority of the channels created are empty except for the "#rules" and the "#read-first-forum-intro" channels. This was because the PI wanted the forum to grow organically over time.
+                        <br><br>
+                        If more time allowed, documentation content of OSP hardware and software would better inform visitors of what each of the channels meant.
+                    </p>
+                    <figure>
+                        <picture class="ratio-9-8 autoWidth preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/THELabForum-rules.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/THELabForum-rules.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="grid gridType8 gridGap-3em-4em noMaxWidth" id="forumScreenshots">
+                        <picture class="gridContent ratio-1-2 maxHeight400 autoWidth noMargin">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-mobile-sidebar.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-mobile-sidebar.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                        <picture class="gridContent ratio-1-2 maxHeight400 autoWidth noMargin">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-mobile-welcome.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-mobile-welcome.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                        <picture class="gridContent ratio-1-2 maxHeight400 autoWidth noMargin">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-mobile-rules.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/discordForum-mobile-rules.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection" id="rpSubmissions">
+                <h2 class="noMarginTop flexRow">
+                    <span>Research Proposals</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-researchProposals.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article>
+                    <p><b>Created and submitted the following documents to UC San Diego's Institutional Review Board (IRB)</b>, which received IRB approval and exemption to a research study to have human subjects record themselves.</p>
+                    <ul>
+                        <li><b>Study protocols</b> on the research design, procedures, asssociated risks, information use, participation compensation, etc. for both the IRB and for human subjects.</li>
+                        <li><b>Informed consent</b> to provide enough context to human subjects on their participation and rights before they sign the consent form.</li>
+                        <li><b>Consent form</b> as a Google Forms submission.</li>
+                        <li><b>Documentation on using a software application.</b></li>
+                        <li><b>Recruitment materials:</b> email, flyer, social media post).</li>
+                    </ul>
+                    <figure id="kualiNotifications">
+                        <figcaption class="justifyFlexStart">
+                            Two email confirmations from UC San Diego's IRB of study submission and review completion.
+                        </figcaption>
+                        <picture class="ratio-1-1 maxWidth750">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-png/kualiNotifications.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/kualiNotifications.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Additional IRB Submissions Needed</h3>
+                    <p class="noPaddingBottom">Created additional document templates and drafts for a separate IRB to help the PI prepare: 
+                    </p>
+                    <ul class="noPaddingBottom">
+                        <li>apply for separate non-exempt study.</li>
+                        <li>an amendment for the existing exempt study aforementioned.</li>
+                    </ul>
+                    <p>Additional information the documents and templates are also confidential.</p>
+                </article>
+            </section>
+            <section class="pageSection" id="nextSteps">
+                <h2 class="noMarginTop flexRow">
+                    <span>Next Steps</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-nextSteps.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <article>
+                    <p>With more time, resources, people, and freedom, I would resume the following activities related to user experience and design thinking:
+                        <!-- <br><br> -->
+                    </p>
+                </article>
+                <article>
+                    <h3>Revisiting OSP's Root Challenges</h3>
+                    <p>Created visualizations to ideated my understanding of the current landscape of OSP based on multiple OSP meetings.</p>
+                    <figure class="justifyFlexStart">
+                        <figcaption>Mind map of OSP related activities: onboarding experience of OSP, software activities for developers, OSP usage for research investigations, etc. <a rel="external" target="_blank" href="https://lucid.app/documents/view/918ac724-ac53-4622-91e3-79f2a294c8ce">View via LucidChart.</a></figcaption>
+                        <a rel="external" target="_blank" href="https://lucid.app/documents/view/918ac724-ac53-4622-91e3-79f2a294c8ce">
+                        <picture class="ratio-2-1 preventOverflow shadow">
+                            <source type="image/webp" srcset="01-designWork-images/openSpeechPlatform/03-original-webp/mindmap-Activities.webp">
+                            <source type="image/png" srcset="01-designWork-images/openSpeechPlatform/02-compressed-png/mindmap-Activities-compressed.png">
+                            <img src="01-designWork-images/openSpeechPlatform/02-compressed-png/mindmap-Activities-compressed.png" data-src="01-designWork-images/openSpeechPlatform/01-original-png/mindmap-Activities.png" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                        </a>
+                    </figure>
+                    <figure class="justifyFlexStart">
+                        <figcaption>Tagging of different quotes from OSP-related publication (by Louis Pisha) based on different types of problem spaces using Miro tool: OSP's relation to the real world, OSP's impact, etc.</figcaption>
+                        <picture class="ratio-9-8 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/taggingQuotes.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/taggingQuotes.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                    <figure class="justifyFlexStart">
+                        <figcaption>Sorting raw data into different problem spaces, then extrapolating summarized insights for each problem space using Miro.</figcaption>
+                        <picture class="ratio-2-1 preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/insghtsFromSources.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/insghtsFromSources.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+                <article>
+                    <h3>Redesigning the Processes Involved with App Development</h3>
+                    <p>Visualized possible integrations of design thinking phases towards how each software application within OSP could be redesigned.</p>
+                    <figure class="justifyFlexStart">
+                        <figcaption>Diagram on <a rel="external" target="_blank" href="https://lucid.app/documents/view/308d6044-1a00-443f-a3f7-586b2bc686d9">LucidChart</a> shows possible paths of activities to do to iteratively incorporate research, insights, and feedback towards describing use cases, prioritized apps and demos, and other deliverables/outcomes.</figcaption>
+                        <picture class="ratio-40-43 noMaxHeight preventOverflow shadow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/triangularModel-flowCharts-1020-compressed.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/triangularModel-flowCharts.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                        </picture>
+                    </figure>
+                </article>
+            </section>
+            <section class="pageSection">
+                <h2>
+                    <span>Key Takeaways</span>
+                    <picture class="ratio-1-1 vectorIcon">
+                        <img src="01-other-images/icons/icon-key.svg" alt="" loading="lazy" class="lazyload blur-up">
+                    </picture>
+                </h2>
+                <figure>
+                    <picture class="ratio-9-5">
+                        <img src="01-designWork-images/openSpeechPlatform/01-original-svg/mainTakeaway.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/mainTakeaway.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                    </picture>
+                </figure>
+                <p>
+                    Implemented deliverables and redesigns to improve how the founder, students, and colleagues communicated different unique value propositions of the group's  hardware/software capabilities across multiple projects.
+                    <br><br>
+                    The rest of this case study emphasizes my greatest contributions to THELab team.
+                    <br>
+                    I made other contributions, but low-level details of these will be ommitted due to <b>strict confidentiality reasons</b>.
+                </p>
+                <!-- <article class="grid gridType8 showHideToggle-mobile-1200 keyActivities">
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#documentation">Software & Hardware Documentation Redesign</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-3-2 preventOverflow" id="softwareHardwareDoc">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/simplifyingDocumentation.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/simplifyingDocumentation.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#websitesReDesign">Websites (Re)Design</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-1-1 preventOverflow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/websiteDevelopment.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/websiteDevelopment.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#surveyPublishing">Survey Publishing</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-1-1 preventOverflow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackCollection.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/feedbackCollection.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#forumDesign">Forum Design</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-1-1 preventOverflow">
+                            <img src="01-designWork-images/openSpeechPlatform/01-original-svg/forumDevelopment.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/forumDevelopment.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                    <article class="gridContent">
+                        <p class="noMarginBottom">
+                            <a rel="external" class="navButton" href="#rpSubmissions"> Research Proposals</a>
+                        </p>
+                        <figure class="noMargin logoOSP">
+                            <picture class="ratio-3-2 preventOverflow">
+                                <img src="01-designWork-images/openSpeechPlatform/01-original-svg/irbResearchProposals.svg" data-src="01-designWork-images/openSpeechPlatform/01-original-svg/irbResearchProposals.svg" loading="lazy" class="lazyload blur-up noPanzoom">
+                            </picture>
+                        </figure>
+                    </article>
+                </article> -->
+            </section>
+        </section>
+    </main>
+    <!-- 
+        Container for other projects.
+        On tablet/desktop screen sizes, this is a two-column grid:
+        - heading, text, and button(s) on the left side
+        - accompanying image on the right side
+    -->
+    <section class="pageSection" id="otherCaseStudies">
+        <h2 class="projectsText" id="projectsText">Other Case Studies</h2>
+        <article class="grid gridType3-900Width projectList">
+            <article class="gridContent">
+                <h3 class="caseStudy">Electric Stride</h3>
+                <h4 class="tags">UX Design, UX Research, Rapid Ideation</h4>
+                <p class="noMarginBottom">An exercise mat for people with Parkinson's to train their gait and stride length. This was created during the Electrical and Computer Engineering (ECE) Design Competition.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="electricStride.html">
+                        <p>See Case Study</p>
+                        <picture class="ratio-1-1 vectorIcon">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <figure class="projectImage gridContent shadow" id="electricStride">
+                <a rel="external" href="electricStride.html">
+                    <picture class="ratio-3-4">
+                        <source type="image/webp" srcset="01-designWork-images/electricStride/03-original-webp/ElectricStride.webp">
+                        <source type="image/png" srcset="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png">
+                        <img src="01-designWork-images/electricStride/02-compressed-png/ElectricStride-compressed.png" data-src="01-designWork-images/electricStride/01-original-png/ElectricStride.png" alt="image" loading="lazy" class="lazyload blur-up objectFitCover">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the Automation Playground project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Automation Playground</h3>
+                <!-- <h4 class="tags">Web Design, Prototyping</h4> -->
+                <p>
+                    Automation Playground is a research subgroup of UC San Diego's Design Lab.<br>
+                    Helped to spearhead a web design project to showcase the research group for the former founder.
+                </p>
+                <button class="button diffURL">
+                    <a rel="external" href="automationPlayground.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+                <button class="button secondaryButton diffURL">
+                    <a rel="external" target="_blank" href="https://automation-playground.ucsd.edu/">
+                        <p>Visit Website</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-external.svg" data-src="01-other-images/icons/icon-external.svg" alt="" loading="lazy" class="lazyload blur-up vectorIcon ratio-1-1">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the Automation Playground project. -->
+            <figure class="gridContent">
+                <a rel="external" href="automationPlayground.html">
+                    <picture class="ratio-2-1">
+                        <img src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" data-src="01-designWork-images/automationPlayground/01-original-svg/automationPlayground-DesktopMobile.svg" loading="eager" class="lazyload blur-up">
+                    </picture>
+                </a>
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TTV project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">Triton Television Reel</h3>
+                <p class="noMarginBottom">This video showcases student projects within Triton Television (TTV), a film and media production student organization at University of California - San Diego.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="tritonTelevisionReel.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TTV project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo shadow" src="https://www.youtube.com./embed/uQnnd5la29Q?si=hOcClVyV_TdNKLPN&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/ttvReel/02-compressed-png/tritonTelevisionReel-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/ttvReel/02-compressed-mp4/ttvReel-finalDraft-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+        <article class="grid gridType3-900Width projectList">
+            <!-- Text and button container for the TCLC Rap Video project. -->
+            <article class="gridContent">
+                <h3 class="caseStudy">TCLC Rap Video</h3>
+                <p class="noMarginBottom">A rap-themed video that demonstrates how kids within an affordable housing community showcase their activities in their afterschool program.</p>
+                <button class="button diffURL">
+                    <a rel="external" href="TCLCVideo.html">
+                        <p>See Case Study</p>
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-arrow-right.svg" data-src="01-other-images/icons/icon-arrow-right.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                    </a>
+                </button>
+            </article>
+            <!-- Clickable image container of the TCLC Rap Video project. -->
+            <figure class="projectImage gridContent shadow">
+                <iframe class="ratio-16-9 youTube mainVideo" src="https://www.youtube.com./embed/WQDrVQvYCAQ?si=M9ZOJaEjUJotCbTY&playsinline=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- <video class="ratio-16-9 mainVideo" poster="01-mediaWork-images/tclcVideo/02-compressed-png/tclcVideo-compressed.png" preload="none" controlsList="nodownload noplaybackrate" controls disablepictureinpicture playsinline>
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-webm//finalDraftTCLCVideo-1920-compressed.webm" type="video/webm">
+                    <source src="01-mediaWork-videos/tclcVideo/02-compressed-mp4/finalDraftTCLCVideo-1920-compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag, please use a different browser to have the video appear and play properly.
+                </video> -->
+            </figure>
+        </article>
+    </section>
+    <!-- footer tag: Informational content, typically located at the bottom of a page shown or as last remaining content. -->
+    <footer role="contentinfo" aria-label="endOfContent">
+        <article id="endMessage">
+            <h3 class="notSelected noMaxWidth" id="thankYouForVisiting">
+                <span>Thank you for visiting.</span>
+            </h3>
+            <p class="subtitle">I'm looking for full-time opportunities in UX design, product design, or similar roles.</p>
+            <p class="width-100" id="conversation">Find me on LinkedIn or email if you're interested to work with me.</p>
+            <!-- Container for buttons. -->
+            <article class="contactButtons">
+                <button class="button diffURL" id="linkedInButton">
+                    <a rel="external" target="_blank" href="https://www.linkedin.com/in/wayne-phung-8a8242102/">
+                        <picture class="vectorIcon ratio-1-1">
+                            <img src="01-other-images/icons/icon-linkedIn.svg" alt="" loading="lazy" class="lazyload blur-up linkedIn">
+                        </picture>
+                        <p>LinkedIn</p>
+                    </a>
+                </button>
+                <button class="button diffURL" id="emailButton">
+                    <a rel="external" target="_blank" href="mailto:waynephung1@gmail.com">
+                        <picture class="vectorIcon ratio-4-3">
+                            <img src="01-other-images/icons/icon-email.svg" alt="" loading="lazy" class="lazyload blur-up">
+                        </picture>
+                        <p>Email</p>
+                    </a>
+                </button>
+            </article>
+        </article>
+        <article id="endNavLinks">
+            <h4>Navigation</h4>
+            <hr>
+            <article class="grid gridType1-320Width">
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to design section of the homepage" rel="external" href="index.html#designWork"><p>Design Work</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href="index.html#mediaWork"><p>Media Work</p></a>
+                <!-- <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to media section of the homepage" rel="external" href=""><p>Other Work</p></a> -->
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to about me section of the homepage" rel="external" href="index.html#aboutMeSection"><p>About Me</p></a>
+                <a class="gridContent anchorLink diffURL" role="link" aria-label="anchor link to cv section of the homepage" rel="external" href="cv.html"><p>CV</p></a>
+                <a class="gridContent anchorLink" role="link" aria-label="anchor link to top of the homepage" rel="external" href="#title"><p>Top of Page</p></a>
+            </article>
+        </article>
+    </footer>
+    <!--END of main content for body.-->
+
+    <!--All script files linked below here. Generally best practice to load these after the metadata and HTML content. Script tags should also be placed before the closing body tag.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-3.6.1.min.js"></script><!--Latest version of jQuery (3.6.0, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.mobile-1.5.0-rc1.min.js"></script><!--Archived version of jQuery mobile (1.5.0-rc1, minified/production-ready).-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/lazysizes.min.js"></script><!--Plugin for lazy-loading images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery.panzoom.min.js"></script><!--Plugin for panning and zooming images, in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/jquery-throttle.min.js"></script><!--Plugin to throttle and debounce events (for limiting how many functions get called from different event handlers), in jQuery.-->
+    <script nonce="wwa0gx65d93mtk023bhz" src="03-js/websitejQuery.js"></script><!--Custom jQuery code to modify page content and behavior.-->
+</body>
+</html>
+
+<!--Commented content saved for later use, but is NOT part of the current HTML template.-->
+
+<!--Unused Javascript files for Cloudinary SDK file upload implementation.-->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script> -->
+    <!-- <script src="03-js/JavaScript%20Libraries/blueimp-file-upload/js/jquery.fileupload.js" type="text/javascript"></script> -->

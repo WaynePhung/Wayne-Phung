@@ -1,0 +1,5277 @@
+/* 
+    File name: websiteStyling.scss
+    Purposes:
+        - To create clean, non-repetitive, efficient development code for manipulating visual elements 
+          from static HTML files.
+
+    General Description:
+        This file is essential for proper visual rendering/behavior of one or more elements, tags, 
+        class names, id names, or a combination of these. Throughout this file, there will be 
+        explanation of the intended uses of each and what the properties do, especially for each 
+        group of nested references of elements/tags/etc.
+
+    CSS Properties Description:
+        Below is a list of how to interpret the CSS properties and values.
+        These mostly cover the most frequently used ones.
+        More may be added in the future.
+
+        "width" and "height" properties
+            - Used for setting the dimensions of elements, including paragraph text, 
+              images, figcaptions, and even containers for grouping a combination of 
+              these elements.
+            - Values for these range from pixels (exact unit of measurement), em, or rem.
+              Em is relative to the parent of the target element (an example is the sizing 
+              of the actual image relative to the figure container). Rem is relative to 
+              the document's root element (best used for setting large containers).
+
+        "max-width" and "max-width" properties
+            - Used for specifying the maximum sizes of the width and height of elements, 
+              typically for preventing them to be shown as too wide, too long, or just too 
+              large for spacing purposes.
+
+        "margin" and "padding" properties
+            - "margin" is used for spacing between the element's edges and its outside borders 
+              (or outer edges).
+            - "padding" is used for spacing inside of the element, typically used for adding 
+               space between the element and the parent container.
+            - Values are usually in rem, though there may be values set to em (this is not ideal due 
+              to lack of consistency with units of measurement usage).
+        
+        "display" properties
+            - Used for configuring the intended structure or visibility of any element.
+            - Values are these following phrases, which have vastly different uses and use cases.
+                - "none" value hides the element and completely removes it from the document, thus 
+                  not taking any space. This is very useful for removing the appearance of an element 
+                  on specific screen widths, thus manipulating the element's intended appearance.
+                - "block" value puts the element in its own line and adds a line break after it, 
+                  which doesn't allow any other elements to be placed to the left or right of it.
+                - "inline-block" value is similar to "block", except that it does not put a line break 
+                  after it, allowing other elements to be placed to the left or right of it.
+                - "flex" value arranges its children elements along a linear direction. Two examples 
+                  would be 1) having a group of similar buttons shown as a row, left to right then top 
+                  to bottom and 2) arranging a mix of text nad images images in a column in reverse order, 
+                  bottom to top then right to left. Note that elements, by default, wrap within the 
+                  width and height confines of the parent container, but they can exist as a single row 
+                  or column only without wrapping. Flex has other properties and values related to its 
+                  usage, which are further explained in the "displayFlex" @mixin.
+                - "grid" value arranges its children elements as a table with cells. Best used for 
+                  forming groups or large sections of content to nest and/or spatially associate multiple 
+                  elements or even containers. They have similar properties as flex, but with additional 
+                  properties for handling the ordering, placement, and (automatic) sizing of one or 
+                  multiple cells.
+*/
+
+/* Important Sass packages. */
+// @use "sass:map";
+@use "sass:map";
+@use "sass:math";
+
+@mixin typefaceStyling-Merriweather {
+    font-family: 'Merriweather', serif;
+
+}
+
+@mixin typefaceStyling-Merriweather-Sans {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+/* Merriweather-normal-light */
+@font-face {
+    @include typefaceStyling-Merriweather;
+    font-weight: 300;
+}
+/* Merriweather-normal-regular */
+@font-face {
+    @include typefaceStyling-Merriweather;
+    font-weight: 400;
+}
+/* Merriweather-normal-medium */
+@font-face {
+    @include typefaceStyling-Merriweather;
+    font-weight: 500;
+}
+/* Merriweather-normal-semi_bold */
+@font-face {
+    @include typefaceStyling-Merriweather;
+    font-weight: 600;
+}
+/* Merriweather-normal-bold */
+@font-face {
+    @include typefaceStyling-Merriweather;
+    font-weight: 700;
+}
+
+/* Merriweather-Sans-light */
+@font-face {
+    @include typefaceStyling-Merriweather-Sans;
+    font-weight: 300;
+}
+
+/* Merriweather-Sans-regular */
+@font-face {
+    @include typefaceStyling-Merriweather-Sans;
+    font-weight: 400;
+}
+
+/* Merriweather-Sans-medium */
+@font-face {
+    @include typefaceStyling-Merriweather-Sans;
+    font-weight: 500;
+}
+
+/* Open Sans-latin-semi_bold */
+@font-face {
+    @include typefaceStyling-Merriweather-Sans;
+    font-weight: 600;
+}
+
+/* END GOOGLE FONT TYPEFACE STYLE GUIDE */
+
+/*
+    These three mixins makes a container of code reusable for specifying the minimum 
+    and/or maximum width condition(s) to apply the CSS properties and values.
+        - "mediaQuery-minOnly" sets up a media query for only the minimum width used in 
+          the media query's condition.
+          - "mediaQuery-maxOnly" sets up a media query for only the maximum width used in 
+          the media query's condition.
+          - "mediaQuery-minMax" sets up a media query for a range between the minimum and 
+          maximum widths used in the media query's condition.
+
+    These mixins uses two or three of the following:
+        - "$min" is a variable used as this mixin's argument to specify the number value 
+          for the minimum width used in the media query's condition.
+        - "$max" is a variable used as this mixin's argument to specify the number value 
+          for the maximum width used in the media query's condition.
+        - "@content" is a Sass directive that allows flexibile input of different CSS 
+          properties and values, whether to apply the same properties for multiple elements 
+          or tailor different properties to specific elements.
+*/
+@mixin mediaQuery-minOnly ($min) {
+    @media only screen and (min-width: #{$min}px) {
+        @content;
+    }
+}
+
+@mixin mediaQuery-maxOnly ($max) {
+    @media only screen and (max-width: #{$max}px) {
+        @content;
+    }
+}
+
+@mixin mediaQuery-minMax ($min, $max) {
+    @media only screen and (min-width: #{$min}px) and (max-width: #{$max}px) {
+        @content;
+    }
+}
+
+/*
+    This mixin is used to position and wrap children elements relative to the parent 
+    container element. It takes the following arguments to define flexbox properties 
+    for container elements:
+        1. Sets the display to flex (essential for any of the other flex properties 
+           to function as intended).
+        2. Enables/disables the wrapping of the children elements based on the 
+           "$flexWrap" variable argument
+            - "wrap" to have the children elements populate within the space 
+              of the container
+            - "nowrap" to have the children elements instead populate within 
+              the same row/column
+        3. Sets the orientation of the wrapping, whether in a row or column. This 
+           is based on the "$flexDirection" variable argument.
+        4. Sets the starting position of each children element relative to the 
+           container element. This is based on the "$alignItems" variable argument:
+            - "flex-start" to start from the beginning portion of the container
+            - "center" to start from the middle portion
+            - "flex-end" to start from the bottom portion
+            - "stretch" to take up the available space of the container
+        - Sets the positioning of all children elements relative to the 
+          container element. This is based on the "$alignContent" variable argument:
+            - "flex-start" to orient all the children elements from the 
+              beginning portion of the container
+            - "center" to orient all the children elements from the middle portion
+            - "flex-end" to orient all the children elements from the bottom portion
+            - "stretch" to take up the available space of the container
+        - Sets the alignment of all children elements when they don't 
+          take up all of the available space in the container. This is 
+          based on the "$justifyContent" variable argument:
+    
+*/
+@mixin displayFlex($flexDirection, $flexWrap, $alignItems, $alignContent, $justifyContent) {
+    display: flex;
+    -ms-flex-wrap: $flexWrap;
+    flex-wrap: $flexWrap;
+    flex-direction: $flexDirection;
+    align-items: $alignItems;
+    align-content: $alignContent;
+    justify-content: $justifyContent;
+}
+
+/*
+    This mixin uses two different variables to toggle the display of an element.
+    
+    If value of the "$state" variable is "show", the element would appear 
+    with either of these display properties.
+        - If the element is a ToC container, the default display would be in flex to 
+          display the children elements as a horizontal row.
+        - Otherwise, set the display of that element to what it originally had, as 
+          defined within this CSS file.
+    
+    If the value of the "$state" variable is "hide", that element would not appear 
+    at all. The space that it took up would also not appear.
+
+    This mixin doesn't do anything if the value of the "$state" variable is neither 
+    "show" or "hide".
+*/
+@mixin showHideToggle($element, $state) {
+    @if ($state == "show") {
+        @if $element=="default" {
+            display: inherit;
+        } @else if $element==".navSideBar" {
+            @include displayFlex(row, wrap, center, flex-start, flex-end);
+        } @else {
+            display: inherit;
+        }
+    } @else if ($state == "hide") {
+        display: none !important;
+    } @else {
+        // Do nothing.
+    }
+}
+
+$size-space: (
+    default: 16px, 
+    xxxs: 2px, 
+    xxs: 4px, 
+    xs: 8px, 
+    s: 12px, 
+    sm: 16px, 
+    m: 20px, 
+    ml: 24px, 
+    l: 32px, 
+    xl: 48px, 
+    xxl: 64px, 
+    xxxl: 96px, 
+    xxxxl: 128px,
+    xxxxxl: 256px,
+    default-num: 16, 
+    xxxs-num: 2, 
+    xxs-num: 4, 
+    xs-num: 8, 
+    s-num: 12, 
+    sm-num: 16, 
+    m-num: 20, 
+    ml-num: 24, 
+    l-num: 32, 
+    xl-num: 48, 
+    xxl-num: 64, 
+    xxxl-num: 96, 
+    xxxxl-num: 128,
+    xxxxxl-num: 256
+);
+
+/* Inset applies to the padding of an element. */
+$size-space-inset: (
+    default: map-get($size-space, default) map-get($size-space, default) map-get($size-space, default) map-get($size-space, default), //16px
+    xxxs: map-get($size-space, xxxs) map-get($size-space, xxxs) map-get($size-space, xxxs) map-get($size-space, xxxs), //2px
+    xxs: map-get($size-space, xxs) map-get($size-space, xxs) map-get($size-space, xxs) map-get($size-space, xxs), //4px
+    xs: map-get($size-space, xs) map-get($size-space, xs) map-get($size-space, xs) map-get($size-space, xs), //8px
+    s: map-get($size-space, s) map-get($size-space, s) map-get($size-space, s) map-get($size-space, s), //12px
+    sm: map-get($size-space, sm) map-get($size-space, sm) map-get($size-space, sm) map-get($size-space, sm), //16px
+    m: map-get($size-space, m) map-get($size-space, m) map-get($size-space, m) map-get($size-space, m), //20px
+    ml: map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml), //24px
+    l: map-get($size-space, l) map-get($size-space, l) map-get($size-space, l) map-get($size-space, l), //32px
+    xl: map-get($size-space, xl) map-get($size-space, xl) map-get($size-space, xl) map-get($size-space, xl), //48px
+    xxl: map-get($size-space, xxl) map-get($size-space, xxl) map-get($size-space, xxl) map-get($size-space, xxl), //64px
+    xxxl: map-get($size-space, xxxl) map-get($size-space, xxxl) map-get($size-space, xxxl) map-get($size-space, xxxl), //96px
+    xxxxl: map-get($size-space, xxxxl) map-get($size-space, xxxxl) map-get($size-space, xxxxl) map-get($size-space, xxxxl), //128px
+    xxxxxl: map-get($size-space, xxxxxl) map-get($size-space, xxxxxl) map-get($size-space, xxxxxl) map-get($size-space, xxxxxl)//256px
+);
+/* Stack applies to bottom vertical space (mainly between elements or establishing negative space). */
+$size-space-stack: (
+    default: 0 0 map-get($size-space, default) 0, //16px
+    xxxs: 0 0 map-get($size-space, xxxs) 0, //2px
+    xxs: 0 0 map-get($size-space, xxs) 0, //4px
+    xs: 0 0 map-get($size-space, xs) 0, //8px
+    s: 0 0 map-get($size-space, s) 0, //12px
+    sm: 0 0 map-get($size-space, sm) 0, //16px
+    m: 0 0 map-get($size-space, m) 0, //20px
+    ml: 0 0 map-get($size-space, ml) 0, //24px
+    l: 0 0 map-get($size-space, l) 0, //32px
+    xl: 0 0 map-get($size-space, xl) 0, //48px
+    xxl: 0 0 map-get($size-space, xxl) 0, //64px
+    xxxl: 0 0 map-get($size-space, xxxl) 0, //96px
+    xxxxl: 0 0 map-get($size-space, xxxxl) 0, //128px
+    xxxxxl: 0 0 map-get($size-space, xxxxxl) 0 //256px
+);
+/* Inline applies to right horizontal space (mainly between elements or establishing negative space). */
+$size-space-inline: (
+    default: 0 map-get($size-space, default) 0 0, //16px
+    xxxs: 0 map-get($size-space, xxxs) 0 0, //2px
+    xxs: 0 map-get($size-space, xxs) 0 0, //4px
+    xs: 0 map-get($size-space, xs) 0 0, //8px
+    s: 0 map-get($size-space, s) 0 0, //12px
+    sm: 0 map-get($size-space, sm) 0 0, //16px
+    m: 0 map-get($size-space, m) 0 0, //20px
+    ml: 0 map-get($size-space, ml) 0 0, //24px
+    l: 0 map-get($size-space, l) 0 0, //32px
+    xl: 0 map-get($size-space, xl) 0 0, //48px
+    xxl: 0 map-get($size-space, xxl) 0 0, //64px
+    xxxl: 0 map-get($size-space, xxxl) 0 0, //96px
+    xxxxl: 0 map-get($size-space, xxxxl 0) 0 0, //128px
+    xxxxxl: 0 map-get($size-space, xxxxxl 0) 0 0 //256px
+);
+/* Default inset spacing for */
+$button-inset: (
+    //primary padding: 12px 24px 12px 24px
+    //secondary padding: 8px 16px 8px 16px
+    //navigationLink-mobile padding: 8px 16px 8px 16px
+    //navigationLink-desktop padding: 0px 24px 0px 24px
+    //ToC-section padding: 8px 16px 8px 16px
+    primary: map-get($size-space, s) map-get($size-space, ml) map-get($size-space, s) map-get($size-space, ml), 
+    secondary: map-get($size-space, xs) map-get($size-space, sm) map-get($size-space, xs) map-get($size-space, sm),
+    navigationLink-mobile: map-get($size-space, xs) map-get($size-space, sm) map-get($size-space, xs) map-get($size-space, sm),
+    navigationLink-desktop: 0 map-get($size-space, ml) 0 map-get($size-space, ml),
+    ToC-section: map-get($size-space, xs) map-get($size-space, sm) map-get($size-space, xs) map-get($size-space, sm)
+);
+/*
+    UPDATE COMMENT
+    Mixin to define the space between each children element in a 
+    container with flex display. For grid display, this defines the 
+    space between each grid cell. Varaible arguments are defined below.
+        - "$rowGap" is the horizontal spacing between elements in a 
+          flexbox container or grid cells.
+        - "$columnGap" is the horizontal spacing between elements in a 
+          flexbox container or grid cells.
+        - By default, each argument has a default value of zero (no space), 
+          even if the argument is empty. However, the value of either or both 
+          arguments can be non-zero if specified.
+*/
+@mixin rowColumnGaps($rowGap: '', $columnGap: '') {
+    @if (($rowGap != 0) and ($columnGap != 0) and ($rowGap != '') and ($columnGap != '')) {
+        gap: map-get($size-space, $rowGap) map-get($size-space, $columnGap);
+    } @else if (($rowGap == 0) and ($columnGap != '')) {
+        gap: 0 map-get($size-space, $columnGap);
+    } @else if (($rowGap == '') and ($columnGap != '')) {
+        gap: 0 map-get($size-space, $columnGap);
+    } @else if (($rowGap != '') and ($columnGap == 0)) {
+        gap: map-get($size-space, $rowGap) 0;
+    } @else if (($rowGap != '') and ($columnGap == '')) {
+        gap: map-get($size-space, $rowGap) 0;
+    } @else {
+        // Do nothing.
+    }
+}
+/* Default padding for left and right sides of a page. */
+// %left-right-outer-padding {
+//     @include mediaQuery-maxOnly(750) {
+//         padding-left: map-get($size-space, sm); //16px
+//         padding-right: map-get($size-space, sm); //16px
+//     }
+//     @include mediaQuery-minOnly(750) {
+//         padding-left: map-get($size-space, xxl); //64px
+//         padding-right: map-get($size-space, xxl); //64px
+//     }
+// }
+// main.indexSection > * {
+//     @extend %left-right-outer-padding;
+//     width: 100%;
+// }
+body, nav.navigationBar, #waynephung, a {
+    padding: 0;
+}
+.sideBarButton {
+    padding: map-get($size-space-inset, xxs);
+}
+
+/* Setting padding structure below 750px screen width for organizing spacing between and within different elements. */
+@include mediaQuery-maxOnly(1024) {
+    h1, p.subtitle {
+        padding: map-get($size-space-stack, l); //0px 0px 32px 0px
+    }
+    nav.navigationBar {
+        padding: map-get($size-space, xs) map-get($size-space, sm); //0px 16px
+        // padding: map-get($size-space-inset, sm); //16px 16px 16px 16px
+        .anchorLinks .navLink {
+            padding: map-get($button-inset, navigationLink-mobile);
+        }
+    }
+    main {
+        padding: map-get($size-space, xxl) 0 map-get($size-space, xxxl) 0; // 64px 0px 96px 0px
+        &.indexSection {
+            & > * {
+                padding-left: map-get($size-space, ml); //24px
+                padding-right: map-get($size-space, ml); //24px
+            }
+        }
+        // .navSideBar {
+        //     padding-left: 0;
+        //     padding-right: map-get($size-space, xxl); //64px
+        // }
+        section {
+            // padding: 0 map-get($size-space, sm) map-get($size-space, xxxl) map-get($size-space, sm); // 0 16px 96px 16px
+            &.titleSection, &.content {
+                padding: 0 map-get($size-space, ml) map-get($size-space, xxl) map-get($size-space, ml); // 0 24px 64px 24px
+            }
+            &.titleSection {
+                @include rowColumnGaps(l, xxl); //32px 64px
+                &.grid > .gridContent {
+                    @include rowColumnGaps(m, sm); //20px 16px
+                }
+            }
+            &.content {
+                @include rowColumnGaps(xxxl, ); //96px;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                .pageSection {
+                    // @include rowColumnGaps(l, ); //32px;
+                    // padding: map-get($size-space-stack, xxl); // 0px 0px 64px 0px
+                    & > article.h2-wrapper {
+                        padding: map-get($size-space, ml) 0 map-get($size-space, xl) 0; // 24px 0px 48px 0px
+                        // margin-bottom: map-get($size-space, l); //32px
+                        & > h2 {
+                            padding: map-get($size-space, ml) 0 map-get($size-space, sm) 0; // 24px 0px 16px 0px
+                            margin-bottom: map-get($size-space, xs); //8px
+                            // margin-bottom: map-get($size-space, l); //32px
+                            &.sticky {
+                                @include rowColumnGaps(sm, sm); //16px 16px
+                                padding: map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml); //24px 24px 24px 24px
+                            }
+                        }
+                    }
+                    & > h2 {
+                        @include rowColumnGaps(sm, sm); //24px 16px
+                        padding: map-get($size-space, ml) 0 40px 0; // 24px 0px 40px 0px
+                        margin-bottom: map-get($size-space, xs); //8px
+                        // margin-bottom: map-get($size-space, l); //32px
+                        &.sticky {
+                            padding: map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml); //24px 24px 24px 24px
+                        }
+                    }
+                    // & > h3 {
+                    //     padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                    // }
+                    & > h3, & > div.buttons {
+                        padding-bottom: map-get($size-space, ml); //24px
+                    }
+                    & > p, & > ol, & > ul {
+                        padding-bottom: map-get($size-space, l); //32px
+                        &:has(+ .article h3) {
+                            padding-bottom: map-get($size-space, xl); //48px
+                        }
+                        &:last-child:not(button), & > :last-child:not(button) {
+                            padding-bottom: 0;
+                        }
+                    }
+                    & > figure {
+                        padding-bottom: map-get($size-space, xl); //48px
+                    }
+                    & > article {
+                        padding-bottom: map-get($size-space, xxl); //64px
+                        & > p, & > ol, & > ul, & > figure {
+                            padding-bottom: map-get($size-space, l); //32px
+                        }
+                        & > h2, & > h3 {
+                            padding-bottom: map-get($size-space, ml); //24px
+                        }
+                        & > h4 {
+                            padding-bottom: map-get($size-space, m); //20px
+                        }
+                        & > p + figure:first-of-type:not(:only-of-type, :last-child) {
+                            padding-bottom: map-get($size-space, xl); //48px
+                        }
+                        & > figure + figure:not(:last-of-type, :last-child) {
+                            padding-bottom: map-get($size-space, xl); //48px
+                        }
+                        & > .grid {
+                            padding-bottom: map-get($size-space, xxl); //64px
+                            & > h3, & > p, & > ol, & > ul, & > figure {
+                                padding-bottom: map-get($size-space, l); //32px
+                            }
+                            // & > h3 {
+                            //     padding-bottom: map-get($size-space, m); //20px
+                            // }
+                            & > h4, & > p {
+                                padding-bottom: map-get($size-space, m); //20px
+                            }
+                            & > .gridContent {
+                                padding-bottom: map-get($size-space, l); //32px
+                                & > h3 {
+                                    padding-bottom: map-get($size-space, xs); //8px
+                                }
+                                // & > h3, & > figure {
+                                & > figure {
+                                    padding-bottom: map-get($size-space, ml); //24px
+                                }
+                                & > h4, & > p, & > ol, & > ul {
+                                    padding-bottom: map-get($size-space, m); //20px
+                                }
+                                & > p.beforeList {
+                                    padding-bottom: map-get($size-space, xs); //8px
+                                }
+                                & > button:not(:only-child, :last-child) {
+                                    margin-bottom: map-get($size-space, sm); //16px
+                                }
+                                &:has(+ .gridContent > h4) {
+                                    padding-bottom: map-get($size-space, l); //32px
+                                }
+                                &:has(+ figure) {
+                                    padding-bottom: map-get($size-space, xl); //48px
+                                }
+                                &:last-child:not(button), & > :last-child:not(button) {
+                                    padding-bottom: 0;
+                                }
+                            }
+                            & > figure.gridContent {
+                                padding-bottom: map-get($size-space, xl); //48px
+                                &:only-of-type, &:only-child {
+                                    padding-bottom: map-get($size-space, l); //32px
+                                }
+                                &:last-child {
+                                    padding-bottom: 0;
+                                }
+                            }
+                            &:last-child {
+                                padding-bottom: 0;
+                            }
+                        }
+                        &.cvText { 
+                            padding-bottom: map-get($size-space, l); //32px
+                            & > h3, & > h4 {
+                                padding-bottom: map-get($size-space, sm); //16px
+                            }
+                        }
+                        &:last-child:not(button), & > :last-child:not(button) {
+                            padding-bottom: 0;
+                        }
+                    }
+                    & > .grid {
+                        padding-bottom: map-get($size-space, xl); //48px
+                        & > h3, & > p, & > ol, & > ul, & > figure {
+                            padding-bottom: map-get($size-space, l); //32px
+                        }
+                        & > h4, & > p, & > ol, & > ul {
+                            padding-bottom: map-get($size-space, m); //20px
+                        }
+                        & > .gridContent {
+                            padding-bottom: map-get($size-space, l); //32px
+                            & > h3 {
+                                padding-bottom: map-get($size-space, xs); //8px
+                            }
+                            // & > h3, & > figure {
+                            & > figure {
+                                padding-bottom: map-get($size-space, ml); //24px
+                            }
+                            & > h4, & > p, & > ol, & > ul {
+                                padding-bottom: map-get($size-space, m); //20px
+                            }
+                            & > p.beforeList {
+                                padding-bottom: map-get($size-space, xs); //8px
+                            }
+                            & > button:not(:only-child, :last-child) {
+                                margin-bottom: map-get($size-space, sm); //16px
+                            }
+                            &:has(+ .gridContent > h4) {
+                                padding-bottom: map-get($size-space, l); //32px
+                            }
+                            &:has(+ figure) {
+                                padding-bottom: map-get($size-space, xl); //48px
+                            }
+                            &:last-child:not(button), & > :last-child:not(button) {
+                                padding-bottom: 0;
+                            }
+                        }
+                        & > figure.gridContent {
+                            padding-bottom: map-get($size-space, xl); //48px
+                            &:only-of-type, &:only-child {
+                                padding-bottom: map-get($size-space, l); //32px
+                            }
+                            &:last-child {
+                                padding-bottom: 0;
+                            }
+                        }
+                        &:last-child:not(button), & > :last-child:not(button) {
+                            padding-bottom: 0;
+                        }
+                    }
+                    & > p {
+                        // padding: map-get($size-space-stack, ml); // 0 0 24px 0
+                        &.noPadding {
+                            padding: 0;
+                        }
+                        &:has(+ ol, + ul) {
+                            padding-bottom: map-get($size-space, sm); //8px
+                        }
+                        // &:has(+ figure) {
+                        //     padding: map-get($size-space-stack, l); // 0 0 32px 0
+                        // }
+                    }
+                    // & > *:not(article.h2-wrapper, h2, h3), .grid, .grid > *, .grid > .grid, .grid > .grid > * {
+                    //     // & > *:not(article.h2-wrapper, h2, h3) {
+                    //     // padding: map-get($size-space-stack, xl); // 0 0 48px 0
+                    //     // @include rowColumnGaps(l, ); //32px 0px
+                    //     &.grid {
+                    //         @include rowColumnGaps(l, xxl); //32px 64px
+                    //         &.min750-rowgap-xl {
+                    //             row-gap: map-get($size-space, l); //32px
+                    //         }
+                    //         & > .grid {
+                    //             @include rowColumnGaps(ml, xxl); //24px 64px
+                    //         }
+                    //         & > .gridContent {
+                    //             padding-bottom: 0;
+                    //             & > h3 {
+                    //                 padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                    //             }
+                    //             & > ol, & > ul {
+                    //                 padding-bottom: 0;
+                    //             }
+                    //         }
+                    //         button {
+                    //             padding: map-get($button-inset, primary);
+                    //         }
+                    //     }
+                    //     & > h3 {
+                    //         padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                    //         // &:has(+ figure.gridContent), &:has(+ .grid) {
+                    //         &:has(+ figure.gridContent) {
+                    //             padding: 0;
+                    //         }
+                    //         &.span2 {
+                    //             padding: 0;
+                    //         }
+                    //     }
+                    //     &:has(+ * > h3) {
+                    //         padding: map-get($size-space-stack, xxl); // 0 0 px 0
+                    //     }
+                    //     & > p {
+                    //         padding: map-get($size-space-stack, ml); // 0 0 24px 0
+                    //         &.noPadding {
+                    //             padding: 0;
+                    //         }
+                    //         &:has(+ ol, + ul) {
+                    //             padding: map-get($size-space-stack, sm); // 0 0 8px 0
+                    //         }
+                    //         &:has(+ figure) {
+                    //             padding: map-get($size-space-stack, l); // 0 0 32px 0
+                    //         }
+                    //     }
+                    //     & > ol, & > ul {
+                    //         padding-left: map-get($size-space, ml); //24px
+                    //         &:has(+ figure), &:has(+ p) {
+                    //             padding-bottom: map-get($size-space, l); // 0 0 32px 0
+                    //         }
+                    //     }
+                    //     button {
+                    //         padding: map-get($button-inset, primary);
+                    //     }
+                    //     & > .grid {
+                    //         @include rowColumnGaps(l, xxl); //32px 64px
+                    //         & > .gridContent {
+                    //             padding: 0;
+                    //         }
+                    //         & > h3:not(:only-child) {
+                    //             padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                    //         }
+                    //         & > h4 {
+                    //             padding: 0;
+                    //         }
+                    //         & > p {
+                    //             padding: 0;
+                    //             &:first-child {
+                    //                 padding: map-get($size-space-stack, m); // 0 0 20px 0;
+                    //             }
+                    //             &:has(+ ol, + ul) {
+                    //                 padding: map-get($size-space-stack, sm); // 0 0 8px 0
+                    //             }
+                    //             &:has(+ figure) {
+                    //                 padding: map-get($size-space-stack, l); // 0 0 32px 0
+                    //             }
+                    //             // &.noPadding {
+                    //             // }
+                    //         }
+                    //         & > * {
+                    //             & > ol:not(:last-child), & > ul:not(:last-child) {
+                    //                 padding-left: map-get($size-space, ml); //24px
+                    //                 padding-bottom: map-get($size-space, l); // 32px
+                    //             }
+                    //         }
+                    //         & > ol:not(:last-child), & > ul:not(:last-child) {
+                    //             padding-left: map-get($size-space, ml); //24px
+                    //             padding-bottom: map-get($size-space, l); // 32px
+                    //         }
+                    //         & > :last-child:not(button) {
+                    //             padding-bottom: 0;
+                    //         }
+                    //     }
+                    //     & > .buttons {
+                    //         padding: map-get($size-space-stack, sm); //16px;
+                    //     }
+                    //     // .buttons {
+                    //         // @include rowColumnGaps(xs, xs); // 8px 8px
+                    //         // button {
+                    //         //     margin: map-get($size-space-stack, xs); // 0px 0px 8px 0px
+                    //         // }
+                    //     // }
+                    //     &:last-child:not(button), & > *:last-child:not(button) {
+                    //         padding-bottom: 0;
+                    //     }
+                    //     // &:only-child, &:last-child {
+                    //     //     padding: 0;
+                    //     // }
+                    // }
+                    // & > button > a {
+                    //     padding: map-get($button-inset, primary);
+                    // }
+                    & > .projectList {
+                        & > .grid {
+                            padding: map-get($size-space-stack, xxxl); // 0px 0px 96px 0px
+                            & > .gridContent {
+                                @include rowColumnGaps(sm, 0); //16px
+                                & > *:not(button, .buttons) {
+                                    padding-bottom: 0;
+                                }
+                                & > p:has(+ button, + .buttons) {
+                                    padding-bottom: map-get($size-space, xs); //8px
+                                }
+                            }
+                        }
+                    }
+                    // & > *:not(article.h2-wrapper, h2, h3, :last-child) {
+                    //     padding: map-get($size-space-stack, xl); // 0 0 48px 0
+                    // }
+                    // &:only-child, &:last-child {
+                    //     padding: 0;
+                    // }
+                }
+            }
+        }
+    }
+    .pageSection#otherCaseStudies {
+        padding: 0 map-get($size-space, ml) map-get($size-space, xxl) map-get($size-space, ml); //0px 24px 64px 24px;
+        @include rowColumnGaps(xl, 0); // 48px 0px
+        h2#projectsText:not(.sticky) {
+            padding: map-get($size-space, l) 0; // 32px 0px 32px 0px
+        }
+        & > .grid.projectList {
+            @include rowColumnGaps(l, ml); // 32px 24px
+            &:not(:last-of-type) {
+                padding: map-get($size-space-stack, xxl); // 0px 0px 64px 0px
+            }
+            & > .gridContent {
+                @include rowColumnGaps(sm, 0); // 16px 0px
+                // padding-top: map-get($size-space, xs); //8px
+                & > p {
+                    // padding: map-get($size-space-stack, m); // 0px 0px 20px 0px
+                }
+                // .buttons {
+                    // @include rowColumnGaps(xs, xs); // 8px 8px
+                    // button {
+                    //     margin: map-get($size-space-stack, xs); // 0px 0px 8px 0px
+                    // }
+                // }
+            }
+        }
+    }
+    section {
+        & > article.h2-wrapper {
+            padding: map-get($size-space, ml) 0 map-get($size-space, ml) 0; // 24px 0px 24px 0px
+            // margin-bottom: map-get($size-space, l); //32px
+            & > h2 {
+                padding: map-get($size-space, ml) 0 map-get($size-space, sm) 0; // 24px 0px 16px 0px
+                margin-bottom: map-get($size-space, xs); //8px
+                // margin-bottom: map-get($size-space, l); //32px
+                &.sticky {
+                    @include rowColumnGaps(sm, l); //16px 32px
+                    padding: map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml) map-get($size-space, ml); //24px 24px 24px 24px
+                }
+            }
+        }
+    }
+    footer {
+        @include rowColumnGaps(xxl, ml); //32px 24px
+        padding: map-get($size-space, xxl) map-get($size-space, ml) map-get($size-space, xxxxl) map-get($size-space, ml); //64px 24px 128px 24px
+        // padding-bottom: map-get($size-space, xxxxl); //128px
+        article {
+            &#endNavLinks {
+                @include rowColumnGaps(sm, sm); //16px 16px
+            }
+        }
+    }
+}
+
+/* Setting padding structure above 750px screen width for organizing spacing between and within different elements. */
+@include mediaQuery-minOnly(1024) {
+    h1, p.subtitle {
+        padding: map-get($size-space-stack, l); //0px 0px 32px 0px
+    }
+    nav.navigationBar {
+        padding-left: map-get($size-space, xxl); //64px
+        padding-right: map-get($size-space, xxl); //64px
+        .anchorLinks .navLink {
+            padding: map-get($button-inset, navigationLink-desktop);
+        }
+    }
+    main {
+        padding: map-get($size-space, xxl) 0 map-get($size-space, xxl) 0; // 64px 0px 64px 0px
+        &.indexSection {
+            & > * {
+                padding-left: map-get($size-space, xxl); //64px
+                padding-right: map-get($size-space, xxl); //64px
+            }
+        }
+        .navSideBar {
+            padding-left: 0;
+            padding-right: map-get($size-space, xxl); //64px
+        }
+        section {
+            // padding: 0 map-get($size-space, sm) map-get($size-space, xxxl) map-get($size-space, sm); // 0 16px 96px 16px
+            &.titleSection, &.content {
+                padding: 0 map-get($size-space, xxl) map-get($size-space, xxxl) map-get($size-space, xxl); // 0 64px 96px 64px
+                &.title-404 {
+                    padding-bottom: map-get($size-space, xxl); // 64px
+                }
+            }
+            &.titleSection {
+                @include rowColumnGaps(l, xxl); //32px 64px
+                // &.grid > .gridContent {
+                //     @include rowColumnGaps(ml, ml); //24px 24px
+                // }
+                &.grid > .gridContent > p {
+                    padding-bottom: map-get($size-space, ml); // 24px
+                }
+            }
+            &.content {
+                @include rowColumnGaps(xxxl, ); //96px;
+                &#cvContent {
+                    @include rowColumnGaps(xxxxl, ); //128px;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                .pageSection {
+                    // padding: map-get($size-space-stack, xxl); // 0px 0px 64px 0px
+                    & > article.h2-wrapper {
+                        padding: map-get($size-space, l) 0 map-get($size-space, ml) 0; // 32px 0px 24px 0px
+                        margin-bottom: map-get($size-space, xs); //8px
+                        & > h2 {
+                            padding: map-get($size-space, l) 0 map-get($size-space, l) 0; // 32px 0px 32px 0px
+                            margin-bottom: map-get($size-space, l); //32px
+                            &.sticky {
+                                @include rowColumnGaps(sm, l); //16px 32px
+                                padding: map-get($size-space, sm) map-get($size-space, xxl) map-get($size-space, sm) map-get($size-space, xxl); //16px 64px 16px 64px
+                            }
+                        }
+                    }
+                    & > h2 {
+                        @include rowColumnGaps(sm, l); //16px 32px
+                        padding: map-get($size-space, l) 0 map-get($size-space, ml) 0; // 32px 0px 24px 0px
+                        margin-bottom: map-get($size-space, xs); //8px
+                        &:has(+ p, + .grid > p.gridContent) {
+                            margin-bottom: 0;
+                        }
+                        &.sticky {
+                            padding: map-get($size-space, sm) map-get($size-space, xxl) map-get($size-space, sm) map-get($size-space, xxl); //16px 64px 16px 64px
+                        }
+                    }
+                    & > h3 {
+                        padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                    }
+                    & > p {
+                        padding: map-get($size-space-stack, ml); // 0 0 24px 0
+                        &.noPadding {
+                            padding: 0;
+                        }
+                        &:has(+ ol, + ul) {
+                            padding: map-get($size-space-stack, sm); // 0 0 8px 0
+                        }
+                        &:has(+ figure) {
+                            padding: map-get($size-space-stack, l); // 0 0 32px 0
+                        }
+                    }
+                    & > *:not(article.h2-wrapper, h2, h3, button, button > a), .grid, .grid > *:not(button), .grid > .grid, .grid > .grid > *:not(button) {
+                        // & > *:not(article.h2-wrapper, h2, h3) {
+                        padding: map-get($size-space-stack, xxl); // 0 0 64px 0
+                        &.grid {
+                            @include rowColumnGaps(l, xxl); //32px 64px
+                            &:has( > h3, > * > h3) {
+                                @include rowColumnGaps(l, xxl); //32px 64px
+                            }
+                            & > h3 {
+                                padding-bottom: 0;
+                                // &:has(+ .grid) {
+                                //     padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                                // }
+                            }
+                            &.min750-rowgap-xl {
+                                row-gap: map-get($size-space, l); //32px
+                            }
+                            & > .grid {
+                                @include rowColumnGaps(ml, xxl); //24px 64px
+                            }
+                            & > article {
+                                padding-bottom: 0;
+                            }
+                            & > .gridContent {
+                                padding-bottom: 0;
+                                // & > h3 {
+                                //     padding-bottom: 0;
+                                // }
+                                & > h4 {
+                                    padding: map-get($size-space-stack, sm); //0px 0px 16px 0px
+                                }
+                                // & > ol, & > ul {
+                                //     padding-bottom: 0;
+                                // }
+                                & > button:not(:only-child, :last-child) {
+                                    margin-bottom: map-get($size-space, sm); //16px
+                                }
+                            }
+                            // & > button > a {
+                            //     padding: map-get($button-inset, primary);
+                            // }
+                        }
+                        & > h3 {
+                            // padding: 0;
+                            padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                            // &:has(+ figure.gridContent), &:has(+ .grid) {
+                            &:has(+ figure.gridContent) {
+                                padding: 0;
+                            }
+                            // &:has(+ .grid) {
+                            //     padding: 0;
+                            // }
+                            &.span2 {
+                                padding: 0;
+                            }
+                        }
+                        & > h4 {
+                            padding: map-get($size-space-stack, m); //0px 0px 16px 0px
+                        }
+                        &:has(+ * > h3) {
+                            padding: map-get($size-space-stack, xxl); // 0 0 px 0
+                        }
+                        & > p {
+                            padding: map-get($size-space-stack, ml); // 0 0 24px 0
+                            &.noPadding, &:only-child {
+                                padding: 0;
+                            }
+                            &:has(+ ol, + ul) {
+                                padding: map-get($size-space-stack, sm); // 0 0 8px 0
+                            }
+                            &:has(+ figure) {
+                                padding: map-get($size-space-stack, l); // 0 0 32px 0
+                            }
+                        }
+                        & > ol, & > ul {
+                            padding-left: map-get($size-space, ml); //24px
+                            padding-bottom: map-get($size-space, l); // 0 0 32px 0
+                            // &:has(+ figure), &:has(+ p) {
+                            // }
+                        }
+                        // & > button > a {
+                        //     padding: map-get($button-inset, primary);
+                        // }
+                        & > figure {
+                            padding: map-get($size-space-stack, xl); // 0 0 48px 0
+                        }
+                        & > .grid {
+                            @include rowColumnGaps(l, xxl); //32px 64px
+                            & > .gridContent {
+                                padding: 0;
+                                & > button:not(:only-child, :last-child) {
+                                    margin-bottom: map-get($size-space, sm); //16px
+                                }
+                            }
+                            & > h3:not(:only-child) {
+                                padding: map-get($size-space-stack, ml); //0px 0px 24px 0px
+                            }
+                            & > h4 {
+                                padding: map-get($size-space-stack, m); //0px 0px 16px 0px
+                            }
+                            & > p {
+                                padding: 0;
+                                // &:first-child {
+                                //     padding: map-get($size-space-stack, m); // 0 0 20px 0;
+                                // }
+                                // &.noPadding {
+                                // }
+                            }
+                            & > * {
+                                & > ol:not(:last-child), & > ul:not(:last-child) {
+                                    padding-left: map-get($size-space, ml); //24px
+                                    padding-bottom: map-get($size-space, l); // 32px
+                                }
+                            }
+                            & > ol:not(:last-child), & > ul:not(:last-child) {
+                                padding-left: map-get($size-space, ml); //24px
+                                padding-bottom: map-get($size-space, l); // 32px
+                            }
+                            & > :last-child:not(button) {
+                                padding-bottom: 0;
+                            }
+                        }
+                        & > .buttons {
+                            padding: map-get($size-space-stack, ml); //24px;
+                        }
+                            // @include rowColumnGaps(xs, xs); // 8px 8px
+                            // button {
+                            //     margin: map-get($size-space-stack, xs); // 0px 0px 8px 0px
+                            // }
+                        // }
+                        &:last-child:not(button), & > *:last-child:not(button) {
+                            padding-bottom: 0;
+                        }
+                        // &:only-child, &:last-child {
+                        //     padding: 0;
+                        // }
+                    }
+                    &.cvText {
+                        // padding-bottom: map-get($size-space, l); //32px
+                        & > h3, & > h4 {
+                            padding-bottom: map-get($size-space, m); //20px
+                        }
+                    }
+                    & > button {
+                        padding: map-get($button-inset, primary);
+                    }
+                    & > .projectList {
+                        & > .grid {
+                            padding: map-get($size-space-stack, xxxl); // 0px 0px 96px 0px
+                            & > .gridContent {
+                                @include rowColumnGaps(sm, 0); //16px
+                                & > *:not(button, .buttons) {
+                                    padding-bottom: 0;
+                                }
+                                & > p:has(+ button, + .buttons) {
+                                    padding-bottom: map-get($size-space, ml); //24px
+                                }
+                            }
+                        }
+                    }
+                    // & > *:not(article.h2-wrapper, h2, h3, :last-child) {
+                    //     padding: map-get($size-space-stack, xl); // 0 0 48px 0
+                    // }
+                    // &:only-child, &:last-child {
+                    //     padding: 0;
+                    // }
+                }
+            }
+        }
+    }
+    .pageSection#otherCaseStudies {
+        padding: map-get($size-space, xxl) map-get($size-space, xxl) map-get($size-space, xxxxl) map-get($size-space, xxl); //64px 64px 128px 64px;
+        h2#projectsText:not(.sticky) {
+            padding: map-get($size-space, l) 0; // 32px 0px 32px 0px
+        }
+        & > .grid.projectList {
+            @include rowColumnGaps(xxxl, xl); // 96px 48px
+            &:not(:last-of-type) {
+                padding: map-get($size-space-stack, xxxxl); // 0px 0px 128px 0px
+            }
+            &:first-of-type {
+                padding: map-get($size-space, xs) 0 map-get($size-space, xxl) 0; // 0px 0px 64px 0px
+            }
+            & > .gridContent {
+                @include rowColumnGaps(sm, 0); // 16px 0px
+                // padding-top: map-get($size-space, xs); //8px
+                & > p {
+                    padding: map-get($size-space-stack, m); // 0px 0px 20px 0px
+                }
+                // .buttons {
+                    // @include rowColumnGaps(xs, xs); // 8px 8px
+                    // button {
+                    //     margin: map-get($size-space-stack, xs); // 0px 0px 8px 0px
+                    // }
+                // }
+            }
+        }
+    }
+    section {
+        h2, article.h2-wrapper {
+            padding: map-get($size-space, l) 0; // 32px 0px 32px 0px
+            // padding: map-get($size-space-stack, l); // 0px 0px 32px 0px
+            &.sticky {
+                @include rowColumnGaps(sm, l); //16px 32px
+                padding: map-get($size-space, sm) map-get($size-space, xxl) map-get($size-space, sm) map-get($size-space, xxl); //16px 64px 16px 64px
+            }
+        }
+    }
+    footer {
+        @include rowColumnGaps(xxl, xxl); //64px 64px
+        padding: map-get($size-space, xxl) map-get($size-space, xxl) map-get($size-space, xxxxl) map-get($size-space, xxl); //64px 64px 128px 64px
+        // padding-bottom: map-get($size-space, xxxxl); //128px
+        article {
+            &#endNavLinks {
+                @include rowColumnGaps(ml, ml); //24px 24px
+            }
+        }
+    }
+}
+
+$header-minHeight-minMax-320-510: 132;
+$header-minHeight-min-1024: 78;
+@include mediaQuery-minMax(320, 510) {
+    footer {
+        padding-bottom: calc($header-minHeight-minMax-320-510 + map-get($size-space, xxxl-num)) + px;
+    }
+}
+
+@include mediaQuery-minMax(510, 1024) {
+    footer {
+        padding-bottom: calc($header-minHeight-min-1024 + map-get($size-space, xxxxl-num)) + px;
+    }
+}
+
+
+/* 
+    UPDATE COMMENT
+    
+    This Sass variable creates a map key value pairs, where each pair consists of the following:
+    - the expression on the left represents a key
+    - the expression on the right is value associated with that key
+    
+    In this case, the values on the right represent the corresponding values for hue, saturation, and lightness 
+    of the color names on the left, which are the exact colors intended for usage in the visual 
+    appearance of text, buttons, and other visual elements.
+    For example "darkBlue" is a key that is a color name, and "hsl(" is a hexcode value that is 
+    associated with "darkBlue".
+
+    The map below is used for a simple, but reproducible function called "color($colorName)" that 
+    can be used to clearly communicate which color is being to for one or more selected elements.
+
+    This map can be expanded to include more colors other than the ones already listed, and the 
+    hexcode values can be conveniently changed so that all elements that uses the same color will 
+    have their colors updated to reflect this change.
+
+    For more information on maps and key-value pairs, copy and paste this URL on an article about 
+    maps from the Sass official website: https://sass-lang.com/documentation/values/maps/
+*/
+$colors: (
+    p-0: hsl(230, 45%, 23%),
+    p-10: hsl(225, 50%, 30%),
+    p-20: hsl(220, 55%, 37%),
+    p-30: hsl(215, 60%, 44%),
+    p-30-alpha65: hsla(215, 60%, 44%, 65%),
+    p-40: hsl(210, 65%, 51%),
+    p-50: hsl(205, 70%, 58%),
+    p-60: hsl(200, 75%, 65%),
+    p-70: hsl(195, 80%, 72%),
+    p-80: hsl(190, 85%, 79%),
+    p-90: hsl(185, 90%, 86%),
+    p-100: hsl(190, 95%, 93%),
+    p-100-alpha90: hsl(190, 95%, 93%, 90%),
+    s-0: hsl(11, 45%, 23%),
+    s-10: hsl(16, 50%, 30%),
+    s-20: hsl(21, 55%, 37%),
+    s-30: hsl(26, 60%, 44%),
+    s-40: hsl(31, 65%, 51%),
+    s-50: hsl(36, 70%, 58%),
+    s-60: hsl(41, 75%, 65%),
+    s-70: hsl(46, 80%, 72%),
+    s-80: hsl(51, 85%, 79%),
+    s-90: hsl(56, 90%, 86%),
+    s-100: hsl(61, 95%, 93%),
+    a1-0: hsl(105, 45%, 23%),
+    a1-10: hsl(110, 50%, 30%),
+    a1-20: hsl(115, 55%, 37%),
+    a1-30: hsl(120, 60%, 44%),
+    a1-40: hsl(125, 65%, 51%),
+    a1-50: hsl(130, 70%, 58%),
+    a1-60: hsl(135, 75%, 65%),
+    a1-70: hsl(140, 80%, 72%),
+    a1-80: hsl(145, 85%, 79%),
+    a1-90: hsl(150, 90%, 86%),
+    a1-100: hsl(155, 95%, 93%),
+    a2-0: hsl(320, 45%, 23%),
+    a2-10: hsl(325, 50%, 30%),
+    a2-20: hsl(330, 55%, 37%),
+    a2-30: hsl(335, 60%, 44%),
+    a2-40: hsl(340, 65%, 51%),
+    a2-50: hsl(345, 70%, 58%),
+    a2-60: hsl(350, 75%, 65%),
+    a2-70: hsl(355, 80%, 72%),
+    a2-80: hsl(360, 85%, 79%),
+    a2-90: hsl(4, 90%, 86%),
+    a2-100: hsl(9, 95%, 93%),
+    n-0: hsl(0, 0%, 0%),
+    n-10: hsl(0, 0%, 10%),
+    n-20: hsl(0, 0%, 20%),
+    n-30: hsl(0, 0%, 30%),
+    n-30-alpha65: hsla(0, 0%, 30%, 65%),
+    n-40: hsl(0, 0%, 40%),
+    n-50: hsl(0, 0%, 50%),
+    n-60: hsl(0, 0%, 60%),
+    n-70: hsl(0, 0%, 70%),
+    n-80: hsl(0, 0%, 80%),
+    n-90: hsl(0, 0%, 90%),
+    n-100: hsl(0, 0%, 100%),
+    n-100-alpha90: hsla(0, 0%, 100%, 90%)
+    // darkBlue: #0047a3, 
+    // darkBlue15: #0047a326, 
+    // darkBlue65: #0047a326, 
+    // softBlack: #444444, 
+    // brown: #884a07, 
+    // lightGray: #9d9d9d, 
+    // lightBlue: #ccedff,
+    // lightBlue90: #ccedffe6, 
+    // white: #ffffff,
+    // darkGray: #4a4a4a,
+    // greenBlue: #1969ab,
+    // tealDeer: #98e6a3
+);
+/*
+    UPDATE COMMENT
+    This function uses the map from the "$colors" variable to return the desired color included from 
+    the map.
+
+    The mapping of color names is necessary to avoid confusion from using color hexcodes on which 
+    colors each element is using and to make the code usage of the CSS color property reproducible, 
+    more understandable, and with less repetitive code.
+*/
+@function color($colorType, $percentage, $opacity: '') {
+    @if ($opacity != '') {
+        @return map-get((
+            'p': map-get($colors, 'p-' + #{$percentage} + '-alpha' + #{$opacity}),
+            's': map-get($colors, 's-' + #{$percentage} + '-alpha' + #{$opacity}),
+            'a1': map-get($colors, 'a1-' + #{$percentage} + '-alpha' + #{$opacity}),
+            'a2': map-get($colors, 'a2-' + #{$percentage} + '-alpha' + #{$opacity}),
+            'n': map-get($colors, 'n-' + #{$percentage} + '-alpha' + #{$opacity})
+        ), $colorType);
+    } @else {
+        @return map-get((
+            'p': map-get($colors, 'p-' + #{$percentage}),
+            's': map-get($colors, 's-' + #{$percentage}),
+            'a1': map-get($colors, 'a1-' + #{$percentage}),
+            'a2': map-get($colors, 'a2-' + #{$percentage}),
+            'n': map-get($colors, 'n-' + #{$percentage})
+        ), $colorType);
+    }
+}
+
+/*
+    This variable has a constant value of 16 to represent the intended default pixel ("px") size 
+    for body text. This will serve as a baseline for harmonizing the sizes of the different headings, 
+    as well as calculating the "rem" equivalent value ("rem" is a different measurement for font size 
+    relative to the root element, generally preferred over "px" for adjusting the spacing of an element).
+
+    The function below is meant to convert values in "px" to "rem", using a specified value 
+    for the "$pixelValue" variable argument.
+        - The "$remValue" variable is set to the calculated division between "$pixelValue" and "$browserValue".
+        - @return directive will provide the resulting "$remValue" value in "rem".
+
+    The function would be repeatedly called to get and set the CSS property value in units of "rem".
+*/
+// $browserValue: 16;
+// @function px-to-rem($pixelValue) {
+//     $remValue: calc($pixelValue / $browserValue);
+//     @return #{$remValue}rem;
+// }
+
+/*
+    The name "%hover" defines a placeholder selector.
+    Placeholder selectors have the percent (%) character before the selector name, 
+    and they have a use case of templatizing repetitive lines of code that need to 
+    define reusable CSS properties and values for multiple elements.
+    
+    The reusable aspect of placeholder selectors is that the CSS properties and values defined 
+    won't be constantly reproduced in the outputed CSS file, reducing repetitive code and the 
+    size of the CSS file. Instead, they are used in "@extend" directives where elements that 
+    mention these directives would inherit the CSS elements, properties, and values defined 
+    in the corresponding placeholder selector.
+    
+    For example, the "%hover" placeholder selector below mentions elements that are also not 
+    the ficaption element to have the mouse cursor set to the pointer appearance and to have 
+    the text of children paragraph (p) elements to be underlined. 
+    An element that has the class name ".class" may use the extend directive to 
+    inherit the elements, cursor property, and the text-decoration property from "%hover".
+
+    .class {
+        @extend hover;
+    }
+
+    Resulting CSS output would be...
+
+    .class {
+        &:not(figcaption) {
+            cursor: pointer;
+        }
+        p {
+            text-decoration: underline;
+        }
+    }
+*/
+%hover {
+    &:not(figcaption) {
+        cursor: pointer;
+    }
+}
+
+
+/*
+    Different placeholder selectors that each set the element(s) to have 
+    the properties of the Crimson Pro typeface and the extra bold font weight.
+*/
+%title, %heading2 {
+    @include typefaceStyling-Merriweather;
+    font-weight: 700;
+    color: color('p', 20);
+}
+// /*
+//     UPDATE COMMENT
+// */
+// %heading2 {
+//     width: 100%;
+// }
+/*
+    UPDATE COMMENT
+*/
+%heading3, %heading4, %figureCaption {
+    @include typefaceStyling-Merriweather-Sans;
+}
+/*
+    UPDATE COMMENT
+*/
+%heading3 {
+    font-weight: 500;
+    color: color('p', 20);
+}
+/*
+    UPDATE COMMENT
+*/
+%heading4 {
+    font-weight: 400;
+    color: color('s', 20);
+}
+/*
+    UPDATE COMMENT
+*/
+%figureCaption {
+    font-weight: 300;
+    color: color('n', 30);
+}
+/*
+    UPDATE COMMENT
+*/
+%subtitle {
+    @include typefaceStyling-Merriweather-Sans;
+    font-weight: 600;
+    color: color('n', 30);
+}
+
+p.subtitle {
+    @extend %subtitle;
+}
+
+/*
+    UPDATE COMMENT
+*/
+%bodyText {
+    @include typefaceStyling-Merriweather-Sans;
+    font-weight: 400;
+    color: color('n', 30);
+}
+p, li {
+    @extend %bodyText;
+}
+
+/* 
+    UPDATE COMMENT
+
+    Placeholder selector for styling heading 1 tags (used for titles).
+        - Sets the width to 100% (takes up the entire container width).
+        - Sets the text color to dark blue.
+        - Sets the font-size ranging from 48px to 96px (in rem units).
+    Placeholder selector for styling heading 2 tags (used for ToC main sections).
+        - Sets the width to 100% (takes up the entire container width).
+        - Sets the text color to dark blue.
+        - Sets the font-size ranging from 48px to 96px (in rem units).
+    Placeholder selector for styling heading 3 tags (used for subsections within the main sections).
+        - Sets the typeface to Open Sans, font style to semi-bold.
+        - Sets the text color to dark brown.
+        - Sets the font-size ranging from 25px to 40px (in rem units).
+    Placeholder selector for styling paragraph tags (used for body text).
+        - Sets the typeface to Open Sans, font style to regular.
+        - Sets the font-size to 16px for window widths below 1920px, 24px 
+        above 1920px (in rem units).
+        - Sets the line height to 1.5 for window widths below 1024px, 1.75 
+        above 1024px.
+*/
+@include mediaQuery-maxOnly(1024) {
+    %title {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+    %heading2 {
+        font-size: 36px;
+        line-height: 1.25;
+    }
+    %heading3 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    %heading4 {
+        font-size: 24px;
+        line-height: 1.375;
+    }
+    %subtitle {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+    %bodyText {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+@include mediaQuery-minOnly(1024) {
+    %title {
+        font-size: 80px;
+        line-height: 1.15;
+    }
+    %heading2 {
+        font-size: 52px;
+        line-height: 1.23;
+    }
+    %heading3 {
+        font-size: 36px;
+        line-height: 1.3333;
+    }
+    %heading4 {
+        font-size: 24px;
+        line-height: 1.3333;
+    }
+    %subtitle {
+        font-size: 24px;
+        line-height: 1.5;
+    }
+    %bodyText {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+}
+
+%buttonText, %anchorLink, %figureCaption {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/*
+    Placeholder selector for styling heading 4 (h4) tags (used for 
+    subsections within subsections on subtopics).
+        - Sets the typeface to Open Sans, font style to semi-bold.
+        - Sets the font-size ranging from 18px to 30px (in rem units).
+*/
+// %heading5 {
+//     @include typefaceStyling-Merriweather-Sans;
+//     font-weight: 600;
+//     @include mediaQuery-maxOnly(550) {
+//         font-size: px-to-rem(18);
+//     }
+//     @include mediaQuery-minMax(550, 1024) {
+//         font-size: px-to-rem(18);
+//     }
+//     @include mediaQuery-minMax(1024, 1920) {
+//         font-size: px-to-rem(22);
+//     }
+//     @include mediaQuery-minOnly(1920) {
+//         font-size: px-to-rem(30);
+//     }
+// }
+
+/*
+    Placeholder selector to set the the behavior of how overflowing 
+    text should be wrapped, the default max width when the window width 
+    is equal or below 1024px, and removal of max width with the class 
+    name "noMaxWidth".
+*/
+%text-wrapping-max-width {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+    // width: 100%;
+    // @include mediaQuery-maxOnly(1024) {
+    //     max-width: 500px;
+    // }
+    // &.noMaxWidth {
+    //     max-width: auto !important;
+    // }
+}
+h1, h2, h3, h4, p, ol, ol li, ul, ul li, figcaption {
+    @extend %text-wrapping-max-width;
+}
+
+/*
+    Placeholder selector to set max-widths across 1024px and 
+    1920px window widths. Any max-width value above 1024px is 
+    in rem.
+*/
+// %text-1920-max-width {
+//     @include mediaQuery-maxOnly(1024) {
+//         max-width: 100%;
+//     }
+//     @include mediaQuery-minMax(1024, 1920) {
+//         max-width: px-to-rem(700);
+//     }
+//     @include mediaQuery-minOnly(1920) {
+//         max-width: px-to-rem(900);
+//     }
+// }
+
+body, header, .anchorLinks, h1, h3, h4, p, ol, ul, li, button, figure, picture, img, .gridContent {
+// * {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+/*
+    UPDATE COMMENT
+
+    Place to organize z-indices.
+*/
+%threeDHover-zIndexes {
+    &:before {
+        z-index: -2;
+    }
+    &:after {
+        z-index: -1;
+    }
+}
+%button-global-zIndexes {
+    &:before {
+        z-index: 0;
+    }
+    &:after {
+        z-index: 1;
+    }
+    a {
+        z-index: 2;
+        p, picture.vectorIcon {
+            z-index: 2;
+        }
+    }
+    p, picture.vectorIcon {
+        z-index: 2;
+    }
+}
+button#toTopPageFixed320px {
+    a {
+        z-index: 2;
+        picture, img, p {
+            z-index: 3;
+        }
+    }
+    @include mediaQuery-maxOnly(320) {
+        z-index: 8;
+    }
+}
+figure div.gradientBlobShadow {
+    z-index: 4;
+}
+%figure-a-zIndexes {
+    z-index: 5;
+}
+%grid-global-zIndexes {
+    .gridContent {
+        &:not(figure.gridContent) > * {
+            z-index: 6;
+        }
+    }
+}
+footer {
+    z-index: 7;
+}
+main {
+    z-index: 7;
+    @include mediaQuery-maxOnly(1024) {
+        z-index: 8;
+    }
+    .navSideBar {
+        *, #tableOfContents-MobileButton {
+            position: relative;
+            z-index: 8;
+        }
+        .navButtons, .navButtons.show {
+            z-index: 8;
+        }
+        @include mediaQuery-maxOnly(1024) {
+            z-index: 8;
+        }
+    }
+}
+header {
+    z-index: 9;
+}
+div#preloader {
+    z-index: 10;
+    &.fade-out {
+        z-index: -1;
+    }
+    &.fade-in {
+        z-index: 10;
+    }
+    picture.loader-inner {
+        z-index: 10;
+    }
+}
+/*
+    Placeholder selector to set default text properties, 
+    rounded corners, and underlined text styling upon 
+    cursor hovering on any button. Mainly used for other 
+    placeholder selectors for primary and secondary button 
+    styling.
+*/
+%button-global {
+    @extend %flex-row-wrap-center;
+    @extend %button-global-zIndexes;
+    @include rowColumnGaps(default, default);
+    position: relative;
+    overflow: hidden;
+    border: map-get($size-space, xxxs) solid transparent;
+    border-radius: map-get($size-space, s);
+    cursor: default;
+    transition: background-image 0.3 ease-out;
+    padding: 0;
+    a {
+        position: relative;
+        @extend %flex-row-wrap-center;
+        @include rowColumnGaps(default, default);
+        // padding: 0;
+        text-decoration: none;
+        width: 100%;
+        min-height: map-get($size-space, ml); //24px
+        p, picture.vectorIcon {
+            position: relative;
+        }
+        p {
+            @extend %buttonText;
+            &:after {
+                @extend %p-after;
+            }
+        }
+        picture.vectorIcon {
+            @extend %vectorIcon;
+        }
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: map-get($size-space, s);
+        transform: translate(-50%, -50%);
+        width: calc(100% * 1.41421356237);
+        padding-bottom: calc(100% * 1.41421356237);
+        opacity: 0;
+        transition: animation-play-state 0.3s linear;
+        animation: spin 1.2s cubic-bezier(0.4, 0.53, 0.67, 0.8) infinite;
+        animation-play-state: paused;
+        @keyframes spin {
+            from {transform: translate(-50%, -50%) rotate(0);}
+            to   {transform: translate(-50%, -50%) rotate(360deg);}
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        inset: map-get($size-space, xxxs);
+        border-radius: map-get($size-space, xs);
+    }
+    &:hover {
+        @extend %hover;
+        a {
+            p {
+                &:after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+        &:before {
+            opacity: 1;
+            animation-play-state: running;
+        }
+    }
+}
+
+
+/*
+    Applies a dark blue background color and light blue text color 
+    to a primary button (any button that emphasizes a key action, 
+    such as reading more about a case study or finding methods to 
+    contact).
+*/
+%button-primary {
+    @extend %button-global;
+    background-color: color('p', 30);
+    a {
+        padding: map-get($button-inset, primary);
+        width: 100%;
+        p {
+            color: color('p', 100);
+            &:after {
+                background-color: color('p', 100);
+            }
+        }
+        picture.vectorIcon img {
+            filter: invert(95%) sepia(10%) saturate(1177%) hue-rotate(170deg) brightness(103%) contrast(99%); //from black to light blue (p-100).
+        }
+    }
+    p {
+        color: color('p', 100);
+        &:after {
+            background-color: color('p', 100);
+        }
+    }
+    picture.vectorIcon img {
+        filter: invert(95%) sepia(10%) saturate(1177%) hue-rotate(170deg) brightness(103%) contrast(99%); //from black to light blue (p-100).
+    }
+    &:before, &:after {
+        background-color: color('p', 30);
+    }
+    &:hover {
+        background-image: linear-gradient(to right bottom, color('p', 30, 65), color('p', 30));
+        &:before {
+            background: conic-gradient(color('p', 30), color('p', 100));
+        }
+    }
+}
+
+/*
+    Applies a transparent background color and dark blue text color 
+    to a second button (any button that provides an action that 
+    doesn't need to be emphasized as much, such as visiting 
+    an external website related to a case study).
+*/
+%button-secondary {
+    @extend %button-global;
+    // background-color: color('p', 100);
+    border: map-get($size-space, xxxs) solid color('p', 30);
+    a {
+        padding: map-get($button-inset, secondary);
+        width: 100%;
+        p {
+            color: color('p', 30);
+            &:after {
+                background-color: color('p', 30);
+            }
+        }
+        picture.vectorIcon img {
+            filter: invert(32%) sepia(87%) saturate(828%) hue-rotate(186deg) brightness(75%) contrast(88%); //from black to dark blue (p-30).
+        }
+    }
+    p {
+        color: color('p', 30);
+        &:after {
+            background-color: color('p', 30);
+        }
+    }
+    picture.vectorIcon img {
+        filter: invert(32%) sepia(87%) saturate(828%) hue-rotate(186deg) brightness(75%) contrast(88%); //from black to dark blue (p-30).
+    }
+    &:before, &:after {
+        background-color: color('n', 100);
+    }
+    &:after {
+    //     inset: 2px;
+        border-radius: map-get($size-space, xs);
+    }
+    &:hover {
+        &:before {
+            background: conic-gradient(color('p', 30) 0deg, color('n', 100) 25deg);
+        }
+    }
+}
+button {
+    @extend %button-primary;
+    &#contactButton {
+        @extend %button-primary;
+        margin: map-get($size-space, xs) 0;
+        @include mediaQuery-maxOnly(1024) {
+            @include showHideToggle("default", "hide");
+        }
+        @include mediaQuery-minMax(1024, 1200) {
+            @include showHideToggle("default", "show");
+        }
+        @include mediaQuery-minOnly(1200) {
+            @include showHideToggle("default", "hide");
+        }
+    }
+    &.secondaryButton, &.videoButton, &#toTopPageFixed320px {
+        @extend %button-secondary;
+    }
+}
+.buttons {
+    @extend %flex-column-wrap-default;
+    &.flexRow {
+        @extend %flex-row-wrap-default;
+    }
+    @include rowColumnGaps(xs, xs); //8px 8px
+}
+div.contactButtons {
+    @include rowColumnGaps(xs, xs); //8px 8px
+    @include mediaQuery-maxOnly(1200) {
+        @include showHideToggle("default", "hide");
+    }
+    @include mediaQuery-minOnly(1200) {
+        @include showHideToggle("default", "show");
+    }
+    button {
+        @extend %button-primary;
+        margin: map-get($size-space, xs) 0; //8px 0px   
+    }
+}
+
+.anchorLinks a#contactButton-mobile {
+    @extend %button-primary;
+    padding: map-get($button-inset, primary);
+    @include mediaQuery-maxOnly(320) {
+        margin: 0;
+    }
+    // @include mediaQuery-minMax(320, 750) {
+    //     margin: map-get($size-space, xs) 0; //8px 0px
+    // }
+    @include mediaQuery-maxOnly(1024) {
+        // margin: map-get($size-space, xs) 0;
+        @include showHideToggle("default", "show");
+    }
+    @include mediaQuery-minOnly(1024) {
+        @include showHideToggle("default", "hide");
+    }
+    p {
+        color: color('p', 100);
+        &:after {
+            background-color: color('p', 100);
+        }
+    }
+}
+/*
+    Applies a transparent background to any button associated with the playing/pausing 
+    actions of video playback. Colors for text, vector icon, and border are set to 
+    dark blue. Margin and padding spacings are set.
+*/
+.videoButton {
+    padding: map-get($button-inset, secondary) !important;
+    p:after {
+        background-color: color('p', 30);
+    }
+}
+
+/*
+    Applies secondary button styling to the ToC button, which is 
+    only visible below 750px window width.
+*/
+#tableOfContents-MobileButton {
+    @extend %button-secondary;
+    align-self: flex-end;
+    flex-grow: initial;
+    margin: 0 auto;
+    padding: map-get($button-inset, secondary);
+    text-decoration: none;
+    p, picture.vectorIcon {
+        position: relative;
+    }
+    p {
+        @extend %buttonText;
+        &:after {
+            @extend %p-after;
+            background-color: color('p', 30);
+        }
+    }
+    // picture.vectorIcon {
+    //     @extend %vectorIcon;
+    // }
+    img.vectorIcon {
+        @extend %vectorIcon;
+        filter: invert(32%) sepia(87%) saturate(828%) hue-rotate(186deg) brightness(75%) contrast(88%); //from black to dark blue (p-30).
+    }
+    &:hover {
+        @extend %hover;
+        p {
+            &:after {
+                width: 100%;
+                left: 0;
+            }
+        }
+        &:before {
+            opacity: 1;
+            animation-play-state: running;
+        }
+    }
+    @include mediaQuery-maxOnly(1024) {
+        @include showHideToggle(default, "show");
+        // @include displayFlex(row, wrap, center, center, center);
+        // display: flex;
+        min-height: 52px;
+        p {
+            color: color('p', 30);
+        }
+        order: 1;
+    }
+    @include mediaQuery-minOnly(1024) {
+        @include showHideToggle(default, "hide");
+    }
+}
+
+/*
+    Placeholder selector to style the underline element for text.
+*/
+%p-after {
+    display: block;
+    position: relative;
+    left: 50%;
+    bottom: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    transform: translateY(map-get($size-space, xxxs));
+    transition: width 0.1s linear 0s, left 0.1s linear 0s;
+}
+
+.navigationBar a, .anchorLinks a, a.sideBarButton, .videoButton {
+    p:after {
+        @extend %p-after;
+        background-color: color('n', 50);
+    }
+    &:hover {
+        @extend %hover;
+        p:after {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+
+/*
+    Placeholder selectors for the flex display of a container:
+        - column flex direction, wrapping along the column for
+          children elements, top-left starting point and alignment
+          of children elements and text
+*/
+%flex-column-wrap-default {
+    @include displayFlex(column, wrap, flex-start, flex-start, flex-start);
+}
+/*
+        - same as previous, except no wrapping of children elements
+*/
+%flex-column-nowrap-default {
+    @include displayFlex(column, nowrap, flex-start, flex-start, flex-start);
+}
+/*
+        - column flex direction, wrapping, center starting point
+          and alignment of children elements and text
+*/
+%flex-column-wrap-center {
+    @include displayFlex(column, wrap, center, center, center);
+}
+%flex-column-nowrap-center {
+    @include displayFlex(column, nowrap, center, center, center);
+}
+/*
+        - row flex direction, wrapping, top-left starting point 
+          and alignment of children elements and text
+*/
+%flex-row-wrap-default {
+    @include displayFlex(row, wrap, flex-start, flex-start, flex-start);
+}
+/*
+        - same as previous, except no wrapping of children elements
+*/
+%flex-row-nowrap-default {
+    @include displayFlex(row, nowrap, flex-start, flex-start, flex-start);
+}
+/*
+        - row flex direction, wrapping, center starting point
+          and alignment of children elements and text
+*/
+%flex-row-wrap-center {
+    @include displayFlex(row, wrap, center, center, center);
+}
+
+/*
+    Placeholder selector to incorporate all the default properties of 
+    a figure container to visually present images and figure captions.
+        - This container will have a column flex direction, no 
+          wrapping of the individual children elements, and 
+          fixed row and column gaps of 1rem each.
+        - No overflow is expected so that each image's size will not 
+          appear to be larger than its corresponding figure container.
+        - Each figure is expected to take up the entire width of its 
+          corresponding parent container (such as a grid cell), with 
+          the height automatically set to the intended image's height.
+*/
+// %figure-global {
+//     @extend %flex-column-nowrap-default;
+//     @include rowColumnGaps(xs, xs);
+//     // overflow: hidden;
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+//     &.gridContent {
+//         // max-width: 100%;
+//         picture {
+//             overflow: hidden;
+//         }
+//     }
+    /*
+        - Each figure container with the class name "shadow" is expected 
+          to have a dark gray shadow surrounding its borders to enhance 
+          the presentation of the image.
+    */
+    // &.shadow {
+    //     // @extend %shadow;
+    //     box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+    // }
+    /*
+        - This element represents a figure caption, where text describing
+          what the image represents is shown and a person can read it.
+          By default, the caption would be horizontally aligned center 
+          to the rest of the figure container and have the the italic 
+          font variation of the regular body text.
+        - If the window width is less than 1024px, there is no maximum 
+          width to the figure caption. Otherwise, it set to the default 
+          max width as defined in the placeholder selector.
+        - Any children links (as a tags) will have the same hover behavior 
+          as any other links.
+    */
+    // figcaption {
+    //     display: inline-block;
+    //     @extend %figureCaption;
+    //     // font-style: italic;
+    //     // &:not(:nth-of-type(1)) {
+    //     //     padding-top: 4.5rem;
+    //     // }
+    //     // &:hover {
+    //     //     cursor: default;
+    //     // }
+    //     // @include mediaQuery-maxOnly(1024) {
+    //     //     max-width: none;
+    //     // }
+    //     & > a {
+    //         @extend %hover;
+    //     }
+    // }
+// }
+/*
+    Default properties for any figure container across web pages; 
+    these containers are used for grouping images and image captions.
+
+    Inherits all properties of the both the default figure and 
+    grid placeholder selectors.
+    
+    There is one class to place the children element to the 
+    left portion within the figure container.
+
+    There are specific class and id names to specify exact 
+    max widths for images that need specific sizes.
+
+    For the few audio players, specific justify-content and max-width 
+    properties are set.
+*/
+figure {
+    @extend %flex-column-nowrap-default;
+    @include rowColumnGaps(sm, sm);
+    // overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    &.gridContent {
+        picture {
+            overflow: hidden;
+        }
+    }
+    &.shadow {
+        // padding-top: map-get($size-space, xxs); //4px
+        // box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+        // overflow: hidden;
+        picture, video, .youTube, .mainVideo {
+            box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+            overflow: hidden;
+            // width: calc(100% - map-get($size-space, xxs));
+            width: 100%;
+            height: auto;
+        }
+        &.preventOverflow {
+            box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+            overflow: hidden;
+            padding: 0 !important;
+            picture, video {
+                height: 100%;
+            }
+            // width: 100%;
+            // width: inherit;
+            // height: auto;
+        }
+    }
+    &.grid, &.grid > &.grid {
+        @extend %grid-global;
+    }
+    &.justifyFlexStart {
+        justify-content: flex-start;
+    }
+    &.alignItemsCenter, &.gridContent.alignItemsCenter {
+        align-items: center;
+    }
+    $width-ps-Icon: 250px;
+    $height-ps-Icon: 250px;
+    &.designProcessPart-250 {
+        max-width: $width-ps-Icon;
+        max-height: $height-ps-Icon;
+        // picture, img {
+        //     height: auto;
+        // }
+    }
+    &#bufferWheel {
+        overflow: hidden;
+        width: map-get($size-space, xxxxl); //128px
+        height: map-get($size-space, xxxxl); //128px
+    }
+    // &:hover {
+    //     @extend %hover;
+    // }
+    &.maxHeight500 {
+        max-height: 500px;
+    }
+    &.maxWidth550 {
+        @include mediaQuery-minOnly(1400) {
+            max-width: 550px !important;
+        }
+    }
+    &.maxWidth750 {
+        @include mediaQuery-minOnly(1400) {
+            max-width: 750px !important;
+        }
+    }
+    &.maxWidth900 {
+        @include mediaQuery-minOnly(1400) {
+            max-width: 900px !important;
+        }
+    }
+    &#hyundaiDesignLab {
+        margin: 0 auto;
+        max-width: 250px;
+    }
+    &#fingo-mainMenuScreen, &#careerCenter {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    &#kualiNotifications {
+        max-width: 650px;
+    }
+    @include mediaQuery-minOnly(1024) {
+        &.alignItemsCenter {
+            align-items: center;
+        }
+        &.noMax {
+            max-width: none;
+            max-height: none;
+        }
+    }
+    // @include mediaQuery-maxOnly(1024) {
+    //     &.justifyContent-FlexStart-1024 {
+    //         justify-content: flex-start;
+    //     }
+    // }
+    // @include mediaQuery-maxOnly(1200) {
+    //     &.justifyContent-FlexStart-1200 {
+    //         justify-content: flex-start;
+    //     }
+    // }
+    @include mediaQuery-minOnly(1024) {
+        // margin: 0 0 0.25rem 0;
+        &.audioPlayer {
+            max-width: 100%;
+            justify-self: flex-start;
+            justify-content: space-between;
+            audio {
+                max-width: 650px;
+            }
+        }
+    }
+    // Important selector since this fixes the spacing issue of the "figcaption a" tag.
+    & > a {
+        border: none;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: auto;
+        z-index: 5;
+        &.shadow {
+            box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+            overflow: hidden;
+            // width: calc(100% - map-get($size-space, xxs));
+            width: 100%;
+            height: auto;
+        }
+        // @extend %figure-a;
+        picture {
+            @extend %flex-row-wrap-center;
+            object-position: center;
+            position: relative;
+            @include mediaQuery-maxOnly(1024) {
+                align-items: flex-start;
+                align-content: flex-start;
+                justify-content: flex-start;
+            }
+            /*
+                Each picture container with the class name "shadow" is expected 
+                to have a dark gray shadow surrounding its borders to enhance 
+                the presentation of the image.
+            */
+            // &.preventOverflow {
+            //     margin: 0.5rem 0.5rem 1rem 0.5rem;
+            //     max-width: calc(100% - 1.1rem);
+            //     max-height: calc(100% - 1.1rem);
+            //     &.maxHeight400 {
+            //         max-width: calc(100% - 1.1rem);
+            //         max-height: calc(400px - 1.1rem);
+            //     }
+            //     &.maxWidth275 {
+            //         max-width: calc(275px - 1.1rem);
+            //         max-height: calc(100% - 1.1rem);
+            //     }
+            // }
+            object-fit: contain;
+            object-position: center;
+            // max-height: 100%;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            touch-action: pan-x pan-y pinch-zoom;
+            &.objectFitCover {
+                object-fit: cover;
+                height: 100%;
+            }
+            &.objectPositionLeft {
+                object-position: left;
+            }
+            &.objectPositionRight {
+                object-position: right;
+            }
+            // &.maxWidth {
+            //     @include mediaQuery-minOnly(1024) {
+            //         max-width: 600px;
+            //     }
+            // }
+            // &.noMaxHeight {
+            //     max-height: none !important;
+            // }
+            &.inheritMaxHeight {
+                max-height: inherit;
+            }
+            // @include mediaQuery-maxOnly(750) {
+                // max-height: 100%;
+                // &.noMaxHeight {
+                //     max-height: none !important;
+                // }   
+            // }
+            @include mediaQuery-minOnly(1024) {
+                &.positionTop {
+                    object-position: top;
+                }
+            }
+            @include mediaQuery-maxOnly(1024) {
+                // max-width: 100%;
+                // max-height: px-to-rem(400);
+                // height: auto;
+                &.objectFit-cover-1024 {
+                    object-fit: cover;
+                }
+                // &.noMaxHeight {
+                //     max-height: none;
+                // }
+            }
+            @include mediaQuery-minOnly(1024) {
+                height: 100%;
+            }
+        }
+    }
+    /*
+        The default properties of the picture container are inherited.
+        Most of these containers will show a shadow effect under the image's edges.
+
+        The "problemSpaceIcon" class is used for images that illustrate different phases 
+        of the design process.
+    */
+    picture {
+        @extend %flex-row-wrap-center;
+        object-fit: contain;
+        object-position: center;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        touch-action: pan-x pan-y pinch-zoom;
+        /*
+            Each picture container with the class name "shadow" is expected 
+            to have a dark gray shadow surrounding its borders to enhance 
+            the presentation of the image.
+        */
+        &.shadow {
+            box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+            overflow: hidden;
+            // width: calc(100% - map-get($size-space, xxs));
+            width: 100%;
+            height: auto;
+        }
+        // @extend %figure-picture;
+        // &.preventOverflow {
+        //     @extend %preventOverflow;
+        // }
+        $width-ps-Icon: map-get($size-space, xxxxl);
+        $height-ps-Icon: map-get($size-space, xxxxl);
+        &#maintainingAgency {
+            max-width: $width-ps-Icon;
+        }
+        &.problemSpaceIcon {
+            padding-bottom: 0;
+            max-width: $width-ps-Icon;
+            max-height: $height-ps-Icon;
+            // @include mediaQuery-maxOnly(750) {
+            //     max-width: $width-ps-Icon;
+            //     max-height: $height-ps-Icon;
+            // }
+            // &.problemIcon4 {
+            //     max-width: $width-ps-Icon;
+            //     max-height: $height-ps-Icon;
+            // }
+            &.noMaxWidth {
+                max-width: none;
+            }
+        }
+        // &.maxWidth550 {
+        //     @include mediaQuery-minOnly(1400) {
+        //         max-width: calc(550px - 1.1rem) !important;
+        //     }
+        // }
+        // &.maxWidth750 {
+        //     @include mediaQuery-minOnly(1400) {
+        //         max-width: calc(750px - 1.1rem) !important;
+        //     }
+        // }
+        // &.maxWidth900 {
+        //     @include mediaQuery-minOnly(1400) {
+        //         max-width: calc(900px - 1.1rem) !important;
+        //     }
+        // }
+        &.threeDHover {
+            @extend %threeDHover;
+            @extend %threeDHover-zIndexes;
+            img {
+                width: 100%;
+                border-radius: inherit;
+            }
+        }
+        img {
+            @extend %figureCaption;
+            object-fit: contain;
+            object-position: center;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            // max-height: 100%;
+            background-repeat: no-repeat;
+            touch-action: pan-x pan-y pinch-zoom;
+            &.objectFitCover {
+                object-fit: cover;
+                height: 100%;
+            }
+            &.objectPositionLeft {
+                object-position: left;
+            }
+            &.objectPositionRight {
+                object-position: right;
+            }
+            // &.maxWidth {
+            //     @include mediaQuery-minOnly(1024) {
+            //         max-width: 600px;
+            //     }
+            // }
+            // &.noMaxHeight {
+            //     max-height: none !important;
+            // }
+            &.inheritMaxHeight {
+                max-height: inherit;
+            }
+            // @include mediaQuery-maxOnly(750) {
+                // max-height: 100%;
+                // &.noMaxHeight {
+                //     max-height: none !important;
+                // }   
+            // }
+            @include mediaQuery-minOnly(1024) {
+                &.positionTop {
+                    object-position: top;
+                }
+            }
+            @include mediaQuery-maxOnly(1024) {
+                max-width: 100%;
+                // max-height: px-to-rem(400);
+                // height: auto;
+                &.objectFit-cover-1024 {
+                    object-fit: cover;
+                }
+                // &.noMaxHeight {
+                //     max-height: none;
+                // }
+            }
+            @include mediaQuery-minOnly(1024) {
+                height: 100%;
+            }
+        }
+    }
+    /*
+        - This element represents a figure caption, where text describing
+          what the image represents is shown and a person can read it.
+          By default, the caption would be horizontally aligned center 
+          to the rest of the figure container and have the the italic 
+          font variation of the regular body text.
+        - If the window width is less than 1024px, there is no maximum 
+          width to the figure caption. Otherwise, it set to the default 
+          max width as defined in the placeholder selector.
+        - Any children links (as a tags) will have the same hover behavior 
+          as any other links.
+    */
+    figcaption {
+        display: inline-block;
+        @extend %figureCaption;
+        // font-style: italic;
+        // &:not(:nth-of-type(1)) {
+        //     padding-top: 4.5rem;
+        // }
+        // &:hover {
+        //     cursor: default;
+        // }
+        // @include mediaQuery-maxOnly(1024) {
+        //     max-width: none;
+        // }
+        & > a {
+            @extend %hover;
+        }
+    }
+    video {
+        position: relative;
+        cursor: pointer;
+        object-fit: contain;
+        align-self: flex-start;
+        &.cursorDefault {
+            cursor: default;
+        }
+        // width: 100%;
+        // height: auto;
+        // @include mediaQuery-maxOnly(1400) {
+        //     max-width: px-to-rem(650);
+        // }
+    }
+    iframe {
+        width: 100%;
+        // height: 100%;
+        border: none;
+        &.gDrive.mainVideo, &.youTube.mainVideo {
+            background: transprent url('01-other-files/spinner-1400ms-200px.gif') no-repeat center center;
+            // background-image: 50%;
+            // @include mediaQuery-minOnly(1024) {
+            //     max-width: px-to-rem(700);
+            // }
+        }
+        &.shadow {
+            box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+        }
+    }
+
+    $blobWidth: 300; //(in pixels, px)
+    $blobHeight: 300; //(in pixels, px)
+    $calcWidth: math.div($blobWidth, 2);
+    $calcHeight: math.div($blobHeight, 2);
+    /*Update comment.*/
+    @mixin absolutePositioning ($topOrBottom, $topOrBottomValue, $leftOrRight, $leftOrRightValue, $width, $height, $transformOrigin: '', $horizValue: 50, $vertValue: 50) {
+        &.#{$topOrBottom}-#{$topOrBottomValue}-#{$leftOrRight}-#{$leftOrRightValue} {
+            @if ($topOrBottom == 'top') {
+                top: calc(#{$topOrBottomValue}#{'%'} - #{$calcHeight}#{'px'});
+            }
+            @if ($topOrBottom == 'bottom') {
+                bottom: calc(#{$topOrBottomValue}#{'%'} - #{$calcHeight}#{'px'});
+            }
+            @if ($leftOrRight == 'left') {
+                left: calc(#{$leftOrRightValue}#{'%'} - #{$calcWidth}#{'px'});
+            }
+            @if ($leftOrRight == 'right') {
+                right: calc(#{$leftOrRightValue}#{'%'} - #{$calcWidth}#{'px'});
+            }
+            @if ($transformOrigin == 'transform-origin') {
+                transform-origin: #{$horizValue}#{'%'} #{$vertValue}#{'%'};
+            }
+        }
+    }
+    div.gradientBlobShadow {
+        filter: blur(4px);
+        // backdrop-filter: blur(4px);
+        position: absolute;
+        transform-origin: center;
+        width: #{$blobWidth}#{'px'}; 
+        height: #{$blobHeight}#{'px'};
+        // border: 1px solid black;
+        animation: rotate 10s linear infinite;
+        &:before {
+            content:''; 
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            // border: 1px solid color('n', 30);
+            border-radius: 50%;
+            animation: shapeshiftBlob 10s linear infinite;
+            // animation: rotate 3s linear infinite;
+        }
+        &.blue:before {
+            background: radial-gradient(blue 10%, transparent 75%);
+        }
+        &.red:before {
+            background: radial-gradient(red 0%, transparent 65%);
+        }
+        @include absolutePositioning ('top', 20, 'left', 25, $blobWidth, $blobHeight, 'transform-origin', 40, 40);
+        @include absolutePositioning ('top', 25, 'left', 10, $blobWidth, $blobHeight, 'transform-origin', 45, 45);
+        @include absolutePositioning ('bottom', 5, 'right', 30, $blobWidth, $blobHeight, 'transform-origin', 50, 50);
+        @include absolutePositioning ('bottom', 10, 'right', 5, $blobWidth, $blobHeight, 'transform-origin', 50, 50);
+        &.animateReverse {
+            animation: rotateReverse 10s linear infinite;
+        }
+    }
+    @keyframes rotate {
+        100% { 
+            transform:rotate(360deg); 
+        } 
+    }
+    @keyframes rotateReverse {
+        100% { 
+            transform:rotate(-360deg); 
+        } 
+    }
+    @keyframes shapeshiftBlob {
+        0%, 100% {
+            border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;
+        }
+        25% {
+            border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%;
+        }
+        50% {
+            border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;
+        }
+        75% {
+            border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;
+        }
+    }
+    // &#THELabWebsite-after {
+    //     @include mediaQuery-minOnly(1400) {
+    //         justify-content: flex-start;
+    //     }
+    // }
+    /*
+        Properties used for specific sizing and appearance of 
+        the Formfactories preview image.
+
+        "object-fit: cover" will cut out a majority of the image, 
+        so "contain" is the better value in this case.
+    */
+    // &#formfactories a picture {
+    //     max-height: 400px;
+    //     img {
+    //         @extend %img;
+    //         object-fit: contain;
+    //     }
+    // }
+    /*
+        Specific sizing for the icon images used in the osp.html page 
+        for the OSP case study. This is to prevent them from appearing  
+        too large and taking up too much space.
+    */
+    // &.logoOSP {
+    //     @extend %flex-row-wrap-center;
+    //     object-position: 0% 50%;
+    //     max-height: 150px;
+    //     width: 100%;
+    //     @include mediaQuery-maxOnly(200) {
+    //         height: 60%;
+    //     }
+    //     @include mediaQuery-minOnly(200) {
+    //         height: auto;
+    //     }
+    //     picture {
+    //         @extend %figure-picture;
+    //         max-height: 100px;
+    //         width: 100%;
+    //         img {
+    //             @extend %img;
+    //             max-height: 100px;
+    //             object-position: center;
+    //             width: auto;
+    //             height: 100%;
+    //         }
+    //         &#logo-simplifyingDocumentation, &#logo-forumWebsiteDevelopment, &#logo-slideDeckCommunication {
+    //             @include mediaQuery-maxOnly(1400) {
+    //                 max-width: 300px;
+    //             }
+    //         }
+    //     }
+    //     p {
+    //         width: 100%;
+    //         text-align: center;
+    //     }
+    // }
+    /*
+        Class addition to the figure container for images that show one phase 
+        of the design process diagram for a case study.
+    */
+    // &.designProcessPart-250 {
+    //     picture {
+    //         @extend %flex-row-wrap-default;
+    //         max-height: 175px;
+    //         img {
+    //             width: 100%;
+    //             height: 100%;
+    //             max-height: 175px;
+    //         }
+    //         &.maxHeight-250, &.maxHeight-250 img {
+    //             max-height: 250px;
+    //         }
+    //     }
+    //     &.noMarginBottom {
+    //         margin-bottom: 0;
+    //     }
+    // }
+    /*
+        Properties to limit the maximum height of the preview image 
+        of the Electric Stride case study to (less than) 400px to 
+        remove extraneous objects in the image other than the mat 
+        and the floor.
+    */
+    &#electricStride {
+        @extend %flex-row-wrap-center;
+        max-height: 400px;
+        width: 100%;
+        height: 100%;
+        & > a {
+            max-height: 400px;
+            height: 100%;
+        }
+        picture, a picture {
+            height: 100%;
+            // width: calc(100% - 1rem);
+            // height: calc(100% - 1rem);
+            // @extend %figure-a-picture;
+            // &.preventOverflow {
+            //     max-height: calc(400px - 1.1rem) !important;
+            // }
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/*
+    Placeholder selector for any images showing a preview of a 
+    case study, which would be used in the landing page sections, 
+    "Other Case Studies" section in the footer of each case study, 
+    and the cv.html page.
+
+    Flex direction would be column, with no wrapping of the 
+    children elements, and the text aligned to the left 
+    of the container.
+*/
+// %figure-projectImage {
+//     @extend %figure-global;
+//     @extend %flex-column-nowrap-center;
+//     @include mediaQuery-maxOnly(1024) {
+//         justify-content: flex-start;
+//     }
+// }
+
+/*
+    Placeholder selector to set the default property of the 
+    direct child element of the figure container. The 
+    children element would position the image container 
+    to take up the children element's available space and 
+    be horizontally and vertically aligned center.
+
+    The "touch-action" property may be obsolete due to its 
+    usage with the Panzoom Javascript library, which is 
+    currently not used.
+*/
+%figure-child {
+    @extend %flex-row-wrap-center;
+    // &.shadow {
+    //     @extend %shadow;
+    // }
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto;
+    touch-action: pan-x pan-y pinch-zoom;
+}
+
+/*
+    This placeholder selector is mainly used with the picture container 
+    and is applied to any container that has the class name "preventOverflow".
+    This adjusts the maximum width and height of that container to be 
+    slightly below 100% so that the shadows are properly shown and not 
+    cut off from the edges. The cutting of the shadows is due to the 
+    overflow of the shadows being hidden when the picture container 
+    has a 100% width.
+
+    For images with certain class names, the maximum height would be 
+    decreased to less than 400px or the maximum width would be 
+    decreased to less than 275px.
+*/
+// %preventOverflow {
+//     margin: 0.5rem 0.5rem 1rem 0.5rem;
+//     max-width: calc(100% - 1.1rem);
+//     max-height: calc(100% - 1.1rem);
+//     &.maxHeight400 {
+//         max-width: calc(100% - 1.1rem);
+//         max-height: calc(400px - 1.1rem);
+//     }
+//     &.maxWidth275 {
+//         max-width: calc(275px - 1.1rem);
+//         max-height: calc(100% - 1.1rem);
+//     }
+// }
+
+/*
+    Placeholder selector for figure containers with an a tag 
+    for the direct child element. The a tag makes the image 
+    clickable such that, as a result, the URL would be redirected 
+    to an external link that is within or outside of the website.
+
+    With the "autoWidth" class, the width is automatically calculated 
+    by the browser.
+*/
+// %figure-a {
+//     @extend %figure-child;
+//     @extend %figure-a-zIndexes;
+//     border: none;
+    // &.autoWidth {
+    //     width: auto !important;
+    // }
+// }
+
+/*
+    Placeholder selector for figure containers with an a tag 
+    for the direct child element, followed by a picture grandchild 
+    element. The a tag makes the image clickable such that, as a 
+    result, the URL would be redirected to an external link that 
+    is within or outside of the website.
+
+    If the window width is at most 1024px, align the picture container 
+    to the left of the a or figure container.
+*/
+// %figure-a-picture {
+//     @extend %flex-row-wrap-center;
+//     object-position: center;
+//     position: relative;
+//     @include mediaQuery-maxOnly(1024) {
+//         align-items: flex-start;
+//         align-content: flex-start;
+//         justify-content: flex-start;
+//     }
+// }
+
+/*
+    Placeholder selector to set the default property of the 
+    picture element (child of the figure container). The 
+    children element would position the image container 
+    to take up the children element's available space,  
+    show the entirety of the original image with its aspect 
+    ratio maintained, and be horizontally and vertically 
+    aligned center.
+
+    The "touch-action" property may be obsolete due to its 
+    usage with the Panzoom Javascript library, which is 
+    currently not used.
+*/
+// %figure-picture {
+//     @extend %figure-child;
+//     @extend %flex-row-wrap-center;
+//     object-fit: contain;
+//     object-position: center;
+//     width: 100%;
+//     height: auto;
+//     // overflow: hidden;
+//     touch-action: pan-x pan-y pinch-zoom;
+// }
+
+%threeDHover {
+    border-radius: 1rem;
+    transform-style: preserve-3d;
+    transform: 
+        perspective(5000px)
+        rotateX(var(--rotateX))
+        rotateY(var(--rotateY));
+    transition: transform 1s 'ease-in-out';
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    @keyframes defaultState {
+        from {
+            transform: 
+                perspective(5000px)
+                rotateX(var(--rotateX))
+                rotateY(var(--rotateY));
+        }
+        to {
+            transform: 
+                perspective(5000px)
+                rotateX(0deg)
+                rotateY(0deg);
+        }
+    }
+    @keyframes hoveringState {
+        from {
+            transform: 
+                perspective(5000px)
+                rotateX(0deg)
+                rotateY(0deg);
+        }
+        to {
+            transform: 
+                perspective(5000px)
+                rotateX(var(--rotateX))
+                rotateY(var(--rotateY));
+        }
+    }
+    &.defaultState {
+        animation-name: defaultState;
+        transform: 
+            perspective(5000px)
+            rotateX(0deg)
+            rotateY(0deg);
+    }
+    &.hoveringState {
+        animation-name: hoveringState;
+        transform: 
+            perspective(5000px)
+            rotateX(var(--rotateX))
+            rotateY(var(--rotateY));
+    }
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        border-radius: inherit;
+    }
+    /* shadow */
+    &:before {
+        inset: 0.75rem;
+        border-radius: inherit;
+        background: yellow;
+        transform: translate3d(-50px, 20px, -50px);
+        filter: blur(15px);
+        opacity: 0.5;
+    }
+    /* gradient thingy */
+    &:after {
+        inset: -1rem;
+        background: linear-gradient(-45deg, red, blue);
+        transform: translate3d(-50px, 20px, -100px);
+    }
+}
+figure picture.threeDHover {
+    @extend %threeDHover;
+    @extend %threeDHover-zIndexes;
+}
+
+/*
+    Placeholder selector for the figure container's shadow.
+    The exact values show the distance of the shadow relative 
+    to all four edges of the container. The order of the values 
+    are for the top edge, right edge, bottom edge, and left edge
+    of the container.
+*/
+// %shadow {
+//     box-shadow: 0 map-get($size-space, xxxs) map-get($size-space, xs) map-get($size-space, xxxs) color('n', 30);
+// }
+
+/*
+    Placeholder selector for the class which will set the 
+    object, width, and height properties for containers of 
+    small icon images associated with each ToC Section.
+
+    No right border is to prevent a miscellaneous line 
+    to the right of the image from appearing.
+*/
+%vectorIcon {
+    @extend %flex-row-wrap-center;
+    object-fit: contain;
+    line-height: 0;
+    border-right: none !important;
+    @include mediaQuery-maxOnly(1920) {
+        width: map-get($size-space, ml);
+        height: map-get($size-space, ml);
+    }
+    @include mediaQuery-minOnly(1920) {
+        width: map-get($size-space, l);
+        height: map-get($size-space, l);
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+$h2-picture-width-max-1920: map-get($size-space, xl);
+$h2-picture-height-max-1920: map-get($size-space, xl);
+$h2-picture-width-min-1920: map-get($size-space, xl);
+$h2-picture-height-min-1920: map-get($size-space, xl);
+h2 picture {
+    @extend %vectorIcon;
+    @include mediaQuery-maxOnly(1920) {
+        width: $h2-picture-width-max-1920 !important;
+        height: $h2-picture-height-max-1920 !important;
+    }
+    @include mediaQuery-minOnly(1920) {
+        width: $h2-picture-width-min-1920 !important;
+        height: $h2-picture-height-min-1920 !important;
+    }
+}
+
+/*
+    Placeholder selector to set the width and height of the 
+    actual small icon images to fill up the container.
+    With the "active" class, use the filter property to change 
+    the color of the icon to white when the ToC section button 
+    is the current one.
+*/
+// %picture-vectorIcon {
+    // @extend %flex-row-wrap-center;
+    // @extend %vectorIcon;
+    // max-width: 3rem;
+    // max-height: 3rem;
+    // img {
+        // width: 100%;
+        // height: 100%;
+        // &.active:not(#mobileToC, [src*="icon-linkedIn.svg"], [src*="icon-email.svg"]), &[src*="arrow-right.svg"] {
+        //     filter: invert(99%) sepia(63%) saturate(2%) hue-rotate(40deg) brightness(116%) contrast(100%); //from soft black to white
+        // }
+    // }
+// }
+
+/*
+    Placeholder selector for the image.
+    All images will have their height equal to the height of the picture container 
+    and will not repeatedly appear in the background, unless stated otherwise.
+
+    The "objectFitCover" class will have the image's width also 
+    cover the entire width of the container, but may have parts of the 
+    image cropped off to preserve the aspect ratio.
+    
+    There are two classes that will position the image to the left, right, or 
+    top portion of the picture container.
+
+    There are three classes to set the maximum image height to a fixed amount, 
+    set the maximum image height equal to the picture container, or remove the 
+    maximum image height restriction.
+
+    Across the 750px and 1024px width checkpoints, the maximum width, maximum height, 
+    and object fit type of the image may change with or without needing the specific 
+    class name.
+*/
+// %img {
+//     object-fit: contain;
+//     object-position: center;
+//     max-height: 100%;
+//     width: 100%;
+//     height: 100%;
+//     background-repeat: no-repeat;
+//     touch-action: pan-x pan-y pinch-zoom;
+//     &.objectFitCover {
+//         object-fit: cover;
+//         height: 100%;
+//     }
+//     &.objectPositionLeft {
+//         object-position: left;
+//     }
+//     &.objectPositionRight {
+//         object-position: right;
+//     }
+//     // &.maxWidth {
+//     //     @include mediaQuery-minOnly(1024) {
+//     //         max-width: 600px;
+//     //     }
+//     // }
+//     // &.noMaxHeight {
+//     //     max-height: none !important;
+//     // }
+//     &.inheritMaxHeight {
+//         max-height: inherit;
+//     }
+//     @include mediaQuery-maxOnly(750) {
+//         max-height: 100%;
+//         // &.noMaxHeight {
+//         //     max-height: none !important;
+//         // }   
+//     }
+//     @include mediaQuery-minOnly(750) {
+//         &.positionTop {
+//             object-position: top;
+//         }
+//     }
+//     @include mediaQuery-maxOnly(1024) {
+//         max-width: 100%;
+//         // max-height: px-to-rem(400);
+//         // height: auto;
+//         &.objectFit-cover-1024 {
+//             object-fit: cover;
+//         }
+//         // &.noMaxHeight {
+//         //     max-height: none;
+//         // }
+//     }
+//     @include mediaQuery-minOnly(1024) {
+//         height: 100%;
+//     }
+// }
+
+/*
+    Placeholder selector for the default properties of the grid.
+*/
+%grid-global {
+    @extend %grid-global-zIndexes;
+    display: grid;
+    @include mediaQuery-minOnly(1024) {
+        justify-items: flex-start;
+    }
+    /*
+        Any grid item that has the "span2" class name or not 
+        tagged with the "gridContent" class name will have 
+        their width take up the entire width of the grid container.
+    */
+    & > *:not(.gridContent), .span2 {
+        grid-column: 1/-1;
+    }
+    @extend %grid-allGridTypes;
+    /*
+        Any article tag that has the "h2-wrapper" class name or not 
+        tagged with the "gridContent" class name will have the flex
+        display properties and values.
+    */
+    article:not(.gridContent, article.h2-wrapper) {
+        &.rowFlex {
+            @include displayFlex(row, wrap, flex-start, flex-start, flex-start);
+        }
+    }
+    .columnSpan-all {
+        grid-column: 1 / -1;
+    }
+    /*
+        "gridContent" is a class name for classifying all nested containers in the 
+        grid container to be a grid cell.
+    */
+    .gridContent {
+        @extend %flex-column-nowrap-default;
+        position: relative;
+        &:not(figure.gridContent, p.gridContent) {
+            @extend %flex-column-nowrap-default;
+        }
+        &.marginBottom {
+            margin-bottom: 1rem !important;
+        }
+        &.alignItemsCenter {
+            align-items: center;
+        }
+        /* 
+           There is an i tag in the osp.html page that is meant to be 
+           as a figure caption, but isn't to conserve vertical space.
+           The inline-block display value ensures that the text is 
+           properly wrapped.
+        */
+        i {
+            display: inline-block;
+        }
+        // @include mediaQuery-maxOnly(400) {
+        //     max-width: calc(100% - map-get($size-space, l));
+        // }
+    }
+    // p.gridContent {
+    //     @include mediaQuery-maxOnly(1024) {
+    //         padding: map-get($size-space-stack, m); //0px 0px 20px 0px
+    //     }
+    // }
+    // Removes the default bottom margin of the paragraph tag (body text).
+    p.noMarginBottom {
+        margin-bottom: 0;
+    }
+}
+
+/*
+    Placeholder selector for setting the default amount of columns for grids to one 
+    below 1024px width.
+*/
+%gridTemplateColumns-default {
+    @include mediaQuery-maxOnly(1024) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*
+    Placeholder selectors for column variations of grid containers.
+    They are useful for having a limited, but good-enoough selection of columns 
+    with different widths (relative to the grid container) to support different 
+    layouts of grouped text, images and/or other visual elements across different 
+    window widths.
+        - "gridType1" is to set two grid columns of equal widths above 1024px window width.
+        - "gridType2" is to set two grid columns, with the left column to 2/3 of the entire 
+          grid container width above 1024px window width.
+        - "gridType3" is to set two grid columns, with the right column to 2/3 of the entire 
+          grid container width above 1024px window width.
+        - "gridType4" is to set two grid columns of equal widths above 1300px window width.
+        - "gridType5" is to set two grid columns, with the left column to 2/3 of the entire 
+          grid container width above 1400px window width.
+        - "gridType6" is to set two grid columns, with the right column to 2/3 of the entire 
+          grid container width above 1400px window width.
+        - "gridType7" is to set three grid columns of equal widths above 1400px window width.
+        - "gridType8" is to set two grid columns of equal widths between 450px and 1400px 
+          window widths and three grid columns of equal widths above 1400px.
+        - "gridType9" is to set one grid column below 475px window width, two columns of 
+          equal widths between 450px and 1400px, and four columns of equal widths above 1400px.
+        - "gridType10" is to set two grid columns, with the right column to 2/3 of the entire 
+          grid container width above 1200px window width.
+        - "gridType10-2Column-AutoRight" is to set two grid columns of automatic sizing 
+          above 1024px window width.
+        - "gridType3-900Width" is almost the same as "gridType3" except that the window 
+        width used is above 900px.
+*/
+%gridType1 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+%gridType2 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+%gridType3 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+%gridType4 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+%gridType5 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+%gridType6 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+%gridType7 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+%gridType8 {
+    @extend %gridType7;
+    @include mediaQuery-minMax(450, 1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+%gridType9 {
+    @extend %gridType1;
+    @include mediaQuery-maxOnly(475) {
+        grid-template-columns: 1fr;
+    }
+    @include mediaQuery-minMax(475, 1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include mediaQuery-minOnly(1400) {
+        // @include rowColumnGaps(l, xxl); // 32px 64px
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+%gridType10 {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1200) {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+%gridType10-2Column-AutoRight {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(1024) {
+        grid-template-columns: auto auto;
+    }
+}
+
+%gridType3-900Width {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(900) {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+%gridType1-320Width {
+    @extend %gridTemplateColumns-default;
+    @include mediaQuery-minOnly(320) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*
+    Placeholder selector to attach the properties and values of each gridType selector 
+    to each corresponding gridType class name.
+*/
+%grid-allGridTypes {
+    &.gridType1 {
+        @extend %gridType1;
+    }
+    &.gridType2 {
+        @extend %gridType2;
+    }
+    &.gridType3 {
+        @extend %gridType3;
+    }
+    &.gridType4 {
+        @extend %gridType4;
+    }
+    &.gridType5 {
+        @extend %gridType5;
+    }
+    &.gridType6 {
+        @extend %gridType6;
+    }
+    &.gridType7 {
+        @extend %gridType7;
+    }
+    &.gridType8 {
+        @extend %gridType8;
+    }
+    &.gridType9 {
+        @extend %gridType9;
+    }
+    &.gridType10 {
+        @extend %gridType10;
+    }
+    &.gridType10-2Column-AutoRight {
+        @extend %gridType10-2Column-AutoRight;
+    }
+    &.gridType3-900Width {
+        @extend %gridType3-900Width;
+    }
+    &.gridType1-320Width {
+        @extend %gridType1-320Width;
+    }
+}
+
+/*
+    Placeholder selector used for the html element to set the default transition time to 0.25 seconds
+    with an ease-in and ease-out transition smoothness.
+*/
+%default-transition {
+    transition: 0.25s ease-in-out;
+}
+
+/*
+    Placeholder selector to set the default background color of the entire page (html element) and 
+    the navigation header to light blue using the color function.
+*/
+%default-backgroundColor {
+    background-color: color('n', 100);
+}
+
+/*
+    Mixin for using numbers as numerators and denominators into a system of class names 
+    that attach calculated aspect ratios to corresponding images.
+*/
+@mixin aspectRatioClass ($number1, $number2) {
+    .ratio-#{$number1}-#{$number2} {
+        aspect-ratio: calc(#{$number1}/#{$number2});
+    }
+}
+
+/*
+    Many repeated callings of the aspectRatioClass mixin 
+    to establish class names of aspect ratios.
+*/
+@include aspectRatioClass(1, 5); //0.2
+@include aspectRatioClass(1, 2); //0.5
+@include aspectRatioClass(9, 16); //0.5625
+@include aspectRatioClass(4, 7); //0.571428571
+@include aspectRatioClass(23, 40); //0.575
+@include aspectRatioClass(3, 5); //0.6
+@include aspectRatioClass(5, 8); //0.625
+@include aspectRatioClass(13, 20); //0.65
+@include aspectRatioClass(2, 3); //0.6666 repeating
+@include aspectRatioClass(7, 10); //0.7
+@include aspectRatioClass(3, 4); //0.75
+@include aspectRatioClass(4, 5); //0.8
+@include aspectRatioClass(5, 6); //0.8333 repeating
+@include aspectRatioClass(10, 11); //0.9090 (90 repeating)
+@include aspectRatioClass(40, 43); //0.93023255814
+@include aspectRatioClass(1, 1); //1
+@include aspectRatioClass(9, 8); //1.125
+@include aspectRatioClass(8, 7); //1.14285714
+@include aspectRatioClass(7, 6); //1.1666 repeating
+@include aspectRatioClass(13, 11); //1.1818 (18 repeating)
+@include aspectRatioClass(6, 5); //1.2
+@include aspectRatioClass(5, 4); //1.25
+@include aspectRatioClass(4, 3); //1.3333 repeating
+@include aspectRatioClass(20, 13); //1.53846153846
+@include aspectRatioClass(8, 5); //1.6
+@include aspectRatioClass(13, 8); //1.625
+@include aspectRatioClass(5, 3); //1.6666 repeating
+@include aspectRatioClass(12, 7); //1.71428571429
+// @include aspectRatioClass(40, 23); //1.73913043478
+@include aspectRatioClass(7, 4); //1.75
+@include aspectRatioClass(16, 9); //1.7777 repeating
+@include aspectRatioClass(9, 5); //1.8
+@include aspectRatioClass(20, 11); //1.8181 (81 repeating)
+@include aspectRatioClass(15, 8); //1.875
+@include aspectRatioClass(48, 25); //1.92
+@include aspectRatioClass(2, 1); //2
+@include aspectRatioClass(20, 9); //2.2222 repeating
+@include aspectRatioClass(9, 4); //2.25
+@include aspectRatioClass(8, 3); //2.5
+@include aspectRatioClass(5, 2); //2.6666 repeating
+@include aspectRatioClass(10, 3); //3.3333 repeating
+@include aspectRatioClass(4, 1); //4
+@include aspectRatioClass(9, 2); //4.5
+@include aspectRatioClass(5, 1); //5
+@include aspectRatioClass(6, 1); //6
+@include aspectRatioClass(19, 3); //6.3333 repeating
+
+/*
+    Mixin to map one or a list of IDs associated with images 
+    with the corresponding aspect ratio.
+
+    If the max-width is not specified, the max width of the 
+    image(s) is reset to auto.
+*/
+@mixin imageDimension ($getIDs, $getWidth, $getNumber1, $getNumber2) {
+    @each $id in $getIDs {
+        #{$id} {
+            @if ($getWidth != '') {
+                max-width: #{$getWidth};
+            }
+            aspect-ratio: calc(#{$getNumber1} / #{$getNumber2});
+        }
+    }
+}
+
+/*
+    Mixin to map aspect ratios to one or a list of IDs associated with images 
+    across different minimum and/or maximum (window width) breakpoint range(s).
+    Breakpoints are meant to be only in units of pixels (px).
+
+    An applicable use case is using two similarly-looking images for the same 
+    figure container where each image has a different width and height relative 
+    to the other (and thus a different aspect ratio), and you want to only 
+    show one of these images above or below certain window widths.
+*/
+@mixin responsiveAspectRatios ($IDs, $number1, $number2, $minMax, $maxWidth:'', $breakpointMin:'', $breakpointMax:'') {
+    @if ($minMax == maxOnly) {
+        @include mediaQuery-maxOnly($breakpointMax) {
+            @include imageDimension($IDs, $maxWidth, $number1, $number2);
+        }
+    }
+    @if ($minMax == minOnly) {
+        @include mediaQuery-minOnly($breakpointMin) {
+            @include imageDimension($IDs, $maxWidth, $number1, $number2);
+        }
+    }
+    @if ($minMax == minMax) {
+        @include mediaQuery-minMax($breakpointMin, $breakpointMax) {
+            @include imageDimension($IDs, $maxWidth, $number1, $number2);
+        }
+    }
+    @if ($minMax == allWidths) {
+        @include imageDimension($IDs, $maxWidth, $number1, $number2);
+    }
+}
+
+/*
+    Three lists of strings of ID names for specific images, mostly from the electricStride.html file (one from the osp.html file).
+*/
+$eStride-idList1: "#eStride-initialResearch", "#eStride-dataSynthesis", "#eStride-problemSpaces";
+$eStride-idList2: "#eStride-ideation, #eStride-prototypingSolution", "#eStride-userTesting", "#eStride-finalDeliverables";
+$osp-idList1: "#ospHardware-real";
+
+/*
+    Many calls to the aspect ratio mixin to set different aspect ratios 
+    to specific images across various window width breakpoints.
+*/
+@include responsiveAspectRatios("#eStride-DesignProcess", 2, 3, maxOnly, 500px, '', 1024);
+@include responsiveAspectRatios("#eStride-DesignProcess", 9, 4, minOnly, '', 1024, '');
+@include responsiveAspectRatios("#eStride-pivoting", 7, 10, maxOnly, '', '', 1200);
+@include responsiveAspectRatios("#eStride-pivoting", 3, 2, minOnly, '', 1200, '');
+@include responsiveAspectRatios(#{$eStride-idList1}, 5, 7, maxOnly, 500px, '', 1200);
+@include responsiveAspectRatios(#{$eStride-idList1}, 5, 4, minOnly, '', 1200, '');
+@include responsiveAspectRatios(#{$eStride-idList2}, 3, 5, maxOnly, 500px, '', 1200);
+@include responsiveAspectRatios(#{$eStride-idList2}, 3, 2, minOnly, '', 1200, '');
+@include responsiveAspectRatios(#{"#ospHardware-real"}, 1, 5, maxOnly, 500px, '', 450);
+@include responsiveAspectRatios(#{"#ospHardware-real"}, 2, 1, minOnly, '', 450, '');
+@include responsiveAspectRatios(#{"#ospSoftware"}, 7, 4, maxOnly, 500px, '', 900);
+@include responsiveAspectRatios(#{"#ospSoftware"}, 5, 2, minOnly, '', 900, '');
+@include responsiveAspectRatios(#{"#feedbackToIterations"}, 7, 4, maxOnly, 500px, '', 1024);
+@include responsiveAspectRatios(#{"#feedbackToIterations"}, 19, 3, minMax, '', 1024, 1200);
+@include responsiveAspectRatios(#{"#feedbackToIterations"}, 7, 4, minOnly, 500px, 1200, '');
+// @include responsiveAspectRatios(#{"#feedbackToIterations"}, 9, 10, minOnly, 500px, '', 1200);
+// @include responsiveAspectRatios(#{"#feedbackToIterations"}, 3, 2, minOnly, '', 1200, '');
+@include responsiveAspectRatios(#{"#websiteDeveloped"}, 3, 2, minOnly, 500px, '', 1200);
+@include responsiveAspectRatios(#{"#websiteDeveloped"}, 1, 1, minOnly, '', 1200, '');
+
+/*
+    Applies the default 0.25 seconds transition, light blue background color, spacing properties, 
+    and row/column gap properties across many elements within the html tag container.
+*/
+html {
+    @extend %default-transition;
+    @extend %default-backgroundColor;
+    // @include spacing;
+    // @include gaps;
+    overflow-x: hidden;
+}
+
+/*
+    Applies a background gif to the preloader container and sets the container to fill the entire page.
+    The preloader will disappear via a function in the main jQuery file.
+*/
+div#preloader {
+    @extend %flex-column-wrap-center;
+    @include rowColumnGaps(default, default);
+    position: fixed;
+    background-color: color('n', 100);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    @keyframes fade-out {
+        from {opacity: 1}
+        to {opacity: 0}
+    }
+    @keyframes fade-in {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+    &.fade-out {
+        opacity: 0;
+        animation-name: fade-out;
+    }
+    &.fade-in {
+        opacity: 1;
+        animation-name: fade-in;
+    }
+    // transition: 0.25s ease-in-out;
+    picture.loader-inner {
+        // @extend %figure-picture;
+        // display: inline-block;
+        // position: absolute;
+        // background: transprent url('01-other-files/spinner-1400ms-200px.gif') no-repeat center center;
+        // background-image: 50%;
+        // border: px-to-rem(1.6) solid color('n', 30);
+        width: 100%;
+        height: 100%;
+        // transform: translate(-25%, -25%);
+        // height: inherit;
+        // object-fit: contain;
+        // object-position: center;
+        img {
+            width: calc(2 * map-get($size-space, xxxxl));
+            height: calc(2 * map-get($size-space, xxxxl));
+        }
+    }
+    p {
+        text-align: center;
+    }
+}
+
+/*
+    Applies fixed display for the header and positions it 
+    to the top of the screen above 320px window width.
+*/
+header {
+    @extend %flex-row-wrap-default;
+    // padding-top: map-get($size-space, xs);
+    // padding-bottom: map-get($size-space, xs);
+    align-items: stretch;
+    @extend %default-backgroundColor;
+    background-color: color('n', 100, 90);
+    backdrop-filter: blur(8px);
+    @include mediaQuery-maxOnly(320) {
+        position: relative;
+    }
+    @include mediaQuery-maxOnly(1024) {
+        width: 100%;
+    }
+    // @include mediaQuery-minMax(750, 1024) {
+        // width: calc(100% - map-get($size-space, xxxxl));
+        // width: 100%;
+    // }
+    @include mediaQuery-minMax(320, 510) {
+        min-height: #{$header-minHeight-minMax-320-510}px;
+    }
+    @include mediaQuery-minMax(320, 1024) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        // flex-direction: row-reverse;
+    }
+    @include mediaQuery-minOnly(1024) {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: auto;
+        min-height: #{$header-minHeight-min-1024}px;
+    }
+    /*
+        Applies the long and thin width/height properties of the scroll progress bar.
+        Applies the dark blue color for the indicator bar.
+        Removes the default transition time.
+    */
+    .progressContainer {
+        left: 0;
+        max-width: 100%;
+        width: 100%;
+        height: map-get($size-space, xxs);
+        scroll-padding: 0;
+        transition: 0s ease-in-out;
+        .progressBar {
+            width: 0%;
+            height: map-get($size-space, xxs);
+            background-color: color('p', 30);
+            color: color('n', 30);
+            scroll-padding: 0;
+            transition: 0s ease-in-out;
+        }
+    }
+    /*
+        Only shows the progress bar at the bottom of any case study page 
+        not in the landing page (index.html) when the window with is 
+        below 750px.
+    */
+    #headerProgressBar-caseStudy {
+        @extend .progressContainer;
+        @include mediaQuery-maxOnly(550) {
+            order: 1;
+        }
+        @include mediaQuery-maxOnly(1024) {
+            @include showHideToggle("", "show");
+        }
+        @include mediaQuery-minOnly(1024) {
+            @include showHideToggle("", "hide");
+        }
+    }
+}
+
+/*
+    Sets the alignment properties for the header's navigation buttons.
+*/
+nav.navigationBar {
+    position: relative;
+    @extend %flex-row-wrap-center;
+    align-items: stretch;
+    justify-content: space-between;
+    order: 0;
+    width: 100%;
+    height: 100%;
+    @include mediaQuery-minMax(525, 1024) {
+        justify-content: center;
+    }
+    // @include mediaQuery-maxOnly(1024) {
+    //     .anchorLinks {
+    //         @include rowColumnGaps(xs, xs);
+    //     }
+    // }
+    @include mediaQuery-maxOnly(1024) {
+        order: 2;
+        max-width: 100%;
+    }
+    /*
+        Applies the default dark blue background color and text sizes to the 
+        "Contact Me" button. The button would only appear above 750px window width.
+    */
+    &#waynephung p, .anchorLinks a.navLink p {
+        background-image: radial-gradient(transparent);
+        transition: background-image 0.3s linear;
+    }
+    &#waynephung:hover p, .anchorLinks a.navLink:not(#contactButton-mobile):hover {
+        p {
+            background-image: radial-gradient(color('p', 90) 0%, transparent 75%);
+            transition: background-image 0.3s linear;
+        }
+    }
+    a {
+        // @extend %flex-row-wrap-center;
+        &:hover {
+            @extend %hover;
+            p:after {
+                width: 100%;
+                left: 0;
+            }
+        }
+        p:after {
+            background-color: color('n', 50);
+        }
+    }
+}
+
+/*
+    Applies left margin, right margin, horizontal flex direction, and centering 
+    for the element containing the four grouped main navigation buttons, which 
+    is only slightly larger above 1920px window width.
+*/
+.anchorLinks {
+    @extend %flex-row-wrap-center;
+    @include mediaQuery-maxOnly(525) {
+        @include rowColumnGaps(xs, xs);
+    }
+    @include mediaQuery-minMax(525, 1024) {
+        justify-content: center;
+        @include rowColumnGaps(xs, l);
+    }
+    align-items: stretch;
+    width: auto;
+    a {
+        @extend %flex-row-wrap-center;
+        p {
+            @extend %anchorLink;
+        }
+        @include mediaQuery-maxOnly(1024) {
+            @include rowColumnGaps(xs, );
+            // align-items: center;
+            height: initial;
+        }
+        @include mediaQuery-minOnly(1024) {
+            // align-items: stretch;
+            height: 100%;
+        }
+    }
+    @include mediaQuery-maxOnly(1024) {
+        // justify-content: space-between;
+        width: 100%;
+    }
+    // @include mediaQuery-minOnly(1024) {
+    //     height: 100%;
+    // }
+    // button {
+    //     @extend %button-primary;
+    //     margin: map-get($size-space, xs) 0;
+    //     @include mediaQuery-maxOnly(750) {
+    //         @include showHideToggle("default", "hide");
+    //     }
+    //     @include mediaQuery-minOnly(750) {
+    //         @include showHideToggle("default", "show");
+    //     }
+    // }
+}
+
+.anchorLinks > *:not(#contactButton-mobile) {
+    @include mediaQuery-maxOnly(320) {
+        width: 30%;
+    }
+}
+
+.contactButtons {
+    @extend %flex-row-wrap-center;
+    @include rowColumnGaps(xs, default);
+    justify-content: flex-start;
+}
+
+/*
+    Class name for the ToC buttons. By default, they should appear to be as borderless 
+    buttons with a transparent background. The text is right aligned, the sizes for the icon 
+    images are generally small, and both have a dark gray color.
+    
+    When the ToC button indicates that the content on the left shows the associated section/heading, 
+    the ToC button is considered "active". Only one is active at a time, and that active button 
+    will have a dark brown background color while the color of the text and vector icon image is 
+    changed to white.
+
+    There are four buttons, of which each pair has the identical button text - either "Top of Page" 
+    (tagged as id name "toTop") or "Other Case Studies" (tagged as id name "toBottom"). One version 
+    of each button appear below 750px window width, the other version of each appear above 750px width.
+*/
+.sideBarButton {
+    @extend %flex-row-wrap-center;
+    justify-content: flex-end;
+    @extend %button-global;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    outline: none;
+    padding: map-get($size-space, xs) map-get($size-space, sm); //8px 16px
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-image 0.3s linear;
+    p, .vectorIcon {
+        background-image: radial-gradient(transparent);
+        animation-name: noBackground;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
+    }
+    p {
+        @extend %anchorLink;
+        color: color('n', 70);
+        @include mediaQuery-maxOnly(1024) {
+            max-width: calc(100% - 1rem - 28px);
+            color: color('n', 30);
+        }
+        @include mediaQuery-minOnly(1024) {
+            max-width: calc(100% - 1rem - 28px);
+        }
+    }
+    .vectorIcon {
+        @extend %vectorIcon;
+        img {
+            filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(240deg) brightness(101%) contrast(95%); //from soft black to light gray (n-70);
+            // filter: invert(73%) sepia(0%) saturate(1%) hue-rotate(200deg) brightness(87%) contrast(86%); //from soft black to light gray;
+            // @include mediaQuery-maxOnly(750) {
+            //     filter: none;
+            // }
+        }
+        transition: background-image 0s linear, filter 0s linear;
+        // margin: 0 0.5rem 0 0;
+        @include mediaQuery-maxOnly(1920) {
+            max-width: 2rem;
+            max-height: 2rem;
+        }
+    }
+    &:not(.active):hover, &#toTop:hover, &#toTop-mobile:hover, &#toBottom:hover, &#toBottom-mobile:hover {
+        @extend %hover;
+        p {
+            color: color('n', 30);
+        }
+        .vectorIcon {
+            img {
+                filter: none;
+            }
+        }
+    }
+    &.active {
+        p, .vectorIcon:not(.iconEmpty) {
+            animation-name: activeBackground;
+            animation-duration: 300ms;
+            animation-timing-function: ease-in-out;
+            background-image: radial-gradient(color('p', 90) 0%, transparent 75%);
+        }
+        p {
+            color: color('n', 30);
+            &:after {
+                @extend %p-after;
+                width: 100%;
+                left: 0;
+                background-color: color('n', 50);
+            }
+        }
+        .vectorIcon img {
+            filter: none;
+        }
+    }
+    @keyframes noBackground {
+        from {background-image: radial-gradient(color('p', 90) 0%, transparent 75%);}
+        to {background-image: radial-gradient(transparent);}
+    }
+    @keyframes activeBackground {
+        from {background-image: radial-gradient(transparent);}
+        to {background-image: radial-gradient(color('p', 90) 0%, transparent 75%);}
+    }
+    &.mobileOnly-750 {
+        justify-content: flex-end;
+    }
+    @include mediaQuery-maxOnly(1024) {
+        margin-right: 0;
+        width: 100%;
+        &#toTop, &#toBottom {
+            @include showHideToggle('.navSideBar', "hide");
+        }
+        &#toTop-mobile, &#toBottom-mobile, &.mobileOnly-750 {
+            @include showHideToggle("default", "show");
+        }
+    }
+    @include mediaQuery-minOnly(1024) {
+        margin-right: 1rem;
+        &#toTop, &#toBottom {
+            @include showHideToggle('.navSideBar', "show");
+            justify-content: space-between;
+        }
+        &#toTop-mobile, &#toBottom-mobile, &.mobileOnly-750 {
+            @include showHideToggle("default", "hide");
+        }
+    }
+}
+
+/*
+    "navButtons" is a class name for the container of most of the ToC section buttons.
+    Sets the max height, width, height, inner padding, and border styling when it has 
+    the class name to enable its visibility.
+*/
+.navButtons {
+    @extend %flex-row-wrap-default;
+    justify-content: space-between;
+    position: relative;
+    @include mediaQuery-maxOnly(1024) {
+        @include showHideToggle(".navSideBar", "hide");
+    }
+    @include mediaQuery-minOnly(1024) {
+        width: 100%;
+    }
+    &.show {
+        // z-index: 1000;
+        background-color: color('n', 100);
+        @include mediaQuery-maxOnly(400) {
+            max-height: 300px;
+            width: 90%;
+            height: 65%;
+        }
+        @include mediaQuery-minMax(400, 1024) {
+            max-height: 300px;
+            width: 60%;
+            height: 65%;
+        }
+        @include mediaQuery-maxOnly(1024) {
+            @include showHideToggle(".navSideBar", "show");
+            display: block !important;
+            overflow-y: scroll;
+            background-color: color('p', 100);
+            border: map-get($size-space, xs) solid color('p', 30);
+            border-radius: map-get($size-space, xxs);
+            // padding: 1rem 8px;
+        }
+    }
+}
+
+/*
+    Applies adjusted padding to any container of ToC section buttons that 
+    have vector icons as children elements.
+*/
+.accordion.withIcons .sideBarButton {
+    @extend %flex-row-wrap-center;
+    justify-content: space-between;
+    // @include mediaQuery-minMax(750, 1920) {
+    //     padding: px-to-rem(6) px-to-rem(12) px-to-rem(6) px-to-rem(6);
+    // }
+    // @include mediaQuery-minOnly(1920) {
+    //     padding: px-to-rem(12) px-to-rem(18) px-to-rem(12) px-to-rem(12);
+    // }
+    & > #toTop, & > #toBottom {
+        @include mediaQuery-minOnly(1024) {
+            justify-content: flex-end;
+            @include showHideToggle('.navSideBar', "show");
+        }
+    }
+}
+
+/*
+    Sets the default inner padding, text alignment, and border styling to each 
+    main navigation buttons. Removes the transition timer.
+    Text is underlined when hovered.
+    When one main navigation button is considered "active", it would have a 
+    dark blue border.
+
+    Hides the "Wayne Phung" button below 1024px window width.
+    Hides one version of the "Contact Me" button when below 750px window width.
+
+    Sets the visual style of the "Contact Me" button to that of a primary button.
+*/
+.navLink {
+    @extend %buttonText;
+    position: relative;
+    border: map-get($size-space, xxxs) solid transparent;
+    border-radius: map-get($size-space, s);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0s ease-in-out;
+    &#waynephung, .anchorLinks a.navLink {
+        p {
+            background-image: radial-gradient(transparent);
+            transition: background-image 0.3s linear;
+        }
+        &:hover {
+            p {
+                background-image: radial-gradient(color('p', 90) 0%, transparent 75%);
+                transition: background-image 0.3s linear;
+            }
+        }
+    }
+    @include mediaQuery-maxOnly(200) {
+        width: 100%;
+    }
+    @include mediaQuery-minMax(200,500) {
+        width: auto;
+    }
+    @include mediaQuery-maxOnly(500) {
+        text-align: center;
+    }
+    @include mediaQuery-minOnly(500) {
+        // width: auto;
+        text-align: auto;
+        // margin: 0 px-to-rem(8);
+        // &:first-of-type {
+        //     margin-left: 0;
+        // }
+        // &:last-of-type {
+        //     margin-right: 0;
+        // }
+    }
+    // @include mediaQuery-maxOnly(750) {
+    //     padding: map-get($button-inset, navigationLink-mobile);
+    //     // padding: px-to-rem(12) px-to-rem(12);
+    // }
+    // @include mediaQuery-minOnly(750) {
+    //     padding: map-get($button-inset, navigationLink-desktop);
+    //     // padding: px-to-rem(12) px-to-rem(16);
+    // }
+    @extend %hover;
+    &#waynephung:not(.currentSection) p, .anchorLinks a.navLink:not(.currentSection) p {
+        @extend %anchorLink;
+        background-image: radial-gradient(transparent);
+        transition: background-image 0.3s linear;
+    }
+    &.currentSection {
+        // text-decoration: underline;
+        // border: px-to-rem(1.6) solid color(darkBlue);
+        background-image: radial-gradient(color('p', 90) 0%, transparent 75%);
+        transition: background-image 0.3s linear;
+        p:after {
+            width: 100%;
+            left: 0;
+        }
+    }
+    &#waynephung {
+        @extend %flex-row-wrap-center;
+        align-items: stretch;
+        // padding: 0;
+        @include mediaQuery-maxOnly(1024) {
+            @include showHideToggle("default", "hide");
+        }
+        @include mediaQuery-minOnly(1024) {
+            @include showHideToggle("default", "show");
+            // padding: map-get($size-space, xs) 0;
+        }
+    }
+    @include mediaQuery-maxOnly(320) {
+        // &:not(:last-of-type) {
+        //    min-width: 45%;
+        // }
+        // &:last-of-type {
+            // width: 60%;
+            // order: 1;
+            // padding: 1rem 1.25rem;
+        // }
+        // &:nth-of-type(0) {
+        //     order: 1;
+        // }
+        // &:nth-of-type(1) {
+        //     order: 2;
+        // }
+        // &:nth-of-type(2) {
+        //     order: 3;
+        // }
+        // &:nth-of-type(3) {
+        //     order: 4;
+        // }
+        // &:nth-of-type(4) {
+        //     order: 5;
+        // }
+    }
+}
+
+/*
+    Styling for the main tag element, which hosts the rest of the 
+    content that isn't the footer or the header.
+    Default left and right padding is applied to set proper side 
+    spacing and help set the structural foundation of the majority 
+    of the content.
+*/
+main {
+    @extend %flex-row-wrap-default;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    @include mediaQuery-maxOnly(1024) {
+        align-content: center;
+        // max-width: px-to-rem(1000);
+    }
+    @include mediaQuery-minOnly(1024) {
+        align-content: flex-start;
+    }
+    &.indexSection {
+        @include mediaQuery-maxOnly(1024) {
+            max-width: 100%;
+        }
+        /*
+            Sets left alignment and very wide width 
+            for the heading 2 tag.
+        */
+        // & > * {
+        //     width: 100%;
+        // }
+        & > h2 {
+            // padding: 1rem 0;
+            text-align: left;
+            backdrop-filter: blur(8px);
+            // @extend h2;
+            @include mediaQuery-maxOnly(1024) {
+                // max-width: 100%;
+                // width: 100%;
+                text-align: left;
+            }
+        }
+        button#toTopPageFixed320px {
+            a {
+                p:after {
+                    @extend %p-after;
+                    background-color: color('p', 30);
+                }
+            }
+            // @include mediaQuery-maxOnly(200) {
+            //     a {
+            //         padding: 0.5rem 1.5rem;
+            //     }
+            // }
+            @include mediaQuery-maxOnly(320) {
+                // display: block;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: map-get($size-space, sm);
+                margin: map-get($size-space, xs) map-get($size-space, sm);
+                width: calc(100% - map-get($size-space, l));
+            }
+            @include mediaQuery-minOnly(320) {
+                display: none;
+            }
+            &:hover {
+                @extend %hover;
+                a {
+                    p {
+                        &:after {
+                            width: 100%;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+        /*
+            "content" class name is for the rest of the body text and images not included in the 
+            title sections and footer within a web page. By default, it's flex direction is column 
+            with no wrapping and top-left starting alignment for consistent scannability of text 
+            and images.
+        */
+        .content {
+            @extend %flex-column-nowrap-default;
+            // @include rowColumnGaps(xl, );
+            /*
+                Above 750px window width, the "content" container will 
+                be as a single column, while the ToC sidebar will 
+                occupy the second column. Because the "content" container 
+                cannot occupy 100% of the width of the main tag container, 
+                it must accommodate space for the sidebar. 
+                The value of the intended width of the sidebar is taken 
+                into account during width calculations across the 750px 
+                and 1920px window width checkpoints.
+            */
+            @include mediaQuery-maxOnly(1024) {
+                width: calc(100% - map-get($size-space, xl));
+            }
+        }
+        /*
+            Sets max width to the initial value placed 
+            on the figure container.
+
+            Inherents default properties set in the previously 
+            declared placeholder selectors for a, picture, and img tags.
+
+            The a tag children element would make the image clickable.
+            
+            Picture tag has the adjusted width and height properties 
+            to be slightly below 100% of the figurecontainer's width 
+            and height.
+        */
+        // section {
+        //     &:not(#title, #introduction) {
+        //         @include rowColumnGaps(default, );
+        //     }
+        //     &#aboutMeSection {
+        //         @include rowColumnGaps(default, xxl);
+        //         article.grid {
+        //             @include rowColumnGaps(default, xxl);
+        //         }
+        //     }
+        //     // #title {
+                
+        //     // }
+        // }
+        /*
+            Attaches the default properies and values of the 
+            grid placeholder selector to any element with the 
+            "grid" class name.
+        */
+        &.grid, &.grid > &.grid {
+            @extend %grid-global;
+        }
+    }
+    /*
+        "titleSection" is the class name for the top-most section of content.
+        It is used for displaying a short blurb of the case study and is 
+        accompanied with either an image or a video.
+        Width is set to the entire width of the main tag container (up to the 
+        left and right padding limits).
+    */
+    .titleSection {
+        width: 100%;
+        /*
+            "titleArticle" class name is the container for the title 
+            of the case study and a short blurb (text).
+            Width is set to auto.
+        */
+        // .titleArticle {
+        //     width: auto;
+        // }
+        /*
+            Grid columns and image properties are set for the title section 
+            and figure containers.
+        */
+        &.grid, &.grid > &.grid {
+            @extend %grid-global;
+            // figure {
+                // &.preventOverflow {
+                //     @extend %preventOverflow;
+                // }
+                // &.shadow {
+                //     @extend %shadow;
+                // }
+            // }
+        }
+        /*
+            "placeholder" id name is used for the template image used 
+            in the caseStudy-template.html file. Sets the maximum 
+            height to 350px.
+        */
+        &#placeholder {
+            max-height: 350px;
+        }
+        /*
+            Sets the primary and secondary button styling to the selected elements.
+            Applies the default padding and hover state behavior.
+        */
+        // button {
+        //     &:not(.secondaryButton) {
+        //         @extend %button-primary;
+        //     }
+        //     &.secondaryButton {
+        //         @extend %button-secondary;
+        //     }
+        //     padding: 0;
+        //     a {
+        //         text-decoration: none;
+        //         // padding: 0.75em 2.5em;
+        //     }
+        //     &:hover {
+        //         @extend %hover;
+        //     }
+        // }
+        // figure {
+        //     @extend %figure-global;
+        // }
+        /*
+            Obsolete element for embedded Google Drive slide decks and YouTube videos.
+            Removes the default border set for these.
+        */
+        iframe {
+            border: none;
+        }
+    }
+    /*
+        "content" class name is for the rest of the body text and images not included in the 
+        title sections and footer within a web page. By default, it's flex direction is column 
+        with no wrapping and top-left starting alignment for consistent scannability of text 
+        and images.
+    */
+    .content {
+        @extend %flex-column-nowrap-default;
+        // @include rowColumnGaps(xl, );
+        width: 100%;
+        &.caseStudyContent {
+            @include mediaQuery-maxOnly(1024) {
+                width: calc(100% - map-get($size-space, xl)); //calc(100% - 48px)
+            }
+            /*
+                Above 750px window width, the "content" container will 
+                be as a single column, while the ToC sidebar will 
+                occupy the second column. Because the "content" container 
+                cannot occupy 100% of the width of the main tag container, 
+                it must accommodate space for the sidebar. 
+                The value of the intended width of the sidebar is taken 
+                into account during width calculations across the 750px 
+                and 1920px window width checkpoints.
+            */
+            @include mediaQuery-minMax(1024, 1920) {
+                width: calc(95% - map-get($size-space, xxl) - map-get($size-space, xxxxl) - 250px);
+            }
+            @include mediaQuery-minOnly(1920) {
+                width: calc(95% - map-get($size-space, xxl) - map-get($size-space, xxxxl) - 350px);
+            }
+        }
+        /*
+            Maximizes the width up to the width of the main element container.
+        */
+        &.errorPage, &.width100 {
+            width: 100%;
+        }
+        /*
+            Modifies the grid columns of the grid containers in the electricStride.html 
+            page, by allowing two columns to exist between 475px and 1400px window widths 
+            while fixing the left grid column to 100px.
+
+            Block display for text is important for line break tags (<br>) to properly work.
+        */
+        .grid.gridType-ProblemIcon.eStride-problemGrid > .gridContent {
+            @include mediaQuery-minMax(475, 1400) {
+                display: grid !important;
+                @include rowColumnGaps(0, ml); //24px 24px
+                grid-template-columns: 100px auto;
+                padding-bottom: map-get($size-space, xl); //48px;
+            }
+            @include mediaQuery-minOnly(1400) {
+                display: flex;
+            }
+            > p.gridContent {
+                display: inline-block;
+            }
+            > h4 {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        /*
+            "pageSection" class name is the container for text and images 
+            related to a single topic or major section.
+        */
+        .pageSection {
+            @extend %flex-row-wrap-default;
+            width: 100%;
+            /*
+                "h2-wrapper" name is for the parent container to contain 
+                the heading 2 tag and its corresponding vector icon image.
+                It may be used without its children elements as a necessary 
+                space placeholder to prevent issues with sudden shifts in scroll 
+                position for jQuery value calculations during jQuery function usage.
+            */
+            article.h2-wrapper {
+                display: block;
+                width: 100%;
+                /*
+                    Sets the light blue background color and other background properties 
+                    for the heading 2 tag.
+                */
+                // h2 {
+                //     position: relative;
+                //     padding: 0;
+                //     width: auto;
+                //     background-color: color('n', 100, 90);
+                //     background-image: linear-gradient(to bottom, transparent 0%, color('p', 100) 0%);
+                //     background-origin: 0%;
+                //     background-repeat: no-repeat;
+                //     background-size: 200% 100%;
+                //     background-position: 200% 100%;
+                //     backdrop-filter: blur(8px);
+                //     transition: background-position 0.25s ease-in-out;
+                //     // z-index: initial;
+                //     // width: 100%;
+                //     /*
+                //         "vectorIcon" class name is used in conjunction with the picture tag to 
+                //         classify any images that are vectorized icons.
+                //         Widths and heights are set.
+                //     */
+                //     picture.vectorIcon {
+                //         @extend %picture-vectorIcon;
+                //         @include mediaQuery-maxOnly(1920) {
+                //             width: 3rem;
+                //             height: 3rem;
+                //         }
+                //         max-width: 3rem;
+                //         max-height: 3rem;
+                //     }
+                //     &.sticky {
+                //         position: fixed;
+                //         top: #{$header-minHeight - 1}px;
+                //         @extend %left-right-outer-padding;
+                //         padding-right: 0;
+                //         width: 100%;
+                //         @include mediaQuery-maxOnly(750) {
+                //             left: map-get($size-space, sm); //16px
+                //         }
+                //         @include mediaQuery-minOnly(750) {
+                //             left: map-get($size-space, xxl); //64px
+                //         }
+                //     }
+                //     /*
+                //         "highlighted" is a temporary class name that shows a light-green background color 
+                //         behind the h2 container with an entrance animation from left ot right.
+                //     */
+                //     // &.highlighted {
+                //     //     background-image: linear-gradient(to bottom, transparent 0%, color('p', 100) 0%);
+                //     //     background-origin: 0%;
+                //     //     background-size: 200% 100%;
+                //     //     background-position: 0% 100%;
+                //     //     transition: background-position 0.25s ease-in-out;
+                //     // }
+                // }
+            }
+            // iframe {
+            //     width: 100%;
+            //     height: 100%;
+            //     border: none;
+            //     // &.gDrive {
+            //     //     @include mediaQuery-minOnly(1400) {
+            //     //         max-width: px-to-rem(700);
+            //     //     }
+            //     // }
+            // }
+        }
+        /*
+            The article tag is a section subcontainer for grouped text and figures.
+            Multiple article subcontainers would exist under each section to describe 
+            separate subtopics related to a single section.
+        */
+        article {
+            /*
+                Any article (children) container not having a "grid" class name would have the 
+                default flex display. These take up the full width of the section 
+                container and don't have any grid columns.
+            */
+            &:not(.grid, .grid > .gridContent, article.h2-wrapper) {
+                @extend %flex-column-nowrap-default;
+            }
+            /*
+                Any (children) container having a "grid" class name would have the default properties 
+                from the default grid placeholder selector.
+            */
+            &.grid, &.grid > &.grid {
+                @extend %grid-global;
+            }
+            // /*
+            //     "designProcessGrid" class name classifies any article element as having a grid system 
+            //     for text and images illustrating a phase in the design/project process.
+            // */
+            // @include mediaQuery-minOnly(1024) {
+            //     &.designProcessGrid {
+            //         .rowSpan2 {
+            //             grid-row: span 2;
+            //         }
+            //     }
+            // }
+        }
+        // video.mainVideo, iframe.mainVideo {
+
+        // }
+        /*
+            The span subcontainer within figures is mainly used to 
+            limit the size of videos.
+        */
+        figure span {
+            // @include mediaQuery-maxOnly(1920) {
+            //     max-width: px-to-rem(750);
+            // }
+            // @include mediaQuery-minOnly(1920) {
+            //     max-width: px-to-rem(1000);
+            // }
+        }
+        /*
+            The audio container is used for displaying an interface for manipulating 
+            playback of uploaded audio.
+        */
+        audio {
+            max-width: 850px;
+            height: 50px;
+        }
+        /*
+            Various properties set for the children elements in section and article 
+            (sub)containers. Specific details are explained for each.
+        */
+        section, article {
+            // @include rowColumnGaps(default, );
+            // &.rowGap-3rem {
+            //     @include rowColumnGaps(xl, xxl);
+            // }
+            // h2, h3 {
+            //     @include rowColumnGaps(default, default);
+            // }
+            /*
+                Sets the default flex display for any body text (p tags) tagged with 
+                the "gridContent" class name.
+            */
+            &.grid {
+                & > p.gridContent {
+                    display: inline-block;
+                    &.noMarginBottom {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            /*
+                Sets article subcontainers to the full width of the parent containers.
+            */
+            article {
+                // @include rowColumnGaps(xxl, xxl);
+                width: 100%;
+                article {
+                    // @include rowColumnGaps(default, xxl);
+                }
+            }
+            // figure {
+                /*
+                    Fixes the max width of a specific icon image to 150px.
+                */
+                // @include mediaQuery-minOnly(750) {
+                //     picture#maintainingAgency {
+                //         max-width: 150px;
+                //     }
+                // }
+                // &#THELabWebsite-after {
+                //     @include mediaQuery-minOnly(1400) {
+                //         justify-content: flex-start;
+                //     }
+                // }
+                // &.preventOverflow {
+                //     @extend %preventOverflow;
+                // }
+                // &.shadow {
+                //     @extend %shadow;
+                // }
+                /*
+                    Video tag would show the video.
+                    Most videos will not have the playback controls shown, 
+                    but are only clickable to set the play/pause state.
+                    Maximum width is set to 650px above the 1400px window 
+                    width to prevent the videos from being too big in size.
+                */
+                // video {
+                //     position: relative;
+                //     cursor: pointer;
+                //     object-fit: contain;
+                //     align-self: flex-start;
+                //     width: 100%;
+                //     height: auto;
+                //     // @include mediaQuery-maxOnly(1400) {
+                //     //     max-width: px-to-rem(650);
+                //     // }
+                // }
+                /*
+                    The span tag may be sometimes used to also act as a container 
+                    for the video, similar to the picture tag as the container for 
+                    the image element). Thus, these span containers will have 
+                    a similar edge shadow effect by inheriting the properties and 
+                    values from these placeholder selectors.
+                */
+                // span.preventOverflow.shadow {
+                //     width: 100%;
+                //     height: auto;
+                //     // @extend %preventOverflow;
+                //     // @extend %shadow;
+                // }
+            // }
+            /*
+                "keyActivities" class name is mainly for a container in osp.html 
+                to showcase a group of vectorized images and corresponding text 
+                regarding the different sections of the case study (not part of 
+                the ToC section buttons).
+
+                Below 1400px window width, The text shown is centered aligned.
+            */
+            &.keyActivities {
+                article p {
+                    @include mediaQuery-maxOnly(1400) {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        /*
+            Any direct children article subcontainers within section containers 
+            will take up the width of their respective section container.
+        */
+        & > article {
+            width: 100%;
+            // @include rowColumnGaps(default, xxl);
+            h2 {
+                @include rowColumnGaps(default, l);
+                // span {
+                //     @include rowColumnGaps(default, default);
+                // }
+            }
+        }
+        // article {
+        //     width: 100%;
+        // }
+    }
+    /*
+        Any child and grandchild subcontainer having the "grid" class name 
+        will inherit the grid appearance properties.
+    */
+    section {
+        .grid, .grid > .grid {
+            @extend %grid-global;
+        }
+    }
+}
+
+/*
+    "navSideBar" class name is the container for the ToC section buttons.
+    By default it will appear as a sidebar on the right side of the 
+    screen with the buttons visible when the window width is above 750px. 
+    Below 750px, it will appear only as a button that toggles the visibility 
+    of the buttons.
+*/
+.navSideBar {
+    @include rowColumnGaps(default, );
+    text-align: right;
+    position: sticky;
+    max-height: 85vh;
+    // overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &:-webkit-scrollbar {
+        display: none;
+    }
+    @include mediaQuery-maxOnly(1024) {
+        @include displayFlex(column, nowrap, center, center, flex-end);
+        position: fixed;
+        bottom: 3em;
+        margin: 0 auto;
+        width: auto;
+        // height: 0%;
+        .desktopButton {
+            @include showHideToggle(default, "hide");
+        }
+    }
+    @include mediaQuery-minOnly(1024) {
+        top: 2em;
+        order: 1;
+        @include showHideToggle(".navSideBar", "show");
+        .desktopButton {
+            @include showHideToggle(default, "show");
+        }
+    }
+    @include mediaQuery-minOnly(1024) {
+        @include rowColumnGaps(l, );
+    }
+    /*
+        Widths of the sidebar across the 750px and 1920px checkpoints.
+    */
+    @include mediaQuery-minMax(1024, 1920) {
+        width: 250px;
+    }
+    @include mediaQuery-minOnly(1920) {
+        width: 350px;
+    }
+    // &#sideBar-EStride, &#sideBar-OSP, &#sideBar-TTV {
+    //     @include mediaQuery-minMax(750, 1920) {
+    //         width: 250px;
+    //     }
+    //     @include mediaQuery-minOnly(1920) {
+    //         width: 350px;
+    //     }
+    // }
+    // &#sideBar-TTV {
+    //     @include mediaQuery-minMax(750, 1920) {
+    //         width: 200px;
+    //     }
+    //     @include mediaQuery-minOnly(1920) {
+    //         width: 350px;
+    //     }
+    // }
+    // &#sideBar-AP {
+    //     @include mediaQuery-minMax(750, 1920) {
+    //         width: 300px;
+    //     }
+    //     @include mediaQuery-minOnly(1920) {
+    //         width: 350px;
+    //     }
+    // }
+    /*
+        Applies a small transition time of 0.075 seconds for 
+        all children (first descendant) elements.
+    */
+    * {
+        transition: 0.075s ease-in-out;
+    }
+    /*
+        Only show the ToC as a toggleable button below 750px
+        window width.
+    */
+    // button#tableOfContents-MobileButton {
+    //     p:after {
+    //         background-color: color('p', 30);
+    //     }
+    //     @include mediaQuery-maxOnly(750) {
+    //         @include showHideToggle(default, "show");
+    //         // display: flex;
+    //         // background-color: color('p', 100);
+    //         // order: 1;
+    //     }
+    //     @include mediaQuery-minOnly(750) {
+    //         @include showHideToggle(default, "hide");
+    //     }
+    // }
+    .navButtons {
+        @extend %flex-column-nowrap-default;
+        justify-content: space-between;
+        /*
+            Only show the ToC section buttons when they 
+            have the "show" class name (usually after 
+            when the ToC container button is selected.
+        */
+        &.show {
+            @include mediaQuery-maxOnly(400) {
+                width: 90%;
+                height: 65%;
+            }
+            @include mediaQuery-minMax(400, 1024) {
+                width: 300px;
+                height: 65%;
+            }
+            /*
+                Stylize the ToC section buttons container 
+                with rounded corners, light blue background 
+                color, and a dark blue border.
+            */
+            @include mediaQuery-maxOnly(1024) {
+                @include showHideToggle(".navSideBar", "show");
+                display: block !important;
+                overflow-y: scroll;
+                background-color: color('n', 100);
+                border: 2px solid color('n', 30);
+                border-radius: 0.75rem;
+                // padding: 1rem 0.5rem;
+                max-height: 300px;
+                &:-webkit-scrollbar-thumb {
+                    width: 12px;
+                    background-color: color('n', 30);
+                }
+            }
+            @include mediaQuery-minOnly(1024) {
+                width: 100%;
+            }
+        }
+        /*
+            Subcontainer for the ToC section buttons. Centers the container in a 
+            flexbox (flex display).
+        */
+        .accordion {
+            @extend %flex-row-wrap-default;
+            align-content: flex-end;
+            justify-content: flex-end;
+            height: auto;
+            // @include mediaQuery-minMax(500, 750) {
+            //     width: 100%;
+            //     // padding: 0;
+            // }
+            @include mediaQuery-maxOnly(1024) {
+                @include displayFlex(row, wrap, flex-start, flex-end, center);
+                // @include rowColumnGaps(xs, 0); //8px 0px;
+                // padding: map-get($size-space, sm) map-get($size-space, sm); //16px 16px
+                .sideBarButton {
+                    padding: map-get($size-space, s) map-get($size-space, ml); //12px 24px
+                    width: 100%;
+                    &:first-child {
+                        padding-top: map-get($size-space, ml); //24px;
+                    }
+                    &:last-child {
+                        padding-bottom: map-get($size-space, ml); //24px;
+                    }
+                    // width: calc(100% - map-get($size-space, l)); //calc(100% - 32px)
+                }
+            }
+            // @include mediaQuery-minOnly(750) {
+            //     @include rowColumnGaps(xs, );
+            // }
+        }
+        /*
+            "sideProgressBar" id name is the progress bar container specifically 
+            as part of the ToC sidebar and only appears above 750px window width 
+            and in case study pages.
+            "progressBar" class name is the soft black progress indicator bar 
+            that dynamically changes its height based on the current scroll position 
+            of the case study content container.
+        */
+        #sideProgressBar {
+            position: absolute;
+            right: 0;
+            width: map-get($size-space, xxs);
+            height: 100%;
+            scroll-padding: 0;
+            border: 1px solid color('n', 50);
+            transition: 0s ease-in-out;
+            @include mediaQuery-maxOnly(1024) {
+                @include showHideToggle(".navSideBar", "hide");
+            }
+            @include mediaQuery-minOnly(1024) {
+                @include showHideToggle(".navSideBar", "show");
+            }
+            .progressBar {
+                background-color: color('n', 50);
+                color: color('n', 50);
+                scroll-padding: 0;
+                transition: 0s ease-in-out;
+            }
+        }
+    }
+    &:hover {
+        .sideBarButton:not(.active) {
+            p {
+                color: color('n', 30);
+            }
+            .vectorIcon {
+                img {
+                    filter: none;
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    @extend %title;
+    @include mediaQuery-maxOnly(1024) {
+        max-width: 100%;
+    }
+}
+
+h2 {
+    @extend %heading2;
+    @extend %flex-row-wrap-center;
+    justify-content: flex-start;
+    position: relative;
+    text-align: left;
+    background-color: color('n', 100, 90);
+    backdrop-filter: blur(8px);
+    background-image: linear-gradient(to bottom, transparent 0%, color('p', 100) 0%);
+    background-origin: 0%;
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-position: 200% 100%;
+    backdrop-filter: blur(8px);
+    // padding: 1rem 0;
+    // width: 100%;
+    width: auto;
+    transition: background-position 0.25s ease-in-out;
+    z-index: 7;
+    // @include mediaQuery-minOnly(1024) {
+    //     max-width: 35%;
+    // }
+    // transition: 0.25s ease-in-out;
+    // &:not(h2.projectsText, .pageSection h2, .conversation > h2, .indexSection section > h2, .projectList > h2) {
+    //     @extend %text-wrapping-max-width;
+    // }
+    // &:not(article.h2-wrapper h2) {
+        // @include mediaQuery-maxOnly(550) {
+        //     padding: 0.5rem 0;
+        // }
+        // @include mediaQuery-minOnly(550) {
+        //     padding: 1rem 0;
+        // }    
+    // }
+    // &.flexRow {
+    //     @extend %flex-row-wrap-center;
+    //     justify-content: flex-start;
+    // }
+    &.noMaxWidth {
+        max-width: 100% !important;
+    }
+    picture.vectorIcon {
+        @extend %vectorIcon;
+        // @include mediaQuery-maxOnly(1920) {
+        //     width: 3rem;
+        //     height: 3rem;
+        // }
+        // max-width: 3rem;
+        // max-height: 3rem;
+    }
+    // span {
+    //     @extend %flex-row-wrap-center;
+        // @include mediaQuery-maxOnly(750) {
+            // max-width: calc(100% - 3rem);
+            // max-width: 100%;
+            // width: auto;
+            // width: calc(100% - 3rem);
+        // }
+        // @include mediaQuery-maxOnly(1920) {
+        //     width: calc(100% - $h2-picture-width-max-1920 - map-get($size-space, l));
+        //     height: calc(100% - $h2-picture-height-max-1920 - map-get($size-space, l));
+        // }
+        // @include mediaQuery-minOnly(1920) {
+        //     width: calc(100% - $h2-picture-width-min-1920 - map-get($size-space, l));
+        //     height: calc(100% - $h2-picture-height-min-1920 - map-get($size-space, l));
+        // }
+    //     justify-content: flex-start;
+    //     &.noMaxWidth {
+    //         max-width: 100% !important;
+    //     }
+    //     &.maxWidthText-75 {
+    //         @include mediaQuery-maxOnly(550) {
+    //             max-width: calc(100% - 4rem);
+    //         }
+    //     }
+    // }
+    /*
+        "projectsText" class name is designated for the heading 2 of "Other Case Studies" text.
+    */
+    &.projectsText {
+        @extend %flex-row-wrap-default;
+        // padding: 0.5rem 0;
+        width: 100%;
+        text-align: left;
+    }
+    &.sticky {
+        position: fixed;
+        left: 0;
+        // @extend %left-right-outer-padding;
+        background-color: color('n', 100, 90);
+        width: 100%;
+        z-index: 7;
+        @include mediaQuery-maxOnly(1024) {
+            top: 0;
+        }
+        // @include mediaQuery-minOnly(750) {
+        //     top: #{$header-minHeight - 1}px;
+        // }
+        @include mediaQuery-minOnly(1024) {
+            top: #{$header-minHeight-min-1024}px;
+            max-width: 100%;
+        }
+    }
+}
+
+.content article.pageSection h2 {
+    max-width: 100%;
+    width: 100%;
+}
+
+main.indexSection section article.h2-wrapper h2 {
+    &.sticky {
+        @include mediaQuery-minOnly(1024) {
+            top: #{$header-minHeight-min-1024 - 1}px;
+        }
+    }
+}
+
+/*
+    "conversation" class name is the container for the "Contact Me" section.
+    Removes padding for the heading 2 tag in the container with the h2 text "Contact Me".
+*/
+// .conversation h2 {
+//     margin: 0 1rem 0 0;
+//     // padding: 0 !important;
+//     width: auto;
+//     text-align: left;
+//     @include mediaQuery-maxOnly(750) {
+//         width: 100%;
+//     }
+// }
+
+
+/*
+    "h3" and "h4" is the name of the heading 3 and heading 4. 
+    h3 is mainly for subsections, h4 is for subtopics within 
+    those subsections.
+
+    h3 flex display will have text displayed to the left 
+    of the container.
+    h4 will have its font size properties set.
+*/
+// h3, h4 {
+//     margin-top: 0;
+//     margin-bottom: 0;
+// }
+
+h3 {
+    @extend %heading3;
+    &.noMaxWidth {
+        max-width: 100% !important;
+    }
+    &.flexRow {
+        @extend %flex-row-wrap-center;
+        justify-content: flex-start;
+    }
+}
+
+h4 {
+    @extend %heading4;
+}
+
+/*
+    "ol" is an ordered list element, used for having numbered bullet points 
+    for indenting a list of contextually-separate text items where the 
+    order of the text items matters.
+    "ul" is an unordered list element, used for having bullet points 
+    for indenting a list of contextually-separate text items where the 
+    order of the text items doesn't matter.
+    "li" is a list item of text within each type of list.
+
+    All three elements have automatically-sized widths.
+*/
+ol, ol li, ul, ul li {
+    width: auto;
+}
+
+/*
+    Due to the indentation of the bullet/numbered points, width is 
+    set to slightly less than 100% below 550px window width.
+
+    The right padding helps to manipulate the amount of identation 
+    for the bullet/numbered points.
+*/
+ol, ul {
+    max-width: 660px;
+    // @include mediaQuery-maxOnly(550) {
+    //     width: calc(100% - 1rem);
+    // }
+    // @include mediaQuery-maxOnly(1920) {
+    //     padding: 1rem 0 0 1rem;
+    // }
+    // @include mediaQuery-minOnly(1920) {
+    //     padding: 1rem 0 0 1.5rem;
+    // }
+    /*
+        Adjusts bottom margin for list items 
+        when below 1024px window width or having 
+        the "adjustMarginBottom" class name.
+    */
+    li {
+        &:not(:last-child) {
+            margin-bottom: map-get($size-space, xs);
+        }
+        // margin: 0;
+        &:last-of-type {
+            @include mediaQuery-maxOnly(1024) {
+                margin-bottom: 0;
+            }
+        }
+        &.adjustMarginBottom {
+            margin-bottom: 1rem;
+        }
+        // @extend %text-1920-max-width;
+        @include mediaQuery-maxOnly(1024) {
+            max-width: 100%;
+        }
+        // @include mediaQuery-minMax(1024, 1920) {
+        //     max-width: px-to-rem(700);
+        // }
+        // @include mediaQuery-minOnly(1920) {
+        //     max-width: px-to-rem(900);
+        // }
+    }
+    // &.noPaddingBottom {
+    //     padding-bottom: 0;
+    // }
+}
+
+/*
+    "p" is the paragraph tag, mainly for body text.
+    By default, body text will have 100% max width, but 
+    "span" children elements or having the "cvMaxWidth" 
+    class name (mostly for the cv.html page) will 
+    modify the max width.
+*/
+p {
+    max-width: 660px;
+    &:not(button p, .content > .gridContent p, .navSideBar .sideBarButton p, p.width-100) {
+        // @extend %text-1920-max-width;
+        @include mediaQuery-maxOnly(1024) {
+            // max-width: 100%;
+        }
+        @include mediaQuery-minMax(1024, 1920) {
+            // max-width: px-to-rem(700);
+            // max-width: 900px;
+        }
+        @include mediaQuery-minOnly(1920) {
+            // max-width: px-to-rem(900);
+            // max-width: 900px;
+        }
+        // &.cvMaxWidth {
+            // max-width: px-to-rem(700);
+        // }
+    }
+    &.width-100 {
+        max-width: 100%;
+        // span {
+            // max-width: px-to-rem(600);
+            // max-width: 900px;
+        // }
+    }
+}
+
+/*
+    "projectList" class name is the container element located in the 
+    footer for hosting different preview content of other case studies.
+    It has a grid system for organizing the preview content.
+
+    The "tags" class name 
+*/
+.projectList {
+    @extend %flex-row-wrap-default;
+    // @include rowColumnGaps(xxl, xxl);
+    width: 100%;
+    &.grid, &.grid > &.grid {
+        @extend %grid-global;
+    }
+    /*
+        Sets total number of columns of all grid types to one below 750px window width.
+    */
+    @include mediaQuery-maxOnly(1024) {
+        // @include rowColumnGaps(xxl, xxl);
+        grid-column: 1/-1;
+    }
+    @include mediaQuery-minOnly(1024) {
+        // @include rowColumnGaps(xxl, xxl);
+    }
+    @include mediaQuery-minMax(1024, 1400) {
+        p {
+            margin-bottom: 0;
+        }
+    }
+    // & > article {
+    //     @include rowColumnGaps(default, );
+    //     &.grid {
+    //         @include rowColumnGaps(default, xxl);
+    //     }
+    //     article.gridContent {
+    //         @include rowColumnGaps(default, );
+    //     }
+    // }
+    article {
+        // @include rowColumnGaps(default, );
+        width: 100%;
+        // &.grid {
+        //     @include rowColumnGaps(xxl, xxl);
+        // }
+        // article.gridContent {
+        //     @include rowColumnGaps(default, );
+        // }
+    }
+    /*
+        "tags" class name are children text items to show 
+        a comma-separate list of tags to succinctly 
+        show topics that a case study covers.
+    */
+    .tags {
+        font-style: italic;
+        text-decoration: none;
+    }
+}
+
+/*
+    "footer" is a container located at the bottom of a web page for 
+    showing content that is less relevant than the rest of the content 
+    above it. Usually used for showing buttons for contact information 
+    or other case studies.
+*/
+footer {
+    @extend %flex-row-wrap-default;
+    // @include rowColumnGaps(0, xxl); //64px
+    position: relative;
+    margin: auto;
+    background-color: color('p', 90);
+    // padding-top: 0rem;
+    // @include mediaQuery-maxOnly(750) {
+    //     @include rowColumnGaps(xl, 0);
+    // }
+    // @include mediaQuery-minOnly(750) {
+    //     @include rowColumnGaps(xl, 0);
+    // }
+    // @include mediaQuery-minOnly(1024) {
+    //     width: 100%;
+    // }
+    // &#conversation {
+    //     background-color: color('p', 90);
+    // }
+    .endNavigation #endMessage h2 {
+        background-color: transparent;
+    }
+    /*
+        "conversation" class name is the container for the "Contact Me" section.
+        Applies a bottom padding to visually separate it from the "Other Case Studies 
+        Section" and the end of the "content" container.
+    */
+    .conversation {
+        @extend %flex-column-nowrap-default;
+        // @include rowColumnGaps(default, default);
+        justify-content: flex-start;
+        width: 100%;
+        @include mediaQuery-maxOnly(1200) {
+            @include showHideToggle("default", "show");
+        }
+        @include mediaQuery-minOnly(1200) {
+            @include showHideToggle("default", "hide");
+        }
+        // @include mediaQuery-maxOnly(1920) {
+        //     padding-bottom: 5rem;
+        // }
+        // @include mediaQuery-minOnly(1920) {
+        //     padding-bottom: 10rem;
+        // }
+    }
+    // .endNavigation {
+    //     @extend %flex-row-wrap-default;
+    //     @include rowColumnGaps(0, xxl);
+    //     width: 100%;
+    article {
+        @extend %flex-row-wrap-default;
+        @include mediaQuery-minOnly(1024) {
+            @include rowColumnGaps(0, 0);
+            &:nth-child(1) {
+                width: calc((100% * (2 / 3)) - map-get($size-space, xxl));
+            }
+            &:nth-child(2) {
+                width: calc((100% * (1 / 3)) - map-get($size-space, xxl));
+            }
+            // width: calc(50% - map-get($size-space, l));
+        }
+        &#endMessage {
+            @include rowColumnGaps(sm, sm);
+            & > * {
+                width: 100%;
+            }
+            p.subtitle {
+                // padding: 0;
+            }
+        }
+        &#endNavLinks {
+            @extend %flex-row-wrap-default;
+            // @include rowColumnGaps(ml, ml);
+            max-width: 300px;
+            width: 100%;
+            h4 {
+                // width: 100%;
+                // padding: 0;
+                color: color('n', 30);
+            }
+            hr {
+                display: inline-block;
+                position: relative;
+                left: 0;
+                top: 0;
+                margin: 0;
+                content: "";
+                background-color: color('n', 30);
+                width: 100%;
+                height: 2px;
+            }
+            & > article.grid {
+                // &.grid, &.grid > &.grid {
+                    @extend %grid-global;
+                // }
+                // max-width: 55%;
+                width: 100%;
+                @include rowColumnGaps(sm, sm);
+                a {
+                    @extend %flex-row-wrap-center;
+                    @include rowColumnGaps(default, default);
+                    // padding: 0;
+                    text-decoration: none;
+                    p {
+                        @extend %buttonText;
+                        position: relative;
+                        background-image: radial-gradient(transparent);
+                        transition: background-image 0.3s linear;
+                        &:after {
+                            @extend %p-after;
+                            background-color: color('n', 30);
+                        }
+                    }
+                    &:hover {
+                        @extend %hover;
+                        p {
+                            background-image: radial-gradient(color('p', 90) 0%, transparent 75%);
+                            transition: background-image 0.3s linear;
+                            &:after {
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // }
+}
+
+/*
+    Prevents the miscellaneous "Loading" text from appearing within the 
+    "ui-loader" class name container.
+*/
+.ui-loader {
+    display: none !important;
+}
+
+
+/*
+    "highlighted" class name is used to change the background color of h2 elements 
+    from transparent (showing the default light blue background color) to light green.
+    Due to the linear-gradient and transition values, the change of background color 
+    will animate from left to right, then right to left.
+*/
+.highlighted:not(#thankYouForVisiting) {
+    background-image: linear-gradient(to bottom, transparent 0%, color('p', 100) 0%);
+    background-origin: 0%;
+    background-size: 200% 100%;
+    background-position: 0% 100%;
+    transition: background-position 0.25s ease-in-out;
+}
+
+.autoWidth {
+    width: auto !important;
+}
+
+.noMaxHeight {
+    max-height: none !important;
+}
+
+.min1024-textAlign-center {
+    @include mediaQuery-minOnly(1024) {
+        text-align: center;
+    }
+}
+
+.width100 {
+    width: 100%;
+}
