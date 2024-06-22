@@ -670,7 +670,7 @@ $(function() {
             }
             console.log('getHref: ' + getHref);
             // let hashIndex = getHref.indexOf("#"),
-            let indexHrefArray = ['#designWork', '#mediaWork', '#aboutMeSection', '#conversation', 'cv.html'];
+            let indexHrefArray = ['#designWork', '#mediaWork', '#aboutMeSection', '#conversation', 'timeline.html'];
             if ((indexHrefArray.includes(getHref)) && !(getHref *= "index.html")) {
                 scrollToElement(event.target);
             } else if (!(indexHrefArray.includes(getHref)) || (getHref *= "index.html")) {
@@ -1006,7 +1006,7 @@ $(function() {
             let getParentName = $(element).parent().prop('tagName');
             // console.log('Parent of paragraph: ' + getParentName);
             if ($(element).parent() && (getParentName == 'A')) {
-                if ($(element).parent().attr('href').split('#')[0].length > -1) {
+                if ($(element).parent().attr('href').split('#')[1].length > -1) {
                     getIDName = $(element).parent().attr('href').split('#')[1];
                 } else if ($(element).parent().attr('href').length > -1) {
                     getIDName = $(element).parent().attr('href');
