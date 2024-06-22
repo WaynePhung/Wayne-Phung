@@ -1006,7 +1006,7 @@ $(function() {
             let getParentName = $(element).parent().prop('tagName');
             // console.log('Parent of paragraph: ' + getParentName);
             if ($(element).parent() && (getParentName == 'A')) {
-                if ($(element).parent().attr('href').split('#')[1].length > -1) {
+                if ($(element).parent().attr('href').split('#')[0].length > -1) {
                     getIDName = $(element).parent().attr('href').split('#')[1];
                 } else if ($(element).parent().attr('href').length > -1) {
                     getIDName = $(element).parent().attr('href');
@@ -1496,7 +1496,7 @@ $(function() {
                             } else if (stickyH2Index == h2.length-1)  {
                                 console.log('maximum stickyH2Index: ' + stickyH2Index);
                                 if ((scrollPosition >= getCurrentH2Pos) && (scrollPosition < (getCurrentH2Pos + getCurrentH2.parents('.pageSection').outerHeight(true) - 150))) {
-                                    // fixH2(getCurrentH2);
+                                    fixH2(getCurrentH2);
                                     if (getCurrentH2.parent('article.h2-wrapper').length) {
                                         //Do nothing.
                                     } else {
@@ -1507,6 +1507,9 @@ $(function() {
                                         // });
                                     }
                                     getCurrentH2.addClass('sticky');
+                                    // getCurrentH2.css({
+                                    //     'width': '100%'
+                                    // });
                                     unfixH2(h2.not(getCurrentH2));
                                     // return false;
                                 } else {
