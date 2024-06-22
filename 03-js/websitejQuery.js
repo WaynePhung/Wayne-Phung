@@ -1006,7 +1006,7 @@ $(function() {
             let getParentName = $(element).parent().prop('tagName');
             // console.log('Parent of paragraph: ' + getParentName);
             if ($(element).parent() && (getParentName == 'A')) {
-                if ($(element).parent().attr('href').split('#')[1].length > -1) {
+                if ($(element).parent().attr('href').split('#')[0].length > -1) {
                     getIDName = $(element).parent().attr('href').split('#')[1];
                 } else if ($(element).parent().attr('href').length > -1) {
                     getIDName = $(element).parent().attr('href');
